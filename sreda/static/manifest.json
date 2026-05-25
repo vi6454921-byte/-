@@ -1,0 +1,21 @@
+{
+  "name": "Среда - ИИ Ассистент",
+  "short_name": "Среда",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#04070d",
+  "theme_color": "#06090f",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/static/icons/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/static/icons/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Среда — личный ассистент Влада</title>
+
+    <meta name="theme-color" content="#02050b" />
+    <link rel="manifest" href="/static/manifest.json" />
+    <link rel="apple-touch-icon" href="/static/icons/icon-192.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="/static/style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+    <!-- Live 3D background -->
+    <div class="scene">
+        <canvas id="bg-canvas"></canvas>
+        <div class="scene-vignette"></div>
+    </div>
+
+    <!-- Top bar -->
+    <header class="hud-top">
+        <div class="brand">
+            <div class="brand-core" aria-hidden="true">
+                <span class="brand-ring r1"></span>
+                <span class="brand-ring r2"></span>
+                <span class="brand-ring r3"></span>
+                <span class="brand-ring r4"></span>
+                <span class="brand-dot"></span>
+            </div>
+            <div class="brand-name">
+                <span class="brand-kicker">S.R.E.D.A.</span>
+                <strong>СРЕДА</strong>
+            </div>
+        </div>
+
+        <div class="hud-metrics" id="hud-metrics">
+            <div class="metric"><span class="metric-label">CPU</span><span class="metric-value" id="m-cpu">—</span></div>
+            <div class="metric"><span class="metric-label">RAM</span><span class="metric-value" id="m-ram">—</span></div>
+            <div class="metric"><span class="metric-label">DISK</span><span class="metric-value" id="m-disk">—</span></div>
+            <div class="metric metric-time"><span class="metric-label" id="m-date">—</span><span class="metric-value" id="m-time">—</span></div>
+            <div class="metric metric-engine"><span class="metric-label">ENGINE</span><span class="metric-value" id="engine-status">Mistral</span></div>
+        </div>
+
+        <div class="hud-actions">
+            <button class="icon-btn" id="btn-briefing" title="Утренний бриф" aria-label="Briefing">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6l1.4 1.4M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/><circle cx="12" cy="12" r="4"/></svg>
+            </button>
+            <button class="icon-btn" id="btn-notifications" title="Уведомления" aria-label="Notifications">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7Z"/><path d="M10 21a2 2 0 0 0 4 0"/></svg>
+                <span class="badge" id="notif-badge" hidden>0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main 3D layout -->
+    <main class="hud-shell">
+
+        <!-- Left rail -->
+        <aside class="rail rail-left">
+            <section class="panel">
+                <span class="corner-tr"></span><span class="corner-bl"></span>
+                <div class="panel-head">
+                    <h3>Состояние системы</h3>
+                    <button class="ghost-btn" id="btn-refresh-system">↻</button>
+                </div>
+                <div class="ring-stack">
+                    <div class="ring-block">
+                        <svg class="ring" viewBox="0 0 100 100">
+                            <circle class="ring-bg" cx="50" cy="50" r="42" />
+                            <circle class="ring-fg ring-cpu" cx="50" cy="50" r="42" />
+                        </svg>
+                        <div class="ring-label"><span id="ring-cpu-val">0%</span><small>CPU</small></div>
+                    </div>
+                    <div class="ring-block">
+                        <svg class="ring" viewBox="0 0 100 100">
+                            <circle class="ring-bg" cx="50" cy="50" r="42" />
+                            <circle class="ring-fg ring-ram" cx="50" cy="50" r="42" />
+                        </svg>
+                        <div class="ring-label"><span id="ring-ram-val">0%</span><small>RAM</small></div>
+                    </div>
+                    <div class="ring-block">
+                        <svg class="ring" viewBox="0 0 100 100">
+                            <circle class="ring-bg" cx="50" cy="50" r="42" />
+                            <circle class="ring-fg ring-disk" cx="50" cy="50" r="42" />
+                        </svg>
+                        <div class="ring-label"><span id="ring-disk-val">0%</span><small>DISK</small></div>
+                    </div>
+                </div>
+                <div class="kv-list" id="system-kv">
+                    <div class="kv"><span>IP</span><b id="sys-ip">—</b></div>
+                    <div class="kv"><span>Хост</span><b id="sys-host">—</b></div>
+                    <div class="kv"><span>Аптайм</span><b id="sys-uptime">—</b></div>
+                    <div class="kv" id="kv-battery" hidden><span>Батарея</span><b id="sys-battery">—</b></div>
+                </div>
+            </section>
+
+            <section class="panel" id="weather-card">
+                <span class="corner-tr"></span><span class="corner-bl"></span>
+                <div class="panel-head"><h3>Погода</h3></div>
+                <div class="weather-now" id="weather-now">—</div>
+                <button class="ghost-btn full" data-quick="Какая погода сейчас и нужно ли брать зонт?">Узнать прогноз</button>
+            </section>
+
+            <section class="panel">
+                <span class="corner-tr"></span><span class="corner-bl"></span>
+                <div class="panel-head">
+                    <h3>Активность</h3>
+                    <div class="seg">
+                        <button class="seg-btn active" data-period="day">День</button>
+                        <button class="seg-btn" data-period="week">Неделя</button>
+                        <button class="seg-btn" data-period="month">Месяц</button>
+                    </div>
+                </div>
+                <div class="bars" id="reports-apps"></div>
+                <p class="report-summary" id="reports-summary">Загрузка…</p>
+            </section>
+        </aside>
+
+        <!-- Center: chat + holo core -->
+        <section class="center">
+            <div class="holo" aria-hidden="true">
+                <div class="holo-ring h1"></div>
+                <div class="holo-ring h2"></div>
+                <div class="holo-ring h3"></div>
+                <div class="holo-ring h4"></div>
+                <div class="holo-arc"></div>
+                <div class="holo-core" id="holo-core"></div>
+            </div>
+
+            <div class="chat-wrap panel">
+                <span class="corner-tr"></span><span class="corner-bl"></span>
+                <div class="panel-head chat-head">
+                    <div>
+                        <h3>Диалог со Средой</h3>
+                        <span class="chat-sub" id="chat-sub">Готова помочь, Влад</span>
+                    </div>
+                    <div class="chat-tags">
+                        <button class="tag-btn" data-quick="Что ты обо мне знаешь? Покажи самые важные факты.">Факты</button>
+                        <button class="tag-btn" data-quick="Покажи мои привычки и что ты заметила.">Привычки</button>
+                        <button class="tag-btn" data-quick="Покажи из чего ты состоишь — какие у тебя модули кода">Свой код</button>
+                        <button class="tag-btn" data-quick="Дай сводку: погода, активность, напоминания на сегодня.">Бриф</button>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chat-messages">
+                    <div class="msg msg-assistant welcome">
+                        <div class="msg-avatar">С</div>
+                        <div class="msg-bubble">
+                            <div class="msg-text" id="welcome-text">Я Среда. Скажи или напиши что нужно — открыть, найти, напомнить. Я разберусь.</div>
+                            <div class="msg-meta"><span>Среда</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="typing" id="typing-indicator" hidden>
+                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                    <span class="typing-text">обрабатываю…</span>
+                </div>
+
+                <form class="chat-input" id="chat-form">
+                    <button type="button" class="icon-btn input-btn" id="btn-voice" title="Голосовой ввод (нажми и говори)">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>
+                    </button>
+                    <button type="button" class="icon-btn input-btn" id="btn-upload" title="Прикрепить картинку">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 15v3a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-3M17 8l-5-5-5 5M12 3v13"/></svg>
+                    </button>
+                    <input type="file" id="upload-input" accept="image/*" hidden />
+                    <input id="message-input" type="text" autocomplete="off" placeholder="Скажи что-нибудь…" required />
+                    <button type="button" class="icon-btn input-btn" id="btn-tts-toggle" title="Озвучивание ответов">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 10v4h4l5 4V6L7 10H3z"/><path id="tts-on-icon" d="M16 8a5 5 0 0 1 0 8M19 5a9 9 0 0 1 0 14"/></svg>
+                    </button>
+                    <button type="submit" class="send-btn" title="Отправить">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Right rail -->
+        <aside class="rail rail-right">
+            <nav class="rail-tabs">
+                <button class="rail-tab active" data-tab="memory">Память</button>
+                <button class="rail-tab" data-tab="notes">Заметки</button>
+                <button class="rail-tab" data-tab="reminders">План</button>
+                <button class="rail-tab" data-tab="self">Код</button>
+                <button class="rail-tab" data-tab="logs">Логи</button>
+            </nav>
+
+            <section class="panel tab-pane active" data-pane="memory">
+                <span class="corner-tr"></span><span class="corner-bl"></span>
+                <div class="panel-head">
+                    <h3>Что я о тебе знаю</h3>
+                    <button class="ghost-btn" data-quick="Что нового ты обо мне узнала за сегодня?">↻</button>
+                </div>
+                <div class="facts-list" id="facts-list"><p class="empty">Память пока пуста. Расскажи о себе в чате.</p></div>
+
+                <div class="sub-head">
+                    <h4>Привычки</h4>
+                </div>
+                <div class="facts-list" id="patterns-list"><p class="empty">Накапливаю наблюдения…</p></div>
+            </section>
+
+            <section class="panel tab-pane" data-pane="notes" hidden>
+                <span class="corner-tr"></span><span class="corner-bl"></span>
+                <div class="panel-head">
+                    <h3>Заметки</h3>
+                    <button class="ghost-btn" id="btn-new-note">+ Новая</button>
+                </div>
+                <div class="search-row">
+                    <input id="notes-search" placeholder="Поиск…" />
+                </div>
+                <div class="notes-list" id="notes-list"><p class="empty">Заметок ещё нет.</p></div>
+            </section>
+
+            <section class="panel tab-pane" data-pane="reminders" hidden>
+                <span class="corner-tr"></span><span class="corner-bl"></span>
+                <div class="panel-head">
+                    <h3>Напоминания</h3>
+                    <button class="ghost-btn" id="btn-new-reminder">+ Создать</button>
+                </div>
+                <div class="reminders-list" id="reminders-list"><p class="empty">Активных напоминаний нет.</p></div>
+            </section>
+
+            <section class="panel tab-pane" data-pane="self" hidden>
+                <span class="corner-tr"></span><span class="corner-bl"></span>
+                <div class="panel-head">
+                    <h3>Свой код</h3>
+                    <button class="ghost-btn" id="btn-refresh-self">↻</button>
+                </div>
+                <p class="report-summary" style="margin-bottom:10px">
+                    Я знаю, из каких модулей собрана. Могу читать их, предлагать улучшения и менять
+                    себя — но только после твоего подтверждения в чате.
+                </p>
+                <div class="code-list" id="self-modules"><p class="empty">Загружаю карту своего кода…</p></div>
+            </section>
+
+            <section class="panel tab-pane" data-pane="logs" hidden>
+                <span class="corner-tr"></span><span class="corner-bl"></span>
+                <div class="panel-head">
+                    <h3>Журнал действий</h3>
+                    <button class="ghost-btn" id="btn-refresh-logs">↻</button>
+                </div>
+                <div class="logs-list" id="logs-list"><p class="empty">Журнал пока пуст.</p></div>
+            </section>
+        </aside>
+    </main>
+
+    <!-- Modal: note -->
+    <div class="modal" id="note-modal" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card">
+            <div class="modal-head"><h3>Новая заметка</h3><button class="ghost-btn" data-close>×</button></div>
+            <input id="note-title" placeholder="Заголовок" />
+            <textarea id="note-body" rows="6" placeholder="Содержимое…"></textarea>
+            <input id="note-tags" placeholder="Теги через запятую" />
+            <button class="primary-btn" id="note-save">Сохранить</button>
+        </div>
+    </div>
+
+    <!-- Modal: reminder -->
+    <div class="modal" id="reminder-modal" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-card">
+            <div class="modal-head"><h3>Новое напоминание</h3><button class="ghost-btn" data-close>×</button></div>
+            <input id="reminder-text" placeholder="Что напомнить? (например: позвонить маме)" />
+            <input id="reminder-when" placeholder="Когда? (например: через 30 минут, через 2 часа)" />
+            <button class="primary-btn" id="reminder-save">Поставить</button>
+        </div>
+    </div>
+
+    <!-- Notification drawer -->
+    <div class="drawer" id="notif-drawer" hidden>
+        <div class="drawer-head"><h3>Уведомления</h3><button class="ghost-btn" id="notif-close">×</button></div>
+        <div class="notif-list" id="notif-list"><p class="empty">Уведомлений нет.</p></div>
+    </div>
+
+    <!-- Mobile bottom tabs -->
+    <nav class="mobile-tabs">
+        <button class="mtab active" data-mtab="chat">💬 Чат</button>
+        <button class="mtab" data-mtab="system">📊 ПК</button>
+        <button class="mtab" data-mtab="rail">🧠 Среда</button>
+    </nav>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
