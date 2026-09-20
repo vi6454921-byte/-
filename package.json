@@ -1,0 +1,28 @@
+{
+  "name": "poligon-shooter",
+  "version": "1.0.0",
+  "description": "ПОЛИГОН — браузерный шутер: садовый участок, стрельбище и четыре оператора с АК-74. Собирается в один shooter.html.",
+  "main": "tools/build.js",
+  "scripts": {
+    "build": "node tools/build.js",
+    "test": "node tools/build.js && xvfb-run -a node tools/test/run.js",
+    "test:nox": "node tools/build.js && node tools/test/run.js",
+    "test:deps": "node tools/test/fetch-cdn.js",
+    "shots": "node tools/test/shots.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vi6454921-byte/-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vi6454921-byte/-/issues"
+  },
+  "homepage": "https://github.com/vi6454921-byte/-#readme",
+  "devDependencies": {
+    "playwright": "^1.63.0"
+  }
+}

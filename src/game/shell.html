@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ПОЛИГОН · ДЕЛЬТА / АЛЬФА</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#0b0d10;color:#e8eaed;
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Inter,Arial,sans-serif;
+    -webkit-user-select:none;user-select:none}
+  canvas{display:block}
+
+  /* ---------------------------------------------------------- прицел --- */
+  #reticle{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:6;
+    pointer-events:none;width:64px;height:64px;opacity:0;transition:opacity .18s}
+  #reticle.on{opacity:1}
+  #reticle i{position:absolute;background:rgba(255,255,255,.82);
+    box-shadow:0 0 2px rgba(0,0,0,.85);display:block}
+  #reticle .dot{left:50%;top:50%;width:2px;height:2px;border-radius:50%;
+    transform:translate(-50%,-50%);background:rgba(255,255,255,.95)}
+
+  /* ------------------------------------------------------------ HUD ---- */
+  #hud{position:fixed;inset:0;pointer-events:none;z-index:5}
+  #ammo{position:absolute;right:30px;bottom:26px;text-align:right;
+    font:600 11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;
+    color:rgba(255,255,255,.44);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+  #ammo b{display:block;font:700 40px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
+    letter-spacing:.01em;color:#f0dcae;margin-top:2px}
+  #ammo b.low{color:#e08b74}
+  #ammo b.empty{color:#d9564a}
+  #ammo s{text-decoration:none;font-size:20px;opacity:.5}
+  #mode{position:absolute;right:30px;bottom:96px;font:600 11px/1 ui-monospace,monospace;
+    letter-spacing:.2em;color:rgba(240,220,174,.8);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+
+  #who{position:absolute;left:28px;bottom:26px;
+    font:600 10.5px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.2em;
+    color:rgba(255,255,255,.4);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+  #who b{display:block;font-size:19px;letter-spacing:.12em;color:#fff;margin-top:3px}
+  #who u{text-decoration:none;display:block;margin-top:2px;font-size:10px;
+    letter-spacing:.16em}
+  #who.delta u{color:#9fbe72}
+  #who.alpha u{color:#c8cdd2}
+
+  #stamina{position:absolute;left:28px;bottom:14px;width:168px;height:3px;
+    background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden;opacity:0;
+    transition:opacity .3s}
+  #stamina.on{opacity:1}
+  #stamina i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#c8a86a,#e3d0a2);
+    transform-origin:left;transition:transform .1s linear}
+
+  /* ----------------------------------------------------- подсказка F --- */
+  #prompt{position:fixed;left:50%;top:58%;transform:translateX(-50%);z-index:7;
+    pointer-events:none;text-align:center;opacity:0;transition:opacity .16s}
+  #prompt.on{opacity:1}
+  #prompt .key{display:inline-flex;align-items:center;justify-content:center;
+    width:34px;height:34px;border:1.5px solid rgba(255,255,255,.78);border-radius:7px;
+    font:700 15px/1 ui-monospace,monospace;color:#fff;background:rgba(10,12,15,.55);
+    backdrop-filter:blur(6px);position:relative;overflow:hidden}
+  #prompt .key .fill{position:absolute;inset:0;background:rgba(232,180,92,.55);
+    transform-origin:bottom;transform:scaleY(0)}
+  #prompt .key span{position:relative}
+  #prompt .lbl{margin-top:8px;font:600 11.5px/1.4 inherit;letter-spacing:.16em;
+    color:rgba(255,255,255,.88);text-shadow:0 1px 8px rgba(0,0,0,.95)}
+  #prompt .sub{font:500 10.5px/1.5 inherit;letter-spacing:.1em;color:rgba(255,255,255,.5)}
+
+  /* ------------------------------------------------------- сообщения --- */
+  #toast{position:fixed;left:50%;top:14%;transform:translateX(-50%);z-index:8;
+    pointer-events:none;display:flex;flex-direction:column;gap:6px;align-items:center}
+  .msg{font:600 12px/1.5 inherit;letter-spacing:.1em;color:#f2e2bb;
+    background:rgba(10,12,15,.68);backdrop-filter:blur(8px);padding:7px 15px;
+    border-radius:7px;border:1px solid rgba(232,180,92,.28);
+    animation:pop .3s ease-out;white-space:nowrap}
+  @keyframes pop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+  /* ---------------------------------------------------------- очки ----- */
+  #score{position:absolute;left:50%;top:22px;transform:translateX(-50%);
+    font:600 10.5px/1.6 ui-monospace,monospace;letter-spacing:.2em;text-align:center;
+    color:rgba(255,255,255,.42);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+  #score b{color:#f0dcae;font-size:15px}
+
+  /* ---------------------------------------------------------- старт ---- */
+  #start{position:fixed;inset:0;z-index:30;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:26px;text-align:center;
+    background:radial-gradient(circle at 50% 42%,rgba(20,24,28,.86),rgba(6,8,10,.97));
+    backdrop-filter:blur(3px);cursor:pointer;padding:24px}
+  #start.hidden{display:none}
+  #start h1{margin:0;font:700 34px/1.1 inherit;letter-spacing:.34em;color:#fff}
+  #start .tag{font:500 11.5px/1.7 inherit;letter-spacing:.3em;color:rgba(255,255,255,.4);
+    margin-top:-14px}
+  #start .keys{display:grid;grid-template-columns:auto auto;gap:7px 20px;
+    font:500 12px/1.4 inherit;color:rgba(255,255,255,.62);text-align:left;
+    max-width:560px}
+  #start .keys b{color:#e8b45c;font-weight:600;font-family:ui-monospace,monospace;
+    letter-spacing:.06em}
+  #start .go{margin-top:6px;font:600 12.5px/1 inherit;letter-spacing:.24em;
+    color:#0d0f12;background:#e0cfa4;padding:15px 34px;border-radius:9px;
+    animation:breathe 2.4s ease-in-out infinite}
+  @keyframes breathe{0%,100%{opacity:.86}50%{opacity:1}}
+  #loading{font:600 11px/1 ui-monospace,monospace;letter-spacing:.24em;
+    color:rgba(255,255,255,.44)}
+
+  #err{position:fixed;inset:0;display:none;align-items:center;justify-content:center;
+    padding:7vw;text-align:center;font:500 17px/1.5 ui-monospace,monospace;color:#e6a79c;
+    white-space:pre-wrap;z-index:50;background:rgba(8,9,11,.96);overflow:auto}
+
+  /* индикатор попадания */
+  #hitmark{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:7;
+    pointer-events:none;opacity:0}
+  #hitmark.on{animation:hm .30s ease-out}
+  @keyframes hm{0%{opacity:1;transform:translate(-50%,-50%) scale(.7)}
+                100%{opacity:0;transform:translate(-50%,-50%) scale(1.25)}}
+
+  /* виньетка и «дыхание» камеры при спринте */
+  #vig{position:fixed;inset:0;z-index:4;pointer-events:none;opacity:0;
+    transition:opacity .35s;
+    background:radial-gradient(ellipse at center,rgba(0,0,0,0) 42%,rgba(0,0,0,.62) 100%)}
+  #dmg{position:fixed;inset:0;z-index:4;pointer-events:none;opacity:0;
+    background:radial-gradient(ellipse at center,rgba(120,10,10,0) 46%,rgba(140,14,14,.55) 100%)}
+</style>
+<script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.166.1/build/three.module.js","three/addons/":"https://unpkg.com/three@0.166.1/examples/jsm/"}}</script>
+</head>
+<body>
+
+<div id="vig"></div>
+<div id="dmg"></div>
+
+<div id="reticle">
+  <i class="dot"></i>
+</div>
+<div id="hitmark">
+  <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
+    <path d="M6 6l4 4M20 6l-4 4M6 20l4-4M20 20l-4-4"/>
+  </svg>
+</div>
+
+<div id="hud">
+  <div id="score">ПОРАЖЕНО <b id="scoreN">0</b></div>
+  <div id="who" class="delta">ОПЕРАТОР<b id="whoName">—</b><u id="whoSide">СВОБОДНАЯ КАМЕРА</u></div>
+  <div id="stamina"><i></i></div>
+  <div id="mode">АВТО</div>
+  <div id="ammo">5,45×39<b id="ammoN">30</b><s id="ammoR">· 180</s></div>
+</div>
+
+<div id="prompt">
+  <div class="key"><div class="fill"></div><span>F</span></div>
+  <div class="lbl" id="promptLbl">ВЗЯТЬ ПОД УПРАВЛЕНИЕ</div>
+  <div class="sub" id="promptSub">удерживайте</div>
+</div>
+
+<div id="toast"></div>
+
+<div id="start">
+  <h1>ПОЛИГОН</h1>
+  <div class="tag">ДЕЛЬТА · АЛЬФА — 4 ОПЕРАТОРА</div>
+  <div class="keys">
+    <b>W A S D</b><span>движение</span>
+    <b>SHIFT</b><span>бег (расходует выносливость)</span>
+    <b>CTRL / C</b><span>присесть</span>
+    <b>ПКМ</b><span>прицеливание</span>
+    <b>ЛКМ</b><span>огонь</span>
+    <b>R</b><span>перезарядка</span>
+    <b>X</b><span>режим огня: предохранитель / авто / одиночный</span>
+    <b>F</b><span>удерживать — сесть за оператора / выйти</span>
+    <b>TAB</b><span>модули оружия</span>
+    <b>V</b><span>осмотреть оружие</span>
+    <b>Q / E</b><span>наклон корпуса</span>
+    <b>ESC</b><span>освободить курсор</span>
+  </div>
+  <div class="go" id="startGo">НАЖМИТЕ, ЧТОБЫ ВОЙТИ</div>
+  <div id="loading">ГЕНЕРАЦИЯ ПОЛИГОНА…</div>
+</div>
+
+<div id="err"></div>
+
+<script type="module">
+import * as THREE from 'three';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { Sky } from 'three/addons/objects/Sky.js';
+
+const errEl = document.getElementById('err');
+const showErr = (e) => {
+  errEl.style.display = 'flex';
+  errEl.textContent = 'Ошибка:\n' + ((e && e.message) || e) + '\n\n' + ((e && e.stack) || '');
+  if (e && e.stack) console.error(e);
+};
+
+/* Модули игры собираются в глобальную область (см. tools/build.js). */
+window.THREE = THREE;
+window.__ADDONS = { RoomEnvironment, Sky };
+
+/*__GAME_BUNDLE__*/
+
+</script>
+</body>
+</html>

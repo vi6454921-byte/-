@@ -10,3 +10,11 @@ data/launcher_errors.log
 static/pc_screen.png
 static/phone_screen.png
 .DS_Store
+
+# --- веб-шутер «Полигон» ---
+node_modules/
+package-lock.json
+# локальный кэш three.js для автотестов (качается скриптом)
+tools/test/cdn/
+# снимки генерируются скриптом `npm run shots`
+tools/test/shots/
