@@ -48,13 +48,23 @@
     reloadEmpty: 3.05,     // с досыланием затвора
     adsTime: 0.26,
     muzzleVel: 880,        // м/с
-    /* отдача: подброс, увод, отход назад */
-    recoilUp: 0.0125,      // рад за выстрел
-    recoilSide: 0.0060,
-    recoilBack: 0.026,     // м
-    spreadHip: 0.030,      // рад
-    spreadAds: 0.0016,
-    spreadMove: 0.020,
+    /* Отдача. Импульс 5,45×39 — около 4,5 Н·с; при массе оружия 3,3 кг и
+       плече от плеча до оси ствола ствол уводит примерно на 0,6–0,9° за
+       выстрел. Отсюда значения ниже: они в разы больше прежних, потому что
+       раньше отдача была неощутимой. */
+    recoilUp: 0.0145,      // рад за выстрел — подброс оружия
+    recoilSide: 0.0075,    // рад — случайный увод
+    recoilBack: 0.035,     // м — отход назад
+    /* Часть отдачи уходит в угол взгляда: именно это уводит прицел вверх
+       при удержании спуска и требует «тянуть вниз». */
+    kickPitch: 0.0090,     // рад за выстрел
+    kickYaw: 0.0034,
+    /* Восстановление: ствол сам опускается обратно, но не до конца — как
+       в жизни, очередь всё равно ползёт вверх. */
+    recover: 0.68,
+    spreadHip: 0.042,      // рад — от бедра попасть трудно
+    spreadAds: 0.0013,
+    spreadMove: 0.026,
     spreadRecover: 4.5
   };
 
@@ -88,6 +98,8 @@
       recoil: { x: 0, v: 0 },            // подброс (pitch)
       recoilYaw: { x: 0, v: 0 },
       recoilBack: { x: 0, v: 0 },
+      /* накопленный сбив наводки, который стрелок отыгрывает обратно */
+      kickBack: { p: 0, y: 0 },
       bobPhase: 0, stepPhase: 0, lastStepSide: 1,
       sway: { x: 0, y: 0, vx: 0, vy: 0 },
       lagYaw: 0, lagPitch: 0,
@@ -200,10 +212,15 @@
       if (Math.abs(wish.x) > 0.7) target *= 0.84;
       if (P.reload >= 0) target *= 0.88;
 
-      /* мировое направление желаемой скорости */
+      /* Мировое направление желаемой скорости.
+         Камера с rotation.y = yaw смотрит вдоль forward = (-sin yaw, -cos yaw),
+         вправо — right = (cos yaw, -sin yaw). Здесь wish.y = -1 означает «вперёд»,
+         wish.x = +1 — «вправо», поэтому раскладываем по этим двум осям.
+         Прежняя формула поворачивала вектор на -yaw и на боковых курсах
+         уводила бойца зеркально: W шёл назад, D — влево. */
       const sinY = Math.sin(P.yaw), cosY = Math.cos(P.yaw);
-      const wx = wish.x * cosY - wish.y * sinY;
-      const wz = wish.x * sinY + wish.y * cosY;
+      const wx = wish.x * cosY + wish.y * sinY;
+      const wz = -wish.x * sinY + wish.y * cosY;
       const want = new THREE.Vector3(wx * target, 0, wz * target);
 
       /* разгон/торможение с ограничением по ускорению: инерция массы */
@@ -378,6 +395,21 @@
       U.spring(P.recoil, 0, 21, dt, 0.62);
       U.spring(P.recoilYaw, 0, 19, dt, 0.7);
       U.spring(P.recoilBack, 0, 24, dt, 0.8);
+
+      /* Возврат наводки после очереди: как только стрелок отпустил спуск
+         (или между выстрелами), ствол сам опускается к исходной точке.
+         Возвращается не весь уведённый угол — остаток и есть «уход» очереди. */
+      if (P.kickBack.p !== 0 || P.kickBack.y !== 0) {
+        const rate = P.triggerHeld ? 3.0 : 9.0;
+        const k = 1 - Math.exp(-rate * dt);
+        const dp = P.kickBack.p * k, dy = P.kickBack.y * k;
+        P.pitch = U.clamp(P.pitch - dp, -1.35, 1.32);
+        P.yaw -= dy;
+        P.kickBack.p -= dp;
+        P.kickBack.y -= dy;
+        if (Math.abs(P.kickBack.p) < 1e-5) P.kickBack.p = 0;
+        if (Math.abs(P.kickBack.y) < 1e-5) P.kickBack.y = 0;
+      }
       /* инерция наводки */
       P.sway.vx += -P.sway.x * 130 * dt - P.sway.vx * 14 * dt;
       P.sway.vy += -P.sway.y * 130 * dt - P.sway.vy * 14 * dt;
@@ -397,14 +429,23 @@
       P.shots++;
       P.shotsInBurst = Math.min(12, P.shotsInBurst + 1);
 
-      /* импульс отдачи: сильнее стоя и от бедра, слабее с упора и в приседе */
-      const stab = (1 - P.ads * 0.22) * (1 - P.crouch * 0.12);
-      P.recoil.v += WPN.recoilUp * 62 * stab * U.lerp(1, 1.22, U.clamp01(P.shotsInBurst / 8));
-      P.recoilYaw.v += (Math.random() - 0.5) * WPN.recoilSide * 88 * stab;
-      P.recoilBack.v += WPN.recoilBack * 30 * stab;
-      /* «сбив» наводки: часть отдачи уходит в реальный угол взгляда */
-      P.pitch = U.clamp(P.pitch + WPN.recoilUp * 0.42 * stab, -1.35, 1.32);
-      P.yaw += (Math.random() - 0.5) * WPN.recoilSide * 0.5 * stab;
+      /* Импульс отдачи: слабее с упором в плечо (прицел) и в приседе,
+         сильнее к концу очереди — ствол «разносит». */
+      const stab = (1 - P.ads * 0.26) * (1 - P.crouch * 0.14);
+      const burst = U.lerp(1, 1.45, U.clamp01(P.shotsInBurst / 9));
+      P.recoil.v += WPN.recoilUp * 68 * stab * burst;
+      P.recoilYaw.v += (Math.random() - 0.5) * WPN.recoilSide * 95 * stab * burst;
+      P.recoilBack.v += WPN.recoilBack * 32 * stab;
+
+      /* Сбив наводки. Копим уведённый угол отдельно, чтобы потом частично
+         вернуть его назад: стрелок компенсирует отдачу, но не полностью —
+         очередь всё равно ползёт вверх. */
+      const kp = WPN.kickPitch * stab * burst;
+      const ky = (Math.random() - 0.5) * 2 * WPN.kickYaw * stab * burst;
+      P.pitch = U.clamp(P.pitch + kp, -1.35, 1.32);
+      P.yaw += ky;
+      P.kickBack.p += kp * WPN.recover;
+      P.kickBack.y += ky * WPN.recover;
 
       if (P.onFire) P.onFire();
     };

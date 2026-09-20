@@ -170,7 +170,10 @@
     const eye = new THREE.MeshStandardMaterial({ color: 0xf2efe8, roughness: 0.22, metalness: 0 });
     const hair = new THREE.MeshStandardMaterial({ color: 0x2b2420, roughness: 0.85, metalness: 0 });
 
-    return { uniform, skin, glove, gear, helmet, boot, hard, eye, hair };
+    /* Балаклава — та же ткань снаряжения, но отдельным материалом, чтобы
+       её меш можно было скрыть вместе с головой в виде от первого лица. */
+    const mask = gear.clone();
+    return { uniform, skin, glove, gear, mask, helmet, boot, hard, eye, hair };
   }
 
   /* ------------------------------------------------------------ сборка -- */

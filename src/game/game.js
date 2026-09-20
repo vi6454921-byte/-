@@ -190,7 +190,7 @@
     const el = (id) => document.getElementById(id);
     const ui = {
       start: el('start'), startGo: el('startGo'), loading: el('loading'),
-      reticle: el('reticle'), ammoN: el('ammoN'), ammoR: el('ammoR'), mode: el('mode'),
+      ammoN: el('ammoN'), ammoR: el('ammoR'), mode: el('mode'),
       whoName: el('whoName'), whoSide: el('whoSide'), who: el('who'),
       prompt: el('prompt'), promptLbl: el('promptLbl'), promptSub: el('promptSub'),
       promptFill: document.querySelector('#prompt .fill'),
@@ -309,26 +309,27 @@
     function updateFree(dt) {
       const f = S.free;
       const speed = (input.sprint ? 9.5 : 4.2);
-      const sinY = Math.sin(f.yaw), cosY = Math.cos(f.yaw);
       let wx = 0, wz = 0, wy = 0;
       if (input.fwd) wz -= 1;
       if (input.back) wz += 1;
       if (input.left) wx -= 1;
       if (input.right) wx += 1;
-      if (input.ads) wy -= 1;                 // ПКМ — вниз
-      if (input.crouch) wy -= 1;
-      if (S.spaceUp) wy += 1;
-      const l = Math.hypot(wx, wz) || 1;
-      /* учёт наклона камеры: летим туда, куда смотрим */
-      const cp = Math.cos(f.pitch), sp = Math.sin(f.pitch);
-      const dirX = (wx / l) * cosY - (wz / l) * sinY * cp;
-      const dirZ = (wx / l) * sinY + (wz / l) * cosY * cp;
-      const dirY = (wz === 0 ? 0 : (-wz / l) * sp) + wy * 0.9;
-      const want = new THREE.Vector3(
-        (wx || wz) ? dirX * speed : 0,
-        dirY * speed,
-        (wx || wz) ? dirZ * speed : 0
-      );
+      if (input.crouch) wy -= 1;              // Ctrl/C — вниз
+      if (S.spaceUp) wy += 1;                 // пробел — вверх
+      /* Летим туда, куда смотрим: строим базис камеры из её же кватерниона,
+         а не вручную из синусов. Ручная раскладка раньше путала знак yaw
+         (W уводил назад) и дробила pitch на отдельные слагаемые. */
+      const want = new THREE.Vector3();
+      const len = Math.hypot(wx, wz);
+      if (len > 0) {
+        const q = new THREE.Quaternion().setFromEuler(
+          new THREE.Euler(f.pitch, f.yaw, 0, 'YXZ'));
+        const fwd = new THREE.Vector3(0, 0, -1).applyQuaternion(q);
+        const right = new THREE.Vector3(1, 0, 0).applyQuaternion(q);
+        want.addScaledVector(fwd, (-wz / len) * speed)
+          .addScaledVector(right, (wx / len) * speed);
+      }
+      want.y += wy * speed * 0.9;
       f.vel.lerp(want, 1 - Math.exp(-9 * dt));
       f.pos.addScaledVector(f.vel, dt);
       const gy = world.heightAt ? world.heightAt(f.pos.x, f.pos.z) : 0;
@@ -426,18 +427,18 @@
       const inRange = cand >= 0;
       const canExit = S.mode === 'embodied';
 
+      /* Подсказка показывается только когда рядом есть другой боец.
+         Раньше «ОТПУСТИТЬ ОПЕРАТОРА» висело посреди экрана постоянно и
+         перекрывало прицеливание. Выйти по-прежнему можно в любой момент —
+         просто без назойливой плашки: об этом сказано на экране старта. */
       let showPrompt = false, lbl = '', sub = '';
       if (inRange) {
         showPrompt = true;
         lbl = 'ВЗЯТЬ: ' + squad[cand].char.preset.name;
         sub = 'удерживайте F';
-      } else if (canExit) {
-        showPrompt = true;
-        lbl = 'ОТПУСТИТЬ ОПЕРАТОРА';
-        sub = 'удерживайте F';
       }
 
-      if (S.fDown && showPrompt) {
+      if (S.fDown && (showPrompt || canExit)) {
         S.holdF += dt;
         if (S.holdF >= HOLD_TIME) {
           S.holdF = 0;
@@ -448,8 +449,12 @@
         S.holdF = Math.max(0, S.holdF - dt * 2.4);
       }
 
-      ui.prompt.classList.toggle('on', showPrompt && !custOpen);
-      if (showPrompt) {
+      /* Во время удержания F вне зоны бойца показываем индикатор выхода —
+         он появляется по факту нажатия, а не висит всё время. */
+      const exiting = !showPrompt && canExit && S.holdF > 0.02;
+      ui.prompt.classList.toggle('on', (showPrompt || exiting) && !custOpen);
+      if (showPrompt || exiting) {
+        if (exiting) { lbl = 'ОТПУСТИТЬ ОПЕРАТОРА'; sub = 'удерживайте F'; }
         ui.promptLbl.textContent = lbl;
         ui.promptSub.textContent = sub;
         ui.promptFill.style.transform = 'scaleY(' + (S.holdF / HOLD_TIME).toFixed(3) + ')';
@@ -552,12 +557,12 @@
       const sideLean = -c.lean * 0.26;
 
       /* Разворот корпуса (bladed stance).
-         Без него задача неразрешима геометрически: от левого плеча до
-         цевья по прямой ~0,78 м, а рука достаёт 0,56 м. Реальный стрелок
-         доворачивает корпус, выводя опорное плечо вперёд — это добавляет
-         ~0,11 м вылета и ставит кисть на цевьё без «резинового» плеча.
-         В прицеле разворот больше, при беге — меньше. */
-      const blade = U.lerp(0.30, 0.46, U.smoothstep(c.ads)) * (1 - U.smoothstep(c.sprint) * 0.45);
+         Опорная рука достаёт 0,56 м, а до цевья по прямой дальше, поэтому
+         стрелок доворачивает корпус и выводит левое плечо вперёд. Разворот
+         нужен НЕ ТОЛЬКО в прицеле: от бедра при малом развороте левый локоть
+         распрямлялся в струну (173°). Базовое значение поднято, и теперь
+         локоть работает в человеческом диапазоне в любой позе. */
+      const blade = U.lerp(0.52, 0.46, U.smoothstep(c.ads)) * (1 - U.smoothstep(c.sprint) * 0.45);
 
       /* Вертикальное покачивание: тяжёлый шаг даёт заметную «просадку». */
       const bobY = Math.sin(c.bobPhase * 2) * U.lerp(0.010, 0.036, moveAmt);
@@ -625,27 +630,35 @@
        чем меньше |z|, тем ближе оружие прижато к стрелку. Значения подобраны
        так, чтобы приклад лёг в плечо, а цевьё осталось в зоне досягаемости
        опорной руки (проверяется автотестом gripCheck). */
+    /* Оружие держится ДАЛЬШЕ от груди, чем было: при z = -0,085 приклад
+       упирался в бойца, правая кисть уезжала к плечу и локоть складывался
+       до 39°, чего у человека быть не может. Вынос вперёд даёт рабочие
+       70–95° в локте (проверяется gripCheck). */
+    /* Положение «наготове». Глубина (z) ограничена длиной опорной руки:
+       при z ниже -0,13 кисть не достаёт до цевья (расчёт в комментарии к
+       bladed stance). Высота -0,30 уводит оружие из поля зрения: при -0,20
+       ствол и предплечье перекрывали пол-экрана. */
     const HIP_POSE = {
-      pos: new THREE.Vector3(0.115, -0.215, -0.085),
-      rot: new THREE.Euler(-0.09, -0.26, 0.09)
+      pos: new THREE.Vector3(0.125, -0.300, -0.105),
+      rot: new THREE.Euler(-0.05, -0.18, 0.06)
     };
     const ADS_POSE = {
-      pos: new THREE.Vector3(0, -0.028, -0.10),
+      pos: new THREE.Vector3(0, -0.030, -0.060),
       rot: new THREE.Euler(0, 0, 0)
     };
     const SPRINT_POSE = {
-      pos: new THREE.Vector3(0.16, -0.27, -0.03),
+      pos: new THREE.Vector3(0.17, -0.345, -0.085),
       rot: new THREE.Euler(0.22, -0.72, 0.42)
     };
     const RELOAD_POSE = {
-      pos: new THREE.Vector3(0.13, -0.31, -0.06),
+      pos: new THREE.Vector3(0.145, -0.375, -0.090),
       rot: new THREE.Euler(0.30, -0.42, 0.24)
     };
     /* Строй: оружие на ремне у груди стволом вниз — поза с референса.
        Знак X важен: поворот +X вокруг оси экрана уводит ствол (-Z) ВВЕРХ,
        поэтому «стволом вниз» — это отрицательный угол. */
     const IDLE_POSE = {
-      pos: new THREE.Vector3(0.075, -0.330, 0.020),
+      pos: new THREE.Vector3(0.090, -0.360, -0.075),
       rot: new THREE.Euler(-0.60, -0.16, 0.13)
     };
 
@@ -655,8 +668,16 @@
     const IRON = {
       rear: new THREE.Vector3(0, 0.116, -0.2485),
       front: new THREE.Vector3(0, 0.116, -0.626),
-      relief: 0.145
+      /* Вынос глаза за целик, м. Реальный вынос на АК — около 0,30 м. */
+      relief: 0.300,
+      /* Небольшой подъём глаза над прицельной линией: щека лежит на гребне
+         приклада, а взгляд идёт чуть сверху через прорезь целика. */
+      rise: 0.010
     };
+    /* Дистанция сведения ствола с линией взгляда, м. Соответствует
+       постоянному прицелу АК-74: на этой дальности пуля идёт точно в точку
+       прицеливания. */
+    const CONVERGE = 100;
 
     function placeWeapon(s, dt, isActive, camPos, camQuat, pose) {
       const c = s.ctrl, w = s.gun;
@@ -729,36 +750,79 @@
         p.z += env * 0.075;
       }
 
+      /* В прицеле «характерные» углы удержания почти полностью гасятся:
+         приклад в плече, щека на гребне — оружие жёстко зафиксировано.
+         Остаётся лишь малая доля, чтобы дыхание и шаг всё же читались. */
+      if (kAds > 0.001) {
+        const keep = U.lerp(1, 0.10, kAds);
+        r.x *= keep; r.y *= keep; r.z *= keep;
+      }
+
       /* --- итоговый трансформ в мировых координатах --- */
       /* База: точка глаз бойца с его ориентацией взгляда. */
       const eyeQ = new THREE.Quaternion().setFromEuler(
         new THREE.Euler(c.pitch, c.yaw, c.lean * -0.10, 'YXZ'));
       const eyePos = eyePosition(s);
 
-      /* В прицеле оружие подводится так, чтобы линия целик-мушка прошла
-         точно через глаз: это даёт «правильную» картинку без подгонки. */
-      const base = new THREE.Vector3().copy(p);
+      /* Сведение оружия.
+         Ствол вынесен вправо-вниз от глаза, поэтому если просто повернуть
+         его параллельно взгляду, пули уйдут мимо точки прицеливания. Как и
+         на реальном оружии, ось канала ствола сводится со линией взгляда на
+         дистанции пристрелки: тогда куда смотрю — туда и попадаю, а сама
+         модель остаётся правдоподобно смещённой.
+
+         Углы позы (r) после этого — только «характер» удержания: увод от
+         инерции, покачивание, наклон. Разворот на 15° вбок, из-за которого
+         пули летели криво, больше не применяется к оси ствола. */
+
+      /* Ориентация удержания. В прицеле углы «характера» гасятся: оружие
+         должно встать ровно по линии взгляда, иначе целик уедет вбок. */
+      const holdQ = eyeQ.clone().multiply(new THREE.Quaternion().setFromEuler(
+        new THREE.Euler(r.x, r.y, r.z, 'YXZ')));
+      w.root.quaternion.copy(holdQ);
+
+      /* Положение. От бедра — заданное смещение от глаза. В прицеле
+         считаем иначе: берём точку выноса глаза на оси целик-мушка и
+         двигаем оружие так, чтобы она совпала с глазом. Смещение
+         поворачивается УЖЕ СОБРАННЫМ кватернионом оружия — раньше здесь
+         стоял кватернион взгляда, и остаточный поворот позы уводил целик
+         в сторону (те самые 1,9°). */
+      const hipPos = eyePos.clone().add(p.clone().applyQuaternion(eyeQ));
+      let worldPos = hipPos;
       if (kAds > 0.001) {
-        /* желаемое положение узла оружия: глаз на оси прицеливания */
         const axis = new THREE.Vector3().subVectors(IRON.rear, IRON.front).normalize();
         const eyeLocal = IRON.rear.clone().addScaledVector(axis, IRON.relief);
-        eyeLocal.y += 0.010;
-        /* оружие смещаем так, чтобы eyeLocal оказался в начале координат */
-        const adsOffset = eyeLocal.clone().multiplyScalar(-1);
-        base.lerp(adsOffset, kAds);
+        eyeLocal.y += IRON.rise;
+        const adsPos = eyePos.clone()
+          .sub(eyeLocal.clone().applyQuaternion(w.root.quaternion));
+        worldPos = hipPos.lerp(adsPos, kAds);
       }
-
-      const worldPos = eyePos.clone().add(base.clone().applyQuaternion(eyeQ));
-      const worldQ = eyeQ.clone().multiply(new THREE.Quaternion().setFromEuler(
-        new THREE.Euler(r.x, r.y, r.z, 'YXZ')));
-
       w.root.position.copy(worldPos);
-      w.root.quaternion.copy(worldQ);
+      w.root.updateMatrixWorld(true);
 
-      /* отдача: отход назад по оси ствола + подброс */
-      w.recoilRig.position.set(0, 0, c.recoilBack.x * 0.65);
-      /* Подброс: ствол уходит вверх, значит поворот по +X (см. выше). */
-      w.tiltRig.rotation.set(c.recoil.x * 0.55, c.recoilYaw.x * 0.5, c.recoilYaw.x * 0.8);
+      /* ...а затем доворачиваем оружие так, чтобы ствол смотрел в точку
+         сведения на линии взгляда. Доворот считается от фактического
+         положения дульного среза, поэтому работает при любой позе. */
+      const conv = eyePos.clone().addScaledVector(
+        new THREE.Vector3(0, 0, -1).applyQuaternion(eyeQ), CONVERGE);
+      const muzzleW = w.gun.localToWorld(w.muzzleLocal.clone());
+      const wantDir = conv.clone().sub(muzzleW).normalize();
+      const curDir = new THREE.Vector3(0, 0, -1)
+        .applyQuaternion(w.gun.getWorldQuaternion(new THREE.Quaternion())).normalize();
+      /* от бедра сводим лишь частично: оружие у пояса и не должно выглядеть
+         «вклеенным» в центр экрана, а в прицеле — точно по оси */
+      const aimK = U.lerp(0.82, 1.0, kAds) * kReady;
+      const align = new THREE.Quaternion().setFromUnitVectors(curDir, wantDir);
+      if (aimK < 1) {
+        align.slerp(new THREE.Quaternion(), 1 - aimK);
+      }
+      w.root.quaternion.premultiply(align);
+
+      /* Отдача самого оружия: отход назад по оси ствола, подброс и увод.
+         Это видимая часть; вторая часть отдачи уходит в угол взгляда
+         (см. P.fire) — именно она сбивает прицел при очереди. */
+      w.recoilRig.position.set(0, 0, c.recoilBack.x);
+      w.tiltRig.rotation.set(c.recoil.x * 0.85, c.recoilYaw.x * 0.6, c.recoilYaw.x * 1.1);
       w.root.updateMatrixWorld(true);
     }
 
@@ -767,15 +831,27 @@
     function eyePosition(s) {
       const c = s.ctrl, M = s.char.metrics;
       const moveAmt = U.clamp01(c.speed / c.PHYS.sprint);
-      const eyeY = U.lerp(c.PHYS.eyeHeight, c.PHYS.crouchEye, c.crouch);
+      /* Высота глаз берётся из скелета конкретного бойца, а не константой:
+         операторы разного роста, и фиксированные 1,655 м ставили камеру
+         кому-то в лоб, а кому-то в горло. */
+      const standEye = M.eyeY;
+      const crouchEye = M.eyeY - (M.hipY - 0.50);
+      const eyeY = U.lerp(standEye, crouchEye, c.crouch);
       const bobY = Math.sin(c.bobPhase * 2) * U.lerp(0.009, 0.030, moveAmt);
       const bobX = Math.sin(c.bobPhase) * U.lerp(0.005, 0.022, moveAmt);
       const lean = c.lean * 0.30;
       const sinY = Math.sin(c.yaw), cosY = Math.cos(c.yaw);
+      /* Наклон Q/E уводит голову вбок ОТНОСИТЕЛЬНО взгляда: вправо от
+         направления движения — это ось right = (cos yaw, -sin yaw). */
+      const side = bobX + lean;
+      /* Глаз лежит на ПЕРЕДНЕЙ поверхности головы, а не в центре черепа.
+         Без этого выноса камера стоит внутри головы, и собственные плечи
+         занимают нижнюю половину кадра. */
+      const fwd = M.headRZ + 0.012;
       return new THREE.Vector3(
-        c.pos.x + (bobX + lean) * cosY,
+        c.pos.x + side * cosY - Math.sin(c.yaw) * fwd,
         c.pos.y + eyeY + bobY - Math.abs(c.lean) * 0.055,
-        c.pos.z + (bobX + lean) * sinY
+        c.pos.z - side * sinY - Math.cos(c.yaw) * fwd
       );
     }
 
@@ -786,6 +862,44 @@
     const ray = new THREE.Raycaster();
     ray.far = 220;
     const hitTargets = [];
+    /* Начальная скорость пули 5,45×39, м/с. Используется и для падения
+       пули, и для скорости трассера. */
+    const MUZZLE_VEL = 880;
+    /* Баллистический коэффициент: на 100 м пуля теряет около 60 м/с.
+       Замедление учитывается при расчёте времени полёта, а значит и сноса. */
+    const DRAG = 0.0006;
+
+    /* Трасса пули по параболе.
+       Хитскан по прямой — это и есть «стрельба лазером»: на 30 м падение
+       уже 4 см, на 100 м — 35 см, и без него дистанции теряют смысл.
+       Считаем полёт шагами и проверяем каждый отрезок на попадание. */
+    function traceBullet(origin, dir, objs, targets) {
+      const pos = origin.clone();
+      const vel = dir.clone().multiplyScalar(MUZZLE_VEL);
+      const step = 1 / 240;                   // шаг интегрирования, с
+      const maxT = 0.45;                      // дальше 200 м не считаем
+      const seg = new THREE.Vector3();
+      for (let t = 0; t < maxT; t += step) {
+        /* сопротивление воздуха и сила тяжести */
+        const v = vel.length();
+        vel.addScaledVector(vel, -DRAG * v * step);
+        vel.y -= 9.81 * step;
+        seg.copy(vel).multiplyScalar(step);
+        const len = seg.length();
+        if (len < 1e-6) break;
+        ray.set(pos, seg.clone().divideScalar(len));
+        ray.far = len;
+        const tHits = targets.length ? ray.intersectObjects(targets, false) : [];
+        const wHits = ray.intersectObjects(objs, true);
+        const t0 = tHits.length ? tHits[0] : null;
+        const w0 = wHits.length ? wHits[0] : null;
+        if (t0 && (!w0 || t0.distance <= w0.distance)) return { hit: t0, target: true };
+        if (w0) return { hit: w0, target: false };
+        pos.add(seg);
+        if (pos.y < -2) break;
+      }
+      return { hit: null, target: false, end: pos };
+    }
 
     function shootRay(s) {
       const c = s.ctrl, w = s.gun;
@@ -828,7 +942,6 @@
       audio.shot({ vol: 1 });
 
       /* --- трассировка --- */
-      ray.set(origin, dir);
       hitTargets.length = 0;
       for (const t of world.targets) if (t.state !== 'down') hitTargets.push(t.board);
       const objs = [world.ground];
@@ -840,24 +953,24 @@
 
       let hit = null, hitKind = 'ground', hitTarget = null;
 
-      const tHits = ray.intersectObjects(hitTargets, false);
-      const wHits = ray.intersectObjects(objs, true);
-      const t0 = tHits.length ? tHits[0] : null;
-      const w0 = wHits.length ? wHits[0] : null;
-
-      if (t0 && (!w0 || t0.distance <= w0.distance)) {
-        hit = t0; hitKind = 'target';
-        hitTarget = world.targets.find((x) => x.board === t0.object);
-      } else if (w0) {
-        hit = w0;
-        const n = (w0.object.name || '') + '|' + ((w0.object.parent && w0.object.parent.name) || '');
-        if (w0.object === world.ground) hitKind = 'ground';
-        else if (/fence|house|props|log/i.test(n)) hitKind = 'wood';
-        else hitKind = 'metal';
+      /* Пуля летит по параболе с учётом сопротивления воздуха. */
+      const shot = traceBullet(origin, dir, objs, hitTargets);
+      if (shot.hit) {
+        hit = shot.hit;
+        if (shot.target) {
+          hitKind = 'target';
+          hitTarget = world.targets.find((x) => x.board === hit.object);
+        } else {
+          const n = (hit.object.name || '') + '|' + ((hit.object.parent && hit.object.parent.name) || '');
+          if (hit.object === world.ground) hitKind = 'ground';
+          else if (/fence|house|props|log|tree|bush/i.test(n)) hitKind = 'wood';
+          else hitKind = 'metal';
+        }
       }
 
-      const end = hit ? hit.point : origin.clone().addScaledVector(dir, 140);
-      fx.tracer(origin.clone().addScaledVector(dir, 0.5), end, 1);
+      const end = hit ? hit.point : (shot.end || origin.clone().addScaledVector(dir, 140));
+      /* Трассер летит со скоростью пули от дульного среза к точке попадания. */
+      fx.tracer(origin.clone().addScaledVector(dir, 0.35), end, 1, MUZZLE_VEL);
 
       if (hit) {
         const nrm = hit.face
@@ -922,7 +1035,9 @@
     for (const s of squad) s.ctrl.onFire = () => shootRay(s);
 
     return finishLoop(C, {
-      poseSoldier, placeWeapon, eyePosition, shootRay, updateTargets
+      poseSoldier, placeWeapon, eyePosition, shootRay, updateTargets,
+      /* баллистика нужна отладочным хукам в finishLoop */
+      MUZZLE_VEL, DRAG
     });
   }
 
@@ -971,7 +1086,10 @@
          embodied  — от глаз бойца (бодикам);
        Переход между ними плавный: камера «влетает» в глаза оператора. */
     const camRig = { pos: new THREE.Vector3(), quat: new THREE.Quaternion(), fov: 72, blend: 0 };
-    const FOV_HIP = 74, FOV_ADS = 40;
+    /* Поле зрения. В прицеле оно сужается сильно: при 40° колодка целика,
+       до которой 0,3 м, занимала пол-экрана. 22° дают привычную картинку —
+       целик и мушка мелкие, цель видно. */
+    const FOV_HIP = 74, FOV_ADS = 22;
 
     function updateCamera(dt) {
       const a = active();
@@ -1026,8 +1144,11 @@
         if (s.char.meshes.skin) s.char.meshes.skin.visible = !hide;
         if (s.char.meshes.helmet) s.char.meshes.helmet.visible = !hide;
         if (s.char.meshes.eye) s.char.meshes.eye.visible = !hide;
-        /* маска и снаряжение на голове тоже уходят; чтобы не прятать
-           бронежилет, отдельного меша головы нет — поэтому gear остаётся */
+        /* Балаклава живёт отдельной группой, поэтому прячется вместе с
+           головой: иначе камера оказывается внутри ткани и весь экран
+           закрывает изнанка маски. Снаряжение на корпусе остаётся видимым —
+           это и есть вид «из бодикама». */
+        if (s.char.meshes.mask) s.char.meshes.mask.visible = !hide;
       }
     }
 
@@ -1046,7 +1167,6 @@
     function updateHUD(dt) {
       hudT += dt;
       const a = active();
-      ui.reticle.classList.toggle('on', !!a && a.ctrl.ads < 0.55 && a.ctrl.sprint < 0.5);
       if (a) {
         const c = a.ctrl;
         ui.ammoN.textContent = String(c.ammo);
@@ -1170,6 +1290,26 @@
       state: S, squad, world, camera, scene, renderer, fx, audio,
       /* Прогон симуляции без рендера: n шагов по dt секунд. */
       step: (n, dt) => { for (let i = 0; i < (n || 1); i++) step(dt || 1 / 60); return S.time; },
+      /* Снижение пули на заданных дистанциях: стреляем горизонтально из
+         точки без препятствий и смотрим, на сколько траектория ушла вниз. */
+      measureDrop: (dists) => {
+        const org = new THREE.Vector3(0, 50, 0);           // высоко, чтобы ничего не мешало
+        const dir = new THREE.Vector3(0, 0, -1);
+        return (dists || [10, 30, 100]).map((d) => {
+          /* та же схема интегрирования, что и в traceBullet */
+          const vel = dir.clone().multiplyScalar(F.MUZZLE_VEL);
+          const pos = org.clone();
+          const h = 1 / 480;
+          while (org.z - pos.z < d) {
+            const v = vel.length();
+            vel.addScaledVector(vel, -F.DRAG * v * h);
+            vel.y -= 9.81 * h;
+            pos.addScaledVector(vel, h);
+            if (org.y - pos.y > 50) break;
+          }
+          return { dist: d, drop: +(org.y - pos.y).toFixed(4) };
+        });
+      },
       /* Управление вводом из автотестов: позволяет проверить полную цепочку
          «клавиша -> контроллер -> выстрел -> попадание», а не только её конец.
          pointerLocked имитирует захват курсора, которого нет в headless. */
@@ -1198,11 +1338,31 @@
         g.updateMatrixWorld(true);
         s.char.root.updateMatrixWorld(true);
         const out = {};
-        for (const [bone, node] of [['palmR', 'gripR'], ['palmL', 'gripL']]) {
+        /* Меряем до ФАКТИЧЕСКОЙ точки хвата, которую выбрал риг: кисть
+           скользит вдоль цевья под длину руки, поэтому расстояние до
+           исходного узла оружия ничего не доказывало бы. */
+        for (const [bone, SS] of [['palmR', 'R'], ['palmL', 'L']]) {
+          const target = s.rig.gripTarget && s.rig.gripTarget[SS];
+          if (!target) { out[bone] = -1; continue; }
           const bp = s.char.bone(bone).getWorldPosition(new THREE.Vector3());
-          const np = g.getObjectByName(node).getWorldPosition(new THREE.Vector3());
-          out[bone] = +bp.distanceTo(np).toFixed(4);
+          out[bone] = +bp.distanceTo(target).toFixed(4);
         }
+        /* Углы в локтях: у стрелка рабочая рука согнута на 70–95°,
+           опорная — на 100–130°. Прямая или сложенная вдвое рука сразу
+           выдаёт неправильную постановку оружия. */
+        const ang = (a, b, c) => {
+          const A = s.char.bone(a).getWorldPosition(new THREE.Vector3());
+          const B = s.char.bone(b).getWorldPosition(new THREE.Vector3());
+          const C = s.char.bone(c).getWorldPosition(new THREE.Vector3());
+          const u = A.sub(B).normalize(), v = C.sub(B).normalize();
+          return Math.round(Math.acos(U.clamp(u.dot(v), -1, 1)) * 180 / Math.PI);
+        };
+        out.elbowR = ang('shoulderR', 'elbowR', 'wristR');
+        out.elbowL = ang('shoulderL', 'elbowL', 'wristL');
+        /* насколько далеко кисть от плеча — источник обоих углов */
+        const sh = (n) => s.char.bone(n).getWorldPosition(new THREE.Vector3());
+        out.reachR = +sh('shoulderR').distanceTo(sh('wristR')).toFixed(3);
+        out.reachL = +sh('shoulderL').distanceTo(sh('wristL')).toFixed(3);
         /* висит ли оружие в воздухе относительно бойца */
         const chest = s.char.bone('chest').getWorldPosition(new THREE.Vector3());
         const gunP = s.gun.root.getWorldPosition(new THREE.Vector3());

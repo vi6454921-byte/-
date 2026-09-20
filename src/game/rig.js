@@ -110,10 +110,13 @@
       curl: [0.95, 1.05, 1.05, 0.90],     // указательный меньше — он на спуске
       thumb: 0.70
     },
-    /* левая кисть на цевье: хват сверху-сбоку, большой палец поверх */
+    /* Левая кисть на цевье. Точка хвата смещена НАЗАД по цевью (+Z), ближе
+       к магазину: при хвате у самого газблока рука вытягивалась в струну
+       (локоть 173°), чего у стрелка не бывает. Так держат оружие в реальности
+       при стрельбе стоя — кисть под серединой цевья, локоть согнут. */
     left: {
       node: 'gripL',
-      offset: [-0.004, -0.030, 0.012],
+      offset: [-0.004, -0.030, 0.075],
       fingerDir: [0.20, 0.86, 0.47],
       palmDir: [0.96, -0.24, -0.12],
       curl: [1.02, 1.08, 1.06, 0.98],
@@ -214,6 +217,33 @@
       const off = new THREE.Vector3(G.offset[0] * side, G.offset[1], G.offset[2])
         .applyQuaternion(W.getWorldQuaternion(new THREE.Quaternion()));
       const target = wp.clone().add(off);
+
+      /* Подгонка хвата под длину руки.
+         Точка на цевье — не гвоздь: стрелок сам выбирает, где держать.
+         Если до идеальной точки дальше, чем рука может достать в комфортном
+         положении, кисть скользит НАЗАД по цевью (в сторону магазина), пока
+         локоть не встанет в рабочий угол. Без этого опорная рука
+         вытягивалась в струну (173°) — верный признак «резиновой» руки. */
+      if (side < 0) {
+        const shoulder = this.bone('shoulder' + SS).getWorldPosition(new THREE.Vector3());
+        const armLen = shoulder.distanceTo(this.bone('elbow' + SS).getWorldPosition(new THREE.Vector3()))
+          + this.bone('elbow' + SS).getWorldPosition(new THREE.Vector3())
+            .distanceTo(this.bone('wrist' + SS).getWorldPosition(new THREE.Vector3()));
+        /* комфортный вылет: локоть согнут примерно на 100° */
+        const comfort = armLen * 0.80;
+        const gunQ = W.getWorldQuaternion(new THREE.Quaternion());
+        /* ось цевья в мире: от дула к прикладу это +Z системы оружия */
+        const back = new THREE.Vector3(0, 0, 1).applyQuaternion(gunQ);
+        let slide = 0;
+        for (let i = 0; i < 10 && shoulder.distanceTo(target) > comfort; i++) {
+          target.addScaledVector(back, 0.02);
+          slide += 0.02;
+          if (slide > 0.22) break;            // дальше цевья кисть не уедет
+        }
+      }
+      /* фактическая точка хвата — её и проверяет gripCheck */
+      this.gripTarget = this.gripTarget || {};
+      this.gripTarget[SS] = target.clone();
 
       /* полюс локтя: наружу и вниз от корпуса — анатомически верно для
          стрелковой стойки (локоть правой прижат, левый вынесен вперёд) */

@@ -124,8 +124,14 @@ async function shot(page, name) {
   const grip = await page.evaluate(() => window.__GAME.gripCheck());
   for (const g of grip) {
     check('хват ' + g.key + ': правая кисть на рукоятке', g.palmR < 0.13, g.palmR + ' м');
-    check('хват ' + g.key + ': левая кисть на цевье', g.palmL < 0.16, g.palmL + ' м');
+    check('хват ' + g.key + ': левая кисть на цевье', g.palmL < 0.13, g.palmL + ' м');
     check('хват ' + g.key + ': оружие у корпуса', g.gunToChest < 0.85, g.gunToChest + ' м');
+    /* Локти обязаны работать в человеческом диапазоне: прямая рука (>165°)
+       или сложенная вдвое (<40°) — это сломанная постановка оружия. */
+    check('хват ' + g.key + ': рабочая рука согнута', g.elbowR > 40 && g.elbowR < 130,
+      g.elbowR + '°');
+    check('хват ' + g.key + ': опорная рука согнута', g.elbowL > 55 && g.elbowL < 165,
+      g.elbowL + '°');
   }
 
   await shot(page, '01-free-camera');
@@ -197,6 +203,36 @@ async function shot(page, name) {
     'скорость ' + inputChain.stoppedSpeed + ' м/с');
   check('невыбранный боец остаётся неподвижен', inputChain.idleMoved === 0,
     'сдвиг ' + inputChain.idleMoved + ' м');
+
+  /* --- направление движения на ВСЕХ курсах ---
+     Регрессия: формула поворота вектора движения имела неверный знак и на
+     yaw 0°/180° случайно работала, а на 90°/270° уводила зеркально —
+     W шёл назад, D влево. Поэтому проверяем все четыре стороны света. */
+  const dirs = await page.evaluate(() => {
+    const G = window.__GAME, T = window.THREE;
+    G.embody(0);
+    const c = G.squad[0].ctrl;
+    const out = [];
+    for (const deg of [0, 90, 180, 270]) {
+      const yaw = deg * Math.PI / 180;
+      /* ожидаемые мировые направления при данном курсе */
+      const fwd = new T.Vector3(-Math.sin(yaw), 0, -Math.cos(yaw));
+      const right = new T.Vector3(Math.cos(yaw), 0, -Math.sin(yaw));
+      for (const [key, want] of [['fwd', fwd], ['right', right]]) {
+        c.pos.set(0, 0, 0); c.vel.set(0, 0, 0); c.yaw = yaw; c.speed = 0;
+        G.setInput({ lock: true, fwd: 0, back: 0, left: 0, right: 0 });
+        G.setInput({ [key]: 1 });
+        G.step(40, 1 / 60);
+        G.setInput({ [key]: 0 });
+        const got = c.pos.clone().normalize();
+        out.push({ deg, key, dot: +got.dot(want).toFixed(2) });
+      }
+    }
+    return out;
+  });
+  const badDir = dirs.filter((d) => d.dot < 0.95);
+  check('движение совпадает со взглядом на всех курсах', badDir.length === 0,
+    badDir.length ? JSON.stringify(badDir) : 'проверено 0/90/180/270°, W и D');
 
   /* --- выносливость: бег её тратит, покой восстанавливает --- */
   const stam = await page.evaluate(() => {
@@ -304,6 +340,59 @@ async function shot(page, name) {
   /* 650 в минуту = 10,8 в секунду; допускаем ±2 на границы интервала */
   check('автоматический огонь держит темп ~650 в/мин', autoFire >= 9 && autoFire <= 13,
     'выстрелов за 1 с: ' + autoFire);
+
+  /* --- отдача: очередь уводит прицел вверх и частично возвращается --- */
+  const recoil = await page.evaluate(() => {
+    const G = window.__GAME;
+    const c = G.squad[0].ctrl;
+    G.setInput({ lock: true, ads: true });
+    c.fireMode = 'auto'; c.ammo = 30; c.cool = 0; c.reload = -1;
+    c.pitch = 0; c.yaw = 0; c.kickBack.p = 0; c.kickBack.y = 0;
+    G.step(30, 1 / 60);
+    const p0 = c.pitch;
+    G.setInput({ trigger: true });
+    G.step(36, 1 / 60);                     // ~6 выстрелов
+    const peak = c.pitch;
+    G.setInput({ trigger: false });
+    G.step(90, 1 / 60);                     // отпустили — ствол опускается
+    const settled = c.pitch;
+    G.setInput({ ads: false });
+    return {
+      подъём: +(peak - p0).toFixed(4),
+      осталось: +(settled - p0).toFixed(4),
+      вернулось: +(peak - settled).toFixed(4)
+    };
+  });
+  /* Очередь обязана уводить ствол вверх (иначе отдачи нет вовсе)... */
+  check('очередь уводит прицел вверх', recoil.подъём > 0.02,
+    'подъём ' + (recoil.подъём * 57.3).toFixed(1) + '°');
+  /* ...и после отпускания спуска частично возвращаться. */
+  check('после очереди прицел частично возвращается',
+    recoil.вернулось > 0.005 && recoil.осталось > 0,
+    'вернулось ' + (recoil.вернулось * 57.3).toFixed(1) + '°, осталось ' +
+    (recoil.осталось * 57.3).toFixed(1) + '°');
+
+  /* --- баллистика: пуля падает, а не летит лазером ---
+     Стреляем строго горизонтально с известной высоты и смотрим, где пуля
+     встретила землю. Для 880 м/с свободное падение даёт ~1,5 м за 0,55 с,
+     то есть точка падения должна быть в районе 150-260 м... но нас
+     интересует главное: снижение ЕСТЬ и оно растёт с дистанцией. */
+  const drop = await page.evaluate(() => {
+    const G = window.__GAME, T = window.THREE;
+    const a = G.squad[0];
+    /* ставим бойца на ровное место и стреляем горизонтально вдоль -Z */
+    a.ctrl.pos.set(0, 0, 20);
+    a.ctrl.yaw = 0; a.ctrl.pitch = 0; a.ctrl.ads = 1; a.ctrl.spread = 0;
+    a.ctrl.ammo = 30; a.ctrl.fireMode = 'semi'; a.ctrl.cool = 0;
+    G.setInput({ lock: true, ads: true });
+    G.step(90, 1 / 60);
+    /* измеряем снижение напрямую через внутреннюю трассировку */
+    return G.measureDrop([5, 30, 100]);
+  });
+  const rising = drop && drop.length === 3
+    && drop[0].drop < drop[1].drop && drop[1].drop < drop[2].drop;
+  check('пуля снижается с дистанцией (не «лазер»)', rising,
+    drop ? drop.map((d) => d.dist + 'м: ' + (d.drop * 100).toFixed(1) + 'см').join(', ') : 'нет данных');
 
   /* --- падение и подъём мишени --- */
   const tgtCycle = await page.evaluate(() => {

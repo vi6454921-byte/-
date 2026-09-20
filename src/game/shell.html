@@ -11,25 +11,19 @@
   canvas{display:block}
 
   /* ---------------------------------------------------------- прицел --- */
-  #reticle{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:6;
-    pointer-events:none;width:64px;height:64px;opacity:0;transition:opacity .18s}
-  #reticle.on{opacity:1}
-  #reticle i{position:absolute;background:rgba(255,255,255,.82);
-    box-shadow:0 0 2px rgba(0,0,0,.85);display:block}
-  #reticle .dot{left:50%;top:50%;width:2px;height:2px;border-radius:50%;
-    transform:translate(-50%,-50%);background:rgba(255,255,255,.95)}
-
   /* ------------------------------------------------------------ HUD ---- */
   #hud{position:fixed;inset:0;pointer-events:none;z-index:5}
   #ammo{position:absolute;right:30px;bottom:26px;text-align:right;
     font:600 11px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.18em;
     color:rgba(255,255,255,.44);text-shadow:0 1px 6px rgba(0,0,0,.9)}
-  #ammo b{display:block;font:700 40px/1 ui-monospace,SFMono-Regular,Menlo,monospace;
-    letter-spacing:.01em;color:#f0dcae;margin-top:2px}
+  #ammo b{display:block;font:700 40px/1.05 ui-monospace,SFMono-Regular,Menlo,monospace;
+    letter-spacing:.01em;color:#f0dcae;margin-top:4px}
   #ammo b.low{color:#e08b74}
   #ammo b.empty{color:#d9564a}
   #ammo s{text-decoration:none;font-size:20px;opacity:.5}
-  #mode{position:absolute;right:30px;bottom:96px;font:600 11px/1 ui-monospace,monospace;
+  /* Режим огня стоит НАД строкой калибра: при bottom:96px он налезал
+     на «5,45×39», потому что блок патронов занимает ~86 px. */
+  #mode{position:absolute;right:30px;bottom:118px;font:600 11px/1 ui-monospace,monospace;
     letter-spacing:.2em;color:rgba(240,220,174,.8);text-shadow:0 1px 6px rgba(0,0,0,.9)}
 
   #who{position:absolute;left:28px;bottom:26px;
@@ -49,7 +43,9 @@
     transform-origin:left;transition:transform .1s linear}
 
   /* ----------------------------------------------------- подсказка F --- */
-  #prompt{position:fixed;left:50%;top:58%;transform:translateX(-50%);z-index:7;
+  /* Подсказка уведена из центра вниз: в центре она перекрывала прицельную
+     картинку и мишень. */
+  #prompt{position:fixed;left:50%;top:72%;transform:translateX(-50%);z-index:7;
     pointer-events:none;text-align:center;opacity:0;transition:opacity .16s}
   #prompt.on{opacity:1}
   #prompt .key{display:inline-flex;align-items:center;justify-content:center;
@@ -124,9 +120,6 @@
 <div id="vig"></div>
 <div id="dmg"></div>
 
-<div id="reticle">
-  <i class="dot"></i>
-</div>
 <div id="hitmark">
   <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round">
     <path d="M6 6l4 4M20 6l-4 4M6 20l4-4M20 20l-4-4"/>

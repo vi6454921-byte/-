@@ -152,8 +152,10 @@
     fx.flashRig = flash.rig;
 
     /* ------------------------------------------------------- трассеры */
-    /* Трассер — вытянутый спрайт-линия вдоль траектории. Живёт 60-90 мс,
-       поэтому при очереди видно «пунктир» уходящих пуль. */
+    /* Трассер — короткий отрезок, летящий по траектории пули, а не линия
+       во всю дистанцию. Раньше рисовался весь путь сразу и держался 75 мс:
+       получался «лазерный луч». Теперь виден быстрый штрих длиной ~8 м,
+       который уходит к цели со скоростью пули. */
     const TR_N = 40;
     const trGeo = new THREE.BufferGeometry();
     const trPos = new Float32Array(TR_N * 2 * 3);
@@ -161,13 +163,17 @@
     trGeo.setAttribute('position', new THREE.BufferAttribute(trPos, 3));
     trGeo.setAttribute('color', new THREE.BufferAttribute(trCol, 3));
     const tracers = new THREE.LineSegments(trGeo, new THREE.LineBasicMaterial({
-      vertexColors: true, transparent: true, opacity: 0.95,
+      vertexColors: true, transparent: true, opacity: 0.8,
       blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false
     }));
     tracers.frustumCulled = false;
     fx.group.add(tracers);
     const trPool = [];
-    for (let i = 0; i < TR_N; i++) trPool.push({ t: 99, ttl: 0.08, a: new THREE.Vector3(), b: new THREE.Vector3(), hot: 1 });
+    for (let i = 0; i < TR_N; i++) trPool.push({
+      t: 99, ttl: 0.4, hot: 1, dist: 0, speed: 900,
+      from: new THREE.Vector3(), dir: new THREE.Vector3(),
+      a: new THREE.Vector3(), b: new THREE.Vector3()
+    });
     let trI = 0;
 
     /* ----------------------------------------------------------- искры */
@@ -243,9 +249,23 @@
       flash.core.visible = flash.glow.visible = flash.star.visible = flash.jet.visible = true;
     };
 
-    fx.tracer = (a, b, hot) => {
+    /* a — дульный срез, b — точка попадания. Трассер летит от a к b. */
+    fx.tracer = (a, b, hot, speed) => {
       const t = trPool[trI = (trI + 1) % TR_N];
-      t.t = 0; t.ttl = 0.075; t.a.copy(a); t.b.copy(b); t.hot = hot === undefined ? 1 : hot;
+      t.from.copy(a);
+      t.dir.subVectors(b, a);
+      t.dist = t.dir.length();
+      if (t.dist < 1e-4) return;
+      t.dir.divideScalar(t.dist);
+      t.speed = speed || 900;
+      /* живёт ровно столько, сколько летит пуля (плюс догорание) */
+      t.ttl = t.dist / t.speed + 0.02;
+      t.t = 0;
+      t.hot = hot === undefined ? 1 : hot;
+      /* Не каждая пуля трассирующая: в ленте обычно один трассер на 4-5
+         обычных патронов, поэтому большинство выстрелов видно только по
+         вспышке и попаданию. */
+      t.visible = Math.random() < 0.32;
     };
 
     fx.sparks = (p, n, dir, spread, hot) => {
@@ -361,22 +381,32 @@
         flash.light.intensity = 0;
       }
 
-      /* трассеры */
+      /* трассеры: штрих движется по траектории со скоростью пули */
       let ti = 0;
+      const TR_LEN = 7.5;                    // длина светящегося участка, м
       for (let i = 0; i < TR_N; i++) {
         const t = trPool[i];
         const k = i * 6;
-        if (t.t >= t.ttl) {
+        if (t.t >= t.ttl || !t.visible) {
           trCol[k] = trCol[k + 1] = trCol[k + 2] = 0;
           trCol[k + 3] = trCol[k + 4] = trCol[k + 5] = 0;
           continue;
         }
         t.t += dt;
-        const f = Math.pow(1 - U.clamp01(t.t / t.ttl), 1.6) * t.hot;
-        trPos[k] = t.a.x; trPos[k + 1] = t.a.y; trPos[k + 2] = t.a.z;
-        trPos[k + 3] = t.b.x; trPos[k + 4] = t.b.y; trPos[k + 5] = t.b.z;
-        trCol[k] = 1.5 * f; trCol[k + 1] = 0.82 * f; trCol[k + 2] = 0.34 * f;
-        trCol[k + 3] = 1.5 * f * 0.4; trCol[k + 4] = 0.7 * f * 0.4; trCol[k + 5] = 0.3 * f * 0.4;
+        /* положение головы штриха вдоль траектории */
+        const head = Math.min(t.dist, t.t * t.speed);
+        const tail = Math.max(0, head - TR_LEN);
+        /* гаснет на подлёте к цели */
+        const f = Math.pow(1 - U.clamp01(t.t / t.ttl), 0.8) * t.hot;
+        trPos[k] = t.from.x + t.dir.x * tail;
+        trPos[k + 1] = t.from.y + t.dir.y * tail;
+        trPos[k + 2] = t.from.z + t.dir.z * tail;
+        trPos[k + 3] = t.from.x + t.dir.x * head;
+        trPos[k + 4] = t.from.y + t.dir.y * head;
+        trPos[k + 5] = t.from.z + t.dir.z * head;
+        /* хвост тусклее головы */
+        trCol[k] = 0.5 * f; trCol[k + 1] = 0.22 * f; trCol[k + 2] = 0.06 * f;
+        trCol[k + 3] = 1.5 * f; trCol[k + 4] = 0.78 * f; trCol[k + 5] = 0.30 * f;
         ti++;
       }
       trGeo.attributes.position.needsUpdate = true;

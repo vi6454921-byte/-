@@ -23,7 +23,11 @@
   const { norm, cross, sub, add, scale, lerp3 } = B;
 
   /* Группы материалов: каждая едет в свой SkinnedMesh. */
-  const GROUPS = ['uniform', 'skin', 'glove', 'gear', 'helmet', 'boot', 'hard', 'eye', 'hair'];
+  /* «mask» вынесена из «gear» отдельной группой намеренно: балаклава надета
+     на голову, и когда игрок смотрит глазами этого бойца, её нужно скрыть
+     вместе с головой. Будь она частью снаряжения, пришлось бы прятать заодно
+     бронежилет и подсумки. */
+  const GROUPS = ['uniform', 'skin', 'glove', 'gear', 'mask', 'helmet', 'boot', 'hard', 'eye', 'hair'];
 
   function newGroups() {
     const g = {};
@@ -238,7 +242,7 @@
   function buildHead(G, M, W, cfg) {
     const surf = headSurface(M, cfg);
     const NT = 40, NP = 28;
-    const oy = M.headY;
+    const oy = M.headC;
     const bones = W('head', 1);
     const grid = [];
     for (let ip = 0; ip <= NP; ip++) {
@@ -778,7 +782,7 @@
   function buildHelmet(G, M, W, cfg) {
     const surf = headSurface(M, cfg);
     const bw = W('head', 1);
-    const oy = M.headY;
+    const oy = M.headC;
     const shell = 0.019;                       // толщина каски над головой
     const NT = 36, NP = 16;
 
@@ -871,7 +875,7 @@
   function buildBoonie(G, M, W, cfg) {
     const surf = headSurface(M, cfg);
     const bw = W('head', 1);
-    const oy = M.headY;
+    const oy = M.headC;
     const NT = 36;
 
     /* тулья — приплюснутый купол поверх головы */
@@ -946,7 +950,7 @@
     const surf = headSurface(M, cfg);
     const bw = W('head', 1);
     const bwn = W('head', 0.6, 'neck', 0.4);
-    const oy = M.headY;
+    const oy = M.headC;
     const NT = 34;
     const off = 0.005;
 
@@ -965,14 +969,14 @@
         const p0 = topPhi(th);
         const phi = U.lerp(p0, Math.PI * 0.97, ip / NP);
         const p = surf(th, phi, off);
-        row.push(G.gear.vertex([p[0], p[1] + oy, p[2]], norm(p), [it / NT * 0.9, ip / NP * 0.45],
+        row.push(G.mask.vertex([p[0], p[1] + oy, p[2]], norm(p), [it / NT * 0.9, ip / NP * 0.45],
           ip > NP - 3 ? bwn : bw));
       }
       grid.push(row);
     }
     for (let ip = 0; ip < NP; ip++)
       for (let it = 0; it < NT; it++)
-        G.gear.quad(grid[ip][it], grid[ip][it + 1], grid[ip + 1][it + 1], grid[ip + 1][it]);
+        G.mask.quad(grid[ip][it], grid[ip][it + 1], grid[ip + 1][it + 1], grid[ip + 1][it]);
 
     /* воротник маски уходит под куртку */
     const collar = [];
@@ -983,7 +987,7 @@
       collar.push({ c: [0, y, -0.004], rx: r, ry: r * 1.06, n: 2.3, axis: [0, -1, 0], up: [0, 0, -1],
         bones: i < 2 ? bw : W('neck', 0.7, 'chest', 0.3) });
     }
-    B.loft(G.gear, collar, 18, { uScale: 0.35 });
+    B.loft(G.mask, collar, 18, { uScale: 0.35 });
   }
 
   /* ============================================================= РЕМЕНЬ == */
