@@ -328,6 +328,8 @@
         appendMessage('user', text);
         socket.emit('user_message', { message: text });
         chatInput.value = '';
+        chatInput.focus();
+        setThinking(true);
     }
 
     // Quick prompt buttons
@@ -375,6 +377,10 @@
     socket.on('msg_status', (data) => {
         if (data && data.status === 'typing') setThinking(true);
     });
+
+    socket.on('connect', () => setThinking(false));
+    socket.on('connect_error', () => setThinking(false));
+    socket.on('disconnect', () => setThinking(false));
 
     socket.on('assistant_message', (data) => {
         setThinking(false);
@@ -549,6 +555,7 @@
         $('#note-body').value = '';
         $('#note-tags').value = '';
         noteModal.hidden = false;
+        $('#note-title')?.focus();
     });
     $('#note-save')?.addEventListener('click', () => {
         const payload = {
@@ -803,8 +810,12 @@
             for (let i = e.resultIndex; i < e.results.length; i++) txt += e.results[i][0].transcript;
             chatInput.value = txt;
         };
-        r.onerror = () => stopVoice();
-        r.onend = () => stopVoice();
+        r.onerror = () => { recognizing = false; btnVoice.classList.remove('recording'); };
+        r.onend = () => {
+            recognizing = false;
+            btnVoice.classList.remove('recording');
+            if (chatInput.value.trim()) { chatInput.focus(); sendMessage(); }
+        };
         recognizer = r;
         return r;
     }
