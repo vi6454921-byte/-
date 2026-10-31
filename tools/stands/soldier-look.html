@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>AEGIS · стенд формы и маскхалатов</title>
+<style>
+html,body{margin:0;height:100%;background:#5d6458;overflow:hidden;font:13px system-ui;color:#eef}
+#ui{position:fixed;left:10px;top:10px;background:#18222bdd;padding:8px 10px;border-radius:8px;max-width:340px;line-height:1.4}
+#ui select,#ui button{font:12px system-ui;margin:2px 0}
+.lab{position:fixed;bottom:8px;font:12px system-ui;color:#fff;text-shadow:0 1px 2px #000;transform:translateX(-50%);white-space:nowrap}
+</style></head><body>
+<div id="ui"><b>Стенд: форма, снаряжение, маскхалаты</b><br>
+<label>Набор <select id="set"><option>lineup</option><option>ghillie</option><option>net</option><option>poses</option><option>closeup</option></select></label>
+<label>Поза <select id="pose"><option>idle</option><option>ready</option><option>crouch</option><option>prone</option><option>run</option></select></label><br>
+ЛКМ — вращение, колесо — приближение.<pre id="info" style="white-space:pre-wrap;margin:6px 0 0"></pre></div>
+<script>
+/* Изолированный стенд: только модули персонажа (без мира, ИИ, звука).
+   Несколько бойцов в ряд: разные формы, кикимора на трёх плотностях,
+   накидка; позы — стоя, «к бою», присед, лёжа, бег (кадр шага).
+   ?set=lineup|ghillie|net|poses|closeup&pose=idle&yaw=0&pitch=0.1&dist=6&cy=1&static=1 */
+window.__AEGIS_STAND = true;
+const QS = new URLSearchParams(location.search);
+const SRC = ['js/lib/three.min.js', 'assets/data/hands.js', 'assets/data/soldier_model.js', 'assets/data/soldier_tex.js',
+  'js/polygon/00_boot.js', 'js/polygon/02_util.js', 'js/polygon/03_viewmodel_vm.js', 'js/polygon/04_viewmodel_hand_assets.js',
+  'js/polygon/05_viewmodel_ak.js', 'js/polygon/06_textures.js', 'js/polygon/07_geobuf.js', 'js/polygon/08_skeleton.js',
+  'js/polygon/09_soldier.js', 'js/polygon/10_soldier_body.js', 'js/polygon/11_soldier_clothing.js', 'js/polygon/12_soldier_gear.js',
+  'js/polygon/13_soldier_kit.js', 'js/polygon/13b_soldier_cover.js', 'js/polygon/14_character.js', 'js/polygon/15_rig.js'];
+const ROOT = '../../';
+function load(i) {
+  if (i >= SRC.length) return start().catch((e) => { document.getElementById('info').textContent = 'ошибка: ' + e.message; console.error(e); });
+  const s = document.createElement('script'); s.src = ROOT + SRC[i] + (QS.get('nc') ? '?' + Date.now() : '');
+  s.onload = () => load(i + 1); s.onerror = () => { document.getElementById('info').textContent = 'нет ' + SRC[i]; };
+  document.head.appendChild(s);
+}
+load(0);
+/* наборы: [ключ пресета, образ (look), подпись, поза?] */
+const SETS = {
+  lineup: [
+    ['delta_1', {}, 'Дельта-1 (исх.)'],
+    ['alpha_1', {}, 'Альфа-1 (исх.)'],
+    ['delta_2', { top: 'emr', bottom: 'emr', headCover: 'emr' }, 'ЕМР «цифра»'],
+    ['alpha_2', { top: 'multicam', bottom: 'multicam', headCover: 'multicam' }, 'Мультикам'],
+    ['delta_1', { top: 'flora', bottom: 'flora', head: 'boonie', headCover: 'flora', armor: 'slick' }, 'Флора, панама'],
+    ['alpha_1', { top: 'winter', bottom: 'winter', headCover: 'winter' }, 'Зима']
+  ],
+  ghillie: [
+    ['delta_1', { cover: 'ghillie', coverCol: 'forest', coverDensity: 1 }, 'Кикимора · 1'],
+    ['delta_1', { cover: 'ghillie', coverCol: 'forest', coverDensity: 3 }, 'Кикимора · 3'],
+    ['delta_1', { cover: 'ghillie', coverCol: 'forest', coverDensity: 5 }, 'Кикимора · 5'],
+    ['alpha_1', { cover: 'ghillie', coverCol: 'autumn', coverDensity: 3 }, 'Осень · 3'],
+    ['alpha_2', { cover: 'ghillie', coverCol: 'steppe', coverDensity: 3 }, 'Степь · 3'],
+    ['delta_2', { cover: 'ghillie', coverCol: 'winter', coverDensity: 3 }, 'Зима · 3']
+  ],
+  net: [
+    ['delta_1', { cover: 'net', coverCol: 'forest', coverDensity: 1 }, 'Накидка · 1'],
+    ['delta_1', { cover: 'net', coverCol: 'forest', coverDensity: 3 }, 'Накидка · 3'],
+    ['delta_1', { cover: 'net', coverCol: 'forest', coverDensity: 5 }, 'Накидка · 5'],
+    ['alpha_1', { cover: 'net', coverCol: 'autumn', coverDensity: 3 }, 'Осень'],
+    ['alpha_2', { cover: 'net', coverCol: 'steppe', coverDensity: 3 }, 'Степь']
+  ],
+  poses: [
+    ['delta_1', { cover: 'ghillie', coverDensity: 3 }, 'стоя', 'idle'],
+    ['delta_1', { cover: 'ghillie', coverDensity: 3 }, 'к бою', 'ready'],
+    ['delta_1', { cover: 'ghillie', coverDensity: 3 }, 'присед', 'crouch'],
+    ['delta_1', { cover: 'ghillie', coverDensity: 3 }, 'бег', 'run'],
+    ['delta_1', { cover: 'ghillie', coverDensity: 3 }, 'лёжа', 'prone']
+  ],
+  closeup: [
+    ['delta_1', JSON.parse(QS.get('look') || '{}'), QS.get('label') || 'крупно']
+  ]
+};
+async function start() {
+  await GAssets.ready();
+  const T = THREE;
+  const R = new T.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  R.setPixelRatio(1); R.setSize(innerWidth, innerHeight);
+  R.shadowMap.enabled = true; R.shadowMap.type = T.PCFSoftShadowMap;
+  R.toneMapping = T.ACESFilmicToneMapping; R.toneMappingExposure = +(QS.get('exp') || 1.0);
+  if ('outputColorSpace' in R) R.outputColorSpace = T.SRGBColorSpace;
+  document.body.appendChild(R.domElement);
+  const scene = new T.Scene(); scene.background = new T.Color(0x8a9097);
+  scene.fog = new T.Fog(0x8a9097, 14, 40);
+  const pm = new T.PMREMGenerator(R);
+  scene.environment = pm.fromScene(new __ADDONS.RoomEnvironment(), 0.04).texture;
+  scene.environmentIntensity = 0.3;
+  const sun = new T.DirectionalLight(0xfff1dc, 2.8); sun.position.set(-3, 6, -4.5); sun.castShadow = true;
+  sun.shadow.mapSize.set(2048, 2048);
+  Object.assign(sun.shadow.camera, { left: -6, right: 6, top: 4, bottom: -2 });
+  sun.shadow.bias = -0.0004; sun.shadow.normalBias = 0.02;
+  scene.add(sun); scene.add(new T.HemisphereLight(0xcfd8e6, 0x4a4136, 0.75));
+  const ground = new T.Mesh(new T.PlaneGeometry(30, 30), new T.MeshStandardMaterial({ color: 0x5f5a4c, roughness: 1 }));
+  ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+  const cam = new T.PerspectiveCamera(+(QS.get('fov') || 30), innerWidth / innerHeight, 0.05, 80);
+  const setSel = document.getElementById('set'), poseSel = document.getElementById('pose');
+  setSel.value = QS.get('set') || 'lineup'; poseSel.value = QS.get('pose') || 'idle';
+  const V = { yaw: +(QS.get('yaw') || 0), pitch: +(QS.get('pitch') || 0.06), dist: +(QS.get('dist') || 0), cy: +(QS.get('cy') || 0.95), cx: +(QS.get('cx') || 0) };
+  let units = [], labels = [];
+  const GAP = +(QS.get('gap') || 1.0);
+  function poseUnit(u, P) {
+    const ch = u.ch, b = ch.bone;
+    for (const bn of ch.bones) bn.rotation.set(0, 0, 0);
+    ch.bone('hips').position.fromArray(ch.rest.hips);
+    ch.root.rotation.set(0, Math.PI + (u.yaw || 0), 0);
+    ch.root.position.y = 0;
+    const base = {};
+    if (P === 'crouch') Object.assign(base, { crouch: -0.36, legBend: 1.25, spinePitch: 0.32, chestPitch: 0.12, headPitch: -0.25, legStagger: 0.25 });
+    if (P === 'run') Object.assign(base, { crouch: -0.06, legBend: 0.3, spinePitch: 0.22, chestPitch: 0.05, legStagger: 0.45 });
+    GRig.applyBasePose(u.rig, base);
+    for (const side of [1, -1]) {
+      const SS = side > 0 ? 'R' : 'L';
+      if (P === 'idle' || P === 'prone') {
+        b('shoulder' + SS).rotation.set(0, side * 0.18, -side * 1.25);
+        b('elbow' + SS).rotation.set(0, side * 0.35, 0);
+      } else {
+        b('shoulder' + SS).rotation.set(side > 0 ? 0.2 : 0.1, side * (side > 0 ? 0.65 : 0.95), -side * 1.05);
+        b('elbow' + SS).rotation.set(0, side * (side > 0 ? 1.55 : 1.1), 0);
+      }
+    }
+    if (P === 'run') { b('kneeL').rotation.x = -1.3; b('hipL').rotation.x = 0.55; b('hipR').rotation.x = -0.35; b('kneeR').rotation.x = -0.25; }
+    if (P === 'prone') {
+      /* лёжа на животе: корпус горизонтально, голова поднята к цели */
+      ch.bone('hips').position.y = 0.17 / (ch.scale || 1);
+      ch.bone('hips').rotation.x = 1.5;
+      b('neck').rotation.x = -0.55; b('head').rotation.x = -0.55;
+      for (const SS of ['R', 'L']) { b('hip' + SS).rotation.x = 0.05; b('knee' + SS).rotation.x = -0.05; b('ankle' + SS).rotation.x = 0.6; }
+      b('shoulderR').rotation.set(-1.2, 0.2, -0.6); b('shoulderL').rotation.set(-1.2, -0.2, 0.6);
+      b('elbowR').rotation.set(0, 1.4, 0); b('elbowL').rotation.set(0, -1.4, 0);
+    }
+    ch.root.updateMatrixWorld(true);
+  }
+  function build() {
+    for (const u of units) scene.remove(u.ch.root);
+    for (const l of labels) l.remove();
+    units = []; labels = [];
+    const list = SETS[setSel.value] || SETS.lineup;
+    const t0 = performance.now();
+    let nv = 0;
+    const info = [];
+    list.forEach(([key, look, label, pz], i) => {
+      const P = GChar.withLook(key, look);
+      const t1 = performance.now();
+      const ch = GChar.build(T, key, P);
+      const ms = performance.now() - t1;
+      const u = { ch, rig: new GRig.Rig(T, ch), label, pose: pz, yaw: +(QS.get('ryaw') || 0) };
+      ch.root.position.x = (i - (list.length - 1) / 2) * GAP;
+      if ((pz || poseSel.value) === 'prone') ch.root.position.z = -0.4;
+      scene.add(ch.root);
+      units.push(u);
+      let v = 0; for (const g in ch.meshes) v += ch.meshes[g].geometry.attributes.position.count;
+      const cv = ch.meshes.cover ? ch.meshes.cover.geometry.attributes.position.count : 0;
+      nv += v; info.push(label + ': ' + v + ' верш. (маск. ' + cv + '), ' + ms.toFixed(0) + ' мс');
+      const d = document.createElement('div'); d.className = 'lab'; d.textContent = label; document.body.appendChild(d); labels.push(d);
+    });
+    for (const u of units) poseUnit(u, u.pose || poseSel.value);
+    if (!V.dist) V.dist = Math.max(3, list.length * GAP * 1.9);
+    document.getElementById('info').textContent = 'сборка ' + (performance.now() - t0).toFixed(0) + ' мс, вершин ' + nv + '\n' + info.join('\n');
+  }
+  setSel.onchange = () => { V.dist = 0; build(); };
+  poseSel.onchange = () => { for (const u of units) poseUnit(u, u.pose || poseSel.value); };
+  let drag = 0, px = 0, py = 0;
+  R.domElement.onpointerdown = (e) => { drag = 1; px = e.clientX; py = e.clientY; };
+  onpointerup = () => { drag = 0; };
+  onpointermove = (e) => { if (!drag) return; V.yaw += (e.clientX - px) * 0.006; V.pitch = Math.max(-1.2, Math.min(1.3, V.pitch + (e.clientY - py) * 0.004)); px = e.clientX; py = e.clientY; };
+  R.domElement.onwheel = (e) => { V.dist = Math.max(0.3, Math.min(30, V.dist * Math.exp(e.deltaY * 0.001))); };
+  const _v = new T.Vector3();
+  function place() {
+    const c = new T.Vector3(V.cx, V.cy, 0);
+    cam.position.set(c.x + Math.sin(V.yaw) * V.dist * Math.cos(V.pitch), V.cy + Math.sin(V.pitch) * V.dist, c.z - Math.cos(V.yaw) * V.dist * Math.cos(V.pitch));
+    cam.lookAt(c); cam.aspect = innerWidth / innerHeight; cam.updateProjectionMatrix();
+    cam.updateMatrixWorld();
+    units.forEach((u, i) => {
+      _v.copy(u.ch.root.position); _v.y = 0; _v.project(cam);
+      labels[i].style.left = ((_v.x * 0.5 + 0.5) * innerWidth) + 'px';
+      labels[i].style.display = Math.abs(_v.x) < 1.1 ? '' : 'none';
+    });
+  }
+  function frame() { requestAnimationFrame(frame); if (window.__STAND_STATIC) return; place(); R.render(scene, cam); }
+  build();
+  window.__STAND = { T, R, scene, cam, V, build, poseUnit, place, render: () => { place(); R.render(scene, cam); }, get units() { return units; } };
+  if (!QS.get('static')) frame(); else { window.__STAND_STATIC = true; place(); R.render(scene, cam); }
+  window.__STAND_READY = true;
+}
+</script></body></html>
