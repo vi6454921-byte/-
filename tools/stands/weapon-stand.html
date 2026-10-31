@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>AEGIS · стенд оружия</title>
+<style>html,body{margin:0;background:#2a2c2e;overflow:hidden}canvas{display:block}#info{position:fixed;left:8px;top:6px;color:#ddd;font:12px monospace;text-shadow:0 1px 2px #000}</style>
+</head>
+<body>
+<div id="info"></div>
+<script src="../../js/lib/three.min.js"></script>
+<script src="../../js/polygon/05f_ballistics.js"></script>
+<script src="../../js/kit/wkit.js"></script>
+<script src="../../js/kit/skins.js"></script>
+<script src="../../js/kit/wcover.js"></script>
+<script src="../../js/kit/imported-weapons.js"></script>
+<script>
+/* Изолированный стенд одной сборки оружия (без оружейной и игры).
+   #w=scar&skin=multicam&wrap=ghillie:forest:2&cfg={"optic":"acog"}&view=side
+   window.stand.show(opts) / window.stand.view(name) — для скриптов скриншотов. */
+(function () {
+  'use strict';
+  const WK = window.AEGIS_WK, A = window.THREE_ADDONS;
+  const W = innerWidth, H = innerHeight;
+  const renderer = new THREE.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  renderer.setPixelRatio(1); renderer.setSize(W, H);
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  document.body.appendChild(renderer.domElement);
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x2b2d30);
+  const pm = new THREE.PMREMGenerator(renderer);
+  const env = pm.fromScene(new A['environments/RoomEnvironment.js'].RoomEnvironment(), 0.04).texture;
+  scene.environment = env;
+  const sun = new THREE.DirectionalLight(0xfff1dc, 2.2);
+  sun.position.set(-300, 900, 600); sun.castShadow = true;
+  sun.shadow.mapSize.set(1024, 1024);
+  Object.assign(sun.shadow.camera, { left: -700, right: 700, top: 500, bottom: -500, near: 10, far: 3000 });
+  sun.shadow.bias = -0.0004;
+  scene.add(sun, sun.target, new THREE.HemisphereLight(0xc8d4e0, 0x403a32, 0.35));
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(6000, 6000), new THREE.MeshStandardMaterial({ color: 0x55534f, roughness: 0.9 }));
+  floor.rotation.x = -Math.PI / 2; floor.receiveShadow = true; scene.add(floor);
+  const cam = new THREE.PerspectiveCamera(28, W / H, 5, 20000);
+  const mats = WK.createMaterials(env), ctx = WK.makeCtx(mats);
+  let asm = null, box = new THREE.Box3(), cur = {};
+  const info = document.getElementById('info');
+
+  function show(o) {
+    cur = Object.assign({ w: 'ak74', skin: null, wrap: null, cfg: {} }, o);
+    if (asm) { scene.remove(asm.root); asm = null; }
+    const def = WK.DEFS[cur.w];
+    if (!def) throw Error('нет образца ' + cur.w);
+    asm = new WK.Assembler(def, WK.LIB, ctx);
+    asm.apply(Object.assign({}, def.defaults, cur.cfg || {}));
+    if (cur.skin && window.GSkins) GSkins.apply(asm.root, cur.w, cur.skin, mats, cur.skinMods || null);
+    if (cur.wrap && window.GWCover) GWCover.apply(asm, cur.w, cur.wrap);
+    asm.root.traverse((m) => { if (m.userData.reticle) m.visible = false; if (m.isMesh) m.castShadow = !m.userData.wcover; });
+    scene.add(asm.root);
+    asm.root.updateMatrixWorld(true);
+    box.setFromObject(asm.root);
+    floor.position.y = box.min.y - 2;
+    let tris = 0, meshes = 0;
+    asm.root.traverse((m) => { if (m.isMesh && m.visible) { meshes++; const g = m.geometry; tris += (g.index ? g.index.count : g.attributes.position.count) / 3; } });
+    info.textContent = cur.w + (cur.skin ? ' · ' + cur.skin : '') + (cur.wrap ? ' · ' + JSON.stringify(cur.wrap) : '') + ' · ' + meshes + ' mesh · ' + Math.round(tris) + ' tri';
+    return { tris: Math.round(tris), meshes, size: box.getSize(new THREE.Vector3()).toArray().map(Math.round) };
+  }
+  /* виды: az — азимут от правого борта (+Z), el — подъём; zoom — доля длины в кадре; at — точка фокуса в долях бокса по X */
+  const VIEWS = {
+    side: { az: 0, el: 4, zoom: 1.1 }, left: { az: 180, el: 4, zoom: 1.1 }, q3: { az: 35, el: 18, zoom: 1.15 },
+    rear: { az: 140, el: 14, zoom: 1.2 }, top: { az: 0, el: 80, zoom: 1.1 }, under: { az: 25, el: -25, zoom: 1.15 },
+    front: { az: -40, el: 10, zoom: 0.55, at: 0.8 }, stock: { az: 20, el: 12, zoom: 0.45, at: 0.15 },
+    recv: { az: 25, el: 15, zoom: 0.5, at: 0.45 }, muzzle: { az: 30, el: 10, zoom: 0.35, at: 0.95 }
+  };
+  function view(name, extra) {
+    const v = Object.assign({}, VIEWS[name] || VIEWS.side, extra || {});
+    const c = box.getCenter(new THREE.Vector3()), s = box.getSize(new THREE.Vector3());
+    if (v.at != null) c.x = box.min.x + s.x * v.at;
+    const len = Math.max(s.x, s.y * 1.8) * v.zoom;
+    const d = len / 2 / Math.tan(THREE.MathUtils.degToRad(cam.fov / 2)) / cam.aspect * 1.05;
+    const az = THREE.MathUtils.degToRad(v.az), el = THREE.MathUtils.degToRad(v.el);
+    cam.position.set(c.x + Math.sin(az) * Math.cos(el) * d * -1, c.y + Math.sin(el) * d, c.z + Math.cos(az) * Math.cos(el) * d);
+    cam.lookAt(c);
+    sun.position.set(c.x - 300, c.y + 900, c.z + 600); sun.target.position.copy(c);
+    renderer.render(scene, cam);
+    return v;
+  }
+  function parseHash() {
+    const q = new URLSearchParams(location.hash.slice(1)), o = {};
+    if (q.get('w')) o.w = q.get('w');
+    if (q.get('skin')) o.skin = q.get('skin');
+    if (q.get('wrap')) { const [t, c, d] = q.get('wrap').split(':'); o.wrap = { t, c: c || 'forest', d: d ? +d : undefined }; }
+    if (q.get('cfg')) try { o.cfg = JSON.parse(q.get('cfg')); } catch (e) { /* */ }
+    return [o, q.get('view') || 'q3'];
+  }
+  window.stand = { show, view, VIEWS, scene, renderer, get asm() { return asm; }, mats };
+  const go = () => { const [o, v] = parseHash(); show(o); view(v); };
+  (window.AEGIS_IMPORTED ? AEGIS_IMPORTED.ready : Promise.resolve()).catch((e) => console.warn(e)).then(() => {
+    try { go(); } catch (e) { info.textContent = 'Ошибка: ' + e.message; console.error(e); }
+    window.stand.ready = true;
+  });
+  addEventListener('hashchange', go);
+})();
+</script>
+</body>
+</html>
