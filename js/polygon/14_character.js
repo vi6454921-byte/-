@@ -118,6 +118,7 @@
     if (!P.padCol) P.padCol = P.hardCol;
     if (COVER && COVER.KINDS[L.cover]) P.cover = L.cover;
     if (COVER && COVER.SCHEMES[L.coverCol]) P.coverCol = L.coverCol;
+    if (Number.isInteger(L.coverDensity) && L.coverDensity >= 1 && L.coverDensity <= 5) P.coverDensity = L.coverDensity;
     P.look = JSON.parse(JSON.stringify(L));
     return P;
   }
@@ -659,6 +660,7 @@
       if (bindM) mesh.bind(skeleton, bindM.clone());
       else if (K !== 1) mesh.bind(skeleton, new THREE.Matrix4().makeScale(K, K, K));
       else mesh.bind(skeleton);
+      if (g === 'cover' && COVER && COVER.attach) COVER.attach(mesh);
       meshes[g] = mesh;
     }
     return meshes;
@@ -838,6 +840,7 @@
     const DQ0 = nb * 4;
     const pars = `
 #ifdef USE_SKINNING
+#define AEGIS_DQS 1
 vec4 dqFetch(const in float i, const in int k) {
   int size = textureSize(boneTexture, 0).x;
   int j = ${DQ0} + int(i) * 2 + k;
