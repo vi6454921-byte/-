@@ -1,0 +1,56 @@
+{
+  "results": [
+    {
+      "test": "fallen treatment",
+      "dt": 0.016666666666666666,
+      "ok": true,
+      "inventory": 2,
+      "mode": "idle"
+    },
+    {
+      "test": "drag",
+      "dt": 0.016666666666666666,
+      "travel": 0.19286476672357636,
+      "hands": {
+        "R": 4.611102534756203e-16,
+        "L": 0.000016354048727137135
+      },
+      "ok": true
+    },
+    {
+      "test": "fallen treatment",
+      "dt": 0.03333333333333333,
+      "ok": true,
+      "inventory": 2,
+      "mode": "idle"
+    },
+    {
+      "test": "drag",
+      "dt": 0.03333333333333333,
+      "travel": 0.24139503192790074,
+      "hands": {
+        "R": 3.1031676915590914e-16,
+        "L": 4.163336342344337e-17
+      },
+      "ok": true
+    },
+    {
+      "test": "fallen treatment",
+      "dt": 0.05,
+      "ok": true,
+      "inventory": 2,
+      "mode": "idle"
+    },
+    {
+      "test": "drag",
+      "dt": 0.05,
+      "travel": 0.17663232452275357,
+      "hands": {
+        "R": 2.9893669801409083e-16,
+        "L": 3.2398021848425308e-16
+      },
+      "ok": true
+    }
+  ],
+  "logs": []
+}

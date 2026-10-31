@@ -1,0 +1,547 @@
+{
+  "errors": [],
+  "missing": [],
+  "rows": [
+    {
+      "before": {
+        "map": "stroyka_zarechye_v2",
+        "state": {
+          "mode": "embodied",
+          "active": "alpha_1",
+          "selected": "alpha_1",
+          "locked": false,
+          "paused": true
+        },
+        "generals": 4,
+        "actors": 12,
+        "ammo": 30,
+        "reserve": 120,
+        "slot": 0,
+        "used": {},
+        "L": {
+          "slots": [
+            {
+              "t": "gun",
+              "id": "mp5a3"
+            },
+            {
+              "t": "ammo",
+              "w": "primary"
+            },
+            {
+              "t": "gun",
+              "id": "glock18c"
+            },
+            {
+              "t": "ammo",
+              "w": "pistol"
+            },
+            {
+              "t": "grenade",
+              "g": "m67"
+            },
+            {
+              "t": "grenade",
+              "g": "m84"
+            }
+          ],
+          "cfg": {},
+          "view": "akm"
+        },
+        "colliders": 7165,
+        "allFinite": true,
+        "overlaps": [],
+        "sceneScripts": [
+          "http://localhost:8765/js/maps/stroyka_zarechye_v2.js"
+        ]
+      },
+      "live": {
+        "combat": {
+          "checks": 0,
+          "shots": 0,
+          "paths": 11,
+          "cachedNav": 3370
+        },
+        "finite": true,
+        "pos": [
+          {
+            "key": "delta_1",
+            "pos": [
+              76.18221767382505,
+              0.9552128523470298,
+              82.80224254810929
+            ]
+          },
+          {
+            "key": "delta_2",
+            "pos": [
+              76.40862334337513,
+              0.9474052558815849,
+              83.91713285112574
+            ]
+          },
+          {
+            "key": "delta_soldier_0",
+            "pos": [
+              76.08990820802497,
+              0.957520896005241,
+              81.78740366335799
+            ]
+          },
+          {
+            "key": "delta_soldier_1",
+            "pos": [
+              76.07793062828932,
+              0.9504674048687847,
+              81.52900905065391
+            ]
+          },
+          {
+            "key": "delta_soldier_2",
+            "pos": [
+              76.21461738727564,
+              0.9039608184856162,
+              80.9691834293253
+            ]
+          },
+          {
+            "key": "delta_soldier_3",
+            "pos": [
+              76.27666762484365,
+              0.9507313853434638,
+              83.21650271273855
+            ]
+          },
+          {
+            "key": "alpha_1",
+            "pos": [
+              0,
+              3.372328042984009,
+              -118
+            ]
+          },
+          {
+            "key": "alpha_2",
+            "pos": [
+              5.4355327502346835,
+              3.350526324623397,
+              -112.14528085593281
+            ]
+          },
+          {
+            "key": "alpha_soldier_0",
+            "pos": [
+              3.97797290725444,
+              3.3377350590173056,
+              -113.49157648164649
+            ]
+          },
+          {
+            "key": "alpha_soldier_1",
+            "pos": [
+              3.9781566104933805,
+              3.344335771501776,
+              -113.24803898187791
+            ]
+          },
+          {
+            "key": "alpha_soldier_2",
+            "pos": [
+              9.859937343886608,
+              2.806547380952037,
+              -119.99911417091792
+            ]
+          },
+          {
+            "key": "alpha_soldier_3",
+            "pos": [
+              5.869806629046973,
+              3.356406662014397,
+              -112.12985714355266
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "map": "angar_map",
+        "state": {
+          "mode": "embodied",
+          "active": "alpha_1",
+          "selected": "alpha_1",
+          "locked": false,
+          "paused": true
+        },
+        "generals": 4,
+        "actors": 12,
+        "ammo": 3,
+        "reserve": 7,
+        "slot": 0,
+        "used": {
+          "4": true
+        },
+        "L": {
+          "slots": [
+            {
+              "t": "gun",
+              "id": "mp5a3"
+            },
+            {
+              "t": "ammo",
+              "w": "primary"
+            },
+            {
+              "t": "gun",
+              "id": "glock18c"
+            },
+            {
+              "t": "ammo",
+              "w": "pistol"
+            },
+            {
+              "t": "grenade",
+              "g": "m67"
+            },
+            {
+              "t": "grenade",
+              "g": "m84"
+            }
+          ],
+          "cfg": {},
+          "view": "akm"
+        },
+        "colliders": 371,
+        "allFinite": true,
+        "overlaps": [],
+        "sceneScripts": [
+          "http://localhost:8765/js/maps/angar_map.js"
+        ]
+      },
+      "live": {
+        "combat": {
+          "checks": 60,
+          "shots": 0,
+          "paths": 11,
+          "cachedNav": 395
+        },
+        "finite": true,
+        "pos": [
+          {
+            "key": "delta_1",
+            "pos": [
+              30.08692451603177,
+              0,
+              2.590374603993722
+            ]
+          },
+          {
+            "key": "delta_2",
+            "pos": [
+              32.419999999999995,
+              0.08,
+              0.5013247572837504
+            ]
+          },
+          {
+            "key": "delta_soldier_0",
+            "pos": [
+              32.419999999999995,
+              0.08,
+              0.49919464194251034
+            ]
+          },
+          {
+            "key": "delta_soldier_1",
+            "pos": [
+              31.32738940886793,
+              0.3,
+              2.6338303541099646
+            ]
+          },
+          {
+            "key": "delta_soldier_2",
+            "pos": [
+              30.76214936521585,
+              0.3,
+              2.626801327774142
+            ]
+          },
+          {
+            "key": "delta_soldier_3",
+            "pos": [
+              31.206958373587167,
+              0.3,
+              2.6399999999999997
+            ]
+          },
+          {
+            "key": "alpha_1",
+            "pos": [
+              -34,
+              0.08,
+              0
+            ]
+          },
+          {
+            "key": "alpha_2",
+            "pos": [
+              -26.978310901155957,
+              0,
+              2.4938148594324177
+            ]
+          },
+          {
+            "key": "alpha_soldier_0",
+            "pos": [
+              -27.00066030204618,
+              0,
+              2.4928463727095322
+            ]
+          },
+          {
+            "key": "alpha_soldier_1",
+            "pos": [
+              -30.022223684290246,
+              0,
+              2.4575930190496167
+            ]
+          },
+          {
+            "key": "alpha_soldier_2",
+            "pos": [
+              -27.644413165110535,
+              0,
+              2.490082049465031
+            ]
+          },
+          {
+            "key": "alpha_soldier_3",
+            "pos": [
+              -27.277833829378302,
+              0,
+              2.492538958660014
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "map": "forest_map_camp",
+        "state": {
+          "mode": "embodied",
+          "active": "alpha_1",
+          "selected": "alpha_1",
+          "locked": false,
+          "paused": true
+        },
+        "generals": 4,
+        "actors": 12,
+        "ammo": 3,
+        "reserve": 7,
+        "slot": 0,
+        "used": {
+          "4": true
+        },
+        "L": {
+          "slots": [
+            {
+              "t": "gun",
+              "id": "mp5a3"
+            },
+            {
+              "t": "ammo",
+              "w": "primary"
+            },
+            {
+              "t": "gun",
+              "id": "glock18c"
+            },
+            {
+              "t": "ammo",
+              "w": "pistol"
+            },
+            {
+              "t": "grenade",
+              "g": "m67"
+            },
+            {
+              "t": "grenade",
+              "g": "m84"
+            }
+          ],
+          "cfg": {},
+          "view": "akm"
+        },
+        "colliders": 5195,
+        "allFinite": true,
+        "overlaps": [],
+        "sceneScripts": [
+          "http://localhost:8765/js/maps/forest_map_camp.js"
+        ]
+      },
+      "live": {
+        "combat": {
+          "checks": 0,
+          "shots": 0,
+          "paths": 11,
+          "cachedNav": 3760
+        },
+        "finite": true,
+        "pos": [
+          {
+            "key": "delta_1",
+            "pos": [
+              76.08798688523798,
+              3.034138548198389,
+              -81.61674239881873
+            ]
+          },
+          {
+            "key": "delta_2",
+            "pos": [
+              76.06939437613528,
+              3.083753665181953,
+              -79.19417393739268
+            ]
+          },
+          {
+            "key": "delta_soldier_0",
+            "pos": [
+              76.03362386301382,
+              3.1180881620171887,
+              -80.5969155839734
+            ]
+          },
+          {
+            "key": "delta_soldier_1",
+            "pos": [
+              76.09048044234764,
+              3.0317901313656375,
+              -81.78884093450945
+            ]
+          },
+          {
+            "key": "delta_soldier_2",
+            "pos": [
+              76.6716330392365,
+              3.1018680851604725,
+              -84.00978412774131
+            ]
+          },
+          {
+            "key": "delta_soldier_3",
+            "pos": [
+              76.18473437629905,
+              3.089041028274516,
+              -82.97004233252973
+            ]
+          },
+          {
+            "key": "alpha_1",
+            "pos": [
+              -84,
+              3.035057306289673,
+              84
+            ]
+          },
+          {
+            "key": "alpha_2",
+            "pos": [
+              -76.48788827883116,
+              3.0265290142579913,
+              83.9429701735189
+            ]
+          },
+          {
+            "key": "alpha_soldier_0",
+            "pos": [
+              -76.30115570390474,
+              3.0169857346337907,
+              83.63993645159168
+            ]
+          },
+          {
+            "key": "alpha_soldier_1",
+            "pos": [
+              -76.41936827824543,
+              3.02489846825543,
+              83.8954895302196
+            ]
+          },
+          {
+            "key": "alpha_soldier_2",
+            "pos": [
+              -76.0752562225198,
+              3.0978957444806534,
+              79.53255326723213
+            ]
+          },
+          {
+            "key": "alpha_soldier_3",
+            "pos": [
+              -76.04066753308149,
+              3.1360593152254244,
+              80.51166636516355
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "map": null,
+        "state": {
+          "mode": "embodied",
+          "active": "alpha_1",
+          "selected": "alpha_1",
+          "locked": false,
+          "paused": true
+        },
+        "generals": 4,
+        "actors": 4,
+        "ammo": 3,
+        "reserve": 7,
+        "slot": 0,
+        "used": {
+          "4": true
+        },
+        "L": {
+          "slots": [
+            {
+              "t": "gun",
+              "id": "mp5a3"
+            },
+            {
+              "t": "ammo",
+              "w": "primary"
+            },
+            {
+              "t": "gun",
+              "id": "glock18c"
+            },
+            {
+              "t": "ammo",
+              "w": "pistol"
+            },
+            {
+              "t": "grenade",
+              "g": "m67"
+            },
+            {
+              "t": "grenade",
+              "g": "m84"
+            }
+          ],
+          "cfg": {},
+          "view": "akm"
+        },
+        "colliders": 769,
+        "allFinite": true,
+        "overlaps": [],
+        "sceneScripts": []
+      }
+    }
+  ]
+}

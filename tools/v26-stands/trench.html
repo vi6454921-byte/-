@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><title>AEGIS v26 · стенд «Траншея»</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#111}#info{position:fixed;left:8px;top:8px;z-index:9;font:12px monospace;color:#cfe;white-space:pre;pointer-events:none;text-shadow:0 0 3px #000}</style>
+</head><body>
+<div id="info">загрузка…</div>
+<script>
+/* Стенд деталей старой траншеи (17d_gloom_world.js: trenchDetail).
+   Рельеф — та же функция высот (GWorld._layout) на той же неравномерной
+   сетке, что в игре (HALF 125, SEG 300, EXP 1.6), высота для расстановки —
+   барицентрика по треугольникам сетки, как F.heightAt в игре.
+   ?view=along|over|bay|dug  &aa=0 */
+const QS = new URLSearchParams(location.search);
+const SRC = ['js/lib/three.min.js', 'js/polygon/02_util.js', 'js/polygon/06_textures.js', 'js/polygon/17_world.js', 'js/polygon/17d_gloom_world.js'];
+const ROOT = '../../';
+function load(i) {
+  if (i >= SRC.length) return start().catch((e) => { window.__STAND_ERR = String(e && e.stack || e); document.getElementById('info').textContent = window.__STAND_ERR; });
+  const s = document.createElement('script'); s.src = ROOT + SRC[i] + (QS.get('nc') ? '?' + Date.now() : '');
+  s.onload = () => load(i + 1); s.onerror = () => { window.__STAND_ERR = 'нет ' + SRC[i]; };
+  document.head.appendChild(s);
+}
+load(0);
+async function start() {
+  const T = THREE, view = QS.get('view') || 'along';
+  const R = new T.WebGLRenderer({ antialias: QS.get('aa') !== '0', preserveDrawingBuffer: true });
+  R.setPixelRatio(1); R.setSize(innerWidth, innerHeight);
+  R.toneMapping = T.AgXToneMapping; R.toneMappingExposure = 0.82; R.outputColorSpace = T.SRGBColorSpace;
+  R.shadowMap.enabled = true; R.shadowMap.type = T.PCFSoftShadowMap;
+  document.body.insertBefore(R.domElement, document.body.firstChild);
+  const scene = new T.Scene(), fogC = new T.Color(0x737b76);
+  scene.background = fogC; scene.fog = new T.FogExp2(fogC, 0.02);
+  const pm = new T.PMREMGenerator(R), es = new T.Scene(); es.background = new T.Color(0x8f9690);
+  scene.environment = pm.fromScene(es, 0.04).texture; scene.environmentIntensity = 0.82;
+  scene.add(new T.HemisphereLight(0xa9b0aa, 0x3c3a32, 0.85));
+  const sun = new T.DirectionalLight(0xdfe5e8, 0.9); sun.position.set(-10, 18, 28); sun.target.position.set(-16, 0, 19);
+  sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -0.0005; sun.shadow.normalBias = 0.03;
+  Object.assign(sun.shadow.camera, { left: -16, right: 16, top: 16, bottom: -16, near: 1, far: 80 }); sun.shadow.camera.updateProjectionMatrix();
+  scene.add(sun, sun.target);
+  const F = GWorld._layout();
+  /* сетка как в buildGround: x_i = warp(-1 + 2i/SEG) */
+  const HALF = 125, SEG = 300, EXP = 1.6, N1 = SEG + 1;
+  const warp = (u) => Math.sign(u) * Math.pow(Math.abs(u), EXP) * HALF;
+  const AX = []; for (let i = 0; i < N1; i++) AX.push(warp(-1 + 2 * i / SEG));
+  const idx = (v0, v1) => { const o = []; for (let i = 0; i < N1; i++) if (AX[i] >= v0 && AX[i] <= v1) o.push(i); return o; };
+  const IX = idx(-33, 1), IZ = idx(5, 35), nx = IX.length, nz = IZ.length;
+  const pos = [], col = [], uv = [], ind = [], HY = new Map();
+  for (let j = 0; j < nz; j++) for (let i = 0; i < nx; i++) {
+    const x = AX[IX[i]], z = AX[IZ[j]], y = F.heightAt(x, z);
+    HY.set(IZ[j] * N1 + IX[i], y);
+    pos.push(x, y, z); uv.push(x / 2.4, -z / 2.4);
+    const d = F.trenchD(x, z), wet = d < 0.5 ? 1 : d < 1.0 ? (1.0 - d) / 0.5 : 0;
+    col.push(0.62 - 0.3 * wet, 0.52 - 0.26 * wet, 0.42 - 0.22 * wet);
+  }
+  for (let j = 0; j < nz - 1; j++) for (let i = 0; i < nx - 1; i++) {
+    const a = j * nx + i, b = (j + 1) * nx + i, c = b + 1, d = a + 1;
+    ind.push(a, b, d, b, c, d);
+  }
+  const gg = new T.BufferGeometry();
+  gg.setAttribute('position', new T.Float32BufferAttribute(pos, 3));
+  gg.setAttribute('color', new T.Float32BufferAttribute(col, 3));
+  gg.setAttribute('uv', new T.Float32BufferAttribute(uv, 2));
+  gg.setIndex(ind); gg.computeVertexNormals();
+  let gmap = null;
+  try { const c = GTex.groundAlbedo(2024, 512); gmap = new T.CanvasTexture(c); gmap.wrapS = gmap.wrapT = T.RepeatWrapping; gmap.colorSpace = T.SRGBColorSpace; } catch (e) { /* без текстуры */ }
+  const ground = new T.Mesh(gg, new T.MeshStandardMaterial({ map: gmap, vertexColors: true, roughness: 1 }));
+  ground.receiveShadow = true; scene.add(ground);
+  const cell = (x) => { let i = 0; while (i < SEG - 1 && AX[i + 1] < x) i++; return i; };
+  const H = (x, z) => {
+    const ix = cell(x), iz = cell(z), s = (x - AX[ix]) / (AX[ix + 1] - AX[ix]), t = (z - AX[iz]) / (AX[iz + 1] - AX[iz]);
+    const a = iz * N1 + ix, b = a + N1, c = b + 1, d = a + 1, g = (k) => HY.has(k) ? HY.get(k) : F.heightAt(AX[k % N1], AX[Math.floor(k / N1)]);
+    if (s + t <= 1) return g(a) + s * (g(d) - g(a)) + t * (g(b) - g(a));
+    return g(c) + (1 - s) * (g(b) - g(c)) + (1 - t) * (g(d) - g(c));
+  };
+  const M = new GGloomWorld._Merge(), MW = new GGloomWorld._Merge();
+  const t0 = performance.now();
+  const st = GGloomWorld._trenchDetail(T, F, H, M, MW);
+  const geo = M.build(T), geoW = MW.build(T);
+  const t1 = performance.now();
+  const det = new T.Mesh(geo, new T.MeshStandardMaterial({ color: 0xffffff, vertexColors: true, roughness: 1, metalness: 0 }));
+  det.castShadow = det.receiveShadow = true; scene.add(det);
+  /* доски: в игре — текстура старого дерева стрельбища (rwood); здесь — процедурная */
+  let wmap = null;
+  try { wmap = new T.CanvasTexture(GTex.woodAlbedo(41, 256, [120, 112, 100])); wmap.wrapS = wmap.wrapT = T.RepeatWrapping; wmap.colorSpace = T.SRGBColorSpace; } catch (e) { /* */ }
+  const detW = new T.Mesh(geoW, new T.MeshStandardMaterial({ map: wmap, color: 0xbdb8ae, vertexColors: true, roughness: 1, metalness: 0 }));
+  detW.castShadow = detW.receiveShadow = true; scene.add(detW);
+  /* вода на дне (как лужи в игре — просто плоскость на уровне низа) */
+  const P = F.TRENCH.pts, cam = new T.PerspectiveCamera(62, innerWidth / innerHeight, 0.03, 200);
+  const mid = (i) => [(P[i][0] + P[i + 1][0]) / 2, (P[i][1] + P[i + 1][1]) / 2], n = [F.TRENCH.nx, F.TRENCH.nz];
+  if (view === 'along') { const a = P[1], b = P[2]; const dx = b[0] - a[0], dz = b[1] - a[1], l = Math.hypot(dx, dz);
+    cam.position.set(a[0] + dx / l * 0.2, H(a[0], a[1]) + 1.5, a[1] + dz / l * 0.2); cam.lookAt(b[0], H(b[0], b[1]) + 0.2, b[1]); }
+  else if (view === 'over') { cam.position.set(-21.5, 6.5, 9.5); cam.lookAt(-17, 0, 19); }
+  else if (view === 'bay') { const m = mid(1); cam.position.set(m[0] - n[0] * 2.6, H(m[0], m[1]) + 1.7, m[1] - n[1] * 2.6); cam.lookAt(m[0] + n[0] * 1.2, H(m[0], m[1]) - 0.1, m[1] + n[1] * 1.2); }
+  else if (view === 'bay4') { const m = mid(4); cam.position.set(m[0] - n[0] * 2.4 + 1.2, H(m[0], m[1]) + 1.6, m[1] - n[1] * 2.4); cam.lookAt(m[0] + n[0] * 0.8, H(m[0], m[1]) - 0.2, m[1] + n[1] * 0.8); }
+  else if (view === 'dug') { const d = F.TRENCH.dug; cam.position.set(d[0] + n[0] * 4.2, H(d[0], d[1]) + 1.6, d[1] + n[1] * 4.2 - 1.5); cam.lookAt(d[0] + n[0] * 1.5, H(d[0], d[1]), d[1] + n[1] * 1.5); }
+  R.render(scene, cam); R.render(scene, cam);
+  const tris = ((geo.attributes.position.count + geoW.attributes.position.count) / 3) | 0;
+  document.getElementById('info').textContent = 'view=' + view + '\nдетали траншеи: ' + tris + ' тр., ' + (t1 - t0).toFixed(1) + ' мс\n' + JSON.stringify(st) +
+    '\nкадр: ' + R.info.render.triangles + ' тр., ' + R.info.render.calls + ' вызовов';
+  window.__STAND_READY = true;
+}
+</script>
+</body></html>

@@ -1,0 +1,109 @@
+{
+  "patch": "deep-material-impacts-v3",
+  "materials": {
+    "concreteHashes": [
+      "27855c77698d3ebf44aa5ea9924db1d7d122ff05fc2f5a799994e5f5cae88955",
+      "74583705d91365ad5fa03ca4d3e5427b94fff076a770b583aaaeb58ae4735ea6",
+      "decb8af0b07fd84baa1ec76930631ecac06ffed611819b512493813610f7fa5e"
+    ],
+    "layers": {
+      "concrete": {
+        "variants": 6,
+        "heightMin": 0,
+        "heightMax": 255,
+        "coveredTexels": 5541,
+        "raisedTexels": 3314,
+        "deepTexels": 124,
+        "profile": 255,
+        "nominalPOMDepthMm": 17.976470588235294
+      },
+      "metal": {
+        "variants": 6,
+        "heightMin": 7,
+        "heightMax": 232,
+        "coveredTexels": 15291,
+        "raisedTexels": 239,
+        "deepTexels": 1725,
+        "profile": 1,
+        "nominalPOMDepthMm": 26.96470588235294
+      },
+      "wood": {
+        "variants": 6,
+        "heightMin": 3,
+        "heightMax": 251,
+        "coveredTexels": 11116,
+        "raisedTexels": 2977,
+        "deepTexels": 2516,
+        "profile": 2,
+        "nominalPOMDepthMm": 39.472941176470584
+      },
+      "paper": {
+        "variants": 4,
+        "heightMin": 15,
+        "heightMax": 239,
+        "coveredTexels": 11838,
+        "raisedTexels": 5138,
+        "deepTexels": 1915,
+        "profile": 3,
+        "nominalPOMDepthMm": 10.729411764705882
+      },
+      "fabric": {
+        "variants": 3,
+        "heightMin": 11,
+        "heightMax": 255,
+        "coveredTexels": 8462,
+        "raisedTexels": 2656,
+        "deepTexels": 1327,
+        "profile": 4,
+        "nominalPOMDepthMm": 16.136470588235294
+      },
+      "soil": {
+        "variants": 5,
+        "heightMin": 7,
+        "heightMax": 255,
+        "coveredTexels": 17348,
+        "raisedTexels": 5711,
+        "deepTexels": 5218,
+        "profile": 5,
+        "nominalPOMDepthMm": 43.858823529411765
+      }
+    },
+    "count": 6,
+    "wallTexturesUnchanged": true,
+    "views": [
+      {
+        "kind": "wood",
+        "changedPixels": 37417,
+        "totalRGBDifference": 3006368
+      },
+      {
+        "kind": "metal",
+        "changedPixels": 7873,
+        "totalRGBDifference": 426465
+      },
+      {
+        "kind": "paper",
+        "changedPixels": 3050,
+        "totalRGBDifference": 328624
+      },
+      {
+        "kind": "fabric",
+        "changedPixels": 4739,
+        "totalRGBDifference": 353024
+      },
+      {
+        "kind": "soil",
+        "changedPixels": 51496,
+        "totalRGBDifference": 2426418
+      },
+      {
+        "kind": "concrete",
+        "changedPixels": 8948,
+        "totalRGBDifference": 788077
+      }
+    ],
+    "errors": []
+  },
+  "reloadSourceUnchangedFromV2": true,
+  "limitations": "POM is view-dependent shader relief, not holes in collision geometry. Local Chromium SwiftShader tests are not physical GPU performance measurements."
+}

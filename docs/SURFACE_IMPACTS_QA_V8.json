@@ -1,0 +1,1889 @@
+{
+  "release": "18.4.7-surface-impacts-v8",
+  "core": {
+    "pass": true,
+    "cases": 15,
+    "rows": [
+      "per-mark linear tint attribute",
+      "removed owner clears mark",
+      "replaced source geometry clears mark",
+      "distant edit in merged mesh preserves unrelated mark",
+      "changed support triangles clear mark",
+      "unparented decal pool follows moving owner via local contact",
+      "hidden source suppresses mark; visibility restores without orphaning",
+      "detached ancestor clears mark",
+      "destroying one instance preserves the other mark",
+      "instance slot compaction does not teleport mark to another object",
+      "160 destroy/reuse cycles release ring and bindings",
+      "13 explicit map material aliases",
+      "material beats generic wall/hit name; dark and light host tints differ",
+      "wood fibre axis follows rotated triangle UV, not global up",
+      "texture albedo decoded once from sRGB into linear tint"
+    ]
+  },
+  "mapDestruction": {
+    "pass": true,
+    "maps": [
+      {
+        "result": {
+          "map": "angar_map",
+          "counts": {
+            "concrete": 124,
+            "fabric": 24,
+            "metal": 123,
+            "wood": 25,
+            "none": 7,
+            "soil": 5
+          },
+          "materials": {
+            "(unnamed)": "fallback",
+            "cable": "fabric",
+            "chrome": "metal",
+            "teamD": "metal",
+            "plastO": "metal",
+            "rubber": "fabric",
+            "foam": "fabric",
+            "conc": "concrete",
+            "palette:0.83|0.35|0|metal": "metal",
+            "panel": "concrete",
+            "palette:0.67|0.35|0|metal": "metal",
+            "corr": "metal",
+            "steel": "metal",
+            "roof": "metal",
+            "wood": "wood",
+            "osb": "wood",
+            "osb2": "wood",
+            "grating": "metal",
+            "hazard": "metal",
+            "palette:0.83|0.05|0|fabric": "fabric",
+            "woodDark": "wood",
+            "palette:0.50|0.35|0|concrete": "concrete",
+            "plywood": "wood",
+            "glass": "none",
+            "palette:0.67|0.05|0|concrete": "concrete",
+            "hesco": "fabric",
+            "palette:1.00|0.05|0|soil": "soil",
+            "hescoMesh": "fabric",
+            "sandbag": "fabric",
+            "palette:0.17|0.85|0|metal": "metal",
+            "palette:0.33|0.85|0|concrete": "concrete",
+            "palette:0.67|0.35|0|concrete": "concrete",
+            "palette:0.83|0.35|0|concrete": "concrete",
+            "palette:0.50|0.35|0|metal": "metal",
+            "palette:1.00|0.05|1|concrete": "concrete",
+            "palette:0.50|0.35|0|soil": "soil",
+            "palette:1.00|0.05|0|concrete": "concrete",
+            "carGlass": "none",
+            "headlamp": "metal",
+            "lightRed": "fallback",
+            "palette:1.00|0.05|0|fabric": "fabric",
+            "helipad": "concrete",
+            "lightAmb": "fallback",
+            "palette:1.00|0.05|2|concrete": "concrete",
+            "palette:0.83|0.05|0|concrete": "concrete",
+            "palette:0.50|0.05|0|concrete": "concrete",
+            "palette:0.50|0.85|2|concrete": "concrete",
+            "palette:0.83|0.05|2|concrete": "concrete",
+            "palette:0.50|0.85|0|concrete": "concrete",
+            "palette:0.67|0.05|0|metal": "metal"
+          },
+          "untyped": [
+            "(unnamed)",
+            "lightRed",
+            "lightAmb"
+          ],
+          "rows": [
+            {
+              "test": "native-bullet-destruction-removes-projected-mark",
+              "sourceKind": "wood",
+              "tint": [
+                0.8756256699562073,
+                0.8784499168395996,
+                0.8229662179946899
+              ],
+              "before": 1,
+              "after": 0,
+              "destroyed": true,
+              "sourceChanged": true,
+              "mesh": "baked_bucket"
+            }
+          ],
+          "colorSamples": [
+            {
+              "kind": "metal",
+              "material": "",
+              "color": [
+                0.2704977910022518,
+                0.2874408377161099,
+                0.3139887133649649
+              ],
+              "tint": [
+                1.0819911640090072,
+                1.1497633508644396,
+                1.2559548534598597
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "",
+              "color": [
+                0.2704977910022518,
+                0.2874408377161099,
+                0.3139887133649649
+              ],
+              "tint": [
+                1.0819911640090072,
+                1.1497633508644396,
+                1.2559548534598597
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "",
+              "color": [
+                0.2704977910022518,
+                0.2874408377161099,
+                0.3139887133649649
+              ],
+              "tint": [
+                1.0819911640090072,
+                1.1497633508644396,
+                1.2559548534598597
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "",
+              "color": [
+                0.3231432091022285,
+                0.3515325994898463,
+                0.3813260114221238
+              ],
+              "tint": [
+                1.292572836408914,
+                1.406130397959385,
+                1.5253040456884952
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "",
+              "color": [
+                0.2704977910022518,
+                0.2874408377161099,
+                0.3139887133649649
+              ],
+              "tint": [
+                1.0819911640090072,
+                1.1497633508644396,
+                1.2559548534598597
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "",
+              "color": [
+                1,
+                1,
+                1
+              ],
+              "tint": [
+                4,
+                4,
+                4
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "",
+              "color": [
+                0,
+                0,
+                0
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "",
+              "color": [
+                0.015996293361446288,
+                0.015996293361446288,
+                0.015996293361446288
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "",
+              "color": [
+                0,
+                0,
+                0
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "",
+              "color": [
+                0.6938717612856897,
+                0.7304607400847158,
+                0.7758222183126458
+              ],
+              "tint": [
+                2.775487045142759,
+                2.9218429603388634,
+                3.103288873250583
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "",
+              "color": [
+                0.0722718506743852,
+                0.08865558627723595,
+                0.036889450395083165
+              ],
+              "tint": [
+                0.2890874026975408,
+                0.3546223451089438,
+                0.14755780158033266
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "teamD",
+              "color": [
+                0.07818742179702069,
+                0.10224173307914941,
+                0.04231141061442144
+              ],
+              "tint": [
+                0.31274968718808277,
+                0.40896693231659764,
+                0.16924564245768575
+              ]
+            }
+          ]
+        },
+        "errors": []
+      },
+      {
+        "result": {
+          "map": "forest_map_camp",
+          "counts": {
+            "wood": 233,
+            "none": 242,
+            "concrete": 504,
+            "metal": 492,
+            "fabric": 44,
+            "soil": 44,
+            "paper": 4
+          },
+          "materials": {
+            "barkSpruce": "wood",
+            "spruce": "none",
+            "barkPine": "wood",
+            "pine": "none",
+            "barkBirch": "wood",
+            "birch": "none",
+            "(unnamed)": "fallback",
+            "fern": "none",
+            "shrub": "none",
+            "bush": "none",
+            "flora": "none",
+            "grass": "none",
+            "blades": "none",
+            "reed": "none",
+            "planksDark": "wood",
+            "planks": "wood",
+            "deadwood": "wood",
+            "planksPaint": "wood",
+            "roofRust": "metal",
+            "stone": "concrete",
+            "canvas": "fabric",
+            "flagRag": "fabric",
+            "camo": "fabric",
+            "dark": "metal",
+            "lampGlass": "none",
+            "wire": "metal",
+            "peat": "soil",
+            "bogFlora": "none",
+            "sack": "fabric",
+            "concrete": "concrete",
+            "brick": "concrete",
+            "glass": "none",
+            "rust": "metal",
+            "olive": "metal",
+            "paperAtlas": "paper",
+            "crate": "wood",
+            "holes": "none",
+            "roofTar": "fabric",
+            "boardT": "wood",
+            "logWall": "wood",
+            "logEnd": "wood",
+            "steel": "metal",
+            "rubber": "fabric",
+            "planksCamp": "wood",
+            "planksWhite": "wood",
+            "roofCamp": "metal",
+            "planksCream": "wood",
+            "steelPipe": "metal",
+            "signDining": "wood",
+            "signWC": "wood",
+            "signGate": "wood",
+            "wolf": "fallback",
+            "paintRed": "metal",
+            "signWash": "wood",
+            "rope": "fabric",
+            "plaster": "concrete",
+            "signMotto": "wood",
+            "stumpTop": "wood",
+            "wattle": "wood",
+            "barkLog": "wood",
+            "dirtMound": "soil",
+            "burnt": "wood",
+            "coals": "none",
+            "charLog": "wood",
+            "towerSteel": "metal",
+            "grate": "metal",
+            "tankCamp": "metal",
+            "tankGrey": "metal",
+            "heli": "metal",
+            "heliNum": "metal",
+            "armorBurnt": "metal",
+            "armor": "metal",
+            "brass": "metal",
+            "depotPaint": "metal",
+            "depotPaintDark": "metal",
+            "fireRed": "none",
+            "bone": "fallback"
+          },
+          "untyped": [
+            "(unnamed)",
+            "wolf",
+            "bone"
+          ],
+          "rows": [
+            {
+              "test": "native-bullet-destruction-removes-projected-mark",
+              "sourceKind": "wood",
+              "tint": [
+                0.11999999731779099,
+                0.25358542799949646,
+                0.3891448378562927
+              ],
+              "before": 1,
+              "after": 0,
+              "destroyed": true,
+              "sourceChanged": true,
+              "mesh": "static"
+            }
+          ],
+          "colorSamples": [
+            {
+              "kind": "wood",
+              "material": "planksDark",
+              "color": [
+                0.01850022012401665,
+                0.012286488353353374,
+                0.008023192982520563
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "kind": "wood",
+              "material": "planksDark",
+              "color": [
+                0.01850022012401665,
+                0.012286488353353374,
+                0.008023192982520563
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "kind": "wood",
+              "material": "planksDark",
+              "color": [
+                0.01850022012401665,
+                0.012286488353353374,
+                0.008023192982520563
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "kind": "wood",
+              "material": "planks",
+              "color": [
+                0.02955683443236377,
+                0.024157632443547246,
+                0.01764195448412081
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12601396060086292
+              ]
+            },
+            {
+              "kind": "wood",
+              "material": "planks",
+              "color": [
+                0.02955683443236377,
+                0.024157632443547246,
+                0.01764195448412081
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12601396060086292
+              ]
+            },
+            {
+              "kind": "wood",
+              "material": "planksDark",
+              "color": [
+                0.01850022012401665,
+                0.012286488353353374,
+                0.008023192982520563
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "kind": "wood",
+              "material": "planks",
+              "color": [
+                0.02955683443236377,
+                0.024157632443547246,
+                0.01764195448412081
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12601396060086292
+              ]
+            },
+            {
+              "kind": "wood",
+              "material": "planksDark",
+              "color": [
+                0.01850022012401665,
+                0.012286488353353374,
+                0.008023192982520563
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "kind": "wood",
+              "material": "planksDark",
+              "color": [
+                0.01850022012401665,
+                0.012286488353353374,
+                0.008023192982520563
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "kind": "wood",
+              "material": "planksDark",
+              "color": [
+                0.01850022012401665,
+                0.012286488353353374,
+                0.008023192982520563
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "kind": "wood",
+              "material": "planks",
+              "color": [
+                0.02955683443236377,
+                0.024157632443547246,
+                0.01764195448412081
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12601396060086292
+              ]
+            },
+            {
+              "kind": "wood",
+              "material": "planksDark",
+              "color": [
+                0.01850022012401665,
+                0.012286488353353374,
+                0.008023192982520563
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12
+              ]
+            }
+          ]
+        },
+        "errors": []
+      },
+      {
+        "result": {
+          "map": "stroyka_zarechye_v2",
+          "counts": {
+            "wood": 111,
+            "none": 464,
+            "metal": 314,
+            "concrete": 278,
+            "fabric": 34,
+            "soil": 24,
+            "paper": 8
+          },
+          "materials": {
+            "barkSpruce": "wood",
+            "spruce": "none",
+            "barkPine": "wood",
+            "pine": "none",
+            "barkBirch": "wood",
+            "birch": "none",
+            "(unnamed)": "fallback",
+            "fern": "none",
+            "shrub": "none",
+            "bush": "none",
+            "flora": "none",
+            "grass": "none",
+            "blades": "none",
+            "hgCont3": "metal",
+            "hgSheetG": "metal",
+            "hgRib": "metal",
+            "steel": "metal",
+            "hgHazard": "metal",
+            "dark": "metal",
+            "planksPaint": "wood",
+            "hgCabin": "metal",
+            "hgYellow": "metal",
+            "grate": "metal",
+            "hgConc": "concrete",
+            "hgGlassDark": "none",
+            "lampGlass": "none",
+            "planksDark": "wood",
+            "planks": "wood",
+            "planksGreen": "wood",
+            "film": "fabric",
+            "planksBlue": "wood",
+            "camo": "fabric",
+            "wire": "metal",
+            "reed": "none",
+            "sack": "fabric",
+            "hgFloor": "concrete",
+            "hgSheet": "metal",
+            "hgSheet2": "metal",
+            "hgPoly": "metal",
+            "hgWall": "metal",
+            "hgExit": "metal",
+            "hgSignA": "metal",
+            "hgAn": "metal",
+            "hgAnLight": "metal",
+            "hgRed": "metal",
+            "rubber": "fabric",
+            "paintRed": "metal",
+            "plaster": "concrete",
+            "olive": "metal",
+            "rust": "metal",
+            "hgPaintY": "metal",
+            "hgPaintW": "metal",
+            "hgOil": "metal",
+            "crate": "wood",
+            "steelPipe": "metal",
+            "burnt": "wood",
+            "coals": "none",
+            "charLog": "wood",
+            "hgChain": "metal",
+            "hgStripe": "metal",
+            "hgBrick": "concrete",
+            "roofTar": "fabric",
+            "hgSignKPP": "metal",
+            "hgSignB": "metal",
+            "hgCont1": "metal",
+            "hgCont2": "metal",
+            "dirtMound": "soil",
+            "hgApron": "concrete",
+            "concrete": "concrete",
+            "logWall": "wood",
+            "holes": "none",
+            "planksWhite": "wood",
+            "glass": "none",
+            "logEnd": "wood",
+            "roofShingle": "concrete",
+            "canvas": "fabric",
+            "nal": "metal",
+            "whitewash": "concrete",
+            "brick": "concrete",
+            "planksGrey": "wood",
+            "roofRust": "metal",
+            "deadwood": "wood",
+            "soil": "soil",
+            "leafLilac": "none",
+            "leafApple": "none",
+            "apple": "none",
+            "fireweed": "none",
+            "roofSlate": "concrete",
+            "galv": "metal",
+            "planksOchre": "wood",
+            "stone": "concrete",
+            "vsign": "paper",
+            "pondWater": "none",
+            "puddle": "none",
+            "rope": "fabric",
+            "zoneSign": "paper",
+            "stumpTop": "wood",
+            "barkLog": "wood",
+            "hayV": "none",
+            "hayFringe": "none",
+            "hogweed": "none",
+            "umbel": "none",
+            "leafBirch": "none",
+            "heli": "metal",
+            "heliNum": "metal",
+            "armorBurnt": "metal",
+            "paperAtlas": "paper",
+            "armor": "metal",
+            "brass": "metal",
+            "depotPaint": "metal",
+            "depotPaintDark": "metal",
+            "fireRed": "none",
+            "tankGrey": "metal",
+            "hay": "none",
+            "towerSteel": "metal",
+            "towerRed": "metal",
+            "bone": "fallback"
+          },
+          "untyped": [
+            "(unnamed)",
+            "bone"
+          ],
+          "rows": [
+            {
+              "test": "native-bullet-destruction-removes-projected-mark",
+              "sourceKind": "metal",
+              "tint": [
+                0.7378999590873718,
+                0.7922772765159607,
+                0.711553692817688
+              ],
+              "before": 1,
+              "after": 0,
+              "destroyed": true,
+              "sourceChanged": true,
+              "mesh": "static"
+            }
+          ],
+          "colorSamples": [
+            {
+              "kind": "metal",
+              "material": "hgCont3",
+              "color": [
+                0.10946171076915331,
+                0.08650046202808521,
+                0.04231141061442144
+              ],
+              "tint": [
+                0.43784684307661326,
+                0.34600184811234086,
+                0.16924564245768575
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "hgCont3",
+              "color": [
+                0.10946171076915331,
+                0.08650046202808521,
+                0.04231141061442144
+              ],
+              "tint": [
+                0.43784684307661326,
+                0.34600184811234086,
+                0.16924564245768575
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "hgSheetG",
+              "color": [
+                0.06480326668529614,
+                0.09989872823822872,
+                0.057805430183792694
+              ],
+              "tint": [
+                0.25921306674118455,
+                0.3995949129529149,
+                0.23122172073517078
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "hgRib",
+              "color": [
+                0.14126329113044458,
+                0.046665086330219256,
+                0.01764195448412081
+              ],
+              "tint": [
+                0.5650531645217783,
+                0.18666034532087702,
+                0.12
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "steel",
+              "color": [
+                0.04518620437910499,
+                0.04817182422013895,
+                0.04817182422013895
+              ],
+              "tint": [
+                0.18074481751641996,
+                0.1926872968805558,
+                0.1926872968805558
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "hgHazard",
+              "color": [
+                0.6938717612856897,
+                0.3967552307153359,
+                0.011612245176281512
+              ],
+              "tint": [
+                2.775487045142759,
+                1.5870209228613437,
+                0.12
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "dark",
+              "color": [
+                0.011612245176281512,
+                0.012286488353353374,
+                0.011612245176281512
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "hgSheetG",
+              "color": [
+                0.06480326668529614,
+                0.09989872823822872,
+                0.057805430183792694
+              ],
+              "tint": [
+                0.25921306674118455,
+                0.3995949129529149,
+                0.23122172073517078
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "hgRib",
+              "color": [
+                0.14126329113044458,
+                0.046665086330219256,
+                0.01764195448412081
+              ],
+              "tint": [
+                0.5650531645217783,
+                0.18666034532087702,
+                0.12
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "steel",
+              "color": [
+                0.04518620437910499,
+                0.04817182422013895,
+                0.04817182422013895
+              ],
+              "tint": [
+                0.18074481751641996,
+                0.1926872968805558,
+                0.1926872968805558
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "hgHazard",
+              "color": [
+                0.6938717612856897,
+                0.3967552307153359,
+                0.011612245176281512
+              ],
+              "tint": [
+                2.775487045142759,
+                1.5870209228613437,
+                0.12
+              ]
+            },
+            {
+              "kind": "metal",
+              "material": "dark",
+              "color": [
+                0.011612245176281512,
+                0.012286488353353374,
+                0.011612245176281512
+              ],
+              "tint": [
+                0.12,
+                0.12,
+                0.12
+              ]
+            }
+          ]
+        },
+        "errors": []
+      }
+    ]
+  },
+  "colorWebGL": {
+    "pass": true,
+    "result": {
+      "count": 12,
+      "samples": [
+        {
+          "kind": "wood",
+          "color": 3416852,
+          "tint": [
+            0.12,
+            0.12,
+            0.12
+          ]
+        },
+        {
+          "kind": "wood",
+          "color": 14269068,
+          "tint": [
+            1.576981275649295,
+            1.7228801748718794,
+            1.8732189822777687
+          ]
+        },
+        {
+          "kind": "wood",
+          "color": 5467489,
+          "tint": [
+            0.19659195915473912,
+            0.536582989425025,
+            0.8538459141353942
+          ]
+        },
+        {
+          "kind": "wood",
+          "color": 9064247,
+          "tint": [
+            0.5776183961818855,
+            0.2743418308667393,
+            0.27288836849454284
+          ]
+        },
+        {
+          "kind": "metal",
+          "color": 3558460,
+          "tint": [
+            0.23122172073517078,
+            0.3903493885321798,
+            0.26650375454432557
+          ]
+        },
+        {
+          "kind": "metal",
+          "color": 7502981,
+          "tint": [
+            0.7922772781976655,
+            0.9382023286010467,
+            1.065422419168202
+          ]
+        },
+        {
+          "kind": "concrete",
+          "color": 7828847,
+          "tint": [
+            0.469261956746183,
+            0.4741747048514677,
+            0.490260724949531
+          ]
+        },
+        {
+          "kind": "concrete",
+          "color": 10246466,
+          "tint": [
+            0.7962012947572447,
+            0.28963109187746583,
+            0.20048056871030945
+          ]
+        },
+        {
+          "kind": "fabric",
+          "color": 5989707,
+          "tint": [
+            0.4921048946079491,
+            0.6911340654381477,
+            0.5956716663888493
+          ]
+        },
+        {
+          "kind": "fabric",
+          "color": 10851692,
+          "tint": [
+            1.5082970810797443,
+            1.4454414623282341,
+            1.1322765264967687
+          ]
+        },
+        {
+          "kind": "soil",
+          "color": 5324843,
+          "tint": [
+            0.6841356923072082,
+            0.6746688033830789,
+            0.6294645677008767
+          ]
+        },
+        {
+          "kind": "paper",
+          "color": 14142641,
+          "tint": [
+            0.8673397016071122,
+            0.8103381709968779,
+            0.6981847703023027
+          ]
+        }
+      ],
+      "programs": [
+        {},
+        {}
+      ]
+    },
+    "errors": []
+  },
+  "materialRelief": {
+    "concreteHashes": [
+      "27855c77698d3ebf44aa5ea9924db1d7d122ff05fc2f5a799994e5f5cae88955",
+      "74583705d91365ad5fa03ca4d3e5427b94fff076a770b583aaaeb58ae4735ea6",
+      "decb8af0b07fd84baa1ec76930631ecac06ffed611819b512493813610f7fa5e"
+    ],
+    "layers": {
+      "concrete": {
+        "variants": 6,
+        "heightMin": 0,
+        "heightMax": 255,
+        "coveredTexels": 5541,
+        "raisedTexels": 3314,
+        "deepTexels": 124,
+        "profile": 255,
+        "nominalPOMDepthMm": 17.976470588235294
+      },
+      "metal": {
+        "variants": 6,
+        "heightMin": 7,
+        "heightMax": 232,
+        "coveredTexels": 15291,
+        "raisedTexels": 239,
+        "deepTexels": 1725,
+        "profile": 1,
+        "nominalPOMDepthMm": 26.96470588235294
+      },
+      "wood": {
+        "variants": 6,
+        "heightMin": 3,
+        "heightMax": 251,
+        "coveredTexels": 11116,
+        "raisedTexels": 2977,
+        "deepTexels": 2516,
+        "profile": 2,
+        "nominalPOMDepthMm": 39.472941176470584
+      },
+      "paper": {
+        "variants": 4,
+        "heightMin": 15,
+        "heightMax": 239,
+        "coveredTexels": 11838,
+        "raisedTexels": 5138,
+        "deepTexels": 1915,
+        "profile": 3,
+        "nominalPOMDepthMm": 10.729411764705882
+      },
+      "fabric": {
+        "variants": 3,
+        "heightMin": 11,
+        "heightMax": 255,
+        "coveredTexels": 8462,
+        "raisedTexels": 2656,
+        "deepTexels": 1327,
+        "profile": 4,
+        "nominalPOMDepthMm": 16.136470588235294
+      },
+      "soil": {
+        "variants": 5,
+        "heightMin": 7,
+        "heightMax": 255,
+        "coveredTexels": 17348,
+        "raisedTexels": 5711,
+        "deepTexels": 5218,
+        "profile": 5,
+        "nominalPOMDepthMm": 43.858823529411765
+      }
+    },
+    "count": 6,
+    "wallTexturesUnchanged": true,
+    "views": [
+      {
+        "kind": "wood",
+        "changedPixels": 37417,
+        "totalRGBDifference": 3006368
+      },
+      {
+        "kind": "metal",
+        "changedPixels": 7873,
+        "totalRGBDifference": 426465
+      },
+      {
+        "kind": "paper",
+        "changedPixels": 3050,
+        "totalRGBDifference": 328624
+      },
+      {
+        "kind": "fabric",
+        "changedPixels": 4739,
+        "totalRGBDifference": 353024
+      },
+      {
+        "kind": "soil",
+        "changedPixels": 51496,
+        "totalRGBDifference": 2426418
+      },
+      {
+        "kind": "concrete",
+        "changedPixels": 8948,
+        "totalRGBDifference": 788077
+      }
+    ],
+    "errors": []
+  },
+  "legacyFX": {
+    "result": {
+      "tracks": [
+        {
+          "id": "ak74",
+          "mode": "tactical",
+          "keys": 15,
+          "maxAngularStepDeg": 8.950834698705318
+        },
+        {
+          "id": "ak74",
+          "mode": "empty",
+          "keys": 18,
+          "maxAngularStepDeg": 10.418176113570354
+        },
+        {
+          "id": "akm",
+          "mode": "tactical",
+          "keys": 15,
+          "maxAngularStepDeg": 9.25020217248028
+        },
+        {
+          "id": "akm",
+          "mode": "empty",
+          "keys": 18,
+          "maxAngularStepDeg": 10.33216661026385
+        },
+        {
+          "id": "m416",
+          "mode": "tactical",
+          "keys": 9,
+          "maxAngularStepDeg": 3.6527991444439114
+        },
+        {
+          "id": "m416",
+          "mode": "empty",
+          "keys": 12,
+          "maxAngularStepDeg": 4.5713853982168775
+        },
+        {
+          "id": "scar",
+          "mode": "tactical",
+          "keys": 9,
+          "maxAngularStepDeg": 3.393290751931959
+        },
+        {
+          "id": "scar",
+          "mode": "empty",
+          "keys": 12,
+          "maxAngularStepDeg": 4.5713853982168775
+        },
+        {
+          "id": "svd",
+          "mode": "tactical",
+          "keys": 15,
+          "maxAngularStepDeg": 6.660968036351008
+        },
+        {
+          "id": "svd",
+          "mode": "empty",
+          "keys": 18,
+          "maxAngularStepDeg": 11.248942595943868
+        },
+        {
+          "id": "m870",
+          "mode": "pump",
+          "keys": 22,
+          "maxAngularStepDeg": 10.5523704171307
+        },
+        {
+          "id": "mp5a3",
+          "mode": "tactical",
+          "keys": 9,
+          "maxAngularStepDeg": 4.455886188530593
+        },
+        {
+          "id": "mp5a3",
+          "mode": "empty",
+          "keys": 15,
+          "maxAngularStepDeg": 11.949403849507057
+        },
+        {
+          "id": "ar15m4",
+          "mode": "tactical",
+          "keys": 9,
+          "maxAngularStepDeg": 4.388473132032405
+        },
+        {
+          "id": "ar15m4",
+          "mode": "empty",
+          "keys": 12,
+          "maxAngularStepDeg": 4.5713853982168775
+        },
+        {
+          "id": "glock21",
+          "mode": "tactical",
+          "keys": 9,
+          "maxAngularStepDeg": 4.85791495934584
+        },
+        {
+          "id": "glock21",
+          "mode": "empty",
+          "keys": 12,
+          "maxAngularStepDeg": 7.483137587322549
+        },
+        {
+          "id": "glock18c",
+          "mode": "tactical",
+          "keys": 9,
+          "maxAngularStepDeg": 4.681810099701519
+        },
+        {
+          "id": "glock18c",
+          "mode": "empty",
+          "keys": 12,
+          "maxAngularStepDeg": 7.244797332358585
+        }
+      ],
+      "fumbles": [
+        {
+          "id": "ak74",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "ak74",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "akm",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "akm",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "m416",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "m416",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "scar",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "scar",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "svd",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "svd",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "mp5a3",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "mp5a3",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "ar15m4",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "ar15m4",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "glock21",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "glock21",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "glock18c",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "glock18c",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        }
+      ],
+      "initial": 5,
+      "afterInstance": 6,
+      "movingFollow": true,
+      "capped": 50,
+      "disposed": true,
+      "programs": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    "errors": []
+  },
+  "gameSmoke": {
+    "result": {
+      "shotHit": true,
+      "afterShot": 2,
+      "reloadStarted": true,
+      "reloadFinished": true,
+      "mag": 29,
+      "chamber": 1,
+      "before": 0,
+      "after": 1,
+      "squad": 24,
+      "finite": true,
+      "module": true,
+      "world": "angar_map",
+      "marks": 2
+    },
+    "errors": []
+  },
+  "npcCore": {
+    "pass": true,
+    "turnCases": 16,
+    "steeringFrameCases": 20,
+    "rows": [
+      {
+        "dt": 0.008333333333333333,
+        "alert": false,
+        "wrap": false,
+        "maxSpeed": 3.000000000000016,
+        "maxAcceleration": 11.000000000004917,
+        "error": 6.717261369360016e-08
+      },
+      {
+        "dt": 0.008333333333333333,
+        "alert": false,
+        "wrap": true,
+        "maxSpeed": 1.252430555555577,
+        "maxAcceleration": 11.000000000004917,
+        "error": 5.848337598787831e-10
+      },
+      {
+        "dt": 0.008333333333333333,
+        "alert": true,
+        "wrap": false,
+        "maxSpeed": 4.200000000000017,
+        "maxAcceleration": 18.000000000002814,
+        "error": 1.7852386235972517e-13
+      },
+      {
+        "dt": 0.008333333333333333,
+        "alert": true,
+        "wrap": true,
+        "maxSpeed": 1.800000000000015,
+        "maxAcceleration": 18.000000000002814,
+        "error": 2.9094646189298464e-15
+      },
+      {
+        "dt": 0.016666666666666666,
+        "alert": false,
+        "wrap": false,
+        "maxSpeed": 3.0000000000000027,
+        "maxAcceleration": 11.00000000000172,
+        "error": 6.717261369360016e-08
+      },
+      {
+        "dt": 0.016666666666666666,
+        "alert": false,
+        "wrap": true,
+        "maxSpeed": 1.2220486111111217,
+        "maxAcceleration": 11.00000000000172,
+        "error": 5.848337598787831e-10
+      },
+      {
+        "dt": 0.016666666666666666,
+        "alert": true,
+        "wrap": false,
+        "maxSpeed": 4.200000000000017,
+        "maxAcceleration": 18.000000000001215,
+        "error": 1.7852386235972517e-13
+      },
+      {
+        "dt": 0.016666666666666666,
+        "alert": true,
+        "wrap": true,
+        "maxSpeed": 1.7250000000000032,
+        "maxAcceleration": 18.000000000001215,
+        "error": 2.9094646189298464e-15
+      },
+      {
+        "dt": 0.03333333333333333,
+        "alert": false,
+        "wrap": false,
+        "maxSpeed": 3.0000000000000027,
+        "maxAcceleration": 11.00000000000012,
+        "error": 6.717261369360016e-08
+      },
+      {
+        "dt": 0.03333333333333333,
+        "alert": false,
+        "wrap": true,
+        "maxSpeed": 1.1986447181230764,
+        "maxAcceleration": 11.00000000000012,
+        "error": 5.848337598787831e-10
+      },
+      {
+        "dt": 0.03333333333333333,
+        "alert": true,
+        "wrap": false,
+        "maxSpeed": 4.200000000000017,
+        "maxAcceleration": 18.000000000000416,
+        "error": 1.7852386235972517e-13
+      },
+      {
+        "dt": 0.03333333333333333,
+        "alert": true,
+        "wrap": true,
+        "maxSpeed": 1.6097792592592564,
+        "maxAcceleration": 18.000000000000416,
+        "error": 2.9094646189298464e-15
+      },
+      {
+        "dt": 0.05,
+        "alert": false,
+        "wrap": false,
+        "maxSpeed": 3.0000000000000027,
+        "maxAcceleration": 11.000000000000018,
+        "error": 6.717261369360016e-08
+      },
+      {
+        "dt": 0.05,
+        "alert": false,
+        "wrap": true,
+        "maxSpeed": 1.1588779582026731,
+        "maxAcceleration": 11.000000000000298,
+        "error": 5.848337598787831e-10
+      },
+      {
+        "dt": 0.05,
+        "alert": true,
+        "wrap": false,
+        "maxSpeed": 4.200000000000017,
+        "maxAcceleration": 18,
+        "error": 1.7852386235972517e-13
+      },
+      {
+        "dt": 0.05,
+        "alert": true,
+        "wrap": true,
+        "maxSpeed": 1.5084199550068522,
+        "maxAcceleration": 17.99999999999997,
+        "error": 2.9094646189298464e-15
+      }
+    ]
+  },
+  "ragdollCore": {
+    "pass": true,
+    "rows": [
+      {
+        "test": "catch-without-fall",
+        "dt": 0.016666666666666666,
+        "direction": [
+          1,
+          0,
+          0
+        ],
+        "maxLean": 0.16958915685551615
+      },
+      {
+        "test": "catch-without-fall",
+        "dt": 0.016666666666666666,
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "maxLean": 0.18500635293329035
+      },
+      {
+        "test": "catch-without-fall",
+        "dt": 0.03333333333333333,
+        "direction": [
+          1,
+          0,
+          0
+        ],
+        "maxLean": 0.16705091542591385
+      },
+      {
+        "test": "catch-without-fall",
+        "dt": 0.03333333333333333,
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "maxLean": 0.18223736228281512
+      },
+      {
+        "test": "catch-without-fall",
+        "dt": 0.05,
+        "direction": [
+          1,
+          0,
+          0
+        ],
+        "maxLean": 0.1649062912354973
+      },
+      {
+        "test": "catch-without-fall",
+        "dt": 0.05,
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "maxLean": 0.17989777225690615
+      },
+      {
+        "test": "fall-and-get-up",
+        "dt": 0.016666666666666666,
+        "speed": 0,
+        "maxGap": 0.00016874749102260586,
+        "maxSpeed": 4.8910855135341205,
+        "minY": 0.025908062234520912,
+        "displacement": 0.9709730330483536,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.016666666666666666
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.6166666666666658
+          },
+          {
+            "name": "recovered",
+            "time": 3.383333333333326
+          }
+        ]
+      },
+      {
+        "test": "fall-and-get-up",
+        "dt": 0.016666666666666666,
+        "speed": 4.55,
+        "maxGap": 0.016540375609598965,
+        "maxSpeed": 8.181862937725667,
+        "minY": 0.02648313157260418,
+        "displacement": 2.833780628376127,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.016666666666666666
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.6166666666666658
+          },
+          {
+            "name": "recovered",
+            "time": 3.383333333333326
+          }
+        ]
+      },
+      {
+        "test": "fall-and-get-up",
+        "dt": 0.03333333333333333,
+        "speed": 0,
+        "maxGap": 0.0001037574912680475,
+        "maxSpeed": 4.889484540208957,
+        "minY": 0.03507428616285324,
+        "displacement": 0.9529270839852589,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.03333333333333333
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.633333333333335
+          },
+          {
+            "name": "recovered",
+            "time": 3.3999999999999977
+          }
+        ]
+      },
+      {
+        "test": "fall-and-get-up",
+        "dt": 0.03333333333333333,
+        "speed": 4.55,
+        "maxGap": 0.00039598569229937604,
+        "maxSpeed": 8.197670707911353,
+        "minY": 0.03720029443502426,
+        "displacement": 3.2459073993288996,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.03333333333333333
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.933333333333336
+          },
+          {
+            "name": "recovered",
+            "time": 3.6999999999999966
+          }
+        ]
+      },
+      {
+        "test": "fall-and-get-up",
+        "dt": 0.05,
+        "speed": 0,
+        "maxGap": 4.443446872170004e-05,
+        "maxSpeed": 4.742164404652146,
+        "minY": 0.029239393770694733,
+        "displacement": 1.030167046105239,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.05
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.6500000000000008
+          },
+          {
+            "name": "recovered",
+            "time": 3.399999999999996
+          }
+        ]
+      },
+      {
+        "test": "fall-and-get-up",
+        "dt": 0.05,
+        "speed": 4.55,
+        "maxGap": 8.931019005206585e-05,
+        "maxSpeed": 8.151208174638615,
+        "minY": 0.034743256866931915,
+        "displacement": 2.72929082516233,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.05
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.6500000000000008
+          },
+          {
+            "name": "recovered",
+            "time": 3.399999999999996
+          }
+        ]
+      },
+      {
+        "test": "ceiling-blocks-recovery-and-retry",
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.016666666666666666
+          },
+          {
+            "name": "get-up-blocked",
+            "time": 4.033333333333324
+          },
+          {
+            "name": "get-up-start",
+            "time": 7.4666666666666455
+          },
+          {
+            "name": "recovered",
+            "time": 9.233333333333372
+          }
+        ]
+      },
+      {
+        "test": "unconscious-does-not-auto-rise"
+      },
+      {
+        "test": "casualty-collapse-cancels-auto-recovery"
+      },
+      {
+        "test": "casualty-vertical-inertia-and-obstacle",
+        "kind": "ground",
+        "scale": 0.85,
+        "maxGap": 0.09189407823532547,
+        "maxSpeed": 17.20264229231575,
+        "minY": 0.03064788691699505
+      },
+      {
+        "test": "casualty-vertical-inertia-and-obstacle",
+        "kind": "step",
+        "scale": 0.85,
+        "maxGap": 0.00019646490603722214,
+        "maxSpeed": 9.854866421965177,
+        "minY": 0.46522483229637146
+      },
+      {
+        "test": "casualty-vertical-inertia-and-obstacle",
+        "kind": "ground",
+        "scale": 1,
+        "maxGap": 0.04330928435659123,
+        "maxSpeed": 18.220610661787813,
+        "minY": 0.032447461038827896
+      },
+      {
+        "test": "casualty-vertical-inertia-and-obstacle",
+        "kind": "step",
+        "scale": 1,
+        "maxGap": 0.0013489285538445881,
+        "maxSpeed": 9.137087649767668,
+        "minY": 0.4418346583843231
+      },
+      {
+        "test": "casualty-vertical-inertia-and-obstacle",
+        "kind": "ground",
+        "scale": 1.15,
+        "maxGap": 0.04702092097804495,
+        "maxSpeed": 9.22822717188998,
+        "minY": 0.04250885918736458
+      },
+      {
+        "test": "casualty-vertical-inertia-and-obstacle",
+        "kind": "step",
+        "scale": 1.15,
+        "maxGap": 0.0010316569088900827,
+        "maxSpeed": 8.445378433140009,
+        "minY": 0.11852753162384033
+      },
+      {
+        "test": "off-centre-impulse-and-no-air-freeze",
+        "angularVelocity": {
+          "x": 2.072934150695801,
+          "y": -7.316524028778076,
+          "z": 0.415903240442276
+        }
+      }
+    ],
+    "stats": {
+      "triggered": 15,
+      "caught": 6,
+      "falls": 9,
+      "recovered": 7,
+      "blocked": 1
+    }
+  },
+  "advancedBuild": true,
+  "advancedTypecheck": true,
+  "decalSemanticTypecheck": "not run; missing @types/three; source transpile and JS syntax checked",
+  "unchangedAdvancedSourceAndAssets": [
+    "src/advanced/active-body.ts",
+    "src/advanced/animator.ts",
+    "src/advanced/combat.ts",
+    "src/advanced/contacts.ts",
+    "src/advanced/geometry.ts",
+    "src/advanced/navigation.ts",
+    "src/advanced/physics.ts",
+    "src/advanced/profiler.ts",
+    "src/advanced/tactics.ts",
+    "src/advanced/traversal.ts",
+    "src/advanced/stumble.ts",
+    "assets/data/env_bc1.js",
+    "assets/data/env_emb.js",
+    "assets/data/env_sky.js",
+    "assets/data/env_tex.js",
+    "assets/data/env_tex6.js",
+    "assets/data/hands.js",
+    "assets/data/soldier_model.js",
+    "assets/data/soldier_tex.js",
+    "assets/data/voice.js",
+    "assets/fonts/OFL-golos.txt",
+    "assets/fonts/OFL.txt",
+    "assets/fonts/golos-cyrillic.woff2",
+    "assets/fonts/golos-latin.woff2",
+    "assets/fonts/oswald-cyrillic.woff2",
+    "assets/fonts/oswald-latin.woff2",
+    "assets/fonts/plex-mono-cyrillic-500.woff2",
+    "assets/fonts/plex-mono-latin-500.woff2",
+    "assets/fonts/plex-sans-cyrillic-400.woff2",
+    "assets/fonts/plex-sans-cyrillic-500.woff2",
+    "assets/fonts/plex-sans-cyrillic-600.woff2",
+    "assets/fonts/plex-sans-latin-400.woff2",
+    "assets/fonts/plex-sans-latin-500.woff2",
+    "assets/fonts/plex-sans-latin-600.woff2",
+    "assets/img/loading.jpg",
+    "assets/snd/shot_ak74.js",
+    "assets/snd/shot_akm.js",
+    "assets/snd/shot_glock18c.js",
+    "assets/snd/shot_m416.js",
+    "assets/snd/shot_m870.js",
+    "assets/snd/shot_mp5a3.js",
+    "assets/snd/shot_scar.js",
+    "assets/snd/shot_svd.js",
+    "assets/snd/shot_ar15m4.js",
+    "assets/snd/shot_glock21.js",
+    "assets/models/weapons/glock21_gen4.glb",
+    "assets/models/weapons/ar15_m4.glb"
+  ],
+  "overallNpmTest": {
+    "pass": false,
+    "knownBaselineFailure": "runtime.cjs:167: occluded target position is not tracked"
+  },
+  "limitations": [
+    "destroyed support marks removed, not transferred to debris",
+    "support deformation conservatively clears marks",
+    "GPU terrain splat uses fallback tint; inaccessible texture uses material color",
+    "instance identity protected conservatively; no universal stable fragment IDs",
+    "no hardware FPS claim"
+  ]
+}

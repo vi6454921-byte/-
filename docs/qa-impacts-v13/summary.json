@@ -1,0 +1,45 @@
+{
+  "pass": true,
+  "surfaceBindingCases": 15,
+  "maps": [
+    "angar_map",
+    "forest_map_camp",
+    "stroyka_zarechye_v2"
+  ],
+  "materialProfiles": 6,
+  "colourCombinations": 12,
+  "previewModes": [
+    "normal",
+    "grazing"
+  ],
+  "concreteTexturesUnchanged": true,
+  "gameSmokeV13": {
+    "result": {
+      "shotHit": true,
+      "afterShot": 2,
+      "reloadStarted": true,
+      "reloadFinished": true,
+      "mag": 29,
+      "chamber": 1,
+      "before": 0,
+      "after": 1,
+      "squad": 24,
+      "finite": true,
+      "module": true,
+      "world": "angar_map",
+      "marks": 2
+    },
+    "errors": []
+  },
+  "typecheck": true,
+  "visualReview": {
+    "wood": "Angular exposed fibres, small bore; no dark halo",
+    "metal": "Compact torn lip and separated scratches",
+    "soil": "Shallow granular asymmetric scuff; no black disk",
+    "fabric": "Small irregular puncture and loose threads",
+    "paper": "Compact curled tear",
+    "concrete": "Reference crater and cracks retained",
+    "normalPreview": "12 colour-matched surfaces; compact marks",
+    "grazingPreview": "Bounded stretch; no broad black stain on new materials"
+  }
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><title>AEGIS v26 · стенд «Окраска и маскировка оружия»</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#17191c}#info{position:fixed;left:8px;top:8px;z-index:9;font:11px monospace;color:#9f9;white-space:pre;pointer-events:none;text-shadow:0 0 3px #000}
+.lbl{position:fixed;z-index:9;font:600 12px sans-serif;color:#eee;text-shadow:0 0 3px #000;pointer-events:none}</style>
+</head><body>
+<div id="info">загрузка…</div>
+<script>
+/* Отдельный стенд: сборка оружейной (wkit) + окраска (skins.js) + маскировка (wcover.js).
+   Слева — как было (заводская, без маскировки), справа — с изменениями.
+   ?w=ak74&skin=woodland&mods={"*":"same"}&wrap=ghillie&col=forest&view=side|top|fp|under|back&cfg={"optic":"pk120"}
+   ?all=1&wrap=net — все образцы с маскировкой; &one=1 — только изменённый */
+const QS = new URLSearchParams(location.search);
+const ROOT = '../../';
+const SRC = ['js/lib/three.min.js', 'js/polygon/00_boot.js', 'js/polygon/05f_ballistics.js', 'js/kit/wkit.js', 'js/kit/skins.js', 'js/kit/wcover.js', 'js/kit/imported-weapons.js'];
+function load(i) {
+  if (i >= SRC.length) return start().catch((e) => { document.getElementById('info').textContent = 'ОШИБКА ' + (e.stack || e); console.error(e); window.__STAND_ERR = String(e.stack || e).slice(0, 1500); });
+  const s = document.createElement('script'); s.src = ROOT + SRC[i] + (QS.get('nc') ? '?' + Date.now() : '');
+  s.onload = () => { console.info('QA loaded ' + SRC[i] + ' ' + (performance.now() / 1000).toFixed(1) + 's'); load(i + 1); }; s.onerror = () => { document.getElementById('info').textContent = 'нет ' + SRC[i]; window.__STAND_ERR = 'нет ' + SRC[i]; };
+  document.head.appendChild(s);
+}
+load(0);
+const J = (k, d) => { try { return QS.get(k) ? JSON.parse(QS.get(k)) : d; } catch (e) { return d; } };
+async function start() {
+  const T = THREE, WK = AEGIS_WK;
+  if (window.AEGIS_IMPORTED) await AEGIS_IMPORTED.ready;
+  console.info('QA imported ready ' + (performance.now() / 1000).toFixed(1) + 's');
+  window.__WCOVER_LOG = 1;
+  const R = new T.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  R.setPixelRatio(1); R.setSize(innerWidth, innerHeight);
+  R.toneMapping = T.AgXToneMapping !== undefined ? T.AgXToneMapping : T.ACESFilmicToneMapping;
+  if ('outputColorSpace' in R) R.outputColorSpace = T.SRGBColorSpace;
+  R.shadowMap.enabled = true;
+  document.body.insertBefore(R.domElement, document.body.firstChild);
+  const scene = new T.Scene();
+  scene.background = new T.Color(0x2a2d31);
+  const pm = new T.PMREMGenerator(R);
+  const env = pm.fromScene(new window.__ADDONS.RoomEnvironment(), 0.04).texture;
+  scene.environment = env;
+  const sun = new T.DirectionalLight(0xfff2e0, 2.2); sun.position.set(2, 4, 3); sun.castShadow = true; scene.add(sun);
+  scene.add(new T.HemisphereLight(0xcfd8e6, 0x3a3226, 0.6));
+  const ctx = WK.makeCtx(WK.createMaterials(env));
+  const t0 = performance.now();
+  function build(id, cfg, skin, mods, wrap) {
+    const def = WK.DEFS[id];
+    const asm = new WK.Assembler(def, WK.LIB, ctx);
+    asm.apply(Object.assign({}, def.defaults, cfg || {}));
+    GSkins.apply(asm.root, id, skin || 'factory', ctx.mats, mods);
+    const n = wrap ? GWCover.apply(asm, id, wrap) : 0;
+    const g = new T.Group(); g.add(asm.root); g.scale.setScalar(0.001);
+    g.traverse((o) => { if (o.isMesh) { o.castShadow = !o.userData.wcover; } });
+    return { g, asm, n, def };
+  }
+  const id = QS.get('w') || 'ak74', view = QS.get('view') || 'side';
+  const cfg = J('cfg', {}), skin = QS.get('skin') || 'factory', mods = J('mods', null);
+  const wrap = QS.get('wrap') && QS.get('wrap') !== 'none' ? { t: QS.get('wrap'), c: QS.get('col') || 'forest' } : null;
+  const info = [], built = [];
+  if (QS.get('all')) {
+    const ids = (QS.get('ids') || 'akm,ak74,m416,ar15m4,scar,svd,m870,mp5a3').split(',');
+    ids.forEach((w, i) => {
+      const b = build(w, cfg[w] || {}, skin, mods, wrap);
+      const c = i % 2, r = Math.floor(i / 2);
+      b.g.position.set((c - 0.5) * 1.15, 0.92 - r * 0.5, 0);
+      scene.add(b.g); built.push(b);
+      info.push(w + ': сеток ' + b.n);
+    });
+  } else {
+    const one = !!QS.get('one');
+    if (!one) { const a = build(id, cfg, 'factory', null, null); a.g.position.set(-0.55, 0, 0); scene.add(a.g); built.push(a); }
+    const b = build(id, cfg, skin, mods, wrap); b.g.position.set(one ? 0 : 0.55, 0, 0); scene.add(b.g); built.push(b);
+    info.push(id + ' · окраска ' + skin + ' · модули ' + JSON.stringify(mods) + ' · маскировка ' + JSON.stringify(wrap) + ' · сеток ' + b.n);
+  }
+  /* камера */
+  const cam = new T.PerspectiveCamera(QS.get('fov') ? +QS.get('fov') : 30, innerWidth / innerHeight, 0.005, 50);
+  const box = new T.Box3(); for (const b of built) box.expandByObject(b.g);
+  let c = box.getCenter(new T.Vector3()), sz = box.getSize(new T.Vector3());
+  /* &focus=x,y,z (мм в системе изменённого образца) и &span=мм — крупный план участка */
+  if (QS.get('focus')) {
+    const b = built[built.length - 1], f = QS.get('focus').split(',').map(Number);
+    c = new T.Vector3(f[0], f[1], f[2] || 0).multiplyScalar(0.001).add(b.g.position);
+    const sp = (+QS.get('span') || 300) * 0.001; sz = new T.Vector3(sp, sp * 0.5, sp * 0.3);
+  }
+  const vf = cam.fov * Math.PI / 180, hf = 2 * Math.atan(Math.tan(vf / 2) * cam.aspect);
+  const D = Math.max(sz.x * 0.5 / Math.tan(hf / 2), sz.y * 0.5 / Math.tan(vf / 2)) * 1.1 + sz.z * 0.5;
+  const VIEWS = {
+    side: [c.x, c.y + 0.02 * D, c.z + D], back: [c.x - D, c.y + 0.1 * D, c.z + 0.01], top: [c.x - D * 0.45, c.y + D * 0.5, c.z + D * 0.6],
+    under: [c.x, c.y - D * 0.6, c.z + D * 0.7], left: [c.x, c.y + 0.02 * D, c.z - D], front: [c.x + D, c.y + 0.15 * D, c.z + D * 0.3]
+  };
+  if (view === 'fp') {
+    /* как глаз стрелка: за коробкой, над прицельной линией (изменённый образец) */
+    const b = built[built.length - 1], base = b.asm.base;
+    const ex = (base.eyeX !== undefined ? base.eyeX : -240) + (QS.get('ex') ? +QS.get('ex') : 60), ey = QS.get('ey') ? +QS.get('ey') : 72;
+    const e = new T.Vector3(ex, ey, QS.get('ez') ? +QS.get('ez') : 0).multiplyScalar(0.001).add(b.g.position);
+    cam.position.copy(e); cam.fov = 55; cam.updateProjectionMatrix();
+    cam.lookAt(e.clone().add(new T.Vector3(1, QS.get('ly') ? +QS.get('ly') : -0.08, 0)));
+  } else {
+    cam.position.set(...(VIEWS[view] || VIEWS.side));
+    if (QS.get('zoom')) cam.position.lerp(c, +QS.get('zoom'));
+    cam.lookAt(c);
+  }
+  const floor = new T.Mesh(new T.PlaneGeometry(20, 20), new T.MeshStandardMaterial({ color: 0x3b3f44, roughness: 0.9 }));
+  floor.rotation.x = -Math.PI / 2; floor.position.y = box.min.y - 0.12; floor.receiveShadow = true; scene.add(floor);
+  console.info('QA built ' + (performance.now() / 1000).toFixed(1) + 's');
+  R.render(scene, cam);
+  console.info('QA rendered ' + (performance.now() / 1000).toFixed(1) + 's');
+  const ms = performance.now() - t0;
+  R.info.reset;
+  document.getElementById('info').textContent = info.join('\n') + '\nсборка+рендер ' + ms.toFixed(0) + ' мс · треуг. ' + R.info.render.triangles + ' · вызовов ' + R.info.render.calls;
+  window.__ST = { R, scene, cam, built, T, render: () => R.render(scene, cam) };
+  window.__STAND_READY = true;
+}
+</script>
+</body></html>

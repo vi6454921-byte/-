@@ -1,0 +1,44 @@
+{
+  "concrete": {
+    "projectorWidthM": 0.16500000655651093,
+    "coveredTexels": 4510.843137260318,
+    "darkTexels": 195.26339869280858,
+    "darkAreaM2": 8.11164314558884e-05,
+    "weightedShadowM2": 0.0010424878452795887
+  },
+  "metal": {
+    "projectorWidthM": 0.11749999970197678,
+    "coveredTexels": 9791.724836602529,
+    "darkTexels": 2155.0117647059074,
+    "darkAreaM2": 0.0004539891208731643,
+    "weightedShadowM2": 0.0015259734416529565
+  },
+  "wood": {
+    "projectorWidthM": 0.16750000417232513,
+    "coveredTexels": 8649.315032679877,
+    "darkTexels": 796,
+    "darkAreaM2": 0.00034077111988208366,
+    "weightedShadowM2": 0.002333427923012088
+  },
+  "paper": {
+    "projectorWidthM": 0.07000000029802322,
+    "coveredTexels": 8348.992156862374,
+    "darkTexels": 1810.9303921568835,
+    "darkAreaM2": 0.00013539976497080433,
+    "weightedShadowM2": 0.000213179505072351
+  },
+  "fabric": {
+    "projectorWidthM": 0.10249999910593033,
+    "coveredTexels": 4861.016993464539,
+    "darkTexels": 1212.3320261437989,
+    "darkAreaM2": 0.00019435215953784,
+    "weightedShadowM2": 0.0005366789236735345
+  },
+  "soil": {
+    "projectorWidthM": 0.2150000035762787,
+    "coveredTexels": 15354.693333336796,
+    "darkTexels": 8550.905098038984,
+    "darkAreaM2": 0.006031274433997079,
+    "weightedShadowM2": 0.008914711965371044
+  }
+}

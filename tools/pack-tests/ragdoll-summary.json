@@ -1,0 +1,9 @@
+{
+  "cases": 180,
+  "fail": 0,
+  "worstRise": 0,
+  "worstFinalSpeed": 0,
+  "worstSleep": 1.2000000000000004,
+  "elapsedMs": 144020.981439,
+  "examples": []
+}

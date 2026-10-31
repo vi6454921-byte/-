@@ -1,0 +1,1141 @@
+{
+  "patch": "ragdoll-stumbling-v6",
+  "base": "AEGIS_locomotion_v5.zip",
+  "environment": "Local Chromium WebGL2/SwiftShader and Node.js/Rapier. No physical GPU FPS claim.",
+  "build": {
+    "transpile": "passed",
+    "strictTypeScript": "passed",
+    "changedJavaScriptSyntax": "passed"
+  },
+  "core": {
+    "pass": true,
+    "rows": [
+      {
+        "test": "catch-without-fall",
+        "dt": 0.016666666666666666,
+        "direction": [
+          1,
+          0,
+          0
+        ],
+        "maxLean": 0.16958915685551615
+      },
+      {
+        "test": "catch-without-fall",
+        "dt": 0.016666666666666666,
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "maxLean": 0.18500635293329035
+      },
+      {
+        "test": "catch-without-fall",
+        "dt": 0.03333333333333333,
+        "direction": [
+          1,
+          0,
+          0
+        ],
+        "maxLean": 0.16705091542591385
+      },
+      {
+        "test": "catch-without-fall",
+        "dt": 0.03333333333333333,
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "maxLean": 0.18223736228281512
+      },
+      {
+        "test": "catch-without-fall",
+        "dt": 0.05,
+        "direction": [
+          1,
+          0,
+          0
+        ],
+        "maxLean": 0.1649062912354973
+      },
+      {
+        "test": "catch-without-fall",
+        "dt": 0.05,
+        "direction": [
+          0,
+          0,
+          -1
+        ],
+        "maxLean": 0.17989777225690615
+      },
+      {
+        "test": "fall-and-get-up",
+        "dt": 0.016666666666666666,
+        "speed": 0,
+        "maxGap": 0.00016874749102260586,
+        "maxSpeed": 4.8910855135341205,
+        "minY": 0.025908062234520912,
+        "displacement": 0.9709730330483536,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.016666666666666666
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.6166666666666658
+          },
+          {
+            "name": "recovered",
+            "time": 3.383333333333326
+          }
+        ]
+      },
+      {
+        "test": "fall-and-get-up",
+        "dt": 0.016666666666666666,
+        "speed": 4.55,
+        "maxGap": 0.016540375609598965,
+        "maxSpeed": 8.181862937725667,
+        "minY": 0.02648313157260418,
+        "displacement": 2.833780628376127,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.016666666666666666
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.6166666666666658
+          },
+          {
+            "name": "recovered",
+            "time": 3.383333333333326
+          }
+        ]
+      },
+      {
+        "test": "fall-and-get-up",
+        "dt": 0.03333333333333333,
+        "speed": 0,
+        "maxGap": 0.0001037574912680475,
+        "maxSpeed": 4.889484540208957,
+        "minY": 0.03507428616285324,
+        "displacement": 0.9529270839852589,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.03333333333333333
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.633333333333335
+          },
+          {
+            "name": "recovered",
+            "time": 3.3999999999999977
+          }
+        ]
+      },
+      {
+        "test": "fall-and-get-up",
+        "dt": 0.03333333333333333,
+        "speed": 4.55,
+        "maxGap": 0.00039598569229937604,
+        "maxSpeed": 8.197670707911353,
+        "minY": 0.03720029443502426,
+        "displacement": 3.2459073993288996,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.03333333333333333
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.933333333333336
+          },
+          {
+            "name": "recovered",
+            "time": 3.6999999999999966
+          }
+        ]
+      },
+      {
+        "test": "fall-and-get-up",
+        "dt": 0.05,
+        "speed": 0,
+        "maxGap": 4.443446872170004e-05,
+        "maxSpeed": 4.742164404652146,
+        "minY": 0.029239393770694733,
+        "displacement": 1.030167046105239,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.05
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.6500000000000008
+          },
+          {
+            "name": "recovered",
+            "time": 3.399999999999996
+          }
+        ]
+      },
+      {
+        "test": "fall-and-get-up",
+        "dt": 0.05,
+        "speed": 4.55,
+        "maxGap": 8.931019005206585e-05,
+        "maxSpeed": 8.151208174638615,
+        "minY": 0.034743256866931915,
+        "displacement": 2.72929082516233,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.05
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.6500000000000008
+          },
+          {
+            "name": "recovered",
+            "time": 3.399999999999996
+          }
+        ]
+      },
+      {
+        "test": "ceiling-blocks-recovery-and-retry",
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.016666666666666666
+          },
+          {
+            "name": "get-up-blocked",
+            "time": 4.033333333333324
+          },
+          {
+            "name": "get-up-start",
+            "time": 7.4666666666666455
+          },
+          {
+            "name": "recovered",
+            "time": 9.233333333333372
+          }
+        ]
+      },
+      {
+        "test": "unconscious-does-not-auto-rise"
+      },
+      {
+        "test": "casualty-collapse-cancels-auto-recovery"
+      },
+      {
+        "test": "casualty-vertical-inertia-and-obstacle",
+        "kind": "ground",
+        "scale": 0.85,
+        "maxGap": 0.09189407823532547,
+        "maxSpeed": 17.20264229231575,
+        "minY": 0.03064788691699505
+      },
+      {
+        "test": "casualty-vertical-inertia-and-obstacle",
+        "kind": "step",
+        "scale": 0.85,
+        "maxGap": 0.00019646490603722214,
+        "maxSpeed": 9.854866421965177,
+        "minY": 0.46522483229637146
+      },
+      {
+        "test": "casualty-vertical-inertia-and-obstacle",
+        "kind": "ground",
+        "scale": 1,
+        "maxGap": 0.04330928435659123,
+        "maxSpeed": 18.220610661787813,
+        "minY": 0.032447461038827896
+      },
+      {
+        "test": "casualty-vertical-inertia-and-obstacle",
+        "kind": "step",
+        "scale": 1,
+        "maxGap": 0.0013489285538445881,
+        "maxSpeed": 9.137087649767668,
+        "minY": 0.4418346583843231
+      },
+      {
+        "test": "casualty-vertical-inertia-and-obstacle",
+        "kind": "ground",
+        "scale": 1.15,
+        "maxGap": 0.04702092097804495,
+        "maxSpeed": 9.22822717188998,
+        "minY": 0.04250885918736458
+      },
+      {
+        "test": "casualty-vertical-inertia-and-obstacle",
+        "kind": "step",
+        "scale": 1.15,
+        "maxGap": 0.0010316569088900827,
+        "maxSpeed": 8.445378433140009,
+        "minY": 0.11852753162384033
+      },
+      {
+        "test": "off-centre-impulse-and-no-air-freeze",
+        "angularVelocity": {
+          "x": 2.072934150695801,
+          "y": -7.316524028778076,
+          "z": 0.415903240442276
+        }
+      }
+    ],
+    "stats": {
+      "triggered": 15,
+      "caught": 6,
+      "falls": 9,
+      "recovered": 7,
+      "blocked": 1
+    }
+  },
+  "browser": {
+    "result": {
+      "rows": [
+        {
+          "name": "catch",
+          "dt": 0.016666666666666666,
+          "cameraFinite": true,
+          "state": "stable",
+          "dead": false,
+          "healthRetained": true
+        },
+        {
+          "name": "fall-recover",
+          "dt": 0.016666666666666666,
+          "states": [
+            "down",
+            "getting-up",
+            "stable"
+          ],
+          "maxBodies": 16,
+          "finite": true,
+          "fireBlocked": true,
+          "headShown": true,
+          "gunDynamic": true,
+          "maxGap": 0.001014466805584215,
+          "dead": false,
+          "recovered": true,
+          "rdCleared": true,
+          "healthRetained": true,
+          "events": [
+            {
+              "name": "external",
+              "time": 0
+            },
+            {
+              "name": "fall",
+              "time": 0.016666666666666666
+            },
+            {
+              "name": "get-up-start",
+              "time": 1.6166666666666658
+            },
+            {
+              "name": "recovered",
+              "time": 3.383333333333326
+            }
+          ]
+        },
+        {
+          "name": "catch",
+          "dt": 0.03333333333333333,
+          "cameraFinite": true,
+          "state": "stable",
+          "dead": false,
+          "healthRetained": true
+        },
+        {
+          "name": "fall-recover",
+          "dt": 0.03333333333333333,
+          "states": [
+            "down",
+            "getting-up",
+            "stable"
+          ],
+          "maxBodies": 16,
+          "finite": true,
+          "fireBlocked": true,
+          "headShown": true,
+          "gunDynamic": true,
+          "maxGap": 0.0010769795819901462,
+          "dead": false,
+          "recovered": true,
+          "rdCleared": true,
+          "healthRetained": true,
+          "events": [
+            {
+              "name": "external",
+              "time": 0
+            },
+            {
+              "name": "fall",
+              "time": 0.03333333333333333
+            },
+            {
+              "name": "get-up-start",
+              "time": 1.7333333333333354
+            },
+            {
+              "name": "recovered",
+              "time": 3.4999999999999973
+            }
+          ]
+        },
+        {
+          "name": "catch",
+          "dt": 0.05,
+          "cameraFinite": true,
+          "state": "stable",
+          "dead": false,
+          "healthRetained": true
+        },
+        {
+          "name": "fall-recover",
+          "dt": 0.05,
+          "states": [
+            "down",
+            "getting-up",
+            "stable"
+          ],
+          "maxBodies": 16,
+          "finite": true,
+          "fireBlocked": true,
+          "headShown": true,
+          "gunDynamic": true,
+          "maxGap": 0.001210829267854387,
+          "dead": false,
+          "recovered": true,
+          "rdCleared": true,
+          "healthRetained": true,
+          "events": [
+            {
+              "name": "external",
+              "time": 0
+            },
+            {
+              "name": "fall",
+              "time": 0.05
+            },
+            {
+              "name": "get-up-start",
+              "time": 2.0500000000000007
+            },
+            {
+              "name": "recovered",
+              "time": 3.7999999999999945
+            }
+          ]
+        },
+        {
+          "name": "contact-trip",
+          "triggered": true,
+          "events": [
+            {
+              "name": "trip-obstacle",
+              "time": 0
+            },
+            {
+              "name": "fall",
+              "time": 0.016666666666666666
+            },
+            {
+              "name": "get-up-start",
+              "time": 1.6166666666666658
+            }
+          ],
+          "finite": true
+        },
+        {
+          "name": "character-preset",
+          "index": 0,
+          "faction": "delta",
+          "recovered": true,
+          "finite": true,
+          "healthRetained": true,
+          "segments": 16
+        },
+        {
+          "name": "character-preset",
+          "index": 1,
+          "faction": "delta",
+          "recovered": true,
+          "finite": true,
+          "healthRetained": true,
+          "segments": 16
+        },
+        {
+          "name": "character-preset",
+          "index": 12,
+          "faction": "alpha",
+          "recovered": true,
+          "finite": true,
+          "healthRetained": true,
+          "segments": 16
+        },
+        {
+          "name": "character-preset",
+          "index": 13,
+          "faction": "alpha",
+          "recovered": true,
+          "finite": true,
+          "healthRetained": true,
+          "segments": 16
+        }
+      ],
+      "at": [
+        -34.5,
+        0.02499995231628436,
+        -22.5
+      ],
+      "stats": {
+        "triggered": 11,
+        "caught": 3,
+        "falls": 8,
+        "recovered": 7,
+        "blocked": 0
+      }
+    },
+    "errors": []
+  },
+  "locomotionRegression": {
+    "cases": 9,
+    "rows": [
+      {
+        "dt": 0.016666666666666666,
+        "speed": 1.5,
+        "maxJump": 0.11632190438187863,
+        "maxError": 5.4437161269171144e-08,
+        "maxSlip": 1.725692983695431e-08,
+        "minGap": -1.0383559609361548e-08,
+        "maxDrop": 0.2130255906240648,
+        "worst": {
+          "i": 32,
+          "side": "R",
+          "phase": 0.837992721720991,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.13723000009010497,
+            0.20373560547458158,
+            -0.7158239071845208
+          ],
+          "to": [
+            0.1372300000116673,
+            0.20251983668770612,
+            -0.8321394579302563
+          ],
+          "target": [
+            0.13723,
+            0.20251983608592544,
+            -0.8321394576130081
+          ],
+          "drop": 0.0705744255594417
+        }
+      },
+      {
+        "dt": 0.016666666666666666,
+        "speed": 2.55,
+        "maxJump": 0.15553656402628943,
+        "maxError": 6.153696796493724e-08,
+        "maxSlip": 2.479878779244619e-08,
+        "minGap": -1.2645172839387264e-08,
+        "maxDrop": 0.2661935671562815,
+        "worst": {
+          "i": 24,
+          "side": "R",
+          "phase": 0.7901341282846033,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.13722999991958446,
+            0.24400598293359343,
+            -0.889394791922343
+          ],
+          "to": [
+            0.13722999988024884,
+            0.2442249002339873,
+            -1.044931201885797
+          ],
+          "target": [
+            0.13723,
+            0.24422489821565893,
+            -1.044931200354885
+          ],
+          "drop": 0.08738815528228806
+        }
+      },
+      {
+        "dt": 0.016666666666666666,
+        "speed": 4.55,
+        "maxJump": 0.189437032560989,
+        "maxError": 7.743860068699258e-08,
+        "maxSlip": 2.8137333364479653e-08,
+        "minGap": -2.3799557477555133e-08,
+        "maxDrop": 0.23050446957963855,
+        "worst": {
+          "i": 140,
+          "side": "L",
+          "phase": 4.213333333333335,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            -0.1372299999703028,
+            0.32304139148215516,
+            -10.555911961316207
+          ],
+          "to": [
+            -0.13723000001013486,
+            0.32321411245459486,
+            -10.745348915137205
+          ],
+          "target": [
+            -0.13723,
+            0.32321411489901913,
+            -10.74534891696178
+          ],
+          "drop": 0.07797036602753857
+        }
+      },
+      {
+        "dt": 0.03333333333333333,
+        "speed": 1.5,
+        "maxJump": 0.2323526437047915,
+        "maxError": 3.75618531656572e-08,
+        "maxSlip": 1.4281678758935479e-08,
+        "minGap": -5.283288667667918e-10,
+        "maxDrop": 0.19716636053940872,
+        "worst": {
+          "i": 16,
+          "side": "R",
+          "phase": 0.8379927217209907,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.13722999998349564,
+            0.20193234755063078,
+            -0.6247875621571558
+          ],
+          "to": [
+            0.1372299996764474,
+            0.20251984602224282,
+            -0.8571394631223763
+          ],
+          "target": [
+            0.13723,
+            0.20251983608592544,
+            -0.8571394576130066
+          ],
+          "drop": 0.06753644346295291
+        }
+      },
+      {
+        "dt": 0.03333333333333333,
+        "speed": 2.55,
+        "maxJump": 0.3089833990298259,
+        "maxError": 5.403703438562816e-08,
+        "maxSlip": 1.649919701998234e-08,
+        "minGap": -4.95340889139495e-09,
+        "maxDrop": 0.17748379134307046,
+        "worst": {
+          "i": 12,
+          "side": "R",
+          "phase": 0.790134128284603,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.13722999973761518,
+            0.23951039400764157,
+            -0.7784837759177337
+          ],
+          "to": [
+            0.13722999969768815,
+            0.2442249052131728,
+            -1.0874312055236741
+          ],
+          "target": [
+            0.13723,
+            0.24422489821565896,
+            -1.0874312003548834
+          ],
+          "drop": 0.08326098328741796
+        }
+      },
+      {
+        "dt": 0.03333333333333333,
+        "speed": 4.55,
+        "maxJump": 0.37801082226749977,
+        "maxError": 8.30982398038021e-08,
+        "maxSlip": 3.422580073486248e-08,
+        "minGap": -2.2355150994246564e-08,
+        "maxDrop": 0.23040776353773318,
+        "worst": {
+          "i": 79,
+          "side": "R",
+          "phase": 4.7293333333333365,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.13723000000237942,
+            0.32138994259720044,
+            -11.871099714462952
+          ],
+          "to": [
+            0.13723000020721096,
+            0.32116027715657375,
+            -12.249110466962318
+          ],
+          "target": [
+            0.13723,
+            0.321160267760099,
+            -12.249110461607192
+          ],
+          "drop": 0.07655070602166149
+        }
+      },
+      {
+        "dt": 0.05,
+        "speed": 1.5,
+        "maxJump": 0.34610285852625433,
+        "maxError": 3.7187122874158165e-08,
+        "maxSlip": 1.3918620028724249e-08,
+        "minGap": -1.3055743749990079e-08,
+        "maxDrop": 0.13226045580043078,
+        "worst": {
+          "i": 11,
+          "side": "R",
+          "phase": 0.8579299942747712,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.13722999991004567,
+            0.20193234942464117,
+            -0.649787563806361
+          ],
+          "to": [
+            0.1372300001798411,
+            0.19832173712054374,
+            -0.9958715885154393
+          ],
+          "target": [
+            0.13723,
+            0.1983217408967411,
+            -0.9958715899299893
+          ],
+          "drop": 0.05950703391371696
+        }
+      },
+      {
+        "dt": 0.05,
+        "speed": 2.55,
+        "maxJump": 0.428831269679936,
+        "maxError": 4.573937690261206e-08,
+        "maxSlip": 1.840686102513015e-08,
+        "minGap": -1.6104947639372647e-08,
+        "maxDrop": 0.17758944483837502,
+        "worst": {
+          "i": 49,
+          "side": "R",
+          "phase": 3.8145715357431946,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.1372299999678547,
+            0.23946967140539888,
+            -6.091257296221677
+          ],
+          "to": [
+            0.1372299999561756,
+            0.240198457919089,
+            -6.5200879466252175
+          ],
+          "target": [
+            0.13723,
+            0.24019845208008728,
+            -6.52008794453117
+          ],
+          "drop": 0.06429372620116051
+        }
+      },
+      {
+        "dt": 0.05,
+        "speed": 4.55,
+        "maxJump": 0.5648490385947014,
+        "maxError": 1.0614355926996063e-07,
+        "maxSlip": 1.0662654897979527e-07,
+        "minGap": -2.5340845352661567e-08,
+        "maxDrop": 0.23007460222935605,
+        "worst": {
+          "i": 47,
+          "side": "L",
+          "phase": 4.2419999999999956,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            -0.1372299999966875,
+            0.3179373836047801,
+            -10.5199934729379
+          ],
+          "to": [
+            -0.13722999966379557,
+            0.31845173252331804,
+            -11.084842277350681
+          ],
+          "target": [
+            -0.13723,
+            0.31845171146838347,
+            -11.084842267441832
+          ],
+          "drop": 0.07777279142237704
+        }
+      }
+    ]
+  },
+  "medicalRegression": {
+    "result": {
+      "m": "delta_1",
+      "q": "delta_2",
+      "elevated": false,
+      "fixture": {
+        "x": -36.5,
+        "y": 0,
+        "z": -22.5
+      },
+      "medicalFloorY": 0.01518041697369199,
+      "before": {
+        "tq": 2,
+        "bd": 3
+      },
+      "after": {
+        "tq": 1,
+        "bd": 3
+      },
+      "wound": {
+        "key": "controlled-arterial-leg",
+        "zone": "thigh",
+        "side": "L",
+        "comp": "limb",
+        "rate": 4,
+        "art": true,
+        "dressed": 0,
+        "tq": true
+      },
+      "samples": [
+        {
+          "t": 0,
+          "mode": "idle",
+          "dist": 3.8451706601387317,
+          "job": false,
+          "prone": 0
+        },
+        {
+          "t": 1,
+          "mode": "approach",
+          "dist": 3.091357713520805,
+          "job": false,
+          "prone": 0
+        },
+        {
+          "t": 2,
+          "mode": "approach",
+          "dist": 0.6545388336470219,
+          "job": false,
+          "prone": 0
+        },
+        {
+          "t": 3,
+          "mode": "treat",
+          "dist": 0.5976820629879951,
+          "job": true,
+          "hand": {
+            "R": {
+              "x": -36.5950210571289,
+              "y": 0.2564158672094345,
+              "z": -22.73822784423828
+            },
+            "L": {
+              "x": -36.49502105712891,
+              "y": 0.2564158672094345,
+              "z": -22.73822784423828
+            }
+          },
+          "prone": 0
+        },
+        {
+          "t": 4,
+          "mode": "treat",
+          "dist": 0.5975348673943657,
+          "job": true,
+          "hand": {
+            "R": {
+              "x": -36.59492950439453,
+              "y": 0.25636649966239927,
+              "z": -22.738391876220703
+            },
+            "L": {
+              "x": -36.494929504394534,
+              "y": 0.25636649966239927,
+              "z": -22.738391876220703
+            }
+          },
+          "prone": 0
+        },
+        {
+          "t": 5,
+          "mode": "treat",
+          "dist": 0.5973633659572237,
+          "job": true,
+          "hand": {
+            "R": {
+              "x": -36.59480743408203,
+              "y": 0.2562460833787918,
+              "z": -22.738615036010742
+            },
+            "L": {
+              "x": -36.494807434082034,
+              "y": 0.2562460833787918,
+              "z": -22.738615036010742
+            }
+          },
+          "prone": 0
+        },
+        {
+          "t": 6,
+          "mode": "treat",
+          "dist": 0.5972153881980612,
+          "job": true,
+          "hand": {
+            "R": {
+              "x": -36.59470825195312,
+              "y": 0.25614396572113035,
+              "z": -22.73876953125
+            },
+            "L": {
+              "x": -36.49470825195313,
+              "y": 0.25614396572113035,
+              "z": -22.73876953125
+            }
+          },
+          "prone": 0
+        }
+      ],
+      "medical": {
+        "stations": 1,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 1,
+        "queued": 0,
+        "expanded": 0,
+        "navigation": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": true,
+          "generation": 1,
+          "revision": 0,
+          "queries": 3,
+          "complete": 1,
+          "projected": 1,
+          "partial": 0,
+          "unreachable": 1,
+          "builds": 1,
+          "buildMs": 433.4000000001397,
+          "triangles": 61582,
+          "bytes": 460108,
+          "errors": 0,
+          "tiles": 20,
+          "polygons": 2831,
+          "lastError": ""
+        }
+      },
+      "debug": {
+        "pos": [
+          -35.990436083662836,
+          0.01518041697369199,
+          -23.059518864177655
+        ],
+        "patient": [
+          -36.54778289794922,
+          0.19162617623806,
+          -22.845033645629883
+        ],
+        "goal": {
+          "x": -36.04471269965949,
+          "y": 0.017999975562095632,
+          "z": -23.03042133547236,
+          "woundX": -36.54539489746094,
+          "woundZ": -22.737646102905273
+        },
+        "path": [
+          {
+            "x": -36.04471269965949,
+            "y": 0.017999975562095632,
+            "z": -23.03042133547236
+          }
+        ],
+        "pathAt": 0,
+        "speed": 0,
+        "hasGun": true,
+        "arms": [
+          {
+            "side": "R",
+            "wrist": [
+              -36.59468536895702,
+              0.2561319826228057,
+              -22.738800052708832
+            ],
+            "shoulder": [
+              -36.3898094977411,
+              0.3901527957665421,
+              -23.069161136288177
+            ]
+          },
+          {
+            "side": "L",
+            "wrist": [
+              -36.494685362212394,
+              0.25613198428086603,
+              -22.73880004369766
+            ],
+            "shoulder": [
+              -36.14390606464909,
+              0.3860040522892973,
+              -22.691015316420142
+            ]
+          }
+        ]
+      }
+    },
+    "errors": []
+  },
+  "weaponsRegression": {
+    "result": {
+      "reports": [
+        {
+          "id": "ar15m4",
+          "cap": 30,
+          "cal": "556",
+          "fired": true,
+          "emptyReload": {
+            "mag": 29,
+            "chamber": 1,
+            "reserve": 90
+          },
+          "tacticalReload": {
+            "mag": 30,
+            "chamber": 1
+          },
+          "mass": 4,
+          "diameter": 5.7,
+          "modes": [
+            "safe",
+            "semi",
+            "auto"
+          ],
+          "finite": true
+        },
+        {
+          "id": "glock21",
+          "cap": 13,
+          "cal": "45acp",
+          "fired": true,
+          "emptyReload": {
+            "mag": 12,
+            "chamber": 1,
+            "reserve": 39
+          },
+          "tacticalReload": {
+            "mag": 13,
+            "chamber": 1
+          },
+          "mass": 14.9,
+          "diameter": 11.43,
+          "modes": [
+            "semi"
+          ],
+          "finite": true
+        }
+      ],
+      "modelsLoaded": 2,
+      "marks": true,
+      "world": "angar_map"
+    },
+    "errors": []
+  },
+  "unitRegressions": {
+    "continuation": "passed",
+    "contact-rig": "passed",
+    "traction": "passed",
+    "trace-bvh": "passed",
+    "navigation": "passed",
+    "brass": "passed",
+    "active-body": "passed 15 infrastructure scenarios, not full balance/get-up acceptance",
+    "runtime": "Existing failure: runtime.cjs:167: occluded target position is not tracked. Reproduced in v6 and previously from unchanged v4 archive; combat.js is byte-identical. Overall npm test is not fully green."
+  },
+  "unchangedFromV5": {
+    "vendor/bullet-impacts/Decals.ts": true,
+    "vendor/bullet-impacts/bullet-impacts.js": true,
+    "js/polygon/18_fx.js": true,
+    "js/polygon/03_viewmodel_vm.js": true,
+    "js/polygon/05b_guns.js": true,
+    "js/kit/imported-weapons.js": true,
+    "js/advanced/combat.js": true,
+    "src/advanced/active-body.ts": true
+  },
+  "physics": {
+    "bodySegments": 15,
+    "withSlingWeapon": 16,
+    "ordinaryAwakeRagdollSubstepSeconds": 0.008333333333333333,
+    "baseTickSeconds": 0.016666666666666666,
+    "maxCoreAnchorGapMeters": 0.09189407823532547,
+    "maxBrowserAnchorGapMeters": 0.001210829267854387
+  },
+  "limitations": [
+    "Stagger movement/pose remains KCC plus IK, not a fully dynamic active biped.",
+    "Nonlethal fall uses a fully dynamic articulated ragdoll; get-up is a support- and clearance-gated 1.75 second animated blend, not physical self-righting. Hands/knees are not guaranteed to remain exact dynamic support contacts during the blend.",
+    "Sleeping bodies avoid extra substeps; awake ragdolls increase physics CPU cost. No measured GPU FPS improvement or mass-combat performance guarantee.",
+    "Self-collisions and joint limits use simplified rigid shapes. Finger/clothing/gear penetration is not exhaustively tested. Stress-case short-lived anchor errors are explicitly reported, not claimed zero.",
+    "Browser scenarios tested the Angar map and four real squad characters across both factions; this is not an exhaustive acceptance run for every map, equipment combination and combat action.",
+    "Temporary fall does not heal/reset health; medical incapacity, loss of consciousness and fatal hits block automatic balance recovery.",
+    "Experimental active-body laboratory is unchanged; its earlier full self-balancing/get-up acceptance remains incomplete."
+  ]
+}

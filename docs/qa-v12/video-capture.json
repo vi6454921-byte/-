@@ -1,0 +1,157 @@
+{
+  "fps": 24,
+  "width": 960,
+  "height": 540,
+  "chapters": [
+    {
+      "kind": "motor",
+      "mode": "jump",
+      "title": "Прыжок без оружия",
+      "note": "Подсед → отталкивание → полёт → амортизация",
+      "source": "CMU 13_11 → фазовый ретаргетинг; перемещение и гравитация — Rapier",
+      "duration": 3.2,
+      "armed": false,
+      "index": 1,
+      "frames": 77,
+      "start": 0,
+      "state": {
+        "result": null,
+        "finite": true
+      },
+      "startSeconds": 0.0
+    },
+    {
+      "kind": "motor",
+      "mode": "jump",
+      "title": "Прыжок с оружием",
+      "note": "Сохранение хвата и отдельная работа ног в воздухе",
+      "source": "CMU 13_11 + связанный оружейный IK",
+      "duration": 3.2,
+      "armed": true,
+      "index": 2,
+      "frames": 77,
+      "start": 77,
+      "state": {
+        "result": null,
+        "finite": true
+      },
+      "startSeconds": 3.2083333333333335
+    },
+    {
+      "kind": "vault",
+      "mode": "vault",
+      "title": "Низкое перешагивание",
+      "height": 0.58,
+      "depth": 0.35,
+      "note": "Автовыбор по геометрии • проверка опоры и свободного места",
+      "source": "CMU 40_07 / 127_25 → адаптация траекторий; контакты рук — IK",
+      "duration": 4.2,
+      "armed": false,
+      "index": 3,
+      "frames": 101,
+      "start": 154,
+      "state": {
+        "result": "landed",
+        "finite": true
+      },
+      "startSeconds": 6.416666666666667
+    },
+    {
+      "kind": "vault",
+      "mode": "vault",
+      "title": "Перемах с опорой руками",
+      "height": 0.88,
+      "depth": 0.4,
+      "note": "Автовыбор по геометрии • проверка опоры и свободного места",
+      "source": "CMU 40_07 / 127_25 → адаптация траекторий; контакты рук — IK",
+      "duration": 4.2,
+      "armed": false,
+      "index": 4,
+      "frames": 101,
+      "start": 255,
+      "state": {
+        "result": "landed",
+        "finite": true
+      },
+      "startSeconds": 10.625
+    },
+    {
+      "kind": "vault",
+      "mode": "vault",
+      "title": "Подъём на платформу",
+      "height": 1.08,
+      "depth": 1.5,
+      "note": "Автовыбор по геометрии • проверка опоры и свободного места",
+      "source": "CMU 40_07 / 127_25 → адаптация траекторий; контакты рук — IK",
+      "duration": 4.2,
+      "armed": false,
+      "index": 5,
+      "frames": 101,
+      "start": 356,
+      "state": {
+        "result": "landed",
+        "finite": true
+      },
+      "startSeconds": 14.833333333333334
+    },
+    {
+      "kind": "weapon",
+      "mode": "run",
+      "gun": "ar15m4",
+      "state": {
+        "result": null,
+        "finite": true
+      },
+      "title": "Бег с оружием — стабилизация хвата",
+      "note": "Общая поправка оружия и кистей, сглаживание плоскости локтя",
+      "source": "CMU locomotion + оружейный контактный решатель v12",
+      "duration": 3.5,
+      "armed": true,
+      "index": 6,
+      "frames": 84,
+      "start": 457,
+      "startSeconds": 19.041666666666668
+    },
+    {
+      "kind": "physical",
+      "mode": "recover",
+      "title": "Физическое падение и опорный подъём",
+      "note": "Стабилизация тела → опора руками → постановка стоп → подъём",
+      "source": "Rapier ragdoll → CMU 140 + контактный IK; вариант выбирается по позе тела",
+      "duration": 8,
+      "armed": true,
+      "index": 7,
+      "frames": 192,
+      "start": 541,
+      "state": {
+        "result": null,
+        "events": [
+          {
+            "name": "video-demo",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.016666666666666666
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.6166666666666658
+          },
+          {
+            "name": "recovered",
+            "time": 4.8333333333333215
+          }
+        ],
+        "clip": "getUpFront",
+        "finite": true
+      },
+      "startSeconds": 22.541666666666668
+    }
+  ],
+  "errors": [],
+  "durationSeconds": 30.541666666666668,
+  "renderWidth": 640,
+  "renderHeight": 360,
+  "note": "Actual game at 60 Hz, 24fps encoded; no generated intermediate frames; silent."
+}

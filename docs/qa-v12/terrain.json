@@ -1,0 +1,224 @@
+{
+  "rows": [
+    {
+      "kind": "uphill",
+      "hz": 60,
+      "finite": true,
+      "maxError": 9.960726417132702e-11,
+      "minGap": -8.274890327120143e-8,
+      "maxSlip": 1.1454682910232043e-10,
+      "maxLift": 0.28331374187602726,
+      "maxHipSpeed": 1.082094377286953,
+      "rewinds": 0
+    },
+    {
+      "kind": "downhill",
+      "hz": 60,
+      "finite": true,
+      "maxError": 1.0552902857943458e-10,
+      "minGap": -6.510314436158904e-8,
+      "maxSlip": 1.0626145671433019e-10,
+      "maxLift": 0.3324877279750112,
+      "maxHipSpeed": 1.3800802250850164,
+      "rewinds": 0
+    },
+    {
+      "kind": "step",
+      "hz": 60,
+      "finite": true,
+      "maxError": 9.547610916020119e-11,
+      "minGap": -3.0537047265855044e-8,
+      "maxSlip": 1.1356876957036812e-10,
+      "maxLift": 0.38134310698950546,
+      "maxHipSpeed": 0.3304708769594611,
+      "rewinds": 0
+    },
+    {
+      "kind": "back",
+      "hz": 60,
+      "finite": true,
+      "maxError": 4.4471386097826264e-11,
+      "minGap": -2.3843894955688505e-8,
+      "maxSlip": 3.2966073979705226e-11,
+      "maxLift": 0.2973060969117904,
+      "maxHipSpeed": 0.3308747462011974,
+      "rewinds": 0
+    },
+    {
+      "kind": "strafe",
+      "hz": 60,
+      "finite": true,
+      "maxError": 2.5814181105408774e-8,
+      "minGap": -2.3987450678553124e-8,
+      "maxSlip": 1.6888693026570806e-8,
+      "maxLift": 0.2973060980845471,
+      "maxHipSpeed": 0.6516206062773966,
+      "rewinds": 0
+    },
+    {
+      "kind": "crouch",
+      "hz": 60,
+      "finite": true,
+      "maxError": 1.9150598507232645e-10,
+      "minGap": -2.3843681570823172e-8,
+      "maxSlip": 2.0311846230833935e-10,
+      "maxLift": 0.1875031081036387,
+      "maxHipSpeed": 0.04250916183337061,
+      "rewinds": 0
+    },
+    {
+      "kind": "prone",
+      "hz": 60,
+      "finite": true,
+      "maxError": 2.9693887490534245e-12,
+      "minGap": -0.03874636541640562,
+      "maxSlip": 0,
+      "maxLift": 0.07867475455889313,
+      "maxHipSpeed": 0,
+      "rewinds": 0
+    },
+    {
+      "kind": "turn-idle",
+      "hz": 60,
+      "finite": true,
+      "maxError": 0.00009857476126878485,
+      "minGap": -2.3841923310619073e-8,
+      "maxSlip": 0.000328863772103942,
+      "maxLift": 0.1587499880790732,
+      "maxHipSpeed": 0.3652053775431052,
+      "rewinds": 0
+    },
+    {
+      "kind": "accelerate",
+      "hz": 60,
+      "finite": true,
+      "maxError": 4.897918026949672e-10,
+      "minGap": -2.386119334063519e-8,
+      "maxSlip": 1.4449822776403807e-10,
+      "maxLift": 0.4465525209113011,
+      "maxHipSpeed": 3.135285531353562,
+      "rewinds": 0
+    },
+    {
+      "kind": "brake",
+      "hz": 60,
+      "finite": true,
+      "maxError": 0.0008363170255336566,
+      "minGap": -2.3842045213107177e-8,
+      "maxSlip": 0.001344867603227322,
+      "maxLift": 0.4320345817438962,
+      "maxHipSpeed": 0.9683396896993957,
+      "rewinds": 0
+    },
+    {
+      "kind": "uphill",
+      "hz": 30,
+      "finite": true,
+      "maxError": 1.3523372947499232e-10,
+      "minGap": -7.900137054261958e-8,
+      "maxSlip": 1.595172575301078e-10,
+      "maxLift": 0.27871489868139454,
+      "maxHipSpeed": 0.32701255661143125,
+      "rewinds": 0
+    },
+    {
+      "kind": "downhill",
+      "hz": 30,
+      "finite": true,
+      "maxError": 1.3675642812469568e-10,
+      "minGap": -6.188109379079432e-8,
+      "maxSlip": 1.337156629015937e-10,
+      "maxLift": 0.3361327357040411,
+      "maxHipSpeed": 1.218562015873259,
+      "rewinds": 0
+    },
+    {
+      "kind": "step",
+      "hz": 30,
+      "finite": true,
+      "maxError": 1.236770526122315e-10,
+      "minGap": -2.471572922713161e-8,
+      "maxSlip": 1.3359202280458462e-10,
+      "maxLift": 0.37944906001844625,
+      "maxHipSpeed": 0.32701255661143125,
+      "rewinds": 0
+    },
+    {
+      "kind": "back",
+      "hz": 30,
+      "finite": true,
+      "maxError": 4.93070768363665e-11,
+      "minGap": 1.1919578449259838e-8,
+      "maxSlip": 1.86609845277266e-11,
+      "maxLift": 0.29673088821212595,
+      "maxHipSpeed": 0.32701255661143125,
+      "rewinds": 0
+    },
+    {
+      "kind": "strafe",
+      "hz": 30,
+      "finite": true,
+      "maxError": 1.5405043032544728e-8,
+      "minGap": 7.502984525342704e-9,
+      "maxSlip": 8.586614084067867e-9,
+      "maxLift": 0.29673088808479925,
+      "maxHipSpeed": 0.6154448946714752,
+      "rewinds": 0
+    },
+    {
+      "kind": "crouch",
+      "hz": 30,
+      "finite": true,
+      "maxError": 2.241673156570457e-10,
+      "minGap": 1.191629052377241e-8,
+      "maxSlip": 1.7697649258290007e-10,
+      "maxLift": 0.18750310810480345,
+      "maxHipSpeed": 0.04145353741051294,
+      "rewinds": 0
+    },
+    {
+      "kind": "prone",
+      "hz": 30,
+      "finite": true,
+      "maxError": 2.8967821816458693e-12,
+      "minGap": -0.038746365416039305,
+      "maxSlip": 0,
+      "maxLift": 0.07866593903670537,
+      "maxHipSpeed": 0,
+      "rewinds": 0
+    },
+    {
+      "kind": "turn-idle",
+      "hz": 30,
+      "finite": true,
+      "maxError": 0.0003566470467868163,
+      "minGap": -2.384190016246901e-8,
+      "maxSlip": 0.00035263196639064086,
+      "maxLift": 0.15709153515072216,
+      "maxHipSpeed": 0.3223806764407544,
+      "rewinds": 0
+    },
+    {
+      "kind": "accelerate",
+      "hz": 30,
+      "finite": true,
+      "maxError": 3.652659312452538e-10,
+      "minGap": -2.3859180561802695e-8,
+      "maxSlip": 8.449021763220592e-11,
+      "maxLift": 0.4365921601957202,
+      "maxHipSpeed": 1.261639671391287,
+      "rewinds": 0
+    },
+    {
+      "kind": "brake",
+      "hz": 30,
+      "finite": true,
+      "maxError": 0.0010186108474043993,
+      "minGap": -2.3842106941507346e-8,
+      "maxSlip": 0.0011766935794071311,
+      "maxLift": 0.42602985060876136,
+      "maxHipSpeed": 0.9436515463848705,
+      "rewinds": 0
+    }
+  ]
+}

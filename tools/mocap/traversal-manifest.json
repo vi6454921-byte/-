@@ -1,0 +1,122 @@
+{
+  "source": "http://mocap.cs.cmu.edu/",
+  "fps": 120,
+  "actions": {
+    "jump": {
+      "clip": "13_11",
+      "frames": [
+        150,
+        355
+      ],
+      "duration": 1.7083333333333333,
+      "leg": 0.8822492444444445
+    },
+    "stepOver": {
+      "clip": "40_07",
+      "frames": [
+        130,
+        350
+      ],
+      "duration": 1.8333333333333333,
+      "leg": 0.8898867422222222
+    },
+    "speedVault": {
+      "clip": "127_25",
+      "frames": [
+        42,
+        210
+      ],
+      "duration": 1.4,
+      "leg": 0.8491682844444444
+    },
+    "mantle": {
+      "clip": "40_07",
+      "frames": [
+        1260,
+        1550
+      ],
+      "duration": 2.4166666666666665,
+      "leg": 0.8898867422222222
+    },
+    "getUpFront": {
+      "clip": "140_01",
+      "frames": [
+        155,
+        660
+      ],
+      "duration": 4.208333333333333,
+      "leg": 0.7785128222222222
+    },
+    "getUpSide": {
+      "clip": "140_03",
+      "frames": [
+        300,
+        820
+      ],
+      "duration": 4.333333333333333,
+      "leg": 0.7785128222222222
+    },
+    "getUpBack": {
+      "clip": "140_08",
+      "frames": [
+        155,
+        780
+      ],
+      "duration": 5.208333333333333,
+      "leg": 0.7785128222222222
+    }
+  },
+  "files": [
+    {
+      "file": "127.asf",
+      "url": "http://mocap.cs.cmu.edu/subjects/127/127.asf",
+      "sha256": "5c28c8c780fd5ae9ece226fbfce83dbce140a11394f183cca3376d238a33f395"
+    },
+    {
+      "file": "127_25.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/127/127_25.amc",
+      "sha256": "2c7ad8ef53c9e3170b3354eefd24f7a5937911a81830b9adfa8ef80ddd34d8db"
+    },
+    {
+      "file": "13.asf",
+      "url": "http://mocap.cs.cmu.edu/subjects/13/13.asf",
+      "sha256": "eb33390bcbccb739d7622bd583fd9be55020868f68689aa6f2060ad688df10dc"
+    },
+    {
+      "file": "13_11.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/13/13_11.amc",
+      "sha256": "68264edee72545214cebb6a6d6ac9c620232c9918ea3febd7a0bda1ad1691439"
+    },
+    {
+      "file": "140.asf",
+      "url": "http://mocap.cs.cmu.edu/subjects/140/140.asf",
+      "sha256": "13d3c7488671d3902c0ea7faa672e1c79465c034c050de88668ace164e519a37"
+    },
+    {
+      "file": "140_01.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/140/140_01.amc",
+      "sha256": "35f699e9f25acc67fc0aac2779f2031c53107345d776dfbd514b0e7f65e55cc6"
+    },
+    {
+      "file": "140_03.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/140/140_03.amc",
+      "sha256": "84072adc179aafe389d8d5dd6d936ce212cef7e496e8938045f5127be97743d8"
+    },
+    {
+      "file": "140_08.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/140/140_08.amc",
+      "sha256": "afaafee69db963a51059e324355d089e95d48f71117cd44e4304d68bf1a4dbf8"
+    },
+    {
+      "file": "40.asf",
+      "url": "http://mocap.cs.cmu.edu/subjects/40/40.asf",
+      "sha256": "4783cfb2ea519adab0f7550bb01e5ac2602a3ba095663e6afb3bd9bd5af76e00"
+    },
+    {
+      "file": "40_07.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/40/40_07.amc",
+      "sha256": "de33af784cec60b419be78e3b4da85a2c0731b840265f29d6acf92b4c676b7a9"
+    }
+  ],
+  "retarget": "CMU positional channels, phase-warped to KCC physics and ground/hand contacts. 40_07 stepstool and 127_25 jump-over adapted to 3 traversal styles; not direct military vault recordings."
+}

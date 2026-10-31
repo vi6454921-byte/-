@@ -1,0 +1,267 @@
+{
+  "baseline": "AEGIS_surface_impacts_v8.zip",
+  "changed": [
+    {
+      "file": "README.md",
+      "sha256": "3ac5bc8cb8d62b29a257d648cca30203b852423c820b03fb960ff24928883b48"
+    },
+    {
+      "file": "index.html",
+      "sha256": "cf6d35fb2775fa1f3a0bb5e85f3f54ee7909ab78197a2dbec0eac3f44ed1d54d"
+    },
+    {
+      "file": "js/advanced/animator.js",
+      "sha256": "40a3e51b15948b74ce48ee22dd6dd4ae509f2b69bf6820e5efcf4ff504f045d3"
+    },
+    {
+      "file": "js/polygon/15_rig.js",
+      "sha256": "a76a6cbd74b703c138783df4bb97d500fbbcbafa775e9266cbc1e5f194fa4162"
+    },
+    {
+      "file": "js/polygon/29_game.js",
+      "sha256": "464b53a650939ba6b2577ff8541ecc596af9dc287eef34f7835c6fb125984fa2"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "63bf2ddeeefc6884cfd85dea78f0f09502c92140ee8941c3853361ef10bccd76"
+    },
+    {
+      "file": "package.json",
+      "sha256": "0e2d840d5788dd34489dbcb2da2b69c19660152ff8440a56d8ada1781acf2251"
+    },
+    {
+      "file": "src/advanced/animator.ts",
+      "sha256": "67595d05b7b8f96917034780a54285b7007583dba69dc02500d9288a1b2083a7"
+    },
+    {
+      "file": "tools/advanced-tests/locomotion-v5-run.png",
+      "sha256": "a144822680bd1c4c93651140693b0df7ae5aa31e4c58b2b213217406dda6f90b"
+    },
+    {
+      "file": "tools/advanced-tests/locomotion-v5.json",
+      "sha256": "14c3921a333e4ee436a6f901943ca97b509ac10b2b51c620e7a4e6269e2f18f7"
+    }
+  ],
+  "added": [
+    {
+      "file": "MOCAP_LOCOMOTION_V9_README_RU.md",
+      "sha256": "f89915ccff8df407076d74f07772f04c3a96c4e3037836c04e2ca2bd5becbc84"
+    },
+    {
+      "file": "docs/CMU_MOCAP_CREDITS.md",
+      "sha256": "2a87e8cbd3e6e7b567206090b45c912c8674d6b1bbefe686a5f7bdc835edfd81"
+    },
+    {
+      "file": "docs/MOCAP_LOCOMOTION_QA_V9.json",
+      "sha256": "3ede20ba9997e74c56985db520c8d087ece9d4bdc34e4fc1a70d6da268eceb0e"
+    },
+    {
+      "file": "docs/MOCAP_LOCOMOTION_V9_DEMO.mp4",
+      "sha256": "d07ee35b975e6a24e439d46c8faf9c7f52d29fa6d2ffabaf69cb5335e76f3808"
+    },
+    {
+      "file": "docs/MOCAP_LOCOMOTION_V9_FRAMES.jpg",
+      "sha256": "c2b4e5b00c5ee10690ca97b48c83307cade9b6e8c5c69b64c0991f6b3d5eab3b"
+    },
+    {
+      "file": "js/advanced/gait-data.js",
+      "sha256": "8821f2bff0840478e19b49dafa68f1f09a33823d38cd412bc8931468110b2f4b"
+    },
+    {
+      "file": "tools/advanced-tests/gait-v9.cjs",
+      "sha256": "24f79b7f25ad67b9496ca2649723aac978bd4d2362ebe3c3da000dd1bc795205"
+    },
+    {
+      "file": "tools/advanced-tests/gait-v9.json",
+      "sha256": "70c32550e9f90260e4b3471ebc25e4283a2604fcc742eaa2a6c199f646da4a74"
+    },
+    {
+      "file": "tools/advanced-tests/locomotion-v9-core.json",
+      "sha256": "ee8457af3dd7744d7ce2ce7a50e91754d31e3da69b2772b0ccf3c215230f4ed0"
+    },
+    {
+      "file": "tools/advanced-tests/locomotion-v9-video.cjs",
+      "sha256": "43e5d8b89f98c39e2e380c93c910d6a8543e727d2fe1c5bd7347238dcee8b6f4"
+    },
+    {
+      "file": "tools/advanced-tests/locomotion-v9-video.json",
+      "sha256": "3883ff6b4538cfafb68703a2b37a7e486a63f898967fe7da6d66d2d5c9dcc477"
+    },
+    {
+      "file": "tools/advanced-tests/locomotion-v9-visual.cjs",
+      "sha256": "22a6bdab18a86d2abd003280f3fe3b8847015d5644f1d45b27bf53334c78cf97"
+    },
+    {
+      "file": "tools/advanced-tests/locomotion-v9-visual.json",
+      "sha256": "ce962176031f484f68a9c5a264bcae9f79225ae994bb369f88dced0a3ec8b5a5"
+    },
+    {
+      "file": "tools/advanced-tests/locomotion-v9.cjs",
+      "sha256": "961875505983f55d1409524db1f3b130c3a9cebe93dac31f88635c1c6e0d6e81"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/armed-run-0.png",
+      "sha256": "76e985f572ff1a45b09bea01d4668af4a94b6f6b594415f99d7fc5a461533241"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/armed-run-1.png",
+      "sha256": "7080268110be2ac6e355843afe6e441c2619c59f6a1204c092b9910536b21681"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/armed-run-2.png",
+      "sha256": "d35996b44c70d2a06a021b8fbbf85bfa5ab0d5a37e9cbf69230eb16229f23042"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/armed-run-3.png",
+      "sha256": "453d69b03ef824a5495ae7001847f082944be324c13a9efcc4acb9dacc6567fd"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/jog-0.png",
+      "sha256": "055cdda465e33f00445de697fc4a3223e527a58a94c62709dfe9ac79e703695f"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/jog-1.png",
+      "sha256": "e210e0322552a0187bd7bea01012e30aa82612c3ba0684eb4befef3ea9be5565"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/jog-2.png",
+      "sha256": "0a0cf09f09e72ee8054ca5d2c02fa41f8eea57b14a7679c89ebf718512b345b3"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/jog-3.png",
+      "sha256": "5f862d11bb3efa33d15a4a3d21b1373a0a6c466950b3e3c8cea4cca42ac14b80"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/run-0.png",
+      "sha256": "3e90e0596d07dee533a8749cc1c019b790c1bfeaa8b46b95ccb80dd6e91f6f83"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/run-1.png",
+      "sha256": "da5168cd920f1ca0afe3c8624e18a3d589b499c1152eef27a20233be63feb1ab"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/run-2.png",
+      "sha256": "4f3b89151570991e3ce2ec5a571ca1e262a036a7fcca2df270ef62ecfdde5762"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/run-3.png",
+      "sha256": "fb97b1b980f0e5b723ed5acfbaffbd17c59be6c23acb17b8a4ff49317a9dd19e"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/walk-0.png",
+      "sha256": "a6c2feb782776a07ceebfa6066d1a19862d6b51aba1f58fc111b8aebfd7e3aeb"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/walk-1.png",
+      "sha256": "2eb6b3192956ddf10a76e0ec93eaacfcb2fafd70e0cbe5ed5a61335df2d88066"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/walk-2.png",
+      "sha256": "d24b205b8a9cd2e170f0fbda6bc46d524468222a0b0e8da75c0364bcbafdbe3c"
+    },
+    {
+      "file": "tools/advanced-tests/motion-v9-frames/walk-3.png",
+      "sha256": "fb3fb7cda101edb5ffb69bfa68f1d4d9153c398ade54f3a9fb7b3e49a801d185"
+    },
+    {
+      "file": "tools/advanced-tests/npc-v7-before-v9.json",
+      "sha256": "65636cf54350f3832009eeab5565458bf8c8e72a881d969a6c4ecb202cd31f1e"
+    },
+    {
+      "file": "tools/advanced-tests/npc-v9-after.json",
+      "sha256": "97a6c8f0457b51cb44ffd92b94d43532d9deeeb80387274f5d9677adfe60fbc7"
+    },
+    {
+      "file": "tools/advanced-tests/npc-v9-browser.cjs",
+      "sha256": "898330567ae15caaf1a5cb8600debdc41c4348385b59761febc1ebee69dc501a"
+    },
+    {
+      "file": "tools/advanced-tests/terrain-v9.cjs",
+      "sha256": "b5c5374d42ce9272e511f5cdbdc1f9b05c4cefbf7c897f559dc934f1fa1536a0"
+    },
+    {
+      "file": "tools/advanced-tests/terrain-v9.json",
+      "sha256": "b32a72e16c5a2287693b9467704a3e3539964caf10b35fcd30c181ec55b56e85"
+    },
+    {
+      "file": "tools/mocap/build-gaits.py",
+      "sha256": "80bc0a7327b731d97930e4141f16129ccd5b2b0ebc39600b085bc8fb7f146b0d"
+    },
+    {
+      "file": "tools/mocap/manifest.json",
+      "sha256": "e5e1a906c5389aa68c5607831d11a2ade9290feccd7d0dd1ada0d6317cd6397f"
+    },
+    {
+      "file": "tools/mocap/source/07.asf",
+      "sha256": "c29414591d76a34885bff0b04a2666bf9659f869751a2549591c55277cf95b04"
+    },
+    {
+      "file": "tools/mocap/source/07_01.amc",
+      "sha256": "3ca8e8b834481c97c32e9dd555f8c9023e33b6c52d93c9d556c83570204bf3f2"
+    },
+    {
+      "file": "tools/mocap/source/07_02.amc",
+      "sha256": "a6062c6c6bce037241d345ca8d802ab36a5cf003b60f759aa7b1db545219c065"
+    },
+    {
+      "file": "tools/mocap/source/09.asf",
+      "sha256": "be10dbce393fd60a2d322410032d618757afcc5bb2f7a508d887c5b0213f1897"
+    },
+    {
+      "file": "tools/mocap/source/09_01.amc",
+      "sha256": "02c94e8c2d4d2ff05f9a784f06403700c2c9d7caedd9bd92b50284d1a05f2bee"
+    },
+    {
+      "file": "tools/mocap/source/09_02.amc",
+      "sha256": "9e618b1c3897776e98485ad01509708b1e5190c76fc630ad6db9ccb12529b927"
+    },
+    {
+      "file": "tools/mocap/source/16.asf",
+      "sha256": "2323f876564610f84bfbec9b90b8ebffb57515673b7f4a45b0fb0849af465bdb"
+    },
+    {
+      "file": "tools/mocap/source/16_15.amc",
+      "sha256": "0873a7753a04c34de2a94dc768b61ef4ed8395f0bd351c2019864b16883b0f89"
+    },
+    {
+      "file": "tools/mocap/source/16_16.amc",
+      "sha256": "b8ec17da1da966b886215e5c4974d29d63beefd72a68139134e2863cce0a6316"
+    },
+    {
+      "file": "tools/mocap/source/16_35.amc",
+      "sha256": "28e83b8ee8ff46e15cb7d41d5e77faaefe3e06cf165f05fb18dd348457bdf387"
+    },
+    {
+      "file": "tools/mocap/source/16_36.amc",
+      "sha256": "d0b511189db92f754c63a3cf0d93b71ebd67cea8b657f57d722c48b9896ba5a9"
+    },
+    {
+      "file": "tools/mocap/source/35.asf",
+      "sha256": "2a8e2eda3c0d7d828566b2a9a8ab36b2b8b3864110574e8b73c8f069fded416c"
+    },
+    {
+      "file": "tools/mocap/source/35_01.amc",
+      "sha256": "0743f4ea48e7e199cd56b2810b5ce81f8ede08d32ff79aa4e363c44cc4fe33aa"
+    },
+    {
+      "file": "tools/mocap/source/35_02.amc",
+      "sha256": "c2573ac32712c503d0d957a4708e0f3488348269485cdc7b00266b44d116c903"
+    },
+    {
+      "file": "tools/mocap/source/35_03.amc",
+      "sha256": "268e87ca19726fe03a66b4f792e3226706afe8a393ab1587a8794de6b43dc447"
+    },
+    {
+      "file": "tools/mocap/source/35_17.amc",
+      "sha256": "8096cd53878242dbc35e987288cef6ae81d4e1c0e207086639bbed5cc06c8fee"
+    },
+    {
+      "file": "tools/mocap/source/35_18.amc",
+      "sha256": "b83673d6f66b56eef95beda511ebca7ae9c759c1a1694c852bc602623430aa42"
+    },
+    {
+      "file": "tools/mocap/source/35_19.amc",
+      "sha256": "f7b771807befc5c353d3df94ee302faef03803d3598b97de583aeb1df5e12081"
+    }
+  ]
+}

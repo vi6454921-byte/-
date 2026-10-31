@@ -1,0 +1,15 @@
+{
+  "base": "AEGIS_v18_3_Recast_BT_Rapier.zip",
+  "changedOrAdded": {
+    "README_ADVANCED_RU.md": "b05bd4bc40985630e1ee1662f6eb60ce67e8922e8a78e1c42c95e2720de51acd",
+    "docs/BUILD_QA.json": "bf124d633cd9b029ac5a1ee87e6f7b7a692e0c2dc1652e196631eb0dd5988600",
+    "docs/LAUNCH_FIX_QA.json": "f2d1ab947c9a612c32588e1e40a09a7ca49b94acb8ef7348071c6c3b4aa6fcfb",
+    "index.html": "1a7fbd4a481597542d8ef251de92c0defc731a954f9098deaad23fb7ff8669f6",
+    "package-lock.json": "a8565c1cbb69a0c8a4dc049088ae2fb9c1c419d526b8f9a36b59ebee872cc58d",
+    "package.json": "dc679848711a742e1cc0a2b9697c1b5101a98292c44e1764b03d59e068bc8a60",
+    "start-server.bat": "5e857788550c9d421cf71f077d972680614d2b6ed285b3c7a0da568d52197545",
+    "start-server.sh": "f39c698f891ebcff7aaeb52b6164e5258e6806890a6d4efbbe2113bf46894515",
+    "tools/advanced-tests/integration-angar_map.json": "32627d6eaf71fad48f729b5eac676aa6579d1b7de2b977057ba0c260c2018777",
+    "tools/serve.py": "46aee185c3aa9a30d30a342c37f41a3a667a994f3d57de109d87c249c048d8d8"
+  }
+}

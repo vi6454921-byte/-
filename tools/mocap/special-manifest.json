@@ -1,0 +1,159 @@
+{
+  "source": "http://mocap.cs.cmu.edu/",
+  "version": 11,
+  "cyclicWindows": {
+    "136_09": [
+      450,
+      1050
+    ],
+    "136_10": [
+      510,
+      1110
+    ],
+    "17_03": [
+      870,
+      1470
+    ]
+  },
+  "actions": {
+    "turn90L": {
+      "clip": "16_17",
+      "frames": [
+        195,
+        399
+      ],
+      "duration": 1.7,
+      "leg": 0.836092,
+      "loop": false,
+      "yaw": 1.632075
+    },
+    "turn90R": {
+      "clip": "16_19",
+      "frames": [
+        153,
+        357
+      ],
+      "duration": 1.7,
+      "leg": 0.836092,
+      "loop": false,
+      "yaw": -1.62316
+    },
+    "turn180": {
+      "clip": "36_02",
+      "frames": [
+        4013,
+        4265
+      ],
+      "duration": 2.1,
+      "leg": 0.843795,
+      "loop": false,
+      "yaw": 2.777449
+    },
+    "stopWalk": {
+      "clip": "16_33",
+      "frames": [
+        131,
+        285
+      ],
+      "duration": 1.283333,
+      "leg": 0.836092,
+      "loop": false,
+      "yaw": -0.035662
+    },
+    "stopRun": {
+      "clip": "16_57",
+      "frames": [
+        109,
+        264
+      ],
+      "duration": 1.291667,
+      "leg": 0.836092,
+      "loop": false,
+      "yaw": -0.019024
+    },
+    "crawl": {
+      "clip": "111_03",
+      "frames": [
+        463,
+        632
+      ],
+      "duration": 1.408333,
+      "leg": 0.775182,
+      "loop": true,
+      "yaw": 0.375488
+    }
+  },
+  "files": [
+    {
+      "file": "111.asf",
+      "url": "http://mocap.cs.cmu.edu/subjects/111/111.asf",
+      "sha256": "8fe67a2163f1f70ed985e34abe0e3ff4af7f5da76f2f3c178d59759cb18bba16"
+    },
+    {
+      "file": "111_03.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/111/111_03.amc",
+      "sha256": "ed59da10b187b0bd294316e7954769b881de2f898e5de8c27ba148e9e3f7d37b"
+    },
+    {
+      "file": "136.asf",
+      "url": "http://mocap.cs.cmu.edu/subjects/136/136.asf",
+      "sha256": "48eb3f19477086e28495d841c604157b354fc76be054fa662ff10843ac698427"
+    },
+    {
+      "file": "136_09.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/136/136_09.amc",
+      "sha256": "2d42440a0cd5abe84a5e4728073425ecfab53787928134536e6e8da84207e79c"
+    },
+    {
+      "file": "136_10.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/136/136_10.amc",
+      "sha256": "1d405f6d991acbfef749073ca3caf7e6e347af3d3a60e579509d2424028eee68"
+    },
+    {
+      "file": "16.asf",
+      "url": "http://mocap.cs.cmu.edu/subjects/16/16.asf",
+      "sha256": "2323f876564610f84bfbec9b90b8ebffb57515673b7f4a45b0fb0849af465bdb"
+    },
+    {
+      "file": "16_17.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/16/16_17.amc",
+      "sha256": "a59f9c90eb2af8197c6390edddbcf761bbec1cf03b6907128212102fe2123a2c"
+    },
+    {
+      "file": "16_19.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/16/16_19.amc",
+      "sha256": "691d578a676bf9e091dac59001a6cb78daa7141ad5639f943c684dee7f4e64e6"
+    },
+    {
+      "file": "16_33.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/16/16_33.amc",
+      "sha256": "03644f38e30d839a005334a6358f97093da05a65da53a73a51bd8136c5cd63ea"
+    },
+    {
+      "file": "16_57.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/16/16_57.amc",
+      "sha256": "ae00399e82615e63be9590e0e11c679a5f033111a656e9ffbbb0a3e3060a01cd"
+    },
+    {
+      "file": "17.asf",
+      "url": "http://mocap.cs.cmu.edu/subjects/17/17.asf",
+      "sha256": "5ffc9575bb74fe327327db991b2f9bb87f00bd9b1a04c20583d955d396020304"
+    },
+    {
+      "file": "17_03.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/17/17_03.amc",
+      "sha256": "6b4be366a5ae8d0a05b7172099d92bb1f33b997933ad5c1ae8747ba5b831abe7"
+    },
+    {
+      "file": "36.asf",
+      "url": "http://mocap.cs.cmu.edu/subjects/36/36.asf",
+      "sha256": "05e190867ead216b5dcdc94b210aa19b2eaaf383df44f1d9bb247e64fbf1c02b"
+    },
+    {
+      "file": "36_02.amc",
+      "url": "http://mocap.cs.cmu.edu/subjects/36/36_02.amc",
+      "sha256": "bbbf8ebb9b7e7c96a114169169d7200c3bd2c77e3d4673427de446bee80f7bfa"
+    }
+  ],
+  "crawlRetarget": "111_03 is quadrupedal crawling, not a military prone capture. Timing/asymmetry are retargeted into a low prone body with terrain IK; no claim of direct military mocap."
+}

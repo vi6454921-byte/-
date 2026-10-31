@@ -1,0 +1,111 @@
+{
+ "MAP": "",
+ "VW": 640,
+ "VH": 360,
+ "loadS": 47.295,
+ "setup": {
+  "best": {
+   "a": 24,
+   "far": 60,
+   "dx": 0.40673664307580015,
+   "dz": 0.9135454576426009
+  },
+  "e": 1,
+  "me": 0
+ },
+ "rows": [
+  {
+   "D1080": 35,
+   "d": 11.7,
+   "hPx": 33.5,
+   "bodyPx": true,
+   "gunPx": false,
+   "gun": null,
+   "queued": 0,
+   "calls": [
+    28,
+    9
+   ],
+   "pixels": [
+    196,
+    199
+   ],
+   "IoU": 0.96,
+   "contrast": [
+    92.6,
+    94.2
+   ],
+   "diffRGB": 8.2
+  },
+  {
+   "D1080": 60,
+   "d": 20,
+   "hPx": 19.6,
+   "bodyPx": true,
+   "gunPx": false,
+   "gun": null,
+   "queued": 0,
+   "calls": [
+    22,
+    4
+   ],
+   "pixels": [
+    37,
+    36
+   ],
+   "IoU": 0.97,
+   "contrast": [
+    66.2,
+    64.7
+   ],
+   "diffRGB": 7.2
+  },
+  {
+   "D1080": 100,
+   "d": 33.3,
+   "hPx": 11.8,
+   "bodyPx": true,
+   "gunPx": false,
+   "gun": null,
+   "queued": 0,
+   "calls": [
+    22,
+    4
+   ],
+   "pixels": [
+    13,
+    13
+   ],
+   "IoU": 1,
+   "contrast": [
+    125.2,
+    126
+   ],
+   "diffRGB": 3.9
+  },
+  {
+   "D1080": 135,
+   "d": 45,
+   "hPx": 8.7,
+   "bodyPx": true,
+   "gunPx": false,
+   "gun": null,
+   "queued": 0,
+   "calls": [
+    22,
+    4
+   ],
+   "pixels": [
+    7,
+    7
+   ],
+   "IoU": 1,
+   "contrast": [
+    146.2,
+    146.8
+   ],
+   "diffRGB": 4.1
+  }
+ ],
+ "errs": []
+}

@@ -1,0 +1,18 @@
+{
+  "result": {
+    "shotHit": true,
+    "afterShot": 2,
+    "reloadStarted": true,
+    "reloadFinished": true,
+    "mag": 29,
+    "chamber": 1,
+    "before": 0,
+    "after": 1,
+    "squad": 24,
+    "finite": true,
+    "module": true,
+    "world": "angar_map",
+    "marks": 2
+  },
+  "errors": []
+}

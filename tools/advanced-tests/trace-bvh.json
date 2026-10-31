@@ -1,0 +1,41 @@
+{
+  "tests": 3000,
+  "instanceIdentityCases": 100,
+  "benchmark": {
+    "rays": 400,
+    "triangles": 64800,
+    "rounds": [
+      {
+        "originalMs": 2128.7525530000003,
+        "bvhMs": 3.551999000000251
+      },
+      {
+        "originalMs": 1990.415196,
+        "bvhMs": 3.747599000000264
+      },
+      {
+        "originalMs": 1963.151707,
+        "bvhMs": 3.208872999999585
+      }
+    ],
+    "note": "Node CPU microbenchmark of identical seeded rays; not gameplay FPS"
+  },
+  "stats": {
+    "rays": 3000,
+    "tests": 4358,
+    "itests": 0,
+    "rebuilds": 0,
+    "meshes": 150,
+    "custom": 0,
+    "dynamic": 1,
+    "topY": null,
+    "bvh": {
+      "geometries": 151,
+      "triangles": 81000,
+      "buildMs": 141.64297400000018,
+      "failures": 0,
+      "backend": "three-mesh-bvh 0.9.2",
+      "enabled": true
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "result": [
+    {
+      "id": "ar15m4",
+      "name": "AR-15 / M4",
+      "mag": 30,
+      "cal": "556",
+      "modes": [
+        "safe",
+        "semi",
+        "auto"
+      ],
+      "carrierTravel": 90,
+      "magTravel": 0.12,
+      "meshCount": 48,
+      "vertices": 51314,
+      "textured": 48,
+      "trigger": true,
+      "sights": 1,
+      "contact": true
+    },
+    {
+      "id": "glock21",
+      "name": "Glock 21 Gen4",
+      "mag": 13,
+      "cal": "45acp",
+      "modes": [
+        "semi"
+      ],
+      "carrierTravel": 36,
+      "magTravel": 0.12,
+      "meshCount": 10,
+      "vertices": 94488,
+      "textured": 10,
+      "trigger": true,
+      "sights": 1,
+      "contact": true
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,13 @@
+{
+  "base": "AEGIS_mocap_actions_v12.zip",
+  "baseSHA256": "cbe0e9412b2796fa03dd507a9af9b4954babc43336372d7bd2bd2ca3c354243b",
+  "unchangedOriginalFiles": 700,
+  "changedOriginalFiles": [
+    "package-lock.json",
+    "package.json",
+    "vendor/bullet-impacts/Decals.ts",
+    "vendor/bullet-impacts/bullet-impacts.js"
+  ],
+  "missingOriginalFiles": [],
+  "animationCodePreserved": true
+}

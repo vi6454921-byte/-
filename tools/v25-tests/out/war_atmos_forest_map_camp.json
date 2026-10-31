@@ -1,0 +1,49 @@
+{
+  "map": "forest_map_camp",
+  "quality": "low",
+  "plumes": [
+    {
+      "a": 7.35,
+      "d": 3602,
+      "big": 0.9
+    },
+    {
+      "a": 4.53,
+      "d": 2583,
+      "big": 0.8
+    }
+  ],
+  "craters": 10,
+  "craterKinds": {
+    "big": 2,
+    "small": 8
+  },
+  "minBaseDist": 44,
+  "roofHits": 0,
+  "battle10min": {
+    "mg": 11,
+    "auto": 18,
+    "single": 10,
+    "art": 2,
+    "duel": 6
+  },
+  "battleBefore": {
+    "mg": 0,
+    "auto": 0,
+    "single": 0,
+    "art": 0,
+    "duel": 0
+  },
+  "msWithout": 31.1,
+  "msWith": 43.3,
+  "shotTimes": [
+    "plume0_high:54453",
+    "plume0_ground:100",
+    "plume1_high:92",
+    "plume1_ground:44",
+    "crater0_r0.8small:6040",
+    "crater1_r1.2small:9165",
+    "crater2_r2.1big:48",
+    "crater3_r0.8small:44"
+  ]
+}

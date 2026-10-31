@@ -1,0 +1,148 @@
+{
+  "result": {
+    "pass": true,
+    "fixtureSeed": "0x1840a3",
+    "brass": [
+      {
+        "dt": 0.016666666666666666,
+        "emitted": 131,
+        "capacity": 26,
+        "spent": 26,
+        "minY": 2.003309726715088,
+        "maxY": 2.003432035446167,
+        "sounds": 33,
+        "disposed": true
+      },
+      {
+        "dt": 0.03333333333333333,
+        "emitted": 131,
+        "capacity": 26,
+        "spent": 26,
+        "minY": 2.003305435180664,
+        "maxY": 2.003429889678955,
+        "sounds": 37,
+        "disposed": true
+      },
+      {
+        "dt": 0.05,
+        "emitted": 131,
+        "capacity": 26,
+        "spent": 26,
+        "minY": 2.0033156871795654,
+        "maxY": 2.003432273864746,
+        "sounds": 30,
+        "disposed": true
+      }
+    ],
+    "magazines": {
+      "drops": 13,
+      "wakeVisualResumed": true,
+      "retained": 8,
+      "resting": 8,
+      "items": [
+        {
+          "p": [
+            33.743,
+            0.093,
+            -0.071
+          ],
+          "rest": true,
+          "t": 0.97
+        },
+        {
+          "p": [
+            33.697,
+            0.093,
+            0.203
+          ],
+          "rest": true,
+          "t": 1.27
+        },
+        {
+          "p": [
+            33.766,
+            0.093,
+            0.062
+          ],
+          "rest": true,
+          "t": 0.95
+        },
+        {
+          "p": [
+            33.755,
+            0.129,
+            0.074
+          ],
+          "rest": true,
+          "t": 1.07
+        },
+        {
+          "p": [
+            33.77,
+            0.093,
+            0.068
+          ],
+          "rest": true,
+          "t": 0.9
+        },
+        {
+          "p": [
+            33.942,
+            0.093,
+            0.081
+          ],
+          "rest": true,
+          "t": 0.98
+        },
+        {
+          "p": [
+            33.802,
+            0.093,
+            0.104
+          ],
+          "rest": true,
+          "t": 0.87
+        },
+        {
+          "p": [
+            -27.54,
+            0.013,
+            -1.468
+          ],
+          "rest": true,
+          "t": 1.27
+        }
+      ]
+    },
+    "mainFx": {
+      "backend": "Rapier",
+      "capacity": 26,
+      "active": 14,
+      "allocated": 26,
+      "spent": 56
+    },
+    "physics": {
+      "backend": "Rapier 0.19.3 WASM",
+      "steps": 915,
+      "actors": 12,
+      "liveMotorRigs": 10,
+      "liveAngularMotors": 130,
+      "servoSubsteps": 64310,
+      "dynamicObjects": 34,
+      "brassPool": {
+        "allocated": 26,
+        "active": 14
+      },
+      "livingContacts": {
+        "rigs": 2,
+        "segments": 34
+      },
+      "ragdolls": 0,
+      "colliders": 444,
+      "bodies": 210,
+      "droppedSeconds": 0,
+      "terrainMaxResolution": 256
+    }
+  },
+  "errors": []
+}

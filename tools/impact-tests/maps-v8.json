@@ -1,0 +1,871 @@
+{
+  "pass": true,
+  "maps": [
+    {
+      "result": {
+        "map": "angar_map",
+        "counts": {
+          "concrete": 124,
+          "fabric": 24,
+          "metal": 123,
+          "wood": 25,
+          "none": 7,
+          "soil": 5
+        },
+        "materials": {
+          "(unnamed)": "fallback",
+          "cable": "fabric",
+          "chrome": "metal",
+          "teamD": "metal",
+          "plastO": "metal",
+          "rubber": "fabric",
+          "foam": "fabric",
+          "conc": "concrete",
+          "palette:0.83|0.35|0|metal": "metal",
+          "panel": "concrete",
+          "palette:0.67|0.35|0|metal": "metal",
+          "corr": "metal",
+          "steel": "metal",
+          "roof": "metal",
+          "wood": "wood",
+          "osb": "wood",
+          "osb2": "wood",
+          "grating": "metal",
+          "hazard": "metal",
+          "palette:0.83|0.05|0|fabric": "fabric",
+          "woodDark": "wood",
+          "palette:0.50|0.35|0|concrete": "concrete",
+          "plywood": "wood",
+          "glass": "none",
+          "palette:0.67|0.05|0|concrete": "concrete",
+          "hesco": "fabric",
+          "palette:1.00|0.05|0|soil": "soil",
+          "hescoMesh": "fabric",
+          "sandbag": "fabric",
+          "palette:0.17|0.85|0|metal": "metal",
+          "palette:0.33|0.85|0|concrete": "concrete",
+          "palette:0.67|0.35|0|concrete": "concrete",
+          "palette:0.83|0.35|0|concrete": "concrete",
+          "palette:0.50|0.35|0|metal": "metal",
+          "palette:1.00|0.05|1|concrete": "concrete",
+          "palette:0.50|0.35|0|soil": "soil",
+          "palette:1.00|0.05|0|concrete": "concrete",
+          "carGlass": "none",
+          "headlamp": "metal",
+          "lightRed": "fallback",
+          "palette:1.00|0.05|0|fabric": "fabric",
+          "helipad": "concrete",
+          "lightAmb": "fallback",
+          "palette:1.00|0.05|2|concrete": "concrete",
+          "palette:0.83|0.05|0|concrete": "concrete",
+          "palette:0.50|0.05|0|concrete": "concrete",
+          "palette:0.50|0.85|2|concrete": "concrete",
+          "palette:0.83|0.05|2|concrete": "concrete",
+          "palette:0.50|0.85|0|concrete": "concrete",
+          "palette:0.67|0.05|0|metal": "metal"
+        },
+        "untyped": [
+          "(unnamed)",
+          "lightRed",
+          "lightAmb"
+        ],
+        "rows": [
+          {
+            "test": "native-bullet-destruction-removes-projected-mark",
+            "sourceKind": "wood",
+            "tint": [
+              0.8647779226303101,
+              0.8658048510551453,
+              0.8229662179946899
+            ],
+            "before": 1,
+            "after": 0,
+            "destroyed": true,
+            "sourceChanged": true,
+            "mesh": "baked_bucket"
+          }
+        ],
+        "colorSamples": [
+          {
+            "kind": "metal",
+            "material": "",
+            "color": [
+              0.2704977910022518,
+              0.2874408377161099,
+              0.3139887133649649
+            ],
+            "tint": [
+              1.0819911640090072,
+              1.1497633508644396,
+              1.2559548534598597
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "",
+            "color": [
+              0.2704977910022518,
+              0.2874408377161099,
+              0.3139887133649649
+            ],
+            "tint": [
+              1.0819911640090072,
+              1.1497633508644396,
+              1.2559548534598597
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "",
+            "color": [
+              0.2704977910022518,
+              0.2874408377161099,
+              0.3139887133649649
+            ],
+            "tint": [
+              1.0819911640090072,
+              1.1497633508644396,
+              1.2559548534598597
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "",
+            "color": [
+              0.3231432091022285,
+              0.3515325994898463,
+              0.3813260114221238
+            ],
+            "tint": [
+              1.292572836408914,
+              1.406130397959385,
+              1.5253040456884952
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "",
+            "color": [
+              0.2704977910022518,
+              0.2874408377161099,
+              0.3139887133649649
+            ],
+            "tint": [
+              1.0819911640090072,
+              1.1497633508644396,
+              1.2559548534598597
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "",
+            "color": [
+              1,
+              1,
+              1
+            ],
+            "tint": [
+              4,
+              4,
+              4
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "",
+            "color": [
+              0,
+              0,
+              0
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "",
+            "color": [
+              0.015996293361446288,
+              0.015996293361446288,
+              0.015996293361446288
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "",
+            "color": [
+              0,
+              0,
+              0
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "",
+            "color": [
+              0.6866853124288864,
+              0.7304607400847158,
+              0.7758222183126458
+            ],
+            "tint": [
+              2.7467412497155457,
+              2.9218429603388634,
+              3.103288873250583
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "",
+            "color": [
+              0.0722718506743852,
+              0.08865558627723595,
+              0.036889450395083165
+            ],
+            "tint": [
+              0.2890874026975408,
+              0.3546223451089438,
+              0.14755780158033266
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "teamD",
+            "color": [
+              0.07818742179702069,
+              0.10224173307914941,
+              0.04231141061442144
+            ],
+            "tint": [
+              0.31274968718808277,
+              0.40896693231659764,
+              0.16924564245768575
+            ]
+          }
+        ]
+      },
+      "errors": []
+    },
+    {
+      "result": {
+        "map": "forest_map_camp",
+        "counts": {
+          "wood": 233,
+          "none": 242,
+          "concrete": 504,
+          "metal": 492,
+          "fabric": 44,
+          "soil": 44,
+          "paper": 4
+        },
+        "materials": {
+          "barkSpruce": "wood",
+          "spruce": "none",
+          "barkPine": "wood",
+          "pine": "none",
+          "barkBirch": "wood",
+          "birch": "none",
+          "(unnamed)": "fallback",
+          "fern": "none",
+          "shrub": "none",
+          "bush": "none",
+          "flora": "none",
+          "grass": "none",
+          "blades": "none",
+          "reed": "none",
+          "planksDark": "wood",
+          "planks": "wood",
+          "deadwood": "wood",
+          "planksPaint": "wood",
+          "roofRust": "metal",
+          "stone": "concrete",
+          "canvas": "fabric",
+          "flagRag": "fabric",
+          "camo": "fabric",
+          "dark": "metal",
+          "lampGlass": "none",
+          "wire": "metal",
+          "peat": "soil",
+          "bogFlora": "none",
+          "sack": "fabric",
+          "concrete": "concrete",
+          "brick": "concrete",
+          "glass": "none",
+          "rust": "metal",
+          "olive": "metal",
+          "paperAtlas": "paper",
+          "crate": "wood",
+          "holes": "none",
+          "roofTar": "fabric",
+          "boardT": "wood",
+          "logWall": "wood",
+          "logEnd": "wood",
+          "steel": "metal",
+          "rubber": "fabric",
+          "planksCamp": "wood",
+          "planksWhite": "wood",
+          "roofCamp": "metal",
+          "planksCream": "wood",
+          "steelPipe": "metal",
+          "signDining": "wood",
+          "signWC": "wood",
+          "signGate": "wood",
+          "wolf": "fallback",
+          "paintRed": "metal",
+          "signWash": "wood",
+          "rope": "fabric",
+          "plaster": "concrete",
+          "signMotto": "wood",
+          "stumpTop": "wood",
+          "wattle": "wood",
+          "barkLog": "wood",
+          "dirtMound": "soil",
+          "burnt": "wood",
+          "coals": "none",
+          "charLog": "wood",
+          "towerSteel": "metal",
+          "grate": "metal",
+          "tankCamp": "metal",
+          "tankGrey": "metal",
+          "heli": "metal",
+          "heliNum": "metal",
+          "armorBurnt": "metal",
+          "armor": "metal",
+          "brass": "metal",
+          "depotPaint": "metal",
+          "depotPaintDark": "metal",
+          "fireRed": "none",
+          "bone": "fallback"
+        },
+        "untyped": [
+          "(unnamed)",
+          "wolf",
+          "bone"
+        ],
+        "rows": [
+          {
+            "test": "native-bullet-destruction-removes-projected-mark",
+            "sourceKind": "wood",
+            "tint": [
+              0.11999999731779099,
+              0.25358542799949646,
+              0.3891448378562927
+            ],
+            "before": 1,
+            "after": 0,
+            "destroyed": true,
+            "sourceChanged": true,
+            "mesh": "static"
+          }
+        ],
+        "colorSamples": [
+          {
+            "kind": "wood",
+            "material": "planksDark",
+            "color": [
+              0.01850022012401665,
+              0.012286488353353374,
+              0.008023192982520563
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          },
+          {
+            "kind": "wood",
+            "material": "planksDark",
+            "color": [
+              0.01850022012401665,
+              0.012286488353353374,
+              0.008023192982520563
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          },
+          {
+            "kind": "wood",
+            "material": "planksDark",
+            "color": [
+              0.01850022012401665,
+              0.012286488353353374,
+              0.008023192982520563
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          },
+          {
+            "kind": "wood",
+            "material": "planks",
+            "color": [
+              0.02955683443236377,
+              0.024157632443547246,
+              0.01764195448412081
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12601396060086292
+            ]
+          },
+          {
+            "kind": "wood",
+            "material": "planks",
+            "color": [
+              0.02955683443236377,
+              0.024157632443547246,
+              0.01764195448412081
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12601396060086292
+            ]
+          },
+          {
+            "kind": "wood",
+            "material": "planksDark",
+            "color": [
+              0.01850022012401665,
+              0.012286488353353374,
+              0.008023192982520563
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          },
+          {
+            "kind": "wood",
+            "material": "planks",
+            "color": [
+              0.02955683443236377,
+              0.024157632443547246,
+              0.01764195448412081
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12601396060086292
+            ]
+          },
+          {
+            "kind": "wood",
+            "material": "planksDark",
+            "color": [
+              0.01850022012401665,
+              0.012286488353353374,
+              0.008023192982520563
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          },
+          {
+            "kind": "wood",
+            "material": "planksDark",
+            "color": [
+              0.01850022012401665,
+              0.012286488353353374,
+              0.008023192982520563
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          },
+          {
+            "kind": "wood",
+            "material": "planksDark",
+            "color": [
+              0.01850022012401665,
+              0.012286488353353374,
+              0.008023192982520563
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          },
+          {
+            "kind": "wood",
+            "material": "planks",
+            "color": [
+              0.02955683443236377,
+              0.024157632443547246,
+              0.01764195448412081
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12601396060086292
+            ]
+          },
+          {
+            "kind": "wood",
+            "material": "planksDark",
+            "color": [
+              0.01850022012401665,
+              0.012286488353353374,
+              0.008023192982520563
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          }
+        ]
+      },
+      "errors": []
+    },
+    {
+      "result": {
+        "map": "stroyka_zarechye_v2",
+        "counts": {
+          "wood": 111,
+          "none": 464,
+          "metal": 314,
+          "concrete": 278,
+          "fabric": 34,
+          "soil": 24,
+          "paper": 8
+        },
+        "materials": {
+          "barkSpruce": "wood",
+          "spruce": "none",
+          "barkPine": "wood",
+          "pine": "none",
+          "barkBirch": "wood",
+          "birch": "none",
+          "(unnamed)": "fallback",
+          "fern": "none",
+          "shrub": "none",
+          "bush": "none",
+          "flora": "none",
+          "grass": "none",
+          "blades": "none",
+          "hgCont3": "metal",
+          "hgSheetG": "metal",
+          "hgRib": "metal",
+          "steel": "metal",
+          "hgHazard": "metal",
+          "dark": "metal",
+          "planksPaint": "wood",
+          "hgCabin": "metal",
+          "hgYellow": "metal",
+          "grate": "metal",
+          "hgConc": "concrete",
+          "hgGlassDark": "none",
+          "lampGlass": "none",
+          "planksDark": "wood",
+          "planks": "wood",
+          "planksGreen": "wood",
+          "film": "fabric",
+          "planksBlue": "wood",
+          "camo": "fabric",
+          "wire": "metal",
+          "reed": "none",
+          "sack": "fabric",
+          "hgFloor": "concrete",
+          "hgSheet": "metal",
+          "hgSheet2": "metal",
+          "hgPoly": "metal",
+          "hgWall": "metal",
+          "hgExit": "metal",
+          "hgSignA": "metal",
+          "hgAn": "metal",
+          "hgAnLight": "metal",
+          "hgRed": "metal",
+          "rubber": "fabric",
+          "paintRed": "metal",
+          "plaster": "concrete",
+          "olive": "metal",
+          "rust": "metal",
+          "hgPaintY": "metal",
+          "hgPaintW": "metal",
+          "hgOil": "metal",
+          "crate": "wood",
+          "steelPipe": "metal",
+          "burnt": "wood",
+          "coals": "none",
+          "charLog": "wood",
+          "hgChain": "metal",
+          "hgStripe": "metal",
+          "hgBrick": "concrete",
+          "roofTar": "fabric",
+          "hgSignKPP": "metal",
+          "hgSignB": "metal",
+          "hgCont1": "metal",
+          "hgCont2": "metal",
+          "dirtMound": "soil",
+          "hgApron": "concrete",
+          "concrete": "concrete",
+          "logWall": "wood",
+          "holes": "none",
+          "planksWhite": "wood",
+          "glass": "none",
+          "logEnd": "wood",
+          "roofShingle": "concrete",
+          "canvas": "fabric",
+          "nal": "metal",
+          "whitewash": "concrete",
+          "brick": "concrete",
+          "planksGrey": "wood",
+          "roofRust": "metal",
+          "deadwood": "wood",
+          "soil": "soil",
+          "leafLilac": "none",
+          "leafApple": "none",
+          "apple": "none",
+          "fireweed": "none",
+          "roofSlate": "concrete",
+          "galv": "metal",
+          "planksOchre": "wood",
+          "stone": "concrete",
+          "vsign": "paper",
+          "pondWater": "none",
+          "puddle": "none",
+          "rope": "fabric",
+          "zoneSign": "paper",
+          "stumpTop": "wood",
+          "barkLog": "wood",
+          "hayV": "none",
+          "hayFringe": "none",
+          "hogweed": "none",
+          "umbel": "none",
+          "leafBirch": "none",
+          "heli": "metal",
+          "heliNum": "metal",
+          "armorBurnt": "metal",
+          "paperAtlas": "paper",
+          "armor": "metal",
+          "brass": "metal",
+          "depotPaint": "metal",
+          "depotPaintDark": "metal",
+          "fireRed": "none",
+          "tankGrey": "metal",
+          "hay": "none",
+          "towerSteel": "metal",
+          "towerRed": "metal",
+          "bone": "fallback"
+        },
+        "untyped": [
+          "(unnamed)",
+          "bone"
+        ],
+        "rows": [
+          {
+            "test": "native-bullet-destruction-removes-projected-mark",
+            "sourceKind": "metal",
+            "tint": [
+              0.7378999590873718,
+              0.7922772765159607,
+              0.711553692817688
+            ],
+            "before": 1,
+            "after": 0,
+            "destroyed": true,
+            "sourceChanged": true,
+            "mesh": "static"
+          }
+        ],
+        "colorSamples": [
+          {
+            "kind": "metal",
+            "material": "hgCont3",
+            "color": [
+              0.10946171076915331,
+              0.08650046202808521,
+              0.04231141061442144
+            ],
+            "tint": [
+              0.43784684307661326,
+              0.34600184811234086,
+              0.16924564245768575
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "hgCont3",
+            "color": [
+              0.10946171076915331,
+              0.08650046202808521,
+              0.04231141061442144
+            ],
+            "tint": [
+              0.43784684307661326,
+              0.34600184811234086,
+              0.16924564245768575
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "hgSheetG",
+            "color": [
+              0.06480326668529614,
+              0.09989872823822872,
+              0.057805430183792694
+            ],
+            "tint": [
+              0.25921306674118455,
+              0.3995949129529149,
+              0.23122172073517078
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "hgRib",
+            "color": [
+              0.14126329113044458,
+              0.046665086330219256,
+              0.01764195448412081
+            ],
+            "tint": [
+              0.5650531645217783,
+              0.18666034532087702,
+              0.12
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "steel",
+            "color": [
+              0.04518620437910499,
+              0.04817182422013895,
+              0.04817182422013895
+            ],
+            "tint": [
+              0.18074481751641996,
+              0.1926872968805558,
+              0.1926872968805558
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "hgHazard",
+            "color": [
+              0.6938717612856897,
+              0.3967552307153359,
+              0.011612245176281512
+            ],
+            "tint": [
+              2.775487045142759,
+              1.5870209228613437,
+              0.12
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "dark",
+            "color": [
+              0.011612245176281512,
+              0.012286488353353374,
+              0.011612245176281512
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "hgSheetG",
+            "color": [
+              0.06480326668529614,
+              0.09989872823822872,
+              0.057805430183792694
+            ],
+            "tint": [
+              0.25921306674118455,
+              0.3995949129529149,
+              0.23122172073517078
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "hgRib",
+            "color": [
+              0.14126329113044458,
+              0.046665086330219256,
+              0.01764195448412081
+            ],
+            "tint": [
+              0.5650531645217783,
+              0.18666034532087702,
+              0.12
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "steel",
+            "color": [
+              0.04518620437910499,
+              0.04817182422013895,
+              0.04817182422013895
+            ],
+            "tint": [
+              0.18074481751641996,
+              0.1926872968805558,
+              0.1926872968805558
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "hgHazard",
+            "color": [
+              0.6938717612856897,
+              0.3967552307153359,
+              0.011612245176281512
+            ],
+            "tint": [
+              2.775487045142759,
+              1.5870209228613437,
+              0.12
+            ]
+          },
+          {
+            "kind": "metal",
+            "material": "dark",
+            "color": [
+              0.011612245176281512,
+              0.012286488353353374,
+              0.011612245176281512
+            ],
+            "tint": [
+              0.12,
+              0.12,
+              0.12
+            ]
+          }
+        ]
+      },
+      "errors": []
+    }
+  ]
+}

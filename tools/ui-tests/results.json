@@ -1,0 +1,150 @@
+[
+  {
+    "width": 1920,
+    "height": 1080,
+    "cpuThrottle": 1,
+    "errors": [],
+    "cards": [
+      {
+        "x": 329,
+        "y": 380.484375,
+        "right": 736.328125,
+        "bottom": 711.828125
+      },
+      {
+        "x": 756.328125,
+        "y": 380.484375,
+        "right": 1163.65625,
+        "bottom": 711.828125
+      },
+      {
+        "x": 1183.65625,
+        "y": 380.484375,
+        "right": 1591,
+        "bottom": 711.828125
+      }
+    ],
+    "paused": true,
+    "inside": true,
+    "oneRow": true,
+    "enabled": true,
+    "mutations": 0,
+    "fromPause": {
+      "active": "alpha_1",
+      "selected": "alpha_1",
+      "paused": true
+    },
+    "backToPause": true
+  },
+  {
+    "width": 1366,
+    "height": 768,
+    "cpuThrottle": 4,
+    "errors": [],
+    "cards": [
+      {
+        "x": 53,
+        "y": 224.484375,
+        "right": 459.65625,
+        "bottom": 555.828125
+      },
+      {
+        "x": 479.65625,
+        "y": 224.484375,
+        "right": 886.328125,
+        "bottom": 555.828125
+      },
+      {
+        "x": 906.328125,
+        "y": 224.484375,
+        "right": 1312.984375,
+        "bottom": 555.828125
+      }
+    ],
+    "paused": true,
+    "inside": true,
+    "oneRow": true,
+    "enabled": true,
+    "mutations": 0,
+    "fromPause": {
+      "active": "alpha_1",
+      "selected": "alpha_1",
+      "paused": true
+    },
+    "backToPause": true
+  },
+  {
+    "width": 1280,
+    "height": 720,
+    "cpuThrottle": 6,
+    "errors": [],
+    "cards": [
+      {
+        "x": 53,
+        "y": 200.484375,
+        "right": 431,
+        "bottom": 531.828125
+      },
+      {
+        "x": 451,
+        "y": 200.484375,
+        "right": 829,
+        "bottom": 531.828125
+      },
+      {
+        "x": 849,
+        "y": 200.484375,
+        "right": 1227,
+        "bottom": 531.828125
+      }
+    ],
+    "paused": true,
+    "inside": true,
+    "oneRow": true,
+    "enabled": true,
+    "mutations": 0,
+    "fromPause": {
+      "active": "alpha_1",
+      "selected": "alpha_1",
+      "paused": true
+    },
+    "backToPause": true
+  },
+  {
+    "width": 1024,
+    "height": 768,
+    "cpuThrottle": 4,
+    "errors": [],
+    "cards": [
+      {
+        "x": 37,
+        "y": 224.03125,
+        "right": 345.65625,
+        "bottom": 556.265625
+      },
+      {
+        "x": 357.65625,
+        "y": 224.03125,
+        "right": 666.328125,
+        "bottom": 556.265625
+      },
+      {
+        "x": 678.328125,
+        "y": 224.03125,
+        "right": 986.984375,
+        "bottom": 556.265625
+      }
+    ],
+    "paused": true,
+    "inside": true,
+    "oneRow": true,
+    "enabled": true,
+    "mutations": 0,
+    "fromPause": {
+      "active": "alpha_1",
+      "selected": "alpha_1",
+      "paused": true
+    },
+    "backToPause": true
+  }
+]

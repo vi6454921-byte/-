@@ -1,0 +1,22 @@
+{
+  "version": "0.43.1",
+  "source": "https://github.com/isaac-mason/recast-navigation-js",
+  "packages": [
+    "@recast-navigation/core",
+    "@recast-navigation/generators",
+    "@recast-navigation/wasm"
+  ],
+  "changes": "Module specifiers made relative; absent source-map comments removed. Generator patch: a successfully built tile with zero polygons is explicitly returned as EMPTY before createNavMeshData. No real errors suppressed; worker rejects RC_LOG_ERROR and failed addTile. Original generator retained as upstream-generators.mjs. wasm-compat unmodified with embedded WASM.",
+  "sha256": {
+    "core-LICENSE": "319340bb218c8a01bf041dc8f6f2390f176d7c332920695b0774b972b4e99162",
+    "core-package.json": "e0915ae4e0b21b26d5f289fd355dac645d40d9d944a7a665278c3d2aeb3de6c1",
+    "core.mjs": "650f12aea419641204653a74e9a97b3627c46097cea2f840cdccf68d1afbca58",
+    "generators-LICENSE": "319340bb218c8a01bf041dc8f6f2390f176d7c332920695b0774b972b4e99162",
+    "generators-package.json": "50120d4c821e12c08d2a5dd72a390f5c833c3ec7f514a29624c3736ca037125b",
+    "generators.mjs": "80614b5cafcd886e46fe218ec6eabdd23cacadb679beaa66f171b8c3d58073c6",
+    "wasm-LICENSE": "319340bb218c8a01bf041dc8f6f2390f176d7c332920695b0774b972b4e99162",
+    "wasm-package.json": "db05fddcb1188010548d64ca9b49eb466ca59c3698e734bdf0c309d51a43d28c",
+    "wasm.mjs": "df034a241a7c2db1d37dfca51135a0a35bb5fea253b99f75804342fee9f54cbb",
+    "upstream-generators.mjs": "293eab40944b1bdbf1460aea569e3560d54425e5ff14a1d62c5cbcb59cc12546"
+  }
+}

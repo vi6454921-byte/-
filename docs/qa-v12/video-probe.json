@@ -1,0 +1,210 @@
+{
+  "streams": [
+    {
+      "index": 0,
+      "codec_name": "h264",
+      "codec_long_name": "H.264 / AVC / MPEG-4 AVC / MPEG-4 part 10",
+      "profile": "High",
+      "codec_type": "video",
+      "codec_tag_string": "avc1",
+      "codec_tag": "0x31637661",
+      "width": 960,
+      "height": 540,
+      "coded_width": 960,
+      "coded_height": 544,
+      "closed_captions": 0,
+      "film_grain": 0,
+      "has_b_frames": 2,
+      "sample_aspect_ratio": "1:1",
+      "display_aspect_ratio": "16:9",
+      "pix_fmt": "yuv420p",
+      "level": 31,
+      "chroma_location": "center",
+      "field_order": "progressive",
+      "refs": 4,
+      "is_avc": "true",
+      "nal_length_size": "4",
+      "id": "0x1",
+      "r_frame_rate": "24/1",
+      "avg_frame_rate": "24/1",
+      "time_base": "1/12288",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 375296,
+      "duration": "30.541667",
+      "bit_rate": "497103",
+      "bits_per_raw_sample": "8",
+      "nb_frames": "733",
+      "nb_read_frames": "733",
+      "extradata_size": 48,
+      "disposition": {
+        "default": 1,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0
+      },
+      "tags": {
+        "language": "und",
+        "handler_name": "VideoHandler",
+        "vendor_id": "[0][0][0][0]",
+        "encoder": "Lavc61.3.100 libx264"
+      }
+    },
+    {
+      "index": 1,
+      "codec_name": "bin_data",
+      "codec_long_name": "binary data",
+      "codec_type": "data",
+      "codec_tag_string": "text",
+      "codec_tag": "0x74786574",
+      "id": "0x2",
+      "r_frame_rate": "0/0",
+      "avg_frame_rate": "0/0",
+      "time_base": "1/1000",
+      "start_pts": 0,
+      "start_time": "0.000000",
+      "duration_ts": 30542,
+      "duration": "30.542000",
+      "bit_rate": "106",
+      "nb_frames": "7",
+      "extradata_size": 63,
+      "disposition": {
+        "default": 0,
+        "dub": 0,
+        "original": 0,
+        "comment": 0,
+        "lyrics": 0,
+        "karaoke": 0,
+        "forced": 0,
+        "hearing_impaired": 0,
+        "visual_impaired": 0,
+        "clean_effects": 0,
+        "attached_pic": 0,
+        "timed_thumbnails": 0,
+        "non_diegetic": 0,
+        "captions": 0,
+        "descriptions": 0,
+        "metadata": 0,
+        "dependent": 0,
+        "still_image": 0
+      },
+      "tags": {
+        "language": "eng",
+        "handler_name": "SubtitleHandler"
+      }
+    }
+  ],
+  "chapters": [
+    {
+      "id": 0,
+      "time_base": "1/1000",
+      "start": 0,
+      "start_time": "0.000000",
+      "end": 3208,
+      "end_time": "3.208000",
+      "tags": {
+        "title": "Прыжок без оружия"
+      }
+    },
+    {
+      "id": 1,
+      "time_base": "1/1000",
+      "start": 3208,
+      "start_time": "3.208000",
+      "end": 6417,
+      "end_time": "6.417000",
+      "tags": {
+        "title": "Прыжок с оружием"
+      }
+    },
+    {
+      "id": 2,
+      "time_base": "1/1000",
+      "start": 6417,
+      "start_time": "6.417000",
+      "end": 10625,
+      "end_time": "10.625000",
+      "tags": {
+        "title": "Низкое перешагивание"
+      }
+    },
+    {
+      "id": 3,
+      "time_base": "1/1000",
+      "start": 10625,
+      "start_time": "10.625000",
+      "end": 14833,
+      "end_time": "14.833000",
+      "tags": {
+        "title": "Перемах с опорой руками"
+      }
+    },
+    {
+      "id": 4,
+      "time_base": "1/1000",
+      "start": 14833,
+      "start_time": "14.833000",
+      "end": 19042,
+      "end_time": "19.042000",
+      "tags": {
+        "title": "Подъём на платформу"
+      }
+    },
+    {
+      "id": 5,
+      "time_base": "1/1000",
+      "start": 19042,
+      "start_time": "19.042000",
+      "end": 22542,
+      "end_time": "22.542000",
+      "tags": {
+        "title": "Бег с оружием — стабилизация хвата"
+      }
+    },
+    {
+      "id": 6,
+      "time_base": "1/1000",
+      "start": 22542,
+      "start_time": "22.542000",
+      "end": 30542,
+      "end_time": "30.542000",
+      "tags": {
+        "title": "Физическое падение и опорный подъём"
+      }
+    }
+  ],
+  "format": {
+    "filename": "/data/work/aegis/docs/AEGIS_ACTIONS_V12.mp4",
+    "nb_streams": 2,
+    "nb_programs": 0,
+    "nb_stream_groups": 0,
+    "format_name": "mov,mp4,m4a,3gp,3g2,mj2",
+    "format_long_name": "QuickTime / MOV",
+    "start_time": "0.000000",
+    "duration": "30.542000",
+    "size": "1908945",
+    "bit_rate": "500018",
+    "probe_score": 100,
+    "tags": {
+      "major_brand": "isom",
+      "minor_version": "512",
+      "compatible_brands": "isomiso2avc1mp41",
+      "title": "AEGIS — mocap actions v12",
+      "encoder": "Lavf61.1.100"
+    }
+  }
+}

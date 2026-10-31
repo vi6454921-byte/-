@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><title>AEGIS v26 · стенд «Ель-подрост»</title>
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#111}#info{position:fixed;left:8px;top:8px;z-index:9;font:12px monospace;color:#cfe;white-space:pre;pointer-events:none;text-shadow:0 0 3px #000}</style>
+</head><body>
+<div id="info">загрузка…</div>
+<script>
+/* Стенд ели-подроста стрельбища (17_world.js: spruceGeometry + saplingMaterial).
+   Свет — как в игре без HDRI (запасная заливка + полусфера + солнце), AgX, туман.
+   ?view=row|close|far|top|tex  &aa=0 (без MSAA, как на слабом ПК)  &wind=1 */
+const QS = new URLSearchParams(location.search);
+const SRC = ['js/lib/three.min.js', 'assets/data/env_tex.js', 'js/polygon/00_boot.js', 'js/polygon/02_util.js',
+  'js/polygon/06_textures.js', 'js/polygon/17_world.js'];
+const ROOT = '../../';
+function load(i) {
+  if (i >= SRC.length) return start().catch((e) => { window.__STAND_ERR = String(e && e.stack || e); document.getElementById('info').textContent = window.__STAND_ERR; });
+  const s = document.createElement('script'); s.src = ROOT + SRC[i] + (QS.get('nc') ? '?' + Date.now() : '');
+  s.onload = () => load(i + 1); s.onerror = () => { window.__STAND_ERR = 'нет ' + SRC[i]; };
+  document.head.appendChild(s);
+}
+load(0);
+async function start() {
+  if (window.GAssets && GAssets.ready) await GAssets.ready();
+  const T = THREE, view = QS.get('view') || 'row';
+  const R = new T.WebGLRenderer({ antialias: QS.get('aa') !== '0', preserveDrawingBuffer: true });
+  R.setPixelRatio(1); R.setSize(innerWidth, innerHeight);
+  R.toneMapping = T.AgXToneMapping; R.toneMappingExposure = 0.82; R.outputColorSpace = T.SRGBColorSpace;
+  document.body.insertBefore(R.domElement, document.body.firstChild);
+  const scene = new T.Scene();
+  const fogC = new T.Color(0x737b76);
+  scene.background = fogC; scene.fog = new T.FogExp2(fogC, view === 'far' ? 0.022 : 0.012);
+  const pm = new T.PMREMGenerator(R), es = new T.Scene(); es.background = new T.Color(0x8f9690);
+  scene.environment = pm.fromScene(es, 0.04).texture; scene.environmentIntensity = 0.82;
+  scene.add(new T.HemisphereLight(0xa9b0aa, 0x3c3a32, 0.85));
+  const sun = new T.DirectionalLight(0xdfe5e8, 0.38); sun.position.set(6, 12, 4); scene.add(sun);
+  const ground = new T.Mesh(new T.PlaneGeometry(200, 200), new T.MeshStandardMaterial({ color: 0x5e4b39, roughness: 1 }));
+  ground.rotation.x = -Math.PI / 2; scene.add(ground);
+  const K = GWorld._spruce;
+  const t0 = performance.now();
+  const M = K.materials(T);
+  const t1 = performance.now();
+  const mat = K.material(T, M);
+  const t2 = performance.now();
+  const vars = [0, 1].map((v) => K.geometry(T, 911 + v * 37));
+  const t3 = performance.now();
+  M.windTime.value = QS.get('wind') ? 3.0 : 0;
+  const tris = (g) => (g.index ? g.index.count : g.attributes.position.count) / 3;
+  const place = [];
+  if (view === 'row') {
+    for (const [x, z, s] of [[-1.6, -3, 0.55], [1.4, -5, 0.9], [-1.2, -8, 1.2], [2.6, -11, 1.45], [-3.5, -15, 1.0], [1.5, -19, 1.3], [-1, -26, 1.4], [4, -32, 1.1]]) place.push([x, z, s]);
+  } else if (view === 'close') {
+    place.push([0, -1.9, 0.75], [1.5, -3.6, 1.1]);
+  } else if (view === 'far') {
+    for (let i = 0; i < 26; i++) { const a = i * 2.4, d = 18 + (i * 7.3) % 22; place.push([Math.sin(a) * 10 + (i % 5 - 2) * 3, -d, 0.6 + (i * 0.37) % 0.9]); }
+  } else if (view === 'top') {
+    place.push([0, -3, 1.0], [2.2, -4.5, 0.7]);
+  }
+  for (let v = 0; v < 2; v++) {
+    const L = place.filter((_, i) => (i & 1) === v);
+    if (!L.length) continue;
+    const tr = new T.InstancedMesh(vars[v].trunk, M.bark, L.length), cr = new T.InstancedMesh(vars[v].crown, mat, L.length);
+    const d = new T.Object3D();
+    L.forEach(([x, z, s], i) => { d.position.set(x, -0.05, z); d.rotation.set(0, i * 1.7 + v, 0); d.scale.set(s, s, s); d.updateMatrix(); tr.setMatrixAt(i, d.matrix); cr.setMatrixAt(i, d.matrix); });
+    scene.add(tr, cr);
+  }
+  const cam = new T.PerspectiveCamera(view === 'far' ? 55 : 62, innerWidth / innerHeight, 0.05, 300);
+  if (view === 'close') { cam.position.set(0.2, 1.55, 0); cam.lookAt(0.3, 1.0, -2.2); }
+  else if (view === 'top') { cam.position.set(1.0, 4.6, 0.2); cam.lookAt(1.0, 0.8, -3.6); }
+  else if (view === 'far') { cam.position.set(0, 1.7, 0); cam.lookAt(0, 1.4, -25); }
+  else { cam.position.set(0, 1.65, 0); cam.lookAt(0, 1.2, -10); }
+  if (view === 'tex') {
+    const map = mat.map, q = new T.Mesh(new T.PlaneGeometry(2, 2), new T.MeshBasicMaterial({ map, transparent: false, alphaTest: 0.05 }));
+    const bg = new T.Scene(); bg.background = new T.Color(0xc8c8c8); bg.add(q);
+    const oc = new T.OrthographicCamera(-1.05, 1.05, 1.05 * innerHeight / innerWidth, -1.05 * innerHeight / innerWidth, 0, 2); oc.position.z = 1;
+    q.scale.set(1, map.image.height / map.image.width, 1);
+    R.toneMapping = T.NoToneMapping; R.render(bg, oc);
+  } else {
+    R.render(scene, cam); R.render(scene, cam);
+  }
+  const info = R.info.render;
+  document.getElementById('info').textContent = 'view=' + view + ' aa=' + (QS.get('aa') !== '0') +
+    '\nкрона: ' + vars.map((v) => tris(v.crown)).join('/') + ' тр., ствол: ' + vars.map((v) => tris(v.trunk)).join('/') +
+    '\nматериалы мира ' + (t1 - t0).toFixed(0) + ' мс, хвоя ' + (t2 - t1).toFixed(0) + ' мс, геометрия ' + (t3 - t2).toFixed(1) + ' мс' +
+    '\nкадр: ' + info.triangles + ' тр., ' + info.calls + ' вызовов' + (mat.map && mat.map.image ? '\nтекстура ' + mat.map.image.width + '×' + mat.map.image.height : '');
+  window.__STAND_READY = true;
+}
+</script>
+</body></html>

@@ -1,0 +1,184 @@
+{
+  "version": "18.1.0-experimental",
+  "source": "AEGIS_v17_3maps_TEST.zip",
+  "maps": [
+    {
+      "map": "angar_map",
+      "duelShots": 2,
+      "npcGripsChecked": 11,
+      "finite": true,
+      "errors": []
+    },
+    {
+      "map": "forest_map_camp",
+      "duelShots": 1,
+      "npcGripsChecked": 11,
+      "finite": true,
+      "errors": []
+    },
+    {
+      "map": "stroyka_zarechye_v2",
+      "duelShots": 2,
+      "npcGripsChecked": 11,
+      "finite": true,
+      "errors": []
+    }
+  ],
+  "models": {
+    "poseCases": 60,
+    "movementSteps": 180,
+    "maxPlantTargetErrorM": 1.6482725995992824e-08,
+    "grenade": {
+      "finite": true,
+      "objects": 1,
+      "afterClear": 0
+    }
+  },
+  "medical": [
+    {
+      "armed": false,
+      "before": {
+        "tq": 2,
+        "bd": 3
+      },
+      "after": {
+        "tq": 1,
+        "bd": 3
+      },
+      "tourniquetApplied": true,
+      "sampledSeconds": 5
+    },
+    {
+      "armed": true,
+      "before": {
+        "tq": 2,
+        "bd": 3
+      },
+      "after": {
+        "tq": 1,
+        "bd": 3
+      },
+      "tourniquetApplied": true,
+      "sampledSeconds": 4
+    }
+  ],
+  "physical": {
+    "falls": 36,
+    "maxSegmentLengthErrorM": 0.05052789873492469,
+    "maxHingeLimitViolationRad": 0.041333654108833606
+  },
+  "continuationScenarios": [
+    {
+      "test": "vault",
+      "dt": 0.016666666666666666,
+      "result": "landed",
+      "pos": [
+        0,
+        0.015135477708245082,
+        -1.759999984245931
+      ],
+      "maxStep": 0.08695969730615616
+    },
+    {
+      "test": "vault",
+      "dt": 0.03333333333333333,
+      "result": "landed",
+      "pos": [
+        0,
+        0.015000011186348194,
+        -1.7599999642372128
+      ],
+      "maxStep": 0.17336587607860565
+    },
+    {
+      "test": "vault",
+      "dt": 0.05,
+      "result": "landed",
+      "pos": [
+        0,
+        0.015135480291210035,
+        -1.7599999842458955
+      ],
+      "maxStep": 0.2595149576663971
+    },
+    {
+      "test": "vault low ceiling",
+      "rejected": true
+    },
+    {
+      "test": "dynamic object ground and cleanup",
+      "pos": [
+        2.1580617427825928,
+        0.030673621222376823,
+        -0.08148416876792908
+      ]
+    },
+    {
+      "test": "angular PD convergence and cleanup"
+    },
+    {
+      "test": "medical ally filter, claim and player priority"
+    },
+    {
+      "test": "thin wall between free grid centers is blocked"
+    },
+    {
+      "test": "vault aborts at new obstruction",
+      "pos": [
+        -0.002606925234431401,
+        0.7099998926497795,
+        -1.0849793509078154
+      ]
+    },
+    {
+      "test": "treatment distance follows moved casualty"
+    }
+  ],
+  "performance": {
+    "scenario": "CPU only, training range, low, 4 unarmed NPCs; 90 warmup + 900 fixed 1/60 steps; separate Chromium sessions; CPU sampling profiler. Original exact archive files, only instrumented profiler + no rendering. Updated final idle-foot-cache and motor sleep optimization. New then original repeat; earlier original also retained. Not FPS.",
+    "cases": {
+      "original": {
+        "mean": 1.592444444444134,
+        "p50": 1.6000000000931323,
+        "p95": 3.5,
+        "flags": {
+          "samples": 360,
+          "mean": 0.7513888888940629,
+          "p50": 0.7000000001862645,
+          "p95": 0.8000000000465661,
+          "max": 3.5
+        },
+        "errors": []
+      },
+      "updated": {
+        "mean": 1.4437777777774157,
+        "p50": 1.1999999999534339,
+        "p95": 3.800000000046566,
+        "flags": {
+          "samples": 360,
+          "mean": 0.2866666666691243,
+          "p50": 0.2999999998137355,
+          "p95": 0.4000000001396984,
+          "max": 2.6000000000931323
+        },
+        "errors": []
+      },
+      "originalEarlier": {
+        "mean": 1.7865555555557109,
+        "p50": 1.6999999999534339,
+        "p95": 4,
+        "flags": {
+          "samples": 360,
+          "mean": 0.8586111111061958,
+          "p50": 0.8000000000465661,
+          "p95": 1.2000000001862645,
+          "max": 6.399999999906868
+        },
+        "errors": []
+      }
+    },
+    "meanReductionPercent": 9.335752162996968,
+    "warning": "single runs, random effects and runtime scheduling; p95 worsened versus the repeat baseline; no universal performance promise"
+  },
+  "limits": "Not fully coupled living active ragdoll; no GPU/FPS guarantee; drag under fire and prolonged battles not fully validated. See ADVANCED_VALIDATION_RU.md."
+}

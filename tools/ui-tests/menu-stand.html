@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AEGIS · Полигон</title>
+<link rel="stylesheet" href="../../css/game.css">
+<link rel="stylesheet" href="../../css/type.css">
+</head>
+<body class="st-loading">
+
+<!-- ================================================ слои поверх сцены -->
+<div id="vig"></div>
+<div id="dmg"></div>
+<canvas id="bloodScr"></canvas>
+<div id="veil"></div>
+<div id="flash"></div>
+<div id="fade"></div>
+<div id="reticle"></div>
+<div id="fps"></div>
+<div id="tag"></div>
+<div id="death"><div class="t">Вы погибли</div><div class="c" id="deathCause"></div><div class="r" id="deathTimer"></div></div>
+
+<div id="hitmark">
+  <svg width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"><path d="M6 6l4 4M20 6l-4 4M6 20l4-4M20 20l-4-4"/></svg>
+</div>
+
+<!-- ======================================================== HUD бойца -->
+<div id="hud">
+  <div id="score">Поражено <b id="scoreN">0</b></div>
+  <div id="who" class="delta"><span>Генерал</span><b id="whoName">—</b><u id="whoSide">Свободная камера</u><em id="whoTrait"></em></div>
+  <div id="stamina"><i></i></div>
+  <div id="slots"></div>
+  <div id="ammo">
+    <div id="mode"></div>
+    <div class="cal"><span id="ammoCal"></span> <i id="ammoType"></i></div>
+    <div class="cnt"><b id="ammoN">0</b><s id="ammoR"></s></div>
+  </div>
+</div>
+
+<div id="prompt">
+  <div class="key"><div class="fill"></div><span id="promptKey">F</span></div>
+  <div class="lbl" id="promptLbl"></div>
+  <div class="sub" id="promptSub">удерживайте</div>
+</div>
+
+
+<!-- ===================================================== главный экран -->
+
+<aside id="menu" class="glass">
+  <div class="m-top">
+    <div class="m-title">AEGIS</div>
+    <div class="m-sub">Учебный полигон</div>
+  </div>
+  <div class="m-gen">
+    <div class="m-cap">Генерал</div>
+    <div id="genList"></div>
+  </div>
+  <nav class="m-btns">
+    <button class="mbtn battle" id="btnBattle"><span>В бой</span><small>выбор карты</small></button>
+    <button class="mbtn" id="btnSettings"><span>Настройки</span><small>управление, графика, звук</small></button>
+    <button class="mbtn" id="btnArmory"><span>Оружие</span><small>снаряжение и модули</small></button>
+    <button class="mbtn" id="btnLab" onclick="location.href='index.html?lab'"><span>Лаборатория</span><small>анимации, ранения, проверки</small></button>
+  </nav>
+  <div class="m-foot" id="menuFoot">Esc: меню · Tab: инвентарь</div>
+</aside>
+
+<aside id="battle" class="glass">
+  <button class="back" id="battleBack"><i>←</i> Назад</button>
+  <div class="m-cap">В бой</div>
+  <div class="b-gen" id="battleGen"></div>
+  <div class="maps" aria-label="Карты операций">
+    <article class="map" data-map="stroyka_zarechye_v2">
+      <div class="map-code">01 · СТРОЙКА</div>
+      <h2 class="map-n">Заречье</h2>
+      <div class="map-id">stroyka_zarechye_v2</div>
+      <p class="map-d">Три сектора: деревня за рекой, стройка с ангаром, ферма на холме. 11 на 11 — флаги и точки возрождения новые в каждом бою, граница — красная линия.</p>
+      <button class="map-start" >Начать операцию →</button>
+    </article>
+    <article class="map" data-map="forest_map_camp">
+      <div class="map-code">02 · ЛЕС</div>
+      <h2 class="map-n">Тихий бор</h2>
+      <div class="map-id">forest_map_camp</div>
+      <p class="map-d">Три сектора: турбаза, пионерлагерь, лесное озеро. 11 на 11 — флаги и точки возрождения новые в каждом бою, граница — красная линия.</p>
+      <button class="map-start" >Начать операцию →</button>
+    </article>
+    <article class="map" data-map="angar_map">
+      <div class="map-code">03 · ПРОМЗОНА</div>
+      <h2 class="map-n">Ангар</h2>
+      <div class="map-id">angar_map</div>
+      <p class="map-d">Без отдельного комплекта оружия, артударов и дрона.</p>
+      <button class="map-start" >Начать операцию →</button>
+    </article>
+  </div>
+  <div class="b-note" role="status">Три карты · Единые системы AEGIS · Снаряжение и остаток боезапаса сохраняются отдельно для каждого генерала.</div>
+  <button class="mbtn" id="battleTraining"><span>Учебный полигон</span><small>Вернуться на полигон с текущим снаряжением</small></button>
+</aside>
+
+<div id="wasd">
+  <div class="keys">
+    <span class="k" data-act="fwd" style="grid-area:w">W</span>
+    <span class="k" data-act="left" style="grid-area:a">A</span>
+    <span class="k" data-act="back" style="grid-area:s">S</span>
+    <span class="k" data-act="right" style="grid-area:d">D</span>
+  </div>
+  <div class="txt">
+    <b>Свободная камера</b>
+    <span id="wasdTxt">Мышь: обзор · Пробел / C: выше / ниже · Shift: быстрее</span>
+    <span id="wasdTxt2">Подлетите к генералу и удерживайте F, чтобы вселиться</span>
+  </div>
+</div>
+
+<!-- ====================================================== меню в бою (Esc) -->
+<div id="pause" class="modal">
+  <div class="glass p-box">
+    <div class="m-top p-top">
+      <div class="m-title">AEGIS</div>
+      <div class="m-sub" id="pauseSub">Меню · пауза</div>
+    </div>
+    <div class="p-who" id="pauseWho"></div>
+    <button class="mbtn battle" id="pResume"><span>Продолжить</span><small>Esc — вернуться в бой</small></button>
+    <button class="mbtn" id="pBattle"><span>В бой</span><small>выбор карты</small></button>
+    <button class="mbtn" id="pArmory"><span>Оружие</span><small>снаряжение и модули</small></button>
+    <button class="mbtn" id="pSettings"><span>Настройки</span><small>управление, графика, звук</small></button>
+    <button class="mbtn" id="pLeave"><span>Выйти из тела</span><small>свободная камера</small></button>
+    <button class="mbtn" id="pMain"><span>Главное меню</span><small>выбор генерала</small></button>
+    <button class="mbtn" id="pQuit" hidden><span>Выйти из боя</span><small>вернуться на полигон</small></button>
+    <div class="m-foot" id="pauseFoot">Esc: продолжить · Tab: инвентарь</div>
+  </div>
+</div>
+
+<!-- =========================================================== настройки -->
+<div id="settings" class="modal">
+  <div class="glass s-box">
+    <div class="s-head">
+      <button class="back" id="setBack"><i>←</i> Назад</button>
+      <div class="s-title">Настройки</div>
+      <div class="s-saved" id="setSaved">Сохранено</div>
+    </div>
+    <div class="s-body">
+      <nav class="s-tabs" id="setTabs">
+        <button data-tab="keys" class="on">Управление</button>
+        <button data-tab="gfx">Графика</button>
+        <button data-tab="snd">Звук и мышь</button>
+        <button data-tab="req">Системные требования</button>
+        <button data-tab="tut">Обучение</button>
+        <button data-tab="about">Об игре</button>
+      </nav>
+      <div class="s-pane on" data-pane="keys">
+        <div class="s-hint">Щёлкните по клавише и нажмите новую (клавиша, кнопка мыши или колесо). Если она уже занята, действия поменяются клавишами. Esc: отмена.</div>
+        <div id="bindList"></div>
+        <div class="s-row end"><button class="sbtn" id="bindReset">Сбросить по умолчанию</button></div>
+      </div>
+      <div class="s-pane" data-pane="gfx">
+        <div class="s-cap">Качество графики</div>
+        <div class="q-list" id="qList">
+          <button data-q="ultra"><b>Ультра-низкая</b><span>Без AO и MSAA, редкое обновление теней, меньше дальнего подлеска. Текстуры оружия и бойцов не заменяются.</span></button>
+          <button data-q="low"><b>Низкая</b><span>Тени 1024 с упрощёнными бойцами, без SSAO и MSAA, меньше травы, разрешение 1×. Цель — 60 FPS на встроенной графике.</span></button>
+          <button data-q="medium"><b>Средняя</b><span>Тени 2048 (обновление через кадр), мягкое затенение SSAO, сглаживание MSAA 2×.</span></button>
+          <button data-q="high"><b>Высокая</b><span>Тени 2048 каждый кадр, SSAO высокого качества, MSAA 4×, повышенное разрешение на экранах с высокой плотностью.</span></button>
+        </div>
+        <div class="s-cap">Погода</div>
+        <div class="q-list" id="wList">
+          <button data-w="morning"><b>Ясное утро</b><span>Низкое тёплое солнце, длинные тени, лучи сквозь кроны.</span></button>
+          <button data-w="day"><b>Солнечный день</b><span>Высокое солнце, чистое небо, короткие резкие тени, дальняя видимость.</span></button>
+        </div>
+        <label class="s-check"><input type="checkbox" id="fpsChk"> Показывать счётчик FPS <em id="fpsKey">F3</em></label>
+        <label class="s-check" title="Задержки при стрельбе (недосыл, гильза в окне, двойная подача) — устраняются клавишей перезарядки; перегретый патронник может «самострелить»."><input type="checkbox" id="hcChk"> Хардкор: задержки и перегрев оружия</label>
+      </div>
+      <div class="s-pane" data-pane="snd">
+        <div class="s-cap">Громкость</div>
+        <div class="s-slider"><input type="range" id="volR" min="0" max="100" step="1"><b id="volV"></b></div>
+        <div class="s-cap">Чувствительность мыши</div>
+        <div class="s-slider"><input type="range" id="sensR" min="20" max="300" step="5"><b id="sensV"></b></div>
+      </div>
+      <div class="s-pane" data-pane="req">
+        <div class="req">
+          <div class="req-c"><div class="req-t">Минимальные</div><div class="req-s">Графика «Низкая» · 720p–1080p · ~30–60 FPS</div>
+            <dl><dt>Процессор</dt><dd>2–4 ядра, Intel Core i3 4-го поколения и новее</dd>
+            <dt>Оперативная память</dt><dd>4 ГБ (лучше 8 ГБ)</dd>
+            <dt>Видеокарта</dt><dd>Intel HD 520 / UHD 620, AMD Vega 3</dd></dl></div>
+          <div class="req-c"><div class="req-t">Комфортные</div><div class="req-s">Графика «Высокая» · 1080p · 60 FPS</div>
+            <dl><dt>Процессор</dt><dd>4 ядра и больше</dd>
+            <dt>Оперативная память</dt><dd>8 ГБ</dd>
+            <dt>Видеокарта</dt><dd>NVIDIA GTX 1050 / AMD Vega 8 и мощнее</dd></dl></div>
+        </div>
+        <div class="req-b"><b>Браузер</b> Chrome, Edge или Firefox последних версий с поддержкой WebGL 2 и включённым аппаратным ускорением. Только ПК (клавиатура и мышь).</div>
+        <div class="req-b" id="gpuInfo"></div>
+      </div>
+      <div class="s-pane" data-pane="tut">
+        <div class="s-hint">Короткое обучение: свободная камера, вселение, оружие, гранаты, меню (Esc) и инвентарь (Tab).</div>
+        <button class="sbtn acc" id="tutAgain">Пройти обучение заново</button>
+      </div>
+      <div class="s-pane" data-pane="about">
+        <div class="s-cap">AEGIS</div>
+        <div class="s-hint">Браузерный тактический шутер-полигон. Работает без сервера: всё лежит в этой папке.</div>
+        <details class="credits" open><summary>Звуки бойцов — Freesound (CC0 / CC BY), авторы</summary><ul><li><a href="https://freesound.org/people/loljames/sounds/121831/">Footsteps in forest close.wav</a> — loljames · CC BY</li><li><a href="https://freesound.org/people/duckduckpony/sounds/204051/">Tools_Backpack_RattleMovement_003.wav</a> — duckduckpony · CC BY</li><li><a href="https://freesound.org/people/Iceofdoom/sounds/413564/">Dying and gasping sounds - Male Death</a> — Iceofdoom · CC BY</li><li><a href="https://freesound.org/people/SoundBiterSFX/sounds/731510/">NPC/Player - Out of Breath (Male)</a> — SoundBiterSFX · CC BY</li><li><a href="https://freesound.org/people/blazefoxar21/sounds/758235/">moan pain male stabbed</a> — blazefoxar21 · CC BY</li><li><a href="https://freesound.org/people/Valerie-Vivegnis/sounds/768185/">Pain groan- man</a> — Valerie-Vivegnis · CC BY</li><li><a href="https://freesound.org/people/Valerie-Vivegnis/sounds/768194/">pain- man- crying and groaning</a> — Valerie-Vivegnis · CC BY</li><li><a href="https://freesound.org/people/joseppujol/sounds/221544/">Wounded man scream</a> — joseppujol · CC0</li><li><a href="https://freesound.org/people/vmgraw/sounds/257706/">GROANING.wav</a> — vmgraw · CC0</li><li><a href="https://freesound.org/people/Drkvixn91/sounds/318077/">Whimper_Gasp_1_Male</a> — Drkvixn91 · CC0</li><li><a href="https://freesound.org/people/AbuNijmeh/sounds/319103/">Heavy_Breathing.wav</a> — AbuNijmeh · CC0</li><li><a href="https://freesound.org/people/Archeos/sounds/325548/">Man screaming.wav</a> — Archeos · CC0</li><li><a href="https://freesound.org/people/milnersouza/sounds/327837/">Fight Reaction Person 1.wav</a> — milnersouza · CC0</li><li><a href="https://freesound.org/people/milnersouza/sounds/327839/">Fight Reaction Person 2.wav</a> — milnersouza · CC0</li><li><a href="https://freesound.org/people/Samusasi/sounds/364453/">Hombre_Retorciéndose_s.wav</a> — Samusasi · CC0</li><li><a href="https://freesound.org/people/Sam54123/sounds/432376/">LaboredBreathing.wav</a> — Sam54123 · CC0</li><li><a href="https://freesound.org/people/MelvinJaepel/sounds/435504/">body falling to ground</a> — MelvinJaepel · CC0</li><li><a href="https://freesound.org/people/Ivan_Bjorkman/sounds/457449/">Male long groan.mp3</a> — Ivan_Bjorkman · CC0</li><li><a href="https://freesound.org/people/craigsmith/sounds/480423/">R11-11-Running on Dirt.wav</a> — craigsmith · CC0</li><li><a href="https://freesound.org/people/Ranner/sounds/488424/">Wounded man</a> — Ranner · CC0</li><li><a href="https://freesound.org/people/skyfarmer/sounds/514224/">Heavy Breathing</a> — skyfarmer · CC0</li><li><a href="https://freesound.org/people/martian/sounds/530471/">male scream pain torture.wav</a> — martian · CC0</li><li><a href="https://freesound.org/people/sherby168/sounds/542078/">huff and puff</a> — sherby168 · CC0</li><li><a href="https://freesound.org/people/gtrempe/sounds/542128/">Male increasing scream - horror yelling in pain.wav</a> — gtrempe · CC0</li><li><a href="https://freesound.org/people/Nox_Sound/sounds/555307/">Foley_Cloth_Movement_Jacket_96khz.wav</a> — Nox_Sound · CC0</li><li><a href="https://freesound.org/people/AncientWarrior/sounds/567989/">WoundedMaleShort.wav</a> — AncientWarrior · CC0</li><li><a href="https://freesound.org/people/unfa/sounds/610998/">Medium Male Pain Grunts</a> — unfa · CC0</li><li><a href="https://freesound.org/people/xkeril/sounds/611276/">Clothes rustling when running</a> — xkeril · CC0</li><li><a href="https://freesound.org/people/SnowFightStudios/sounds/643669/">Man sobbing, crying, or whimpering.mp3</a> — SnowFightStudios · CC0</li><li><a href="https://freesound.org/people/SnowFightStudios/sounds/643670/">Grunts_Various Male.mp3</a> — SnowFightStudios · CC0</li><li><a href="https://freesound.org/people/SnowFightStudios/sounds/643671/">Various Man Dying Grunts.mp3</a> — SnowFightStudios · CC0</li><li><a href="https://freesound.org/people/B.Harkins/sounds/683653/">Labored Male Breathing.wav</a> — B.Harkins · CC0</li><li><a href="https://freesound.org/people/AudioPapkin/sounds/716949/">Running on dry leaves</a> — AudioPapkin · CC0</li><li><a href="https://freesound.org/people/serøutōnin--deprivəd/sounds/719241/">A rifle being moved around and rattled constantly. Bright sounding</a> — serøutōnin--deprivəd · CC0</li><li><a href="https://freesound.org/people/serøutōnin--deprivəd/sounds/725403/">A rifle being moved around and handled w/ magazine removals</a> — serøutōnin--deprivəd · CC0</li><li><a href="https://freesound.org/people/FuzzyTuesday/sounds/730386/">Groans from a Man</a> — FuzzyTuesday · CC0</li><li><a href="https://freesound.org/people/mosszaaa/sounds/736383/">EQUIPTact_DumpPouch_DropMagazine_06</a> — mosszaaa · CC0</li><li><a href="https://freesound.org/people/Vrymaa/sounds/770095/">Footsteps Moss - Forest, walk, jog &amp; run</a> — Vrymaa · CC0</li><li><a href="https://freesound.org/people/xkeril/sounds/788342/">Clothes movements (walking foley)</a> — xkeril · CC0</li><li><a href="https://freesound.org/people/TyrantTim/sounds/800870/">Soldier-DeathHit</a> — TyrantTim · CC0</li><li><a href="https://freesound.org/people/TyrantTim/sounds/800871/">Soldier-Death Agony scream</a> — TyrantTim · CC0</li><li><a href="https://freesound.org/people/TyrantTim/sounds/800872/">Soldier-In pain agony</a> — TyrantTim · CC0</li><li><a href="https://freesound.org/people/Vrymaa/sounds/805470/">Harness Armour straps - Baldric or military equipment</a> — Vrymaa · CC0</li><li><a href="https://freesound.org/people/Wigglesworth/sounds/853591/">A body falling to the ground, with leaf crush</a> — Wigglesworth · CC0</li></ul>
+</details>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ обучение -->
+<div id="tutorial" class="modal">
+  <div class="glass t-box">
+    <div class="t-step" id="tutStep"></div>
+    <div class="t-title" id="tutTitle"></div>
+    <div class="t-body" id="tutBody"></div>
+    <div class="t-dots" id="tutDots"></div>
+    <div class="t-btns">
+      <button class="sbtn ghost" id="tutSkip">Пропустить</button>
+      <button class="sbtn" id="tutPrev">Назад</button>
+      <button class="sbtn acc" id="tutNext">Далее</button>
+    </div>
+  </div>
+</div>
+
+<!-- =========================================================== оружейная -->
+<div id="armory"></div>
+
+<!-- ============================================================ загрузка -->
+<div id="loading">
+  <div class="l-in">
+    <div class="l-logo">AEGIS</div>
+    <div class="l-bar"><i id="loadBar"></i></div>
+    <div class="l-t" id="loadT">Загрузка полигона…</div>
+  </div>
+</div>
+<div id="err"></div>
+<script src="../../js/app/config.js"></script><script>
+AEGIS.LS.set('aegis.tutorial',true);AEGIS.LS.set('aegis.ingameTut',{off:true});
+window.testState={active:'alpha_1',selected:'delta_1',paused:false};window.testCalls=[];
+window.testGame={state:()=>testState,selected:()=>testState.selected,select:k=>testState.selected=k,
+ensureSelected:()=>({key:testState.selected}),setHighlight:()=>{},focus:()=>{},setInput:()=>{},
+pause:v=>testState.paused=v,setRender:()=>{},setAmbient:()=>{},unlock:()=>{},lock:()=>{},
+applySettings:()=>{},audioInit:()=>{},tutProbe:()=>({}),setLoadout:()=>testCalls.push('setLoadout'),
+loadout:()=>AEGIS.emptyLoadout(),disembody:()=>testState.active=null};
+</script><script src="../../js/app/ui.js"></script><script>AEGIS_UI.onGameReady(testGame);</script></body>
+</html>

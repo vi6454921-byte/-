@@ -1,0 +1,99 @@
+<!doctype html><meta charset="utf-8" /><title>
+  AEGIS · баллистический стенд</title
+><style>
+  body {
+    background: #1a2227;
+    color: #e3e8e5;
+    font: 16px system-ui;
+    margin: 30px;
+  }
+  input,
+  select,
+  button {
+    font: inherit;
+    padding: 8px;
+  }
+  table {
+    border-collapse: collapse;
+    margin-top: 24px;
+  }
+  td,
+  th {
+    padding: 10px;
+    border: 1px solid #556260;
+  }
+  small {
+    display: block;
+    margin: 15px 0;
+  }
+</style>
+<h1>Баллистический стенд</h1>
+<p>Общий игровой решатель без леса, оружейной и рендера.</p>
+<label
+  >Патрон
+  <select id="cal">
+    <option value="545|7N6">7Н6</option>
+    <option value="556|M855">M855</option>
+    <option value="762x51|M80">M80</option>
+    <option value="9x19|JHP">9×19 JHP</option>
+    <option value="12ga|slug">12ga slug</option>
+  </select></label
+>
+<label
+  >Скорость <input id="v" type="number" value="880" min="50" max="1200"
+/></label>
+<label
+  >Ноль <input id="zero" type="number" value="100" min="25" max="800"
+/></label>
+<label
+  >Боковой ветер <input id="wind" type="number" value="0" min="-20" max="20"
+/></label>
+<button id="go">Рассчитать</button
+><small
+  >Высота прицела 60 мм, стандартный воздух. Ветер здесь постоянный: это
+  отдельный эталон, а не поле лесных порывов. BC вариантов и пробитие — игровые
+  приближения.</small
+>
+<div id="out"></div>
+<script src="../js/polygon/05f_ballistics.js"></script>
+<script>
+  function run() {
+    const [cal, id] = document.getElementById("cal").value.split("|"),
+      s = GBallistics.spec(cal, id),
+      v = +document.getElementById("v").value,
+      Z = +document.getElementById("zero").value,
+      w = +document.getElementById("wind").value,
+      sol = GBallistics.zero(s, v, 0.06, 0, Z),
+      tr = GBallistics.trajectory(
+        s,
+        v,
+        sol.elev,
+        1200,
+        100,
+        GBallistics.AIR,
+        w,
+      );
+    document.getElementById("out").innerHTML =
+      "<table><tr><th>м</th><th>Смещение от линии, м</th><th>Снос, м</th><th>Время, с</th><th>Скорость, м/с</th></tr>" +
+      tr
+        .slice(1)
+        .map(
+          (p) =>
+            "<tr>" +
+            [
+              p.x,
+              (p.y - 0.06).toFixed(3),
+              p.z.toFixed(3),
+              p.t.toFixed(3),
+              p.v.toFixed(1),
+            ]
+              .map((v) => "<td>" + v + "</td>")
+              .join("") +
+            "</tr>",
+        )
+        .join("") +
+      "</table>";
+  }
+  document.getElementById("go").onclick = run;
+  run();
+</script>

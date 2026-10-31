@@ -1,0 +1,139 @@
+/* =====================================================================
+   AEGIS v13 · типографика (подключается ПОСЛЕДНЕЙ, перекрывает старые слои)
+   Было: три гарнитуры (Oswald / IBM Plex Sans / Plex Mono), подписи 9.5–11 px
+   ЗАГЛАВНЫМИ с разрядкой .12–.46em — на кириллице это читается хуже всего:
+   у заглавных нет выносных элементов, разрядка рвёт слово на буквы.
+   Стало (по Xbox Accessibility Guideline 101 и WCAG 1.4.12):
+   · одна гарнитура — Golos Text (Paratype, сделан для госуслуг РФ, именно
+     для чтения с экрана; SIL OFL 1.1, assets/fonts/OFL-golos.txt), переменная
+     400–900, лежит локально (офлайн);
+   · обычный регистр, разрядка 0 (кроме логотипа);
+   · минимальный кегль 12 px (было 9.5), основной текст 13–16 px;
+   · цифры счётчиков — табличные (не прыгают при смене значения).
+   ===================================================================== */
+@font-face{font-family:"Golos Text";font-style:normal;font-weight:400 900;font-display:swap;src:url(../assets/fonts/golos-cyrillic.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Golos Text";font-style:normal;font-weight:400 900;font-display:swap;src:url(../assets/fonts/golos-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{
+  --ui:"Golos Text","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --f:var(--ui); --fd:var(--ui); --mono:var(--ui);
+  --font-display:var(--ui); --font-text:var(--ui); --font-mono:var(--ui);
+}
+html body,html body *{font-family:var(--ui)!important;letter-spacing:0!important;text-transform:none!important}
+html body{font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+/* логотип — единственное место с лёгкой разрядкой */
+.l-logo,#brand b,.m-title,#intro .ld-logo{letter-spacing:.06em!important;margin-right:0!important}
+#death .t{letter-spacing:.04em!important;margin-right:0!important}
+/* жирность: в HUD 600 поверх игры читается лучше 700/800 (не «слипается») */
+#ammo,#mode,#who,#score,#tag i,#death .c,#death .r{font-weight:600}
+/* HUD поверх сцены: тень вместо подложки, чтобы текст не терялся на светлом небе */
+#ammo,#mode,#who,#score,#slots,#tag,#prompt,#death,#treat,#vitals,#inj{text-shadow:0 1px 2px rgba(0,0,0,.95),0 0 6px rgba(0,0,0,.55)}
+#who{color:rgba(255,255,255,.72)}
+#score{color:rgba(255,255,255,.75)}
+#ammo{color:rgba(255,255,255,.8)}
+/* ---------------- минимальные кегли (сгенерировано по всем старым правилам < 12.5 px) */
+/* css/game.css */
+#ammo{font-size:12.5px} /* было 11.0 */
+#mode{font-size:12.5px} /* было 11.0 */
+#who{font-size:12.5px} /* было 10.5 */
+#who u{font-size:12px} /* было 10.0 */
+#score{font-size:12.5px} /* было 10.5 */
+#slots .slot b{font-size:12px} /* было 10.0 */
+#slots .slot span{font-size:13px} /* было 11.5 */
+#prompt .sub{font-size:12.5px} /* было 11.0 */
+#death .c{font-size:13px} /* было 11.5 */
+#death .r{font-size:12.5px} /* было 10.5 */
+#fps{font-size:12.5px} /* было 11.0 */
+#tag span{font-size:12.5px} /* было 10.5 */
+#tag i{font-size:12px} /* было 9.5 */
+#brand span{font-size:12.5px} /* было 11.0 */
+.m-sub{font-size:13px} /* было 12.0 */
+.m-cap{font-size:12.5px} /* было 11.0 */
+.gen span{font-size:12.5px} /* было 11.0 */
+.mbtn small{font-size:13px} /* было 12.0 */
+.m-foot{font-size:13px} /* было 12.0 */
+.map-d{font-size:13px} /* было 11.5 */
+.soon{font-size:13px} /* было 12.0 */
+.b-note{font-size:13px} /* было 11.5 */
+#wasd .txt span{font-size:13px} /* было 11.5 */
+.s-saved{font-size:13px} /* было 12.0 */
+.s-cap{font-size:12.5px} /* было 11.0 */
+.q-list button span{font-size:13px} /* было 12.0 */
+.s-check em{font-size:12.5px} /* было 11.0 */
+.req-s{font-size:13px} /* было 12.0 */
+.credits{font-size:13px} /* было 12.0 */
+.t-step{font-size:13px} /* было 12.0 */
+.t-body kbd{font-size:13px} /* было 12.0 */
+.l-t{font-size:12.5px} /* было 11.0 */
+.m-cap,.s-cap{font-size:13px} /* было 12.0 */
+.t-keys .t-k{font-size:13px} /* было 12.0 */
+.t-scheme{font-size:12.5px} /* было 10.5 */
+.t-scheme b{font-size:13px} /* было 12.0 */
+.ts-slots i{font-size:12px} /* было 10.0 */
+#vitals{font-size:12px} /* было 10.0 */
+#vitals .vst i{font-size:12px} /* было 9.5 */
+#vitals .vkit{font-size:12px} /* было 9.5 */
+#vitals .vkit b{font-size:12.5px} /* было 11.0 */
+#vitals kbd,#treat kbd{font-size:12px} /* было 10.0 */
+#vitals .vmsg{font-size:12px} /* было 10.0 */
+#treat{font-size:13px} /* было 12.0 */
+#treat .ts{font-size:12.5px} /* было 10.5 */
+#who em{font-size:12px} /* было 9.5 */
+.gen .tr{font-size:12px} /* было 9.5 */
+#itut{font-size:13px} /* было 12.0 */
+#itut .ih{font-size:12px} /* было 10.0 */
+#itut kbd{font-size:12px} /* было 10.0 */
+/* css/armory-aegis.css */
+.aeg-slot b{font-size:12px} /* было 10.0 */
+.aeg-slot small{font-size:12px} /* было 10.0 */
+.aeg-gen-n{font-size:13px} /* было 11.5 */
+.pk-t{font-size:12.5px} /* было 11.0 */
+.pk-o span{font-size:12.5px} /* было 11.0 */
+.pk-err{font-size:13px} /* было 12.0 */
+.wl-t{font-size:12.5px} /* было 11.0 */
+.wl-i span{font-size:12.5px} /* было 11.0 */
+.wl-i em{font-size:12.5px} /* было 10.5 */
+.wl-t,.pk-t{font-size:13px} /* было 12.0 */
+.pk-t i{font-size:13px} /* было 11.5 */
+.co-n{font-size:12.5px} /* было 11.0 */
+/* css/armory-engine.css */
+.btn.sm{font-size:13px} /* было 12.0 */
+.c-spec{font-size:13px} /* было 12.0 */
+.s-t,.m-head span,.m-gt,.h-t{font-size:12.5px} /* было 11.0 */
+.s-r b small{font-size:12.5px} /* было 11.0 */
+.s-r em{font-size:13px} /* было 11.5 */
+.m-head span{font-size:13px} /* было 12.0 */
+.m-pl{font-size:13px} /* было 12.0 */
+.o-d{font-size:13px} /* было 11.5 */
+.o-c i{font-size:12.5px} /* было 11.0 */
+.m-note{font-size:13px} /* было 11.5 */
+.a-batt .bt{font-size:12.5px} /* было 11.0 */
+.a-batt kbd{font-size:12px} /* было 9.5 */
+.shot-info{font-size:13px} /* было 12.0 */
+.a-batt b small{font-size:12px} /* было 9.5 */
+.a-m b{font-size:13px} /* было 12.0 */
+.a-m span{font-size:13px} /* было 12.0 */
+.help kbd{font-size:12.5px} /* было 11.0 */
+.h-n{font-size:13px} /* было 11.5 */
+.tip{font-size:13px} /* было 12.0 */
+.ads-hint span{font-size:13px} /* было 11.5 */
+
+/* ---------------- v13 · «Состояние» вместо полоски «Здоровье» */
+#vitals{width:320px;bottom:116px;font:500 13px/1.4 var(--ui);color:rgba(255,255,255,.75);opacity:.6}
+#vitals.hurt{opacity:1}
+#vitals .vh{justify-content:flex-start;gap:10px}
+#vitals .vh span{font-size:12.5px;color:rgba(255,255,255,.6)}
+#vitals .vh b{font:600 15px/1.2 var(--ui);color:#eef0f2}
+#vitals.warn .vh b{color:#f0d89c}
+#vitals.low .vh b{color:#f5b26b}
+#vitals.crit .vh b{color:#ff8a7e}
+#vitals .vst{display:flex;flex-direction:column;align-items:flex-start;gap:3px;margin-top:6px}
+#vitals .vst i{font-size:13px;line-height:1.3;padding:3px 8px;border-radius:4px;background:rgba(0,0,0,.5)}
+#vitals .vst .c-min{border-color:rgba(255,255,255,.12);color:#d9d9d6}
+#vitals .vst .c-fr3{border-color:rgba(240,140,70,.85);color:#ffc999}
+#vitals .vsy{margin-top:5px;min-height:0;font-size:13px}
+#vitals .vsy .s1{color:#f0d89c}
+#vitals .vsy .s2{color:#f5b26b}
+#vitals .vsy .s3{color:#ff8a7e;animation:vBlink 1.2s ease-in-out infinite}
+#vitals .vkit{font-size:12.5px;gap:14px}
+#vitals .vmsg{font-size:13px;color:#f3dfae}
+@media (prefers-reduced-motion:reduce){#vitals .vsy .s3,#vitals .vst .c-art{animation:none}}

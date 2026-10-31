@@ -1,0 +1,209 @@
+{
+  "result": {
+    "rows": [
+      {
+        "name": "catch",
+        "dt": 0.016666666666666666,
+        "cameraFinite": true,
+        "state": "stable",
+        "dead": false,
+        "healthRetained": true
+      },
+      {
+        "name": "fall-recover",
+        "dt": 0.016666666666666666,
+        "states": [
+          "down",
+          "getting-up",
+          "stable"
+        ],
+        "maxBodies": 16,
+        "finite": true,
+        "fireBlocked": true,
+        "headShown": true,
+        "gunDynamic": true,
+        "maxGap": 0.0007496922931701905,
+        "dead": false,
+        "recovered": true,
+        "rdCleared": true,
+        "healthRetained": true,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.016666666666666666
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.6166666666666658
+          },
+          {
+            "name": "recovered",
+            "time": 3.383333333333326
+          }
+        ]
+      },
+      {
+        "name": "catch",
+        "dt": 0.03333333333333333,
+        "cameraFinite": true,
+        "state": "stable",
+        "dead": false,
+        "healthRetained": true
+      },
+      {
+        "name": "fall-recover",
+        "dt": 0.03333333333333333,
+        "states": [
+          "down",
+          "getting-up",
+          "stable"
+        ],
+        "maxBodies": 16,
+        "finite": true,
+        "fireBlocked": true,
+        "headShown": true,
+        "gunDynamic": true,
+        "maxGap": 0.0007800904429206215,
+        "dead": false,
+        "recovered": true,
+        "rdCleared": true,
+        "healthRetained": true,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.03333333333333333
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.633333333333335
+          },
+          {
+            "name": "recovered",
+            "time": 3.3999999999999977
+          }
+        ]
+      },
+      {
+        "name": "catch",
+        "dt": 0.05,
+        "cameraFinite": true,
+        "state": "stable",
+        "dead": false,
+        "healthRetained": true
+      },
+      {
+        "name": "fall-recover",
+        "dt": 0.05,
+        "states": [
+          "down",
+          "getting-up",
+          "stable"
+        ],
+        "maxBodies": 16,
+        "finite": true,
+        "fireBlocked": true,
+        "headShown": true,
+        "gunDynamic": true,
+        "maxGap": 0.0007869170351644282,
+        "dead": false,
+        "recovered": true,
+        "rdCleared": true,
+        "healthRetained": true,
+        "events": [
+          {
+            "name": "external",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.05
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.800000000000001
+          },
+          {
+            "name": "recovered",
+            "time": 3.5499999999999954
+          }
+        ]
+      },
+      {
+        "name": "contact-trip",
+        "triggered": true,
+        "events": [
+          {
+            "name": "trip-obstacle",
+            "time": 0
+          },
+          {
+            "name": "fall",
+            "time": 0.016666666666666666
+          },
+          {
+            "name": "get-up-start",
+            "time": 1.6166666666666658
+          }
+        ],
+        "finite": true
+      },
+      {
+        "name": "character-preset",
+        "index": 0,
+        "faction": "delta",
+        "recovered": true,
+        "finite": true,
+        "healthRetained": true,
+        "segments": 16
+      },
+      {
+        "name": "character-preset",
+        "index": 1,
+        "faction": "delta",
+        "recovered": true,
+        "finite": true,
+        "healthRetained": true,
+        "segments": 16
+      },
+      {
+        "name": "character-preset",
+        "index": 12,
+        "faction": "alpha",
+        "recovered": true,
+        "finite": true,
+        "healthRetained": true,
+        "segments": 16
+      },
+      {
+        "name": "character-preset",
+        "index": 13,
+        "faction": "alpha",
+        "recovered": true,
+        "finite": true,
+        "healthRetained": true,
+        "segments": 16
+      }
+    ],
+    "at": [
+      -34.5,
+      0.02499995231628436,
+      -22.5
+    ],
+    "stats": {
+      "triggered": 11,
+      "caught": 3,
+      "falls": 8,
+      "recovered": 7,
+      "blocked": 0
+    }
+  },
+  "errors": []
+}

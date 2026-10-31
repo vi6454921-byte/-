@@ -1,0 +1,116 @@
+[
+  {
+    "path": "LOCOMOTION_README_RU.md",
+    "status": "added",
+    "sha256": "32738f5a39feabc318379d50a0a36ef18ed7e3e12ccf1c3118d791178ae54eb4",
+    "bytes": 3571
+  },
+  {
+    "path": "README.md",
+    "status": "modified",
+    "sha256": "2b3f496fd7b0f0efe3746a43f5c3f7ab42aaf3753bcf8003ffde242233644445",
+    "bytes": 3708
+  },
+  {
+    "path": "docs/LOCOMOTION_QA_V5.json",
+    "status": "added",
+    "sha256": "af328ea2f8056781e51744055a6870b4c339862ec64f12e832c423fc83165b3a",
+    "bytes": 23531
+  },
+  {
+    "path": "js/advanced/animator.js",
+    "status": "modified",
+    "sha256": "6e6e8565f63e147fc0830e5a4c1a741b18185f807987a9d1e7e08fc317291832",
+    "bytes": 25255
+  },
+  {
+    "path": "js/polygon/15_rig.js",
+    "status": "modified",
+    "sha256": "5f1a92c62206bf3597becf1c2a6fa8c445f6fa7f0ce44029c45e79ce1e0eb156",
+    "bytes": 47407
+  },
+  {
+    "path": "js/polygon/20_player.js",
+    "status": "modified",
+    "sha256": "4010ec135418ccfd7eaea786f0251d7c97d364480e2556b87c992103e4292abc",
+    "bytes": 61022
+  },
+  {
+    "path": "js/polygon/21_game_bodycam.js",
+    "status": "modified",
+    "sha256": "981f37d993afa594d8668dfe260232277e34fc3ffd48a289c6fb29df09160cbf",
+    "bytes": 50140
+  },
+  {
+    "path": "js/polygon/29_game.js",
+    "status": "modified",
+    "sha256": "f4251694f9b03cec5ad87a26c064ce5b417df2cdd8c3b585c80e40f7b3919187",
+    "bytes": 368029
+  },
+  {
+    "path": "package.json",
+    "status": "modified",
+    "sha256": "6c5d279339601fc541fde0fb2cc821be10f09bd54f44dcc9b32a4aa8ac061947",
+    "bytes": 2099
+  },
+  {
+    "path": "src/advanced/animator.ts",
+    "status": "modified",
+    "sha256": "154e3c4b2a1b9932be07a84b86191ca406cd3a6d9b0039a98199c3258d59cc6f",
+    "bytes": 23166
+  },
+  {
+    "path": "tools/advanced-tests/continuation-browser.json",
+    "status": "modified",
+    "sha256": "66ac578f72eb9ccab40e718ddef469eb6d7f64b2abc063151e435b52a721f2e8",
+    "bytes": 226172
+  },
+  {
+    "path": "tools/advanced-tests/locomotion-v5-browser.cjs",
+    "status": "added",
+    "sha256": "a78c585e0605aa7fc52ce846ac21a747d8255398e6197b9e1d6d79a80fb11002",
+    "bytes": 6291
+  },
+  {
+    "path": "tools/advanced-tests/locomotion-v5-core.json",
+    "status": "added",
+    "sha256": "ea8431b5b5da3eb23dc2e888677ac5a447bcefb788ed8c1fd5f4cb4923c0acbc",
+    "bytes": 7154
+  },
+  {
+    "path": "tools/advanced-tests/locomotion-v5-run.png",
+    "status": "added",
+    "sha256": "382fc3c0b91491650b80c4d3418dfab54a4c06bed46f14dc8aef6eabda6a3ad9",
+    "bytes": 91382
+  },
+  {
+    "path": "tools/advanced-tests/locomotion-v5.cjs",
+    "status": "added",
+    "sha256": "16c17bb67a225aab0586d7ce29b654048707b3d3031b3354b3bfe8f1e1c402aa",
+    "bytes": 2430
+  },
+  {
+    "path": "tools/advanced-tests/locomotion-v5.json",
+    "status": "added",
+    "sha256": "93b23884029dfcd24485298d92e71786c5a1a502a1c161bbdacb18b35d81c56e",
+    "bytes": 12222
+  },
+  {
+    "path": "tools/advanced-tests/navigation.json",
+    "status": "modified",
+    "sha256": "44ca62b5e30602da234adefa3473e27cbe5e10648ed16c740458ae64ebdd2b83",
+    "bytes": 6710
+  },
+  {
+    "path": "tools/advanced-tests/trace-bvh.json",
+    "status": "modified",
+    "sha256": "153534432cd0daa67a74e17447c840a784a4d5f9bff15ffe2a51e2d4dd1f56ac",
+    "bytes": 785
+  },
+  {
+    "path": "tools/locomotion-tests/baseline-animator-v4.js",
+    "status": "added",
+    "sha256": "b2ab63142d277ec2af2492aa6a866411133fb0f608388f102b01fc2cbe645187",
+    "bytes": 20176
+  }
+]

@@ -1,0 +1,5 @@
+{
+  "fullGameSmoke": "INCONCLUSIVE: full game did not yield a completed smoke report in the available software-rendered session; no gameplay FPS or successful game launch claimed.",
+  "realWeakPCs": "NOT RUN: no physical target PCs available.",
+  "mapIntegration": "BLOCKED: map source files absent."
+}

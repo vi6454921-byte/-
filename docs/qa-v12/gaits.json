@@ -1,0 +1,32 @@
+{
+  "pass": true,
+  "rows": [
+    {
+      "name": "walk",
+      "cycles": 14,
+      "freq": 0.881815,
+      "speed": 1.200034,
+      "stance": 0.50744,
+      "channels": 16
+    },
+    {
+      "name": "jog",
+      "cycles": 2,
+      "freq": 1.256579,
+      "speed": 2.757333,
+      "stance": 0.28,
+      "channels": 16
+    },
+    {
+      "name": "run",
+      "cycles": 3,
+      "freq": 1.364471,
+      "speed": 3.447395,
+      "stance": 0.28,
+      "channels": 16
+    }
+  ],
+  "speedSamples": 1001,
+  "phaseSamples": 100,
+  "maxCadenceStep": 0.0037155946224021186
+}

@@ -1,0 +1,168 @@
+{
+  "source": "http://mocap.cs.cmu.edu/",
+  "clips": [
+    {
+      "clip": "35_01",
+      "group": "walk",
+      "frames": 358,
+      "speed": 1.2814,
+      "leg": 0.87321,
+      "cycles": 2,
+      "url": "http://mocap.cs.cmu.edu/subjects/35/35_01.amc",
+      "sha256": "0743f4ea48e7e199cd56b2810b5ce81f8ede08d32ff79aa4e363c44cc4fe33aa"
+    },
+    {
+      "clip": "35_02",
+      "group": "walk",
+      "frames": 406,
+      "speed": 1.24338,
+      "leg": 0.87321,
+      "cycles": 2,
+      "url": "http://mocap.cs.cmu.edu/subjects/35/35_02.amc",
+      "sha256": "c2573ac32712c503d0d957a4708e0f3488348269485cdc7b00266b44d116c903"
+    },
+    {
+      "clip": "35_03",
+      "group": "walk",
+      "frames": 427,
+      "speed": 1.25438,
+      "leg": 0.87321,
+      "cycles": 2,
+      "url": "http://mocap.cs.cmu.edu/subjects/35/35_03.amc",
+      "sha256": "268e87ca19726fe03a66b4f792e3226706afe8a393ab1587a8794de6b43dc447"
+    },
+    {
+      "clip": "16_15",
+      "group": "walk",
+      "frames": 471,
+      "speed": 1.09448,
+      "leg": 0.83621,
+      "cycles": 2,
+      "url": "http://mocap.cs.cmu.edu/subjects/16/16_15.amc",
+      "sha256": "0873a7753a04c34de2a94dc768b61ef4ed8395f0bd351c2019864b16883b0f89"
+    },
+    {
+      "clip": "16_16",
+      "group": "walk",
+      "frames": 510,
+      "speed": 1.01852,
+      "leg": 0.83621,
+      "cycles": 3,
+      "url": "http://mocap.cs.cmu.edu/subjects/16/16_16.amc",
+      "sha256": "b8ec17da1da966b886215e5c4974d29d63beefd72a68139134e2863cce0a6316"
+    },
+    {
+      "clip": "07_01",
+      "group": "walk",
+      "frames": 316,
+      "speed": 1.35826,
+      "leg": 0.80755,
+      "cycles": 1,
+      "url": "http://mocap.cs.cmu.edu/subjects/07/07_01.amc",
+      "sha256": "3ca8e8b834481c97c32e9dd555f8c9023e33b6c52d93c9d556c83570204bf3f2"
+    },
+    {
+      "clip": "07_02",
+      "group": "walk",
+      "frames": 329,
+      "speed": 1.31969,
+      "leg": 0.80755,
+      "cycles": 2,
+      "url": "http://mocap.cs.cmu.edu/subjects/07/07_02.amc",
+      "sha256": "a6062c6c6bce037241d345ca8d802ab36a5cf003b60f759aa7b1db545219c065"
+    },
+    {
+      "clip": "16_35",
+      "group": "jog",
+      "frames": 162,
+      "speed": 2.81541,
+      "leg": 0.83621,
+      "cycles": 1,
+      "url": "http://mocap.cs.cmu.edu/subjects/16/16_35.amc",
+      "sha256": "28e83b8ee8ff46e15cb7d41d5e77faaefe3e06cf165f05fb18dd348457bdf387"
+    },
+    {
+      "clip": "16_36",
+      "group": "jog",
+      "frames": 189,
+      "speed": 2.69926,
+      "leg": 0.83621,
+      "cycles": 1,
+      "url": "http://mocap.cs.cmu.edu/subjects/16/16_36.amc",
+      "sha256": "d0b511189db92f754c63a3cf0d93b71ebd67cea8b657f57d722c48b9896ba5a9"
+    },
+    {
+      "clip": "35_17",
+      "group": "run",
+      "frames": 167,
+      "speed": 3.16548,
+      "leg": 0.87321,
+      "cycles": 1,
+      "url": "http://mocap.cs.cmu.edu/subjects/35/35_17.amc",
+      "sha256": "8096cd53878242dbc35e987288cef6ae81d4e1c0e207086639bbed5cc06c8fee"
+    },
+    {
+      "clip": "35_18",
+      "group": "run",
+      "frames": 175,
+      "speed": 3.13309,
+      "leg": 0.87321,
+      "cycles": 0,
+      "url": "http://mocap.cs.cmu.edu/subjects/35/35_18.amc",
+      "sha256": "b83673d6f66b56eef95beda511ebca7ae9c759c1a1694c852bc602623430aa42"
+    },
+    {
+      "clip": "35_19",
+      "group": "run",
+      "frames": 160,
+      "speed": 3.33807,
+      "leg": 0.87321,
+      "cycles": 0,
+      "url": "http://mocap.cs.cmu.edu/subjects/35/35_19.amc",
+      "sha256": "f7b771807befc5c353d3df94ee302faef03803d3598b97de583aeb1df5e12081"
+    },
+    {
+      "clip": "09_01",
+      "group": "run",
+      "frames": 148,
+      "speed": 3.63162,
+      "leg": 0.85983,
+      "cycles": 1,
+      "url": "http://mocap.cs.cmu.edu/subjects/09/09_01.amc",
+      "sha256": "02c94e8c2d4d2ff05f9a784f06403700c2c9d7caedd9bd92b50284d1a05f2bee"
+    },
+    {
+      "clip": "09_02",
+      "group": "run",
+      "frames": 130,
+      "speed": 3.54508,
+      "leg": 0.85983,
+      "cycles": 1,
+      "url": "http://mocap.cs.cmu.edu/subjects/09/09_02.amc",
+      "sha256": "9e618b1c3897776e98485ad01509708b1e5190c76fc630ad6db9ccb12529b927"
+    }
+  ],
+  "gaits": {
+    "walk": {
+      "speed": 1.200034,
+      "freq": 0.881815,
+      "leg": 0.845928,
+      "stance": 0.50744,
+      "cycles": 14
+    },
+    "jog": {
+      "speed": 2.757333,
+      "freq": 1.256579,
+      "leg": 0.836212,
+      "stance": 0.28,
+      "cycles": 2
+    },
+    "run": {
+      "speed": 3.447395,
+      "freq": 1.364471,
+      "leg": 0.86429,
+      "stance": 0.28,
+      "cycles": 3
+    }
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru"><head><meta charset="utf-8"><title>AEGIS v26 · стенд «Внешний вид»</title>
+<link rel="stylesheet" href="../../css/game.css">
+<style>html,body{margin:0;height:100%;overflow:hidden;background:#111}#info{position:fixed;right:8px;bottom:60px;z-index:99;font:11px monospace;color:#9f9;white-space:pre;pointer-events:none;text-shadow:0 0 3px #000}</style>
+</head><body class="st-look">
+<div id="info">загрузка…</div>
+<script>
+/* Стенд редактора внешнего вида: модули бойца + js/app/looks.js со своим
+   рендерером (в игре — общий, через G.setPreview). Без мира, ИИ и физики.
+   ?key=delta_1&tab=form&look={"top":"multicam"}&focus=full&yaw=0.5&noui=1 */
+window.__AEGIS_STAND = true;
+const QS = new URLSearchParams(location.search);
+const SRC = ['js/lib/three.min.js', 'assets/data/hands.js', 'assets/data/soldier_model.js', 'assets/data/soldier_tex.js',
+  'js/polygon/00_boot.js', 'js/polygon/02_util.js', 'js/polygon/03_viewmodel_vm.js', 'js/polygon/04_viewmodel_hand_assets.js',
+  'js/polygon/05_viewmodel_ak.js', 'js/polygon/06_textures.js', 'js/polygon/07_geobuf.js', 'js/polygon/08_skeleton.js',
+  'js/polygon/09_soldier.js', 'js/polygon/10_soldier_body.js', 'js/polygon/11_soldier_clothing.js', 'js/polygon/12_soldier_gear.js',
+  'js/polygon/13_soldier_kit.js', 'js/polygon/13b_soldier_cover.js', 'js/polygon/14_character.js', 'js/polygon/15_rig.js', 'js/app/looks.js'];
+const ROOT = '../../';
+function load(i) {
+  if (i >= SRC.length) return start();
+  const s = document.createElement('script'); s.src = ROOT + SRC[i] + (QS.get('nc') ? '?' + Date.now() : '');
+  s.onload = () => load(i + 1); s.onerror = () => { document.getElementById('info').textContent = 'нет ' + SRC[i]; };
+  document.head.appendChild(s);
+}
+load(0);
+async function start() {
+  await GAssets.ready();
+  const T = THREE;
+  const R = new T.WebGLRenderer({ antialias: true, preserveDrawingBuffer: true });
+  R.setPixelRatio(1); R.setSize(innerWidth, innerHeight);
+  R.shadowMap.enabled = true; R.shadowMap.type = T.PCFSoftShadowMap;
+  /* как в игре (29_game.js) */
+  R.toneMapping = T.AgXToneMapping !== undefined ? T.AgXToneMapping : T.ACESFilmicToneMapping;
+  if ('outputColorSpace' in R) R.outputColorSpace = T.SRGBColorSpace;
+  R.domElement.style.cssText = 'position:fixed;inset:0;width:100%;height:100%';
+  document.body.insertBefore(R.domElement, document.body.firstChild);
+  addEventListener('resize', () => R.setSize(innerWidth, innerHeight));
+  if (QS.get('look')) {
+    const d = GLooks.load(); d.units[QS.get('key') || 'delta_1'] = JSON.parse(QS.get('look')); GLooks.save(d);
+  }
+  if (QS.get('clear')) localStorage.removeItem(GLooks.KEY);
+  let fn = null, prev = performance.now(), frames = 0, drawn = 0;
+  function loop() {
+    requestAnimationFrame(loop);
+    const now = performance.now(), dt = (now - prev) / 1000; prev = now; frames++;
+    if (fn && fn(R, dt) !== false) drawn++;
+  }
+  loop();
+  const E = GLooks._E;
+  window.__LKS = {
+    T, R, E, GLooks,
+    get drawn() { return drawn; }, get frames() { return frames; },
+    open: (key) => GLooks.open({ THREE: T, renderer: R, key: key || QS.get('key') || 'delta_1', setPreview: (f) => { fn = f ? (r, dt) => { const pv = E.pv; const was = pv && pv.dirty; f(r, dt); return was; } : null; }, onClose: (res) => { window.__LKS.closed = res; } }),
+    tab: (t) => { E.tab = t; E.el.querySelector('.lk-tabs button:nth-child(' + (['form','armor','head','feet','cover','team'].indexOf(t) + 1) + ')').click(); },
+    setLook: (key, look) => { E.key = key; E.data.units[key] = GLooks.norm({ units: { [key]: look } }).units[key] || {}; E.dirty.add(key); GLooks.save(E.data); return new Promise((res) => { E.pv.panel = E.el.querySelector('.lk-panel').getBoundingClientRect().right; E.pv.set(key, E.data.units[key], E.data.team[GLooks.UNIT[key].team].band); E.pv.compile().then(() => { E.pv.dirty = true; res(E.pv.buildMs); }); }); },
+    idle: () => new Promise((res) => { const t0 = performance.now(); const w = () => { const b = E.el.querySelector('.lk-busy'); if ((!b.classList.contains('on') && !E.t) || performance.now() - t0 > 120000) res(performance.now() - t0); else setTimeout(w, 50); }; w(); })
+  };
+  window.__LKS.open();
+  if (QS.get('tab')) window.__LKS.tab(QS.get('tab'));
+  if (QS.get('noui')) E.el.querySelector('.lk-panel').style.display = 'none';
+  setInterval(() => { const pv = E.pv; document.getElementById('info').textContent = 'кадров ' + frames + ' · отрисовано ' + drawn + (pv && pv.buildMs ? ' · сборка ' + pv.buildMs.toFixed(0) + ' мс' : '') + (pv && pv.ch ? ' · ' + Object.keys(pv.ch.meshes).length + ' сеток' : ''); }, 500);
+  window.__STAND_READY = true;
+}
+</script></body></html>

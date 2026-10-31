@@ -1,0 +1,43 @@
+{
+  "bootMs": 24049,
+  "cases": 192,
+  "fail": 0,
+  "examples": [],
+  "perf": [
+    {
+      "rate": 1,
+      "msPerStep": 4.696666666667443,
+      "ms": 563.6000000000931,
+      "dead": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "rate": 4,
+      "msPerStep": 19.494999999999223,
+      "ms": 2339.399999999907,
+      "dead": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "rate": 6,
+      "msPerStep": 35.36416666666822,
+      "ms": 4243.700000000186,
+      "dead": [
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  ],
+  "labReady": true,
+  "errors": []
+}

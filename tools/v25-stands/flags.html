@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>AEGIS v25 · стенд флагов</title>
+<style>
+html,body{margin:0;background:#15171a;color:#d9d9d4;font:13px/1.4 Arial,sans-serif;overflow:hidden}
+#ui{position:fixed;left:10px;top:10px;background:rgba(0,0,0,.55);padding:8px 12px;border-radius:4px;max-width:520px}
+#ui b{color:#e0b060}
+#atlas{display:none;padding:10px;gap:10px;flex-wrap:wrap;overflow:auto;height:100vh;box-sizing:border-box}
+#atlas canvas{width:460px;border:1px solid #333}
+</style></head>
+<body>
+<div id="ui"><b>Стенд флагов v25</b> — ткань (Верле) + текстура двустороннего флага.<br>
+?mode=2d — атласы (лицо сверху, изнанка снизу); ?view=front|back|side|close; ?sun=front|back; ?wind=4.2; ?t=секунды</div>
+<div id="atlas"></div>
+<script src="../../js/lib/three.min.js"></script>
+<script src="../../js/polygon/27_game_flags.js"></script>
+<script>
+const P = new URLSearchParams(location.search);
+const mode = P.get('mode') || '3d';
+if (mode === '2d') {
+  const box = document.getElementById('atlas'); box.style.display = 'flex';
+  const t0 = performance.now();
+  const only = P.get('only');
+  for (const k of ['delta', 'alpha']) if (!only || only === k) { const c = GFlags.emblem(k, { wear: +(P.get('wear') || 0.25), fray: P.has('fray') }); if (P.has('full')) c.style.width = c.width + 'px'; box.append(c); }
+  if (!only) box.append(GFlags.emblem('plain', { color: [0.55, 0.05, 0.04], wear: 0.35 }));
+  window.__ms = performance.now() - t0;
+  document.getElementById('ui').innerHTML += '<br>генерация 3 атласов: ' + window.__ms.toFixed(1) + ' мс';
+  window.__ready = true;
+} else {
+  const W = innerWidth, H = innerHeight;
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(W, H); renderer.setPixelRatio(1);
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+  document.body.append(renderer.domElement);
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x8ea4bb);
+  scene.add(new THREE.HemisphereLight(0xa9b0aa, 0x3c3a32, 0.9));
+  const sun = new THREE.DirectionalLight(0xfff1dc, 2.6);
+  sun.castShadow = true; sun.shadow.mapSize.set(1024, 1024);
+  const sc = sun.shadow.camera; sc.left = sc.bottom = -8; sc.right = sc.top = 8; sc.near = 1; sc.far = 40;
+  sun.shadow.bias = -0.0005; sun.shadow.normalBias = 0.03;
+  scene.add(sun, sun.target);
+  const ground = new THREE.Mesh(new THREE.PlaneGeometry(60, 60), new THREE.MeshStandardMaterial({ color: 0x6b6450, roughness: 1 }));
+  ground.rotation.x = -Math.PI / 2; ground.receiveShadow = true; scene.add(ground);
+  const FL = GFlags.create(THREE, { scene, groundAt: () => 0, windSpeed: +(P.get('wind') || 4.2), quality: P.get('q') || 'high' });
+  FL.add({ name: 'delta', kind: 'delta', x: -1.4, z: 0, poleH: 4.6, drop: 0.06, w: 1.35, h: 0.9 });
+  FL.add({ name: 'alpha', kind: 'alpha', x: 1.5, z: 0.9, poleH: 4.6, drop: 0.06, w: 1.35, h: 0.9 });
+  if (P.has('plain')) FL.add({ name: 'red', color: [0.55, 0.05, 0.04], x: 4.2, z: 1.6, poleH: 3.2, drop: 0.05, w: 0.9, h: 0.6 });
+  const a = FL.base, n = new THREE.Vector3(-Math.sin(a), 0, Math.cos(a)), d = new THREE.Vector3(Math.cos(a), 0, Math.sin(a));
+  const view = P.get('view') || 'front', sunSide = P.get('sun') || 'front';
+  const ctr = new THREE.Vector3(0.2, 3.85, 0.4);
+  const cam = new THREE.PerspectiveCamera(+(P.get('fov') || 40), W / H, 0.05, 200);
+  const sgn = view === 'back' ? -1 : 1;
+  if (view === 'side') cam.position.copy(ctr).addScaledVector(d, 7).addScaledVector(n, 2.5).add(new THREE.Vector3(0, -0.6, 0));
+  else if (view === 'close') { ctr.set(-0.75, 3.9, 0.3); cam.position.copy(ctr).addScaledVector(n, 1.5 * sgn).add(new THREE.Vector3(0, -0.15, 0)); }
+  else cam.position.copy(ctr).addScaledVector(n, 7.5 * sgn).add(new THREE.Vector3(0, -1.6, 0));
+  cam.lookAt(ctr);
+  const ss = sunSide === 'back' ? -sgn : sgn;
+  sun.position.copy(ctr).addScaledVector(n, 12 * ss).add(new THREE.Vector3(3, 9, 0)); sun.target.position.copy(ctr);
+  cam.updateMatrixWorld(); cam.updateProjectionMatrix();
+  const T = +(P.get("t") || 5);
+  const t0 = performance.now();
+  for (let i = 0; i < T * 60; i++) FL.update(1 / 60, cam);
+  window.__simMs = (performance.now() - t0) / (T * 60);
+  renderer.render(scene, cam);
+  window.__ready = true;
+  window.__info = { simMsPerFrame: window.__simMs };
+}
+</script>
+</body></html>

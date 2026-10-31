@@ -1,0 +1,114 @@
+{
+  "bootMs": 21550,
+  "checks": [
+    {
+      "test": "ADS toggle",
+      "ok": true
+    },
+    {
+      "test": "crouch toggle",
+      "ok": true
+    },
+    {
+      "test": "zero 100→150",
+      "ok": true
+    },
+    {
+      "test": "FOV parameter",
+      "ok": true,
+      "data": 105
+    },
+    {
+      "test": "invertY",
+      "ok": true
+    },
+    {
+      "test": "near miss response",
+      "ok": true
+    },
+    {
+      "test": "suppression clears",
+      "ok": true
+    },
+    {
+      "test": "Vorontsov stops bleeding",
+      "ok": true,
+      "data": {
+        "mode": "treat",
+        "med": {
+          "tq": 2,
+          "bd": 4,
+          "job": null,
+          "npcT": 0,
+          "msg": "Жгут · плечо лев. — готово (Тихонов)",
+          "msgT": 0.6000000000000032
+        }
+      }
+    },
+    {
+      "test": "native broadphase in scene",
+      "ok": true
+    },
+    {
+      "test": "shots mute",
+      "ok": true,
+      "data": 0
+    },
+    {
+      "test": "ambience mute",
+      "ok": true,
+      "data": 0
+    },
+    {
+      "test": "blob reused",
+      "ok": true
+    },
+    {
+      "test": "cache survives transfer",
+      "ok": true,
+      "data": {
+        "size": 232869,
+        "copy": 232869
+      }
+    },
+    {
+      "test": "GPU compression used",
+      "ok": true,
+      "data": {
+        "supported": true,
+        "decoded": 7
+      }
+    }
+  ],
+  "cache": {
+    "hits": 4,
+    "decoded": 35,
+    "persistentHits": 0,
+    "entries": 35
+  },
+  "trace": {
+    "rays": 0,
+    "tests": 0,
+    "meshes": 38,
+    "custom": 2,
+    "dynamic": 8
+  },
+  "perf": [
+    {
+      "cpuRate": 1,
+      "msPerStep": 4.291666666666667,
+      "render": false
+    },
+    {
+      "cpuRate": 4,
+      "msPerStep": 14.359999999997672,
+      "render": false
+    },
+    {
+      "cpuRate": 6,
+      "msPerStep": 24.934166666667444,
+      "render": false
+    }
+  ],
+  "logs": []
+}

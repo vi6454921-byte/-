@@ -1,0 +1,13 @@
+{
+ "simT": 40.2,
+ "samples": 784,
+ "movingShare": 0.57,
+ "vaultsNPC": 0,
+ "trips": 4,
+ "tripsBy": {
+  "hit": 4
+ },
+ "nearFenceStuckSamples": 0,
+ "stuckBy": [],
+ "alive": 20
+}

@@ -1,0 +1,32 @@
+{
+  "index.html": {
+    "status": 200,
+    "mime": "text/html",
+    "bytes": 25775
+  },
+  "vendor/recast/core.mjs": {
+    "status": 200,
+    "mime": "text/javascript",
+    "bytes": 102016
+  },
+  "js/advanced/nav-worker.mjs": {
+    "status": 200,
+    "mime": "text/javascript",
+    "bytes": 1267
+  },
+  "occupiedPortFallback": "8770 occupied -> 8771; HTTP 200",
+  "windowsBatExecuted": false,
+  "version": "18.3.1-launch-fix",
+  "fileProtocol": {
+    "fileGuard": true,
+    "recastRequested": false,
+    "message": "Игра открыта напрямую с диска (file://).\n\nВ версии 18.3 Recast/Detour использует модули и Web Worker: нужен локальный HTTP-сервер. Это не ошибка WebGL или видеокарты.\n\nЗакройте эту вкладку. В распакованной папке AEGIS дважды нажмите start-server.bat (Windows) или запустите start-server.sh (Linux/macOS). Браузер откроется автоматически. Держите окно сервера открытым.\n\nЕсли Python не установлен, установите Python 3.8+ с python.org. Node.js и npm не нужны."
+  },
+  "httpGameSmoke": {
+    "map": "angar_map",
+    "exitCode": 0,
+    "errors": [],
+    "report": "tools/advanced-tests/integration-angar_map.json"
+  },
+  "scope": "Loader/server only; previous 18.3 game QA retained. Windows BAT not executed on Linux."
+}

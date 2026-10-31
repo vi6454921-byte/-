@@ -1,0 +1,862 @@
+{
+ "note": "perf_battle.cjs, quality low, WARM 600 + STEPS 900, no render; ms per 1/60 s step. base :8001 = v22, :8000 = v23",
+ "battle_forest": [
+  {
+   "build": "v22",
+   "seed": 7,
+   "map": "forest_map_camp",
+   "meanMs": 14.85,
+   "medianMs": 14.3,
+   "p95Ms": 19.9,
+   "p99Ms": 24,
+   "maxMs": 37.3,
+   "alive": 18,
+   "beh": {
+    "shots": 79,
+    "hits": 9,
+    "decisions": 1783,
+    "checks": 3354,
+    "trips": 7,
+    "tripsBy": {
+     "hit": 5,
+     "catch-step": 5,
+     "caught": 3
+    },
+    "falls": 0,
+    "vaults": 0,
+    "dead": 4
+   },
+   "world": {
+    "ragdolls": 4.1,
+    "objects": 26,
+    "awakeObjects": 12.6
+   },
+   "sysMs": {
+    "rapier": 5.12,
+    "tactics": 0.19,
+    "visibility-rapier": 0.02,
+    "controllers": 1.5,
+    "flags": 0.01,
+    "pose-and-hands": 7.08,
+    "simulation": 14.85
+   },
+   "heapMB": 872,
+   "gcDrops": 33,
+   "errors": 0
+  },
+  {
+   "build": "v23",
+   "seed": 7,
+   "map": "forest_map_camp",
+   "meanMs": 13.56,
+   "medianMs": 12.5,
+   "p95Ms": 20.1,
+   "p99Ms": 26.7,
+   "maxMs": 47,
+   "alive": 19,
+   "beh": {
+    "shots": 127,
+    "hits": 8,
+    "flanks": 3,
+    "scoots": 1,
+    "decisions": 1962,
+    "checks": 4098,
+    "trips": 6,
+    "tripsBy": {
+     "hit": 5,
+     "catch-step": 5,
+     "caught": 2
+    },
+    "falls": 0,
+    "vaults": 1,
+    "dead": 3
+   },
+   "world": {
+    "ragdolls": 2.1,
+    "objects": 27.8,
+    "awakeObjects": 21.6
+   },
+   "sysMs": {
+    "rapier": 5.39,
+    "tactics": 0.23,
+    "controllers": 1.56,
+    "flags": 0,
+    "pose-and-hands": 5.12,
+    "visibility-rapier": 0.04,
+    "simulation": 13.55
+   },
+   "heapMB": 771,
+   "gcDrops": 45,
+   "errors": 0
+  },
+  {
+   "build": "v22",
+   "seed": 23,
+   "map": "forest_map_camp",
+   "meanMs": 13.97,
+   "medianMs": 13.3,
+   "p95Ms": 20.5,
+   "p99Ms": 25.3,
+   "maxMs": 45.2,
+   "alive": 17,
+   "beh": {
+    "shots": 155,
+    "hits": 10,
+    "flanks": 2,
+    "scoots": 2,
+    "decisions": 1822,
+    "checks": 3571,
+    "trips": 4,
+    "tripsBy": {
+     "hit": 2,
+     "leg-hit": 2
+    },
+    "falls": 0,
+    "vaults": 0,
+    "dead": 5
+   },
+   "world": {
+    "ragdolls": 3.4,
+    "objects": 27.4,
+    "awakeObjects": 23.9
+   },
+   "sysMs": {
+    "rapier": 5.19,
+    "tactics": 0.19,
+    "visibility-rapier": 0.03,
+    "controllers": 1.3,
+    "flags": 0.01,
+    "pose-and-hands": 5.96,
+    "simulation": 13.96
+   },
+   "heapMB": 788,
+   "gcDrops": 38,
+   "errors": 0
+  },
+  {
+   "build": "v23",
+   "seed": 23,
+   "map": "forest_map_camp",
+   "meanMs": 15.3,
+   "medianMs": 15,
+   "p95Ms": 20.1,
+   "p99Ms": 24.2,
+   "maxMs": 88.6,
+   "alive": 13,
+   "beh": {
+    "shots": 235,
+    "hits": 22,
+    "flanks": 6,
+    "scoots": 3,
+    "decisions": 1528,
+    "checks": 2825,
+    "trips": 11,
+    "tripsBy": {
+     "hit": 6,
+     "leg-hit": 5
+    },
+    "falls": 0,
+    "vaults": 0,
+    "dead": 9
+   },
+   "world": {
+    "ragdolls": 7.1,
+    "objects": 28.3,
+    "awakeObjects": 21.8
+   },
+   "sysMs": {
+    "rapier": 6.04,
+    "tactics": 0.15,
+    "controllers": 1.1,
+    "flags": 0.01,
+    "pose-and-hands": 6.58,
+    "simulation": 15.29,
+    "visibility-rapier": 0.02
+   },
+   "heapMB": 795,
+   "gcDrops": 26,
+   "errors": 0
+  },
+  {
+   "build": "v22",
+   "seed": 42,
+   "map": "forest_map_camp",
+   "meanMs": 11.46,
+   "medianMs": 10.4,
+   "p95Ms": 16.9,
+   "p99Ms": 29.1,
+   "maxMs": 191.2,
+   "alive": 20,
+   "beh": {
+    "shots": 133,
+    "hits": 6,
+    "flanks": 1,
+    "scoots": 2,
+    "decisions": 2036,
+    "checks": 4207,
+    "trips": 4,
+    "tripsBy": {
+     "hit": 4
+    },
+    "falls": 0,
+    "vaults": 0,
+    "dead": 2
+   },
+   "world": {
+    "ragdolls": 1.1,
+    "objects": 26.3,
+    "awakeObjects": 17.5
+   },
+   "sysMs": {
+    "rapier": 3.59,
+    "tactics": 0.38,
+    "visibility-rapier": 0.03,
+    "controllers": 1.62,
+    "flags": 0,
+    "pose-and-hands": 4.74,
+    "simulation": 11.45
+   },
+   "heapMB": 768,
+   "gcDrops": 45,
+   "errors": 0
+  },
+  {
+   "build": "v23",
+   "seed": 42,
+   "map": "forest_map_camp",
+   "meanMs": 14.94,
+   "medianMs": 14.5,
+   "p95Ms": 19.7,
+   "p99Ms": 25.4,
+   "maxMs": 66.8,
+   "alive": 17,
+   "beh": {
+    "shots": 151,
+    "hits": 17,
+    "flanks": 7,
+    "scoots": 4,
+    "decisions": 1775,
+    "checks": 3838,
+    "trips": 14,
+    "tripsBy": {
+     "hit": 12
+    },
+    "falls": 0,
+    "vaults": 0,
+    "dead": 5
+   },
+   "world": {
+    "ragdolls": 3.7,
+    "objects": 26.5,
+    "awakeObjects": 20.2
+   },
+   "sysMs": {
+    "rapier": 5.63,
+    "tactics": 0.17,
+    "controllers": 1.46,
+    "flags": 0.14,
+    "pose-and-hands": 6.51,
+    "visibility-rapier": 0.03,
+    "simulation": 14.94
+   },
+   "heapMB": 786,
+   "gcDrops": 43,
+   "errors": 0
+  },
+  {
+   "build": "v22",
+   "seed": 5,
+   "map": "forest_map_camp",
+   "meanMs": 14.33,
+   "medianMs": 13.3,
+   "p95Ms": 19.9,
+   "p99Ms": 29.1,
+   "maxMs": 59.6,
+   "alive": 18,
+   "beh": {
+    "shots": 267,
+    "hits": 17,
+    "flanks": 5,
+    "scoots": 1,
+    "decisions": 1750,
+    "checks": 3486,
+    "trips": 12,
+    "tripsBy": {
+     "hit": 9,
+     "leg-hit": 1
+    },
+    "falls": 0,
+    "vaults": 0,
+    "dead": 4
+   },
+   "world": {
+    "ragdolls": 3.9,
+    "objects": 30.3,
+    "awakeObjects": 25.8
+   },
+   "sysMs": {
+    "rapier": 4.97,
+    "tactics": 0.19,
+    "visibility-rapier": 0.03,
+    "controllers": 1.35,
+    "flags": 0,
+    "pose-and-hands": 6.48,
+    "simulation": 14.32
+   },
+   "heapMB": 790,
+   "gcDrops": 39,
+   "errors": 0
+  },
+  {
+   "build": "v23",
+   "seed": 5,
+   "map": "forest_map_camp",
+   "meanMs": 14.92,
+   "medianMs": 14.2,
+   "p95Ms": 22.4,
+   "p99Ms": 29.8,
+   "maxMs": 47.6,
+   "alive": 17,
+   "beh": {
+    "shots": 194,
+    "hits": 15,
+    "flanks": 8,
+    "scoots": 2,
+    "decisions": 1718,
+    "checks": 3089,
+    "trips": 12,
+    "tripsBy": {
+     "hit": 7
+    },
+    "falls": 0,
+    "vaults": 0,
+    "dead": 5
+   },
+   "world": {
+    "ragdolls": 4.8,
+    "objects": 27.6,
+    "awakeObjects": 24.3
+   },
+   "sysMs": {
+    "rapier": 5.9,
+    "tactics": 0.16,
+    "visibility-rapier": 0.03,
+    "controllers": 1.27,
+    "flags": 0.01,
+    "pose-and-hands": 6.19,
+    "simulation": 14.91
+   },
+   "heapMB": 873,
+   "gcDrops": 50,
+   "errors": 0
+  },
+  {
+   "build": "v22",
+   "seed": 99,
+   "map": "forest_map_camp",
+   "meanMs": 17.11,
+   "medianMs": 16.3,
+   "p95Ms": 28.2,
+   "p99Ms": 44.9,
+   "maxMs": 185.5,
+   "alive": 13,
+   "beh": {
+    "shots": 235,
+    "hits": 21,
+    "flanks": 5,
+    "scoots": 4,
+    "decisions": 1397,
+    "checks": 2633,
+    "trips": 14,
+    "tripsBy": {
+     "hit": 10,
+     "leg-hit": 2
+    },
+    "falls": 0,
+    "vaults": 0,
+    "dead": 9
+   },
+   "world": {
+    "ragdolls": 9.7,
+    "objects": 30.3,
+    "awakeObjects": 25.3
+   },
+   "sysMs": {
+    "rapier": 8.91,
+    "tactics": 0.4,
+    "controllers": 1.13,
+    "flags": 0.02,
+    "pose-and-hands": 5.18,
+    "simulation": 17.11,
+    "visibility-rapier": 0.02
+   },
+   "heapMB": 774,
+   "gcDrops": 37,
+   "errors": 0
+  },
+  {
+   "build": "v23",
+   "seed": 99,
+   "map": "forest_map_camp",
+   "meanMs": 15.88,
+   "medianMs": 14.8,
+   "p95Ms": 22.8,
+   "p99Ms": 27.7,
+   "maxMs": 52.5,
+   "alive": 15,
+   "beh": {
+    "shots": 187,
+    "hits": 12,
+    "flanks": 2,
+    "scoots": 1,
+    "decisions": 1688,
+    "checks": 3194,
+    "trips": 5,
+    "tripsBy": {
+     "hit": 4,
+     "leg-hit": 1
+    },
+    "falls": 0,
+    "vaults": 0,
+    "dead": 7
+   },
+   "world": {
+    "ragdolls": 5.5,
+    "objects": 28.6,
+    "awakeObjects": 21.3
+   },
+   "sysMs": {
+    "rapier": 5.43,
+    "tactics": 0.16,
+    "controllers": 1.41,
+    "flags": 0.01,
+    "pose-and-hands": 7.46,
+    "simulation": 15.87,
+    "visibility-rapier": 0.02
+   },
+   "heapMB": 875,
+   "gcDrops": 28,
+   "errors": 0
+  }
+ ],
+ "nofire_forest": [
+  {
+   "build": "v22",
+   "seed": 7,
+   "map": "forest_map_camp",
+   "meanMs": 11.9,
+   "medianMs": 11.6,
+   "p95Ms": 14.7,
+   "p99Ms": 22,
+   "maxMs": 53.7,
+   "alive": 22,
+   "beh": {
+    "shots": 0,
+    "hits": 0,
+    "flanks": 6,
+    "decisions": 2126,
+    "checks": 15153,
+    "trips": 0,
+    "tripsBy": {},
+    "falls": 0,
+    "vaults": 0,
+    "dead": 0
+   },
+   "world": {
+    "ragdolls": 0,
+    "objects": 0.5,
+    "awakeObjects": 0.5
+   },
+   "sysMs": {
+    "rapier": 2.59,
+    "tactics": 0.16,
+    "visibility-rapier": 0.09,
+    "controllers": 1.32,
+    "flags": 0,
+    "pose-and-hands": 7.1,
+    "simulation": 11.9
+   },
+   "heapMB": 767,
+   "gcDrops": 66,
+   "errors": 0
+  },
+  {
+   "build": "v23",
+   "seed": 7,
+   "map": "forest_map_camp",
+   "meanMs": 11.11,
+   "medianMs": 10.8,
+   "p95Ms": 14.1,
+   "p99Ms": 23.1,
+   "maxMs": 108.6,
+   "alive": 22,
+   "beh": {
+    "shots": 0,
+    "hits": 3,
+    "flanks": 8,
+    "scoots": 0,
+    "decisions": 2126,
+    "checks": 14671,
+    "trips": 3,
+    "tripsBy": {
+     "leg-hit": 2,
+     "hit": 1
+    },
+    "falls": 0,
+    "vaults": 0,
+    "dead": 0
+   },
+   "world": {
+    "ragdolls": 0,
+    "objects": 0.7,
+    "awakeObjects": 0.7
+   },
+   "sysMs": {
+    "rapier": 2.24,
+    "tactics": 0.18,
+    "visibility-rapier": 0.08,
+    "controllers": 1.53,
+    "flags": 0,
+    "pose-and-hands": 6.44,
+    "simulation": 11.11
+   },
+   "heapMB": 765,
+   "gcDrops": 30,
+   "errors": 0
+  },
+  {
+   "build": "v22",
+   "seed": 23,
+   "map": "forest_map_camp",
+   "meanMs": 13.24,
+   "medianMs": 13,
+   "p95Ms": 17,
+   "p99Ms": 23.2,
+   "maxMs": 45.4,
+   "alive": 22,
+   "beh": {
+    "shots": 0,
+    "hits": 0,
+    "flanks": 8,
+    "decisions": 2126,
+    "checks": 13089,
+    "trips": 0,
+    "tripsBy": {},
+    "falls": 0,
+    "vaults": 0,
+    "dead": 0
+   },
+   "world": {
+    "ragdolls": 0,
+    "objects": 1.4,
+    "awakeObjects": 1.4
+   },
+   "sysMs": {
+    "rapier": 2.48,
+    "tactics": 0.17,
+    "visibility-rapier": 0.09,
+    "controllers": 1.29,
+    "flags": 0.1,
+    "pose-and-hands": 8.53,
+    "simulation": 13.24
+   },
+   "heapMB": 784,
+   "gcDrops": 73,
+   "errors": 0
+  },
+  {
+   "build": "v23",
+   "seed": 23,
+   "map": "forest_map_camp",
+   "meanMs": 12.77,
+   "medianMs": 12.9,
+   "p95Ms": 15.5,
+   "p99Ms": 18.7,
+   "maxMs": 23.5,
+   "alive": 22,
+   "beh": {
+    "shots": 0,
+    "hits": 0,
+    "flanks": 7,
+    "scoots": 0,
+    "decisions": 2126,
+    "checks": 15459,
+    "trips": 0,
+    "tripsBy": {},
+    "falls": 0,
+    "vaults": 0,
+    "dead": 0
+   },
+   "world": {
+    "ragdolls": 0,
+    "objects": 0,
+    "awakeObjects": 0
+   },
+   "sysMs": {
+    "rapier": 2.27,
+    "tactics": 0.16,
+    "visibility-rapier": 0.07,
+    "controllers": 1.18,
+    "flags": 0.01,
+    "pose-and-hands": 8.38,
+    "simulation": 12.77
+   },
+   "heapMB": 784,
+   "gcDrops": 73,
+   "errors": 0
+  },
+  {
+   "build": "v22",
+   "seed": 42,
+   "map": "forest_map_camp",
+   "meanMs": 13.6,
+   "medianMs": 12.6,
+   "p95Ms": 20.1,
+   "p99Ms": 23.8,
+   "maxMs": 77.3,
+   "alive": 22,
+   "beh": {
+    "shots": 0,
+    "hits": 0,
+    "flanks": 5,
+    "decisions": 2126,
+    "checks": 13415,
+    "trips": 0,
+    "tripsBy": {},
+    "falls": 0,
+    "vaults": 0,
+    "dead": 0
+   },
+   "world": {
+    "ragdolls": 0,
+    "objects": 0,
+    "awakeObjects": 0
+   },
+   "sysMs": {
+    "rapier": 2.88,
+    "tactics": 0.24,
+    "visibility-rapier": 0.08,
+    "controllers": 1.51,
+    "flags": 0.01,
+    "pose-and-hands": 8.17,
+    "simulation": 13.6
+   },
+   "heapMB": 766,
+   "gcDrops": 66,
+   "errors": 0
+  },
+  {
+   "build": "v23",
+   "seed": 42,
+   "map": "forest_map_camp",
+   "meanMs": 13.24,
+   "medianMs": 13.2,
+   "p95Ms": 18.6,
+   "p99Ms": 21.8,
+   "maxMs": 53.6,
+   "alive": 22,
+   "beh": {
+    "shots": 0,
+    "hits": 0,
+    "flanks": 8,
+    "scoots": 0,
+    "decisions": 2125,
+    "checks": 15662,
+    "trips": 0,
+    "tripsBy": {},
+    "falls": 0,
+    "vaults": 0,
+    "dead": 0
+   },
+   "world": {
+    "ragdolls": 0,
+    "objects": 0,
+    "awakeObjects": 0
+   },
+   "sysMs": {
+    "rapier": 2.65,
+    "tactics": 0.18,
+    "visibility-rapier": 0.1,
+    "controllers": 1.44,
+    "flags": 0.01,
+    "pose-and-hands": 8.1,
+    "simulation": 13.23
+   },
+   "heapMB": 773,
+   "gcDrops": 70,
+   "errors": 0
+  }
+ ],
+ "nofire_zarechye": [
+  {
+   "build": "v22",
+   "seed": 7,
+   "map": "stroyka_zarechye_v2",
+   "meanMs": 8.92,
+   "medianMs": 8.7,
+   "p95Ms": 11.2,
+   "p99Ms": 15.4,
+   "maxMs": 35.1,
+   "alive": 22,
+   "beh": {
+    "shots": 0,
+    "hits": 0,
+    "flanks": 2,
+    "decisions": 2125,
+    "checks": 5199,
+    "trips": 0,
+    "tripsBy": {},
+    "falls": 0,
+    "vaults": 0,
+    "dead": 0
+   },
+   "world": {
+    "ragdolls": 0,
+    "objects": 0.3,
+    "awakeObjects": 0.3
+   },
+   "sysMs": {
+    "rapier": 2.12,
+    "tactics": 0.2,
+    "visibility-rapier": 0.04,
+    "controllers": 1.47,
+    "flags": 0,
+    "pose-and-hands": 4.69,
+    "simulation": 8.91
+   },
+   "heapMB": 801,
+   "gcDrops": 22,
+   "errors": 0
+  },
+  {
+   "build": "v23",
+   "seed": 7,
+   "map": "stroyka_zarechye_v2",
+   "meanMs": 8.86,
+   "medianMs": 8.3,
+   "p95Ms": 11.1,
+   "p99Ms": 18.2,
+   "maxMs": 208.5,
+   "alive": 22,
+   "beh": {
+    "shots": 0,
+    "hits": 3,
+    "flanks": 1,
+    "scoots": 0,
+    "decisions": 2124,
+    "checks": 5181,
+    "trips": 3,
+    "tripsBy": {
+     "leg-hit": 3
+    },
+    "falls": 0,
+    "vaults": 0,
+    "dead": 0
+   },
+   "world": {
+    "ragdolls": 0,
+    "objects": 0.2,
+    "awakeObjects": 0.2
+   },
+   "sysMs": {
+    "rapier": 2.33,
+    "tactics": 0.4,
+    "visibility-rapier": 0.04,
+    "controllers": 1.62,
+    "flags": 0,
+    "pose-and-hands": 4.04,
+    "simulation": 8.85
+   },
+   "heapMB": 814,
+   "gcDrops": 69,
+   "errors": 0
+  }
+ ],
+ "battle_zarechye": [
+  {
+   "build": "v22",
+   "seed": 7,
+   "map": "stroyka_zarechye_v2",
+   "meanMs": 11.71,
+   "medianMs": 10.3,
+   "p95Ms": 18.2,
+   "p99Ms": 37.1,
+   "maxMs": 216.3,
+   "alive": 21,
+   "beh": {
+    "shots": 139,
+    "hits": 4,
+    "flanks": 2,
+    "decisions": 2107,
+    "checks": 4284,
+    "trips": 3,
+    "tripsBy": {
+     "hit": 3
+    },
+    "falls": 0,
+    "vaults": 1,
+    "dead": 1
+   },
+   "world": {
+    "ragdolls": 0.3,
+    "objects": 26.4,
+    "awakeObjects": 18.6
+   },
+   "sysMs": {
+    "rapier": 4.32,
+    "tactics": 0.46,
+    "visibility-rapier": 0.04,
+    "controllers": 1.53,
+    "flags": 0,
+    "pose-and-hands": 4.31,
+    "simulation": 11.7
+   },
+   "heapMB": 822,
+   "gcDrops": 23,
+   "errors": 0
+  },
+  {
+   "build": "v23",
+   "seed": 7,
+   "map": "stroyka_zarechye_v2",
+   "meanMs": 13.44,
+   "medianMs": 12.5,
+   "p95Ms": 19.6,
+   "p99Ms": 32.3,
+   "maxMs": 216.4,
+   "alive": 20,
+   "beh": {
+    "shots": 50,
+    "hits": 5,
+    "flanks": 0,
+    "scoots": 1,
+    "decisions": 2008,
+    "checks": 3502,
+    "trips": 1,
+    "tripsBy": {
+     "hit": 1
+    },
+    "falls": 0,
+    "vaults": 0,
+    "dead": 2
+   },
+   "world": {
+    "ragdolls": 2,
+    "objects": 25.7,
+    "awakeObjects": 12.5
+   },
+   "sysMs": {
+    "rapier": 5.11,
+    "tactics": 0.41,
+    "visibility-rapier": 0.03,
+    "controllers": 1.53,
+    "flags": 0,
+    "pose-and-hands": 5.52,
+    "simulation": 13.44
+   },
+   "heapMB": 816,
+   "gcDrops": 28,
+   "errors": 0
+  }
+ ]
+}

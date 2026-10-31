@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><title>AEGIS v25 · стенд воронок</title>
+<style>html,body{margin:0;background:#15171a;overflow:hidden}
+#ui{position:fixed;left:10px;top:10px;background:rgba(0,0,0,.55);color:#ddd;font:13px/1.4 Arial,sans-serif;padding:8px 12px;border-radius:4px}</style></head>
+<body>
+<div id="ui"><b>Стенд воронок v25</b> (17f_war_atmos.js) — ?kind=big|small&amp;sun=side|front|back&amp;d=7&amp;h=1.7&amp;ground=soil|concrete</div>
+<script src="../../js/lib/three.min.js"></script>
+<script src="../../js/polygon/17f_war_atmos.js"></script>
+<script>
+const P = new URLSearchParams(location.search);
+const W = innerWidth, H = innerHeight;
+const renderer = new THREE.WebGLRenderer({ antialias: true });
+renderer.setSize(W, H); renderer.setPixelRatio(1);
+renderer.shadowMap.enabled = true; renderer.toneMapping = THREE.ACESFilmicToneMapping;
+document.body.append(renderer.domElement);
+const scene = new THREE.Scene(); scene.background = new THREE.Color(0x9fb3c6); scene.fog = new THREE.Fog(0x9fb3c6, 60, 260);
+scene.add(new THREE.HemisphereLight(0xb7c2c9, 0x4a4234, 0.85));
+const sun = new THREE.DirectionalLight(0xfff0d8, 2.4); scene.add(sun); scene.add(sun.target);
+/* грунт: шум цвета, рельеф пологий */
+const hAt = (x, z) => 0.12 * Math.sin(x * 0.21) * Math.cos(z * 0.17) + 0.05 * Math.sin(x * 0.7 + z * 0.4);
+const concrete = P.get('ground') === 'concrete';
+const cv = document.createElement('canvas'); cv.width = cv.height = 256; const g = cv.getContext('2d');
+g.fillStyle = concrete ? '#7d7b76' : '#5c5038'; g.fillRect(0, 0, 256, 256);
+for (let i = 0; i < 2600; i++) { const v = Math.random(); g.fillStyle = concrete ? `rgba(${90 + v * 60},${88 + v * 60},${84 + v * 60},.35)` : (v < .5 ? `rgba(${70 + v * 40},${80 + v * 50},${40 + v * 20},.35)` : `rgba(${90 + v * 30},${72 + v * 25},${50 + v * 20},.35)`); g.fillRect(Math.random() * 256, Math.random() * 256, 1 + Math.random() * 4, 1 + Math.random() * 4); }
+const gt = new THREE.CanvasTexture(cv); gt.wrapS = gt.wrapT = THREE.RepeatWrapping; gt.repeat.set(40, 40); gt.colorSpace = THREE.SRGBColorSpace;
+const geo = new THREE.PlaneGeometry(200, 200, 200, 200); geo.rotateX(-Math.PI / 2);
+const pa = geo.attributes.position; for (let i = 0; i < pa.count; i++) pa.setY(i, hAt(pa.getX(i), pa.getZ(i))); geo.computeVertexNormals();
+const ground = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ map: gt, roughness: 1 })); ground.receiveShadow = true; scene.add(ground);
+const cam = new THREE.PerspectiveCamera(70, W / H, 0.05, 800);
+const world = { mapId: concrete ? 'angar_map' : 'stand', bounds: { x0: -40, x1: 40, z0: -40, z1: 40 }, heightAt: hAt, bases: {} };
+const WA = GWarAtmos.create(THREE, { world, scene, camera: cam, quality: P.get('q') || 'low', craters: true });
+WA.update(0.016, 0, { physReady: true });
+const items = WA.craters ? WA.craters.items : [];
+const kind = P.get('kind') || 'big';
+const c = items.filter((it) => (kind === 'big' ? it.v : !it.v)).sort((a, b) => Math.hypot(a.x, a.z) - Math.hypot(b.x, b.z))[0] || items[0];
+const d = +(P.get('d') || (kind === 'big' ? 9 : 5)), hh = +(P.get('h') || 1.7);
+cam.position.set(c.x, c.y + hh, c.z + d); cam.lookAt(c.x, c.y, c.z);
+const sd = P.get('sun') || 'side';
+const sv = sd === 'front' ? new THREE.Vector3(0.15, 0.75, 1) : sd === 'back' ? new THREE.Vector3(-0.15, 0.75, -1) : new THREE.Vector3(1, 0.7, 0.2);
+sun.position.set(c.x, c.y, c.z).addScaledVector(sv.normalize(), 30); sun.target.position.set(c.x, c.y, c.z);
+renderer.render(scene, cam);
+window.__info = { n: items.length, kind, r: +c.r.toFixed(2) };
+/* ?time=1 — цена дымов: тот же кадр с ними и без (лучшее из 3, с glFinish), вид с 40 м на первый столб */
+if (P.has('time') && WA.plumes) {
+  const p0 = WA.plumes.list[0], dir = new THREE.Vector3(Math.cos(p0.a), 0, Math.sin(p0.a));
+  cam.position.set(0, 40, 0); cam.lookAt(dir.x * 100, 48, dir.z * 100); cam.updateMatrixWorld(true);
+  WA.update(1 / 60, 40, { physReady: true, paused: true });
+  const gl = renderer.getContext();
+  const time = () => { let best = 1e9; for (let i = 0; i < 3; i++) { const t0 = performance.now(); renderer.render(scene, cam); gl.finish(); best = Math.min(best, performance.now() - t0); } return +best.toFixed(2); };
+  time();
+  const M = WA.plumes.mesh;
+  M.visible = false; const a1 = time(); M.visible = true; const b1 = time(); M.visible = false; const a2 = time(); M.visible = true; const b2 = time();
+  window.__info.msWithout = Math.min(a1, a2); window.__info.msWith = Math.min(b1, b2); window.__info.plume = p0;
+}
+window.__ready = true;
+</script></body></html>

@@ -1,0 +1,102 @@
+{
+  "version": "18.4.1-active-body-experimental",
+  "base": "AEGIS_v18_4_Rapier_Debris.zip",
+  "fullLivingBodyMigrationReady": false,
+  "enabledInNormalGameplay": false,
+  "build": {
+    "strictTypeScript": "pass",
+    "transpile": "pass",
+    "modules": 10,
+    "npmTest": "pass",
+    "npmSuites": 8
+  },
+  "infrastructure": {
+    "status": "pass",
+    "scenarios": 15,
+    "report": "tools/advanced-tests/active-body-core.json"
+  },
+  "fullMigrationAcceptance": {
+    "status": "FAIL",
+    "results": [
+      {
+        "name": "30s_balance_with_6Ns_chest_push",
+        "pass": false,
+        "stableAtEnd": 0,
+        "peakTilt": 2.984693142794847
+      },
+      {
+        "name": "physical_walk_6m_and_stop",
+        "pass": false,
+        "actualDistance": -0.7827478051185608,
+        "stepsStarted": 1,
+        "stableAtEnd": 0,
+        "peakTilt": 2.5204307941147484
+      },
+      {
+        "name": "60Ns_push_fall_get_up",
+        "pass": false,
+        "recoveryRequested": true,
+        "stableAtEnd": 0,
+        "peakTilt": 3.001535013066953
+      }
+    ],
+    "exitCode": 1,
+    "report": "tools/advanced-tests/active-body-acceptance.json"
+  },
+  "realModelBrowserDiagnostics": {
+    "pageErrors": [],
+    "webGLerror": 0,
+    "models": [
+      {
+        "preset": "delta_1",
+        "parts": 19,
+        "dynamic": true,
+        "hiddenActors": 0,
+        "stateAtEnd": "fallen",
+        "maxJointGapMeters": 0.0690589317780002
+      },
+      {
+        "preset": "delta_2",
+        "parts": 19,
+        "dynamic": true,
+        "hiddenActors": 0,
+        "stateAtEnd": "fallen",
+        "maxJointGapMeters": 0.06494768296330228
+      },
+      {
+        "preset": "alpha_1",
+        "parts": 19,
+        "dynamic": true,
+        "hiddenActors": 0,
+        "stateAtEnd": "fallen",
+        "maxJointGapMeters": 0.07921999542297925
+      },
+      {
+        "preset": "alpha_2",
+        "parts": 19,
+        "dynamic": true,
+        "hiddenActors": 0,
+        "stateAtEnd": "fallen",
+        "maxJointGapMeters": 0.12714218104864533
+      }
+    ],
+    "report": "tools/advanced-tests/active-body-browser.json"
+  },
+  "ordinaryGameplayRender": {
+    "map": "angar_map",
+    "pageErrors": [],
+    "webGLerror": 0,
+    "report": "tools/advanced-tests/render-browser.json"
+  },
+  "limits": [
+    "Autonomous balance FAIL",
+    "Walking 6m + stop FAIL",
+    "Fall / get-up FAIL",
+    "Lab only; legacy hybrid remains in ordinary gameplay",
+    "No joint anatomical hard limits; no self-collision",
+    "Hands/feet/weapon/gameplay transitions not fully migrated",
+    "No FPS or hardware performance improvement claim",
+    "Windows BAT not executed on Linux host",
+    "Browser model/max-gap checks certify rendering/ownership only, not anatomical quality"
+  ]
+}

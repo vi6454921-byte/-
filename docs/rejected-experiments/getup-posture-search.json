@@ -1,0 +1,245 @@
+{
+  "scope": "Offline posture search, not recovery/standing certification.",
+  "rows": [
+    {
+      "hip": 0.9,
+      "spine": -1.2,
+      "requested": true,
+      "finite": true,
+      "tilt": 0.203137383567143,
+      "hipPosition": {
+        "x": 0.09073679894208908,
+        "y": 0.39138758182525635,
+        "z": -0.33430543541908264
+      },
+      "contacts": {
+        "feet": 2,
+        "hands": 2,
+        "knees": 2,
+        "forearms": 0
+      },
+      "loadRatio": 0.29465392032322096,
+      "score": 3.016706793023198
+    },
+    {
+      "hip": 1.7,
+      "spine": -1.2,
+      "requested": true,
+      "finite": true,
+      "tilt": 1.1526456790639743,
+      "hipPosition": {
+        "x": 0.0876743346452713,
+        "y": 0.45269882678985596,
+        "z": -0.4167269170284271
+      },
+      "contacts": {
+        "feet": 2,
+        "hands": 2,
+        "knees": 0,
+        "forearms": 0
+      },
+      "loadRatio": 0.5338894318190605,
+      "score": 2.5867730625946703
+    },
+    {
+      "hip": 1.7,
+      "spine": -0.8,
+      "requested": true,
+      "finite": true,
+      "tilt": 1.2554066714638394,
+      "hipPosition": {
+        "x": 0.09256040304899216,
+        "y": 0.4313010573387146,
+        "z": -0.44784340262413025
+      },
+      "contacts": {
+        "feet": 2,
+        "hands": 2,
+        "knees": 2,
+        "forearms": 0
+      },
+      "loadRatio": 0.4690922357559668,
+      "score": 2.2401443457745103
+    },
+    {
+      "hip": 2.1,
+      "spine": -1.2,
+      "requested": true,
+      "finite": true,
+      "tilt": 1.3925044095996884,
+      "hipPosition": {
+        "x": 0.11569438129663467,
+        "y": 0.47063809633255005,
+        "z": -0.42514514923095703
+      },
+      "contacts": {
+        "feet": 2,
+        "hands": 2,
+        "knees": 0,
+        "forearms": 0
+      },
+      "loadRatio": 0.5108692873917734,
+      "score": 2.2302542779874566
+    },
+    {
+      "hip": 2.1,
+      "spine": -0.8,
+      "requested": true,
+      "finite": true,
+      "tilt": 1.4200368802435026,
+      "hipPosition": {
+        "x": 0.09224368631839752,
+        "y": 0.471133828163147,
+        "z": -0.4224826693534851
+      },
+      "contacts": {
+        "feet": 2,
+        "hands": 2,
+        "knees": 0,
+        "forearms": 0
+      },
+      "loadRatio": 0.49085849013760924,
+      "score": 2.135662187667597
+    },
+    {
+      "hip": 2.1,
+      "spine": -0.4,
+      "requested": true,
+      "finite": true,
+      "tilt": 1.582258492453889,
+      "hipPosition": {
+        "x": 0.0943567082285881,
+        "y": 0.4328914284706116,
+        "z": -0.48825907707214355
+      },
+      "contacts": {
+        "feet": 2,
+        "hands": 2,
+        "knees": 0,
+        "forearms": 0
+      },
+      "loadRatio": 0.45039901410799077,
+      "score": 1.7840884707945839
+    },
+    {
+      "hip": 1.3,
+      "spine": -1.2,
+      "requested": true,
+      "finite": true,
+      "tilt": 0.9173495997500524,
+      "hipPosition": {
+        "x": 0.08456270396709442,
+        "y": 0.4368700087070465,
+        "z": -0.46520793437957764
+      },
+      "contacts": {
+        "feet": 0,
+        "hands": 2,
+        "knees": 2,
+        "forearms": 0
+      },
+      "loadRatio": 1.909622508192125e-62,
+      "score": 1.2688642219583062
+    },
+    {
+      "hip": 0.9,
+      "spine": -0.8,
+      "requested": true,
+      "finite": true,
+      "tilt": 1.2395553930553391,
+      "hipPosition": {
+        "x": 0.07735782116651535,
+        "y": 0.42233192920684814,
+        "z": -0.8077284097671509
+      },
+      "contacts": {
+        "feet": 0,
+        "hands": 2,
+        "knees": 0,
+        "forearms": 0
+      },
+      "loadRatio": 2.4346020626463657e-67,
+      "score": 0.8440809848790525
+    },
+    {
+      "hip": 1.3,
+      "spine": -0.8,
+      "requested": true,
+      "finite": true,
+      "tilt": 1.2702651504324174,
+      "hipPosition": {
+        "x": 0.07879422605037689,
+        "y": 0.4554999768733978,
+        "z": -0.6259127259254456
+      },
+      "contacts": {
+        "feet": 0,
+        "hands": 2,
+        "knees": 0,
+        "forearms": 0
+      },
+      "loadRatio": 1.5968627024350434e-67,
+      "score": 0.8381481550438836
+    },
+    {
+      "hip": 1.7,
+      "spine": -0.4,
+      "requested": true,
+      "finite": true,
+      "tilt": 1.5877011310967706,
+      "hipPosition": {
+        "x": 0.08224151283502579,
+        "y": 0.4519132375717163,
+        "z": -0.5855917930603027
+      },
+      "contacts": {
+        "feet": 0,
+        "hands": 2,
+        "knees": 0,
+        "forearms": 0
+      },
+      "loadRatio": 1.1336476005145367e-67,
+      "score": 0.4519132375717163
+    },
+    {
+      "hip": 1.3,
+      "spine": -0.4,
+      "requested": true,
+      "finite": true,
+      "tilt": 1.5595896265565474,
+      "hipPosition": {
+        "x": 0.07865384966135025,
+        "y": 0.4310044050216675,
+        "z": -0.7645336389541626
+      },
+      "contacts": {
+        "feet": 0,
+        "hands": 2,
+        "knees": 0,
+        "forearms": 0
+      },
+      "loadRatio": 1.6128751498242782e-67,
+      "score": 0.4452732189311266
+    },
+    {
+      "hip": 0.9,
+      "spine": -0.4,
+      "requested": true,
+      "finite": true,
+      "tilt": 1.532719369643481,
+      "hipPosition": {
+        "x": 0.0753038227558136,
+        "y": 0.36650514602661133,
+        "z": -0.9083290696144104
+      },
+      "contacts": {
+        "feet": 0,
+        "hands": 2,
+        "knees": 0,
+        "forearms": 0
+      },
+      "loadRatio": 2.836404680882395e-67,
+      "score": 0.4149862336149799
+    }
+  ]
+}

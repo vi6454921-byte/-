@@ -1,0 +1,152 @@
+[
+  {
+    "path": "RAGDOLL_STUMBLING_README_RU.md",
+    "status": "added",
+    "sha256": "a8cf4eeaa6e3d6830af57c659427a7c9ebf91fb97195a634e13063032d6b1d61",
+    "bytes": 9062
+  },
+  {
+    "path": "README.md",
+    "status": "modified",
+    "sha256": "91d1616fa336368cc11a05ffeb7274cff465fc8901e04f38ee1565ce1cf3d0e8",
+    "bytes": 4106
+  },
+  {
+    "path": "docs/RAGDOLL_STUMBLING_QA_V6.json",
+    "status": "added",
+    "sha256": "92fe51f5b4d74983f96ecaee7b5b25252c4eb817805243cf91516fe68c38352f",
+    "bytes": 29309
+  },
+  {
+    "path": "index.html",
+    "status": "modified",
+    "sha256": "5081e2b5079a02511b078d0aa7b7e4b05900487c51400d40005656896e5c549f",
+    "bytes": 25684
+  },
+  {
+    "path": "js/advanced/animator.js",
+    "status": "modified",
+    "sha256": "da1f5b4789b54802ec985b2a9359f67217dd1f04406fb26b2f284a270ea131ef",
+    "bytes": 25392
+  },
+  {
+    "path": "js/advanced/physics.js",
+    "status": "modified",
+    "sha256": "adecdbcc849ac775e9e48d7de8d1e667ea065c5a13bc2f13c4a76c98be555a35",
+    "bytes": 56424
+  },
+  {
+    "path": "js/advanced/stumble.js",
+    "status": "added",
+    "sha256": "9c9687a834b2835bfd60472641198a18d3f85fd659b8cb86e82a29df0ad8248d",
+    "bytes": 16295
+  },
+  {
+    "path": "js/polygon/20_player.js",
+    "status": "modified",
+    "sha256": "8a55c62ef2b7139ca83ff70084feef02b1bba565fde1d03fc8e07c7b38c49d09",
+    "bytes": 61401
+  },
+  {
+    "path": "js/polygon/21_game_bodycam.js",
+    "status": "modified",
+    "sha256": "a6275d324ac60a423b5b0f72b98c380dce7ed294499725a9ae08f07ae1be76ba",
+    "bytes": 50243
+  },
+  {
+    "path": "js/polygon/23_game_damage.js",
+    "status": "modified",
+    "sha256": "2c970ea0af7d8e1145d25464899a57c899c6f14a23714881555895d9fa5710f5",
+    "bytes": 175037
+  },
+  {
+    "path": "js/polygon/29_game.js",
+    "status": "modified",
+    "sha256": "4c879eef962e193705219d61d8f76cd206e7ff710937b0b343982907c23a4f0e",
+    "bytes": 370427
+  },
+  {
+    "path": "package.json",
+    "status": "modified",
+    "sha256": "bf0024d26b69f1c4fcf8be40d216783bd4db837809bd23d3cf75a5e457e28a0e",
+    "bytes": 2250
+  },
+  {
+    "path": "src/advanced/animator.ts",
+    "status": "modified",
+    "sha256": "a1d61cf26774037ef16409576b831bc765c41df14fcdbc9c1935b8f97ca97504",
+    "bytes": 23287
+  },
+  {
+    "path": "src/advanced/physics.ts",
+    "status": "modified",
+    "sha256": "e02d1060136c3be211b8e6664f36c5ba65900e9c23a9d6874bb9270c352592d0",
+    "bytes": 50810
+  },
+  {
+    "path": "src/advanced/stumble.ts",
+    "status": "added",
+    "sha256": "1dac29dfb0444e015b38cf08f8426348404d9ed0c83b9b3a84136578713dea76",
+    "bytes": 13739
+  },
+  {
+    "path": "tools/advanced-tests/medical-browser.json",
+    "status": "modified",
+    "sha256": "1afc2d9bec61fec26438182eac758ca91dff4910e95c3c6b9e5741d0b1831e75",
+    "bytes": 4649
+  },
+  {
+    "path": "tools/advanced-tests/navigation.json",
+    "status": "modified",
+    "sha256": "e7d8ce1df334a6d3ded30f294363457125a9322f4b82c3c1ab384868d82117b6",
+    "bytes": 6703
+  },
+  {
+    "path": "tools/advanced-tests/ragdoll-v6-browser.cjs",
+    "status": "added",
+    "sha256": "e49e660ea6d428d9b8d4d98a936937eae1f96218b787105b57f72d843c08b60b",
+    "bytes": 8663
+  },
+  {
+    "path": "tools/advanced-tests/ragdoll-v6-browser.json",
+    "status": "added",
+    "sha256": "21e99f01d3b8064bb7ee380a0eb10bd6b37c0503ce0d312b5ed18f27d07d7d99",
+    "bytes": 4577
+  },
+  {
+    "path": "tools/advanced-tests/ragdoll-v6-fall.png",
+    "status": "added",
+    "sha256": "d7fea952674d81f3505439c7fcef5a58e74c8a8d778678f0051807c9e0fb65e5",
+    "bytes": 83170
+  },
+  {
+    "path": "tools/advanced-tests/ragdoll-v6.cjs",
+    "status": "added",
+    "sha256": "be6ffc727c40b6ae65b1fc4e880e35c450b7c96b6fa76b893b31de3519962f00",
+    "bytes": 7884
+  },
+  {
+    "path": "tools/advanced-tests/ragdoll-v6.json",
+    "status": "added",
+    "sha256": "e6b1eb3b3a49e270a732d937e31c9d493b472e58c26d5cacabb6c37e7986f752",
+    "bytes": 6998
+  },
+  {
+    "path": "tools/advanced-tests/trace-bvh.json",
+    "status": "modified",
+    "sha256": "57a3ceb9307eb19f9a872d3f44ecbdc4d40069d981542e9753645b237a6c7ca1",
+    "bytes": 792
+  },
+  {
+    "path": "tools/advanced-tests/traction.json",
+    "status": "modified",
+    "sha256": "863fb21bd31d3dea0489c7c1192e7752d7f0b7893c4941fcfcc7f9ace03ebaa8",
+    "bytes": 2947
+  },
+  {
+    "path": "tools/build-advanced.cjs",
+    "status": "modified",
+    "sha256": "cc55130b1ef9877ef2bfd9c347a2a61a686fa35f7d990e3015505a54c8aa103a",
+    "bytes": 1031
+  }
+]

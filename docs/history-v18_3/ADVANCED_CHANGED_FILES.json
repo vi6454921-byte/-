@@ -1,0 +1,900 @@
+{
+  "version": "18.3.0-experimental",
+  "excludedSelfReferences": [
+    "docs/ADVANCED_CHANGED_FILES.json",
+    "docs/FILE_HASHES.json"
+  ],
+  "comparisons": {
+    "original": {
+      "archive": "AEGIS_v17_3maps_TEST.zip",
+      "sha256": "25e71e1b377c355ba41f14554fe2d7308e78259a5c54ff695f53f3fb45471169",
+      "originalFileCount": 160,
+      "missingWithoutReplacement": [],
+      "relocated": {},
+      "modified": [
+        {
+          "path": "README.md",
+          "sha256": "e0ae412341e2dfb33b939134a079435a934bc98c6b86685b5e4d32aed247338a"
+        },
+        {
+          "path": "index.html",
+          "sha256": "a7b5ddaecb9154836fac7b626064dee95170beeaaae6fcaa00c9ce447ddeed2e"
+        },
+        {
+          "path": "js/app/aidlab.js",
+          "sha256": "4a2d9ed7324664be5337d24f2a2b0bc3936e2573625b1622533626d79ddecfc8"
+        },
+        {
+          "path": "js/app/riglab.js",
+          "sha256": "8925ce5ca63c21c6e1f3afee0eab65c5d2323f20fa5068e3420a0d4e77254716"
+        },
+        {
+          "path": "js/polygon/05d_grenades.js",
+          "sha256": "034b70818885c981e11391dd7090c0b2d7f071e4316c3da2494e9cf1ee815152"
+        },
+        {
+          "path": "js/polygon/05g_trace.js",
+          "sha256": "fceab36b098622629e94e56a9e149c67d1421d62f9c645b2dbea59452be903c9"
+        },
+        {
+          "path": "js/polygon/20_player.js",
+          "sha256": "538c6adef539ae83d19c74edb9b350ec8a48fecd3348408304f63fc8c027fc56"
+        },
+        {
+          "path": "js/polygon/21_game_bodycam.js",
+          "sha256": "a20e15d3a66dc44201ee3a5f1304641a8598c16b6abb585ebcd5bc31a58cdd3e"
+        },
+        {
+          "path": "js/polygon/23_game_damage.js",
+          "sha256": "4791cac819869dedfd827fdecd386e1026f9916e1b26867636aa491811f11e36"
+        },
+        {
+          "path": "js/polygon/27_game_flags.js",
+          "sha256": "7fef33223fd8a4675cd8f8e390589c5d57369323d83b15fa9a7ddb1d9aa2cbeb"
+        },
+        {
+          "path": "js/polygon/29_game.js",
+          "sha256": "cde038e38f0a0f1327fcd3cf5a8ef106617cdad484c8d75477ee9b4776b073b9"
+        },
+        {
+          "path": "js/polygon/30_game_medic.js",
+          "sha256": "80c3d40343cda04214147db64cb412294eb2c4e3ec1e551beb732b2722723258"
+        },
+        {
+          "path": "js/polygon/30b_tactics.js",
+          "sha256": "803a9581a06f46645288b1f3693fb63f15d19a54c728e4b554daf30b57107448"
+        }
+      ],
+      "added": [
+        {
+          "path": "README_ADVANCED_RU.md",
+          "sha256": "bce73ea9d690c953275e54413e641b1b679d0772b40a80fff4b2f0ac41a56a19"
+        },
+        {
+          "path": "docs/ADVANCED_VALIDATION_RU.md",
+          "sha256": "09d1474a2eb992513ef4f3968f9c692a5b5684ee758dd84aa8e77fb693fd8561"
+        },
+        {
+          "path": "docs/BUILD_QA.json",
+          "sha256": "400af4716bf1904e80eca1bf32f04c0da2af03a59a88090e1ce61dd476d1b5f7"
+        },
+        {
+          "path": "docs/history-v18_1/ADVANCED_CHANGED_FILES.json",
+          "sha256": "ebf73dd63a79f6477b9d3b1fc7d403724fe4869047f1e459c2657c25155f9fb2"
+        },
+        {
+          "path": "docs/history-v18_1/ADVANCED_VALIDATION_RU.md",
+          "sha256": "5d723defb3515dc19c22f445933dde237c8525cd8e64a5ebcaedc2ace887c9b1"
+        },
+        {
+          "path": "docs/history-v18_1/BUILD_QA.json",
+          "sha256": "d39d3b159dcf53d2701835dcdccfdb566189bb97ae1973a1fbd9b463e92fe326"
+        },
+        {
+          "path": "docs/history-v18_1/README_ADVANCED_RU.md",
+          "sha256": "a3a008cc7f2ab8c124d7efc26dbf6ac4b96fedbbb3d441dd0679cda0723a8ff8"
+        },
+        {
+          "path": "docs/history-v18_2/ADVANCED_VALIDATION_RU.md",
+          "sha256": "be57f08b0df091d0d5033697b5c729ef158a8cbf555881d0ed52bf8b4666d97b"
+        },
+        {
+          "path": "docs/history-v18_2/BUILD_QA.json",
+          "sha256": "bd496f5dcb2bfe773f07bf8263e95a98cd8546da4aaf157bf5bebc3f8cfac09d"
+        },
+        {
+          "path": "docs/history-v18_2/README_ADVANCED_RU.md",
+          "sha256": "02ea150109d1c1fec08c49f425fae4be8181fcd7ebf34e7e172b6ad58a48fe21"
+        },
+        {
+          "path": "js/advanced/animator.js",
+          "sha256": "4dd5350fc48d9ce040342af463faca19dd321bc7491839d2c1595d93883901c9"
+        },
+        {
+          "path": "js/advanced/combat.js",
+          "sha256": "3352e5c7b596513e702e679d62af3a702dd0b39e1c34a20b8197d5b7715ed887"
+        },
+        {
+          "path": "js/advanced/contacts.js",
+          "sha256": "896804ffd32cd7f8127733f3576a62ce920bc3ea21e2ddb4de3ce70d565aef75"
+        },
+        {
+          "path": "js/advanced/geometry.js",
+          "sha256": "3037b53b67dde92a2d46133cae24548cd8a9896e13c8515dd498539ba34f2795"
+        },
+        {
+          "path": "js/advanced/nav-worker.mjs",
+          "sha256": "7e02c5ca658932ecb3000c514ffa117dc09f99b4eed7309ba952afbcc781ecda"
+        },
+        {
+          "path": "js/advanced/navigation.js",
+          "sha256": "26f5fa3155bb4a82cfef7cb0dd7328e75710074b3cb6a5cea7159c4725272e01"
+        },
+        {
+          "path": "js/advanced/physics.js",
+          "sha256": "5bc374ed68da53b914d8b05333fa4dd48b984c047fee8a3e2069c3139e79d951"
+        },
+        {
+          "path": "js/advanced/profiler.js",
+          "sha256": "3de832585f6021da75c01bd1efb26a94b85817973fa1c9a9b6022083cad7e262"
+        },
+        {
+          "path": "js/advanced/tactics.js",
+          "sha256": "7c86300eb4f5ff45f61b0d883719795252c290d5e6aba3ca983c6f14765f8e08"
+        },
+        {
+          "path": "js/advanced/traversal.js",
+          "sha256": "a64bc893d476094563ca2c4e989069803dbc9e63c40b11ddd2989d1a51d4ffca"
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "d50441466e5278ad09a670919237578d54f3b8e402b38f1194d8bf4daec9a227"
+        },
+        {
+          "path": "package.json",
+          "sha256": "2a809c27457daeb48318b80ceb3089e44fba5e66e4adbf5cbadb5a1d9ddbea17"
+        },
+        {
+          "path": "src/advanced/animator.ts",
+          "sha256": "dc01f6b277ecc20846cf9234d348e283d6f38d8f77f933abab593b8e288068bc"
+        },
+        {
+          "path": "src/advanced/combat.ts",
+          "sha256": "ebb309fe861e40024da767ab2d5cda8e3e637b6b73571bbcaa4285f472c9b2a1"
+        },
+        {
+          "path": "src/advanced/contacts.ts",
+          "sha256": "397a0ecf22bb8b4659744a404f9c3acb470d315a0ababa1215032224fbc4c661"
+        },
+        {
+          "path": "src/advanced/geometry.ts",
+          "sha256": "146d21b84181ac18b4f0f0928b43a8e235521f842382b2ce912d05a2c0e77367"
+        },
+        {
+          "path": "src/advanced/navigation.ts",
+          "sha256": "76eaad443871b0799fee9e90c6b54fe83d10054d9268d1359cc5a2a150d69719"
+        },
+        {
+          "path": "src/advanced/physics.ts",
+          "sha256": "1cc8206585f3029f145dd5e40d18868211a0a35b7820fe710c1ebee847ee5518"
+        },
+        {
+          "path": "src/advanced/profiler.ts",
+          "sha256": "16d495ab80ef1f6e861186475675762b8eb774196983fe6a428634fa9d6bf260"
+        },
+        {
+          "path": "src/advanced/tactics.ts",
+          "sha256": "6140ec479e2832d2a2d321d37a90a06007fa36de045f30190fa7373a542735cb"
+        },
+        {
+          "path": "src/advanced/traversal.ts",
+          "sha256": "315d3319d9e40a043c4d945cdda739edd056ccf27135be50f7e94f19b9ee6bbe"
+        },
+        {
+          "path": "start-server.bat",
+          "sha256": "080c1d7c6ebf0666bced9f69be6bfc3abd80d4b1734f201cb81835402506375e"
+        },
+        {
+          "path": "start-server.sh",
+          "sha256": "c95556c1584f86855a5784c1b4412ad0c2d277098172961c086077ee3807082a"
+        },
+        {
+          "path": "tools/advanced-tests/browser-smoke.cjs",
+          "sha256": "c9f8ea498ac9152b06267b940057cf56cbe172cdbf7b8ac6ec1128b9e3b0072d"
+        },
+        {
+          "path": "tools/advanced-tests/combat-aim-browser.cjs",
+          "sha256": "804b2a5224d8356e50540b969fe61695233a1120eb546e5d2b61e6fc4031f9f0"
+        },
+        {
+          "path": "tools/advanced-tests/combat-aim-browser.json",
+          "sha256": "db9d9d8b2e55837ec9a07427c7e1757dfc121dac326779632d47a8c318d15fe2"
+        },
+        {
+          "path": "tools/advanced-tests/compare-cpu.cjs",
+          "sha256": "384fed6e419aa942b2d9a01e67e5b5ce3b2dc16df492e521a6ae0e47b38ae3b0"
+        },
+        {
+          "path": "tools/advanced-tests/contact-rig.cjs",
+          "sha256": "db3c913a1812f0d40575b244b2613992375d554a1e6da10a526d5749bd05d88a"
+        },
+        {
+          "path": "tools/advanced-tests/contact-rig.json",
+          "sha256": "8f36b0e46b381bdd7527207a1d3326642e23395246d297d5dbdd541a9e1be48e"
+        },
+        {
+          "path": "tools/advanced-tests/continuation-browser.cjs",
+          "sha256": "c03103dc3bba97d5d0eb109d1400b7bfce48154f743f3af5a76f71e45888053f"
+        },
+        {
+          "path": "tools/advanced-tests/continuation-browser.json",
+          "sha256": "d758ad360eb415e2a7e574a69c144e19ef00a0646ed5f6d1db907dcee650fee1"
+        },
+        {
+          "path": "tools/advanced-tests/continuation-results.json",
+          "sha256": "8ad30fcda6f8ee50c61b63348687337ea689004be7d5ad84c02a16a77fcd0092"
+        },
+        {
+          "path": "tools/advanced-tests/continuation.cjs",
+          "sha256": "6f0303928bfd342b9ea52623fc9b65de6ba3b5fbdb339ce19842e86ac4530538"
+        },
+        {
+          "path": "tools/advanced-tests/cpu-benchmark.cjs",
+          "sha256": "9840871111b8b884e83fed6340a4c23e954fdc3005a4a5067df578bbc89cb786"
+        },
+        {
+          "path": "tools/advanced-tests/history-v1/cpu-original.json",
+          "sha256": "2292646b0d2891f7954307fa5f2fc4708ff3450cb1f28196e5467643da780978"
+        },
+        {
+          "path": "tools/advanced-tests/history-v1/cpu-updated.json",
+          "sha256": "e42ab6aa684c9787b416f0edc72d6b1444d1d072e9de9706f064ff9202fe8079"
+        },
+        {
+          "path": "tools/advanced-tests/history-v1/performance-summary.json",
+          "sha256": "f821d1ef678561c5c0d3e154280d77a37e9a66aa5429a5ec02f2feab80fb41c9"
+        },
+        {
+          "path": "tools/advanced-tests/history-v18_1-cpu/cpu-v2-baseline-repeat.json",
+          "sha256": "d0eabb78fb8d8b303eaa569de01c284af50a0eae23714ee136961050cc4f07ec"
+        },
+        {
+          "path": "tools/advanced-tests/history-v18_1-cpu/cpu-v2-baseline.json",
+          "sha256": "15c6dc1c7ea804f05b1b15f67ced7a4fcee7c314d85d3cc0b0f70e0f4f3409d0"
+        },
+        {
+          "path": "tools/advanced-tests/history-v18_1-cpu/cpu-v2-updated.json",
+          "sha256": "8e9a4dd5893b5262b78a69256057fc2618cc4ca90ad321573c274c84d92d9c40"
+        },
+        {
+          "path": "tools/advanced-tests/history-v18_1-cpu/performance-summary.json",
+          "sha256": "bd7dfdea71eb65b1d1216aa0183755c27f0981b0c771c1f891354915f9cb97d1"
+        },
+        {
+          "path": "tools/advanced-tests/history-v2-before-final/cpu-before-idle-cache.json",
+          "sha256": "66ee743c48a4928fe8c187f46929336aaeb1fca5416a11e0ce40285e0648c303"
+        },
+        {
+          "path": "tools/advanced-tests/history-v3-before-final/soak-angar-exact.json",
+          "sha256": "edcb0e08d24c3ae2837da5c0af73f40d5b33067acbfe52f446fdfbc0133d2928"
+        },
+        {
+          "path": "tools/advanced-tests/history-v3-before-final/soak-angar_map.json",
+          "sha256": "ca9a4a3087114f9c83b810dd61009e1ab1039aeb5ab9915fc89bcbaafb9d838e"
+        },
+        {
+          "path": "tools/advanced-tests/history-v3-before-final/soak-forest_map_camp.json",
+          "sha256": "cadcc60f921430d99d4f75239cd93a9533983963ce21764a03ac7a4a146d8889"
+        },
+        {
+          "path": "tools/advanced-tests/history-v3-before-final/soak-stroyka_zarechye_v2.json",
+          "sha256": "a0dc47c98b62edb115dac3faa1e3e49fe53d4d27d6f4b678dc8d42e8bda756f5"
+        },
+        {
+          "path": "tools/advanced-tests/history-v3-before-roof-fix/combat-aim-browser.json",
+          "sha256": "2a2207a4ab20cec610169b346600cdb8b32c18a993fb0981125e7bd6c99b53c0"
+        },
+        {
+          "path": "tools/advanced-tests/history-v3-before-roof-fix/soak-angar_map.json",
+          "sha256": "1d52ca5271b70683860b3458888f3ed36b2bf26fceb9ed9243acd9b592ba6b2c"
+        },
+        {
+          "path": "tools/advanced-tests/history-v3-before-roof-fix/soak-forest_map_camp.json",
+          "sha256": "f462d01fd68c5e51dad2e7d9202c43e3013d50c786bf4290b574bc38f7e13013"
+        },
+        {
+          "path": "tools/advanced-tests/history-v3-before-roof-fix/soak-stroyka_zarechye_v2.json",
+          "sha256": "7b82972d2fa558ea35936eb7cfd17d68b80ef6654b507dd368591e82ee07bf40"
+        },
+        {
+          "path": "tools/advanced-tests/integration-angar_map.json",
+          "sha256": "0969dbb9667584ff5959dddd42158ea193fca4db6eba60da6aaadf1e2a469e17"
+        },
+        {
+          "path": "tools/advanced-tests/integration-forest_map_camp.json",
+          "sha256": "c82941164db589421f883d555468489247d331cb20a969df5998b2b9c09300d1"
+        },
+        {
+          "path": "tools/advanced-tests/integration-stroyka_zarechye_v2.json",
+          "sha256": "3092595b263b2cab46a86715c1b358e9733f39f5c54cac1697a65c0f9ca442b3"
+        },
+        {
+          "path": "tools/advanced-tests/medical-barrier-armed.json",
+          "sha256": "d731e4f65471e0f0423e8fbce58b3aff4ce9d15563e2d5b8dbd9ce48c7a1bd55"
+        },
+        {
+          "path": "tools/advanced-tests/medical-barrier.json",
+          "sha256": "cbe228b1c2c1a1ef19f5073f2508fd95581771d067e7adc08496458c533ced4b"
+        },
+        {
+          "path": "tools/advanced-tests/medical-browser-armed.json",
+          "sha256": "b30c2fff80de5fa2a1d71abdbfc836fdfe026d5f7abe6f21dff833da8752451e"
+        },
+        {
+          "path": "tools/advanced-tests/medical-browser.cjs",
+          "sha256": "63d70a205b70a5fd5632c3beaf04f6e6f31726414a7b60abc25a15f0bb41fabd"
+        },
+        {
+          "path": "tools/advanced-tests/medical-browser.json",
+          "sha256": "4a45900ac2f496ec2e6d580565a0ec418173556328ddbf2c2316f4a34ee3e92e"
+        },
+        {
+          "path": "tools/advanced-tests/medical-elevated-armed.json",
+          "sha256": "5e1b6f380351c11ecdd7e260c08dccd54f42b3f0a5dc3b6e9366db0f23a3cd39"
+        },
+        {
+          "path": "tools/advanced-tests/medical-elevated.json",
+          "sha256": "661738fb526d97414086d3abfb9d34565aac1b7ee57df8574f9b0139f2b6267d"
+        },
+        {
+          "path": "tools/advanced-tests/navigation-angar_map.json",
+          "sha256": "70a5c0d300c74604cc90e66da98cbfd26d8faf1506f868d1d9428d68629e5196"
+        },
+        {
+          "path": "tools/advanced-tests/navigation-browser.cjs",
+          "sha256": "d1f46ce9018165fb27516ae998e3f42e2d469305bc7663401f8f2e6cb65ff0cd"
+        },
+        {
+          "path": "tools/advanced-tests/navigation-forest_map_camp.json",
+          "sha256": "8a7ea46abeee9eff11b3ca774eb939b70426b865ca8e381f2e057eaa0a9ebf95"
+        },
+        {
+          "path": "tools/advanced-tests/navigation-stroyka_zarechye_v2.json",
+          "sha256": "094ae5fbfc43279f1f8310a4a0ba6ddbcc75118fa8a7b584b414c7743f8e137a"
+        },
+        {
+          "path": "tools/advanced-tests/navigation.cjs",
+          "sha256": "182c8f9678db805325d3363aaa827e01319f46d578b660d694b8ca1084afa748"
+        },
+        {
+          "path": "tools/advanced-tests/navigation.json",
+          "sha256": "6ff9f1ae0cb6deefd40975908a04341c6feb94d8ef151ba13bc846211934a88c"
+        },
+        {
+          "path": "tools/advanced-tests/quality-v3-browser-armed.json",
+          "sha256": "0cb97b1678477f57bcd4dd99f13386e61c7b9d64d3d27f89132510bbe0d0e7cd"
+        },
+        {
+          "path": "tools/advanced-tests/quality-v3-browser.cjs",
+          "sha256": "c345475f1a67b8ea571fe8b92c16d7a0b2b179f3a9befed3bc87457bd5d5fdf9"
+        },
+        {
+          "path": "tools/advanced-tests/quality-v3-browser.json",
+          "sha256": "5df927b3e42f81ef9f9e60f69ecaf63a62ebc6bbb323977476ef413106d8a1dd"
+        },
+        {
+          "path": "tools/advanced-tests/render-browser.cjs",
+          "sha256": "18cf48ca5975d03da92940fde310bdb2ce0f7d230c67e198280637a0be81eb8b"
+        },
+        {
+          "path": "tools/advanced-tests/render-browser.json",
+          "sha256": "cb3c8a418d43db9862e4223779ecc9d556d756867c0f289bdb237ebcf8940cdb"
+        },
+        {
+          "path": "tools/advanced-tests/results.json",
+          "sha256": "9945e8111cc958625cc8cb44545cd11b3b4989b0bc7556d216aacd9508cd8061"
+        },
+        {
+          "path": "tools/advanced-tests/runtime.cjs",
+          "sha256": "2432c3411b3dfad0daaeb20ea12681784ca3bc3cecb204efe1ea96a1ea31a97e"
+        },
+        {
+          "path": "tools/advanced-tests/soak-angar_map.json",
+          "sha256": "ce45a0bd5fecc9db137db4277ca1bb8e3a795e8bac1cc0168634e2994c5c4bac"
+        },
+        {
+          "path": "tools/advanced-tests/soak-browser.cjs",
+          "sha256": "3b8d24b5dc5e15bbc1bb33c527188c123e521038972552102b2b3226d743ac5f"
+        },
+        {
+          "path": "tools/advanced-tests/soak-forest_map_camp.json",
+          "sha256": "6096c02b3cb8a1230c6d9f46e7eee6b4d77caeb64988fc5b656eb071075676fa"
+        },
+        {
+          "path": "tools/advanced-tests/soak-stroyka_zarechye_v2.json",
+          "sha256": "6f9b2ca9e97bff1b4eaaf60508c0c6a12c55368739c6e2c5c60d77c97d27f2a4"
+        },
+        {
+          "path": "tools/advanced-tests/trace-bvh.cjs",
+          "sha256": "8070c2b05e20645155820ef208b81805d226174bdc88361c5224e3341fca5551"
+        },
+        {
+          "path": "tools/advanced-tests/trace-bvh.json",
+          "sha256": "3eae1131792ab8834713b830a773ef7562696311f33bb39f6139533d407511f4"
+        },
+        {
+          "path": "tools/advanced-tests/traction.cjs",
+          "sha256": "50fcc4ef558ceee10599107abeae61c53df6bd15e43f1305a2bd289780f6c929"
+        },
+        {
+          "path": "tools/advanced-tests/traction.json",
+          "sha256": "45e2bce068600819e9d820e1ae6b63d8fb3a06966c6a0107f9f691e4023ce464"
+        },
+        {
+          "path": "tools/advanced-tests/visual-crouch.png",
+          "sha256": "8df68993d89b3a3dfb11222ca78b5c885939ff4173ad2c9c16d3db52e0adb9d8"
+        },
+        {
+          "path": "tools/advanced-tests/visual-fallen.png",
+          "sha256": "b0f91deb955a92d6d77a4854c43d0a9c4885e7634be42c723fbf6fa8b68765f8"
+        },
+        {
+          "path": "tools/advanced-tests/visual-main-fp.png",
+          "sha256": "bddeca0e801dac039056270863c2050fc3adcfe35e17b385e96ec4df7c78bd2d"
+        },
+        {
+          "path": "tools/advanced-tests/visual-main-map.png",
+          "sha256": "761fb460a56548aa23e6bf79035e1d5c0de50c71f3b89cbef866bf4fce84ba64"
+        },
+        {
+          "path": "tools/advanced-tests/visual-prone.png",
+          "sha256": "964015772df3e4f5d28f26cc4af7a60d139151f107c0f7cf96d4281f40d45ec9"
+        },
+        {
+          "path": "tools/advanced-tests/visual-smoke.cjs",
+          "sha256": "bfc67cd2faf6d912a36f6548498753afc1b88e6d5faa568b435a5b1384db54ef"
+        },
+        {
+          "path": "tools/advanced-tests/visual-smoke.json",
+          "sha256": "ddc25cfbd5c14e0bd4920e55bdf2c5365b0e03d91e055fad1f91ada559d9299e"
+        },
+        {
+          "path": "tools/advanced-tests/visual-standing.png",
+          "sha256": "4172150fdc0d01fae77987fc629fe3a7603906b8b84084a1fc4271a61f6936fd"
+        },
+        {
+          "path": "tools/advanced-tests/visual-vault-armed-v3.png",
+          "sha256": "318daacfc206aabd09003add1f3a16d97de861ca909ba8690a107f4e1d19f40b"
+        },
+        {
+          "path": "tools/advanced-tests/visual-vault-v3.png",
+          "sha256": "3ef421c2840453c1bb761dea8dba04cb7952c4af671b276ab3f9a16cb3a3f9d7"
+        },
+        {
+          "path": "tools/build-advanced.cjs",
+          "sha256": "36cbb3dc0f23405c20d62979d97d0728a960dda72acfa73972614f6b0e3ddfcf"
+        },
+        {
+          "path": "tsconfig.json",
+          "sha256": "f7ff4e2abfc3871671735c7d67d645ec929aa1c39b15faf9bfeb3cd3c51d0d98"
+        },
+        {
+          "path": "vendor/mesh-bvh/LICENSE",
+          "sha256": "b106ef6198a9862ed2b5b873e944ecf3583c631a84a7462d400ecc1910ce7fee"
+        },
+        {
+          "path": "vendor/mesh-bvh/README.md",
+          "sha256": "b11026f5be132702b29e2f0ed122819175403192c829913063381a1e36bce1f6"
+        },
+        {
+          "path": "vendor/mesh-bvh/mesh-bvh.js",
+          "sha256": "0495f2cb529808e3fdc224ba043fc75a8ad66d9bcad84894109f3ca166a554ec"
+        },
+        {
+          "path": "vendor/mesh-bvh/package.json",
+          "sha256": "d63f81bdcbeafa3c1ded8cbadc1204f2fe9f43e6e51005f19f2c1c332cf725b2"
+        },
+        {
+          "path": "vendor/mesh-bvh/provenance.json",
+          "sha256": "bb96db3d48933273ad6f345421d5312d858d1c43bbc2897640482d6f701f764e"
+        },
+        {
+          "path": "vendor/mesh-bvh/upstream.umd.cjs",
+          "sha256": "feb543797df79dc1bbf2848896b97ab61384866f04f90caa265a4260a5dfc5dc"
+        },
+        {
+          "path": "vendor/rapier/LICENSE",
+          "sha256": "ceacfa4d7fa67df64ab09a56fe248c50a3bfc9bc00374d69bd74ad763b14b89c"
+        },
+        {
+          "path": "vendor/rapier/package.json",
+          "sha256": "0e0b00bc0e8d0dd7afed4da18831a5bc416fce03637c64b48329898dfd9e3320"
+        },
+        {
+          "path": "vendor/rapier/rapier.js",
+          "sha256": "7932ea7f8369df92f2ac092c309759cfd283c9290f71817501706b50c948e9f1"
+        },
+        {
+          "path": "vendor/recast/PROVENANCE.json",
+          "sha256": "815edc1ccd566ed395ce39a474e22d64ec142f6bcedae6781741ce4e72a25c9d"
+        },
+        {
+          "path": "vendor/recast/core-LICENSE",
+          "sha256": "319340bb218c8a01bf041dc8f6f2390f176d7c332920695b0774b972b4e99162"
+        },
+        {
+          "path": "vendor/recast/core-package.json",
+          "sha256": "e0915ae4e0b21b26d5f289fd355dac645d40d9d944a7a665278c3d2aeb3de6c1"
+        },
+        {
+          "path": "vendor/recast/core.mjs",
+          "sha256": "650f12aea419641204653a74e9a97b3627c46097cea2f840cdccf68d1afbca58"
+        },
+        {
+          "path": "vendor/recast/generators-LICENSE",
+          "sha256": "319340bb218c8a01bf041dc8f6f2390f176d7c332920695b0774b972b4e99162"
+        },
+        {
+          "path": "vendor/recast/generators-package.json",
+          "sha256": "50120d4c821e12c08d2a5dd72a390f5c833c3ec7f514a29624c3736ca037125b"
+        },
+        {
+          "path": "vendor/recast/generators.mjs",
+          "sha256": "80614b5cafcd886e46fe218ec6eabdd23cacadb679beaa66f171b8c3d58073c6"
+        },
+        {
+          "path": "vendor/recast/upstream-generators.mjs",
+          "sha256": "293eab40944b1bdbf1460aea569e3560d54425e5ff14a1d62c5cbcb59cc12546"
+        },
+        {
+          "path": "vendor/recast/wasm-LICENSE",
+          "sha256": "319340bb218c8a01bf041dc8f6f2390f176d7c332920695b0774b972b4e99162"
+        },
+        {
+          "path": "vendor/recast/wasm-package.json",
+          "sha256": "db05fddcb1188010548d64ca9b49eb466ca59c3698e734bdf0c309d51a43d28c"
+        },
+        {
+          "path": "vendor/recast/wasm.mjs",
+          "sha256": "df034a241a7c2db1d37dfca51135a0a35bb5fea253b99f75804342fee9f54cbb"
+        }
+      ]
+    },
+    "previous": {
+      "archive": "AEGIS_v18_2_BT_Rapier_QUALITY.zip",
+      "sha256": "aa0548c6e5b32e0ef6b1a0b6f4ef5fb2c036165c23b405a9405854b47b8fc8a7",
+      "originalFileCount": 257,
+      "missingWithoutReplacement": [],
+      "relocated": {},
+      "modified": [
+        {
+          "path": "README.md",
+          "sha256": "e0ae412341e2dfb33b939134a079435a934bc98c6b86685b5e4d32aed247338a"
+        },
+        {
+          "path": "README_ADVANCED_RU.md",
+          "sha256": "bce73ea9d690c953275e54413e641b1b679d0772b40a80fff4b2f0ac41a56a19"
+        },
+        {
+          "path": "docs/ADVANCED_VALIDATION_RU.md",
+          "sha256": "09d1474a2eb992513ef4f3968f9c692a5b5684ee758dd84aa8e77fb693fd8561"
+        },
+        {
+          "path": "docs/BUILD_QA.json",
+          "sha256": "400af4716bf1904e80eca1bf32f04c0da2af03a59a88090e1ce61dd476d1b5f7"
+        },
+        {
+          "path": "index.html",
+          "sha256": "a7b5ddaecb9154836fac7b626064dee95170beeaaae6fcaa00c9ce447ddeed2e"
+        },
+        {
+          "path": "js/advanced/combat.js",
+          "sha256": "3352e5c7b596513e702e679d62af3a702dd0b39e1c34a20b8197d5b7715ed887"
+        },
+        {
+          "path": "js/advanced/physics.js",
+          "sha256": "5bc374ed68da53b914d8b05333fa4dd48b984c047fee8a3e2069c3139e79d951"
+        },
+        {
+          "path": "js/advanced/tactics.js",
+          "sha256": "7c86300eb4f5ff45f61b0d883719795252c290d5e6aba3ca983c6f14765f8e08"
+        },
+        {
+          "path": "js/advanced/traversal.js",
+          "sha256": "a64bc893d476094563ca2c4e989069803dbc9e63c40b11ddd2989d1a51d4ffca"
+        },
+        {
+          "path": "js/polygon/20_player.js",
+          "sha256": "538c6adef539ae83d19c74edb9b350ec8a48fecd3348408304f63fc8c027fc56"
+        },
+        {
+          "path": "js/polygon/29_game.js",
+          "sha256": "cde038e38f0a0f1327fcd3cf5a8ef106617cdad484c8d75477ee9b4776b073b9"
+        },
+        {
+          "path": "package-lock.json",
+          "sha256": "d50441466e5278ad09a670919237578d54f3b8e402b38f1194d8bf4daec9a227"
+        },
+        {
+          "path": "package.json",
+          "sha256": "2a809c27457daeb48318b80ceb3089e44fba5e66e4adbf5cbadb5a1d9ddbea17"
+        },
+        {
+          "path": "src/advanced/combat.ts",
+          "sha256": "ebb309fe861e40024da767ab2d5cda8e3e637b6b73571bbcaa4285f472c9b2a1"
+        },
+        {
+          "path": "src/advanced/physics.ts",
+          "sha256": "1cc8206585f3029f145dd5e40d18868211a0a35b7820fe710c1ebee847ee5518"
+        },
+        {
+          "path": "src/advanced/tactics.ts",
+          "sha256": "6140ec479e2832d2a2d321d37a90a06007fa36de045f30190fa7373a542735cb"
+        },
+        {
+          "path": "src/advanced/traversal.ts",
+          "sha256": "315d3319d9e40a043c4d945cdda739edd056ccf27135be50f7e94f19b9ee6bbe"
+        },
+        {
+          "path": "tools/advanced-tests/browser-smoke.cjs",
+          "sha256": "c9f8ea498ac9152b06267b940057cf56cbe172cdbf7b8ac6ec1128b9e3b0072d"
+        },
+        {
+          "path": "tools/advanced-tests/combat-aim-browser.cjs",
+          "sha256": "804b2a5224d8356e50540b969fe61695233a1120eb546e5d2b61e6fc4031f9f0"
+        },
+        {
+          "path": "tools/advanced-tests/combat-aim-browser.json",
+          "sha256": "db9d9d8b2e55837ec9a07427c7e1757dfc121dac326779632d47a8c318d15fe2"
+        },
+        {
+          "path": "tools/advanced-tests/compare-cpu.cjs",
+          "sha256": "384fed6e419aa942b2d9a01e67e5b5ce3b2dc16df492e521a6ae0e47b38ae3b0"
+        },
+        {
+          "path": "tools/advanced-tests/continuation-browser.cjs",
+          "sha256": "c03103dc3bba97d5d0eb109d1400b7bfce48154f743f3af5a76f71e45888053f"
+        },
+        {
+          "path": "tools/advanced-tests/continuation-browser.json",
+          "sha256": "d758ad360eb415e2a7e574a69c144e19ef00a0646ed5f6d1db907dcee650fee1"
+        },
+        {
+          "path": "tools/advanced-tests/cpu-benchmark.cjs",
+          "sha256": "9840871111b8b884e83fed6340a4c23e954fdc3005a4a5067df578bbc89cb786"
+        },
+        {
+          "path": "tools/advanced-tests/integration-angar_map.json",
+          "sha256": "0969dbb9667584ff5959dddd42158ea193fca4db6eba60da6aaadf1e2a469e17"
+        },
+        {
+          "path": "tools/advanced-tests/integration-forest_map_camp.json",
+          "sha256": "c82941164db589421f883d555468489247d331cb20a969df5998b2b9c09300d1"
+        },
+        {
+          "path": "tools/advanced-tests/integration-stroyka_zarechye_v2.json",
+          "sha256": "3092595b263b2cab46a86715c1b358e9733f39f5c54cac1697a65c0f9ca442b3"
+        },
+        {
+          "path": "tools/advanced-tests/medical-barrier-armed.json",
+          "sha256": "d731e4f65471e0f0423e8fbce58b3aff4ce9d15563e2d5b8dbd9ce48c7a1bd55"
+        },
+        {
+          "path": "tools/advanced-tests/medical-barrier.json",
+          "sha256": "cbe228b1c2c1a1ef19f5073f2508fd95581771d067e7adc08496458c533ced4b"
+        },
+        {
+          "path": "tools/advanced-tests/medical-browser-armed.json",
+          "sha256": "b30c2fff80de5fa2a1d71abdbfc836fdfe026d5f7abe6f21dff833da8752451e"
+        },
+        {
+          "path": "tools/advanced-tests/medical-browser.cjs",
+          "sha256": "63d70a205b70a5fd5632c3beaf04f6e6f31726414a7b60abc25a15f0bb41fabd"
+        },
+        {
+          "path": "tools/advanced-tests/medical-browser.json",
+          "sha256": "4a45900ac2f496ec2e6d580565a0ec418173556328ddbf2c2316f4a34ee3e92e"
+        },
+        {
+          "path": "tools/advanced-tests/quality-v3-browser-armed.json",
+          "sha256": "0cb97b1678477f57bcd4dd99f13386e61c7b9d64d3d27f89132510bbe0d0e7cd"
+        },
+        {
+          "path": "tools/advanced-tests/quality-v3-browser.cjs",
+          "sha256": "c345475f1a67b8ea571fe8b92c16d7a0b2b179f3a9befed3bc87457bd5d5fdf9"
+        },
+        {
+          "path": "tools/advanced-tests/quality-v3-browser.json",
+          "sha256": "5df927b3e42f81ef9f9e60f69ecaf63a62ebc6bbb323977476ef413106d8a1dd"
+        },
+        {
+          "path": "tools/advanced-tests/render-browser.cjs",
+          "sha256": "18cf48ca5975d03da92940fde310bdb2ce0f7d230c67e198280637a0be81eb8b"
+        },
+        {
+          "path": "tools/advanced-tests/render-browser.json",
+          "sha256": "cb3c8a418d43db9862e4223779ecc9d556d756867c0f289bdb237ebcf8940cdb"
+        },
+        {
+          "path": "tools/advanced-tests/results.json",
+          "sha256": "9945e8111cc958625cc8cb44545cd11b3b4989b0bc7556d216aacd9508cd8061"
+        },
+        {
+          "path": "tools/advanced-tests/runtime.cjs",
+          "sha256": "2432c3411b3dfad0daaeb20ea12681784ca3bc3cecb204efe1ea96a1ea31a97e"
+        },
+        {
+          "path": "tools/advanced-tests/soak-angar_map.json",
+          "sha256": "ce45a0bd5fecc9db137db4277ca1bb8e3a795e8bac1cc0168634e2994c5c4bac"
+        },
+        {
+          "path": "tools/advanced-tests/soak-browser.cjs",
+          "sha256": "3b8d24b5dc5e15bbc1bb33c527188c123e521038972552102b2b3226d743ac5f"
+        },
+        {
+          "path": "tools/advanced-tests/soak-forest_map_camp.json",
+          "sha256": "6096c02b3cb8a1230c6d9f46e7eee6b4d77caeb64988fc5b656eb071075676fa"
+        },
+        {
+          "path": "tools/advanced-tests/soak-stroyka_zarechye_v2.json",
+          "sha256": "6f9b2ca9e97bff1b4eaaf60508c0c6a12c55368739c6e2c5c60d77c97d27f2a4"
+        },
+        {
+          "path": "tools/advanced-tests/trace-bvh.json",
+          "sha256": "3eae1131792ab8834713b830a773ef7562696311f33bb39f6139533d407511f4"
+        },
+        {
+          "path": "tools/advanced-tests/traction.cjs",
+          "sha256": "50fcc4ef558ceee10599107abeae61c53df6bd15e43f1305a2bd289780f6c929"
+        },
+        {
+          "path": "tools/advanced-tests/traction.json",
+          "sha256": "45e2bce068600819e9d820e1ae6b63d8fb3a06966c6a0107f9f691e4023ce464"
+        },
+        {
+          "path": "tools/advanced-tests/visual-crouch.png",
+          "sha256": "8df68993d89b3a3dfb11222ca78b5c885939ff4173ad2c9c16d3db52e0adb9d8"
+        },
+        {
+          "path": "tools/advanced-tests/visual-fallen.png",
+          "sha256": "b0f91deb955a92d6d77a4854c43d0a9c4885e7634be42c723fbf6fa8b68765f8"
+        },
+        {
+          "path": "tools/advanced-tests/visual-main-fp.png",
+          "sha256": "bddeca0e801dac039056270863c2050fc3adcfe35e17b385e96ec4df7c78bd2d"
+        },
+        {
+          "path": "tools/advanced-tests/visual-main-map.png",
+          "sha256": "761fb460a56548aa23e6bf79035e1d5c0de50c71f3b89cbef866bf4fce84ba64"
+        },
+        {
+          "path": "tools/advanced-tests/visual-prone.png",
+          "sha256": "964015772df3e4f5d28f26cc4af7a60d139151f107c0f7cf96d4281f40d45ec9"
+        },
+        {
+          "path": "tools/advanced-tests/visual-smoke.cjs",
+          "sha256": "bfc67cd2faf6d912a36f6548498753afc1b88e6d5faa568b435a5b1384db54ef"
+        },
+        {
+          "path": "tools/advanced-tests/visual-standing.png",
+          "sha256": "4172150fdc0d01fae77987fc629fe3a7603906b8b84084a1fc4271a61f6936fd"
+        },
+        {
+          "path": "tools/advanced-tests/visual-vault-armed-v3.png",
+          "sha256": "318daacfc206aabd09003add1f3a16d97de861ca909ba8690a107f4e1d19f40b"
+        },
+        {
+          "path": "tools/advanced-tests/visual-vault-v3.png",
+          "sha256": "3ef421c2840453c1bb761dea8dba04cb7952c4af671b276ab3f9a16cb3a3f9d7"
+        },
+        {
+          "path": "tools/build-advanced.cjs",
+          "sha256": "36cbb3dc0f23405c20d62979d97d0728a960dda72acfa73972614f6b0e3ddfcf"
+        }
+      ],
+      "added": [
+        {
+          "path": "docs/history-v18_2/ADVANCED_VALIDATION_RU.md",
+          "sha256": "be57f08b0df091d0d5033697b5c729ef158a8cbf555881d0ed52bf8b4666d97b"
+        },
+        {
+          "path": "docs/history-v18_2/BUILD_QA.json",
+          "sha256": "bd496f5dcb2bfe773f07bf8263e95a98cd8546da4aaf157bf5bebc3f8cfac09d"
+        },
+        {
+          "path": "docs/history-v18_2/README_ADVANCED_RU.md",
+          "sha256": "02ea150109d1c1fec08c49f425fae4be8181fcd7ebf34e7e172b6ad58a48fe21"
+        },
+        {
+          "path": "js/advanced/nav-worker.mjs",
+          "sha256": "7e02c5ca658932ecb3000c514ffa117dc09f99b4eed7309ba952afbcc781ecda"
+        },
+        {
+          "path": "js/advanced/navigation.js",
+          "sha256": "26f5fa3155bb4a82cfef7cb0dd7328e75710074b3cb6a5cea7159c4725272e01"
+        },
+        {
+          "path": "src/advanced/navigation.ts",
+          "sha256": "76eaad443871b0799fee9e90c6b54fe83d10054d9268d1359cc5a2a150d69719"
+        },
+        {
+          "path": "tools/advanced-tests/medical-elevated-armed.json",
+          "sha256": "5e1b6f380351c11ecdd7e260c08dccd54f42b3f0a5dc3b6e9366db0f23a3cd39"
+        },
+        {
+          "path": "tools/advanced-tests/medical-elevated.json",
+          "sha256": "661738fb526d97414086d3abfb9d34565aac1b7ee57df8574f9b0139f2b6267d"
+        },
+        {
+          "path": "tools/advanced-tests/navigation-angar_map.json",
+          "sha256": "70a5c0d300c74604cc90e66da98cbfd26d8faf1506f868d1d9428d68629e5196"
+        },
+        {
+          "path": "tools/advanced-tests/navigation-browser.cjs",
+          "sha256": "d1f46ce9018165fb27516ae998e3f42e2d469305bc7663401f8f2e6cb65ff0cd"
+        },
+        {
+          "path": "tools/advanced-tests/navigation-forest_map_camp.json",
+          "sha256": "8a7ea46abeee9eff11b3ca774eb939b70426b865ca8e381f2e057eaa0a9ebf95"
+        },
+        {
+          "path": "tools/advanced-tests/navigation-stroyka_zarechye_v2.json",
+          "sha256": "094ae5fbfc43279f1f8310a4a0ba6ddbcc75118fa8a7b584b414c7743f8e137a"
+        },
+        {
+          "path": "tools/advanced-tests/navigation.cjs",
+          "sha256": "182c8f9678db805325d3363aaa827e01319f46d578b660d694b8ca1084afa748"
+        },
+        {
+          "path": "tools/advanced-tests/navigation.json",
+          "sha256": "6ff9f1ae0cb6deefd40975908a04341c6feb94d8ef151ba13bc846211934a88c"
+        },
+        {
+          "path": "vendor/recast/PROVENANCE.json",
+          "sha256": "815edc1ccd566ed395ce39a474e22d64ec142f6bcedae6781741ce4e72a25c9d"
+        },
+        {
+          "path": "vendor/recast/core-LICENSE",
+          "sha256": "319340bb218c8a01bf041dc8f6f2390f176d7c332920695b0774b972b4e99162"
+        },
+        {
+          "path": "vendor/recast/core-package.json",
+          "sha256": "e0915ae4e0b21b26d5f289fd355dac645d40d9d944a7a665278c3d2aeb3de6c1"
+        },
+        {
+          "path": "vendor/recast/core.mjs",
+          "sha256": "650f12aea419641204653a74e9a97b3627c46097cea2f840cdccf68d1afbca58"
+        },
+        {
+          "path": "vendor/recast/generators-LICENSE",
+          "sha256": "319340bb218c8a01bf041dc8f6f2390f176d7c332920695b0774b972b4e99162"
+        },
+        {
+          "path": "vendor/recast/generators-package.json",
+          "sha256": "50120d4c821e12c08d2a5dd72a390f5c833c3ec7f514a29624c3736ca037125b"
+        },
+        {
+          "path": "vendor/recast/generators.mjs",
+          "sha256": "80614b5cafcd886e46fe218ec6eabdd23cacadb679beaa66f171b8c3d58073c6"
+        },
+        {
+          "path": "vendor/recast/upstream-generators.mjs",
+          "sha256": "293eab40944b1bdbf1460aea569e3560d54425e5ff14a1d62c5cbcb59cc12546"
+        },
+        {
+          "path": "vendor/recast/wasm-LICENSE",
+          "sha256": "319340bb218c8a01bf041dc8f6f2390f176d7c332920695b0774b972b4e99162"
+        },
+        {
+          "path": "vendor/recast/wasm-package.json",
+          "sha256": "db05fddcb1188010548d64ca9b49eb466ca59c3698e734bdf0c309d51a43d28c"
+        },
+        {
+          "path": "vendor/recast/wasm.mjs",
+          "sha256": "df034a241a7c2db1d37dfca51135a0a35bb5fea253b99f75804342fee9f54cbb"
+        }
+      ]
+    }
+  },
+  "originalAssetsUnchanged": true
+}

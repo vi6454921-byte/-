@@ -1,0 +1,36 @@
+<!doctype html><meta charset="utf-8"><title>AEGIS Reload / Bullet Impacts QA</title>
+<style>body{margin:0;background:#283039;color:white;font:14px Arial}#label{position:absolute;top:14px;left:20px}canvas{display:block}</style><div id="label"></div>
+<script src="../../js/lib/three.min.js"></script>
+<script src="../../js/kit/wkit.js"></script>
+<script src="../../assets/data/hands.js"></script>
+<script>const jobs=[];window.GAssets={data:{},add:(n,p)=>jobs.push(p.then(x=>GAssets.data[n]=x))};window.__addon=p=>Promise.resolve(THREE_ADDONS[p]);</script>
+<script src="../../js/kit/imported-weapons.js"></script>
+<script src="../../js/polygon/02_util.js"></script>
+<script src="../../js/polygon/03_viewmodel_vm.js"></script>
+<script src="../../js/polygon/04_viewmodel_hand_assets.js"></script>
+<script src="../../js/polygon/05b_guns.js"></script>
+<script src="../../vendor/bullet-impacts/bullet-impacts.js"></script>
+<script src="../../js/app/impact-surfaces.js"></script>
+<script src="../../js/polygon/18_fx.js"></script>
+<script>
+(async()=>{
+await Promise.all(jobs);
+const T=THREE, scene=new T.Scene(),cam=new T.PerspectiveCamera(72,1100/760,.01,100),renderer=new T.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+renderer.setSize(1100,760);renderer.setPixelRatio(1);document.body.append(renderer.domElement);scene.background=new T.Color('#38434a');
+scene.add(new T.HemisphereLight(0xe8f5ff,0x53514b,2.5));const light=new T.DirectionalLight(0xffffff,3);light.position.set(-2,3,3);scene.add(light);
+const weapons=Object.keys(GGuns.WP).map(id=>GGuns.build(id,{}, {noShadow:true}));weapons.forEach(w=>scene.add(w.root));const specs=weapons.map(w=>GGuns.createSpec(w));
+const assets=GAssets.data.vm_hands;
+const rig=new GVM.WeaponRig({left:assets.clone(assets.left),right:assets.clone(assets.right)},specs);scene.add(rig.root);
+function sample(keys,t){let i=0;while(i<keys.length-2&&t>keys[i+1][0])i++;const a=keys[i],b=keys[Math.min(i+1,keys.length-1)],u=b[0]>a[0]?T.MathUtils.clamp((t-a[0])/(b[0]-a[0]),0,1):1;return new T.Vector3().fromArray(a[1]).lerp(new T.Vector3().fromArray(b[1]),u*u*(3-2*u));}
+function frame(id,mode,t){const i=specs.findIndex(s=>s.id===id);rig.activate(i);rig.root.visible=true;cam.position.set(0,0,0);cam.quaternion.identity();const sp=rig.spec;rig.track=sp[mode]||sp.pumpTrack(4,true);rig.reloadT=t;rig.reloading=true;
+const gp=new T.Vector3().fromArray(sp.tuning.poses.hip.pos).add(sample(rig.track.gunPos,t));const rot=sample(rig.track.gunRot,t).multiplyScalar(Math.PI/180);const base=sp.tuning.poses.hip.rot;rot.add(new T.Vector3(...base).multiplyScalar(Math.PI/180));
+rig.gunMatrix.compose(gp,new T.Quaternion().setFromEuler(new T.Euler(rot.x,rot.y,rot.z,'YXZ')),new T.Vector3(1,1,1));rig.gun.root.matrix.copy(rig.gunMatrix);rig.gun.root.matrixWorldNeedsUpdate=true;
+new T.Matrix4().multiplyMatrices(rig.gunMatrix,sp.rightGrip).decompose(rig.right.anchor.position,rig.right.anchor.quaternion,new T.Vector3());rig.right.setPose(sp.hands.indexed);
+const lm=new T.Matrix4();rig.leftAt(t,lm);lm.decompose(rig.left.anchor.position,rig.left.anchor.quaternion,new T.Vector3());rig.left.setPose(rig.leftPose);
+rig.magState='gun';for(const [te,e]of rig.track.events)if(te<=t){if(e==='grab'||e==='grabOld')rig.magState='hand';if(e==='drop')rig.magState='none';if(e==='seat')rig.magState='gun';}rig.updateMagazine();
+const B=GVM.CONFIG.body,E=sp.tuning.elbowPole,down=new T.Vector3(0,-1,0);rig.armR.update(new T.Vector3(...B.shoulderR),rig.right.anchor.position,new T.Vector3(...E.hipR),rig.right.anchor,down,rig.right.ulnarSign);rig.armL.update(new T.Vector3(...B.shoulderL),rig.left.anchor.position,new T.Vector3(...E.hipL),rig.left.anchor,down,rig.left.ulnarSign);
+weapons.forEach((w,j)=>w.root.visible=j===i);GGuns.applyToGun(rig,weapons[i],new T.Matrix4());scene.updateMatrixWorld(true);renderer.render(scene,cam);document.getElementById('label').textContent=id+' · '+mode+' · '+t.toFixed(2)+'s';return {wrist:rig.left.anchor.position.toArray(),quat:rig.left.anchor.quaternion.toArray(),mag:rig.magState};}
+const fx=GFX.create(T,scene);fx.group.visible=false;
+window.LAB={weapons,T,scene,cam,renderer,rig,specs,frame,fx};window.ready=true;frame('ak74','empty',.35);
+})().catch(e=>{window.failure=e.stack;console.error(e)});
+</script>

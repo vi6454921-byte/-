@@ -1,0 +1,26 @@
+<!doctype html><meta charset="utf-8"><title>AEGIS · стенд экрана загрузки</title>
+<link rel="stylesheet" href="css/type.css"><link rel="stylesheet" href="css/game.css">
+<body>
+<!-- v21: изолированный стенд заставки. Те же файлы, что в index.html (intro.js → three → оружейная),
+     прогресс загрузки имитируется. Параметры: ?hold — не завершать загрузку; ?t=40 — длительность, с. -->
+<script src="js/app/intro.js"></script>
+<script src="js/lib/three.min.js"></script>
+<script src="js/polygon/05f_ballistics.js"></script>
+<script src="js/kit/wkit.js"></script>
+<script src="js/kit/skins.js"></script>
+<script src="js/kit/wcover.js"></script>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search), T = +(q.get('t') || 40) * 1000, hold = q.has('hold'), t0 = performance.now();
+  var stages = ['map', 'world', 'impostors', 'weather', 'soldier', 'preLoop', 'inv'];
+  window.AEGIS_LOADP = { n: 1, k: 0 }; window.AEGIS_BOOT = { k: 0, t: [] };
+  var iv = setInterval(function () {
+    var u = Math.min(1, (performance.now() - t0) / T);
+    AEGIS_LOADP.k = Math.min(1, u / 0.7);
+    var b = Math.max(0, (u - 0.7) / 0.3); AEGIS_BOOT.k = b;
+    if (b > 0) AEGIS_BOOT.t = [[stages[Math.min(stages.length - 1, Math.floor(b * stages.length))]]];
+    if (u >= 1 && !hold) { clearInterval(iv); AEGIS_INTRO.markReady(); }
+  }, 250);
+})();
+</script>
+</body>

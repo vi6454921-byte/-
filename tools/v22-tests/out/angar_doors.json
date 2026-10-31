@@ -1,0 +1,114 @@
+[
+ {
+  "i": 0,
+  "c": [
+   -12.1,
+   1.04,
+   -9.5
+  ],
+  "n": [
+   0,
+   -1
+  ],
+  "open": 0,
+  "target": 0,
+  "hit": {
+   "name": "",
+   "type": "Mesh",
+   "ud": [
+    "mat",
+    "door",
+    "thick",
+    "nomerge"
+   ],
+   "mat": "wood",
+   "d": 1.479,
+   "inst": 0,
+   "parent": "level_environment"
+  }
+ },
+ {
+  "i": 1,
+  "c": [
+   -5.6,
+   1.04,
+   -9.5
+  ],
+  "n": [
+   0,
+   -1
+  ],
+  "open": 0,
+  "target": 0,
+  "hit": {
+   "name": "",
+   "type": "Mesh",
+   "ud": [
+    "mat",
+    "door",
+    "thick",
+    "nomerge"
+   ],
+   "mat": "wood",
+   "d": 1.479,
+   "inst": 1,
+   "parent": "level_environment"
+  }
+ },
+ {
+  "i": 2,
+  "c": [
+   1.2,
+   1.04,
+   -9.5
+  ],
+  "n": [
+   0,
+   -1
+  ],
+  "open": 0,
+  "target": 0,
+  "hit": {
+   "name": "",
+   "type": "Mesh",
+   "ud": [
+    "mat",
+    "door",
+    "thick",
+    "nomerge"
+   ],
+   "mat": "wood",
+   "d": 1.479,
+   "inst": 2,
+   "parent": "level_environment"
+  }
+ },
+ {
+  "i": 3,
+  "c": [
+   8,
+   1.04,
+   -9.5
+  ],
+  "n": [
+   0,
+   -1
+  ],
+  "open": 0,
+  "target": 0,
+  "hit": {
+   "name": "",
+   "type": "Mesh",
+   "ud": [
+    "mat",
+    "door",
+    "thick",
+    "nomerge"
+   ],
+   "mat": "wood",
+   "d": 1.479,
+   "inst": 3,
+   "parent": "level_environment"
+  }
+ }
+]

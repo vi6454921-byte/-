@@ -1,0 +1,28 @@
+{
+  "mode": "local Python launcher --active-body-lab --port 0",
+  "urlQuery": "?activebodylab&map=angar_map",
+  "http": {
+    "/index.html": {
+      "status": 200,
+      "mime": "text/html"
+    },
+    "/js/advanced/active-body.js": {
+      "status": 200,
+      "mime": "text/javascript"
+    },
+    "/vendor/recast/core.mjs": {
+      "status": 200,
+      "mime": "text/javascript"
+    },
+    "/vendor/recast/wasm.mjs": {
+      "status": 200,
+      "mime": "text/javascript"
+    },
+    "temporary_wasm_MIME_fixture": {
+      "status": 200,
+      "mime": "application/wasm"
+    }
+  },
+  "note": "Recast WASM is embedded in wasm.mjs; a temporary minimal WASM file checked the server MIME mapping only. Real WASM initialization was covered by browser tests.",
+  "windowsBatExecuted": false
+}

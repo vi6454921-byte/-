@@ -1,0 +1,6 @@
+# имя сид описание-для-VoiceDesign (англ., как требует модель). Отобранные дубли (референсы клонирования):
+# grom_13, hrip_7, sokol_5, tihiy_5. Фраза-референс: см. REF в design.sh.
+grom 13 A Russian man in his late forties with a very deep, low-pitched chest voice, a heavy bass. He speaks calmly, firmly and seriously at a low pitch, without raising his voice, like a veteran commander giving a short radio report.
+hrip 7 A Russian man around forty with a hoarse, raspy, low and gravelly voice. He speaks firmly and quickly at a low pitch, gruff and tense, without shouting, like a tired sergeant reporting over the radio.
+sokol 5 A Russian man in his early twenties with a clear young tenor voice. He speaks fast and tense with adrenaline, in a raised urgent voice, slightly breathless, but not shouting.
+tihiy 5 A Russian man around thirty with a steady medium-low baritone voice. He speaks evenly, precisely and seriously in a slightly raised voice, like an experienced radio operator reporting under fire, calm and focused.

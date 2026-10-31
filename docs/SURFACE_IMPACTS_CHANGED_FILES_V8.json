@@ -1,0 +1,111 @@
+{
+  "baseline": "AEGIS_npc_motion_v7.zip",
+  "changed": [
+    {
+      "file": "README.md",
+      "sha256": "633e11a30c25d333f229e963aeb0a3d90af0b8b9bb5112ef874f34e13779776b"
+    },
+    {
+      "file": "index.html",
+      "sha256": "3b618a1841f13d9d71fee8ab6497cdab629c966e191a68a3117826f6a4d0c1c1"
+    },
+    {
+      "file": "js/app/maps.js",
+      "sha256": "cd813826a2ad24b18c57930d700fa811b67c2621e0d414d36e172312a773a741"
+    },
+    {
+      "file": "js/maps/angar_map.js",
+      "sha256": "77d90ae5e24e68703377398577b3e3fa7ca8ac9cf0128a64b79911dcb30413b5"
+    },
+    {
+      "file": "js/maps/forest_map_camp.js",
+      "sha256": "43a971add0428ddd35d69c6adf1b0280b85c042d8d77f4cee33e2d20f1d985b8"
+    },
+    {
+      "file": "js/maps/stroyka_zarechye_v2.js",
+      "sha256": "69adc01bf65a320ba74b97efc9aa74dbc4b27b1df07aeb32b129371f8694fb1c"
+    },
+    {
+      "file": "js/polygon/18_fx.js",
+      "sha256": "9103714a551ccc8eaf3bcb697c8264543a86a71e42b1fb8a272ced15408c582a"
+    },
+    {
+      "file": "js/polygon/29_game.js",
+      "sha256": "c22253ca247922cc6de9620695c29be58dc94ebb66abf7c37f745fe20466319e"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "845693b92c77984a96005e2984de8e7b4873e6671663a7ffab0665115ed24f78"
+    },
+    {
+      "file": "package.json",
+      "sha256": "22756dc6d25a5dd6b1fd60b577585b4bf834e6fe60c09887f892205b0928e4ba"
+    },
+    {
+      "file": "tools/impact-tests/impacts-preview.png",
+      "sha256": "e3440bd4c201ad620a544bf4acc09416ab533a54acb7f020a35f45b441992ee1"
+    },
+    {
+      "file": "tools/impact-tests/stand.html",
+      "sha256": "4ad38fc3b0280ab8da4313b99c727051cdddb774fe569eec59cfbac04efe2047"
+    },
+    {
+      "file": "vendor/bullet-impacts/Decals.ts",
+      "sha256": "c7d1621611b099c0bc6acb787d9264498f93b577b0498fe982010fb971c2b6cd"
+    },
+    {
+      "file": "vendor/bullet-impacts/bullet-impacts.js",
+      "sha256": "80fa2cf22f17f0035a8ffe5d3778c526a631dc9687da883c05a062c7391095ee"
+    }
+  ],
+  "added": [
+    {
+      "file": "SURFACE_IMPACTS_V8_README_RU.md",
+      "sha256": "40f456836e03cbc53cda1c0fe3d432c0f5a93cd247ca2678b8a5031f17c0385c"
+    },
+    {
+      "file": "docs/SURFACE_IMPACTS_QA_V8.json",
+      "sha256": "9ed599136286be0105e75338201ba40e3bf5f4f89cea0737c396997eab50e3f8"
+    },
+    {
+      "file": "docs/SURFACE_IMPACTS_V8_TINTS.png",
+      "sha256": "e091db2795f34d5132619bc73de7347cddfdc3f6f784b159e385133fc4995413"
+    },
+    {
+      "file": "js/app/impact-surfaces.js",
+      "sha256": "e3638eb8c30a856c29f1ec907fa8eebdcc59cb4b456f1a1df244ff90209d8272"
+    },
+    {
+      "file": "tools/impact-tests/maps-v8.cjs",
+      "sha256": "a3eaddaf27af6495a8cf047d4a7626a6faa584231bcb8b9f29e06d3d4bfd3725"
+    },
+    {
+      "file": "tools/impact-tests/maps-v8.json",
+      "sha256": "6b9d4a465b649aeade799e89c3b9d573dc4a70d007b81e29a3cfab71a37f9a75"
+    },
+    {
+      "file": "tools/impact-tests/surface-v8-core.json",
+      "sha256": "47bec913a984cb2cb7b1737f9434349763bbb9686dffe62d0545a69c602af1c9"
+    },
+    {
+      "file": "tools/impact-tests/surface-v8-tints.png",
+      "sha256": "e091db2795f34d5132619bc73de7347cddfdc3f6f784b159e385133fc4995413"
+    },
+    {
+      "file": "tools/impact-tests/surface-v8.cjs",
+      "sha256": "7ef756459801a7590c899fd990d7757ffc28c5188f63adedc4028caea5be7a5f"
+    },
+    {
+      "file": "tools/impact-tests/tint-v8.cjs",
+      "sha256": "ef4ec6023c46fb871cdb8fb831bb95157ab3d28791987cb9be0885a4755ead69"
+    },
+    {
+      "file": "tools/impact-tests/tint-v8.html",
+      "sha256": "620c1a63976af08600ba75a01de1177b394b016422266e28d0ac6d732c7dfacc"
+    },
+    {
+      "file": "tools/impact-tests/tint-v8.json",
+      "sha256": "4f0ff1944e474270cbf530743c7ba14af81d5fb04acfde372676d588a050e0b0"
+    }
+  ]
+}

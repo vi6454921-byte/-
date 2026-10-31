@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "scope": "Finite bounded dynamics, connected joints and cleanup under strong multidirectional pushes / a 2m drop. Falling is permitted. Does NOT certify get-up, gait, whole-game integration or FPS.",
+  "rows": [
+    {
+      "name": "forward_60Ns",
+      "durationSeconds": 12,
+      "finiteSamples": 13680,
+      "maxGap": 0.04936968952650694,
+      "maxTilt": 2.1677744067681184,
+      "state": "fallen",
+      "rigMode": "impulse",
+      "physicalModeChanges": 1
+    },
+    {
+      "name": "backward_60Ns",
+      "durationSeconds": 12,
+      "finiteSamples": 13680,
+      "maxGap": 9.238020836636066e-8,
+      "maxTilt": 0.14553451635762746,
+      "state": "standing",
+      "rigMode": "articulated",
+      "physicalModeChanges": 0
+    },
+    {
+      "name": "lateral_100Ns",
+      "durationSeconds": 12,
+      "finiteSamples": 13680,
+      "maxGap": 8.189512465477998e-8,
+      "maxTilt": 0.12857170037366475,
+      "state": "standing",
+      "rigMode": "articulated",
+      "physicalModeChanges": 0
+    },
+    {
+      "name": "diagonal_100Ns",
+      "durationSeconds": 12,
+      "finiteSamples": 13680,
+      "maxGap": 8.293033397200258e-8,
+      "maxTilt": 0.17091556638656646,
+      "state": "standing",
+      "rigMode": "articulated",
+      "physicalModeChanges": 0
+    },
+    {
+      "name": "airborne_2m",
+      "durationSeconds": 12,
+      "finiteSamples": 13680,
+      "maxGap": 1.3407694715423155e-7,
+      "maxTilt": 0.5687832244377222,
+      "state": "standing",
+      "rigMode": "articulated",
+      "physicalModeChanges": 0
+    }
+  ]
+}

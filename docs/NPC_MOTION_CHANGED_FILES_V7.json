@@ -1,0 +1,134 @@
+[
+  {
+    "path": "NPC_MOTION_V7_README_RU.md",
+    "status": "added",
+    "sha256": "0cf9facd4fbe300aaefa99f48a904dcc2d63e21e6c39019c5e8134f17c0026f3",
+    "bytes": 9483
+  },
+  {
+    "path": "README.md",
+    "status": "modified",
+    "sha256": "9f36340743aab8b55bfd0a0e3e8fad5197b3d835af7660121c018e260e5bbb7c",
+    "bytes": 4512
+  },
+  {
+    "path": "docs/NPC_MOTION_QA_V7.json",
+    "status": "added",
+    "sha256": "96a972893f68363b77e1d09f8fe83f21149370430926ee76fe1e8c11a6e26c53",
+    "bytes": 63764
+  },
+  {
+    "path": "docs/NPC_MOTION_V7_FRAMES.jpg",
+    "status": "added",
+    "sha256": "5bea1ac62d0212d06391b1a25abe2466256958477f1df77e74f20d58a80bd1e2",
+    "bytes": 61074
+  },
+  {
+    "path": "js/advanced/animator.js",
+    "status": "modified",
+    "sha256": "c03cc0dbed0f63954f51f3f3c6dbc52029d42f62b0d585a18ba9498a12354bde",
+    "bytes": 30096
+  },
+  {
+    "path": "js/app/teams.js",
+    "status": "modified",
+    "sha256": "2eaaed463a43d2e9fb3d859ad52aa64502606b07a49b63043e5e8eaf4c3a1e18",
+    "bytes": 42169
+  },
+  {
+    "path": "js/polygon/20_player.js",
+    "status": "modified",
+    "sha256": "9d419bb950ef10968146111edf8393da466765309fe93bb7e84a0144ee0ff22d",
+    "bytes": 61616
+  },
+  {
+    "path": "js/polygon/29_game.js",
+    "status": "modified",
+    "sha256": "da115d11d71d19deda8f016d0ef688d725346dca03087046660abb50c5422f27",
+    "bytes": 370829
+  },
+  {
+    "path": "package-lock.json",
+    "status": "modified",
+    "sha256": "7ab01c40e26e90bf4bc715a52f39d05feb0015d56fb1c4b870edcb8170990e17",
+    "bytes": 809
+  },
+  {
+    "path": "package.json",
+    "status": "modified",
+    "sha256": "4686a3ec2b3b497882f04378c71a966454c6d5aa9b7306dec2b422b4e719db55",
+    "bytes": 2371
+  },
+  {
+    "path": "src/advanced/animator.ts",
+    "status": "modified",
+    "sha256": "b95b13837450f50f882ae3640bc90f4e0a5e97e259656dcdc13204cc82e4e444",
+    "bytes": 26919
+  },
+  {
+    "path": "tools/advanced-tests/locomotion-v5-core.json",
+    "status": "modified",
+    "sha256": "5e1b098cd0b7180d1c103007c62aa6e68c62e85e1e0a3f46b9384d86e96b3a45",
+    "bytes": 7184
+  },
+  {
+    "path": "tools/advanced-tests/navigation.json",
+    "status": "modified",
+    "sha256": "31cd74a1667c8c4603b1f6e9df47b8f3db062f969cc412d3ded3e2b81d674b3d",
+    "bytes": 6704
+  },
+  {
+    "path": "tools/advanced-tests/npc-v7-after.json",
+    "status": "added",
+    "sha256": "e1f5a53ff54865f5a16111d1810880efd946b5046465c972042eeb2d71f561fa",
+    "bytes": 9433
+  },
+  {
+    "path": "tools/advanced-tests/npc-v7-before.json",
+    "status": "added",
+    "sha256": "01232eda64824a153fb0c631a15975abc9495c62e68c7764ec73705eb59b3c7a",
+    "bytes": 8911
+  },
+  {
+    "path": "tools/advanced-tests/npc-v7-browser.cjs",
+    "status": "added",
+    "sha256": "4dded132deb742eea6382dbd672654eeead78ef262020528f6dccb9d3f65fe29",
+    "bytes": 6029
+  },
+  {
+    "path": "tools/advanced-tests/npc-v7-core.json",
+    "status": "added",
+    "sha256": "5a1ed5d49e429b74dd7f6557fed62f79bb2ea1712169f9bec1eb0f118b1a2761",
+    "bytes": 3333
+  },
+  {
+    "path": "tools/advanced-tests/npc-v7-visual.cjs",
+    "status": "added",
+    "sha256": "dd65f10ce2b87abeef307eb7b47737d94a0cc60b08826bb3d415e254542a96d6",
+    "bytes": 3622
+  },
+  {
+    "path": "tools/advanced-tests/npc-v7.cjs",
+    "status": "added",
+    "sha256": "b277edeaad1a3ab17965a9b329deca51a1cf0895178ab2c3327ec494cfbb59e7",
+    "bytes": 1842
+  },
+  {
+    "path": "tools/advanced-tests/ragdoll-v6-browser.json",
+    "status": "modified",
+    "sha256": "d94d85b4c208a48d4599d48a5a4db299c68ade1a0f9708c532e8c5f7cac45399",
+    "bytes": 4577
+  },
+  {
+    "path": "tools/advanced-tests/ragdoll-v6-fall.png",
+    "status": "modified",
+    "sha256": "3cf441d89ee6bb31c21a0f2bcf342adcf7cc165fcfc6b2c2cc5f17ae6d9a4b33",
+    "bytes": 84877
+  },
+  {
+    "path": "tools/advanced-tests/trace-bvh.json",
+    "status": "modified",
+    "sha256": "2d7496027f966ff1ebf6eb34499690ee2b070a1ce834c4e230226f1a31bb2c98",
+    "bytes": 793
+  }
+]

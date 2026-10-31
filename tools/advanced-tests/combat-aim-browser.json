@@ -1,0 +1,215 @@
+{
+  "result": {
+    "spawn": {
+      "x": -11.5,
+      "y": 0,
+      "z": 10.5
+    },
+    "before": 0,
+    "wounds": [
+      {
+        "key": "aortD",
+        "name": "аорта",
+        "art": true,
+        "comp": "none",
+        "zone": "thorax",
+        "side": "",
+        "rate": 128,
+        "tau": 0,
+        "tq": false,
+        "dressed": 0,
+        "central": true
+      },
+      {
+        "key": "lungL",
+        "name": "левое лёгкое",
+        "art": false,
+        "comp": "none",
+        "side": "",
+        "rate": 4,
+        "tau": 600,
+        "tq": false,
+        "dressed": 0,
+        "central": false
+      },
+      {
+        "key": "liver",
+        "name": "печень",
+        "art": false,
+        "comp": "none",
+        "side": "",
+        "rate": 19.200000000000003,
+        "tau": 900,
+        "tq": false,
+        "dressed": 0,
+        "central": false
+      },
+      {
+        "key": "stom",
+        "name": "желудок",
+        "art": false,
+        "comp": "none",
+        "side": "",
+        "rate": 1.6,
+        "tau": 120,
+        "tq": false,
+        "dressed": 0,
+        "central": false
+      },
+      {
+        "key": "soft_thorax",
+        "name": "рана · грудь",
+        "art": false,
+        "comp": "chest",
+        "zone": "thorax",
+        "side": "",
+        "rate": 0.6824159049473363,
+        "tau": 150,
+        "tq": false,
+        "dressed": 0,
+        "central": false
+      },
+      {
+        "key": "int_thorax",
+        "name": "внутреннее кровотечение · грудь",
+        "art": false,
+        "comp": "none",
+        "zone": "thorax",
+        "side": "",
+        "rate": 3.308236039593192,
+        "tau": 900,
+        "tq": false,
+        "dressed": 0,
+        "central": false
+      }
+    ],
+    "after": 6,
+    "dead": true,
+    "collapsed": true,
+    "shots": [
+      {
+        "key": "delta_1",
+        "ads": 0.8301404853128989,
+        "pitch": -0.021015690130128318,
+        "miss": 0.019481391437902715,
+        "along": 12.198381576129153,
+        "observedHeight": 1.25,
+        "targetCrouch": 0,
+        "targetProne": 0
+      },
+      {
+        "key": "delta_1",
+        "ads": 1,
+        "pitch": -0.007388701595931273,
+        "miss": 0.008012184966536617,
+        "along": 12.271276354988323,
+        "observedHeight": 1.25,
+        "targetCrouch": 0,
+        "targetProne": 0
+      }
+    ],
+    "ai": {
+      "checks": 286,
+      "shots": 2,
+      "decisions": 22,
+      "friendlyBlocks": 0,
+      "hearing": 3,
+      "coverTests": 0,
+      "paths": 3,
+      "expanded": 0,
+      "queued": 0,
+      "cachedNav": 0,
+      "navigation": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 3,
+        "complete": 3,
+        "projected": 0,
+        "partial": 0,
+        "unreachable": 0,
+        "builds": 1,
+        "buildMs": 353.79999999981374,
+        "triangles": 13774,
+        "bytes": 274040,
+        "errors": 0,
+        "tiles": 20,
+        "polygons": 1644,
+        "lastError": ""
+      },
+      "modes": [
+        {
+          "key": "delta_1",
+          "mode": "overwatch",
+          "role": 0
+        },
+        {
+          "key": "delta_2",
+          "mode": "idle",
+          "role": 1
+        },
+        {
+          "key": "delta_soldier_0",
+          "mode": "idle",
+          "role": 2
+        },
+        {
+          "key": "delta_soldier_1",
+          "mode": "idle",
+          "role": 0
+        },
+        {
+          "key": "delta_soldier_2",
+          "mode": "idle",
+          "role": 1
+        },
+        {
+          "key": "delta_soldier_3",
+          "mode": "idle",
+          "role": 2
+        },
+        {
+          "key": "alpha_1",
+          "mode": "idle",
+          "role": 0
+        },
+        {
+          "key": "alpha_2",
+          "mode": "idle",
+          "role": 1
+        },
+        {
+          "key": "alpha_soldier_0",
+          "mode": "idle",
+          "role": 2
+        },
+        {
+          "key": "alpha_soldier_1",
+          "mode": "idle",
+          "role": 0
+        },
+        {
+          "key": "alpha_soldier_2",
+          "mode": "idle",
+          "role": 1
+        },
+        {
+          "key": "alpha_soldier_3",
+          "mode": "idle",
+          "role": 2
+        }
+      ]
+    },
+    "geometry": {
+      "geometries": 163,
+      "triangles": 380156,
+      "buildMs": 245.8000000002794,
+      "failures": 0,
+      "backend": "three-mesh-bvh 0.9.2",
+      "enabled": true
+    }
+  },
+  "errors": []
+}

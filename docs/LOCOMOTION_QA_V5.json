@@ -1,0 +1,789 @@
+{
+  "patch": "locomotion-v5",
+  "base": "AEGIS_M4_Glock21_v4.zip",
+  "environment": "Local Chromium / SwiftShader; synthetic isolated support surface, no physical-GPU FPS claim",
+  "browser": {
+    "result": {
+      "cases": [
+        {
+          "name": "walk",
+          "dt": 0.016666666666666666,
+          "maxError": 4.457018551991718e-08,
+          "maxPlantSlip": 2.432213742722182e-08,
+          "maxJump": 0.14486354618100775,
+          "minGap": -1.8173980750879615e-08,
+          "maxDrop": 0.2762308121302629,
+          "finite": true,
+          "hipYawRange": 0.1342292913892929,
+          "chestYawRange": 0.04698001109046777,
+          "phase": 5.557079041309086
+        },
+        {
+          "name": "run",
+          "dt": 0.016666666666666666,
+          "maxError": 7.796571852592173e-08,
+          "maxPlantSlip": 2.641194684284556e-08,
+          "maxJump": 0.18943414185582025,
+          "minGap": -3.029846361302102e-08,
+          "maxDrop": 0.27299067154501844,
+          "finite": true,
+          "hipYawRange": 0.22046683040471787,
+          "chestYawRange": 0.07716200591137712,
+          "phase": 7.153676998951081
+        },
+        {
+          "name": "back",
+          "dt": 0.016666666666666666,
+          "maxError": 6.882841319280532e-08,
+          "maxPlantSlip": 1.9308865962285198e-08,
+          "maxJump": 0.11651576111426523,
+          "minGap": -2.8518145830935815e-08,
+          "maxDrop": 0.228049949201252,
+          "finite": true,
+          "hipYawRange": 0.12713476116030092,
+          "chestYawRange": 0.04449699140575025,
+          "phase": 5.0361867527574065
+        },
+        {
+          "name": "strafe",
+          "dt": 0.016666666666666666,
+          "maxError": 5.167383954760258e-08,
+          "maxPlantSlip": 4.7279765193782105e-08,
+          "maxJump": 0.144863547021154,
+          "minGap": -2.43783516012952e-08,
+          "maxDrop": 0.2240866576262146,
+          "finite": true,
+          "hipYawRange": 0.6185192497555791,
+          "chestYawRange": 0.21648178751861663,
+          "phase": 5.557079041309086
+        },
+        {
+          "name": "crouch",
+          "dt": 0.016666666666666666,
+          "maxError": 1.4321508443691697e-07,
+          "maxPlantSlip": 9.748514673220604e-08,
+          "maxJump": 0.09308904840089174,
+          "minGap": -6.485396707167634e-08,
+          "maxDrop": 0,
+          "finite": true,
+          "hipYawRange": 0.043338665450200306,
+          "chestYawRange": 0.015168531062130565,
+          "phase": 5.455686103858372
+        },
+        {
+          "name": "turn",
+          "dt": 0.016666666666666666,
+          "maxError": 7.627436526386494e-08,
+          "maxPlantSlip": 5.1631003547617976e-08,
+          "maxJump": 0.14818948612685404,
+          "minGap": -4.684069618288156e-09,
+          "maxDrop": 0.2802630680919671,
+          "finite": true,
+          "hipYawRange": 1.2337327030489327,
+          "chestYawRange": 0.4318062926028067,
+          "phase": 5.557079041309101
+        },
+        {
+          "name": "stop",
+          "dt": 0.016666666666666666,
+          "maxError": 0.0007104225536233922,
+          "maxPlantSlip": 0.0007006187358858234,
+          "maxJump": 0.164636382235848,
+          "minGap": -3.069275410216843e-08,
+          "maxDrop": 0.32,
+          "finite": true,
+          "hipYawRange": 0.19761658084912828,
+          "chestYawRange": 0.0691647346675823,
+          "phase": 4.46416247820491
+        },
+        {
+          "name": "start",
+          "dt": 0.016666666666666666,
+          "maxError": 9.861633079040761e-08,
+          "maxPlantSlip": 4.907345596396007e-08,
+          "maxJump": 0.19590559028469648,
+          "minGap": -2.483606352521317e-08,
+          "maxDrop": 0.32,
+          "finite": true,
+          "hipYawRange": 0.2204102084802293,
+          "chestYawRange": 0.07714182855241236,
+          "phase": 6.462133306491189
+        },
+        {
+          "name": "walk",
+          "dt": 0.03333333333333333,
+          "maxError": 5.388081487344874e-08,
+          "maxPlantSlip": 1.8723074472602995e-08,
+          "maxJump": 0.2890233081130421,
+          "minGap": -1.3526086625748057e-08,
+          "maxDrop": 0.2656487936006975,
+          "finite": true,
+          "hipYawRange": 0.13382086082407235,
+          "chestYawRange": 0.04683708442809108,
+          "phase": 5.534664484650879
+        },
+        {
+          "name": "run",
+          "dt": 0.03333333333333333,
+          "maxError": 1.0456930509555894e-07,
+          "maxPlantSlip": 4.030324139606292e-08,
+          "maxJump": 0.3779732683733654,
+          "minGap": -1.3707784504712883e-08,
+          "maxDrop": 0.27565914342396614,
+          "finite": true,
+          "hipYawRange": 0.21941450413435154,
+          "chestYawRange": 0.07679358608302123,
+          "phase": 7.124582116110318
+        },
+        {
+          "name": "back",
+          "dt": 0.03333333333333333,
+          "maxError": 7.519594687493216e-08,
+          "maxPlantSlip": 3.658514797855048e-08,
+          "maxJump": 0.2319786612946728,
+          "minGap": -8.725150255073366e-09,
+          "maxDrop": 0.22756963930613727,
+          "finite": true,
+          "hipYawRange": 0.126841275489735,
+          "chestYawRange": 0.04439430539833908,
+          "phase": 5.015951661741658
+        },
+        {
+          "name": "strafe",
+          "dt": 0.03333333333333333,
+          "maxError": 8.504881997692851e-08,
+          "maxPlantSlip": 5.183213574310892e-08,
+          "maxJump": 0.2890232988062139,
+          "minGap": -1.0598911234782626e-08,
+          "maxDrop": 0.21157223719457563,
+          "finite": true,
+          "hipYawRange": 0.6024708051795092,
+          "chestYawRange": 0.2108645598020019,
+          "phase": 5.534664484650879
+        },
+        {
+          "name": "crouch",
+          "dt": 0.03333333333333333,
+          "maxError": 2.421681665310041e-07,
+          "maxPlantSlip": 2.207233665668713e-07,
+          "maxJump": 0.18395745833723806,
+          "minGap": -4.854061817771704e-08,
+          "maxDrop": 0,
+          "finite": true,
+          "hipYawRange": 0.043218463586860295,
+          "chestYawRange": 0.015126447525290425,
+          "phase": 5.4336957854322
+        },
+        {
+          "name": "turn",
+          "dt": 0.03333333333333333,
+          "maxError": 9.028474734114265e-08,
+          "maxPlantSlip": 1.0107768929959852e-07,
+          "maxJump": 0.29563199355656805,
+          "minGap": -1.8578301438920697e-08,
+          "maxDrop": 0.26732593397352844,
+          "finite": true,
+          "hipYawRange": 1.2322945714198654,
+          "chestYawRange": 0.4313026960181357,
+          "phase": 5.53466448465089
+        },
+        {
+          "name": "stop",
+          "dt": 0.03333333333333333,
+          "maxError": 0.0007536804034728285,
+          "maxPlantSlip": 0.0007413589209110869,
+          "maxJump": 0.319668613259905,
+          "minGap": -5.747130925326527e-08,
+          "maxDrop": 0.31270663436728685,
+          "finite": true,
+          "hipYawRange": 0.1967010403713425,
+          "chestYawRange": 0.06884434001615007,
+          "phase": 4.452202530407186
+        },
+        {
+          "name": "start",
+          "dt": 0.03333333333333333,
+          "maxError": 1.6227064265456396e-07,
+          "maxPlantSlip": 7.690599544253618e-08,
+          "maxJump": 0.3909480087161481,
+          "minGap": -1.7697291618268274e-08,
+          "maxDrop": 0.30867652974615134,
+          "finite": true,
+          "hipYawRange": 0.21916765453288956,
+          "chestYawRange": 0.07670726869300828,
+          "phase": 6.445394164831056
+        },
+        {
+          "name": "walk",
+          "dt": 0.05,
+          "maxError": 7.903696550166298e-08,
+          "maxPlantSlip": 3.9761979783120565e-08,
+          "maxJump": 0.3887935679527582,
+          "minGap": -9.555754562629026e-09,
+          "maxDrop": 0.23385820548240643,
+          "finite": true,
+          "hipYawRange": 0.1327337097464545,
+          "chestYawRange": 0.046456600085797425,
+          "phase": 5.512249927992689
+        },
+        {
+          "name": "run",
+          "dt": 0.05,
+          "maxError": 1.090683322255407e-07,
+          "maxPlantSlip": 6.505045228980687e-08,
+          "maxJump": 0.5646933272012857,
+          "minGap": 8.498126230493952e-10,
+          "maxDrop": 0.2779654733885618,
+          "finite": true,
+          "hipYawRange": 0.21670605261442794,
+          "chestYawRange": 0.07584577759627195,
+          "phase": 7.095487233269467
+        },
+        {
+          "name": "back",
+          "dt": 0.05,
+          "maxError": 7.343155749600763e-08,
+          "maxPlantSlip": 3.240566114229131e-08,
+          "maxJump": 0.34350139723163486,
+          "minGap": -6.124824966646791e-09,
+          "maxDrop": 0.20925705033248232,
+          "finite": true,
+          "hipYawRange": 0.1259496502129081,
+          "chestYawRange": 0.044082243577993174,
+          "phase": 4.995716570725958
+        },
+        {
+          "name": "strafe",
+          "dt": 0.05,
+          "maxError": 8.977592971063825e-08,
+          "maxPlantSlip": 3.938114821396327e-08,
+          "maxJump": 0.38879355147129957,
+          "minGap": -3.1340162950921346e-08,
+          "maxDrop": 0.20666338306937337,
+          "finite": true,
+          "hipYawRange": 0.5753395662569735,
+          "chestYawRange": 0.2013689974952808,
+          "phase": 5.512249927992689
+        },
+        {
+          "name": "crouch",
+          "dt": 0.05,
+          "maxError": 1.7121049389149204e-07,
+          "maxPlantSlip": 1.2180587837517612e-07,
+          "maxJump": 0.24712478712357858,
+          "minGap": -2.0936633912671532e-08,
+          "maxDrop": 0,
+          "finite": true,
+          "hipYawRange": 0.042826138378646024,
+          "chestYawRange": 0.014989151626910608,
+          "phase": 5.411705467006011
+        },
+        {
+          "name": "turn",
+          "dt": 0.05,
+          "maxError": 9.663020036578167e-08,
+          "maxPlantSlip": 1.0524135795359552e-07,
+          "maxJump": 0.4175164504020593,
+          "minGap": -1.0002824943344812e-08,
+          "maxDrop": 0.23942853871500192,
+          "finite": true,
+          "hipYawRange": 1.2317578801716946,
+          "chestYawRange": 0.43111479984493817,
+          "phase": 5.512249927992689
+        },
+        {
+          "name": "stop",
+          "dt": 0.05,
+          "maxError": 0.0008131052169700863,
+          "maxPlantSlip": 0.0008130290214588133,
+          "maxJump": 0.47731332422314754,
+          "minGap": -2.7861640480852934e-08,
+          "maxDrop": 0.26282865715490866,
+          "finite": true,
+          "hipYawRange": 0.19438206808735461,
+          "chestYawRange": 0.06803253865500171,
+          "phase": 4.436958412983427
+        },
+        {
+          "name": "start",
+          "dt": 0.05,
+          "maxError": 1.4265154771463037e-07,
+          "maxPlantSlip": 4.454326497593791e-08,
+          "maxJump": 0.5761159642989281,
+          "minGap": 1.7472510799310115e-09,
+          "maxDrop": 0.32,
+          "finite": true,
+          "hipYawRange": 0.2166360902811432,
+          "chestYawRange": 0.07582088886296162,
+          "phase": 6.436352161871263
+        }
+      ],
+      "samples": [
+        {
+          "i": 80,
+          "phase": 2.5275906272639688,
+          "feet": {
+            "R": {
+              "target": [
+                0.13723,
+                0.24003266060299566,
+                -5.592125318721451
+              ],
+              "plant": false
+            },
+            "L": {
+              "target": [
+                -0.13723,
+                0.10375002384185793,
+                -6.591870341307872
+              ],
+              "plant": true
+            }
+          }
+        },
+        {
+          "i": 90,
+          "phase": 2.8185394556719663,
+          "feet": {
+            "R": {
+              "target": [
+                0.13723,
+                0.2827174538744052,
+                -7.324079440196453
+              ],
+              "plant": false
+            },
+            "L": {
+              "target": [
+                -0.13723,
+                0.11082433842265069,
+                -6.591870341307872
+              ],
+              "plant": true
+            }
+          }
+        },
+        {
+          "i": 100,
+          "phase": 3.109488284079964,
+          "feet": {
+            "R": {
+              "target": [
+                0.13723,
+                0.10375002384185793,
+                -7.895077742902777
+              ],
+              "plant": true
+            },
+            "L": {
+              "target": [
+                -0.13723,
+                0.2995031491706836,
+                -7.323195154101383
+              ],
+              "plant": false
+            }
+          }
+        },
+        {
+          "i": 110,
+          "phase": 3.400437112487961,
+          "feet": {
+            "R": {
+              "target": [
+                0.13723,
+                0.10425354084195798,
+                -7.895081890893115
+              ],
+              "plant": false
+            },
+            "L": {
+              "target": [
+                -0.13723,
+                0.2133136772266005,
+                -9.006796968805695
+              ],
+              "plant": false
+            }
+          }
+        }
+      ],
+      "finiteSquad": true,
+      "weapons": true
+    },
+    "errors": []
+  },
+  "core": {
+    "rows": [
+      {
+        "dt": 0.016666666666666666,
+        "speed": 1.5,
+        "maxJump": 0.11632190438187863,
+        "maxError": 5.4437161269171144e-08,
+        "maxSlip": 1.725692983695431e-08,
+        "minGap": -1.0383559609361548e-08,
+        "maxDrop": 0.2130255906240648,
+        "worst": {
+          "i": 32,
+          "side": "R",
+          "phase": 0.837992721720991,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.13723000009010497,
+            0.20373560547458158,
+            -0.7158239071845208
+          ],
+          "to": [
+            0.1372300000116673,
+            0.20251983668770612,
+            -0.8321394579302563
+          ],
+          "target": [
+            0.13723,
+            0.20251983608592544,
+            -0.8321394576130081
+          ],
+          "drop": 0.0705744255594417
+        }
+      },
+      {
+        "dt": 0.016666666666666666,
+        "speed": 2.55,
+        "maxJump": 0.15553656402628943,
+        "maxError": 6.153696796493724e-08,
+        "maxSlip": 2.479878779244619e-08,
+        "minGap": -1.2645172839387264e-08,
+        "maxDrop": 0.2661935671562815,
+        "worst": {
+          "i": 24,
+          "side": "R",
+          "phase": 0.7901341282846033,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.13722999991958446,
+            0.24400598293359343,
+            -0.889394791922343
+          ],
+          "to": [
+            0.13722999988024884,
+            0.2442249002339873,
+            -1.044931201885797
+          ],
+          "target": [
+            0.13723,
+            0.24422489821565893,
+            -1.044931200354885
+          ],
+          "drop": 0.08738815528228806
+        }
+      },
+      {
+        "dt": 0.016666666666666666,
+        "speed": 4.55,
+        "maxJump": 0.189437032560989,
+        "maxError": 7.743860068699258e-08,
+        "maxSlip": 2.8137333364479653e-08,
+        "minGap": -2.3799557477555133e-08,
+        "maxDrop": 0.23050446957963855,
+        "worst": {
+          "i": 140,
+          "side": "L",
+          "phase": 4.213333333333335,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            -0.1372299999703028,
+            0.32304139148215516,
+            -10.555911961316207
+          ],
+          "to": [
+            -0.13723000001013486,
+            0.32321411245459486,
+            -10.745348915137205
+          ],
+          "target": [
+            -0.13723,
+            0.32321411489901913,
+            -10.74534891696178
+          ],
+          "drop": 0.07797036602753857
+        }
+      },
+      {
+        "dt": 0.03333333333333333,
+        "speed": 1.5,
+        "maxJump": 0.2323526437047915,
+        "maxError": 3.75618531656572e-08,
+        "maxSlip": 1.4281678758935479e-08,
+        "minGap": -5.283288667667918e-10,
+        "maxDrop": 0.19716636053940872,
+        "worst": {
+          "i": 16,
+          "side": "R",
+          "phase": 0.8379927217209907,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.13722999998349564,
+            0.20193234755063078,
+            -0.6247875621571558
+          ],
+          "to": [
+            0.1372299996764474,
+            0.20251984602224282,
+            -0.8571394631223763
+          ],
+          "target": [
+            0.13723,
+            0.20251983608592544,
+            -0.8571394576130066
+          ],
+          "drop": 0.06753644346295291
+        }
+      },
+      {
+        "dt": 0.03333333333333333,
+        "speed": 2.55,
+        "maxJump": 0.3089833990298259,
+        "maxError": 5.403703438562816e-08,
+        "maxSlip": 1.649919701998234e-08,
+        "minGap": -4.95340889139495e-09,
+        "maxDrop": 0.17748379134307046,
+        "worst": {
+          "i": 12,
+          "side": "R",
+          "phase": 0.790134128284603,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.13722999973761518,
+            0.23951039400764157,
+            -0.7784837759177337
+          ],
+          "to": [
+            0.13722999969768815,
+            0.2442249052131728,
+            -1.0874312055236741
+          ],
+          "target": [
+            0.13723,
+            0.24422489821565896,
+            -1.0874312003548834
+          ],
+          "drop": 0.08326098328741796
+        }
+      },
+      {
+        "dt": 0.03333333333333333,
+        "speed": 4.55,
+        "maxJump": 0.37801082226749977,
+        "maxError": 8.30982398038021e-08,
+        "maxSlip": 3.422580073486248e-08,
+        "minGap": -2.2355150994246564e-08,
+        "maxDrop": 0.23040776353773318,
+        "worst": {
+          "i": 79,
+          "side": "R",
+          "phase": 4.7293333333333365,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.13723000000237942,
+            0.32138994259720044,
+            -11.871099714462952
+          ],
+          "to": [
+            0.13723000020721096,
+            0.32116027715657375,
+            -12.249110466962318
+          ],
+          "target": [
+            0.13723,
+            0.321160267760099,
+            -12.249110461607192
+          ],
+          "drop": 0.07655070602166149
+        }
+      },
+      {
+        "dt": 0.05,
+        "speed": 1.5,
+        "maxJump": 0.34610285852625433,
+        "maxError": 3.7187122874158165e-08,
+        "maxSlip": 1.3918620028724249e-08,
+        "minGap": -1.3055743749990079e-08,
+        "maxDrop": 0.13226045580043078,
+        "worst": {
+          "i": 11,
+          "side": "R",
+          "phase": 0.8579299942747712,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.13722999991004567,
+            0.20193234942464117,
+            -0.649787563806361
+          ],
+          "to": [
+            0.1372300001798411,
+            0.19832173712054374,
+            -0.9958715885154393
+          ],
+          "target": [
+            0.13723,
+            0.1983217408967411,
+            -0.9958715899299893
+          ],
+          "drop": 0.05950703391371696
+        }
+      },
+      {
+        "dt": 0.05,
+        "speed": 2.55,
+        "maxJump": 0.428831269679936,
+        "maxError": 4.573937690261206e-08,
+        "maxSlip": 1.840686102513015e-08,
+        "minGap": -1.6104947639372647e-08,
+        "maxDrop": 0.17758944483837502,
+        "worst": {
+          "i": 49,
+          "side": "R",
+          "phase": 3.8145715357431946,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            0.1372299999678547,
+            0.23946967140539888,
+            -6.091257296221677
+          ],
+          "to": [
+            0.1372299999561756,
+            0.240198457919089,
+            -6.5200879466252175
+          ],
+          "target": [
+            0.13723,
+            0.24019845208008728,
+            -6.52008794453117
+          ],
+          "drop": 0.06429372620116051
+        }
+      },
+      {
+        "dt": 0.05,
+        "speed": 4.55,
+        "maxJump": 0.5648490385947014,
+        "maxError": 1.0614355926996063e-07,
+        "maxSlip": 1.0662654897979527e-07,
+        "minGap": -2.5340845352661567e-08,
+        "maxDrop": 0.23007460222935605,
+        "worst": {
+          "i": 47,
+          "side": "L",
+          "phase": 4.2419999999999956,
+          "plant": false,
+          "prevPlant": false,
+          "from": [
+            -0.1372299999966875,
+            0.3179373836047801,
+            -10.5199934729379
+          ],
+          "to": [
+            -0.13722999966379557,
+            0.31845173252331804,
+            -11.084842277350681
+          ],
+          "target": [
+            -0.13723,
+            0.31845171146838347,
+            -11.084842267441832
+          ],
+          "drop": 0.07777279142237704
+        }
+      }
+    ]
+  },
+  "modelPoseRegression": {
+    "poses": 120,
+    "errors": []
+  },
+  "weaponRegression": {
+    "result": {
+      "reports": [
+        {
+          "id": "ar15m4",
+          "cap": 30,
+          "cal": "556",
+          "fired": true,
+          "emptyReload": {
+            "mag": 29,
+            "chamber": 1,
+            "reserve": 90
+          },
+          "tacticalReload": {
+            "mag": 30,
+            "chamber": 1
+          },
+          "mass": 4,
+          "diameter": 5.7,
+          "modes": [
+            "safe",
+            "semi",
+            "auto"
+          ],
+          "finite": true
+        },
+        {
+          "id": "glock21",
+          "cap": 13,
+          "cal": "45acp",
+          "fired": true,
+          "emptyReload": {
+            "mag": 12,
+            "chamber": 1,
+            "reserve": 39
+          },
+          "tacticalReload": {
+            "mag": 13,
+            "chamber": 1
+          },
+          "mass": 14.9,
+          "diameter": 11.43,
+          "modes": [
+            "semi"
+          ],
+          "finite": true
+        }
+      ],
+      "modelsLoaded": 2,
+      "marks": true,
+      "world": "angar_map"
+    },
+    "errors": []
+  },
+  "unchangedFromV4": {
+    "vendor/bullet-impacts/Decals.ts": true,
+    "vendor/bullet-impacts/bullet-impacts.js": true,
+    "js/polygon/18_fx.js": true,
+    "js/polygon/03_viewmodel_vm.js": true,
+    "js/advanced/combat.js": true
+  },
+  "unitRegressions": {
+    "continuation": "passed",
+    "contact-rig": "passed",
+    "traction": "passed",
+    "trace-bvh": "passed",
+    "navigation": "passed",
+    "brass": "passed",
+    "active-body": "passed 15 infrastructure scenarios, not gait acceptance",
+    "runtime": "Known pre-existing failure at runtime.cjs:167: occluded target position is not tracked; reproduced from unchanged v4 archive, combat.js byte-identical. Therefore npm test does not pass as a whole."
+  },
+  "limitations": [
+    "Normal gameplay remains hybrid animation / analytic IK / Rapier, not a fully dynamic self-balancing character.",
+    "Browser gait tests use one full character on a flat support surface; separate pose regression checks 120 configurations, not every moving character/terrain/action combination.",
+    "No claim of zero clothing/foot intersections on all obstacles, or of a measured GPU FPS improvement.",
+    "One parallel Chromium gait run exhausted the page process; the final isolated rerun completed with no page errors."
+  ]
+}

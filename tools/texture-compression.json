@@ -1,0 +1,79 @@
+[
+  {
+    "key": "mud_diff",
+    "w": 1024,
+    "h": 1024,
+    "mips": 11,
+    "psnr": 37.39,
+    "rawGPUBytes": 4194304,
+    "compressedBytes": 699064,
+    "included": true,
+    "rgbaWithMipsBytes": 5592404
+  },
+  {
+    "key": "paint_diff",
+    "w": 512,
+    "h": 512,
+    "mips": 10,
+    "psnr": 44.78,
+    "rawGPUBytes": 1048576,
+    "compressedBytes": 174776,
+    "included": true,
+    "rgbaWithMipsBytes": 1398100
+  },
+  {
+    "key": "planks_diff",
+    "w": 1024,
+    "h": 1024,
+    "mips": 11,
+    "psnr": 41.74,
+    "rawGPUBytes": 4194304,
+    "compressedBytes": 699064,
+    "included": true,
+    "rgbaWithMipsBytes": 5592404
+  },
+  {
+    "key": "rock_diff",
+    "w": 1024,
+    "h": 1024,
+    "mips": 11,
+    "psnr": 33.21,
+    "rawGPUBytes": 4194304,
+    "compressedBytes": 699064,
+    "included": true,
+    "rgbaWithMipsBytes": 5592404
+  },
+  {
+    "key": "rust_diff",
+    "w": 512,
+    "h": 512,
+    "mips": 10,
+    "psnr": 40.96,
+    "rawGPUBytes": 1048576,
+    "compressedBytes": 174776,
+    "included": true,
+    "rgbaWithMipsBytes": 1398100
+  },
+  {
+    "key": "rwood_diff",
+    "w": 512,
+    "h": 512,
+    "mips": 10,
+    "psnr": 36.6,
+    "rawGPUBytes": 1048576,
+    "compressedBytes": 174776,
+    "included": true,
+    "rgbaWithMipsBytes": 1398100
+  },
+  {
+    "key": "sign_diff",
+    "w": 512,
+    "h": 512,
+    "mips": 10,
+    "psnr": 34.9,
+    "rawGPUBytes": 1048576,
+    "compressedBytes": 174776,
+    "included": true,
+    "rgbaWithMipsBytes": 1398100
+  }
+]

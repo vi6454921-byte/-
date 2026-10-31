@@ -1,0 +1,13 @@
+{
+  "tests": 3000,
+  "stats": {
+    "rays": 3000,
+    "tests": 4358,
+    "itests": 0,
+    "rebuilds": 0,
+    "meshes": 150,
+    "custom": 0,
+    "dynamic": 1,
+    "topY": null
+  }
+}

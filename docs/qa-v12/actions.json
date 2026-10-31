@@ -1,0 +1,251 @@
+{
+  "rows": [
+    {
+      "title": "Прыжок",
+      "hz": 60,
+      "finite": true,
+      "styles": [],
+      "states": [
+        "load",
+        "air",
+        "land"
+      ],
+      "clips": [],
+      "maxHeight": 0.2656374334386783,
+      "minAnkle": 0.09999998987710584,
+      "maxWristStep": 0.24989195908886047,
+      "jumped": true,
+      "result": null
+    },
+    {
+      "title": "Низкое перешагивание",
+      "hz": 60,
+      "finite": true,
+      "styles": [
+        "stepOver"
+      ],
+      "states": [],
+      "clips": [],
+      "maxHeight": 0.6399999579219728,
+      "minAnkle": 0.10010001266287849,
+      "maxWristStep": 0.44687755913657257,
+      "jumped": true,
+      "result": "landed"
+    },
+    {
+      "title": "Перемах через барьер",
+      "hz": 60,
+      "finite": true,
+      "styles": [
+        "speedVault"
+      ],
+      "states": [],
+      "clips": [],
+      "maxHeight": 0.9400000294475466,
+      "minAnkle": 0.10010001266287816,
+      "maxWristStep": 0.4500655488764723,
+      "jumped": true,
+      "result": "landed"
+    },
+    {
+      "title": "Подъём на платформу",
+      "hz": 60,
+      "finite": true,
+      "styles": [
+        "mantle"
+      ],
+      "states": [],
+      "clips": [],
+      "maxHeight": 1.1400000771449412,
+      "minAnkle": 0.10010001266287799,
+      "maxWristStep": 0.41272880596261174,
+      "jumped": true,
+      "result": "landed"
+    },
+    {
+      "title": "Подъём после падения",
+      "hz": 60,
+      "finite": true,
+      "styles": [],
+      "states": [
+        "down",
+        "getting-up",
+        "stable"
+      ],
+      "clips": [
+        "getUpFront"
+      ],
+      "maxHeight": 0.025000059604644777,
+      "minAnkle": 0.03955866116268941,
+      "maxWristStep": 0.24195806972763553,
+      "jumped": false,
+      "result": null,
+      "finalBalance": "stable"
+    },
+    {
+      "title": "Прыжок",
+      "hz": 30,
+      "finite": true,
+      "styles": [],
+      "states": [
+        "load",
+        "air",
+        "land"
+      ],
+      "clips": [],
+      "maxHeight": 0.24664804004933102,
+      "minAnkle": 0.10000002478351316,
+      "maxWristStep": 0.2707437805356872,
+      "jumped": true,
+      "result": null
+    },
+    {
+      "title": "Низкое перешагивание",
+      "hz": 30,
+      "finite": true,
+      "styles": [
+        "stepOver"
+      ],
+      "states": [],
+      "clips": [],
+      "maxHeight": 0.6399999607159406,
+      "minAnkle": 0.10010001545684633,
+      "maxWristStep": 0.402910021515148,
+      "jumped": true,
+      "result": "landed"
+    },
+    {
+      "title": "Перемах через барьер",
+      "hz": 30,
+      "finite": true,
+      "styles": [
+        "speedVault"
+      ],
+      "states": [],
+      "clips": [],
+      "maxHeight": 0.9400000322415143,
+      "minAnkle": 0.10010001545684621,
+      "maxWristStep": 0.40863354047638045,
+      "jumped": true,
+      "result": "landed"
+    },
+    {
+      "title": "Подъём на платформу",
+      "hz": 30,
+      "finite": true,
+      "styles": [
+        "mantle"
+      ],
+      "states": [],
+      "clips": [],
+      "maxHeight": 1.1400000799252301,
+      "minAnkle": 0.10010001545684612,
+      "maxWristStep": 0.4045502445779373,
+      "jumped": true,
+      "result": "landed"
+    },
+    {
+      "title": "Подъём после падения",
+      "hz": 30,
+      "finite": true,
+      "styles": [],
+      "states": [
+        "down",
+        "getting-up",
+        "stable"
+      ],
+      "clips": [
+        "getUpFront"
+      ],
+      "maxHeight": 0.02500002980232239,
+      "minAnkle": 0.0395613223508805,
+      "maxWristStep": 0.2218908321209626,
+      "jumped": false,
+      "result": null,
+      "finalBalance": "stable"
+    },
+    {
+      "title": "Прыжок",
+      "hz": 20,
+      "finite": true,
+      "styles": [],
+      "states": [
+        "load",
+        "air",
+        "land"
+      ],
+      "clips": [],
+      "maxHeight": 0.22989731842826586,
+      "minAnkle": 0.10000003277615149,
+      "maxWristStep": 0.36004881480404693,
+      "jumped": true,
+      "result": null
+    },
+    {
+      "title": "Низкое перешагивание",
+      "hz": 20,
+      "finite": true,
+      "styles": [
+        "stepOver"
+      ],
+      "states": [],
+      "clips": [],
+      "maxHeight": 0.6399999616100104,
+      "minAnkle": 0.10010001545684613,
+      "maxWristStep": 0.39856709602890417,
+      "jumped": true,
+      "result": "landed"
+    },
+    {
+      "title": "Перемах через барьер",
+      "hz": 20,
+      "finite": true,
+      "styles": [
+        "speedVault"
+      ],
+      "states": [],
+      "clips": [],
+      "maxHeight": 0.9400000322415143,
+      "minAnkle": 0.10010001545684655,
+      "maxWristStep": 0.40423986075887053,
+      "jumped": true,
+      "result": "landed"
+    },
+    {
+      "title": "Подъём на платформу",
+      "hz": 20,
+      "finite": true,
+      "styles": [
+        "mantle"
+      ],
+      "states": [],
+      "clips": [],
+      "maxHeight": 1.140000079938909,
+      "minAnkle": 0.10010001545684634,
+      "maxWristStep": 0.3958710532234361,
+      "jumped": true,
+      "result": "landed"
+    },
+    {
+      "title": "Подъём после падения",
+      "hz": 20,
+      "finite": true,
+      "styles": [],
+      "states": [
+        "down",
+        "getting-up",
+        "stable"
+      ],
+      "clips": [
+        "getUpFront"
+      ],
+      "maxHeight": 0.02500002980232239,
+      "minAnkle": 0.04333445527310997,
+      "maxWristStep": 0.24290676374276302,
+      "jumped": false,
+      "result": null,
+      "finalBalance": "stable"
+    }
+  ],
+  "errors": []
+}

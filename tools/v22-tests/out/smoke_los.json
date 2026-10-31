@@ -1,0 +1,97 @@
+{
+ "pass": true,
+ "firstBlocked": 3.2,
+ "pair": [
+  "delta_2",
+  "alpha_soldier_4",
+  37
+ ],
+ "out": [
+  [
+   "start",
+   0,
+   "vis",
+   true,
+   "tau",
+   "false"
+  ],
+  [
+   "t",
+   1.6,
+   "vis",
+   true,
+   "tau",
+   "false"
+  ],
+  [
+   "t",
+   3.2,
+   "vis",
+   false,
+   "tau",
+   "true"
+  ],
+  [
+   "t",
+   4.2,
+   "vis",
+   false,
+   "tau",
+   "true"
+  ],
+  [
+   "t",
+   5.2,
+   "vis",
+   false,
+   "tau",
+   "true"
+  ],
+  [
+   "t",
+   8.2,
+   "vis",
+   false,
+   "tau",
+   "true"
+  ],
+  [
+   "t",
+   12.2,
+   "vis",
+   false,
+   "tau",
+   "true"
+  ],
+  [
+   "t",
+   20,
+   "vis",
+   false,
+   "tau",
+   "true"
+  ],
+  [
+   "t",
+   30,
+   "vis",
+   false,
+   "tau",
+   "true"
+  ],
+  [
+   "t",
+   45.1,
+   "vis",
+   false,
+   "tau",
+   "true"
+  ]
+ ],
+ "st": {
+  "clouds": 3,
+  "puffs": 170,
+  "veil": 0,
+  "max": 170
+ }
+}

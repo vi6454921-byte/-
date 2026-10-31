@@ -1,0 +1,8 @@
+READY stroyka_zarechye_v2 30 120 overlap []
+LIVE stroyka_zarechye_v2 {"checks":0,"shots":0,"paths":11,"cachedNav":3370}
+READY angar_map 3 7 overlap []
+LIVE angar_map {"checks":60,"shots":0,"paths":11,"cachedNav":395}
+READY forest_map_camp 3 7 overlap []
+LIVE forest_map_camp {"checks":0,"shots":0,"paths":11,"cachedNav":3760}
+READY null 3 7 overlap []
+PASS integrated levels, live simulation, depleted ammo, used grenade, return to training

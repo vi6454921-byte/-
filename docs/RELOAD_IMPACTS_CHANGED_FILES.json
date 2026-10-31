@@ -1,0 +1,422 @@
+[
+  {
+    "path": "NEW_WEAPONS_README_RU.md",
+    "status": "added",
+    "sha256": "3fc0a8061fd59dc46c8092c700751aa49536c26eb5a026b0ed7d5c27094b8fb3",
+    "bytes": 5809
+  },
+  {
+    "path": "README.md",
+    "status": "modified",
+    "sha256": "e79adb8c1ae7789b3fdd160420b3892957b31c2603e5fabd4d04b02bfb072e34",
+    "bytes": 3346
+  },
+  {
+    "path": "RELOAD_IMPACTS_README_RU.md",
+    "status": "added",
+    "sha256": "c21e2f4a75d0efc17f8e34233013c78d2ce797dc8673dd908edb2ba03456de8f",
+    "bytes": 12091
+  },
+  {
+    "path": "armory.html",
+    "status": "modified",
+    "sha256": "7cb2e97797a41b757edc3f33825ae36e342e90b0d73c52db228fe478a47db403",
+    "bytes": 804
+  },
+  {
+    "path": "assets/models/weapons/ar15_m4.glb",
+    "status": "added",
+    "sha256": "7d2e09907de00335bb701614a561d8842c6ed12e12c536da9a2592014b0451ab",
+    "bytes": 4584820
+  },
+  {
+    "path": "assets/models/weapons/glock21_gen4.glb",
+    "status": "added",
+    "sha256": "ccb1197762cd1cd60558150154a93e23ca5cb11e3ba1bdd016deb5171540dd74",
+    "bytes": 14291064
+  },
+  {
+    "path": "assets/snd/shot_ar15m4.js",
+    "status": "added",
+    "sha256": "ffb321352bda16d7e079ad8a014416b6c537df226d2a236981ad9c8d9d17c5ea",
+    "bytes": 832876
+  },
+  {
+    "path": "assets/snd/shot_glock21.js",
+    "status": "added",
+    "sha256": "5590129b1369c6d69be3c68b247d881ea11a1dd21a9387fc7f20268538e83511",
+    "bytes": 479156
+  },
+  {
+    "path": "css/armory-aegis.css",
+    "status": "modified",
+    "sha256": "d19a06936d7a130ced25a361d48c38d8b7bc65d09d1a4554b72b06886a756354",
+    "bytes": 20477
+  },
+  {
+    "path": "docs/MAGAZINE_CONTACT_FIT.json",
+    "status": "added",
+    "sha256": "ebfd0aba6e60660defb1f8b9a7b95f4917e2308de90e68b5979078b4d4e7fc07",
+    "bytes": 19949
+  },
+  {
+    "path": "docs/MAGAZINE_CONTACT_QA_V2.json",
+    "status": "added",
+    "sha256": "f41228280b5ca42506a36b24e7fdd2d8688604e11ad7713506a3fe81f89018b3",
+    "bytes": 4573
+  },
+  {
+    "path": "docs/MATERIALS_QA_V3.json",
+    "status": "added",
+    "sha256": "3dd81b91c0ddcffc886551bbebc1e6dbdcb327afcbc7de7ab1f500fe220d5eac",
+    "bytes": 2857
+  },
+  {
+    "path": "docs/MATERIALS_WALL_BASELINE_HASHES.json",
+    "status": "added",
+    "sha256": "16270883325a04dbb714d80f9000026540c4c7773c39c7f0f9952ca8c4f3e238",
+    "bytes": 202
+  },
+  {
+    "path": "docs/NEW_WEAPONS_CONTACT_FIT_V4.json",
+    "status": "added",
+    "sha256": "62c1b2771e8c66fdfecc29c84fb14857dc2134308f76e1677df0300fd6216435",
+    "bytes": 5841
+  },
+  {
+    "path": "docs/NEW_WEAPONS_QA_V4.json",
+    "status": "added",
+    "sha256": "066c2948bb9d3baca6a66b7f0aaaa057eab027924ecf18a460a6e5fa46685502",
+    "bytes": 18288
+  },
+  {
+    "path": "docs/NEW_WEAPONS_SOURCES_V4.json",
+    "status": "added",
+    "sha256": "6d1821d957e33684d50685d9bba1c09914057833d180d634912e135fc92a23b7",
+    "bytes": 706
+  },
+  {
+    "path": "docs/RELOAD_IMPACTS_QA.json",
+    "status": "added",
+    "sha256": "387f891b90fc89b2d8baee35586ce83b46241e02ba011b439e50a2efb18313b1",
+    "bytes": 13577
+  },
+  {
+    "path": "index.html",
+    "status": "modified",
+    "sha256": "4f3442fe18277f22b8d0b78632076d23d350f74ea1a8c680308cdb978f0f21b6",
+    "bytes": 25654
+  },
+  {
+    "path": "js/app/armory-ui.js",
+    "status": "modified",
+    "sha256": "e8b35b5be040dc6ef38004433f95483d22ed834e5ca2906d12974f3064a56df7",
+    "bytes": 24697
+  },
+  {
+    "path": "js/app/config.js",
+    "status": "modified",
+    "sha256": "95c285debe833eb3a839ed47177c9bcb7b3f998593a162be80dd782e1f8946ad",
+    "bytes": 22243
+  },
+  {
+    "path": "js/kit/imported-weapons.js",
+    "status": "added",
+    "sha256": "bd0b936b1a741485db44f7f2d1058f9d93f2188d1b4fee02aac4240ccd103231",
+    "bytes": 5871
+  },
+  {
+    "path": "js/polygon/03_viewmodel_vm.js",
+    "status": "modified",
+    "sha256": "ef1fe47dd2a975a3589021e0c79ef7b0e4d88bc50478666bc3af087e0519e5ba",
+    "bytes": 98845
+  },
+  {
+    "path": "js/polygon/05b_guns.js",
+    "status": "modified",
+    "sha256": "b2e08ef06c487e8bdaad82e312bfcd875c1906a49696e1c6c29d7332861c445c",
+    "bytes": 75802
+  },
+  {
+    "path": "js/polygon/05e_recoil.js",
+    "status": "modified",
+    "sha256": "9b2de4c87bdebb007f4aeb70261a523d5d866fffcaf1d601d181b8293e4d3946",
+    "bytes": 36364
+  },
+  {
+    "path": "js/polygon/05f_ballistics.js",
+    "status": "modified",
+    "sha256": "f792754797829c9f07588022c0e67e552b0630254ffa351e4b7cfb09cccac532",
+    "bytes": 11318
+  },
+  {
+    "path": "js/polygon/18_fx.js",
+    "status": "modified",
+    "sha256": "5270664878e5eb72281f851045259b5f7fe6c89e60f530bd2e564c81eabdb5f9",
+    "bytes": 29298
+  },
+  {
+    "path": "js/polygon/29_game.js",
+    "status": "modified",
+    "sha256": "4683c947b84af77fef7a63b274725804ba69af324129528af0771dcfc74cc410",
+    "bytes": 368005
+  },
+  {
+    "path": "tools/build-bullet-impacts.cjs",
+    "status": "added",
+    "sha256": "458aabd24ede9de166254f07406b64e44cc0c558e169e9fadd2ba0937c1d4c6e",
+    "bytes": 891
+  },
+  {
+    "path": "tools/impact-tests/browser.cjs",
+    "status": "added",
+    "sha256": "8f40af484247cc4403ad6fa0abe640057bfc5e2ef041a8ba38fcdeb7cc0e6841",
+    "bytes": 5433
+  },
+  {
+    "path": "tools/impact-tests/contact-check.cjs",
+    "status": "added",
+    "sha256": "f0096d3526232ff1923296c0d4ea23e7d304eaf6f29150c445792af2776d747d",
+    "bytes": 3613
+  },
+  {
+    "path": "tools/impact-tests/contact-first-person.png",
+    "status": "added",
+    "sha256": "29ed8ef8e45fa455f03ca4bfd1672594f7974d403e6b295753ac9216940d3995",
+    "bytes": 130394
+  },
+  {
+    "path": "tools/impact-tests/contact-left.png",
+    "status": "added",
+    "sha256": "f574d51a00133ab6c552120ca8f2e683a8838eb90985b02b444dcec9f39909fc",
+    "bytes": 354142
+  },
+  {
+    "path": "tools/impact-tests/contact-results.json",
+    "status": "added",
+    "sha256": "453a27502e581fde9cd1cfad4e51c07ef91318b604c74657edfde62cc32e86fb",
+    "bytes": 5867
+  },
+  {
+    "path": "tools/impact-tests/contact-right.png",
+    "status": "added",
+    "sha256": "4651a53a46236fbb2fbc7d6a30a4fcdff35226199218bb7cea647017fddfe022",
+    "bytes": 199987
+  },
+  {
+    "path": "tools/impact-tests/game-results.json",
+    "status": "added",
+    "sha256": "864cf1f2f5f2e9791dbdf8ceb67312bd51787e02c1d90d4269299f918f865d9c",
+    "bytes": 297
+  },
+  {
+    "path": "tools/impact-tests/game-smoke.cjs",
+    "status": "added",
+    "sha256": "3b1880f6784760c8f1b6273233552b71a4f3392c940edabae82d4b963e3ee236",
+    "bytes": 2617
+  },
+  {
+    "path": "tools/impact-tests/impacts-preview.png",
+    "status": "added",
+    "sha256": "6adc4969aa57cefea35d5ab36d4e4d38cc2c69793d95a63732a898afe351f329",
+    "bytes": 29972
+  },
+  {
+    "path": "tools/impact-tests/material-concrete-deep.png",
+    "status": "added",
+    "sha256": "6932b88ecd574d4c1ad7e85258c19ef0f58e992f9e1690bf8ff4e653ef9ec204",
+    "bytes": 678070
+  },
+  {
+    "path": "tools/impact-tests/material-fabric-deep.png",
+    "status": "added",
+    "sha256": "64f21753c5755eeeeff9c87102905837a6193b6016b2c2add0fa2fa61019ba57",
+    "bytes": 618302
+  },
+  {
+    "path": "tools/impact-tests/material-metal-deep.png",
+    "status": "added",
+    "sha256": "99f3e06c4c74b2a3b302022f4135e571d49408bae0a2be233cf90e54ec687f5b",
+    "bytes": 343303
+  },
+  {
+    "path": "tools/impact-tests/material-paper-deep.png",
+    "status": "added",
+    "sha256": "f575416fdd129a26b1af03b1d627eefae0f00d2299ac8750ac5a38cbf4862e4a",
+    "bytes": 371852
+  },
+  {
+    "path": "tools/impact-tests/material-soil-deep.png",
+    "status": "added",
+    "sha256": "99e7eaf664649861b26e074a8384ffa4d043904adbcbd15687f7b798cbb9156e",
+    "bytes": 693909
+  },
+  {
+    "path": "tools/impact-tests/material-wood-deep.png",
+    "status": "added",
+    "sha256": "0ecb2e0c505f8983061e559ee630a57790a5d340cc0a35e44aae139db1c026c3",
+    "bytes": 461763
+  },
+  {
+    "path": "tools/impact-tests/materials-check.cjs",
+    "status": "added",
+    "sha256": "341cffcb89a694edadc3d70101f7a65debc41f2a7648fe653135fae79cd71122",
+    "bytes": 3206
+  },
+  {
+    "path": "tools/impact-tests/materials-overview.png",
+    "status": "added",
+    "sha256": "435ad2d88b4069506769a9e4e434e238679c4b39b250697713b36aaf0e86c63f",
+    "bytes": 700346
+  },
+  {
+    "path": "tools/impact-tests/materials-results.json",
+    "status": "added",
+    "sha256": "7968dae7385b0e160d4edf8e5e6a0aadb7d396faa91233c955151ed76aa504fb",
+    "bytes": 2383
+  },
+  {
+    "path": "tools/impact-tests/materials.html",
+    "status": "added",
+    "sha256": "0d03553fc4773530f237969ae8fc4ceb1eaed461b6d5112af13e7882676b7d13",
+    "bytes": 5089
+  },
+  {
+    "path": "tools/impact-tests/reload-preview.png",
+    "status": "added",
+    "sha256": "29ed8ef8e45fa455f03ca4bfd1672594f7974d403e6b295753ac9216940d3995",
+    "bytes": 130394
+  },
+  {
+    "path": "tools/impact-tests/results.json",
+    "status": "added",
+    "sha256": "cd8aad0926d233e36339faa771d9d8ba0ecdd4609898e1121f725ed9bcfcf980",
+    "bytes": 4687
+  },
+  {
+    "path": "tools/impact-tests/stand.html",
+    "status": "added",
+    "sha256": "d0012625f166385da91107de7f521813e4d7485ec2a209968503b84f8a9ab6c5",
+    "bytes": 4215
+  },
+  {
+    "path": "tools/weapon-import/ar15m4-armory.png",
+    "status": "added",
+    "sha256": "31c91765e42b06edbba315dfe115a185b0ce383fe1e9b06525482aadc78e464a",
+    "bytes": 740326
+  },
+  {
+    "path": "tools/weapon-import/ar15m4-first-person.png",
+    "status": "added",
+    "sha256": "d62f059eb2f573f9fec6821b0374369788f083a100db3e451fce985f6bfc0bf5",
+    "bytes": 92022
+  },
+  {
+    "path": "tools/weapon-import/ar15m4-model.png",
+    "status": "added",
+    "sha256": "c040b5243efb18674a3ba84a85301d5bb5c95ee5f50bc61451c7adfd52b1747f",
+    "bytes": 61795
+  },
+  {
+    "path": "tools/weapon-import/ar15m4-reload.png",
+    "status": "added",
+    "sha256": "11edcae405510168400bc98e79740f9ff9656c2358c6236216480682a868a98e",
+    "bytes": 146822
+  },
+  {
+    "path": "tools/weapon-import/armory-results.json",
+    "status": "added",
+    "sha256": "52238e78626170479bd046ad3ce342dc1050698026f6ab3131b65ad9601a533d",
+    "bytes": 3128
+  },
+  {
+    "path": "tools/weapon-import/check-armory.cjs",
+    "status": "added",
+    "sha256": "07f2c5cb8f3e9791ef0b03152c733428f72704991f53834543535d261d2e86a7",
+    "bytes": 1875
+  },
+  {
+    "path": "tools/weapon-import/check-game.cjs",
+    "status": "added",
+    "sha256": "4d96810a6a5704497ddb28903015b2f5217d328627637d3b2d30c9f59d631f1f",
+    "bytes": 2714
+  },
+  {
+    "path": "tools/weapon-import/check-models.cjs",
+    "status": "added",
+    "sha256": "50cd03ab2fda9f4fe4fd665a8c76639dfa4578c65dedef1c8bf484a3381b7623",
+    "bytes": 3668
+  },
+  {
+    "path": "tools/weapon-import/game-results.json",
+    "status": "added",
+    "sha256": "e54512c1ec3464b5959718cb3da3e38d2d0d1ae7a7cd1f27d7efd758abe84420",
+    "bytes": 985
+  },
+  {
+    "path": "tools/weapon-import/glock21-armory.png",
+    "status": "added",
+    "sha256": "8f08180d60a009ecc152269109bacfce57931ae7212a19b3eb243d1f22cf426a",
+    "bytes": 825971
+  },
+  {
+    "path": "tools/weapon-import/glock21-first-person.png",
+    "status": "added",
+    "sha256": "c4ac31c437218486c94fe2dfc396eaccbcd34b7449288b80bd433786a141d858",
+    "bytes": 48204
+  },
+  {
+    "path": "tools/weapon-import/glock21-model.png",
+    "status": "added",
+    "sha256": "9d3aa83bc7e8f55938a402e7b3588c83e88459d1e0c0cd20e187ab9328bb58f6",
+    "bytes": 103284
+  },
+  {
+    "path": "tools/weapon-import/glock21-reload.png",
+    "status": "added",
+    "sha256": "f571be33e1a2dd315e889b97335d4f41eeda6b1551d56f72f611f764f7ce3c60",
+    "bytes": 100866
+  },
+  {
+    "path": "tools/weapon-import/glock21-rigid-info.json",
+    "status": "added",
+    "sha256": "964387915f155913afe59d8e3dfb6674826ee77ccb9082f7d465834cb577c2f4",
+    "bytes": 1782
+  },
+  {
+    "path": "tools/weapon-import/model-results.json",
+    "status": "added",
+    "sha256": "a3aa900df98721e67b8e22252205fbdd4fc6ae65a1bb118291f117f4e215a845",
+    "bytes": 728
+  },
+  {
+    "path": "vendor/bullet-impacts/DecalGeometry.js",
+    "status": "added",
+    "sha256": "b2b958a5ba4faf08fe60f7a91fe8489139b43d139e3d036e53ba1b70661cc888",
+    "bytes": 8506
+  },
+  {
+    "path": "vendor/bullet-impacts/Decals.ts",
+    "status": "added",
+    "sha256": "6f05d5a1c8f1b788500e090bcf7fb26bdcc8d649dd8bf6cab459ab556329072e",
+    "bytes": 53248
+  },
+  {
+    "path": "vendor/bullet-impacts/LICENSE-THREE",
+    "status": "added",
+    "sha256": "4c40a1ef62450b857c3b2aaf294936304cd552d965fbcd9d32d4c5bcf4ba4454",
+    "bytes": 1081
+  },
+  {
+    "path": "vendor/bullet-impacts/README_SOURCE_RU.md",
+    "status": "added",
+    "sha256": "d8f19b54c655d4c1a728fe3fdf2599dc11b18e0f4ae0563c0519702f641ba362",
+    "bytes": 942
+  },
+  {
+    "path": "vendor/bullet-impacts/bullet-impacts.js",
+    "status": "added",
+    "sha256": "d1219b0209dfc6ad7f30b00c5b517e1dd4d5aa2905819e803d2ddb68e98b05f1",
+    "bytes": 54086
+  }
+]

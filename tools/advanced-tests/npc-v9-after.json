@@ -1,0 +1,336 @@
+{
+  "result": {
+    "rows": [
+      {
+        "kind": "walk",
+        "hz": 120,
+        "maxFootSpeed": 31.800000000598178,
+        "maxHipSpeed": 1.4246496029005806,
+        "maxKneeSpeed": 55.05332657682084,
+        "maxDrop": 0.19829254169792876,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 7.711683705155373e-11,
+        "footDistance": 26.78519485626518
+      },
+      {
+        "kind": "run",
+        "hz": 120,
+        "maxFootSpeed": 45.570000000299096,
+        "maxHipSpeed": 8.367781406058903,
+        "maxKneeSpeed": 167.79629659919942,
+        "maxDrop": 0.32,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 0.027288121177073563,
+        "footDistance": 54.99083088719063
+      },
+      {
+        "kind": "start-stop",
+        "hz": 120,
+        "maxFootSpeed": 41.52000001167888,
+        "maxHipSpeed": 7.814350786602797,
+        "maxKneeSpeed": 124.75514106379758,
+        "maxDrop": 0.24707686476492585,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 0.23507409839643523,
+        "footDistance": 31.92949868294385
+      },
+      {
+        "kind": "turn",
+        "hz": 120,
+        "maxFootSpeed": 31.80000000151969,
+        "maxHipSpeed": 1.4246496029005806,
+        "maxKneeSpeed": 81.29654781040955,
+        "maxDrop": 0.2028939091508136,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 1.2640620437679877e-10,
+        "footDistance": 27.2243365399712
+      },
+      {
+        "kind": "strafe",
+        "hz": 120,
+        "maxFootSpeed": 31.80000068882633,
+        "maxHipSpeed": 1.5307164914896365,
+        "maxKneeSpeed": 107.353040130303,
+        "maxDrop": 0.2800716078197416,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 8.054158646206016e-9,
+        "footDistance": 37.990631701279106
+      },
+      {
+        "kind": "creep",
+        "hz": 120,
+        "maxFootSpeed": 21.917889987867767,
+        "maxHipSpeed": 6.195716326380043,
+        "maxKneeSpeed": 44.664943033099014,
+        "maxDrop": 0.09065850094716876,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 4.6953769592597255e-12,
+        "footDistance": 20.38841314026094
+      },
+      {
+        "kind": "walk",
+        "hz": 60,
+        "maxFootSpeed": 15.900000000641764,
+        "maxHipSpeed": 1.385624955402116,
+        "maxKneeSpeed": 32.668035565573824,
+        "maxDrop": 0.20152111311443377,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 1.199076886510304e-10,
+        "footDistance": 26.41799875786186
+      },
+      {
+        "kind": "run",
+        "hz": 60,
+        "maxFootSpeed": 22.78500000380896,
+        "maxHipSpeed": 6.9791828290059525,
+        "maxKneeSpeed": 74.69018292391532,
+        "maxDrop": 0.32,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 0.06466068694014077,
+        "footDistance": 54.63771357185647
+      },
+      {
+        "kind": "start-stop",
+        "hz": 60,
+        "maxFootSpeed": 20.760000001675394,
+        "maxHipSpeed": 3.087026083196742,
+        "maxKneeSpeed": 55.310340913098834,
+        "maxDrop": 0.22408163931543723,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 0.2244020897568853,
+        "footDistance": 31.343170807809415
+      },
+      {
+        "kind": "turn",
+        "hz": 60,
+        "maxFootSpeed": 15.900000000995648,
+        "maxHipSpeed": 1.385624955402116,
+        "maxKneeSpeed": 37.82904674857697,
+        "maxDrop": 0.20152111311443377,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 9.635411976877144e-11,
+        "footDistance": 26.69314889269216
+      },
+      {
+        "kind": "strafe",
+        "hz": 60,
+        "maxFootSpeed": 15.900000717056228,
+        "maxHipSpeed": 1.350829310967816,
+        "maxKneeSpeed": 49.16286706483679,
+        "maxDrop": 0.2525362905871842,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 3.247160108031236e-8,
+        "footDistance": 37.09953218366412
+      },
+      {
+        "kind": "creep",
+        "hz": 60,
+        "maxFootSpeed": 10.95662041791822,
+        "maxHipSpeed": 3.010237713620223,
+        "maxKneeSpeed": 22.004339812364897,
+        "maxDrop": 0.08888528078643221,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 4.733853193897969e-12,
+        "footDistance": 19.971148069050624
+      },
+      {
+        "kind": "walk",
+        "hz": 30,
+        "maxFootSpeed": 7.950000000492275,
+        "maxHipSpeed": 0.49187047267885364,
+        "maxKneeSpeed": 25.748956601112454,
+        "maxDrop": 0.1969876259189115,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 6.231449956667022e-11,
+        "footDistance": 25.55125578718414
+      },
+      {
+        "kind": "run",
+        "hz": 30,
+        "maxFootSpeed": 11.392500006673226,
+        "maxHipSpeed": 4.224578696615572,
+        "maxKneeSpeed": 34.06603803036409,
+        "maxDrop": 0.32,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 0.018218169836840225,
+        "footDistance": 52.55581627991362
+      },
+      {
+        "kind": "start-stop",
+        "hz": 30,
+        "maxFootSpeed": 10.380000007338701,
+        "maxHipSpeed": 1.7356129418704547,
+        "maxKneeSpeed": 25.17418930090477,
+        "maxDrop": 0.21767607179359183,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 0.20464150681880175,
+        "footDistance": 29.42228785753638
+      },
+      {
+        "kind": "turn",
+        "hz": 30,
+        "maxFootSpeed": 7.950000000851999,
+        "maxHipSpeed": 1.9601161550456592,
+        "maxKneeSpeed": 24.105953234421037,
+        "maxDrop": 0.32,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 0.04735807759648378,
+        "footDistance": 25.308917330607716
+      },
+      {
+        "kind": "strafe",
+        "hz": 30,
+        "maxFootSpeed": 7.950000114483506,
+        "maxHipSpeed": 1.304416840351369,
+        "maxKneeSpeed": 21.564248025596168,
+        "maxDrop": 0.21957065246904506,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 1.3381150404128934e-8,
+        "footDistance": 33.79806903513628
+      },
+      {
+        "kind": "creep",
+        "hz": 30,
+        "maxFootSpeed": 5.479411508230022,
+        "maxHipSpeed": 1.5612113286810958,
+        "maxKneeSpeed": 13.776885923037968,
+        "maxDrop": 0.08211583008377277,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 6.643779398108164e-12,
+        "footDistance": 18.218404271774762
+      },
+      {
+        "kind": "walk",
+        "hz": 20,
+        "maxFootSpeed": 6.8006538658681315,
+        "maxHipSpeed": 2.395207383710425,
+        "maxKneeSpeed": 14.221869650621946,
+        "maxDrop": 0.32,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 0.06124154532505797,
+        "footDistance": 24.0897602921211
+      },
+      {
+        "kind": "run",
+        "hz": 20,
+        "maxFootSpeed": 10.798999620616394,
+        "maxHipSpeed": 3.5187029942209413,
+        "maxKneeSpeed": 18.181909930673214,
+        "maxDrop": 0.32,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 0.21036981193781745,
+        "footDistance": 50.932324370260595
+      },
+      {
+        "kind": "start-stop",
+        "hz": 20,
+        "maxFootSpeed": 9.322435818869435,
+        "maxHipSpeed": 4.1704466636585575,
+        "maxKneeSpeed": 20.079736873199185,
+        "maxDrop": 0.32,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 0.1855016072580188,
+        "footDistance": 25.403911315007484
+      },
+      {
+        "kind": "turn",
+        "hz": 20,
+        "maxFootSpeed": 6.408367731844753,
+        "maxHipSpeed": 2.3896378212172387,
+        "maxKneeSpeed": 16.404571641723713,
+        "maxDrop": 0.32,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 0.07909566641152677,
+        "footDistance": 23.995805243511384
+      },
+      {
+        "kind": "strafe",
+        "hz": 20,
+        "maxFootSpeed": 7.222569653677335,
+        "maxHipSpeed": 1.7792147861016705,
+        "maxKneeSpeed": 18.490742624209492,
+        "maxDrop": 0.31147714294819473,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 2.8941816592389852e-8,
+        "footDistance": 27.37114997541395
+      },
+      {
+        "kind": "creep",
+        "hz": 20,
+        "maxFootSpeed": 3.6514266853478783,
+        "maxHipSpeed": 1.4101675992949225,
+        "maxKneeSpeed": 11.00709515956693,
+        "maxDrop": 0.07920632567160146,
+        "finite": true,
+        "phaseBack": 0,
+        "slip": 3.278790143430213e-12,
+        "footDistance": 12.335597154107093
+      }
+    ],
+    "scheduler": [
+      {
+        "interval": 0,
+        "poses": 90,
+        "repeated": 0
+      },
+      {
+        "interval": 0.03333333333333333,
+        "poses": 90,
+        "repeated": 0
+      },
+      {
+        "interval": 0.06666666666666667,
+        "poses": 90,
+        "repeated": 0
+      },
+      {
+        "interval": 0.1,
+        "poses": 90,
+        "repeated": 0
+      }
+    ],
+    "hiddenPoses": 7,
+    "visibility": [
+      {
+        "distance": 30,
+        "interval": 0,
+        "hidden": false
+      },
+      {
+        "distance": 60,
+        "interval": 0,
+        "hidden": false
+      },
+      {
+        "distance": 100,
+        "interval": 0,
+        "hidden": false
+      }
+    ],
+    "finiteSquad": true
+  },
+  "errors": []
+}

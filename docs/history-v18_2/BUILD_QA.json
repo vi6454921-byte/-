@@ -1,0 +1,448 @@
+{
+  "version": "18.2.0-experimental",
+  "source": "AEGIS_v17_3maps_TEST.zip",
+  "architecture": {
+    "ai": "Reactive behavior trees in TypeScript; bounded grid A*, NOT Recast/GOAP",
+    "physics": "Rapier 0.19.3 WASM, KCC + animated/IK skin + contact-assisted live rigs + physical ragdolls",
+    "raycast": "three-mesh-bvh 0.9.2 exact static single-material acceleration; material arrays keep native Three raycast"
+  },
+  "build": {
+    "transpile": "pass",
+    "strictTypeScript": "pass",
+    "nodeSyntax": "pass",
+    "npmTest": "pass",
+    "legacyBallisticsAssertions": 499,
+    "legacyRayMatches": 3000
+  },
+  "runtime": {
+    "coordinateAndStateAssertions": 1030831,
+    "ragdollCases": 36,
+    "continuationRecords": 14
+  },
+  "models": {
+    "poses": 60,
+    "movementSteps": 180,
+    "maxPlantTargetErrorM": 1.6493044169350667e-08,
+    "grenade": {
+      "finite": true,
+      "objects": 1,
+      "afterClear": 0
+    }
+  },
+  "livingContacts": {
+    "pass": true,
+    "results": [
+      {
+        "dt": 0.016666666666666666,
+        "maxContacts": 1,
+        "maxJointGap": 0.0015458352151951754,
+        "minDist": -0.0014941804111003876,
+        "maxAngle": 0.36648575837114883
+      },
+      {
+        "dt": 0.03333333333333333,
+        "maxContacts": 1,
+        "maxJointGap": 0.00013022234771292913,
+        "minDist": -0.0014941804111003876,
+        "maxAngle": 0.3649950905284967
+      },
+      {
+        "dt": 0.05,
+        "maxContacts": 1,
+        "maxJointGap": 0.0001014980226854741,
+        "minDist": -0.0014941804111003876,
+        "maxAngle": 0.3635379473280639
+      }
+    ]
+  },
+  "shoulderTraction": {
+    "cases": 12,
+    "movedRangeM": [
+      0.9306826591491699,
+      1.2674566507339478
+    ],
+    "maxSpeedMps": 1.5103108505282117,
+    "maxJointAnchorGapM": 0.0030988001922059496,
+    "scope": "isolated physical pull; not full medical evacuation under fire"
+  },
+  "traversal": [
+    {
+      "case": "quality-v3-browser",
+      "armed": false,
+      "maxFPError": 7.108895957933346e-16,
+      "fpFrames": 72,
+      "hiddenGunFrames": 0,
+      "result": "landed",
+      "frames": 73,
+      "handFrames": 18,
+      "maxHandError": 9.733999309949026e-06,
+      "contactFrames": 10,
+      "maxAngle": 2.3093615212092775,
+      "pos": [
+        0,
+        0.01500000836327664,
+        -1.7599999642372128
+      ],
+      "restoredWeapon": true,
+      "contactModels": [
+        {
+          "key": "delta_1",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.2399600935901393,
+          "maxGap": 0.0002795583186573879,
+          "parts": 17
+        },
+        {
+          "key": "delta_2",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.33999846261888994,
+          "maxGap": 0.00048339923188409577,
+          "parts": 17
+        },
+        {
+          "key": "alpha_1",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.2188196551861627,
+          "maxGap": 0.00020551018553728319,
+          "parts": 17
+        },
+        {
+          "key": "alpha_2",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.26703684354989776,
+          "maxGap": 0.00034464740075311104,
+          "parts": 17
+        }
+      ]
+    },
+    {
+      "case": "quality-v3-browser-armed",
+      "armed": true,
+      "maxFPError": 6.304854800243424e-16,
+      "fpFrames": 72,
+      "hiddenGunFrames": 72,
+      "result": "landed",
+      "frames": 73,
+      "handFrames": 18,
+      "maxHandError": 9.675592467123225e-06,
+      "contactFrames": 10,
+      "maxAngle": 2.3059521826221325,
+      "pos": [
+        0,
+        0.01500000836327664,
+        -1.7599999642372128
+      ],
+      "restoredWeapon": true,
+      "contactModels": [
+        {
+          "key": "delta_1",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.24005442976576186,
+          "maxGap": 0.00027910168265728305,
+          "parts": 17
+        },
+        {
+          "key": "delta_2",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.33960810557232124,
+          "maxGap": 0.0004841879023785592,
+          "parts": 17
+        },
+        {
+          "key": "alpha_1",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.21988576351294273,
+          "maxGap": 0.0002042665727233703,
+          "parts": 17
+        },
+        {
+          "key": "alpha_2",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.26701721558024355,
+          "maxGap": 0.00034421609334810317,
+          "parts": 17
+        }
+      ]
+    }
+  ],
+  "medical": [
+    {
+      "case": "medical-browser",
+      "tourniquetApplied": true,
+      "tourniquetsUsed": 1,
+      "sampledSeconds": 15,
+      "navigation": {
+        "stations": 3,
+        "replans": 2,
+        "stalls": 2,
+        "gripBreaks": 0,
+        "claims": 1,
+        "queued": 0,
+        "expanded": 0
+      },
+      "errors": []
+    },
+    {
+      "case": "medical-browser-armed",
+      "tourniquetApplied": true,
+      "tourniquetsUsed": 1,
+      "sampledSeconds": 5,
+      "navigation": {
+        "stations": 1,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 1,
+        "queued": 0,
+        "expanded": 0
+      },
+      "errors": []
+    },
+    {
+      "case": "medical-barrier",
+      "tourniquetApplied": true,
+      "tourniquetsUsed": 1,
+      "sampledSeconds": 6,
+      "navigation": {
+        "stations": 1,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 1,
+        "queued": 0,
+        "expanded": 6
+      },
+      "errors": []
+    },
+    {
+      "case": "medical-barrier-armed",
+      "tourniquetApplied": true,
+      "tourniquetsUsed": 1,
+      "sampledSeconds": 11,
+      "navigation": {
+        "stations": 1,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 1,
+        "queued": 0,
+        "expanded": 6
+      },
+      "errors": []
+    }
+  ],
+  "combatAim": {
+    "shots": 1,
+    "woundSourcesBefore": 0,
+    "woundSourcesAfter": 6,
+    "targetDead": true,
+    "targetCollapsed": true,
+    "errors": []
+  },
+  "maps": [
+    {
+      "map": "angar_map",
+      "duelShots": 2,
+      "allModelGrips": 12,
+      "npcGripsChecked": 11,
+      "finite": true,
+      "errors": []
+    },
+    {
+      "map": "forest_map_camp",
+      "duelShots": 2,
+      "allModelGrips": 12,
+      "npcGripsChecked": 11,
+      "finite": true,
+      "errors": []
+    },
+    {
+      "map": "stroyka_zarechye_v2",
+      "duelShots": 1,
+      "allModelGrips": 12,
+      "npcGripsChecked": 11,
+      "finite": true,
+      "errors": []
+    }
+  ],
+  "soak": [
+    {
+      "map": "angar_map",
+      "seconds": 90,
+      "frames": 5400,
+      "shots": 811,
+      "aliveAtEnd": 12,
+      "woundedPeakSampled": 0,
+      "fallenPeakSampled": 0,
+      "peakBodiesSampled": 180,
+      "queuedAtEnd": 0,
+      "unreachableAtEnd": 4,
+      "last360CpuSimulationMs": {
+        "samples": 360,
+        "mean": 6.379999999999483,
+        "p50": 6.2999999998137355,
+        "p95": 7.7000000001862645,
+        "max": 10.900000000372529
+      },
+      "errors": []
+    },
+    {
+      "map": "forest_map_camp",
+      "seconds": 90,
+      "frames": 5400,
+      "shots": 244,
+      "aliveAtEnd": 12,
+      "woundedPeakSampled": 0,
+      "fallenPeakSampled": 0,
+      "peakBodiesSampled": 172,
+      "queuedAtEnd": 0,
+      "unreachableAtEnd": 3,
+      "last360CpuSimulationMs": {
+        "samples": 360,
+        "mean": 8.72527777777933,
+        "p50": 7.2999999998137355,
+        "p95": 28.5,
+        "max": 33.5
+      },
+      "errors": []
+    },
+    {
+      "map": "stroyka_zarechye_v2",
+      "seconds": 90,
+      "frames": 5400,
+      "shots": 12,
+      "aliveAtEnd": 12,
+      "woundedPeakSampled": 0,
+      "fallenPeakSampled": 0,
+      "peakBodiesSampled": 168,
+      "queuedAtEnd": 0,
+      "unreachableAtEnd": 9,
+      "last360CpuSimulationMs": {
+        "samples": 360,
+        "mean": 4.740277777780364,
+        "p50": 4.7999999998137355,
+        "p95": 5.6000000005587935,
+        "max": 6.400000000372529
+      },
+      "errors": []
+    }
+  ],
+  "rays": {
+    "tests": 3000,
+    "instanceIdentityCases": 100,
+    "benchmark": {
+      "rays": 400,
+      "triangles": 64800,
+      "rounds": [
+        {
+          "originalMs": 1310.245987,
+          "bvhMs": 2.424959999999828
+        },
+        {
+          "originalMs": 1283.65178,
+          "bvhMs": 2.501767999999629
+        },
+        {
+          "originalMs": 1287.872319,
+          "bvhMs": 2.537268999999469
+        }
+      ],
+      "note": "Node CPU microbenchmark of identical seeded rays; not gameplay FPS"
+    },
+    "stats": {
+      "rays": 3000,
+      "tests": 4450,
+      "meshes": 150,
+      "custom": 0,
+      "dynamic": 1,
+      "bvh": {
+        "geometries": 151,
+        "triangles": 81000,
+        "buildMs": 80.33853600000005,
+        "failures": 0,
+        "backend": "three-mesh-bvh 0.9.2",
+        "enabled": true
+      }
+    }
+  },
+  "render": {
+    "fp": {
+      "visible": true,
+      "fov": 38.07579787499657,
+      "gunVisible": true,
+      "curKind": "gun",
+      "rigTuck": 0,
+      "gunChain": [
+        {
+          "name": "weaponMount",
+          "visible": true
+        },
+        {
+          "name": "Scene",
+          "visible": true
+        }
+      ],
+      "rigChain": [
+        {
+          "name": "Group",
+          "visible": true
+        },
+        {
+          "name": "bodycamRig",
+          "visible": true
+        },
+        {
+          "name": "Scene",
+          "visible": true
+        }
+      ],
+      "camera": [
+        -13.500000050362832,
+        1.742785966916633,
+        9.389000187370357
+      ],
+      "muzzle": [
+        -0.0003225270360091665,
+        -0.16433284203311996,
+        0.9321486232870193
+      ],
+      "rightHand": [
+        2.0944816519315776,
+        -12.292356487321484,
+        -1.1304595097678751
+      ]
+    },
+    "lastRender": {
+      "frame": 47,
+      "calls": 631,
+      "triangles": 3542628,
+      "points": 1660,
+      "lines": 0
+    },
+    "glError": 0,
+    "pageErrors": [],
+    "modelSnapshots": [
+      "standing",
+      "crouch",
+      "prone",
+      "fallen"
+    ]
+  },
+  "limits": [
+    "hybrid live physics, not autonomous physical balance",
+    "three live contact rigs, static collisions only; wrist/foot completion by IK",
+    "vault palms assist but do not support whole body weight physically",
+    "bounded 2.5D A*, partial/unreachable paths remain; no multi-level navmesh",
+    "90 seconds per map is not multi-hour game QA",
+    "CPU tests without rendering are not FPS; no overall percentage promised",
+    "specialized ballistics, recoil, cloth and some effects not ported to Rapier"
+  ]
+}

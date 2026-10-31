@@ -1,0 +1,157 @@
+{
+ "start": {
+  "item": "gun",
+  "slot": 0,
+  "rig": true,
+  "gun": true,
+  "ndc": [
+   0.16,
+   -0.83,
+   0.873
+  ],
+  "onScreen": true,
+  "lowerW": 0,
+  "heals": 0
+ },
+ "slots": [
+  "gun",
+  "ammo",
+  "ammo",
+  "grenade",
+  "grenade",
+  null
+ ],
+ "pressCurrentSlot": {
+  "item": "gun",
+  "slot": 0,
+  "rig": true,
+  "gun": true,
+  "ndc": [
+   0.16,
+   -0.84,
+   0.873
+  ],
+  "onScreen": true,
+  "lowerW": 0,
+  "heals": 0
+ },
+ "afterReload": {
+  "item": "gun",
+  "slot": 0,
+  "rig": true,
+  "gun": true,
+  "ndc": [
+   0.16,
+   -0.83,
+   0.873
+  ],
+  "onScreen": true,
+  "lowerW": 0,
+  "heals": 0
+ },
+ "reloadThenSlot": {
+  "item": "gun",
+  "slot": 0,
+  "rig": true,
+  "gun": true,
+  "ndc": [
+   0.16,
+   -0.83,
+   0.873
+  ],
+  "onScreen": true,
+  "lowerW": 0,
+  "heals": 0
+ },
+ "grenadeInHand": {
+  "item": "grenade",
+  "slot": 3,
+  "rig": true,
+  "gun": false,
+  "ndc": null,
+  "onScreen": false,
+  "lowerW": 0,
+  "heals": 0
+ },
+ "afterThrow": {
+  "item": "gun",
+  "slot": 0,
+  "rig": true,
+  "gun": true,
+  "ndc": [
+   0.16,
+   -0.83,
+   0.873
+  ],
+  "onScreen": true,
+  "lowerW": 0,
+  "heals": 0
+ },
+ "throwThenSlot": {
+  "item": "gun",
+  "slot": 0,
+  "rig": true,
+  "gun": true,
+  "ndc": [
+   0.16,
+   -0.83,
+   0.873
+  ],
+  "onScreen": true,
+  "lowerW": 0,
+  "heals": 0
+ },
+ "afterQuickG": {
+  "item": "gun",
+  "slot": 0,
+  "rig": true,
+  "gun": true,
+  "ndc": [
+   0.16,
+   -0.83,
+   0.873
+  ],
+  "onScreen": true,
+  "lowerW": 0,
+  "heals": 0
+ },
+ "quickGThenSlot": {
+  "item": "gun",
+  "slot": 0,
+  "rig": true,
+  "gun": true,
+  "ndc": [
+   0.16,
+   -0.83,
+   0.873
+  ],
+  "onScreen": true,
+  "lowerW": 0,
+  "heals": 0
+ },
+ "doubleTap": {
+  "item": null,
+  "slot": -1,
+  "rig": false,
+  "gun": false,
+  "ndc": null,
+  "onScreen": false,
+  "lowerW": 1,
+  "heals": 0
+ },
+ "redraw": {
+  "item": "gun",
+  "slot": 0,
+  "rig": true,
+  "gun": true,
+  "ndc": [
+   0.16,
+   -0.84,
+   0.873
+  ],
+  "onScreen": true,
+  "lowerW": 0,
+  "heals": 0
+ },
+ "errors": []
+}

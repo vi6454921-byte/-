@@ -1,0 +1,232 @@
+{
+  "result": {
+    "tracks": [
+      {
+        "id": "ak74",
+        "mode": "tactical",
+        "keys": 15,
+        "maxAngularStepDeg": 8.950834698705318
+      },
+      {
+        "id": "ak74",
+        "mode": "empty",
+        "keys": 18,
+        "maxAngularStepDeg": 10.418176113570354
+      },
+      {
+        "id": "akm",
+        "mode": "tactical",
+        "keys": 15,
+        "maxAngularStepDeg": 9.25020217248028
+      },
+      {
+        "id": "akm",
+        "mode": "empty",
+        "keys": 18,
+        "maxAngularStepDeg": 10.33216661026385
+      },
+      {
+        "id": "m416",
+        "mode": "tactical",
+        "keys": 9,
+        "maxAngularStepDeg": 3.6527991444439114
+      },
+      {
+        "id": "m416",
+        "mode": "empty",
+        "keys": 12,
+        "maxAngularStepDeg": 4.5713853982168775
+      },
+      {
+        "id": "scar",
+        "mode": "tactical",
+        "keys": 9,
+        "maxAngularStepDeg": 3.393290751931959
+      },
+      {
+        "id": "scar",
+        "mode": "empty",
+        "keys": 12,
+        "maxAngularStepDeg": 4.5713853982168775
+      },
+      {
+        "id": "svd",
+        "mode": "tactical",
+        "keys": 15,
+        "maxAngularStepDeg": 6.660968036351008
+      },
+      {
+        "id": "svd",
+        "mode": "empty",
+        "keys": 18,
+        "maxAngularStepDeg": 11.248942595943868
+      },
+      {
+        "id": "m870",
+        "mode": "pump",
+        "keys": 22,
+        "maxAngularStepDeg": 10.5523704171307
+      },
+      {
+        "id": "mp5a3",
+        "mode": "tactical",
+        "keys": 9,
+        "maxAngularStepDeg": 4.455886188530593
+      },
+      {
+        "id": "mp5a3",
+        "mode": "empty",
+        "keys": 15,
+        "maxAngularStepDeg": 11.949403849507057
+      },
+      {
+        "id": "ar15m4",
+        "mode": "tactical",
+        "keys": 9,
+        "maxAngularStepDeg": 4.388473132032405
+      },
+      {
+        "id": "ar15m4",
+        "mode": "empty",
+        "keys": 12,
+        "maxAngularStepDeg": 4.5713853982168775
+      },
+      {
+        "id": "glock21",
+        "mode": "tactical",
+        "keys": 9,
+        "maxAngularStepDeg": 4.85791495934584
+      },
+      {
+        "id": "glock21",
+        "mode": "empty",
+        "keys": 12,
+        "maxAngularStepDeg": 7.483137587322549
+      },
+      {
+        "id": "glock18c",
+        "mode": "tactical",
+        "keys": 9,
+        "maxAngularStepDeg": 4.681810099701519
+      },
+      {
+        "id": "glock18c",
+        "mode": "empty",
+        "keys": 12,
+        "maxAngularStepDeg": 7.244797332358585
+      }
+    ],
+    "fumbles": [
+      {
+        "id": "ak74",
+        "mode": "tactical",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "ak74",
+        "mode": "empty",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "akm",
+        "mode": "tactical",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "akm",
+        "mode": "empty",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "m416",
+        "mode": "tactical",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "m416",
+        "mode": "empty",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "scar",
+        "mode": "tactical",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "scar",
+        "mode": "empty",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "svd",
+        "mode": "tactical",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "svd",
+        "mode": "empty",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "mp5a3",
+        "mode": "tactical",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "mp5a3",
+        "mode": "empty",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "ar15m4",
+        "mode": "tactical",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "ar15m4",
+        "mode": "empty",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "glock21",
+        "mode": "tactical",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "glock21",
+        "mode": "empty",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "glock18c",
+        "mode": "tactical",
+        "mechanicsPreserved": true
+      },
+      {
+        "id": "glock18c",
+        "mode": "empty",
+        "mechanicsPreserved": true
+      }
+    ],
+    "initial": 5,
+    "afterInstance": 6,
+    "movingFollow": true,
+    "capped": 50,
+    "disposed": true,
+    "programs": [
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  "errors": []
+}

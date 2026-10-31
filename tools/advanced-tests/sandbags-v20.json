@@ -1,0 +1,112 @@
+{
+ "walls": 56,
+ "results": [
+  {
+   "k": 0,
+   "kind": "respawn",
+   "h": 0.9,
+   "off": -0.6,
+   "vaulted": true,
+   "crossed": true,
+   "fell": false,
+   "dead": false,
+   "falls": 0,
+   "worldFalls": 0
+  },
+  {
+   "k": 1,
+   "kind": "respawn",
+   "h": 0.9,
+   "off": 0,
+   "vaulted": true,
+   "crossed": true,
+   "fell": false,
+   "dead": false,
+   "falls": 0,
+   "worldFalls": 0
+  },
+  {
+   "k": 2,
+   "kind": "respawn",
+   "h": 0.9,
+   "off": 0.6,
+   "vaulted": true,
+   "crossed": true,
+   "fell": false,
+   "dead": false,
+   "falls": 0,
+   "worldFalls": 0
+  },
+  {
+   "k": 3,
+   "kind": "respawn",
+   "h": 0.9,
+   "off": -0.6,
+   "vaulted": true,
+   "crossed": true,
+   "fell": false,
+   "dead": false,
+   "falls": 0,
+   "worldFalls": 0
+  },
+  {
+   "k": 4,
+   "kind": "mapbags",
+   "h": 0.77,
+   "off": 0,
+   "vaulted": true,
+   "crossed": true,
+   "fell": false,
+   "dead": false,
+   "falls": 0,
+   "worldFalls": 0
+  },
+  {
+   "k": 5,
+   "kind": "mapbags",
+   "h": 0.59,
+   "off": 0.6,
+   "vaulted": true,
+   "crossed": true,
+   "fell": false,
+   "dead": false,
+   "falls": 0,
+   "worldFalls": 0
+  },
+  {
+   "k": 6,
+   "kind": "mapbags",
+   "h": 0.59,
+   "off": -0.6,
+   "vaulted": true,
+   "crossed": true,
+   "fell": false,
+   "dead": false,
+   "falls": 0,
+   "worldFalls": 0
+  },
+  {
+   "k": 7,
+   "kind": "mapbags",
+   "h": 0.59,
+   "off": 0,
+   "vaulted": true,
+   "crossed": true,
+   "fell": false,
+   "dead": false,
+   "falls": 0,
+   "worldFalls": 0
+  }
+ ],
+ "fallLog": [],
+ "stumble": {
+  "triggered": 12,
+  "caught": 5,
+  "falls": 0,
+  "recovered": 0,
+  "blocked": 0,
+  "vaults": 9,
+  "rescued": 0
+ },
+ "errors": []
+}

@@ -1,0 +1,613 @@
+{
+  "version": "18.4.0-experimental",
+  "base": "AEGIS_v18_3_1_LAUNCH_FIX.zip",
+  "changedGameplayScope": [
+    "Rapier spent-case pool (26 bodies + 600 decorative instances)",
+    "Rapier dropped-magazine cuboids (8 retained bodies)",
+    "dynamic-object API optional contact reporting, conservative small-object sleeping, reset/disable reuse",
+    "grenade cleanup regression now checks exact owned keys"
+  ],
+  "build": {
+    "typeScriptModules": 9,
+    "strictTypeScript": "pass",
+    "transpile": "pass",
+    "npmTest": "pass",
+    "npmTestSuites": 7,
+    "legacyBallisticsAssertions": 499,
+    "legacyRayMatches": 3000
+  },
+  "physicsDebris": {
+    "node": {
+      "pass": true,
+      "rows": [
+        {
+          "shape": "brass",
+          "kind": "ground",
+          "dt": 0.016666666666666666,
+          "steps": 600,
+          "end": {
+            "x": 0.23604267835617065,
+            "y": 0.0032983138225972652,
+            "z": -0.46457716822624207
+          },
+          "minY": 0.0015286699635908008,
+          "maxX": 0.3536580204963684,
+          "contacts": 3,
+          "passed": true
+        },
+        {
+          "shape": "brass",
+          "kind": "platform",
+          "dt": 0.016666666666666666,
+          "steps": 600,
+          "end": {
+            "x": 0.37841877341270447,
+            "y": 2.003324270248413,
+            "z": 0.22899751365184784
+          },
+          "minY": 2.001767873764038,
+          "maxX": 0.37841877341270447,
+          "contacts": 2,
+          "passed": true
+        },
+        {
+          "shape": "brass",
+          "kind": "wall",
+          "dt": 0.016666666666666666,
+          "steps": 600,
+          "end": {
+            "x": -0.5461219549179077,
+            "y": 0.0032979617826640606,
+            "z": 6.699320316314697
+          },
+          "minY": 0.001406649244017899,
+          "maxX": 0.9863747954368591,
+          "contacts": 3,
+          "passed": true
+        },
+        {
+          "shape": "brass",
+          "kind": "ground",
+          "dt": 0.03333333333333333,
+          "steps": 301,
+          "end": {
+            "x": 0.23604267835617065,
+            "y": 0.0032983138225972652,
+            "z": -0.46457716822624207
+          },
+          "minY": 0.0015286699635908008,
+          "maxX": 0.3520493805408478,
+          "contacts": 3,
+          "passed": true
+        },
+        {
+          "shape": "brass",
+          "kind": "platform",
+          "dt": 0.03333333333333333,
+          "steps": 301,
+          "end": {
+            "x": 0.37841877341270447,
+            "y": 2.003324270248413,
+            "z": 0.22899751365184784
+          },
+          "minY": 2.001767873764038,
+          "maxX": 0.37841877341270447,
+          "contacts": 2,
+          "passed": true
+        },
+        {
+          "shape": "brass",
+          "kind": "wall",
+          "dt": 0.03333333333333333,
+          "steps": 301,
+          "end": {
+            "x": -0.5461219549179077,
+            "y": 0.0032979617826640606,
+            "z": 6.699320316314697
+          },
+          "minY": 0.0014080563560128212,
+          "maxX": 0.9822397232055664,
+          "contacts": 3,
+          "passed": true
+        },
+        {
+          "shape": "brass",
+          "kind": "ground",
+          "dt": 0.05,
+          "steps": 200,
+          "end": {
+            "x": 0.23604267835617065,
+            "y": 0.0032983138225972652,
+            "z": -0.46457716822624207
+          },
+          "minY": 0.0015926107298582792,
+          "maxX": 0.3519935607910156,
+          "contacts": 3,
+          "passed": true
+        },
+        {
+          "shape": "brass",
+          "kind": "platform",
+          "dt": 0.05,
+          "steps": 200,
+          "end": {
+            "x": 0.37841877341270447,
+            "y": 2.003324270248413,
+            "z": 0.22899751365184784
+          },
+          "minY": 2.001772403717041,
+          "maxX": 0.37841877341270447,
+          "contacts": 2,
+          "passed": true
+        },
+        {
+          "shape": "brass",
+          "kind": "wall",
+          "dt": 0.05,
+          "steps": 200,
+          "end": {
+            "x": -0.5461219549179077,
+            "y": 0.0032979617826640606,
+            "z": 6.699320316314697
+          },
+          "minY": 0.001406649244017899,
+          "maxX": 0.9863747954368591,
+          "contacts": 3,
+          "passed": true
+        },
+        {
+          "shape": "magazine",
+          "kind": "ground",
+          "dt": 0.016666666666666666,
+          "steps": 600,
+          "end": {
+            "x": 0.3442513644695282,
+            "y": 0.023713065311312675,
+            "z": -0.05673765763640404
+          },
+          "minY": 0.023713065311312675,
+          "maxX": 0.35550570487976074,
+          "contacts": 3,
+          "passed": true
+        },
+        {
+          "shape": "magazine",
+          "kind": "platform",
+          "dt": 0.016666666666666666,
+          "steps": 600,
+          "end": {
+            "x": 0.4074978828430176,
+            "y": 2.023587465286255,
+            "z": 0.20372135937213898
+          },
+          "minY": 2.023587465286255,
+          "maxX": 0.4074978828430176,
+          "contacts": 2,
+          "passed": true
+        },
+        {
+          "shape": "magazine",
+          "kind": "wall",
+          "dt": 0.016666666666666666,
+          "steps": 600,
+          "end": {
+            "x": -2.043898105621338,
+            "y": 0.02390003390610218,
+            "z": -2.2118728160858154
+          },
+          "minY": 0.02390003390610218,
+          "maxX": 0.9242087006568909,
+          "contacts": 6,
+          "passed": true
+        },
+        {
+          "shape": "magazine",
+          "kind": "ground",
+          "dt": 0.03333333333333333,
+          "steps": 301,
+          "end": {
+            "x": 0.3442513644695282,
+            "y": 0.023713065311312675,
+            "z": -0.05673765763640404
+          },
+          "minY": 0.023713065311312675,
+          "maxX": 0.3526911437511444,
+          "contacts": 3,
+          "passed": true
+        },
+        {
+          "shape": "magazine",
+          "kind": "platform",
+          "dt": 0.03333333333333333,
+          "steps": 301,
+          "end": {
+            "x": 0.4074978828430176,
+            "y": 2.023587465286255,
+            "z": 0.20372135937213898
+          },
+          "minY": 2.023587465286255,
+          "maxX": 0.4074978828430176,
+          "contacts": 2,
+          "passed": true
+        },
+        {
+          "shape": "magazine",
+          "kind": "wall",
+          "dt": 0.03333333333333333,
+          "steps": 301,
+          "end": {
+            "x": -2.043898105621338,
+            "y": 0.02390003390610218,
+            "z": -2.2118728160858154
+          },
+          "minY": 0.02390003390610218,
+          "maxX": 0.9242087006568909,
+          "contacts": 6,
+          "passed": true
+        },
+        {
+          "shape": "magazine",
+          "kind": "ground",
+          "dt": 0.05,
+          "steps": 200,
+          "end": {
+            "x": 0.3442513644695282,
+            "y": 0.023713065311312675,
+            "z": -0.05673765763640404
+          },
+          "minY": 0.023713065311312675,
+          "maxX": 0.3526911437511444,
+          "contacts": 3,
+          "passed": true
+        },
+        {
+          "shape": "magazine",
+          "kind": "platform",
+          "dt": 0.05,
+          "steps": 200,
+          "end": {
+            "x": 0.4074978828430176,
+            "y": 2.023587465286255,
+            "z": 0.20372135937213898
+          },
+          "minY": 2.023587465286255,
+          "maxX": 0.4074978828430176,
+          "contacts": 2,
+          "passed": true
+        },
+        {
+          "shape": "magazine",
+          "kind": "wall",
+          "dt": 0.05,
+          "steps": 200,
+          "end": {
+            "x": -2.043898105621338,
+            "y": 0.02390003390610218,
+            "z": -2.2118728160858154
+          },
+          "minY": 0.02390003390610218,
+          "maxX": 0.9125381112098694,
+          "contacts": 6,
+          "passed": true
+        }
+      ],
+      "actorFilter": true,
+      "airborneNoFreeze": true,
+      "removedSupportWake": true,
+      "reuses": 2600,
+      "poolCapacity": 26,
+      "fullCleanup": true
+    },
+    "browser": {
+      "result": {
+        "pass": true,
+        "fixtureSeed": "0x1840a3",
+        "brass": [
+          {
+            "dt": 0.016666666666666666,
+            "emitted": 131,
+            "capacity": 26,
+            "spent": 26,
+            "minY": 2.003309726715088,
+            "maxY": 2.003432035446167,
+            "sounds": 33,
+            "disposed": true
+          },
+          {
+            "dt": 0.03333333333333333,
+            "emitted": 131,
+            "capacity": 26,
+            "spent": 26,
+            "minY": 2.003305435180664,
+            "maxY": 2.003429889678955,
+            "sounds": 37,
+            "disposed": true
+          },
+          {
+            "dt": 0.05,
+            "emitted": 131,
+            "capacity": 26,
+            "spent": 26,
+            "minY": 2.0033156871795654,
+            "maxY": 2.003432273864746,
+            "sounds": 30,
+            "disposed": true
+          }
+        ],
+        "magazines": {
+          "drops": 13,
+          "wakeVisualResumed": true,
+          "retained": 8,
+          "resting": 8,
+          "items": [
+            {
+              "p": [
+                33.743,
+                0.093,
+                -0.071
+              ],
+              "rest": true,
+              "t": 0.97
+            },
+            {
+              "p": [
+                33.697,
+                0.093,
+                0.203
+              ],
+              "rest": true,
+              "t": 1.27
+            },
+            {
+              "p": [
+                33.766,
+                0.093,
+                0.062
+              ],
+              "rest": true,
+              "t": 0.95
+            },
+            {
+              "p": [
+                33.755,
+                0.129,
+                0.074
+              ],
+              "rest": true,
+              "t": 1.07
+            },
+            {
+              "p": [
+                33.77,
+                0.093,
+                0.068
+              ],
+              "rest": true,
+              "t": 0.9
+            },
+            {
+              "p": [
+                33.942,
+                0.093,
+                0.081
+              ],
+              "rest": true,
+              "t": 0.98
+            },
+            {
+              "p": [
+                33.802,
+                0.093,
+                0.104
+              ],
+              "rest": true,
+              "t": 0.87
+            },
+            {
+              "p": [
+                -27.54,
+                0.013,
+                -1.468
+              ],
+              "rest": true,
+              "t": 1.27
+            }
+          ]
+        },
+        "mainFx": {
+          "backend": "Rapier",
+          "capacity": 26,
+          "active": 14,
+          "allocated": 26,
+          "spent": 56
+        },
+        "physics": {
+          "backend": "Rapier 0.19.3 WASM",
+          "steps": 915,
+          "actors": 12,
+          "liveMotorRigs": 10,
+          "liveAngularMotors": 130,
+          "servoSubsteps": 64310,
+          "dynamicObjects": 34,
+          "brassPool": {
+            "allocated": 26,
+            "active": 14
+          },
+          "livingContacts": {
+            "rigs": 2,
+            "segments": 34
+          },
+          "ragdolls": 0,
+          "colliders": 444,
+          "bodies": 210,
+          "droppedSeconds": 0,
+          "terrainMaxResolution": 256
+        }
+      },
+      "errors": []
+    }
+  },
+  "models": {
+    "poses": 60,
+    "movementSteps": 180,
+    "grenade": {
+      "finite": true,
+      "objects": 1,
+      "beforeTotal": 0,
+      "afterClear": 0,
+      "unrelatedRetained": true,
+      "afterTotal": 2
+    },
+    "errors": []
+  },
+  "maps": [
+    {
+      "map": "angar_map",
+      "finite": true,
+      "duelShots": 1,
+      "grips": 12,
+      "errors": []
+    },
+    {
+      "map": "forest_map_camp",
+      "finite": true,
+      "duelShots": 2,
+      "grips": 12,
+      "errors": []
+    },
+    {
+      "map": "stroyka_zarechye_v2",
+      "finite": true,
+      "duelShots": 2,
+      "grips": 12,
+      "errors": []
+    }
+  ],
+  "soak": [
+    {
+      "map": "angar_map",
+      "seconds": 90,
+      "frames": 5400,
+      "shots": 1077,
+      "aliveAtEnd": 12,
+      "woundedPeakSampled": 0,
+      "fallenPeakSampled": 0,
+      "peakBodiesSampled": 214,
+      "peakAllocatedBrass": 26,
+      "last360CpuSimulationMs": {
+        "samples": 360,
+        "mean": 8.008333333332686,
+        "p50": 7.7000000001862645,
+        "p95": 10.199999999953434,
+        "max": 16
+      },
+      "errors": []
+    },
+    {
+      "map": "forest_map_camp",
+      "seconds": 90,
+      "frames": 5400,
+      "shots": 314,
+      "aliveAtEnd": 12,
+      "woundedPeakSampled": 0,
+      "fallenPeakSampled": 0,
+      "peakBodiesSampled": 198,
+      "peakAllocatedBrass": 26,
+      "last360CpuSimulationMs": {
+        "samples": 360,
+        "mean": 11.669722222221834,
+        "p50": 10.300000000046566,
+        "p95": 18.300000000046566,
+        "max": 30.100000000093132
+      },
+      "errors": []
+    },
+    {
+      "map": "stroyka_zarechye_v2",
+      "seconds": 90,
+      "frames": 5400,
+      "shots": 553,
+      "aliveAtEnd": 12,
+      "woundedPeakSampled": 0,
+      "fallenPeakSampled": 0,
+      "peakBodiesSampled": 202,
+      "peakAllocatedBrass": 26,
+      "last360CpuSimulationMs": {
+        "samples": 360,
+        "mean": 12.536388888889148,
+        "p50": 10.300000000046566,
+        "p95": 24.300000000046566,
+        "max": 37.200000000186265
+      },
+      "errors": []
+    }
+  ],
+  "render": {
+    "glError": 0,
+    "pageErrors": [],
+    "firstPerson": {
+      "visible": true,
+      "fov": 38.07579787499657,
+      "gunVisible": true,
+      "curKind": "gun",
+      "rigTuck": 0,
+      "gunChain": [
+        {
+          "name": "weaponMount",
+          "visible": true
+        },
+        {
+          "name": "Scene",
+          "visible": true
+        }
+      ],
+      "rigChain": [
+        {
+          "name": "Group",
+          "visible": true
+        },
+        {
+          "name": "bodycamRig",
+          "visible": true
+        },
+        {
+          "name": "Scene",
+          "visible": true
+        }
+      ],
+      "camera": [
+        -13.500000050362832,
+        1.742785966916633,
+        9.389000187370357
+      ],
+      "muzzle": [
+        -0.0003225270360091665,
+        -0.16433284203311996,
+        0.9321486232870193
+      ],
+      "rightHand": [
+        2.0944816519315776,
+        -12.292356487321484,
+        -1.1304595097678751
+      ]
+    }
+  },
+  "otherRegressions": {
+    "runtimeCoordinateStateAssertions": 1030832,
+    "ragdollCases": 36,
+    "contactRig": true,
+    "tractionCases": 12,
+    "navigationFixtures": 15
+  },
+  "remaining": "MIGRATION_STATUS_RU.md",
+  "historicalQA": "history-v18_3/BUILD_QA.json",
+  "limits": [
+    "not fully physical autonomous live-body balance",
+    "recoil/cloth/specialized ballistics and some blast particles remain custom",
+    "brass/magazines static-only collisions; capsule/cuboid proxies",
+    "baked brass is decorative and does not wake after support removal",
+    "browser regression is local Chromium software rendering, not real Windows/GPU certification",
+    "3 x 90s CPU soaks are not long play sessions or FPS measurement",
+    "Windows BAT not executed in Linux; HTTP launcher retained from 18.3.1"
+  ]
+}

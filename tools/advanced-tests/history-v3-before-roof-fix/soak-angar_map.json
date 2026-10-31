@@ -1,0 +1,8350 @@
+{
+  "scenario": "Natural base spawns; no injected duel, no rendering; 12 AK74 NPCs; CPU sampling profiler",
+  "map": "angar_map",
+  "seconds": 90,
+  "samples": [
+    {
+      "time": 2.0499999999999976,
+      "ms": 1053.1999999997206,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 153,
+        "shots": 18,
+        "decisions": 96,
+        "friendlyBlocks": 482,
+        "hearing": 0,
+        "coverTests": 72,
+        "paths": 10,
+        "expanded": 3500,
+        "queued": 0,
+        "cachedNav": 1160,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 123,
+        "actors": 12,
+        "liveMotorRigs": 11,
+        "liveAngularMotors": 143,
+        "servoSubsteps": 12654,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 1,
+          "segments": 17
+        },
+        "ragdolls": 0,
+        "colliders": 397,
+        "bodies": 172,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          33.61814532900124,
+          0.0179904106844333,
+          -0.6421629382087701
+        ],
+        [
+          33.4982834172303,
+          0.010399995007901452,
+          1.3070119021252495
+        ],
+        [
+          31.94305012272148,
+          0.014996590281953104,
+          -1.9908669380558015
+        ],
+        [
+          33.567385419255515,
+          0.00209968274430139,
+          -1.3314806964126131
+        ],
+        [
+          34.85227280460149,
+          0.002095390918839257,
+          -1.1106637645626356
+        ],
+        [
+          34.25668816455183,
+          0.02404850910534151,
+          -1.3988692649510541
+        ],
+        [
+          -33.593566259743966,
+          0.018478612422768492,
+          0.9097427009255625
+        ],
+        [
+          -34.501695979344746,
+          0.010390242998255417,
+          1.3069740966567478
+        ],
+        [
+          -34.558854501066335,
+          0.02511796152975876,
+          0.6567312820774334
+        ],
+        [
+          -35.04042304381032,
+          0.002097920274536591,
+          -0.9367828489024015
+        ],
+        [
+          -33.81727630133138,
+          0.002084498766635079,
+          -1.3879709241655078
+        ],
+        [
+          -32.77267880872647,
+          0.018192134870332666,
+          -0.3729841340581109
+        ]
+      ]
+    },
+    {
+      "time": 4.049999999999991,
+      "ms": 728.5,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 252,
+        "shots": 36,
+        "decisions": 194,
+        "friendlyBlocks": 1289,
+        "hearing": 0,
+        "coverTests": 144,
+        "paths": 13,
+        "expanded": 4710,
+        "queued": 0,
+        "cachedNav": 1135,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 243,
+        "actors": 12,
+        "liveMotorRigs": 11,
+        "liveAngularMotors": 143,
+        "servoSubsteps": 20827,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 1,
+          "segments": 17
+        },
+        "ragdolls": 0,
+        "colliders": 397,
+        "bodies": 172,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          33.61814532900124,
+          0.01999041063390905,
+          -0.6421629382087701
+        ],
+        [
+          33.498285718043036,
+          0.022399994704755954,
+          1.3070078522973205
+        ],
+        [
+          29.142671283701794,
+          0.015143120155698853,
+          -2.2798324202352935
+        ],
+        [
+          33.56738689045944,
+          0.004099682526430115,
+          -1.331481156226981
+        ],
+        [
+          34.8522699015944,
+          0.004095390657312237,
+          -1.110658973626753
+        ],
+        [
+          34.285829515783206,
+          0.03554852230445249,
+          -1.453085651468564
+        ],
+        [
+          -33.593566259743966,
+          0.020478612372244243,
+          0.9097427009255625
+        ],
+        [
+          -34.501696085466705,
+          0.02239024269510992,
+          1.3069740906011642
+        ],
+        [
+          -34.329225893202775,
+          0.03691796233761124,
+          0.6769069161749741
+        ],
+        [
+          -35.04042304381032,
+          0.004097920224012341,
+          -0.9367828489024015
+        ],
+        [
+          -33.81727630133138,
+          0.004084498716110829,
+          -1.3879709241655078
+        ],
+        [
+          -32.77267880872647,
+          0.020192134819808416,
+          -0.3729841340581109
+        ]
+      ]
+    },
+    {
+      "time": 6.049999999999984,
+      "ms": 856.2999999998137,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 370,
+        "shots": 49,
+        "decisions": 290,
+        "friendlyBlocks": 1704,
+        "hearing": 0,
+        "coverTests": 288,
+        "paths": 25,
+        "expanded": 6766,
+        "queued": 0,
+        "cachedNav": 1030,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "investigate",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "investigate",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 363,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 32281,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          33.61814532900124,
+          0.024290410525281914,
+          -0.6421629382087701
+        ],
+        [
+          32.04276125560048,
+          0.05268281361350091,
+          3.1499598596087166
+        ],
+        [
+          29.142674508407005,
+          0.01520373110906803,
+          -2.2798360679083682
+        ],
+        [
+          33.210569726471164,
+          0.01903831921663368,
+          -1.528035000973974
+        ],
+        [
+          33.631647826868274,
+          0.022812164716015104,
+          1.6292782374458192
+        ],
+        [
+          33.16474730691583,
+          0.04104879550868645,
+          -2.241103636831511
+        ],
+        [
+          -33.593566259743966,
+          0.022478612321719993,
+          0.9097427009255625
+        ],
+        [
+          -34.21131080726474,
+          0.0343903199172928,
+          1.3291144174237504
+        ],
+        [
+          -34.48003405176891,
+          0.04071796224161517,
+          0.7306019182711304
+        ],
+        [
+          -35.04042304381032,
+          0.006097920173488092,
+          -0.9367828489024015
+        ],
+        [
+          -31.996935832579418,
+          0.24598321006487822,
+          -2.8611487476364132
+        ],
+        [
+          -32.77267880872647,
+          0.022192134769284166,
+          -0.3729841340581109
+        ]
+      ]
+    },
+    {
+      "time": 8.04999999999998,
+      "ms": 825.8999999999069,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 490,
+        "shots": 59,
+        "decisions": 386,
+        "friendlyBlocks": 1941,
+        "hearing": 0,
+        "coverTests": 402,
+        "paths": 31,
+        "expanded": 7842,
+        "queued": 1,
+        "cachedNav": 2,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "investigate",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "investigate",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 483,
+        "actors": 12,
+        "liveMotorRigs": 11,
+        "liveAngularMotors": 143,
+        "servoSubsteps": 42482,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 1,
+          "segments": 17
+        },
+        "ragdolls": 0,
+        "colliders": 397,
+        "bodies": 172,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          33.61814532900124,
+          0.026290410474757664,
+          -0.6421629382087701
+        ],
+        [
+          32.04177296532637,
+          0.05247550015701563,
+          3.1499695466823927
+        ],
+        [
+          29.14267738562831,
+          0.015167904028203338,
+          -2.2798370095005285
+        ],
+        [
+          31.434956122590535,
+          0.015099984088010387,
+          -1.8335232029963626
+        ],
+        [
+          32.656266717150274,
+          0.02981216453918023,
+          2.5211016020276156
+        ],
+        [
+          29.781277535613057,
+          0.015185483402092359,
+          -2.1883009756159737
+        ],
+        [
+          -33.30665565552408,
+          0.03057861211709678,
+          1.0523109104833566
+        ],
+        [
+          -34.3704972012186,
+          0.046390372393943835,
+          1.4181749519140228
+        ],
+        [
+          -34.64793819388713,
+          0.045117935122107156,
+          0.8214126694454592
+        ],
+        [
+          -35.040421942949905,
+          0.008097920115687884,
+          -0.9367820815044234
+        ],
+        [
+          -29.5952800391675,
+          0.017518981900138897,
+          -3.1116376987920162
+        ],
+        [
+          -32.77267880872647,
+          0.024192134718759917,
+          -0.3729841340581109
+        ]
+      ]
+    },
+    {
+      "time": 10.050000000000079,
+      "ms": 725.6999999997206,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 615,
+        "shots": 71,
+        "decisions": 482,
+        "friendlyBlocks": 2301,
+        "hearing": 0,
+        "coverTests": 552,
+        "paths": 37,
+        "expanded": 9299,
+        "queued": 0,
+        "cachedNav": 362,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "investigate",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "investigate",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 603,
+        "actors": 12,
+        "liveMotorRigs": 11,
+        "liveAngularMotors": 143,
+        "servoSubsteps": 51347,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 1,
+          "segments": 17
+        },
+        "ragdolls": 0,
+        "colliders": 397,
+        "bodies": 172,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          33.61814532900124,
+          0.028290410424233414,
+          -0.6421629382087701
+        ],
+        [
+          32.040770919188645,
+          0.05190293741543428,
+          3.1499678464617715
+        ],
+        [
+          29.14267736241373,
+          0.015100012009497732,
+          -2.2798368475440784
+        ],
+        [
+          27.061838746471636,
+          0.015004952652816428,
+          -1.6054717137481893
+        ],
+        [
+          32.656266717150274,
+          0.03181216448865598,
+          2.5211016020276156
+        ],
+        [
+          27.62020226095477,
+          0.01506685089225357,
+          -2.023431182914763
+        ],
+        [
+          -33.28534349045003,
+          0.042578611813951284,
+          1.064766600204166
+        ],
+        [
+          -34.24666650128401,
+          0.05839039644342847,
+          1.3607372883567628
+        ],
+        [
+          -34.47984706959606,
+          0.056149779964471236,
+          0.744820426801225
+        ],
+        [
+          -35.040421942949905,
+          0.010097920065163635,
+          -0.9367820815044234
+        ],
+        [
+          -29.270044487814154,
+          0.015000022156527848,
+          -3.1109204400565904
+        ],
+        [
+          -32.77267880872647,
+          0.026192134668235667,
+          -0.3729841340581109
+        ]
+      ]
+    },
+    {
+      "time": 12.050000000000178,
+      "ms": 740.3999999999069,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 728,
+        "shots": 79,
+        "decisions": 578,
+        "friendlyBlocks": 2699,
+        "hearing": 0,
+        "coverTests": 735,
+        "paths": 43,
+        "expanded": 10780,
+        "queued": 0,
+        "cachedNav": 806,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "investigate",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "reload",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 723,
+        "actors": 12,
+        "liveMotorRigs": 11,
+        "liveAngularMotors": 143,
+        "servoSubsteps": 60039,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 1,
+          "segments": 17
+        },
+        "ragdolls": 0,
+        "colliders": 397,
+        "bodies": 172,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          33.61814532900124,
+          0.030290410373709165,
+          -0.6421629382087701
+        ],
+        [
+          32.03975402030031,
+          0.05125132638568175,
+          3.1499681570964686
+        ],
+        [
+          29.14267736241373,
+          0.015100019081728533,
+          -2.2798368475440784
+        ],
+        [
+          22.018586684419148,
+          0.015157074372837087,
+          -1.9727390034782692
+        ],
+        [
+          32.656266717150274,
+          0.03381216443813173,
+          2.5211016020276156
+        ],
+        [
+          23.558847179495146,
+          0.015179885380348423,
+          -2.004600447933015
+        ],
+        [
+          -33.28534349045003,
+          0.054578611510805786,
+          1.064766600204166
+        ],
+        [
+          -34.166751125355354,
+          0.0703904757683631,
+          1.3403014861252611
+        ],
+        [
+          -34.20279815327295,
+          0.0677497824508464,
+          0.6817589635038802
+        ],
+        [
+          -35.040421942949905,
+          0.012097920014639385,
+          -0.9367820815044234
+        ],
+        [
+          -29.270046457712688,
+          0.015099990187081858,
+          -3.1109206508842853
+        ],
+        [
+          -32.77267880872647,
+          0.028192134617711417,
+          -0.3729841340581109
+        ]
+      ]
+    },
+    {
+      "time": 14.050000000000278,
+      "ms": 656.8999999999069,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 836,
+        "shots": 89,
+        "decisions": 675,
+        "friendlyBlocks": 3179,
+        "hearing": 0,
+        "coverTests": 840,
+        "paths": 50,
+        "expanded": 11519,
+        "queued": 1,
+        "cachedNav": 568,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "investigate",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 843,
+        "actors": 12,
+        "liveMotorRigs": 11,
+        "liveAngularMotors": 143,
+        "servoSubsteps": 67556,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 1,
+          "segments": 17
+        },
+        "ragdolls": 0,
+        "colliders": 397,
+        "bodies": 172,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          33.61814532900124,
+          0.032290410323184915,
+          -0.6421629382087701
+        ],
+        [
+          32.092664633029045,
+          0.07554107933901832,
+          2.9893678278282456
+        ],
+        [
+          29.142267304954935,
+          0.015153005664615193,
+          -2.2828661995980783
+        ],
+        [
+          16.939359657867186,
+          0.015100035718205618,
+          -1.9880748433602966
+        ],
+        [
+          32.656266717150274,
+          0.03581216438760748,
+          2.5211016020276156
+        ],
+        [
+          18.46880614184623,
+          0.015431781495863106,
+          -1.9982911554621552
+        ],
+        [
+          -33.28534349045003,
+          0.06657861120766029,
+          1.064766600204166
+        ],
+        [
+          -34.079278268015585,
+          0.08264113916811766,
+          1.3310854611575347
+        ],
+        [
+          -34.19287088582991,
+          0.07014978100778535,
+          0.6812755831150066
+        ],
+        [
+          -35.040421942949905,
+          0.014097919964115135,
+          -0.9367820815044234
+        ],
+        [
+          -28.890881473593822,
+          0.015131275124076637,
+          -3.1087730842778747
+        ],
+        [
+          -32.77267880872647,
+          0.030992134546977468,
+          -0.3729841340581109
+        ]
+      ]
+    },
+    {
+      "time": 16.05000000000037,
+      "ms": 687.8000000002794,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 964,
+        "shots": 110,
+        "decisions": 770,
+        "friendlyBlocks": 3617,
+        "hearing": 0,
+        "coverTests": 1042,
+        "paths": 56,
+        "expanded": 12380,
+        "queued": 0,
+        "cachedNav": 637,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "investigate",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 963,
+        "actors": 12,
+        "liveMotorRigs": 11,
+        "liveAngularMotors": 143,
+        "servoSubsteps": 78529,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 1,
+          "segments": 17
+        },
+        "ragdolls": 0,
+        "colliders": 397,
+        "bodies": 172,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          33.580919417374645,
+          0.04409041002509184,
+          -0.6717886582622157
+        ],
+        [
+          32.10464085800149,
+          0.08021908525870458,
+          2.8357091198419218
+        ],
+        [
+          28.941434715288885,
+          0.01503227740249713,
+          -4.230635438677286
+        ],
+        [
+          15.230191113354646,
+          0.015137397927901475,
+          -1.998956570910588
+        ],
+        [
+          32.656266717162175,
+          0.04431216417287942,
+          2.52110160202047
+        ],
+        [
+          17.02394413706422,
+          0.015100014385097893,
+          -2.0004456009226352
+        ],
+        [
+          -33.28534349045003,
+          0.07857861090451479,
+          1.064766600204166
+        ],
+        [
+          -34.07665153753722,
+          0.09454325940168928,
+          1.3306209542445582
+        ],
+        [
+          -34.19287088583148,
+          0.0721497809572611,
+          0.6812755831061087
+        ],
+        [
+          -35.040421942949905,
+          0.016097919913590886,
+          -0.9367820815044234
+        ],
+        [
+          -25.458851801626793,
+          0.015100061413249932,
+          -3.829700466929882
+        ],
+        [
+          -32.28361751605813,
+          0.04299213424383197,
+          -2.1126939612921483
+        ]
+      ]
+    },
+    {
+      "time": 18.050000000000257,
+      "ms": 669.6000000000931,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 1087,
+        "shots": 139,
+        "decisions": 868,
+        "friendlyBlocks": 3977,
+        "hearing": 0,
+        "coverTests": 1078,
+        "paths": 59,
+        "expanded": 13358,
+        "queued": 0,
+        "cachedNav": 820,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 1083,
+        "actors": 12,
+        "liveMotorRigs": 11,
+        "liveAngularMotors": 143,
+        "servoSubsteps": 87353,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 1,
+          "segments": 17
+        },
+        "ragdolls": 0,
+        "colliders": 397,
+        "bodies": 172,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          33.580919417374645,
+          0.056090409721946344,
+          -0.6717886582622157
+        ],
+        [
+          32.10483637632669,
+          0.07987668038867923,
+          2.8360521504779532
+        ],
+        [
+          24.31933551316262,
+          0.015100064294529147,
+          -2.411595764841781
+        ],
+        [
+          15.230191280988215,
+          0.015160947590629803,
+          -1.998957945543703
+        ],
+        [
+          32.65626671724367,
+          0.05631216386973392,
+          2.521101601973901
+        ],
+        [
+          17.02394413706422,
+          0.015100021457328694,
+          -2.0004456009226352
+        ],
+        [
+          -33.285343083541775,
+          0.08167850121390074,
+          1.0647771229984109
+        ],
+        [
+          -34.07665135838138,
+          0.09500005287554814,
+          1.3306209693971478
+        ],
+        [
+          -34.30306431307615,
+          0.08334177689539501,
+          0.7109266552152268
+        ],
+        [
+          -35.040421942949905,
+          0.018097919863066636,
+          -0.9367820815044234
+        ],
+        [
+          -24.412701346181755,
+          0.015155835244513582,
+          -3.1430942155918236
+        ],
+        [
+          -32.28361751605813,
+          0.05439213395584375,
+          -2.1126939612921483
+        ]
+      ]
+    },
+    {
+      "time": 20.050000000000143,
+      "ms": 724.6000000000931,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 1196,
+        "shots": 157,
+        "decisions": 963,
+        "friendlyBlocks": 4324,
+        "hearing": 0,
+        "coverTests": 1280,
+        "paths": 69,
+        "expanded": 15127,
+        "queued": 0,
+        "cachedNav": 441,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "investigate",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "reload",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 1203,
+        "actors": 12,
+        "liveMotorRigs": 11,
+        "liveAngularMotors": 143,
+        "servoSubsteps": 95170,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 1,
+          "segments": 17
+        },
+        "ragdolls": 0,
+        "colliders": 397,
+        "bodies": 172,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          33.26728050625778,
+          0.06809040941880085,
+          -0.9484316788287686
+        ],
+        [
+          32.104556823064826,
+          0.0806669396547477,
+          2.831087890159906
+        ],
+        [
+          20.48533826355935,
+          0.015123753961233888,
+          -2.0510063325736105
+        ],
+        [
+          15.230188564093643,
+          0.015100018372322666,
+          -1.9989595734232941
+        ],
+        [
+          32.2885560931954,
+          0.06831216278806096,
+          2.2189284830236877
+        ],
+        [
+          17.02394413706422,
+          0.015100028529559495,
+          -2.0004456009226352
+        ],
+        [
+          -33.28534106856755,
+          0.0836785011633765,
+          1.0647763843967546
+        ],
+        [
+          -34.134378158615775,
+          0.09501327007455984,
+          1.39417021034962
+        ],
+        [
+          -34.697090918430305,
+          0.0953626596237882,
+          1.0428946611946603
+        ],
+        [
+          -35.040421942949905,
+          0.020097919812542386,
+          -0.9367820815044234
+        ],
+        [
+          -24.39845729897197,
+          0.015385372567834565,
+          -3.131559097324676
+        ],
+        [
+          -32.28361751605813,
+          0.06149213377648266,
+          -2.1126939612921483
+        ]
+      ]
+    },
+    {
+      "time": 22.05000000000003,
+      "ms": 828.7999999998137,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 1310,
+        "shots": 179,
+        "decisions": 1060,
+        "friendlyBlocks": 4707,
+        "hearing": 0,
+        "coverTests": 1446,
+        "paths": 75,
+        "expanded": 15851,
+        "queued": 0,
+        "cachedNav": 795,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "reload",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 1323,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 104145,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.951840541380335,
+          0.07989040912070777,
+          -1.2230726045230256
+        ],
+        [
+          32.10466321884732,
+          0.08033141334772154,
+          2.828516632125861
+        ],
+        [
+          18.62319050791465,
+          0.015115622016310226,
+          -2.0296432001402955
+        ],
+        [
+          15.230188564093643,
+          0.015100025444553467,
+          -1.9989595734232941
+        ],
+        [
+          32.10475776452977,
+          0.08003445262875175,
+          2.190240737461304
+        ],
+        [
+          17.02394413706422,
+          0.015100035601790296,
+          -2.0004456009226352
+        ],
+        [
+          -33.285339393625,
+          0.08567850111285225,
+          1.0647759846747071
+        ],
+        [
+          -34.019804430387424,
+          0.09485031773510855,
+          1.7111059395219292
+        ],
+        [
+          -34.73522659654856,
+          0.09494937480485532,
+          1.112394286927307
+        ],
+        [
+          -35.040421942949905,
+          0.022097919762018137,
+          -0.9367820815044234
+        ],
+        [
+          -21.599077638224024,
+          0.015093787133082515,
+          -2.345475961745429
+        ],
+        [
+          -32.28361751605813,
+          0.0659921336628031,
+          -2.1126939612921483
+        ]
+      ]
+    },
+    {
+      "time": 24.049999999999915,
+      "ms": 785.3999999999069,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 1382,
+        "shots": 198,
+        "decisions": 1156,
+        "friendlyBlocks": 5069,
+        "hearing": 0,
+        "coverTests": 1649,
+        "paths": 78,
+        "expanded": 16144,
+        "queued": 0,
+        "cachedNav": 152,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 1443,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 111127,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.95184042218451,
+          0.08189040842989925,
+          -1.2230732012768328
+        ],
+        [
+          32.1046060597192,
+          0.08031348633403468,
+          2.8285105977618015
+        ],
+        [
+          18.623190282977234,
+          0.015100020835234318,
+          -2.0296432060299225
+        ],
+        [
+          15.230188564093643,
+          0.015100032516784268,
+          -1.9989595734232941
+        ],
+        [
+          32.10500442849689,
+          0.08066937120929651,
+          2.1674873535415853
+        ],
+        [
+          17.02394413706422,
+          0.01510001287169871,
+          -2.0004456009226352
+        ],
+        [
+          -33.28533808428614,
+          0.087678501062328,
+          1.0647759973186481
+        ],
+        [
+          -31.037035958103345,
+          0.015100029084351263,
+          2.3220156266879153
+        ],
+        [
+          -34.73522930091796,
+          0.09485308360672207,
+          1.1123916914611645
+        ],
+        [
+          -35.040421942949905,
+          0.024097919711493887,
+          -0.9367820815044234
+        ],
+        [
+          -21.59271617656769,
+          0.015100005493877688,
+          -2.3479572052343554
+        ],
+        [
+          -32.28361751605813,
+          0.06799213361227885,
+          -2.1126939612921483
+        ]
+      ]
+    },
+    {
+      "time": 26.0499999999998,
+      "ms": 756.6000000000931,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 1444,
+        "shots": 211,
+        "decisions": 1252,
+        "friendlyBlocks": 5429,
+        "hearing": 0,
+        "coverTests": 1803,
+        "paths": 79,
+        "expanded": 16497,
+        "queued": 0,
+        "cachedNav": 777,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 1563,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 117668,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.95183855921324,
+          0.083890408379375,
+          -1.2230728650841485
+        ],
+        [
+          32.104601740992706,
+          0.08027086302490716,
+          2.8285107004056647
+        ],
+        [
+          16.839910943892832,
+          0.015150298950175056,
+          -1.3599771493995463
+        ],
+        [
+          15.230188564093643,
+          0.01510000978669268,
+          -1.9989595734232941
+        ],
+        [
+          32.104656125013484,
+          0.0801544259829825,
+          2.167444883105081
+        ],
+        [
+          17.023944137064476,
+          0.01510001994392951,
+          -2.000445600922515
+        ],
+        [
+          -33.285336923753576,
+          0.08967850101180375,
+          1.0647758626020014
+        ],
+        [
+          -30.91949220943106,
+          0.015100026923391852,
+          2.328433516169808
+        ],
+        [
+          -34.73523036551995,
+          0.09494936102055362,
+          1.112393924237951
+        ],
+        [
+          -35.04042193113161,
+          0.026097919660969637,
+          -0.9367820770278301
+        ],
+        [
+          -21.592718885438504,
+          0.014999993247329257,
+          -2.3479618789101804
+        ],
+        [
+          -32.28361751605813,
+          0.0699921335617546,
+          -2.1126939612921483
+        ]
+      ]
+    },
+    {
+      "time": 28.049999999999688,
+      "ms": 724,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 1509,
+        "shots": 226,
+        "decisions": 1349,
+        "friendlyBlocks": 5789,
+        "hearing": 0,
+        "coverTests": 2081,
+        "paths": 79,
+        "expanded": 16497,
+        "queued": 0,
+        "cachedNav": 789,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 1683,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 122330,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.95183793854614,
+          0.08589040832885075,
+          -1.2230733667484515
+        ],
+        [
+          32.10473193619609,
+          0.0800924517675412,
+          2.828510744697921
+        ],
+        [
+          16.839912595822845,
+          0.015036372205941007,
+          -1.359975094998481
+        ],
+        [
+          15.230188564093643,
+          0.015100016858923482,
+          -1.9989595734232941
+        ],
+        [
+          32.10468493028957,
+          0.08034905705608253,
+          2.167444790126096
+        ],
+        [
+          17.023944137064476,
+          0.015100027016160311,
+          -2.000445600922515
+        ],
+        [
+          -33.285336607887885,
+          0.0916785009612795,
+          1.064776433138622
+        ],
+        [
+          -30.919488342687476,
+          0.015099986465429538,
+          2.3284347251953275
+        ],
+        [
+          -34.735233983677304,
+          0.09494933114910964,
+          1.1123935947995849
+        ],
+        [
+          -35.04042193113161,
+          0.028097919610445388,
+          -0.9367820770278301
+        ],
+        [
+          -21.592721857209938,
+          0.01509998667461332,
+          -2.347966605287653
+        ],
+        [
+          -32.28361751605813,
+          0.07199213351123035,
+          -2.1126939612921483
+        ]
+      ]
+    },
+    {
+      "time": 30.049999999999574,
+      "ms": 758.5,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 1586,
+        "shots": 246,
+        "decisions": 1444,
+        "friendlyBlocks": 6172,
+        "hearing": 0,
+        "coverTests": 2294,
+        "paths": 85,
+        "expanded": 17038,
+        "queued": 0,
+        "cachedNav": 459,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "reload",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "take-cover",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 1803,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 129796,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.9518375260659,
+          0.0878904082783265,
+          -1.2230730320051038
+        ],
+        [
+          32.10468950680033,
+          0.08031033426914291,
+          2.8285108388511886
+        ],
+        [
+          16.83989838925452,
+          0.015097500603587832,
+          -1.3599851581255966
+        ],
+        [
+          14.897601651367642,
+          0.015189753710728837,
+          -2.0371559809893522
+        ],
+        [
+          32.10489502177216,
+          0.08046804261721263,
+          2.1726065948446207
+        ],
+        [
+          16.617753876280336,
+          0.015031154802272795,
+          -2.0929182885128914
+        ],
+        [
+          -33.28533545496265,
+          0.09367850091075525,
+          1.0647766758821433
+        ],
+        [
+          -27.999673394927743,
+          0.015306746898204437,
+          2.3822921652587663
+        ],
+        [
+          -34.73523829424326,
+          0.09494934682152234,
+          1.1123918662329972
+        ],
+        [
+          -35.04042193113161,
+          0.030097919559921138,
+          -0.9367820770278301
+        ],
+        [
+          -21.592721857209938,
+          0.01509999374684412,
+          -2.347966605287653
+        ],
+        [
+          -32.28361751605813,
+          0.0739921334607061,
+          -2.1126939612921483
+        ]
+      ]
+    },
+    {
+      "time": 32.049999999999464,
+      "ms": 855.8999999999069,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 1674,
+        "shots": 264,
+        "decisions": 1542,
+        "friendlyBlocks": 6652,
+        "hearing": 0,
+        "coverTests": 2494,
+        "paths": 87,
+        "expanded": 17466,
+        "queued": 0,
+        "cachedNav": 706,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "reload",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 1923,
+        "actors": 12,
+        "liveMotorRigs": 9,
+        "liveAngularMotors": 117,
+        "servoSubsteps": 134420,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 3,
+          "segments": 51
+        },
+        "ragdolls": 0,
+        "colliders": 423,
+        "bodies": 180,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.95183682282486,
+          0.08989040822780225,
+          -1.2230733286833875
+        ],
+        [
+          32.10466798013394,
+          0.08027952690781603,
+          2.8285129860290668
+        ],
+        [
+          16.839903805285935,
+          0.01509755053484696,
+          -1.3599951076616592
+        ],
+        [
+          14.897590489035261,
+          0.015179688034550054,
+          -2.037155788231386
+        ],
+        [
+          32.10462110244253,
+          0.08073891440108127,
+          2.172575097367554
+        ],
+        [
+          16.614746000215195,
+          0.01514592250896385,
+          -2.0935006121021336
+        ],
+        [
+          -32.961970950406766,
+          0.09430120655088103,
+          1.3300021749019457
+        ],
+        [
+          -25.948943253417074,
+          0.015084374246725929,
+          2.391307646032578
+        ],
+        [
+          -34.73523964925838,
+          0.09494930748041952,
+          1.1123930369940036
+        ],
+        [
+          -35.04042193113161,
+          0.03209791950939689,
+          -0.9367820770278301
+        ],
+        [
+          -21.592721857209938,
+          0.015100000819074921,
+          -2.347966605287653
+        ],
+        [
+          -32.28361751605813,
+          0.07599213341018185,
+          -2.1126939612921483
+        ]
+      ]
+    },
+    {
+      "time": 34.04999999999935,
+      "ms": 766.5,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 1765,
+        "shots": 288,
+        "decisions": 1637,
+        "friendlyBlocks": 7089,
+        "hearing": 0,
+        "coverTests": 2537,
+        "paths": 87,
+        "expanded": 17466,
+        "queued": 0,
+        "cachedNav": 816,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 2043,
+        "actors": 12,
+        "liveMotorRigs": 9,
+        "liveAngularMotors": 117,
+        "servoSubsteps": 140028,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 3,
+          "segments": 51
+        },
+        "ragdolls": 0,
+        "colliders": 423,
+        "bodies": 180,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.95183661724424,
+          0.091890408177278,
+          -1.2230737523958979
+        ],
+        [
+          32.10469114756697,
+          0.08036862812832624,
+          2.828513017937613
+        ],
+        [
+          16.83990191692594,
+          0.014997706934082089,
+          -1.3599933513886848
+        ],
+        [
+          14.897589340486235,
+          0.015141827516345074,
+          -2.037140749603549
+        ],
+        [
+          32.104695295014885,
+          0.08031972420394595,
+          2.1725750295181046
+        ],
+        [
+          14.532472764787048,
+          0.01499773261093651,
+          -2.7155326460351437
+        ],
+        [
+          -32.96197362362155,
+          0.09430117431111285,
+          1.3300011394714844
+        ],
+        [
+          -25.94894313493457,
+          0.015165381444603554,
+          2.391296326580763
+        ],
+        [
+          -34.73523996744056,
+          0.09494933342648437,
+          1.112392718691073
+        ],
+        [
+          -35.04042193113161,
+          0.03409791945887264,
+          -0.9367820770278301
+        ],
+        [
+          -21.592721857209938,
+          0.015100007891305722,
+          -2.347966605287653
+        ],
+        [
+          -32.28361751605813,
+          0.0779921333596576,
+          -2.1126939612921483
+        ]
+      ]
+    },
+    {
+      "time": 36.04999999999924,
+      "ms": 685.6999999997206,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 1848,
+        "shots": 309,
+        "decisions": 1734,
+        "friendlyBlocks": 7556,
+        "hearing": 0,
+        "coverTests": 2700,
+        "paths": 88,
+        "expanded": 17728,
+        "queued": 0,
+        "cachedNav": 915,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 2163,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 144689,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.95183633012245,
+          0.09389040812675375,
+          -1.223074329238134
+        ],
+        [
+          32.10462064083467,
+          0.08023820400512705,
+          2.828513061087037
+        ],
+        [
+          16.839896273067247,
+          0.015149314527661772,
+          -1.3599987198031933
+        ],
+        [
+          14.8975882738746,
+          0.015100002845429117,
+          -2.037138003701081
+        ],
+        [
+          32.104697105782456,
+          0.08014172646471707,
+          2.172574974601023
+        ],
+        [
+          14.53246929109852,
+          0.015096725881448947,
+          -2.7155342108312412
+        ],
+        [
+          -32.961972812912165,
+          0.09420124876851332,
+          1.329999009736781
+        ],
+        [
+          -25.94894156498097,
+          0.015100013226401643,
+          2.39129985815214
+        ],
+        [
+          -34.73523934427136,
+          0.09494933778478298,
+          1.1123936692325709
+        ],
+        [
+          -35.04042193113161,
+          0.03609791940834839,
+          -0.9367820770278301
+        ],
+        [
+          -21.121595051684785,
+          0.015028323192382231,
+          -2.3046272509170938
+        ],
+        [
+          -32.28361751638964,
+          0.07999213330913335,
+          -2.1126939613744042
+        ]
+      ]
+    },
+    {
+      "time": 38.04999999999912,
+      "ms": 715.2000000001863,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 1942,
+        "shots": 328,
+        "decisions": 1830,
+        "friendlyBlocks": 8017,
+        "hearing": 0,
+        "coverTests": 2937,
+        "paths": 91,
+        "expanded": 18018,
+        "queued": 0,
+        "cachedNav": 149,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "reload",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 2283,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 149128,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.951836466939206,
+          0.0949147041537799,
+          -1.223074660972614
+        ],
+        [
+          32.10467196502495,
+          0.08003739913283425,
+          2.828513123018852
+        ],
+        [
+          16.839894661311284,
+          0.015112391043658135,
+          -1.360007049560102
+        ],
+        [
+          14.8975882738746,
+          0.015100009917659918,
+          -2.037138003701081
+        ],
+        [
+          32.104894152902766,
+          0.08037598681221425,
+          2.176913253447595
+        ],
+        [
+          14.532469942488184,
+          0.01513413756765658,
+          -2.715531118628154
+        ],
+        [
+          -32.961972503114005,
+          0.09420118603884475,
+          1.329995375093393
+        ],
+        [
+          -25.948939945423874,
+          0.015099991849638172,
+          2.3912994580875613
+        ],
+        [
+          -34.73523895363272,
+          0.09509938459814293,
+          1.112393836358404
+        ],
+        [
+          -35.04042193113161,
+          0.03809791935782414,
+          -0.9367820770278301
+        ],
+        [
+          -19.51312201561786,
+          0.015114493737200974,
+          -3.4697333646156783
+        ],
+        [
+          -32.2836163991866,
+          0.08199213314219378,
+          -2.112694190861971
+        ]
+      ]
+    },
+    {
+      "time": 40.04999999999901,
+      "ms": 768.1999999997206,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 2034,
+        "shots": 338,
+        "decisions": 1926,
+        "friendlyBlocks": 8497,
+        "hearing": 0,
+        "coverTests": 3169,
+        "paths": 93,
+        "expanded": 18129,
+        "queued": 0,
+        "cachedNav": 289,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "reload",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 2403,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 152932,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.95183807958076,
+          0.0948147021481418,
+          -1.2230725999548753
+        ],
+        [
+          32.10469770201152,
+          0.08035031505960433,
+          2.828513149217733
+        ],
+        [
+          16.839892842071947,
+          0.015139852130232612,
+          -1.3600108954655268
+        ],
+        [
+          14.8975882738746,
+          0.015100016989890719,
+          -2.037138003701081
+        ],
+        [
+          32.105000366799054,
+          0.08049178736655449,
+          2.1783181109978504
+        ],
+        [
+          14.532469689752427,
+          0.015099988639121875,
+          -2.715531118628154
+        ],
+        [
+          -32.9619759459817,
+          0.09420122814481147,
+          1.3299931007411345
+        ],
+        [
+          -25.948942498140084,
+          0.01499999116822437,
+          2.3913031147578985
+        ],
+        [
+          -34.735238792191275,
+          0.09504932410345646,
+          1.1123939507353564
+        ],
+        [
+          -35.04042193113161,
+          0.04009791930729989,
+          -0.9367820770278301
+        ],
+        [
+          -17.064366934303656,
+          0.015147472855460364,
+          -4.441940932961728
+        ],
+        [
+          -32.283615957784875,
+          0.08399213309166953,
+          -2.1126960300603503
+        ]
+      ]
+    },
+    {
+      "time": 42.049999999998896,
+      "ms": 726.8999999999069,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 2113,
+        "shots": 353,
+        "decisions": 2023,
+        "friendlyBlocks": 8977,
+        "hearing": 0,
+        "coverTests": 3337,
+        "paths": 95,
+        "expanded": 18266,
+        "queued": 1,
+        "cachedNav": 408,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "investigate",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 2523,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 156433,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.951839826882804,
+          0.09481465681892587,
+          -1.2230717366986
+        ],
+        [
+          32.10461160280201,
+          0.08024182732651752,
+          2.828513152035153
+        ],
+        [
+          16.83990093060277,
+          0.015046473487018375,
+          -1.360008429475174
+        ],
+        [
+          14.8975882738746,
+          0.01510002406212152,
+          -2.037138003701081
+        ],
+        [
+          32.104706459015055,
+          0.08006235255561478,
+          2.178282712736572
+        ],
+        [
+          14.532469064293748,
+          0.015100975542736705,
+          -2.715531118628154
+        ],
+        [
+          -32.96197698385189,
+          0.09430128079111455,
+          1.3299931489404422
+        ],
+        [
+          -25.94893887402041,
+          0.015111788796275505,
+          2.391304938245254
+        ],
+        [
+          -34.735239420444714,
+          0.09484932170016691,
+          1.1123936486010353
+        ],
+        [
+          -35.04042193113161,
+          0.04209791925677564,
+          -0.9367820770278301
+        ],
+        [
+          -20.48002376053266,
+          0.016379166136175627,
+          -2.6047022875925805
+        ],
+        [
+          -32.28361559059296,
+          0.08599213304114528,
+          -2.1126970082685856
+        ]
+      ]
+    },
+    {
+      "time": 44.04999999999878,
+      "ms": 791.8000000002794,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 2195,
+        "shots": 372,
+        "decisions": 2118,
+        "friendlyBlocks": 9457,
+        "hearing": 0,
+        "coverTests": 3459,
+        "paths": 97,
+        "expanded": 18507,
+        "queued": 0,
+        "cachedNav": 733,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "reload",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 2643,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 160927,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.95184107018001,
+          0.09491465077735484,
+          -1.2230717274601233
+        ],
+        [
+          32.10469386644499,
+          0.08034326954430071,
+          2.828515574282097
+        ],
+        [
+          16.8398996801609,
+          0.01511248618044192,
+          -1.3600114863990187
+        ],
+        [
+          14.8975882738746,
+          0.01510003113435232,
+          -2.037138003701081
+        ],
+        [
+          32.10467076042942,
+          0.08019981286088296,
+          2.178282640953708
+        ],
+        [
+          14.524212330801543,
+          0.015126287275052164,
+          -2.719509226571108
+        ],
+        [
+          -32.96197832052788,
+          0.09443009365350008,
+          1.3299918152712369
+        ],
+        [
+          -25.948938492353772,
+          0.015100003469342482,
+          2.391304938245254
+        ],
+        [
+          -34.73523937964661,
+          0.0949493103689747,
+          1.1123933589625994
+        ],
+        [
+          -35.04042193113161,
+          0.04409791920625139,
+          -0.9367820770278301
+        ],
+        [
+          -20.65713345844393,
+          0.015104104357305914,
+          -2.4974593735874002
+        ],
+        [
+          -32.28361529126804,
+          0.08799213299062103,
+          -2.112697301557739
+        ]
+      ]
+    },
+    {
+      "time": 46.04999999999867,
+      "ms": 682.2000000001863,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 2305,
+        "shots": 395,
+        "decisions": 2216,
+        "friendlyBlocks": 9937,
+        "hearing": 0,
+        "coverTests": 3623,
+        "paths": 99,
+        "expanded": 18729,
+        "queued": 0,
+        "cachedNav": 847,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "investigate",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 2763,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 165109,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.95184129076718,
+          0.09491471711953636,
+          -1.2230718545596595
+        ],
+        [
+          32.10463613415331,
+          0.08014592930476283,
+          2.828515644344388
+        ],
+        [
+          16.839895041185517,
+          0.015060660003655357,
+          -1.360014663532995
+        ],
+        [
+          14.8975882738746,
+          0.015099978601938346,
+          -2.037138003701081
+        ],
+        [
+          32.10462860358012,
+          0.08022332608561555,
+          2.1782826019866914
+        ],
+        [
+          14.113017798618733,
+          0.015100012642506044,
+          -2.858060977337103
+        ],
+        [
+          -32.96197675162485,
+          0.09420122837400413,
+          1.3299921473930763
+        ],
+        [
+          -25.948938492353772,
+          0.015100010541573283,
+          2.391304938245254
+        ],
+        [
+          -34.735239219019284,
+          0.09484931643964956,
+          1.1123936487438117
+        ],
+        [
+          -35.04042193113161,
+          0.04609791915572714,
+          -0.9367820770278301
+        ],
+        [
+          -17.92233967015614,
+          0.015162957002758048,
+          -4.903217551660937
+        ],
+        [
+          -32.28361500144909,
+          0.08999213294009678,
+          -2.1126973600764507
+        ]
+      ]
+    },
+    {
+      "time": 48.049999999998555,
+      "ms": 721.3999999999069,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 2414,
+        "shots": 419,
+        "decisions": 2311,
+        "friendlyBlocks": 10417,
+        "hearing": 0,
+        "coverTests": 3744,
+        "paths": 102,
+        "expanded": 19065,
+        "queued": 0,
+        "cachedNav": 0,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 2883,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 169820,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.951841293605185,
+          0.09491466654435499,
+          -1.2230719023008412
+        ],
+        [
+          32.10464837329445,
+          0.08006882520339786,
+          2.8285156263232034
+        ],
+        [
+          16.839896050883645,
+          0.015137291069549974,
+          -1.3600147878226065
+        ],
+        [
+          14.8975882738746,
+          0.015099985674169147,
+          -2.037138003701081
+        ],
+        [
+          32.10498046399544,
+          0.08037441186206706,
+          2.18178786730848
+        ],
+        [
+          14.09708234037584,
+          0.015000067891378421,
+          -2.867124316081557
+        ],
+        [
+          -32.961976028793956,
+          0.09443009907045052,
+          1.3299918954462662
+        ],
+        [
+          -25.948938492353772,
+          0.015100017613804084,
+          2.391304938245254
+        ],
+        [
+          -34.73523860262394,
+          0.09504930888942908,
+          1.1123939041198911
+        ],
+        [
+          -35.04042193113161,
+          0.04809791910520289,
+          -0.9367820770278301
+        ],
+        [
+          -14.834860821050604,
+          0.015000037205027184,
+          -2.094097923035015
+        ],
+        [
+          -32.283614718382566,
+          0.09199213288957253,
+          -2.112697864829812
+        ]
+      ]
+    },
+    {
+      "time": 50.04999999999844,
+      "ms": 721.5,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 2497,
+        "shots": 438,
+        "decisions": 2408,
+        "friendlyBlocks": 10886,
+        "hearing": 0,
+        "coverTests": 3960,
+        "paths": 103,
+        "expanded": 19176,
+        "queued": 0,
+        "cachedNav": 371,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 3003,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 175489,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.951841220960596,
+          0.09491466629697243,
+          -1.2230719027237402
+        ],
+        [
+          32.10467600406727,
+          0.08001359066611258,
+          2.8285156637692617
+        ],
+        [
+          16.839895425163526,
+          0.015000580682681175,
+          -1.3600141292476946
+        ],
+        [
+          14.8975882738746,
+          0.015099992746399948,
+          -2.037138003701081
+        ],
+        [
+          32.104598897163946,
+          0.08031411036972713,
+          2.182475916898748
+        ],
+        [
+          13.786922534853465,
+          0.015098664534889394,
+          -3.04458468027726
+        ],
+        [
+          -32.961975084454636,
+          0.09430118804084486,
+          1.3299914861894448
+        ],
+        [
+          -25.948938492353772,
+          0.015099994883712498,
+          2.391304938245254
+        ],
+        [
+          -34.735238099684665,
+          0.09509962400625227,
+          1.1123941024693418
+        ],
+        [
+          -35.04042193113161,
+          0.05009791905467864,
+          -0.9367820770278301
+        ],
+        [
+          -14.478057060259474,
+          0.015100011998583796,
+          -1.8693674707527743
+        ],
+        [
+          -32.28361474880883,
+          0.09399213283904828,
+          -2.1126976574494876
+        ]
+      ]
+    },
+    {
+      "time": 52.04999999999833,
+      "ms": 718.8999999999069,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 2562,
+        "shots": 447,
+        "decisions": 2504,
+        "friendlyBlocks": 11366,
+        "hearing": 0,
+        "coverTests": 4249,
+        "paths": 103,
+        "expanded": 19176,
+        "queued": 0,
+        "cachedNav": 400,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 3123,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 179764,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.95184125044236,
+          0.0949146591083263,
+          -1.2230718317078164
+        ],
+        [
+          32.10463069795978,
+          0.08057028191387872,
+          2.828515703294426
+        ],
+        [
+          16.83990470818522,
+          0.015100028685992584,
+          -1.3600165352762892
+        ],
+        [
+          14.8975882738746,
+          0.01509999981863075,
+          -2.037138003701081
+        ],
+        [
+          32.104521124765874,
+          0.08085730676793901,
+          2.182475883520608
+        ],
+        [
+          13.786923938010533,
+          0.01510000890630181,
+          -3.0445848252415795
+        ],
+        [
+          -32.96197369268876,
+          0.09440118102429551,
+          1.3299917095897795
+        ],
+        [
+          -25.948938492353772,
+          0.015100001955943299,
+          2.391304938245254
+        ],
+        [
+          -34.73523953095225,
+          0.09484931531915208,
+          1.1123937295921815
+        ],
+        [
+          -35.04042193113161,
+          0.05209791900415439,
+          -0.9367820770278301
+        ],
+        [
+          -14.478057060259474,
+          0.015099989268492209,
+          -1.8693674707527743
+        ],
+        [
+          -32.283612845950636,
+          0.09494905138853937,
+          -2.112698510248011
+        ]
+      ]
+    },
+    {
+      "time": 54.049999999998214,
+      "ms": 651.5999999996275,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 2639,
+        "shots": 462,
+        "decisions": 2600,
+        "friendlyBlocks": 11846,
+        "hearing": 0,
+        "coverTests": 4409,
+        "paths": 105,
+        "expanded": 19398,
+        "queued": 0,
+        "cachedNav": 248,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 3243,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 184421,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.95184134757733,
+          0.09491465345490724,
+          -1.2230717602689012
+        ],
+        [
+          32.10473347511933,
+          0.08009288807033954,
+          2.8285157826704426
+        ],
+        [
+          16.839903126332874,
+          0.01502382511171163,
+          -1.3600188078034192
+        ],
+        [
+          14.8975882738746,
+          0.01510000689086155,
+          -2.037138003701081
+        ],
+        [
+          32.10495282548464,
+          0.08052993415003584,
+          2.1867692343918996
+        ],
+        [
+          13.786923938010533,
+          0.01510001597853261,
+          -3.0445848252415795
+        ],
+        [
+          -32.96197672568667,
+          0.09420121388757252,
+          1.329986593591813
+        ],
+        [
+          -25.948938492353772,
+          0.0151000090281741,
+          2.391304938245254
+        ],
+        [
+          -34.73523958821447,
+          0.09509990236983867,
+          1.1123928354289945
+        ],
+        [
+          -35.04042193113161,
+          0.05409791895363014,
+          -0.9367820770278301
+        ],
+        [
+          -14.478057060259474,
+          0.01509999634072301,
+          -1.8693674707527743
+        ],
+        [
+          -32.28361064028365,
+          0.09484901709583937,
+          -2.1126984719134736
+        ]
+      ]
+    },
+    {
+      "time": 56.0499999999981,
+      "ms": 695.0999999996275,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 2711,
+        "shots": 477,
+        "decisions": 2697,
+        "friendlyBlocks": 12326,
+        "hearing": 0,
+        "coverTests": 4615,
+        "paths": 105,
+        "expanded": 19398,
+        "queued": 0,
+        "cachedNav": 330,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "reload",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 3363,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 189452,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.95184135066772,
+          0.09491466248437064,
+          -1.2230717602689012
+        ],
+        [
+          32.10471812055684,
+          0.07986372239565753,
+          2.8285093039374005
+        ],
+        [
+          16.83990326001413,
+          0.015100007454748265,
+          -1.3600169869332943
+        ],
+        [
+          14.8975882738746,
+          0.015100013963092351,
+          -2.037138003701081
+        ],
+        [
+          32.10464509693366,
+          0.08032596064003883,
+          2.0153814034937128
+        ],
+        [
+          13.786923938010533,
+          0.015099993248441024,
+          -3.0445848252415795
+        ],
+        [
+          -32.961975956874376,
+          0.09410119056337862,
+          1.329986641278695
+        ],
+        [
+          -25.948938492353772,
+          0.0151000161004049,
+          2.391304938245254
+        ],
+        [
+          -34.735239463075445,
+          0.09494931544031715,
+          1.1123933339465115
+        ],
+        [
+          -35.04042193113161,
+          0.05609791890310589,
+          -0.9367820770278301
+        ],
+        [
+          -14.478057060259474,
+          0.01510000341295381,
+          -1.8693674707527743
+        ],
+        [
+          -32.28361013688827,
+          0.09500682589714415,
+          -2.1126991255611767
+        ]
+      ]
+    },
+    {
+      "time": 58.049999999997986,
+      "ms": 750.1000000000931,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 2789,
+        "shots": 491,
+        "decisions": 2792,
+        "friendlyBlocks": 12768,
+        "hearing": 0,
+        "coverTests": 4787,
+        "paths": 108,
+        "expanded": 19403,
+        "queued": 0,
+        "cachedNav": 427,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 3483,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 194422,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          32.95184135375811,
+          0.09491467151383404,
+          -1.2230717602689012
+        ],
+        [
+          32.1047044738344,
+          0.07985751370642902,
+          2.8285868562654106
+        ],
+        [
+          16.66409225128537,
+          0.015128701379580889,
+          -1.6566640474717487
+        ],
+        [
+          14.8975882738746,
+          0.015100021035323152,
+          -2.037138003701081
+        ],
+        [
+          32.10470030042625,
+          0.0803420769461809,
+          2.01537836549732
+        ],
+        [
+          13.786923938010533,
+          0.015100000320671825,
+          -3.0445848252415795
+        ],
+        [
+          -32.961975232591364,
+          0.09430121771220001,
+          1.3299866388060133
+        ],
+        [
+          -25.948938492353772,
+          0.015099993370313314,
+          2.391304938245254
+        ],
+        [
+          -34.735238945656974,
+          0.09510004847834352,
+          1.1123933102194006
+        ],
+        [
+          -35.04042193113161,
+          0.05809791885258164,
+          -0.9367820770278301
+        ],
+        [
+          -14.624599553105966,
+          0.015100021890248172,
+          -1.8926080521113244
+        ],
+        [
+          -32.19016042714219,
+          0.09471482982189627,
+          -2.297300516575172
+        ]
+      ]
+    },
+    {
+      "time": 60.04999999999787,
+      "ms": 831.6000000000931,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 2900,
+        "shots": 507,
+        "decisions": 2890,
+        "friendlyBlocks": 13125,
+        "hearing": 0,
+        "coverTests": 5024,
+        "paths": 111,
+        "expanded": 19838,
+        "queued": 0,
+        "cachedNav": 553,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "investigate",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 3603,
+        "actors": 12,
+        "liveMotorRigs": 11,
+        "liveAngularMotors": 143,
+        "servoSubsteps": 203237,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 1,
+          "segments": 17
+        },
+        "ragdolls": 0,
+        "colliders": 397,
+        "bodies": 172,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          31.82491678832147,
+          0.015098633455636445,
+          -2.138687494608824
+        ],
+        [
+          32.10470559481391,
+          0.08025301522275186,
+          2.8285905609447006
+        ],
+        [
+          14.664393249153552,
+          0.015005051112893852,
+          -3.4846591829206215
+        ],
+        [
+          14.8975882738746,
+          0.015100028107553953,
+          -2.037138003701081
+        ],
+        [
+          32.10469385129573,
+          0.08031431695599167,
+          2.015325152336135
+        ],
+        [
+          13.786923938010533,
+          0.015100007392902626,
+          -3.0445848252415795
+        ],
+        [
+          -32.961974457376556,
+          0.09420119438800612,
+          1.3299865865268226
+        ],
+        [
+          -25.948938492353772,
+          0.015100000442544115,
+          2.391304938245254
+        ],
+        [
+          -34.73523879156869,
+          0.09494930496293819,
+          1.1123934038692378
+        ],
+        [
+          -35.04042193113161,
+          0.06009791880205739,
+          -0.9367820770278301
+        ],
+        [
+          -15.263185589057045,
+          0.01509774604809877,
+          -2.9249410819864288
+        ],
+        [
+          -29.35064197741093,
+          0.01580248318168742,
+          -4.139413425064243
+        ]
+      ]
+    },
+    {
+      "time": 62.04999999999776,
+      "ms": 687.3999999999069,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 3003,
+        "shots": 530,
+        "decisions": 2985,
+        "friendlyBlocks": 13405,
+        "hearing": 0,
+        "coverTests": 5228,
+        "paths": 113,
+        "expanded": 20229,
+        "queued": 0,
+        "cachedNav": 114,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "investigate",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 3723,
+        "actors": 12,
+        "liveMotorRigs": 11,
+        "liveAngularMotors": 143,
+        "servoSubsteps": 210491,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 1,
+          "segments": 17
+        },
+        "ragdolls": 0,
+        "colliders": 397,
+        "bodies": 172,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          31.824916243940123,
+          0.015098645810212474,
+          -2.138687575766185
+        ],
+        [
+          32.10463505119796,
+          0.08018268687146701,
+          2.8286132906985157
+        ],
+        [
+          14.54612113305518,
+          0.015099997659490327,
+          -3.567698060481254
+        ],
+        [
+          14.8975882738746,
+          0.015099975575139979,
+          -2.037138003701081
+        ],
+        [
+          32.10481052893402,
+          0.0800558453429403,
+          2.1696008436220593
+        ],
+        [
+          13.786923938010533,
+          0.015100014465133427,
+          -3.0445848252415795
+        ],
+        [
+          -32.961973688523166,
+          0.09410121231849189,
+          1.3299866342137046
+        ],
+        [
+          -25.948938492353772,
+          0.015100007514774916,
+          2.391304938245254
+        ],
+        [
+          -34.73523855453605,
+          0.09494932014058577,
+          1.112393887725805
+        ],
+        [
+          -35.04042193113161,
+          0.06209791875153314,
+          -0.9367820770278301
+        ],
+        [
+          -15.263197444162753,
+          0.01499797811001713,
+          -2.9249454510637527
+        ],
+        [
+          -24.507082872461694,
+          0.026572393713649944,
+          -2.904805825621418
+        ]
+      ]
+    },
+    {
+      "time": 64.04999999999765,
+      "ms": 717.1000000000931,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 3094,
+        "shots": 553,
+        "decisions": 3082,
+        "friendlyBlocks": 13645,
+        "hearing": 0,
+        "coverTests": 5393,
+        "paths": 114,
+        "expanded": 20327,
+        "queued": 0,
+        "cachedNav": 348,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 3843,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 216221,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          31.824914300921677,
+          0.015151677562244004,
+          -2.138687761051572
+        ],
+        [
+          32.104691963075396,
+          0.08006670506392766,
+          2.828545335792978
+        ],
+        [
+          14.54612113305518,
+          0.015100004731721128,
+          -3.567698060481254
+        ],
+        [
+          14.8975882738746,
+          0.01509998264737078,
+          -2.037138003701081
+        ],
+        [
+          32.104939731238396,
+          0.0805157520389912,
+          2.1650696237608007
+        ],
+        [
+          13.786923938010533,
+          0.01509999173504184,
+          -3.0445848252415795
+        ],
+        [
+          -32.96197288303936,
+          0.09420118881462258,
+          1.3299866365236612
+        ],
+        [
+          -25.948938492353772,
+          0.015100014587005717,
+          2.391304938245254
+        ],
+        [
+          -34.73523995673835,
+          0.09484930517646717,
+          1.1123933127600625
+        ],
+        [
+          -35.04042193113161,
+          0.0640979187010089,
+          -0.9367820770278301
+        ],
+        [
+          -15.263203208764239,
+          0.015098081607987979,
+          -2.924944317333233
+        ],
+        [
+          -23.421139299792756,
+          0.01510000527741795,
+          -2.527921587068298
+        ]
+      ]
+    },
+    {
+      "time": 66.04999999999754,
+      "ms": 766.3999999999069,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 3180,
+        "shots": 576,
+        "decisions": 3178,
+        "friendlyBlocks": 13855,
+        "hearing": 0,
+        "coverTests": 5685,
+        "paths": 117,
+        "expanded": 20409,
+        "queued": 0,
+        "cachedNav": 144,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 3963,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 223603,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          31.233495361217464,
+          0.015082976991834585,
+          -3.537569827450308
+        ],
+        [
+          32.10467946117032,
+          0.07997125963402141,
+          2.8285453815515833
+        ],
+        [
+          13.317636654974535,
+          0.01500001028944098,
+          -4.222373133988205
+        ],
+        [
+          14.8975882738746,
+          0.015099989719601581,
+          -2.037138003701081
+        ],
+        [
+          32.10468457939378,
+          0.08033176397657371,
+          2.1651074451841743
+        ],
+        [
+          13.786923938010547,
+          0.015099998807272641,
+          -3.0445848252417194
+        ],
+        [
+          -32.96197184035812,
+          0.09420120534559828,
+          1.329986671627947
+        ],
+        [
+          -25.948938492353772,
+          0.01509999185691413,
+          2.391304938245254
+        ],
+        [
+          -34.735240208881905,
+          0.09484929105747142,
+          1.1123936402360928
+        ],
+        [
+          -35.04042193113161,
+          0.06609791865048464,
+          -0.9367820770278301
+        ],
+        [
+          -15.263204218767733,
+          0.015099998513591117,
+          -2.924943943163972
+        ],
+        [
+          -23.421136871713333,
+          0.015101774710274185,
+          -2.527920383358791
+        ]
+      ]
+    },
+    {
+      "time": 68.04999999999742,
+      "ms": 807.1000000000931,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 3274,
+        "shots": 604,
+        "decisions": 3274,
+        "friendlyBlocks": 13975,
+        "hearing": 0,
+        "coverTests": 5932,
+        "paths": 119,
+        "expanded": 20446,
+        "queued": 0,
+        "cachedNav": 186,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 4083,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 230721,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          29.766435857908036,
+          0.015134281395148719,
+          -7.0017644288519945
+        ],
+        [
+          32.10467954391615,
+          0.0799766990671742,
+          2.8285463988682604
+        ],
+        [
+          10.5217287850395,
+          0.015076043482622481,
+          -6.003724018574777
+        ],
+        [
+          14.8975882738746,
+          0.015099996791832382,
+          -2.037138003701081
+        ],
+        [
+          32.104695178666866,
+          0.08031836884401855,
+          2.156587758400969
+        ],
+        [
+          13.786923938010547,
+          0.015100005879503442,
+          -3.0445848252417194
+        ],
+        [
+          -32.96197079768743,
+          0.09420120359936845,
+          1.329986706719784
+        ],
+        [
+          -25.948938492353772,
+          0.015099998929144931,
+          2.391304938245254
+        ],
+        [
+          -34.73523991563244,
+          0.09494931003791862,
+          1.1123933180612584
+        ],
+        [
+          -35.04042193113161,
+          0.0680979185999604,
+          -0.9367820770278301
+        ],
+        [
+          -15.263204218767733,
+          0.015100005585821918,
+          -2.924943943163972
+        ],
+        [
+          -23.42113390639467,
+          0.015138373755689827,
+          -2.52791523778491
+        ]
+      ]
+    },
+    {
+      "time": 70.04999999999731,
+      "ms": 821.1000000000931,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 3420,
+        "shots": 629,
+        "decisions": 3371,
+        "friendlyBlocks": 14095,
+        "hearing": 0,
+        "coverTests": 6146,
+        "paths": 124,
+        "expanded": 21026,
+        "queued": 0,
+        "cachedNav": 304,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "reload",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 4203,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 238461,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          29.448589436196787,
+          0.015111154072656063,
+          -6.8980841909185395
+        ],
+        [
+          32.10563374458988,
+          0.08035079164574199,
+          2.8285509892697185
+        ],
+        [
+          5.490590700210646,
+          0.01500186875819054,
+          -6.366941361743576
+        ],
+        [
+          14.8975882738746,
+          0.015100003864063183,
+          -2.037138003701081
+        ],
+        [
+          32.10483414455512,
+          0.08046646257207613,
+          2.1477024808476295
+        ],
+        [
+          13.786923938010547,
+          0.015100012951734243,
+          -3.0445848252417194
+        ],
+        [
+          -32.96196980482132,
+          0.09420120185313863,
+          1.3299866421956006
+        ],
+        [
+          -25.948938492353772,
+          0.015100006001375732,
+          2.391304938245254
+        ],
+        [
+          -34.7352393871802,
+          0.09494931836161413,
+          1.1123935534364409
+        ],
+        [
+          -35.04042193113161,
+          0.07009791854943614,
+          -0.9367820770278301
+        ],
+        [
+          -15.263204218767733,
+          0.01510001265805272,
+          -2.924943943163972
+        ],
+        [
+          -23.421138479066332,
+          0.01509999881272961,
+          -2.5279200239019275
+        ]
+      ]
+    },
+    {
+      "time": 72.0499999999972,
+      "ms": 762.8999999999069,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 3561,
+        "shots": 646,
+        "decisions": 3466,
+        "friendlyBlocks": 14215,
+        "hearing": 0,
+        "coverTests": 6390,
+        "paths": 126,
+        "expanded": 21256,
+        "queued": 0,
+        "cachedNav": 589,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "reload",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 4323,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 245524,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          29.276983248224717,
+          0.015005340523202904,
+          -6.493478736708409
+        ],
+        [
+          32.105035302491245,
+          0.08006456264729422,
+          2.8285519921665188
+        ],
+        [
+          0.5598028984680923,
+          0.015050833046188927,
+          -6.360924766920126
+        ],
+        [
+          14.8975882738746,
+          0.015100010936293984,
+          -2.037138003701081
+        ],
+        [
+          32.10463309837751,
+          0.08033025870099664,
+          2.1476979682553314
+        ],
+        [
+          13.786921767470782,
+          0.015107078434084542,
+          -3.0445847225800304
+        ],
+        [
+          -32.9619682879574,
+          0.09413002441942808,
+          1.3299837031862625
+        ],
+        [
+          -25.948938492353772,
+          0.015100013073606533,
+          2.391304938245254
+        ],
+        [
+          -34.735239681770885,
+          0.09484934829015401,
+          1.1123923208651034
+        ],
+        [
+          -35.04042193113161,
+          0.0720979184989119,
+          -0.9367820770278301
+        ],
+        [
+          -15.263204218767733,
+          0.015099989927961133,
+          -2.924943943163972
+        ],
+        [
+          -23.42113437744441,
+          0.015100005932254135,
+          -2.5279149238683307
+        ]
+      ]
+    },
+    {
+      "time": 74.04999999999708,
+      "ms": 722.6000000000931,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 3712,
+        "shots": 665,
+        "decisions": 3564,
+        "friendlyBlocks": 14335,
+        "hearing": 0,
+        "coverTests": 6552,
+        "paths": 129,
+        "expanded": 21487,
+        "queued": 0,
+        "cachedNav": 640,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "investigate",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 4443,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 252609,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          29.260914393852307,
+          0.01500004093759344,
+          -6.39902402484928
+        ],
+        [
+          32.10465981436036,
+          0.0802658309362414,
+          2.8284913145001997
+        ],
+        [
+          -3.8995117905720917,
+          0.014999063156210468,
+          -4.405265225007517
+        ],
+        [
+          14.8975882738746,
+          0.015100018008524785,
+          -2.037138003701081
+        ],
+        [
+          32.10464656660616,
+          0.08010862981609534,
+          2.14771358723065
+        ],
+        [
+          13.786920987299345,
+          0.015121109470783267,
+          -3.0445856776094624
+        ],
+        [
+          -32.96196998516763,
+          0.094201246934972,
+          1.3299840954260889
+        ],
+        [
+          -25.948938492353772,
+          0.015100020145837334,
+          2.391304938245254
+        ],
+        [
+          -34.73524013053752,
+          0.09494930415530689,
+          1.1123930294657305
+        ],
+        [
+          -35.04042193113161,
+          0.07409791844838765,
+          -0.9367820770278301
+        ],
+        [
+          -15.263204218767733,
+          0.015099997000191934,
+          -2.924943943163972
+        ],
+        [
+          -23.42113437744441,
+          0.015100015085408813,
+          -2.5279146432488493
+        ]
+      ]
+    },
+    {
+      "time": 76.04999999999697,
+      "ms": 732.2000000001863,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 3894,
+        "shots": 682,
+        "decisions": 3659,
+        "friendlyBlocks": 14466,
+        "hearing": 0,
+        "coverTests": 6804,
+        "paths": 132,
+        "expanded": 21643,
+        "queued": 1,
+        "cachedNav": 660,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "investigate",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "investigate",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "no-ammo",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "investigate",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 4563,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 260183,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          29.173148823077184,
+          0.015092185942194192,
+          -5.987316297173871
+        ],
+        [
+          32.104689520192636,
+          0.07997583748465331,
+          2.8284147185757473
+        ],
+        [
+          -8.401369460596129,
+          0.020711011688035796,
+          -2.3051896723018412
+        ],
+        [
+          14.8975882738746,
+          0.015100025080755586,
+          -2.037138003701081
+        ],
+        [
+          32.104733166537976,
+          0.08034646663145395,
+          2.1477129672990336
+        ],
+        [
+          13.78692116984513,
+          0.015152533305808902,
+          -3.0445834002519487
+        ],
+        [
+          -32.961969208092164,
+          0.09413001618304406,
+          1.3299837129938608
+        ],
+        [
+          -25.948938492353772,
+          0.015099997415745747,
+          2.391304938245254
+        ],
+        [
+          -34.735239556520355,
+          0.09504932961863233,
+          1.1123934643287916
+        ],
+        [
+          -35.04042193113161,
+          0.0760979183978634,
+          -0.9367820770278301
+        ],
+        [
+          -15.695850245806305,
+          0.015042789274133384,
+          -4.491260327636857
+        ],
+        [
+          -23.42113437744441,
+          0.015099992355317227,
+          -2.5279146432488493
+        ]
+      ]
+    },
+    {
+      "time": 78.04999999999686,
+      "ms": 679.5,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 4125,
+        "shots": 693,
+        "decisions": 3756,
+        "friendlyBlocks": 14757,
+        "hearing": 0,
+        "coverTests": 7058,
+        "paths": 136,
+        "expanded": 22212,
+        "queued": 0,
+        "cachedNav": 204,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "no-ammo",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 4683,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 267328,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          29.15623168479981,
+          0.015000014231191017,
+          -5.893424596754866
+        ],
+        [
+          32.10468673405566,
+          0.07995995497958575,
+          2.828372963407142
+        ],
+        [
+          -9.374662306553963,
+          0.015132535054362961,
+          -1.9105454161895246
+        ],
+        [
+          14.8975882738746,
+          0.015100032152986387,
+          -2.037138003701081
+        ],
+        [
+          32.10488258137621,
+          0.08051871289353585,
+          2.1697390527417233
+        ],
+        [
+          13.786922206271292,
+          0.014999823717516847,
+          -3.044581567789319
+        ],
+        [
+          -32.96196835955715,
+          0.09410119460881106,
+          1.3299837433501436
+        ],
+        [
+          -25.948938492353772,
+          0.015100004487976548,
+          2.391304938245254
+        ],
+        [
+          -34.73523915123163,
+          0.0950493089549127,
+          1.1123934343520026
+        ],
+        [
+          -35.04042193113161,
+          0.07809791834733915,
+          -0.9367820770278301
+        ],
+        [
+          -15.342203283779163,
+          0.015011768363450528,
+          -2.3286784810002157
+        ],
+        [
+          -23.42113437744441,
+          0.015099999427548028,
+          -2.5279146432488493
+        ]
+      ]
+    },
+    {
+      "time": 80.04999999999674,
+      "ms": 634.2999999998137,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 4345,
+        "shots": 704,
+        "decisions": 3852,
+        "friendlyBlocks": 15208,
+        "hearing": 0,
+        "coverTests": 7264,
+        "paths": 138,
+        "expanded": 22456,
+        "queued": 0,
+        "cachedNav": 248,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "no-ammo",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 4803,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 272948,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          28.91177188897329,
+          0.015103119061677717,
+          -5.5579844336694935
+        ],
+        [
+          32.104584679385965,
+          0.08030724937680134,
+          2.828372936114151
+        ],
+        [
+          -9.374664360929104,
+          0.015186614500635187,
+          -1.9105483259548568
+        ],
+        [
+          14.8975882738746,
+          0.015099979620572412,
+          -2.037138003701081
+        ],
+        [
+          32.10484241850309,
+          0.08030071084795054,
+          2.16903803103772
+        ],
+        [
+          13.786917495109975,
+          0.015097935265657725,
+          -3.0445824800103747
+        ],
+        [
+          -32.96196999738508,
+          0.0942301381546713,
+          1.329983863397449
+        ],
+        [
+          -25.948938492353772,
+          0.01510001156020735,
+          2.391304938245254
+        ],
+        [
+          -34.735239191803835,
+          0.09509999980946304,
+          1.1123933522685159
+        ],
+        [
+          -35.04042245691783,
+          0.08009787881019292,
+          -0.936779316659569
+        ],
+        [
+          -15.342199208300702,
+          0.015098006192687308,
+          -2.328684677752202
+        ],
+        [
+          -23.42113437744441,
+          0.015100006499778829,
+          -2.5279146432488493
+        ]
+      ]
+    },
+    {
+      "time": 82.04999999999663,
+      "ms": 612.7999999998137,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 4572,
+        "shots": 717,
+        "decisions": 3948,
+        "friendlyBlocks": 15671,
+        "hearing": 0,
+        "coverTests": 7483,
+        "paths": 140,
+        "expanded": 22554,
+        "queued": 0,
+        "cachedNav": 294,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "reload",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "no-ammo",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 4923,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 277970,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          28.9117721316627,
+          0.015130460928048706,
+          -5.5579859230039235
+        ],
+        [
+          32.10463347002414,
+          0.08024169219652322,
+          2.8283729963509248
+        ],
+        [
+          -10.09170471222337,
+          0.015000049730588216,
+          -2.6639203280027695
+        ],
+        [
+          14.8975882738746,
+          0.015099986692803213,
+          -2.037138003701081
+        ],
+        [
+          32.104601894298234,
+          0.08057149338856107,
+          2.168976271209877
+        ],
+        [
+          13.786917290572745,
+          0.015159474336542189,
+          -3.0445784966518827
+        ],
+        [
+          -32.96196862338987,
+          0.09423012150000432,
+          1.3299836753285605
+        ],
+        [
+          -25.948938492353772,
+          0.01510001863243815,
+          2.391304938245254
+        ],
+        [
+          -34.73523977087169,
+          0.09494932632514974,
+          1.1123932977704067
+        ],
+        [
+          -35.040420097224995,
+          0.08209787837404292,
+          -0.936781355757329
+        ],
+        [
+          -15.342203326883574,
+          0.0151373098388774,
+          -2.3286902733537183
+        ],
+        [
+          -23.42113437744441,
+          0.01510001357200963,
+          -2.5279146432488493
+        ]
+      ]
+    },
+    {
+      "time": 84.04999999999652,
+      "ms": 664.5,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 4815,
+        "shots": 729,
+        "decisions": 4045,
+        "friendlyBlocks": 16012,
+        "hearing": 0,
+        "coverTests": 7650,
+        "paths": 140,
+        "expanded": 22554,
+        "queued": 0,
+        "cachedNav": 325,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "reload",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "no-ammo",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 5043,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 284411,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          28.911768216467667,
+          0.014999992250523064,
+          -5.557984012644188
+        ],
+        [
+          32.10468560225317,
+          0.07993061100978593,
+          2.8283730330466885
+        ],
+        [
+          -11.656314599845937,
+          0.015137002732444671,
+          -4.231968382477811
+        ],
+        [
+          14.8975882738746,
+          0.015099993765034014,
+          -2.037138003701081
+        ],
+        [
+          32.10459609749369,
+          0.08029498533869628,
+          2.168976203468688
+        ],
+        [
+          13.786917444747147,
+          0.015099789430678356,
+          -3.044577260789551
+        ],
+        [
+          -32.961969258099344,
+          0.09420129126010579,
+          1.3299840394208262
+        ],
+        [
+          -25.948938492353772,
+          0.015099995902346564,
+          2.391304938245254
+        ],
+        [
+          -34.735239646491976,
+          0.0949493185034953,
+          1.1123933532305978
+        ],
+        [
+          -35.04042194579429,
+          0.08409787832351867,
+          -0.9367789646421263
+        ],
+        [
+          -15.342209429407024,
+          0.015000002412392632,
+          -2.3286910014313555
+        ],
+        [
+          -23.42113437744441,
+          0.015099990841918043,
+          -2.5279146432488493
+        ]
+      ]
+    },
+    {
+      "time": 86.0499999999964,
+      "ms": 696.1000000000931,
+      "alive": 12,
+      "wounded": 0,
+      "fallen": 0,
+      "ai": {
+        "checks": 5058,
+        "shots": 744,
+        "decisions": 4140,
+        "friendlyBlocks": 16370,
+        "hearing": 0,
+        "coverTests": 7903,
+        "paths": 146,
+        "expanded": 22994,
+        "queued": 0,
+        "cachedNav": 239,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "disengage",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "no-ammo",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 5163,
+        "actors": 12,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 291725,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 2,
+          "segments": 34
+        },
+        "ragdolls": 0,
+        "colliders": 410,
+        "bodies": 176,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 0,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 0
+      },
+      "finite": true,
+      "positions": [
+        [
+          28.911764427910306,
+          0.01500203401883482,
+          -5.557989174592271
+        ],
+        [
+          32.104694752590234,
+          0.08034153656308263,
+          2.8283731869534456
+        ],
+        [
+          -14.552547529392323,
+          0.015099390684554237,
+          -1.8572820204305973
+        ],
+        [
+          14.8975882738746,
+          0.015100000837264815,
+          -2.037138003701081
+        ],
+        [
+          32.10488796232158,
+          0.08063586282514734,
+          2.1697899373933334
+        ],
+        [
+          13.786915903168708,
+          0.014999813050962985,
+          -3.0445795822503374
+        ],
+        [
+          -32.9619689982028,
+          0.09423012876868597,
+          1.3299836669975997
+        ],
+        [
+          -24.4875316432619,
+          0.015090563434569049,
+          2.4284548922485794
+        ],
+        [
+          -34.735239241270286,
+          0.09494935744442046,
+          1.1123933231384735
+        ],
+        [
+          -35.040422660253384,
+          0.08609787827299442,
+          -0.9367766298708451
+        ],
+        [
+          -15.342212211556745,
+          0.01511846222737745,
+          -2.3286939311991013
+        ],
+        [
+          -23.42854581696914,
+          0.015103842508324306,
+          -2.5156131783927127
+        ]
+      ]
+    },
+    {
+      "time": 88.04999999999629,
+      "ms": 878.0999999996275,
+      "alive": 11,
+      "wounded": 1,
+      "fallen": 1,
+      "ai": {
+        "checks": 5181,
+        "shots": 758,
+        "decisions": 4231,
+        "friendlyBlocks": 16744,
+        "hearing": 0,
+        "coverTests": 8118,
+        "paths": 148,
+        "expanded": 23004,
+        "queued": 0,
+        "cachedNav": 114,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "disengage",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "reload",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "flank",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "no-ammo",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "reload",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "overwatch",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 5283,
+        "actors": 11,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 299796,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 1,
+          "segments": 17
+        },
+        "ragdolls": 1,
+        "colliders": 411,
+        "bodies": 170,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 1,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 40
+      },
+      "finite": true,
+      "positions": [
+        [
+          28.911762750059943,
+          0.015099980668310309,
+          -5.557990610852406
+        ],
+        [
+          32.10472768629924,
+          0.08009160757183054,
+          2.8283732007241706
+        ],
+        [
+          -11.163916775936523,
+          0.015038175277368282,
+          -1.4436475235659092
+        ],
+        [
+          14.8975882738746,
+          0.015100007909495616,
+          -2.037138003701081
+        ],
+        [
+          32.10457574565253,
+          0.08052861863507133,
+          2.171034256001093
+        ],
+        [
+          13.786915932627503,
+          0.015099999553058296,
+          -3.0445795763585783
+        ],
+        [
+          -32.90452063639843,
+          0.09469973063824,
+          2.2268956854485493
+        ],
+        [
+          -23.8979384553409,
+          0.015000012213931768,
+          2.0351020190796154
+        ],
+        [
+          -34.73523947059831,
+          0.0949493325460935,
+          1.1123932383786228
+        ],
+        [
+          -35.04042236092375,
+          0.08809787822247017,
+          -0.9367769487077842
+        ],
+        [
+          -15.342224263871598,
+          0.015115339193556565,
+          -2.3287000397615536
+        ],
+        [
+          -23.43809665098555,
+          0.015112149520064122,
+          -2.5073855086423724
+        ]
+      ]
+    },
+    {
+      "time": 90.04999999999617,
+      "ms": 701.4000000003725,
+      "alive": 11,
+      "wounded": 1,
+      "fallen": 1,
+      "ai": {
+        "checks": 5265,
+        "shots": 775,
+        "decisions": 4319,
+        "friendlyBlocks": 17084,
+        "hearing": 0,
+        "coverTests": 8336,
+        "paths": 149,
+        "expanded": 23004,
+        "queued": 0,
+        "cachedNav": 184,
+        "modes": [
+          {
+            "key": "delta_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_0",
+            "mode": "disengage",
+            "role": 2
+          },
+          {
+            "key": "delta_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "delta_soldier_2",
+            "mode": "overwatch",
+            "role": 1
+          },
+          {
+            "key": "delta_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          },
+          {
+            "key": "alpha_1",
+            "mode": "no-ammo",
+            "role": 0
+          },
+          {
+            "key": "alpha_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_0",
+            "mode": "bound",
+            "role": 2
+          },
+          {
+            "key": "alpha_soldier_1",
+            "mode": "overwatch",
+            "role": 0
+          },
+          {
+            "key": "alpha_soldier_2",
+            "mode": "take-cover",
+            "role": 1
+          },
+          {
+            "key": "alpha_soldier_3",
+            "mode": "take-cover",
+            "role": 2
+          }
+        ]
+      },
+      "physics": {
+        "backend": "Rapier 0.19.3 WASM",
+        "steps": 5403,
+        "actors": 11,
+        "liveMotorRigs": 10,
+        "liveAngularMotors": 130,
+        "servoSubsteps": 306175,
+        "dynamicObjects": 0,
+        "livingContacts": {
+          "rigs": 1,
+          "segments": 17
+        },
+        "ragdolls": 1,
+        "colliders": 411,
+        "bodies": 170,
+        "droppedSeconds": 0,
+        "terrainMaxResolution": 256
+      },
+      "medical": {
+        "stations": 1,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 0,
+        "queued": 0,
+        "expanded": 40
+      },
+      "finite": true,
+      "positions": [
+        [
+          28.911762750059943,
+          0.01509998774054111,
+          -5.557990610852406
+        ],
+        [
+          32.10461986351228,
+          0.08031861491735981,
+          2.8283732604629286
+        ],
+        [
+          -7.583045635352173,
+          0.015100038983291597,
+          -0.6693033703293114
+        ],
+        [
+          14.8975882738746,
+          0.015100014981726417,
+          -2.037138003701081
+        ],
+        [
+          32.10473025839956,
+          0.08014707336951687,
+          2.1710342032956484
+        ],
+        [
+          13.786915932627503,
+          0.015100006625289097,
+          -3.0445795763585783
+        ],
+        [
+          -32.9045216932812,
+          0.09490183414163766,
+          2.226895794657767
+        ],
+        [
+          -23.897938518685983,
+          0.015099992107934668,
+          2.0351020249721814
+        ],
+        [
+          -34.73523934621973,
+          0.09494932472443907,
+          1.112393293838217
+        ],
+        [
+          -35.04042254705937,
+          0.09009787817194592,
+          -0.9367765949932012
+        ],
+        [
+          -15.342218118530225,
+          0.015096787196938521,
+          -2.328690247722836
+        ],
+        [
+          -23.43809665098555,
+          0.015112149520064122,
+          -2.5073855086423724
+        ]
+      ]
+    }
+  ],
+  "final": {
+    "info": {
+      "mode": "embodied",
+      "activeIdx": -1,
+      "score": 0,
+      "camera": [
+        -34,
+        2,
+        2
+      ],
+      "fov": 72.01,
+      "targets": [],
+      "squad": [
+        {
+          "key": "delta_1",
+          "pos": [
+            28.912,
+            0.015,
+            -5.558
+          ],
+          "ammo": 28,
+          "speed": 0,
+          "yaw": 1.71,
+          "prone": 0,
+          "crouch": 1,
+          "thr": "/0/0/iy1.71/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "delta_2",
+          "pos": [
+            32.105,
+            0.08,
+            2.828
+          ],
+          "ammo": 30,
+          "speed": 0,
+          "yaw": 0,
+          "prone": 0.77,
+          "crouch": 1,
+          "thr": "/0/0/iy-0.00/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "delta_soldier_0",
+          "pos": [
+            -7.583,
+            0.015,
+            -0.669
+          ],
+          "ammo": 17,
+          "speed": 1.836,
+          "yaw": 7.64,
+          "prone": 0,
+          "crouch": 0,
+          "thr": "/0/0/iy1.36/ty-/w1.0",
+          "stun": false
+        },
+        {
+          "key": "delta_soldier_1",
+          "pos": [
+            14.898,
+            0.015,
+            -2.037
+          ],
+          "ammo": 27,
+          "speed": 0,
+          "yaw": 1.68,
+          "prone": 0,
+          "crouch": 1,
+          "thr": "/0/0/iy1.68/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "delta_soldier_2",
+          "pos": [
+            32.105,
+            0.08,
+            2.171
+          ],
+          "ammo": 4,
+          "speed": 0,
+          "yaw": 1.48,
+          "prone": 0,
+          "crouch": 0,
+          "thr": "/0/0/iy1.48/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "delta_soldier_3",
+          "pos": [
+            13.787,
+            0.015,
+            -3.045
+          ],
+          "ammo": 18,
+          "speed": 0,
+          "yaw": 10.27,
+          "prone": 0.53,
+          "crouch": 1,
+          "thr": "/0/0/iy-2.31/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "alpha_1",
+          "pos": [
+            -32.905,
+            0.095,
+            2.227
+          ],
+          "ammo": 0,
+          "speed": 0,
+          "yaw": 1.09,
+          "prone": 1,
+          "crouch": 1,
+          "thr": "/0/0/iy1.02/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "alpha_2",
+          "pos": [
+            -23.898,
+            0.015,
+            2.035
+          ],
+          "ammo": 30,
+          "speed": 0,
+          "yaw": 1.54,
+          "prone": 1,
+          "crouch": 1,
+          "thr": "/0/0/iy1.49/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "alpha_soldier_0",
+          "pos": [
+            -34.735,
+            0.095,
+            1.112
+          ],
+          "ammo": 27,
+          "speed": 0,
+          "yaw": -1.59,
+          "prone": 0,
+          "crouch": 0,
+          "thr": "/0/0/iy-1.59/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "alpha_soldier_1",
+          "pos": [
+            -35.04,
+            0.09,
+            -0.937
+          ],
+          "ammo": 12,
+          "speed": 0,
+          "yaw": -1.58,
+          "prone": 0,
+          "crouch": 1,
+          "thr": "/0/0/iy-1.58/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "alpha_soldier_2",
+          "pos": [
+            -15.342,
+            0.015,
+            -2.329
+          ],
+          "ammo": 22,
+          "speed": 0,
+          "yaw": -1.86,
+          "prone": 0.96,
+          "crouch": 1,
+          "thr": "/0/0/iy-1.78/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "alpha_soldier_3",
+          "pos": [
+            -23.438,
+            0.015,
+            -2.507
+          ],
+          "ammo": 30,
+          "speed": 0.101,
+          "yaw": -3.76,
+          "prone": 0.7,
+          "crouch": 1,
+          "thr": "/0/0/iy-1.64/ty-/w-",
+          "stun": false
+        }
+      ]
+    },
+    "start": [
+      [
+        34.00001569724009,
+        0.0000987602979876101,
+        0
+      ],
+      [
+        33.49828487063658,
+        0.00009999999747378752,
+        1.3070125970960824
+      ],
+      [
+        32.65768886520514,
+        0.00008565262396587059,
+        -0.3975849885648864
+      ],
+      [
+        33.56738387955929,
+        0.00009970528481062502,
+        -1.3314791228132148
+      ],
+      [
+        34.852273275788114,
+        0.00009539507300360128,
+        -1.110665575704116
+      ],
+      [
+        35.39811110185698,
+        0.00009547117952024564,
+        0.07327033874012143
+      ],
+      [
+        -34.00001076196713,
+        0.00009941920870915055,
+        0
+      ],
+      [
+        -34.50169586202193,
+        0.00009024325845530257,
+        1.3069740624131108
+      ],
+      [
+        -35.361333532122096,
+        0.00009876881813397631,
+        0.3268235093982671
+      ],
+      [
+        -35.04042304381032,
+        0.0000979203250608407,
+        -0.9367828489024015
+      ],
+      [
+        -33.81727630133138,
+        0.00008449881715932861,
+        -1.3879709241655078
+      ],
+      [
+        -32.752580910152446,
+        0.0000911862516659312,
+        -0.6355468756999975
+      ]
+    ],
+    "perf": {
+      "rapier": {
+        "samples": 360,
+        "mean": 0.6302777777736386,
+        "p50": 0.599999999627471,
+        "p95": 1,
+        "max": 7.699999999720603
+      },
+      "tactics": {
+        "samples": 360,
+        "mean": 0.03555555555633166,
+        "p50": 0,
+        "p95": 0.10000000009313226,
+        "max": 4.099999999627471
+      },
+      "visibility-rapier": {
+        "samples": 360,
+        "mean": 0.008888888888112787,
+        "p50": 0,
+        "p95": 0.10000000009313226,
+        "max": 0.10000000009313226
+      },
+      "controllers": {
+        "samples": 360,
+        "mean": 0.5105555555589186,
+        "p50": 0.5,
+        "p95": 0.7000000001862645,
+        "max": 2.7000000001862645
+      },
+      "flags": {
+        "samples": 360,
+        "mean": 0.002222222220411317,
+        "p50": 0,
+        "p95": 0,
+        "max": 0.10000000009313226
+      },
+      "pose-and-hands": {
+        "samples": 360,
+        "mean": 4.505833333333592,
+        "p50": 4.2999999998137355,
+        "p95": 5.5,
+        "max": 16.700000000186265
+      },
+      "simulation": {
+        "samples": 360,
+        "mean": 6.320000000000517,
+        "p50": 5.899999999906868,
+        "p95": 8.700000000186265,
+        "max": 28.600000000093132
+      }
+    },
+    "end": [
+      {
+        "key": "delta_1",
+        "pos": [
+          28.911762750059943,
+          0.01509998774054111,
+          -5.557990610852406
+        ],
+        "mode": "overwatch",
+        "path": "complete",
+        "goal": null,
+        "ammo": 28,
+        "reserve": 90,
+        "wounds": 0,
+        "collapsed": false
+      },
+      {
+        "key": "delta_2",
+        "pos": [
+          32.10461986351228,
+          0.08031861491735981,
+          2.8283732604629286
+        ],
+        "mode": "take-cover",
+        "path": "complete",
+        "goal": {
+          "x": 33.635466374199204,
+          "y": 0,
+          "z": -0.8671448989587316,
+          "key": "66,26"
+        },
+        "ammo": 30,
+        "reserve": 90,
+        "wounds": 0,
+        "collapsed": false
+      },
+      {
+        "key": "delta_soldier_0",
+        "pos": [
+          -7.583045635352173,
+          0.015100038983291597,
+          -0.6693033703293114
+        ],
+        "mode": "disengage",
+        "path": "complete",
+        "goal": {
+          "x": -2.783385741169866,
+          "z": 0.35719364610216897,
+          "y": 0.015148763284742017
+        },
+        "ammo": 17,
+        "reserve": 90,
+        "wounds": 0,
+        "collapsed": false
+      },
+      {
+        "key": "delta_soldier_1",
+        "pos": [
+          14.8975882738746,
+          0.015100014981726417,
+          -2.037138003701081
+        ],
+        "mode": "overwatch",
+        "path": "complete",
+        "goal": null,
+        "ammo": 27,
+        "reserve": 0,
+        "wounds": 0,
+        "collapsed": false
+      },
+      {
+        "key": "delta_soldier_2",
+        "pos": [
+          32.10473025839956,
+          0.08014707336951687,
+          2.1710342032956484
+        ],
+        "mode": "overwatch",
+        "path": "unreachable",
+        "goal": null,
+        "ammo": 4,
+        "reserve": 0,
+        "wounds": 0,
+        "collapsed": false
+      },
+      {
+        "key": "delta_soldier_3",
+        "pos": [
+          13.786915932627503,
+          0.015100006625289097,
+          -3.0445795763585783
+        ],
+        "mode": "take-cover",
+        "path": "complete",
+        "goal": {
+          "x": 20.2343428906477,
+          "y": 0,
+          "z": -0.3186511801980245,
+          "key": "54,27"
+        },
+        "ammo": 18,
+        "reserve": 120,
+        "wounds": 0,
+        "collapsed": false
+      },
+      {
+        "key": "alpha_1",
+        "pos": [
+          -32.9045216932812,
+          0.09490183414163766,
+          2.226895794657767
+        ],
+        "mode": "no-ammo",
+        "path": "complete",
+        "goal": null,
+        "ammo": 0,
+        "reserve": 0,
+        "wounds": 0,
+        "collapsed": false
+      },
+      {
+        "key": "alpha_2",
+        "pos": [
+          -23.897938518685983,
+          0.015099992107934668,
+          2.0351020249721814
+        ],
+        "mode": "take-cover",
+        "path": "complete",
+        "goal": {
+          "x": -20.20242038864084,
+          "y": 0,
+          "z": 0.5043682955118198,
+          "key": "18,27"
+        },
+        "ammo": 30,
+        "reserve": 90,
+        "wounds": 0,
+        "collapsed": false
+      },
+      {
+        "key": "alpha_soldier_0",
+        "pos": [
+          -34.73523934621973,
+          0.09494932472443907,
+          1.112393293838217
+        ],
+        "mode": "bound",
+        "path": "unreachable",
+        "goal": {
+          "x": 7.917702510229375,
+          "z": 13.789454436238051,
+          "y": 0.08014707336951687
+        },
+        "ammo": 27,
+        "reserve": 120,
+        "wounds": 0,
+        "collapsed": false
+      },
+      {
+        "key": "alpha_soldier_1",
+        "pos": [
+          -35.04042254705937,
+          0.09009787817194592,
+          -0.9367765949932012
+        ],
+        "mode": "overwatch",
+        "path": "unreachable",
+        "goal": null,
+        "ammo": 12,
+        "reserve": 0,
+        "wounds": 0,
+        "collapsed": false
+      },
+      {
+        "key": "alpha_soldier_2",
+        "pos": [
+          -15.342218118530225,
+          0.015096787196938521,
+          -2.328690247722836
+        ],
+        "mode": "take-cover",
+        "path": "complete",
+        "goal": {
+          "x": -19.03774366329459,
+          "y": 0,
+          "z": -3.8594358407339477,
+          "key": "19,23"
+        },
+        "ammo": 22,
+        "reserve": 60,
+        "wounds": 0,
+        "collapsed": false
+      },
+      {
+        "key": "alpha_soldier_3",
+        "pos": [
+          -23.43809665098555,
+          0.015112149520064122,
+          -2.5073855086423724
+        ],
+        "dead": true,
+        "mode": "take-cover",
+        "path": "complete",
+        "goal": {
+          "x": -29.90767615461954,
+          "y": 0,
+          "z": 0.10358222601808897,
+          "key": "9,27"
+        },
+        "ammo": 30,
+        "reserve": 120,
+        "wounds": 6,
+        "collapsed": true
+      }
+    ]
+  },
+  "hot": [
+    {
+      "n": 546,
+      "fn": "R.update",
+      "url": "05e_recoil.js",
+      "line": 372
+    },
+    {
+      "n": 507,
+      "fn": "updateMatrixWorld",
+      "url": "three.min.js",
+      "line": 2
+    },
+    {
+      "n": 453,
+      "fn": "step",
+      "url": "29_game.js",
+      "line": 4886
+    },
+    {
+      "n": 442,
+      "fn": "torsoPen",
+      "url": "15_rig.js",
+      "line": 244
+    },
+    {
+      "n": 412,
+      "fn": "resonate",
+      "url": "wkit.js",
+      "line": 2380
+    },
+    {
+      "n": 350,
+      "fn": "updateMatrixWorld",
+      "url": "three.min.js",
+      "line": 2
+    },
+    {
+      "n": 324,
+      "fn": "(program)",
+      "url": "",
+      "line": 0
+    },
+    {
+      "n": 279,
+      "fn": "wasm-function[37]",
+      "url": "005fccd2",
+      "line": 1
+    },
+    {
+      "n": 274,
+      "fn": "pose",
+      "url": "animator.js",
+      "line": 129
+    },
+    {
+      "n": 260,
+      "fn": "updateMatrixWorld",
+      "url": "three.min.js",
+      "line": 2
+    },
+    {
+      "n": 245,
+      "fn": "updateMatrixWorld",
+      "url": "three.min.js",
+      "line": 2
+    },
+    {
+      "n": 240,
+      "fn": "updateMatrixWorld",
+      "url": "three.min.js",
+      "line": 2
+    },
+    {
+      "n": 239,
+      "fn": "updateMatrixWorld",
+      "url": "three.min.js",
+      "line": 2
+    },
+    {
+      "n": 239,
+      "fn": "setFromRotationMatrix",
+      "url": "three.min.js",
+      "line": 2
+    },
+    {
+      "n": 234,
+      "fn": "updateMatrixWorld",
+      "url": "three.min.js",
+      "line": 2
+    },
+    {
+      "n": 233,
+      "fn": "P.update",
+      "url": "20_player.js",
+      "line": 774
+    },
+    {
+      "n": 209,
+      "fn": "updateMatrixWorld",
+      "url": "three.min.js",
+      "line": 2
+    },
+    {
+      "n": 209,
+      "fn": "updateMatrixWorld",
+      "url": "three.min.js",
+      "line": 2
+    },
+    {
+      "n": 206,
+      "fn": "Rig.solveArmsGLB",
+      "url": "15_rig.js",
+      "line": 362
+    },
+    {
+      "n": 203,
+      "fn": "multiplyMatrices",
+      "url": "three.min.js",
+      "line": 2
+    }
+  ],
+  "errors": []
+}

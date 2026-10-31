@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "checkedFiles": 66,
+  "scope": [
+    "assets",
+    "vendor",
+    "js/maps"
+  ],
+  "baseline": "AEGIS_animation_system_v11.zip"
+}

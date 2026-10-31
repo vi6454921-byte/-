@@ -1,0 +1,54 @@
+{
+  "result": {
+    "reports": [
+      {
+        "id": "ar15m4",
+        "cap": 30,
+        "cal": "556",
+        "fired": true,
+        "emptyReload": {
+          "mag": 29,
+          "chamber": 1,
+          "reserve": 90
+        },
+        "tacticalReload": {
+          "mag": 30,
+          "chamber": 1
+        },
+        "mass": 4,
+        "diameter": 5.7,
+        "modes": [
+          "safe",
+          "semi",
+          "auto"
+        ],
+        "finite": true
+      },
+      {
+        "id": "glock21",
+        "cap": 13,
+        "cal": "45acp",
+        "fired": true,
+        "emptyReload": {
+          "mag": 12,
+          "chamber": 1,
+          "reserve": 39
+        },
+        "tacticalReload": {
+          "mag": 13,
+          "chamber": 1
+        },
+        "mass": 14.9,
+        "diameter": 11.43,
+        "modes": [
+          "semi"
+        ],
+        "finite": true
+      }
+    ],
+    "modelsLoaded": 2,
+    "marks": true,
+    "world": "angar_map"
+  },
+  "errors": []
+}

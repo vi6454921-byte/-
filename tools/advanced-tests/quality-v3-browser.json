@@ -1,0 +1,66 @@
+{
+  "result": {
+    "rows": [
+      {
+        "key": "delta_1",
+        "finite": true,
+        "contacts": 1,
+        "angle": 0.2489090698883648,
+        "maxGap": 0.00021746241991017792,
+        "parts": 17
+      },
+      {
+        "key": "delta_2",
+        "finite": true,
+        "contacts": 1,
+        "angle": 0.2890673065085133,
+        "maxGap": 0.00038278027357770285,
+        "parts": 17
+      },
+      {
+        "key": "delta_soldier_4",
+        "finite": true,
+        "contacts": 1,
+        "angle": 0.2487548963683269,
+        "maxGap": 0.00021765081333439013,
+        "parts": 17
+      },
+      {
+        "key": "delta_soldier_5",
+        "finite": true,
+        "contacts": 1,
+        "angle": 0.28882276626340725,
+        "maxGap": 0.00038535567695021576,
+        "parts": 17
+      }
+    ],
+    "vault": {
+      "armed": false,
+      "handsOff": false,
+      "maxFPError": 0.14000000000000024,
+      "fpFrames": 41,
+      "hiddenGunFrames": 0,
+      "result": "landed",
+      "frames": 67,
+      "handFrames": 16,
+      "maxHandError": 0.000009320948128565626,
+      "contactFrames": 2,
+      "maxAngle": 1.2432711536667629,
+      "pos": [
+        0,
+        0.015000008335336878,
+        -1.7599999642372128
+      ],
+      "restoredWeapon": true
+    },
+    "geometry": {
+      "geometries": 179,
+      "triangles": 379988,
+      "buildMs": 142.09999999892898,
+      "failures": 0,
+      "backend": "three-mesh-bvh 0.9.2",
+      "enabled": true
+    }
+  },
+  "errors": []
+}

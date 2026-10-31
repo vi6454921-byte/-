@@ -1,0 +1,297 @@
+{
+  "pass": true,
+  "backend": "Recast/Detour WASM 0.43.1",
+  "tests": [
+    {
+      "name": "wall detour",
+      "state": "complete",
+      "points": 5,
+      "build": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 1,
+        "complete": 1,
+        "projected": 0,
+        "partial": 0,
+        "unreachable": 0,
+        "builds": 1,
+        "buildMs": 60.621380999999985,
+        "triangles": 1164,
+        "bytes": 3060,
+        "errors": 0,
+        "tiles": 4,
+        "polygons": 15,
+        "lastError": ""
+      }
+    },
+    {
+      "name": "disconnected wall is partial, never complete",
+      "state": "partial",
+      "points": 1,
+      "build": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 1,
+        "complete": 0,
+        "projected": 0,
+        "partial": 1,
+        "unreachable": 0,
+        "builds": 1,
+        "buildMs": 31.50760200000002,
+        "triangles": 1164,
+        "bytes": 2204,
+        "errors": 0,
+        "tiles": 4,
+        "polygons": 9,
+        "lastError": ""
+      }
+    },
+    {
+      "name": "1.4m doorway",
+      "state": "complete",
+      "points": 6,
+      "build": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 1,
+        "complete": 1,
+        "projected": 0,
+        "partial": 0,
+        "unreachable": 0,
+        "builds": 1,
+        "buildMs": 15.460298999999964,
+        "triangles": 1176,
+        "bytes": 3060,
+        "errors": 0,
+        "tiles": 4,
+        "polygons": 15,
+        "lastError": ""
+      }
+    },
+    {
+      "name": "1.0m doorway",
+      "state": "complete",
+      "points": 6,
+      "build": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 1,
+        "complete": 1,
+        "projected": 0,
+        "partial": 0,
+        "unreachable": 0,
+        "builds": 1,
+        "buildMs": 12.12253099999998,
+        "triangles": 1176,
+        "bytes": 3060,
+        "errors": 0,
+        "tiles": 4,
+        "polygons": 15,
+        "lastError": ""
+      }
+    },
+    {
+      "name": "0.4m doorway rejected for capsule",
+      "state": "partial",
+      "points": 1,
+      "build": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 1,
+        "complete": 0,
+        "projected": 0,
+        "partial": 1,
+        "unreachable": 0,
+        "builds": 1,
+        "buildMs": 18.54580500000003,
+        "triangles": 1176,
+        "bytes": 2204,
+        "errors": 0,
+        "tiles": 4,
+        "polygons": 9,
+        "lastError": ""
+      }
+    },
+    {
+      "name": "stacked floors cannot shortcut vertically",
+      "state": "unreachable",
+      "points": 0,
+      "build": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 1,
+        "complete": 0,
+        "projected": 0,
+        "partial": 0,
+        "unreachable": 1,
+        "builds": 1,
+        "buildMs": 11.78514800000005,
+        "triangles": 1164,
+        "bytes": 1976,
+        "errors": 0,
+        "tiles": 4,
+        "polygons": 8,
+        "lastError": ""
+      }
+    },
+    {
+      "name": "stairs to elevated floor",
+      "state": "complete",
+      "points": 4,
+      "build": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 1,
+        "complete": 1,
+        "projected": 0,
+        "partial": 0,
+        "unreachable": 0,
+        "builds": 1,
+        "buildMs": 13.505448999999999,
+        "triangles": 1260,
+        "bytes": 4420,
+        "errors": 0,
+        "tiles": 4,
+        "polygons": 23,
+        "lastError": ""
+      }
+    },
+    {
+      "name": "physical stairs dt 0.016666666666666666",
+      "state": "landed",
+      "pos": [
+        2.0000380101405426,
+        2.01509972580061,
+        -0.0010068118975008478
+      ],
+      "maxDelta": 0.10930007817230387
+    },
+    {
+      "name": "physical stairs dt 0.03333333333333333",
+      "state": "landed",
+      "pos": [
+        1.9999976334759548,
+        2.0150660456238256,
+        -0.0031947060247465436
+      ],
+      "maxDelta": 0.19416814061975676
+    },
+    {
+      "name": "physical stairs dt 0.05",
+      "state": "landed",
+      "pos": [
+        2.000001639081388,
+        2.01509030834859,
+        -0.002555385279301381
+      ],
+      "maxDelta": 0.2489466957959419
+    },
+    {
+      "name": "low ceiling rejects standing navigation",
+      "state": "unreachable",
+      "points": 0,
+      "build": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 1,
+        "complete": 0,
+        "projected": 0,
+        "partial": 0,
+        "unreachable": 1,
+        "builds": 1,
+        "buildMs": 28.355357000000026,
+        "triangles": 1164,
+        "bytes": 1796,
+        "errors": 0,
+        "tiles": 4,
+        "polygons": 7,
+        "lastError": ""
+      }
+    },
+    {
+      "name": "cylinder detour",
+      "state": "complete",
+      "points": 11,
+      "build": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 1,
+        "complete": 1,
+        "projected": 0,
+        "partial": 0,
+        "unreachable": 0,
+        "builds": 1,
+        "buildMs": 24.573984999999993,
+        "triangles": 1212,
+        "bytes": 6876,
+        "errors": 0,
+        "tiles": 4,
+        "polygons": 43,
+        "lastError": ""
+      }
+    },
+    {
+      "name": "destructible wall before",
+      "state": "partial",
+      "points": 1,
+      "build": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 1,
+        "complete": 0,
+        "projected": 0,
+        "partial": 1,
+        "unreachable": 0,
+        "builds": 1,
+        "buildMs": 18.256727999999953,
+        "triangles": 1164,
+        "bytes": 2204,
+        "errors": 0,
+        "tiles": 4,
+        "polygons": 9,
+        "lastError": ""
+      }
+    },
+    {
+      "name": "removed wall rebuild",
+      "state": "complete",
+      "generation": 2
+    },
+    {
+      "name": "10000 repeated Detour queries",
+      "state": "bounded heap",
+      "beforeHeap": 67108864,
+      "afterHeap": 67108864
+    }
+  ]
+}

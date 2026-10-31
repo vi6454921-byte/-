@@ -1,0 +1,127 @@
+{
+  "scope": "infrastructure only; balance, walking and getting up NOT certified",
+  "results": [
+    {
+      "scale": 1,
+      "dt": 0.016666666666666666,
+      "dynamicParts": 19,
+      "COMfall": 0.7751523599361474,
+      "expectedFreeFall": 0.7848000000000002,
+      "peakHorizontal": 1.0601106882095337,
+      "ownershipAndCleanup": true
+    },
+    {
+      "scale": 1,
+      "dt": 0.03333333333333333,
+      "dynamicParts": 19,
+      "COMfall": 0.7751523599361474,
+      "expectedFreeFall": 0.7848000000000002,
+      "peakHorizontal": 1.0601106882095337,
+      "ownershipAndCleanup": true
+    },
+    {
+      "scale": 1,
+      "dt": 0.05,
+      "dynamicParts": 19,
+      "COMfall": 0.7751523599361474,
+      "expectedFreeFall": 0.7848000000000002,
+      "peakHorizontal": 1.0463370084762573,
+      "ownershipAndCleanup": true
+    },
+    {
+      "scale": 0.966,
+      "dt": 0.016666666666666666,
+      "dynamicParts": 19,
+      "COMfall": 0.7751509642005749,
+      "expectedFreeFall": 0.7848000000000002,
+      "peakHorizontal": 1.036008358001709,
+      "ownershipAndCleanup": true
+    },
+    {
+      "scale": 0.966,
+      "dt": 0.03333333333333333,
+      "dynamicParts": 19,
+      "COMfall": 0.7751509642005749,
+      "expectedFreeFall": 0.7848000000000002,
+      "peakHorizontal": 1.036008358001709,
+      "ownershipAndCleanup": true
+    },
+    {
+      "scale": 0.966,
+      "dt": 0.05,
+      "dynamicParts": 19,
+      "COMfall": 0.7751509642005749,
+      "expectedFreeFall": 0.7848000000000002,
+      "peakHorizontal": 1.036008358001709,
+      "ownershipAndCleanup": true
+    },
+    {
+      "scale": 1.025,
+      "dt": 0.016666666666666666,
+      "dynamicParts": 19,
+      "COMfall": 0.7751503993271207,
+      "expectedFreeFall": 0.7848000000000002,
+      "peakHorizontal": 0.7168449759483337,
+      "ownershipAndCleanup": true
+    },
+    {
+      "scale": 1.025,
+      "dt": 0.03333333333333333,
+      "dynamicParts": 19,
+      "COMfall": 0.7751503993271207,
+      "expectedFreeFall": 0.7848000000000002,
+      "peakHorizontal": 0.7168301939964294,
+      "ownershipAndCleanup": true
+    },
+    {
+      "scale": 1.025,
+      "dt": 0.05,
+      "dynamicParts": 19,
+      "COMfall": 0.7751503993271207,
+      "expectedFreeFall": 0.7848000000000002,
+      "peakHorizontal": 0.7168298959732056,
+      "ownershipAndCleanup": true
+    },
+    {
+      "scale": 0.988,
+      "dt": 0.016666666666666666,
+      "dynamicParts": 19,
+      "COMfall": 0.7751506847401637,
+      "expectedFreeFall": 0.7848000000000002,
+      "peakHorizontal": 1.0821603536605835,
+      "ownershipAndCleanup": true
+    },
+    {
+      "scale": 0.988,
+      "dt": 0.03333333333333333,
+      "dynamicParts": 19,
+      "COMfall": 0.7751506847401637,
+      "expectedFreeFall": 0.7848000000000002,
+      "peakHorizontal": 1.0821603536605835,
+      "ownershipAndCleanup": true
+    },
+    {
+      "scale": 0.988,
+      "dt": 0.05,
+      "dynamicParts": 19,
+      "COMfall": 0.7751506847401637,
+      "expectedFreeFall": 0.7848000000000002,
+      "peakHorizontal": 1.0821603536605835,
+      "ownershipAndCleanup": true
+    },
+    {
+      "internalForceResidual": 0,
+      "internalTorqueResidual": 3.5536125780153413e-7
+    },
+    {
+      "wallContacts": 15,
+      "falseSupports": 0
+    },
+    {
+      "resets": 50,
+      "capacity": 12,
+      "foreignSessionRejected": true,
+      "characterReplacementCleanup": true
+    }
+  ]
+}

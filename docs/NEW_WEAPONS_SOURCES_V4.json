@@ -1,0 +1,20 @@
+[
+  {
+    "id": "ar15m4",
+    "source": "ar15_m4.glb",
+    "sourceSHA256": "51d0962dc781770374b20f638323a7626a5215916b900d878f36fefed5bcc9d3",
+    "sourceBytes": 4585260,
+    "gameAsset": "assets/models/weapons/ar15_m4.glb",
+    "gameSHA256": "7d2e09907de00335bb701614a561d8842c6ed12e12c536da9a2592014b0451ab",
+    "gameBytes": 4584820
+  },
+  {
+    "id": "glock21",
+    "source": "Glock21_Gen4_Reworked_v2.fbx",
+    "sourceSHA256": "95ecbdfacb6da885b30c91c99404f5cb686e269e18b030aeba08a71e87e2409f",
+    "sourceBytes": 72943772,
+    "gameAsset": "assets/models/weapons/glock21_gen4.glb",
+    "gameSHA256": "ccb1197762cd1cd60558150154a93e23ca5cb11e3ba1bdd016deb5171540dd74",
+    "gameBytes": 14291064
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "scenario": "Low quality, training range, four unarmed NPCs; no rendering; 90 warmup steps + 900 measured fixed 1/60s steps; sequential fresh Chromium sessions; CPU sampling profiler enabled. One run per version, not FPS.",
+  "cases": {
+    "original": {
+      "samples": 900,
+      "meanMs": 2.639111111111318,
+      "medianMs": 2.5999999998603016,
+      "p95Ms": 6.100000000093132,
+      "flags": {
+        "samples": 360,
+        "mean": 1.0738888888923814,
+        "p50": 1.0999999998603016,
+        "p95": 1.1999999999534339,
+        "max": 2.4000000001396984
+      },
+      "errors": []
+    },
+    "updated": {
+      "samples": 900,
+      "meanMs": 2.233666666666201,
+      "medianMs": 2.1000000000931323,
+      "p95Ms": 6.2000000001862645,
+      "flags": {
+        "samples": 360,
+        "mean": 0.40888888888617253,
+        "p50": 0.39999999990686774,
+        "p95": 0.6000000000931323,
+        "max": 1.3999999999068677
+      },
+      "errors": []
+    }
+  },
+  "meanReductionPercent": 15.362916807030015
+}

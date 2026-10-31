@@ -1,0 +1,31 @@
+{
+  "scope": "Local HTTP module response and MIME check, not file:// support",
+  "status": "PASS",
+  "checks": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "contentType": "text/html"
+    },
+    {
+      "path": "vendor/recast/core.mjs",
+      "status": 200,
+      "contentType": "text/javascript"
+    },
+    {
+      "path": "vendor/recast/generators.mjs",
+      "status": 200,
+      "contentType": "text/javascript"
+    },
+    {
+      "path": "vendor/recast/wasm.mjs",
+      "status": 200,
+      "contentType": "text/javascript"
+    },
+    {
+      "path": "js/advanced/active-body.js",
+      "status": 200,
+      "contentType": "text/javascript"
+    }
+  ]
+}

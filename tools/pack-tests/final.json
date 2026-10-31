@@ -1,0 +1,48 @@
+{
+  "gripCases": 192,
+  "gripFails": 0,
+  "examples": [],
+  "perf": [
+    {
+      "quality": "low",
+      "cpuRate": 1,
+      "msPerStep": 2.839444444444962,
+      "render": false
+    },
+    {
+      "quality": "ultra",
+      "cpuRate": 1,
+      "msPerStep": 3.3361111111111112,
+      "render": false
+    },
+    {
+      "quality": "low",
+      "cpuRate": 4,
+      "msPerStep": 11.725555555553486,
+      "render": false
+    },
+    {
+      "quality": "ultra",
+      "cpuRate": 4,
+      "msPerStep": 17.049444444443928,
+      "render": false
+    },
+    {
+      "quality": "low",
+      "cpuRate": 6,
+      "msPerStep": 19.419444444444444,
+      "render": false
+    },
+    {
+      "quality": "ultra",
+      "cpuRate": 6,
+      "msPerStep": 23.018333333334887,
+      "render": false
+    }
+  ],
+  "logs": [],
+  "gpu": {
+    "supported": true,
+    "decoded": 7
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "version": "18.4.3-active-body-experimental",
+  "base": "18.4",
+  "scope": "Experimental lab only; requested full body migration NOT complete",
+  "files": [
+    {
+      "path": "ACTIVE_BODY_README_RU.md",
+      "change": "added"
+    },
+    {
+      "path": "README.md",
+      "change": "modified"
+    },
+    {
+      "path": "README_ADVANCED_RU.md",
+      "change": "modified"
+    },
+    {
+      "path": "docs/ACTIVE_BODY_LAUNCH_QA.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/ACTIVE_BODY_QA.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/BUILD_QA.json",
+      "change": "modified"
+    },
+    {
+      "path": "docs/MIGRATION_STATUS_RU.md",
+      "change": "modified"
+    },
+    {
+      "path": "docs/history-v18_4/ADVANCED_CHANGED_FILES.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4/ADVANCED_VALIDATION_RU.md",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4/BUILD_QA.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4/CHANGE_PLAN_RU.md",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4/FILE_HASHES.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4/IMPROVEMENTS.md",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4/LAUNCH_FIX_CHANGED_FILES.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4/LAUNCH_FIX_QA.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4/MIGRATION_STATUS_RU.md",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4/modified-files.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4_1/ACTIVE_BODY_QA.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4_1/BUILD_QA.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4_1/active-body-acceptance.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4_1/active-body-browser.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4_1/active-body-core.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4_2/BUILD_QA.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4_2/active-body-acceptance.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4_2/active-body-browser.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4_2/active-body-core.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/history-v18_4_2/active-body-walk-current.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/rejected-experiments/README_RU.md",
+      "change": "added"
+    },
+    {
+      "path": "docs/rejected-experiments/getup-posture-search.json",
+      "change": "added"
+    },
+    {
+      "path": "docs/rejected-experiments/split-arm-freefall.txt",
+      "change": "added"
+    },
+    {
+      "path": "docs/rejected-experiments/split-arm-performance.json",
+      "change": "added"
+    },
+    {
+      "path": "index.html",
+      "change": "modified"
+    },
+    {
+      "path": "js/advanced/active-body.js",
+      "change": "added"
+    },
+    {
+      "path": "js/advanced/contacts.js",
+      "change": "modified"
+    },
+    {
+      "path": "js/advanced/physics.js",
+      "change": "modified"
+    },
+    {
+      "path": "js/app/activebodylab.js",
+      "change": "added"
+    },
+    {
+      "path": "package-lock.json",
+      "change": "modified"
+    },
+    {
+      "path": "package.json",
+      "change": "modified"
+    },
+    {
+      "path": "src/advanced/active-body.ts",
+      "change": "added"
+    },
+    {
+      "path": "src/advanced/contacts.ts",
+      "change": "modified"
+    },
+    {
+      "path": "src/advanced/physics.ts",
+      "change": "modified"
+    },
+    {
+      "path": "start-body-lab.bat",
+      "change": "added"
+    },
+    {
+      "path": "start-body-lab.sh",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-acceptance.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-acceptance.json",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-browser.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-browser.json",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-contacts.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-contacts.json",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-core.json",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-fixture.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-flight-probe.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-getup-search.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-http-modules.json",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-motors.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-motors.json",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-performance.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-performance.json",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-preview.png",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-robustness.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-robustness.json",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body-walk-current.json",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/active-body.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/body-controller-probe.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/body-joints.json",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/body-recovery-probe.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/brass.json",
+      "change": "modified"
+    },
+    {
+      "path": "tools/advanced-tests/continuation-results.json",
+      "change": "modified"
+    },
+    {
+      "path": "tools/advanced-tests/foot-contact-probe.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/joint-coordinates.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/joint-drive-probe.cjs",
+      "change": "added"
+    },
+    {
+      "path": "tools/advanced-tests/navigation.json",
+      "change": "modified"
+    },
+    {
+      "path": "tools/advanced-tests/render-browser.json",
+      "change": "modified"
+    },
+    {
+      "path": "tools/advanced-tests/results.json",
+      "change": "modified"
+    },
+    {
+      "path": "tools/advanced-tests/trace-bvh.json",
+      "change": "modified"
+    },
+    {
+      "path": "tools/advanced-tests/traction.json",
+      "change": "modified"
+    },
+    {
+      "path": "tools/advanced-tests/visual-main-fp.png",
+      "change": "modified"
+    },
+    {
+      "path": "tools/advanced-tests/visual-main-map.png",
+      "change": "modified"
+    },
+    {
+      "path": "tools/build-advanced.cjs",
+      "change": "modified"
+    },
+    {
+      "path": "tools/serve.py",
+      "change": "modified"
+    }
+  ]
+}

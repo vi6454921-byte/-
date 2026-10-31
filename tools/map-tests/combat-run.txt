@@ -1,0 +1,1 @@
+PASS 10 combat assertions: LOS, cooldown, active-player exclusion, friendly line, dead target, bounded route. Mock controllers, not a full firing/damage benchmark.

@@ -1,0 +1,14 @@
+{
+  "version": "18.4.11-mocap-actions-v12",
+  "targetedChecksPassed": true,
+  "actions": 15,
+  "ragdollAndRecovery": 31,
+  "weapons": 25,
+  "staticGrip": 15,
+  "terrain": 20,
+  "typecheck": "passed",
+  "maxStaticWeaponChatterMetresPerFrame": 1.7537856332017486e-14,
+  "maxWeaponGripErrorMetres": 3.831959752594557e-09,
+  "knownPriorGeneralTestFailure": "runtime.cjs:167 — AI/occlusion; not represented as a clean global npm test run",
+  "video": "AEGIS_ACTIONS_V12.mp4"
+}

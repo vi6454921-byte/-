@@ -1,0 +1,12 @@
+{
+  "package": "three-mesh-bvh",
+  "version": "0.9.2",
+  "license": "MIT",
+  "source": "https://registry.npmjs.org/three-mesh-bvh/-/three-mesh-bvh-0.9.2.tgz",
+  "files": {
+    "LICENSE": "b106ef6198a9862ed2b5b873e944ecf3583c631a84a7462d400ecc1910ce7fee",
+    "mesh-bvh.js": "0495f2cb529808e3fdc224ba043fc75a8ad66d9bcad84894109f3ca166a554ec",
+    "upstream.umd.cjs": "feb543797df79dc1bbf2848896b97ab61384866f04f90caa265a4260a5dfc5dc",
+    "package.json": "d63f81bdcbeafa3c1ded8cbadc1204f2fe9f43e6e51005f19f2c1c332cf725b2"
+  }
+}

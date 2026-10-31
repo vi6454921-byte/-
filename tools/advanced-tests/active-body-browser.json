@@ -1,0 +1,1193 @@
+{
+  "result": {
+    "scope": "Rendering / integration diagnostic only. Does not certify balance or locomotion.",
+    "results": [
+      {
+        "i": 4,
+        "key": "delta_soldier_2",
+        "preset": "delta_1",
+        "hipHeight": 1.01753,
+        "parts": 19,
+        "allDynamic": true,
+        "hiddenActors": 0,
+        "maxTilt": 0.16921988493167017,
+        "minHeight": 0.9448856115341187,
+        "maxGap": 8.916712965693341e-8,
+        "stats": {
+          "key": "delta_soldier_2",
+          "rigMode": "articulated",
+          "multibodyLinks": 18,
+          "state": "standing",
+          "parts": 19,
+          "dynamic": true,
+          "mass": 76.10000000000001,
+          "support": 2,
+          "tilt": 0.15333247474819203,
+          "steps": 0,
+          "contacts": {
+            "feet": 2,
+            "hands": 0,
+            "knees": 0,
+            "forearms": 0
+          },
+          "selfCollision": true,
+          "completedSteps": 0,
+          "missedSteps": 0,
+          "recoveryPhase": null,
+          "recoveryFailure": null,
+          "locomotion": false,
+          "autoRecover": false,
+          "transitions": []
+        },
+        "rows": [
+          {
+            "t": 0,
+            "state": "standing",
+            "support": 0,
+            "tilt": 0,
+            "hip": [
+              -3.422003349087821e-13,
+              1.0410993099212646,
+              -6.208958347464488e-11
+            ]
+          },
+          {
+            "t": 1,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.00837394583753844,
+            "hip": [
+              0.0008558323606848717,
+              0.9511178731918335,
+              -0.032582808285951614
+            ]
+          },
+          {
+            "t": 2,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.011916489078361334,
+            "hip": [
+              0.003594766603782773,
+              0.9506911635398865,
+              -0.06537308543920517
+            ]
+          },
+          {
+            "t": 3,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.012623304527908717,
+            "hip": [
+              -0.007203768007457256,
+              0.953777015209198,
+              -0.07781243324279785
+            ]
+          },
+          {
+            "t": 4,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.01315461807410843,
+            "hip": [
+              -0.021763727068901062,
+              0.949495255947113,
+              -0.08506541699171066
+            ]
+          },
+          {
+            "t": 5,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.024236667470564063,
+            "hip": [
+              -0.03418975695967674,
+              0.9491409659385681,
+              -0.09891403466463089
+            ]
+          },
+          {
+            "t": 6,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.022201938775138843,
+            "hip": [
+              -0.04097721725702286,
+              0.9486379027366638,
+              -0.1094147339463234
+            ]
+          },
+          {
+            "t": 7,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.025242203285784595,
+            "hip": [
+              -0.04567309096455574,
+              0.9487033486366272,
+              -0.12012200802564621
+            ]
+          },
+          {
+            "t": 8,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.03228841753405511,
+            "hip": [
+              -0.04900476709008217,
+              0.9484184980392456,
+              -0.1306903213262558
+            ]
+          },
+          {
+            "t": 9,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.03536361017993657,
+            "hip": [
+              -0.05213795602321625,
+              0.9488898515701294,
+              -0.14138849079608917
+            ]
+          },
+          {
+            "t": 10,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.039516291030747865,
+            "hip": [
+              -0.05637719854712486,
+              0.9486179947853088,
+              -0.16281044483184814
+            ]
+          },
+          {
+            "t": 11,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.07626467261541221,
+            "hip": [
+              -0.06706187129020691,
+              0.9478029012680054,
+              -0.18914079666137695
+            ]
+          },
+          {
+            "t": 12,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.0919639525048295,
+            "hip": [
+              -0.07698076963424683,
+              0.949775218963623,
+              -0.2084924727678299
+            ]
+          },
+          {
+            "t": 13,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.14168707613105774,
+            "hip": [
+              -0.0867563933134079,
+              0.9469146132469177,
+              -0.2471703141927719
+            ]
+          },
+          {
+            "t": 14,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.15396245044800647,
+            "hip": [
+              -0.06058327108621597,
+              0.9501556158065796,
+              -0.28125521540641785
+            ]
+          }
+        ]
+      },
+      {
+        "i": 5,
+        "key": "delta_soldier_3",
+        "preset": "delta_2",
+        "hipHeight": 0.98293398,
+        "parts": 19,
+        "allDynamic": true,
+        "hiddenActors": 0,
+        "maxTilt": 0.1639177351562818,
+        "minHeight": 0.9140700697898865,
+        "maxGap": 8.652247141638608e-8,
+        "stats": {
+          "key": "delta_soldier_3",
+          "rigMode": "articulated",
+          "multibodyLinks": 18,
+          "state": "standing",
+          "parts": 19,
+          "dynamic": true,
+          "mass": 76.10000000000001,
+          "support": 2,
+          "tilt": 0.1217272196994518,
+          "steps": 0,
+          "contacts": {
+            "feet": 2,
+            "hands": 0,
+            "knees": 0,
+            "forearms": 0
+          },
+          "selfCollision": true,
+          "completedSteps": 0,
+          "missedSteps": 0,
+          "recoveryPhase": null,
+          "recoveryFailure": null,
+          "locomotion": false,
+          "autoRecover": false,
+          "transitions": []
+        },
+        "rows": [
+          {
+            "t": 0,
+            "state": "standing",
+            "support": 0,
+            "tilt": 0,
+            "hip": [
+              -3.470063646149324e-12,
+              1.0065033435821533,
+              1.74515332740377e-10
+            ]
+          },
+          {
+            "t": 1,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.006995172263515513,
+            "hip": [
+              -0.0003830727655440569,
+              0.9198200106620789,
+              -0.039131343364715576
+            ]
+          },
+          {
+            "t": 2,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.01391138044762746,
+            "hip": [
+              -0.007798704784363508,
+              0.9191832542419434,
+              -0.0696910098195076
+            ]
+          },
+          {
+            "t": 3,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.016210129738103898,
+            "hip": [
+              -0.021773317828774452,
+              0.9223477840423584,
+              -0.08042501658201218
+            ]
+          },
+          {
+            "t": 4,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.017210513449457183,
+            "hip": [
+              -0.025530410930514336,
+              0.9205469489097595,
+              -0.09675604850053787
+            ]
+          },
+          {
+            "t": 5,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.03203031458521528,
+            "hip": [
+              -0.04054815322160721,
+              0.9203142523765564,
+              -0.11497204750776291
+            ]
+          },
+          {
+            "t": 6,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.04798546099295083,
+            "hip": [
+              -0.057232946157455444,
+              0.9179518818855286,
+              -0.13647329807281494
+            ]
+          },
+          {
+            "t": 7,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.10293093459714706,
+            "hip": [
+              -0.0756966695189476,
+              0.9171262979507446,
+              -0.1717582792043686
+            ]
+          },
+          {
+            "t": 8,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.13820413949150298,
+            "hip": [
+              -0.06398828327655792,
+              0.9153881072998047,
+              -0.2106933444738388
+            ]
+          },
+          {
+            "t": 9,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.11104665195773206,
+            "hip": [
+              -0.019815683364868164,
+              0.9211612343788147,
+              -0.23613786697387695
+            ]
+          },
+          {
+            "t": 10,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.09262220206606896,
+            "hip": [
+              0.010085069574415684,
+              0.9211753010749817,
+              -0.25586003065109253
+            ]
+          },
+          {
+            "t": 11,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.09688565679554123,
+            "hip": [
+              0.019128961488604546,
+              0.9217059016227722,
+              -0.2682898938655853
+            ]
+          },
+          {
+            "t": 12,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.10624572838423983,
+            "hip": [
+              0.02168864570558071,
+              0.9207572340965271,
+              -0.2787758708000183
+            ]
+          },
+          {
+            "t": 13,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.11861006296036013,
+            "hip": [
+              0.022017043083906174,
+              0.921760082244873,
+              -0.2937334477901459
+            ]
+          },
+          {
+            "t": 14,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.15137877070333322,
+            "hip": [
+              0.022124823182821274,
+              0.9227628111839294,
+              -0.3073335587978363
+            ]
+          }
+        ]
+      },
+      {
+        "i": 10,
+        "key": "alpha_soldier_2",
+        "preset": "alpha_1",
+        "hipHeight": 1.04296825,
+        "parts": 19,
+        "allDynamic": true,
+        "hiddenActors": 0,
+        "maxTilt": 0.14600227628690507,
+        "minHeight": 0.9690167903900146,
+        "maxGap": 9.765569831536773e-8,
+        "stats": {
+          "key": "alpha_soldier_2",
+          "rigMode": "articulated",
+          "multibodyLinks": 18,
+          "state": "standing",
+          "parts": 19,
+          "dynamic": true,
+          "mass": 76.10000000000001,
+          "support": 2,
+          "tilt": 0.12762345298318753,
+          "steps": 0,
+          "contacts": {
+            "feet": 2,
+            "hands": 0,
+            "knees": 0,
+            "forearms": 0
+          },
+          "selfCollision": true,
+          "completedSteps": 0,
+          "missedSteps": 0,
+          "recoveryPhase": null,
+          "recoveryFailure": null,
+          "locomotion": false,
+          "autoRecover": false,
+          "transitions": []
+        },
+        "rows": [
+          {
+            "t": 0,
+            "state": "standing",
+            "support": 0,
+            "tilt": 0,
+            "hip": [
+              8.054001259319432e-13,
+              1.066537618637085,
+              1.1566386737271728e-10
+            ]
+          },
+          {
+            "t": 1,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.0039051913141148653,
+            "hip": [
+              -0.0025555486790835857,
+              0.9749065637588501,
+              -0.028422409668564796
+            ]
+          },
+          {
+            "t": 2,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.0076015448744905885,
+            "hip": [
+              -0.006861106026917696,
+              0.974366307258606,
+              -0.05445188283920288
+            ]
+          },
+          {
+            "t": 3,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.014048829266474093,
+            "hip": [
+              -0.019906405359506607,
+              0.9773297905921936,
+              -0.06590236723423004
+            ]
+          },
+          {
+            "t": 4,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.012046756888488623,
+            "hip": [
+              -0.022615771740674973,
+              0.9758051633834839,
+              -0.07690710574388504
+            ]
+          },
+          {
+            "t": 5,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.021990694807640696,
+            "hip": [
+              -0.039227068424224854,
+              0.9744437336921692,
+              -0.09009352326393127
+            ]
+          },
+          {
+            "t": 6,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.03026602640732578,
+            "hip": [
+              -0.05270567908883095,
+              0.9753669500350952,
+              -0.10451985150575638
+            ]
+          },
+          {
+            "t": 7,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.06122142807481489,
+            "hip": [
+              -0.07276094704866409,
+              0.9722636342048645,
+              -0.131291002035141
+            ]
+          },
+          {
+            "t": 8,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.09337014731659492,
+            "hip": [
+              -0.07425717264413834,
+              0.9706281423568726,
+              -0.1611790508031845
+            ]
+          },
+          {
+            "t": 9,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.08061035075060126,
+            "hip": [
+              -0.051681507378816605,
+              0.9716627597808838,
+              -0.18359965085983276
+            ]
+          },
+          {
+            "t": 10,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.08910572699205864,
+            "hip": [
+              -0.04142127186059952,
+              0.9735707640647888,
+              -0.18855561316013336
+            ]
+          },
+          {
+            "t": 11,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.1023204634356687,
+            "hip": [
+              -0.04008558765053749,
+              0.9752873182296753,
+              -0.20507942140102386
+            ]
+          },
+          {
+            "t": 12,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.14261942462084182,
+            "hip": [
+              -0.048416394740343094,
+              0.9735893607139587,
+              -0.2128051072359085
+            ]
+          },
+          {
+            "t": 13,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.11918197454023272,
+            "hip": [
+              -0.03521173819899559,
+              0.9781085848808289,
+              -0.22402653098106384
+            ]
+          },
+          {
+            "t": 14,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.10751223534187893,
+            "hip": [
+              -0.019158918410539627,
+              0.9753612875938416,
+              -0.24363793432712555
+            ]
+          }
+        ]
+      },
+      {
+        "i": 11,
+        "key": "alpha_soldier_3",
+        "preset": "alpha_2",
+        "hipHeight": 1.00531964,
+        "parts": 19,
+        "allDynamic": true,
+        "hiddenActors": 0,
+        "maxTilt": 0.17201156607622664,
+        "minHeight": 0.9347513914108276,
+        "maxGap": 9.15373779157843e-8,
+        "stats": {
+          "key": "alpha_soldier_3",
+          "rigMode": "articulated",
+          "multibodyLinks": 18,
+          "state": "standing",
+          "parts": 19,
+          "dynamic": true,
+          "mass": 76.10000000000001,
+          "support": 2,
+          "tilt": 0.11586846514582717,
+          "steps": 0,
+          "contacts": {
+            "feet": 2,
+            "hands": 0,
+            "knees": 0,
+            "forearms": 0
+          },
+          "selfCollision": true,
+          "completedSteps": 0,
+          "missedSteps": 0,
+          "recoveryPhase": null,
+          "recoveryFailure": null,
+          "locomotion": false,
+          "autoRecover": false,
+          "transitions": []
+        },
+        "rows": [
+          {
+            "t": 0,
+            "state": "standing",
+            "support": 0,
+            "tilt": 0,
+            "hip": [
+              1.909409045805499e-12,
+              1.0288890600204468,
+              4.41238061713034e-12
+            ]
+          },
+          {
+            "t": 1,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.006864015802799596,
+            "hip": [
+              -0.0034392017405480146,
+              0.9402199387550354,
+              -0.033753711730241776
+            ]
+          },
+          {
+            "t": 2,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.015467435222133362,
+            "hip": [
+              -0.015919936820864677,
+              0.9398826956748962,
+              -0.05602595955133438
+            ]
+          },
+          {
+            "t": 3,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.017996701183744444,
+            "hip": [
+              -0.03118234872817993,
+              0.9440179467201233,
+              -0.0677071064710617
+            ]
+          },
+          {
+            "t": 4,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.02245822889123211,
+            "hip": [
+              -0.03668792545795441,
+              0.9419975876808167,
+              -0.07764256000518799
+            ]
+          },
+          {
+            "t": 5,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.06745496698038561,
+            "hip": [
+              -0.07338960468769073,
+              0.9448715448379517,
+              -0.10249409824609756
+            ]
+          },
+          {
+            "t": 6,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.12197089229883712,
+            "hip": [
+              -0.09769415855407715,
+              0.9359293580055237,
+              -0.14135971665382385
+            ]
+          },
+          {
+            "t": 7,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.12187259637747382,
+            "hip": [
+              -0.07064877450466156,
+              0.9400726556777954,
+              -0.18432198464870453
+            ]
+          },
+          {
+            "t": 8,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.15640312324251973,
+            "hip": [
+              -0.05150587484240532,
+              0.9441675543785095,
+              -0.20055696368217468
+            ]
+          },
+          {
+            "t": 9,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.15988780109300874,
+            "hip": [
+              -0.042637478560209274,
+              0.9491066932678223,
+              -0.21185149252414703
+            ]
+          },
+          {
+            "t": 10,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.16235476169494767,
+            "hip": [
+              -0.014212203212082386,
+              0.9475218057632446,
+              -0.2342817187309265
+            ]
+          },
+          {
+            "t": 11,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.15091395402537575,
+            "hip": [
+              0.005963325500488281,
+              0.9495285749435425,
+              -0.248220294713974
+            ]
+          },
+          {
+            "t": 12,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.04894436025282609,
+            "hip": [
+              0.016628455370664597,
+              0.943688154220581,
+              -0.2761988639831543
+            ]
+          },
+          {
+            "t": 13,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.031109213016516677,
+            "hip": [
+              -0.002724181627854705,
+              0.9423000812530518,
+              -0.3174426853656769
+            ]
+          },
+          {
+            "t": 14,
+            "state": "standing",
+            "support": 2,
+            "tilt": 0.09448564396871656,
+            "hip": [
+              -0.040964990854263306,
+              0.9401016235351562,
+              -0.3544408977031708
+            ]
+          }
+        ]
+      }
+    ],
+    "strong": [
+      {
+        "t": 0,
+        "key": "delta_1",
+        "rigMode": "articulated",
+        "multibodyLinks": 18,
+        "state": "standing",
+        "parts": 19,
+        "dynamic": true,
+        "mass": 76.10000000000001,
+        "support": 2,
+        "tilt": 0.011916489078361334,
+        "steps": 0,
+        "contacts": {
+          "feet": 2,
+          "hands": 0,
+          "knees": 0,
+          "forearms": 0
+        },
+        "selfCollision": true,
+        "completedSteps": 0,
+        "missedSteps": 0,
+        "recoveryPhase": null,
+        "recoveryFailure": null,
+        "locomotion": false,
+        "autoRecover": false,
+        "transitions": [],
+        "hip": [
+          -0.0044568199664354324,
+          0.9562053084373474,
+          -0.0662226751446724
+        ],
+        "allFinite": true
+      },
+      {
+        "t": 1,
+        "key": "delta_1",
+        "rigMode": "articulated",
+        "multibodyLinks": 18,
+        "state": "standing",
+        "parts": 19,
+        "dynamic": true,
+        "mass": 76.10000000000001,
+        "support": 2,
+        "tilt": 0.010180322750035073,
+        "steps": 0,
+        "contacts": {
+          "feet": 2,
+          "hands": 0,
+          "knees": 0,
+          "forearms": 0
+        },
+        "selfCollision": true,
+        "completedSteps": 0,
+        "missedSteps": 0,
+        "recoveryPhase": null,
+        "recoveryFailure": null,
+        "locomotion": false,
+        "autoRecover": false,
+        "transitions": [],
+        "hip": [
+          0.0020360625348985195,
+          0.9488250613212585,
+          -0.08484368026256561
+        ],
+        "allFinite": true
+      },
+      {
+        "t": 2,
+        "key": "delta_1",
+        "rigMode": "articulated",
+        "multibodyLinks": 18,
+        "state": "standing",
+        "parts": 19,
+        "dynamic": true,
+        "mass": 76.10000000000001,
+        "support": 2,
+        "tilt": 0.0217059365697588,
+        "steps": 0,
+        "contacts": {
+          "feet": 2,
+          "hands": 0,
+          "knees": 0,
+          "forearms": 0
+        },
+        "selfCollision": true,
+        "completedSteps": 0,
+        "missedSteps": 0,
+        "recoveryPhase": null,
+        "recoveryFailure": null,
+        "locomotion": false,
+        "autoRecover": false,
+        "transitions": [],
+        "hip": [
+          0.004896999802440405,
+          0.949547290802002,
+          -0.10234156996011734
+        ],
+        "allFinite": true
+      },
+      {
+        "t": 3,
+        "key": "delta_1",
+        "rigMode": "articulated",
+        "multibodyLinks": 18,
+        "state": "standing",
+        "parts": 19,
+        "dynamic": true,
+        "mass": 76.10000000000001,
+        "support": 2,
+        "tilt": 0.015476211124999079,
+        "steps": 0,
+        "contacts": {
+          "feet": 2,
+          "hands": 0,
+          "knees": 0,
+          "forearms": 0
+        },
+        "selfCollision": true,
+        "completedSteps": 0,
+        "missedSteps": 0,
+        "recoveryPhase": null,
+        "recoveryFailure": null,
+        "locomotion": false,
+        "autoRecover": false,
+        "transitions": [],
+        "hip": [
+          0.0010105534456670284,
+          0.9489244818687439,
+          -0.11157400906085968
+        ],
+        "allFinite": true
+      },
+      {
+        "t": 4,
+        "key": "delta_1",
+        "rigMode": "articulated",
+        "multibodyLinks": 18,
+        "state": "standing",
+        "parts": 19,
+        "dynamic": true,
+        "mass": 76.10000000000001,
+        "support": 2,
+        "tilt": 0.02063650483580136,
+        "steps": 0,
+        "contacts": {
+          "feet": 2,
+          "hands": 0,
+          "knees": 0,
+          "forearms": 0
+        },
+        "selfCollision": true,
+        "completedSteps": 0,
+        "missedSteps": 0,
+        "recoveryPhase": null,
+        "recoveryFailure": null,
+        "locomotion": false,
+        "autoRecover": false,
+        "transitions": [],
+        "hip": [
+          -0.003263672813773155,
+          0.9490607380867004,
+          -0.11740197241306305
+        ],
+        "allFinite": true
+      },
+      {
+        "t": 5,
+        "key": "delta_1",
+        "rigMode": "articulated",
+        "multibodyLinks": 18,
+        "state": "standing",
+        "parts": 19,
+        "dynamic": true,
+        "mass": 76.10000000000001,
+        "support": 2,
+        "tilt": 0.016466402342663385,
+        "steps": 0,
+        "contacts": {
+          "feet": 2,
+          "hands": 0,
+          "knees": 0,
+          "forearms": 0
+        },
+        "selfCollision": true,
+        "completedSteps": 0,
+        "missedSteps": 0,
+        "recoveryPhase": null,
+        "recoveryFailure": null,
+        "locomotion": false,
+        "autoRecover": false,
+        "transitions": [],
+        "hip": [
+          -0.008585523813962936,
+          0.9480569958686829,
+          -0.12243412435054779
+        ],
+        "allFinite": true
+      },
+      {
+        "t": 6,
+        "key": "delta_1",
+        "rigMode": "articulated",
+        "multibodyLinks": 18,
+        "state": "standing",
+        "parts": 19,
+        "dynamic": true,
+        "mass": 76.10000000000001,
+        "support": 2,
+        "tilt": 0.012875160214067925,
+        "steps": 0,
+        "contacts": {
+          "feet": 2,
+          "hands": 0,
+          "knees": 0,
+          "forearms": 0
+        },
+        "selfCollision": true,
+        "completedSteps": 0,
+        "missedSteps": 0,
+        "recoveryPhase": null,
+        "recoveryFailure": null,
+        "locomotion": false,
+        "autoRecover": false,
+        "transitions": [],
+        "hip": [
+          -0.01400834135711193,
+          0.9493729472160339,
+          -0.1278858482837677
+        ],
+        "allFinite": true
+      },
+      {
+        "t": 7,
+        "key": "delta_1",
+        "rigMode": "articulated",
+        "multibodyLinks": 18,
+        "state": "standing",
+        "parts": 19,
+        "dynamic": true,
+        "mass": 76.10000000000001,
+        "support": 2,
+        "tilt": 0.03294249508162467,
+        "steps": 0,
+        "contacts": {
+          "feet": 2,
+          "hands": 0,
+          "knees": 0,
+          "forearms": 0
+        },
+        "selfCollision": true,
+        "completedSteps": 0,
+        "missedSteps": 0,
+        "recoveryPhase": null,
+        "recoveryFailure": null,
+        "locomotion": false,
+        "autoRecover": false,
+        "transitions": [],
+        "hip": [
+          -0.018712058663368225,
+          0.9472895860671997,
+          -0.122635617852211
+        ],
+        "allFinite": true
+      },
+      {
+        "t": 8,
+        "key": "delta_1",
+        "rigMode": "articulated",
+        "multibodyLinks": 18,
+        "state": "standing",
+        "parts": 19,
+        "dynamic": true,
+        "mass": 76.10000000000001,
+        "support": 2,
+        "tilt": 0.029828724493974074,
+        "steps": 0,
+        "contacts": {
+          "feet": 2,
+          "hands": 0,
+          "knees": 0,
+          "forearms": 0
+        },
+        "selfCollision": true,
+        "completedSteps": 0,
+        "missedSteps": 0,
+        "recoveryPhase": null,
+        "recoveryFailure": null,
+        "locomotion": false,
+        "autoRecover": false,
+        "transitions": [],
+        "hip": [
+          -0.018933318555355072,
+          0.9501863121986389,
+          -0.11893942952156067
+        ],
+        "allFinite": true
+      },
+      {
+        "t": 9,
+        "key": "delta_1",
+        "rigMode": "articulated",
+        "multibodyLinks": 18,
+        "state": "standing",
+        "parts": 19,
+        "dynamic": true,
+        "mass": 76.10000000000001,
+        "support": 2,
+        "tilt": 0.024006659757531797,
+        "steps": 0,
+        "contacts": {
+          "feet": 2,
+          "hands": 0,
+          "knees": 0,
+          "forearms": 0
+        },
+        "selfCollision": true,
+        "completedSteps": 0,
+        "missedSteps": 0,
+        "recoveryPhase": null,
+        "recoveryFailure": null,
+        "locomotion": false,
+        "autoRecover": false,
+        "transitions": [],
+        "hip": [
+          -0.02153460495173931,
+          0.9449048638343811,
+          -0.12034550309181213
+        ],
+        "allFinite": true
+      }
+    ],
+    "air": [
+      {
+        "t": 0.016666666666666666,
+        "support": 0,
+        "y": 3.0410995483398438
+      },
+      {
+        "t": 0.1,
+        "support": 0,
+        "y": 2.9930710792541504
+      },
+      {
+        "t": 0.18333333333333332,
+        "support": 0,
+        "y": 2.876918077468872
+      },
+      {
+        "t": 0.26666666666666666,
+        "support": 0,
+        "y": 2.6926398277282715
+      },
+      {
+        "t": 0.35,
+        "support": 0,
+        "y": 2.4402377605438232
+      },
+      {
+        "t": 0.43333333333333335,
+        "support": 0,
+        "y": 2.1197116374969482
+      }
+    ],
+    "glError": 0
+  },
+  "errors": []
+}

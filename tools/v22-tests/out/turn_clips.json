@@ -1,0 +1,170 @@
+{
+ "t": 30.5,
+ "samples": 5970,
+ "fast": 512,
+ "fastAct": 66,
+ "fastActFrac": 0.129,
+ "byName": {
+  "turn180@slow": 2,
+  "stopRun@fast": 15,
+  "turn90L@slow": 4,
+  "turn90R@slow": 2,
+  "stopRun@walk": 2,
+  "stopWalk@walk": 4,
+  "stopWalk@fast": 2,
+  "turn90R@walk": 1,
+  "stopWalk@slow": 1
+ },
+ "sample": [
+  [
+   "turn180",
+   0,
+   "delta_soldier_8"
+  ],
+  [
+   "stopRun",
+   3.8,
+   "alpha_soldier_8"
+  ],
+  [
+   "stopRun",
+   4.04,
+   "alpha_soldier_5"
+  ],
+  [
+   "turn90L",
+   0.4,
+   "alpha_2"
+  ],
+  [
+   "turn90R",
+   0,
+   "alpha_soldier_5"
+  ],
+  [
+   "turn90L",
+   0,
+   "alpha_soldier_8"
+  ],
+  [
+   "stopRun",
+   4.2,
+   "delta_2"
+  ],
+  [
+   "stopRun",
+   3.59,
+   "alpha_2"
+  ],
+  [
+   "turn180",
+   0,
+   "delta_soldier_5"
+  ],
+  [
+   "stopRun",
+   4.05,
+   "alpha_2"
+  ],
+  [
+   "stopRun",
+   3.53,
+   "alpha_soldier_2"
+  ],
+  [
+   "stopRun",
+   3.54,
+   "delta_2"
+  ],
+  [
+   "stopRun",
+   1.49,
+   "alpha_soldier_2"
+  ],
+  [
+   "stopRun",
+   1.5,
+   "delta_2"
+  ],
+  [
+   "stopWalk",
+   1.2,
+   "delta_soldier_0"
+  ],
+  [
+   "stopWalk",
+   2.01,
+   "alpha_soldier_8"
+  ],
+  [
+   "stopRun",
+   3.98,
+   "alpha_soldier_2"
+  ],
+  [
+   "stopWalk",
+   1.54,
+   "alpha_soldier_2"
+  ],
+  [
+   "stopWalk",
+   1.22,
+   "delta_soldier_2"
+  ],
+  [
+   "turn90R",
+   0,
+   "delta_soldier_2"
+  ],
+  [
+   "stopRun",
+   3.07,
+   "delta_2"
+  ],
+  [
+   "turn90R",
+   0.73,
+   "alpha_soldier_5"
+  ],
+  [
+   "stopRun",
+   3.82,
+   "alpha_soldier_2"
+  ],
+  [
+   "stopRun",
+   2.46,
+   "alpha_2"
+  ],
+  [
+   "stopWalk",
+   0.82,
+   "alpha_soldier_5"
+  ],
+  [
+   "stopRun",
+   2.95,
+   "alpha_soldier_2"
+  ],
+  [
+   "stopRun",
+   3.45,
+   "delta_2"
+  ],
+  [
+   "stopWalk",
+   0.87,
+   "alpha_soldier_5"
+  ],
+  [
+   "stopRun",
+   2.83,
+   "alpha_soldier_2"
+  ],
+  [
+   "turn90L",
+   0,
+   "delta_soldier_4"
+  ]
+ ]
+}

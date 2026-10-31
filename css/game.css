@@ -1,0 +1,792 @@
+/* ==========================================================================
+   AEGIS · стили главной страницы: HUD бойца, главное меню (стеклянная
+   панель), настройки, пауза, обучение, оружейная (iframe).
+   Стекло — полупрозрачный тёмный фон + размытие, без градиентов.
+   ========================================================================== */
+:root{
+  --tx:#eef0f2; --tx2:#b9bec5; --tx3:#868c94;
+  --glass:rgba(14,16,20,.46); --glass2:rgba(255,255,255,.06); --line:rgba(255,255,255,.13); --line2:rgba(255,255,255,.24);
+  --red:#e0313c; --red2:rgba(224,49,60,.86); --acc:#e8c36a; --acc2:rgba(232,195,106,.16);
+  --delta:#e05a4f; --alpha:#c9ced4;
+  --f:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Inter,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;overflow:hidden;background:#0b0d10;color:var(--tx);font-family:var(--f);
+  -webkit-user-select:none;user-select:none;-webkit-font-smoothing:antialiased}
+canvas{display:block}
+button{font:inherit;color:inherit}
+.glass{background:var(--glass);border:1px solid var(--line);border-radius:16px;
+  backdrop-filter:blur(22px) saturate(1.15);-webkit-backdrop-filter:blur(22px) saturate(1.15);
+  box-shadow:0 18px 50px rgba(0,0,0,.35)}
+
+/* --------------------------------------------------------------- HUD --- */
+#hud{position:fixed;inset:0;pointer-events:none;z-index:5;transition:opacity .25s}
+body:not(.embodied) #hud{opacity:0}
+#ammo{position:absolute;right:30px;bottom:24px;text-align:right;font:600 11px/1.5 var(--mono);letter-spacing:.14em;
+  color:rgba(255,255,255,.55);text-shadow:0 1px 6px rgba(0,0,0,.9);display:none}
+#ammo.on{display:block}
+#ammo .cnt b{font:700 40px/1.05 var(--mono);letter-spacing:.01em;color:#f0dcae}
+#ammo .cnt b.low{color:#e08b74}
+#ammo .cnt b.empty{color:#d9564a}
+#ammo .cnt s{text-decoration:none;font-size:18px;opacity:.6;margin-left:8px}
+#ammo .cal i{font-style:normal;opacity:.7;font-size:.9em}
+#mode{font:600 11px/1 var(--mono);letter-spacing:.18em;color:rgba(240,220,174,.85);margin-bottom:8px}
+#who{position:absolute;left:28px;bottom:30px;font:600 10.5px/1.6 var(--mono);letter-spacing:.2em;
+  color:rgba(255,255,255,.45);text-shadow:0 1px 6px rgba(0,0,0,.9);text-transform:uppercase}
+#who b{display:block;font-size:19px;letter-spacing:.08em;color:#fff;margin-top:3px;text-transform:none}
+#who u{text-decoration:none;display:block;margin-top:2px;font-size:10px;letter-spacing:.14em;text-transform:none}
+#who.delta u{color:#ef8a7e} #who.alpha u{color:#c8cdd2}
+#stamina{position:absolute;left:28px;bottom:18px;width:168px;height:3px;background:rgba(255,255,255,.12);
+  border-radius:2px;overflow:hidden;opacity:0;transition:opacity .3s}
+#stamina.on{opacity:1}
+#stamina i{display:block;height:100%;width:100%;background:#d9c08a;transform-origin:left}
+#score{position:absolute;left:50%;top:20px;transform:translateX(-50%);font:600 10.5px/1.6 var(--mono);
+  letter-spacing:.2em;text-align:center;color:rgba(255,255,255,.45);text-shadow:0 1px 6px rgba(0,0,0,.9)}
+#score b{color:#f0dcae;font-size:15px}
+/* шесть слотов снаряжения */
+#slots{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:flex;gap:6px}
+#slots .slot{min-width:84px;height:44px;padding:6px 9px;border-radius:9px;background:rgba(10,12,15,.42);
+  border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  display:flex;flex-direction:column;justify-content:space-between;transition:border-color .15s,background .15s,opacity .15s}
+#slots .slot b{font:700 10px/1 var(--mono);color:rgba(255,255,255,.55)}
+#slots .slot span{font:600 12px/1.1 var(--f);color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+#slots .slot.empty span{color:rgba(255,255,255,.3)}
+#slots .slot.ammo span{color:rgba(240,220,174,.8)}
+#slots .slot.on{border-color:var(--acc);background:rgba(232,195,106,.18)}
+#slots .slot.used{opacity:.35}
+#slots .slot.used span{text-decoration:line-through}
+
+/* прицельные сетки коллиматора и оптики */
+#reticle{position:fixed;inset:0;z-index:4;pointer-events:none}
+#reticle.dot .box{position:absolute;left:0;top:0;width:256px;height:256px}
+#reticle.dot svg{width:256px;height:256px;display:block;filter:saturate(1.35) brightness(1.15)}
+#reticle.dot .box{mix-blend-mode:screen}
+#reticle.scope svg{position:absolute;inset:0;width:100%;height:100%}
+#reticle.scope .mask{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,transparent calc(var(--r) - 2px),#000 var(--r))}
+#flash{position:fixed;inset:0;z-index:12;pointer-events:none;background:#fff;opacity:0}
+
+/* ------------------------------------------------------- подсказка F --- */
+#prompt{position:fixed;left:50%;top:70%;transform:translateX(-50%);z-index:7;pointer-events:none;
+  text-align:center;opacity:0;transition:opacity .16s}
+#prompt.on{opacity:1}
+#prompt .key{display:inline-flex;align-items:center;justify-content:center;min-width:36px;height:36px;padding:0 8px;
+  border:1.5px solid rgba(255,255,255,.8);border-radius:8px;font:700 15px/1 var(--mono);color:#fff;
+  background:rgba(10,12,15,.55);backdrop-filter:blur(6px);position:relative;overflow:hidden}
+#prompt .key .fill{position:absolute;inset:0;background:rgba(232,195,106,.6);transform-origin:bottom;transform:scaleY(0)}
+#prompt .key span{position:relative}
+#prompt .lbl{margin-top:8px;font:600 13px/1.4 var(--f);letter-spacing:.06em;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.95)}
+#prompt .sub{font:500 11px/1.5 var(--f);letter-spacing:.06em;color:rgba(255,255,255,.6);text-shadow:0 1px 8px rgba(0,0,0,.95)}
+
+@keyframes pop{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+
+/* --------------------------------------------- гибель и эффекты --- */
+#hitmark{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:7;pointer-events:none;opacity:0;display:none}
+#vig{position:fixed;inset:0;z-index:4;pointer-events:none;opacity:0;transition:opacity .35s;
+  background:radial-gradient(ellipse at center,rgba(0,0,0,0) 42%,rgba(0,0,0,.62) 100%)}
+#dmg{position:fixed;inset:0;z-index:4;pointer-events:none;opacity:0;
+  background:radial-gradient(ellipse at center,rgba(120,10,10,0) 46%,rgba(140,14,14,.55) 100%)}
+#fade{position:fixed;inset:0;z-index:6;pointer-events:none;background:#000;opacity:0}
+#veil{position:fixed;inset:0;z-index:3;pointer-events:none;opacity:0;background:rgb(90,76,62)}
+#death{position:fixed;left:50%;top:70%;transform:translate(-50%,-50%);z-index:9;pointer-events:none;text-align:center;
+  opacity:0;transition:opacity .8s ease-out}
+#death.on{opacity:1}
+#death .t{font:700 25px/1.2 var(--f);letter-spacing:.46em;color:#efe3d2;text-shadow:0 2px 18px rgba(0,0,0,.95);margin-right:-.46em}
+#death .c{margin-top:12px;font:600 11.5px/1.5 var(--mono);letter-spacing:.16em;color:#dca08c;text-shadow:0 1px 8px rgba(0,0,0,.95)}
+#death .r{margin-top:18px;font:600 10.5px/1.5 var(--mono);letter-spacing:.2em;color:rgba(255,255,255,.6);text-shadow:0 1px 8px rgba(0,0,0,.95)}
+#bloodScr{display:none!important}
+#fps{position:fixed;right:12px;top:10px;z-index:60;pointer-events:none;display:none;font:600 11px/1.35 var(--mono);
+  color:#cfe;letter-spacing:.04em;background:rgba(0,0,0,.5);padding:4px 7px;border-radius:4px;white-space:pre}
+body.dead #hud,body.dead #prompt{opacity:0!important;transition:opacity .4s}
+
+/* метка над головой выбранного генерала */
+#tag{position:fixed;left:0;top:0;z-index:8;pointer-events:none;display:none;text-align:center;
+  padding:6px 12px 7px;border-radius:10px;background:rgba(12,14,18,.55);border:1px solid rgba(232,195,106,.7);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);white-space:nowrap}
+#tag.on{display:block}
+#tag::after{content:'';position:absolute;left:50%;bottom:-7px;width:12px;height:12px;margin-left:-6px;
+  background:rgba(12,14,18,.55);border-right:1px solid rgba(232,195,106,.7);border-bottom:1px solid rgba(232,195,106,.7);transform:rotate(45deg)}
+#tag b{display:block;font:700 13px/1.2 var(--f);color:#fff}
+#tag span{display:block;font:600 10.5px/1.4 var(--f);letter-spacing:.06em;color:var(--tx2)}
+#tag.delta span{color:#f0978b}
+#tag i{display:block;font:700 9.5px/1.2 var(--mono);font-style:normal;letter-spacing:.2em;text-transform:uppercase;color:var(--acc);margin-top:2px}
+
+/* ---------------------------------------------------- главный экран --- */
+#brand{position:fixed;left:30px;top:26px;z-index:10;pointer-events:none;transition:opacity .35s}
+#brand b{display:block;font:800 30px/1 var(--f);letter-spacing:.36em;color:#fff;text-shadow:0 2px 20px rgba(0,0,0,.6)}
+#brand span{display:block;margin-top:8px;font:600 11px/1 var(--f);letter-spacing:.24em;text-transform:uppercase;color:rgba(255,255,255,.65);text-shadow:0 1px 10px rgba(0,0,0,.8)}
+#menu,#battle{position:fixed;right:28px;top:50%;width:340px;z-index:20;padding:26px 22px 20px;
+  transform:translate(0,-50%);transition:opacity .3s,transform .35s cubic-bezier(.2,.7,.2,1)}
+.m-title{font:800 26px/1 var(--f);letter-spacing:.32em;color:#fff}
+.m-sub{margin-top:8px;font:600 11px/1 var(--f);letter-spacing:.2em;text-transform:uppercase;color:var(--tx3)}
+.m-cap{font:700 11px/1 var(--f);letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);margin-bottom:10px}
+.m-gen{margin:22px 0 18px}
+#genList{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.gen{padding:8px 10px;border-radius:10px;border:1px solid var(--line);background:var(--glass2);cursor:pointer;text-align:left;transition:border-color .15s,background .15s}
+.gen:hover{border-color:var(--line2);background:rgba(255,255,255,.1)}
+.gen b{display:block;font-size:13px;font-weight:700}
+.gen span{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--tx2);margin-top:2px}
+.gen span::before{content:'';width:10px;height:4px;border-radius:2px;background:#111;border:1px solid rgba(255,255,255,.35)}
+.gen.delta span::before{background:#b51a16;border-color:#b51a16}
+.gen.on{border-color:var(--acc);background:var(--acc2)}
+.m-btns{display:flex;flex-direction:column;gap:10px}
+.mbtn{display:flex;flex-direction:column;align-items:flex-start;gap:4px;width:100%;padding:15px 18px;border-radius:12px;
+  border:1px solid var(--line2);background:rgba(255,255,255,.06);cursor:pointer;text-align:left;
+  transition:background .15s,border-color .15s,transform .1s}
+.mbtn span{font:700 16px/1 var(--f);letter-spacing:.06em}
+.mbtn small{font:500 11.5px/1.2 var(--f);color:var(--tx2)}
+.mbtn:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.4)}
+.mbtn:active{transform:translateY(1px)}
+.mbtn:focus-visible,.sbtn:focus-visible,.gen:focus-visible,.back:focus-visible{outline:2px solid #9cc2f0;outline-offset:2px}
+.mbtn.battle{background:var(--red2);border:1.5px solid var(--red);color:#fff}
+.mbtn.battle small{color:rgba(255,255,255,.82)}
+.mbtn.battle:hover{background:var(--red);border-color:#ff5b64}
+.m-foot{margin-top:18px;font:500 11px/1.4 var(--f);color:var(--tx3);text-align:center}
+body:not(.st-menu) #menu{opacity:0;transform:translate(40px,-50%);pointer-events:none}
+body:not(.st-battle) #battle{opacity:0;transform:translate(40px,-50%);pointer-events:none}
+body:not(.st-menu):not(.st-battle) #brand{opacity:0}
+.back{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px 0 10px;border-radius:10px;border:1px solid var(--line2);
+  background:rgba(255,255,255,.06);cursor:pointer;font:600 13px/1 var(--f)}
+.back:hover{background:rgba(255,255,255,.13)}
+.back i{font-style:normal;font-size:16px}
+#battle .back{margin-bottom:20px}
+.b-gen{font-size:13px;color:var(--tx2);margin-bottom:14px}
+.b-gen b{color:#fff}
+.maps{display:flex;flex-direction:column;gap:12px}
+.map{position:relative;border-radius:12px;border:1px solid var(--line);overflow:hidden;background:rgba(0,0,0,.25);cursor:not-allowed}
+.map-art{height:96px;background:#2a3328;filter:grayscale(.55) brightness(.75)}
+.map-art.a1{background:#2d3a2a;box-shadow:inset 0 -30px 0 #24301f, inset 80px -60px 0 #33422c}
+.map-art.a2{background:#3a3631;box-shadow:inset 0 -26px 0 #2e2a25, inset -90px -50px 0 #47413a}
+.map-n{padding:10px 12px 0;font-weight:700;font-size:14px}
+.map-d{padding:3px 12px 12px;font-size:11.5px;color:var(--tx2)}
+.soon{position:absolute;right:10px;top:10px;padding:5px 10px;border-radius:7px;background:rgba(10,12,15,.72);
+  border:1px solid var(--line2);font:700 10.5px/1 var(--f);letter-spacing:.16em;text-transform:uppercase}
+.b-note{margin-top:14px;font-size:11.5px;line-height:1.5;color:var(--tx3)}
+
+/* подсказка WASD */
+#wasd{position:fixed;left:28px;bottom:26px;z-index:10;display:flex;align-items:center;gap:16px;pointer-events:none;transition:opacity .3s}
+body:not(.st-menu):not(.st-fly) #wasd{opacity:0}
+#wasd .keys{display:grid;grid-template-areas:". w ." "a s d";grid-template-columns:repeat(3,38px);grid-auto-rows:38px;gap:5px}
+#wasd .k{display:flex;align-items:center;justify-content:center;border-radius:8px;font:700 14px/1 var(--mono);color:#fff;
+  background:rgba(232,195,106,.2);border:1.5px solid rgba(232,195,106,.85);box-shadow:0 0 18px rgba(232,195,106,.32);
+  backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:background .1s,transform .1s}
+body.st-menu #wasd .k{animation:glow 2.2s ease-in-out infinite}
+#wasd .k.on{background:rgba(232,195,106,.75);color:#14110a;transform:translateY(1px)}
+@keyframes glow{0%,100%{box-shadow:0 0 10px rgba(232,195,106,.18)}50%{box-shadow:0 0 22px rgba(232,195,106,.5)}}
+#wasd .txt{display:flex;flex-direction:column;gap:3px;text-shadow:0 1px 8px rgba(0,0,0,.9)}
+#wasd .txt b{font:700 13px/1.2 var(--f);letter-spacing:.06em;color:#fff}
+#wasd .txt span{font:500 11.5px/1.35 var(--f);color:rgba(255,255,255,.75)}
+
+/* ---------------------------------------------------- модальные окна --- */
+.modal{position:fixed;inset:0;z-index:30;display:none;align-items:center;justify-content:center;background:rgba(6,8,10,.35)}
+body.st-pause #pause,body.st-settings #settings,body.st-tutorial #tutorial{display:flex}
+.p-box{width:340px;padding:24px 22px;display:flex;flex-direction:column;gap:10px;max-height:calc(100vh - 24px);overflow:auto;scrollbar-width:thin}
+.p-box .mbtn{padding:13px 16px}
+.p-who{font-size:13px;color:var(--tx2);margin:-2px 0 6px}
+.p-who b{color:#fff}
+
+/* настройки */
+.s-box{width:min(980px,94vw);height:min(680px,90vh);display:flex;flex-direction:column;overflow:hidden}
+.s-head{display:flex;align-items:center;gap:16px;padding:16px 20px;border-bottom:1px solid var(--line)}
+.s-title{font:700 18px/1 var(--f);letter-spacing:.08em}
+.s-saved{margin-left:auto;font-size:12px;color:var(--acc);opacity:0;transition:opacity .3s}
+.s-saved.on{opacity:1}
+.s-body{flex:1;display:flex;min-height:0}
+.s-tabs{width:220px;padding:14px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:4px}
+.s-tabs button{text-align:left;padding:10px 12px;border-radius:9px;border:1px solid transparent;background:transparent;cursor:pointer;font-weight:600;font-size:13.5px;color:var(--tx2)}
+.s-tabs button:hover{background:rgba(255,255,255,.06);color:#fff}
+.s-tabs button.on{background:var(--acc2);border-color:rgba(232,195,106,.5);color:#fff}
+.s-pane{display:none;flex:1;overflow:auto;padding:18px 22px;scrollbar-width:thin;scrollbar-color:#454b53 transparent}
+.s-pane.on{display:block}
+.s-hint{font-size:12.5px;line-height:1.5;color:var(--tx2);margin-bottom:14px}
+.s-cap{font:700 11px/1 var(--f);letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);margin:16px 0 10px}
+.s-cap:first-child{margin-top:0}
+.b-group{margin-bottom:16px}
+.b-row{display:grid;grid-template-columns:1fr 170px;align-items:center;gap:12px;padding:5px 8px;border-radius:8px}
+.b-row:hover{background:rgba(255,255,255,.04)}
+.b-row span{font-size:13.5px}
+.b-key{height:32px;border-radius:8px;border:1px solid var(--line2);background:rgba(255,255,255,.07);cursor:pointer;font:700 12.5px/1 var(--mono)}
+.b-key:hover{border-color:var(--acc)}
+.b-key.wait{border-color:var(--acc);background:var(--acc2);color:var(--acc);animation:glow 1s infinite}
+.b-key.none{color:var(--tx3)}
+.b-row.flash{background:rgba(232,195,106,.14)}
+.s-row{display:flex;gap:10px;margin-top:10px}
+.s-row.end{justify-content:flex-end}
+.sbtn{height:38px;padding:0 16px;border-radius:10px;border:1px solid var(--line2);background:rgba(255,255,255,.07);cursor:pointer;font-weight:600;font-size:13px}
+.sbtn:hover{background:rgba(255,255,255,.14)}
+.sbtn.acc{background:var(--red2);border-color:var(--red);color:#fff}
+.sbtn.acc:hover{background:var(--red)}
+.sbtn.ghost{background:transparent;border-color:transparent;color:var(--tx2)}
+.sbtn.ghost:hover{color:#fff;background:rgba(255,255,255,.06)}
+.sbtn:disabled{opacity:.35;cursor:default}
+.q-list{display:flex;flex-direction:column;gap:8px}
+.q-list button{text-align:left;padding:13px 15px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04);cursor:pointer}
+.q-list button:hover{border-color:var(--line2)}
+.q-list button b{display:block;font-size:14.5px}
+.q-list button span{display:block;font-size:12px;color:var(--tx2);margin-top:4px}
+.q-list button.on{border-color:var(--acc);background:var(--acc2)}
+.s-check{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:13.5px;cursor:pointer}
+.s-check input{width:16px;height:16px;accent-color:#e8c36a}
+.s-check em{font-style:normal;font:700 11px/1 var(--mono);color:var(--tx3);border:1px solid var(--line2);border-radius:5px;padding:3px 6px}
+.s-slider{display:flex;align-items:center;gap:14px}
+.s-slider input{flex:1;accent-color:#e8c36a}
+.s-slider b{width:56px;text-align:right;font:700 13px/1 var(--mono)}
+.req{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.req-c{padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.04)}
+.req-t{font-weight:700;font-size:15px}
+.req-s{font-size:12px;color:var(--acc);margin:4px 0 10px}
+.req dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:12.5px}
+.req dt{color:var(--tx3)} .req dd{margin:0}
+.req-b{margin-top:12px;font-size:12.5px;line-height:1.5;color:var(--tx2)}
+.req-b b{color:#fff;margin-right:6px}
+.credits{font-size:12px;line-height:1.5;color:var(--tx2)}
+.credits summary{cursor:pointer;font-weight:600;color:#fff;margin-bottom:6px}
+.credits ul{margin:6px 0 0;padding-left:18px}
+.credits a{color:inherit}
+
+/* обучение */
+.t-box{width:min(620px,92vw);padding:26px 28px 20px}
+.t-step{font:700 11px/1 var(--f);letter-spacing:.18em;text-transform:uppercase;color:var(--acc)}
+.t-title{margin-top:10px;font:700 22px/1.25 var(--f)}
+.t-body{margin-top:12px;font-size:14px;line-height:1.6;color:var(--tx2);min-height:150px}
+.t-body p{margin:0 0 10px}
+.t-body kbd{display:inline-block;min-width:24px;padding:3px 7px;margin:0 2px;border-radius:6px;border:1px solid rgba(232,195,106,.7);
+  background:rgba(232,195,106,.14);font:700 12px/1.2 var(--mono);color:#fff;text-align:center}
+.t-keys{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin-top:6px;align-items:center}
+.t-dots{display:flex;gap:6px;margin:16px 0 14px}
+.t-dots i{width:22px;height:4px;border-radius:2px;background:rgba(255,255,255,.18)}
+.t-dots i.on{background:var(--acc)}
+.t-btns{display:flex;gap:10px;justify-content:flex-end}
+.t-btns #tutSkip{margin-right:auto}
+
+/* оружейная поверх полигона */
+#armory{position:fixed;inset:0;z-index:35;display:block;visibility:hidden;pointer-events:none;background:#121417}
+body.st-armory #armory{visibility:visible;pointer-events:auto}
+#armory iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+body.st-armory #hud,body.st-armory #prompt,body.st-armory #tag,body.st-armory #wasd{display:none}
+
+/* ------------------------------------------------------------ загрузка --- */
+#loading{position:fixed;inset:0;z-index:70;display:flex;align-items:center;justify-content:center;background:#0b0d10;transition:opacity .6s}
+#loading.done{opacity:0;pointer-events:none}
+.l-in{width:320px;text-align:center}
+.l-logo{font:800 34px/1 var(--f);letter-spacing:.42em;margin-right:-.42em;color:#fff}
+.l-bar{margin:26px 0 12px;height:3px;border-radius:2px;background:rgba(255,255,255,.1);overflow:hidden}
+.l-bar i{display:block;height:100%;width:0;background:var(--acc);transition:width .25s}
+.l-t{font:600 11px/1 var(--f);letter-spacing:.18em;text-transform:uppercase;color:var(--tx3)}
+#err{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:7vw;text-align:center;
+  font:500 15px/1.5 var(--mono);color:#e6a79c;white-space:pre-wrap;z-index:90;background:rgba(8,9,11,.97);overflow:auto;user-select:text}
+@media (max-width:900px){#menu,#battle{right:14px;width:300px}}
+
+/* ==========================================================================
+   AEGIS v2 · «чёткий» слой оформления.
+   • Без backdrop-filter: размытое стекло давало мыльные края и съедало
+     кадры на слабых видеокартах — теперь плотные тёмные панели.
+   • Без центрирования через translate(-50%): дробные пиксели размывали
+     текст. Центрируем через inset/margin:auto и flex.
+   • Системные UI-шрифты с хинтингом, умеренный трекинг, табличные цифры.
+   ========================================================================== */
+:root{
+  --f:'Segoe UI Variable Text','Segoe UI',system-ui,-apple-system,BlinkMacSystemFont,Inter,Roboto,'Helvetica Neue',Arial,sans-serif;
+  --fd:'Segoe UI Variable Display','Segoe UI',system-ui,-apple-system,Inter,Roboto,Arial,sans-serif;
+  --mono:'Cascadia Mono','JetBrains Mono',Consolas,'SFMono-Regular',Menlo,'Roboto Mono','Liberation Mono',monospace;
+  --panel:#111419; --panel2:#171b21; --panel3:#1e232a;
+  --line:#2a3039; --line2:#3a424d; --tx2:#b3bac4; --tx3:#7f8792;
+  --acc:#f0c35a; --acc2:rgba(240,195,90,.12); --red:#e5383b; --red2:#c92d31;
+}
+html,body{-webkit-font-smoothing:auto;-moz-osx-font-smoothing:auto;text-rendering:optimizeLegibility;font-kerning:normal}
+.glass{background:var(--panel);border:1px solid var(--line);border-radius:6px;
+  backdrop-filter:none;-webkit-backdrop-filter:none;
+  box-shadow:0 1px 0 rgba(255,255,255,.04) inset,0 24px 60px rgba(0,0,0,.55)}
+.glass::before{content:'';position:absolute;left:0;top:0;right:0;height:2px;background:var(--acc);border-radius:6px 6px 0 0;opacity:.9}
+#menu,#battle,.p-box,.s-box,.t-box{position:relative}
+#menu,#battle{position:fixed}
+
+/* HUD: чёткие цифры, никакого размытия */
+#ammo,#who,#score,#mode,#slots .slot b,#ammo .cnt b{font-variant-numeric:tabular-nums}
+#ammo{letter-spacing:.08em;color:rgba(255,255,255,.7);text-shadow:0 1px 2px rgba(0,0,0,.95),0 0 1px #000}
+#ammo .cnt b{font:700 42px/1 var(--fd);letter-spacing:0;color:#fff;text-shadow:0 2px 3px rgba(0,0,0,.8)}
+#ammo .cnt b.low{color:#ffb35c} #ammo .cnt b.empty{color:#ff5a4f}
+#ammo .cnt s{opacity:.55;font:600 18px/1 var(--fd)}
+#mode{letter-spacing:.12em;color:var(--acc);text-shadow:0 1px 2px #000}
+#who{letter-spacing:.12em;color:rgba(255,255,255,.6);text-shadow:0 1px 2px rgba(0,0,0,.95)}
+#who b{font:700 20px/1.15 var(--fd);letter-spacing:.01em;text-shadow:0 1px 3px rgba(0,0,0,.9)}
+#who u{letter-spacing:.06em}
+#stamina{height:3px;border-radius:0;background:rgba(255,255,255,.14)}
+#stamina i{background:var(--acc)}
+#score{left:0;right:0;margin:0 auto;width:max-content;transform:none;letter-spacing:.14em;color:rgba(255,255,255,.62);text-shadow:0 1px 2px rgba(0,0,0,.95)}
+#score b{color:var(--acc);font:700 16px/1 var(--fd)}
+/* v24: в командном бою строка АЛЬФА │ ДЕЛЬТА стоит сверху по центру — счёт под ней */
+body.teams-on #score{top:calc(16px + var(--teamsH, 18px))}
+#slots{left:0;right:0;margin:0 auto;width:max-content;transform:none;gap:4px}
+#slots .slot{min-width:88px;height:46px;padding:6px 10px 7px;border-radius:3px;background:rgba(12,14,18,.82);
+  border:1px solid rgba(255,255,255,.1);backdrop-filter:none;-webkit-backdrop-filter:none;position:relative}
+#slots .slot b{font:700 10px/1 var(--mono);color:rgba(255,255,255,.5)}
+#slots .slot span{font:600 12.5px/1.1 var(--f)}
+#slots .slot.on{border-color:var(--acc);background:rgba(28,24,14,.9);box-shadow:inset 0 -2px 0 var(--acc)}
+#slots .slot.on b{color:var(--acc)}
+
+#prompt{left:0;right:0;margin:0 auto;width:max-content;transform:none}
+#prompt .key{border-radius:4px;border:1.5px solid #fff;background:rgba(12,14,18,.85);backdrop-filter:none}
+#prompt .key .fill{background:rgba(240,195,90,.75)}
+#prompt .lbl{letter-spacing:.02em;text-shadow:0 1px 2px #000,0 0 6px rgba(0,0,0,.8)}
+#prompt .sub{letter-spacing:.02em;color:rgba(255,255,255,.72);text-shadow:0 1px 2px #000}
+
+
+#hitmark{left:0;top:0;right:0;bottom:0;margin:auto;transform:none}
+#death{left:0;right:0;top:auto;bottom:22%;transform:none}
+#death .t{font:700 26px/1.2 var(--fd);letter-spacing:.32em;margin-right:-.32em;text-shadow:0 2px 4px rgba(0,0,0,.95)}
+#death .c{letter-spacing:.1em;text-shadow:0 1px 2px #000}
+#death .r{letter-spacing:.12em;text-shadow:0 1px 2px #000}
+
+#tag{border-radius:3px;background:rgba(12,14,18,.9);border:1px solid var(--acc);backdrop-filter:none;-webkit-backdrop-filter:none}
+#tag::after{background:rgba(12,14,18,.9);border-color:var(--acc)}
+#tag i{letter-spacing:.12em}
+
+/* главное меню */
+#brand b{font:800 30px/1 var(--fd);letter-spacing:.3em;text-shadow:0 2px 4px rgba(0,0,0,.7)}
+#brand span{letter-spacing:.16em;color:rgba(255,255,255,.75);text-shadow:0 1px 3px rgba(0,0,0,.9)}
+#menu,#battle{top:0;bottom:0;margin:auto 0;height:max-content;max-height:calc(100vh - 40px);overflow:auto;transform:none;padding:28px 22px 20px}
+body:not(.st-menu) #menu,body:not(.st-battle) #battle{transform:translateX(40px)}
+.m-title{font:800 26px/1 var(--fd);letter-spacing:.26em}
+.m-sub,.m-cap{letter-spacing:.12em}
+.gen{border-radius:4px;background:var(--panel2);border-color:var(--line)}
+.gen:hover{background:var(--panel3);border-color:var(--line2)}
+.gen.on{border-color:var(--acc);background:rgba(240,195,90,.1);box-shadow:inset 3px 0 0 var(--acc)}
+.mbtn{border-radius:4px;border:1px solid var(--line2);background:var(--panel2);padding:14px 16px;position:relative}
+.mbtn span{font:700 15.5px/1 var(--f);letter-spacing:.02em}
+.mbtn small{font:500 12px/1.25 var(--f)}
+.mbtn:hover{background:var(--panel3);border-color:#56606c}
+.mbtn.battle{background:var(--red2);border:1px solid var(--red);box-shadow:inset 0 -2px 0 rgba(0,0,0,.25)}
+.mbtn.battle:hover{background:var(--red);border-color:#ff6366}
+.back,.sbtn,.b-key{border-radius:4px}
+.back{background:var(--panel2)} .back:hover{background:var(--panel3)}
+.map{border-radius:4px;background:var(--panel2)}
+.soon{border-radius:3px;background:#0c0e12;letter-spacing:.12em}
+#wasd .k{border-radius:4px;background:rgba(18,16,10,.82);border:1.5px solid var(--acc);backdrop-filter:none;-webkit-backdrop-filter:none;box-shadow:none}
+body.st-menu #wasd .k{animation:glow 2.2s ease-in-out infinite}
+#wasd .k.on{background:var(--acc)}
+#wasd .txt{text-shadow:0 1px 2px #000,0 0 6px rgba(0,0,0,.8)}
+#wasd .txt b{letter-spacing:.02em}
+
+/* модальные окна */
+.modal{background:rgba(5,6,8,.62)}
+.p-box{gap:8px}
+.s-head{background:var(--panel2)}
+.s-title{letter-spacing:.04em}
+.s-tabs{background:#0e1115}
+.s-tabs button{border-radius:3px}
+.s-tabs button.on{background:var(--acc2);border-color:transparent;box-shadow:inset 3px 0 0 var(--acc)}
+.s-cap,.t-step{letter-spacing:.12em}
+.b-row{border-radius:3px}
+.b-key{background:var(--panel2)}
+.sbtn{background:var(--panel2)} .sbtn:hover{background:var(--panel3)}
+.sbtn.acc{background:var(--red2)} .sbtn.acc:hover{background:var(--red)}
+.q-list button,.req-c{border-radius:4px;background:var(--panel2)}
+.q-list button.on{box-shadow:inset 3px 0 0 var(--acc)}
+.t-body kbd{border-radius:3px;background:rgba(240,195,90,.12)}
+.t-dots i{border-radius:0}
+.l-logo{font:800 34px/1 var(--fd);letter-spacing:.36em;margin-right:-.36em}
+.l-bar{height:2px;border-radius:0}
+.l-t{letter-spacing:.12em}
+@media (max-width:1180px){#slots .slot{min-width:70px;padding:5px 8px}#slots .slot span{max-width:84px;font-size:11.5px}}
+@media (max-width:900px){#slots{bottom:auto;top:52px}#ammo .cnt b{font-size:34px}}
+/* v24: в узком окне слоты встают наверх (52–98 px) и заставка сектора (13vh) ложилась на них — опускаем её под слоты */
+@media (max-width:900px){#sectorBanner{top:max(13vh,108px)!important}}
+
+/* ==========================================================================
+   AEGIS v3 · дизайн-слой по Viora LITE.
+   SURFACE: меню тактического полигона для игрока за ПК, вечером, мышь в руке.
+   JOB:     быстро понять, куда нажать: снаряжение, вселение, бой.
+   RECIPE:  R5 Signal Industry (тёмный, жёсткий, один сигнальный цвет).
+   SIGNATURE: сигнальная оранжевая полоса слева на панелях и одна залитая
+              главная кнопка; всё остальное на графите с тонкими линиями.
+   ========================================================================== */
+:root{
+  --canvas:#111111; --surface:#1b1b1b; --hairline:#2e2e2e;
+  --ink:#f5f5f4; --ink-muted:#a3a3a0; --accent:#ea580c; --accent-ink:#111111;
+  --surface2:#232323; --surface3:#2b2b2b; --control-border:#5c5c59;
+  --accent-soft:rgba(234,88,12,.14); --accent-line:rgba(234,88,12,.55);
+  --font-display:"Oswald","Arial Narrow","Roboto Condensed","Segoe UI",system-ui,sans-serif;
+  --font-text:"Inter","Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-mono:"JetBrains Mono","Cascadia Mono",Consolas,Menlo,monospace;
+  --r:2px; --dur:180ms; --ease:cubic-bezier(.2,.6,.2,1);
+  /* старые имена переменных указывают на новые токены */
+  --tx:var(--ink); --tx2:#c4c4c0; --tx3:var(--ink-muted);
+  --panel:var(--canvas); --panel2:var(--surface); --panel3:var(--surface2);
+  --line:var(--hairline); --line2:#3d3d3b;
+  --acc:var(--accent); --acc2:var(--accent-soft);
+  --f:var(--font-text); --fd:var(--font-display); --mono:var(--font-mono);
+}
+html,body{background:var(--canvas);color:var(--ink);font-family:var(--font-text)}
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:var(--r)}
+::selection{background:rgba(234,88,12,.3);color:var(--ink)}
+
+/* панели: графит, тонкая линия, сигнальная полоса слева вместо цветной шапки */
+.glass{background:rgba(17,17,17,.96);border:1px solid var(--hairline);border-radius:var(--r);box-shadow:0 24px 60px rgba(0,0,0,.55)}
+.glass::before{left:0;top:0;bottom:0;right:auto;width:4px;height:auto;border-radius:0;background:var(--accent);opacity:1}
+#menu,#battle{padding:28px 24px 20px 28px}
+.m-title{font:600 34px/1 var(--font-display);letter-spacing:.18em;color:var(--ink)}
+.m-sub{font:500 12px/1.2 var(--font-text);letter-spacing:.08em;text-transform:none;color:var(--ink-muted);margin-top:8px}
+.m-cap,.s-cap{font:600 12px/1 var(--font-display);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted)}
+.t-step{font:600 12px/1 var(--font-display);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.m-foot{color:var(--ink-muted);font-size:12px}
+
+/* общие правила кнопок: высота от 44px, ховер, нажатие, отключение, фокус */
+.mbtn,.sbtn,.back,.gen,.b-key,.s-tabs button,.q-list button{transition:background-color var(--dur) var(--ease),border-color var(--dur) var(--ease),color var(--dur) var(--ease),transform 90ms var(--ease)}
+.mbtn{min-height:56px;border-radius:var(--r);border:1px solid var(--hairline);background:var(--surface);padding:13px 16px 13px 18px;gap:5px}
+.mbtn span{font:600 17px/1 var(--font-display);letter-spacing:.06em;text-transform:uppercase}
+.mbtn small{font:400 12px/1.3 var(--font-text);color:var(--ink-muted)}
+.mbtn:hover{background:var(--surface2);border-color:var(--control-border)}
+.mbtn:active,.sbtn:active,.back:active,.gen:active{transform:translateY(1px)}
+.mbtn:disabled,.sbtn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.mbtn.battle,.sbtn.acc{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);box-shadow:none}
+.mbtn.battle small{color:rgba(17,17,17,.78)}
+.mbtn.battle:hover,.sbtn.acc:hover{background:#f26a1f;border-color:#f26a1f}
+.mbtn.battle:active,.sbtn.acc:active{background:#c94a09}
+.mbtn:focus-visible,.sbtn:focus-visible,.gen:focus-visible,.back:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mbtn.battle:focus-visible,.sbtn.acc:focus-visible{outline-color:var(--ink)}
+.sbtn{min-height:44px;height:auto;padding:0 18px;border-radius:var(--r);border:1px solid var(--hairline);background:var(--surface);font:600 13px/1 var(--font-text)}
+.sbtn:hover{background:var(--surface2);border-color:var(--control-border)}
+.sbtn.ghost{background:transparent;border-color:transparent;color:var(--ink-muted)}
+.sbtn.ghost:hover{color:var(--ink);background:var(--surface)}
+.back{min-height:44px;border-radius:var(--r);border:1px solid var(--hairline);background:var(--surface);font:600 13px/1 var(--font-text)}
+.back:hover{background:var(--surface2);border-color:var(--control-border)}
+.gen{min-height:48px;border-radius:var(--r);background:var(--surface);border:1px solid var(--hairline)}
+.gen:hover{background:var(--surface2);border-color:var(--control-border)}
+.gen.on{border-color:var(--accent);background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
+.gen b{font:600 14px/1.15 var(--font-display);letter-spacing:.04em}
+
+/* настройки */
+.s-head{background:var(--surface);border-bottom:1px solid var(--hairline)}
+.s-title{font:600 20px/1 var(--font-display);letter-spacing:.1em;text-transform:uppercase}
+.s-tabs{background:var(--canvas);border-right:1px solid var(--hairline)}
+.s-tabs button{min-height:44px;border-radius:var(--r);color:var(--ink-muted);font:500 13.5px/1.2 var(--font-text)}
+.s-tabs button:hover{background:var(--surface);color:var(--ink)}
+.s-tabs button.on{background:var(--accent-soft);color:var(--ink);box-shadow:inset 3px 0 0 var(--accent)}
+.b-key{min-height:36px;border-radius:var(--r);background:var(--surface);border-color:var(--control-border)}
+.b-key:hover{border-color:var(--accent)}
+.b-key.wait{border-color:var(--accent);background:var(--accent-soft);color:var(--ink)}
+.q-list button,.req-c{border-radius:var(--r);background:var(--surface);border-color:var(--hairline)}
+.q-list button:hover{border-color:var(--control-border)}
+.q-list button.on{border-color:var(--accent);background:var(--accent-soft);box-shadow:inset 3px 0 0 var(--accent)}
+.s-check input,.s-slider input{accent-color:var(--accent)}
+.s-saved,.req-s{color:var(--accent)}
+.s-hint,.req-b{color:#c4c4c0}
+
+/* обучение: крупный заголовок, схема оружейной, ровные списки */
+.t-box{width:min(680px,94vw);padding:28px 30px 22px 34px}
+.t-title{font:600 26px/1.15 var(--font-display);letter-spacing:.03em}
+.t-body{font:400 14.5px/1.6 var(--font-text);color:#d4d4d0;min-height:170px}
+.t-body b{color:var(--ink)}
+.t-body kbd{border-radius:var(--r);border:1px solid var(--accent-line);background:var(--accent-soft);font:600 12px/1.2 var(--font-mono)}
+.t-keys .t-k{font:600 12px/1 var(--font-mono);color:var(--ink)}
+.t-ol,.t-ul{margin:10px 0 10px;padding-left:22px}
+.t-ol li,.t-ul li{margin:4px 0}
+.t-ol li::marker{color:var(--accent);font-weight:600}
+.t-ul li::marker{color:var(--accent)}
+.t-dots i{height:3px;background:var(--hairline)}
+.t-dots i.on{background:var(--accent)}
+.t-scheme{position:relative;height:150px;margin:2px 0 8px;border:1px solid var(--hairline);background:var(--canvas);font:500 10.5px/1 var(--font-text);color:var(--ink-muted)}
+.t-scheme b{display:block;font:600 10.5px/1 var(--font-display);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:6px}
+.t-scheme u{display:block;height:7px;margin:4px 0;background:var(--surface3);text-decoration:none}
+.ts-back{position:absolute;left:8px;top:8px;padding:5px 8px;border:1px solid var(--hairline);background:var(--surface)}
+.ts-slots{position:absolute;left:0;right:0;top:8px;margin:0 auto;width:max-content;display:flex;gap:3px}
+.ts-slots i{width:34px;height:20px;display:flex;align-items:center;justify-content:center;font:600 10px/1 var(--font-mono);font-style:normal;color:var(--ink);border:1px solid var(--accent);background:var(--accent-soft)}
+.ts-list{position:absolute;left:8px;top:40px;width:120px;padding:7px;border:1px solid var(--hairline);background:var(--surface)}
+.ts-list em{display:block;margin-top:6px;padding:4px 5px;font-style:normal;font-weight:600;color:var(--accent-ink);background:var(--accent);text-align:center}
+.ts-mods{position:absolute;right:8px;top:8px;bottom:8px;width:120px;padding:7px;border:1px solid var(--hairline);background:var(--surface)}
+.ts-gun{position:absolute;left:140px;right:140px;top:48px;bottom:12px;display:flex;align-items:center;justify-content:center;border:1px dashed var(--hairline)}
+
+/* HUD и подсказки: тот же сигнальный цвет */
+#slots .slot{border-radius:var(--r)}
+#slots .slot.on{border-color:var(--accent);background:rgba(40,20,8,.9);box-shadow:inset 0 -2px 0 var(--accent)}
+#slots .slot.on b,#mode,#score b{color:var(--accent)}
+#prompt .key .fill{background:rgba(234,88,12,.8)}
+#wasd .k{border-radius:var(--r);border-color:var(--accent);background:rgba(24,14,8,.82)}
+#wasd .k.on{background:var(--accent);color:var(--accent-ink)}
+@keyframes glow{0%,100%{box-shadow:0 0 8px rgba(234,88,12,.2)}50%{box-shadow:0 0 20px rgba(234,88,12,.5)}}
+#tag{border-color:var(--accent)} #tag::after{border-color:var(--accent)} #tag i{color:var(--accent)}
+#death .t{font:600 30px/1.2 var(--font-display);letter-spacing:.3em}
+.l-logo{font:600 40px/1 var(--font-display);letter-spacing:.3em;margin-right:-.3em}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+}
+
+/* ------------------------------------------------ 3D-заставка (intro.js) --- */
+body.intro-on #loading{opacity:0}
+
+/* ============================================================ AEGIS v4 · шрифт
+   IBM Plex Sans / Plex Mono (SIL OFL 1.1, assets/fonts/OFL.txt), лежат локально:
+   игра работает из file:// без сети. Plex выбран за полноценную кириллицу
+   с раздельными «л/д», открытые формы букв и табличные цифры. */
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url(../assets/fonts/plex-sans-cyrillic-400.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:400;font-display:swap;src:url(../assets/fonts/plex-sans-latin-400.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:500;font-display:swap;src:url(../assets/fonts/plex-sans-cyrillic-500.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:500;font-display:swap;src:url(../assets/fonts/plex-sans-latin-500.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url(../assets/fonts/plex-sans-cyrillic-600.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"IBM Plex Sans";font-style:normal;font-weight:600;font-display:swap;src:url(../assets/fonts/plex-sans-latin-600.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(../assets/fonts/plex-mono-cyrillic-500.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"IBM Plex Mono";font-style:normal;font-weight:500;font-display:swap;src:url(../assets/fonts/plex-mono-latin-500.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{
+  --font-display:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-text:"IBM Plex Sans","Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+  --font-mono:"IBM Plex Mono",Consolas,Menlo,monospace;
+}
+
+/* ============================================================ AEGIS v4 · меню
+   Ориентир: меню паузы и главные экраны Escape from Tarkov, Ready or Not,
+   Squad, Arma Reforger. Общее у них: пункты меню это строки текста,
+   выровненные по левому краю, без заливки; выбранный пункт помечается
+   полосой и ярким текстом; цвет акцента расходуется только на эту метку.
+   Подписи обычным регистром, без разрядки: так быстрее читается кириллица. */
+:root{
+  --accent:#e09a3e; --accent-ink:#141210;
+  --accent-soft:rgba(224,154,62,.12); --accent-line:rgba(224,154,62,.5);
+  --ink:#ecebe7; --ink-muted:#a7a6a0; --hairline:#2c2c2a; --surface:#191918; --surface2:#222220;
+}
+::selection{background:rgba(224,154,62,.3)}
+/* сигнальная полоса слева у каждой панели больше не нужна */
+.glass::before{display:none}
+.glass{background:rgba(14,14,13,.94);border:1px solid var(--hairline);border-radius:4px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+
+/* типографика: обычный регистр, без разрядки, ровная шкала 12 / 14 / 16 / 20 / 28 */
+.m-cap,.s-cap,.t-step,.s-title,.mbtn span,.soon,#wasd .txt b{text-transform:none;letter-spacing:0}
+.m-cap,.s-cap{font:500 13px/1.2 var(--font-text);color:var(--ink-muted);margin-bottom:10px}
+.t-step{font:500 13px/1.2 var(--font-text);color:var(--accent)}
+.m-title{font:600 28px/1 var(--font-display);letter-spacing:.04em}
+.m-sub{font:400 14px/1.3 var(--font-text);letter-spacing:0;color:var(--ink-muted);margin-top:6px}
+.m-foot{font:400 12.5px/1.4 var(--font-text);color:#8a8984;text-align:left}
+.s-title{font:600 20px/1.2 var(--font-display)}
+.t-title{font:600 24px/1.25 var(--font-display);letter-spacing:0}
+.t-body{font:400 15px/1.6 var(--font-text);color:#d6d5d0}
+.gen b{font:600 14px/1.2 var(--font-text);letter-spacing:0}
+.gen span{font-size:12.5px}
+#death .t{font:600 28px/1.2 var(--font-display);letter-spacing:.02em}
+.l-logo{letter-spacing:.12em;margin-right:-.12em}
+.soon{font:500 12px/1 var(--font-text)}
+
+/* пункты меню: строки списка */
+.m-btns{gap:2px;margin-top:6px}
+.p-box{gap:2px}
+.mbtn,.p-box .mbtn{position:relative;min-height:48px;padding:12px 14px 12px 18px;gap:3px;border:0;border-radius:3px;background:transparent;box-shadow:none;color:var(--ink-muted);transform:none}
+.mbtn span{font:500 17px/1.2 var(--font-text);color:inherit}
+.mbtn small{font:400 13px/1.3 var(--font-text);color:#8a8984}
+.mbtn::before{content:"";position:absolute;left:0;top:10px;bottom:10px;width:3px;border-radius:2px;background:var(--accent);opacity:0;transform:scaleY(.4);transition:opacity var(--dur) var(--ease),transform var(--dur) var(--ease)}
+.mbtn:hover,.mbtn:focus-visible{background:rgba(255,255,255,.045);color:var(--ink);border:0}
+.mbtn:hover::before,.mbtn:focus-visible::before{opacity:1;transform:none}
+.mbtn:focus-visible{outline:2px solid var(--accent);outline-offset:0}
+.mbtn:active{background:rgba(255,255,255,.07);transform:none}
+/* главное действие: та же строка, но текст светлый и метка видна всегда */
+.mbtn.battle{background:transparent;border:0;color:var(--ink)}
+.mbtn.battle::before{opacity:1;transform:none}
+.mbtn.battle span{font-weight:600}
+.mbtn.battle small{color:#8a8984}
+.mbtn.battle:hover{background:rgba(255,255,255,.045);border:0}
+.mbtn.battle:active{background:rgba(255,255,255,.07)}
+.mbtn.battle:focus-visible{outline-color:var(--accent)}
+/* разделитель перед выходом в главное меню, как в реальных играх */
+#pMain{margin-top:8px}
+#pMain::after{content:"";position:absolute;left:0;right:0;top:-5px;height:1px;background:var(--hairline)}
+.p-box{width:320px;padding:22px 16px 16px}
+.p-box > .m-cap{padding-left:18px;font:600 20px/1.2 var(--font-display);color:var(--ink);margin-bottom:4px}
+.p-who{padding-left:18px;margin:0 0 12px;font-size:13.5px;color:var(--ink-muted)}
+.p-who b{color:var(--ink);font-weight:500}
+
+/* обычные кнопки: спокойнее, акцентная без кислотной заливки */
+.sbtn,.back{font:500 14px/1 var(--font-text);border-radius:3px}
+.sbtn.acc{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.sbtn.acc:hover{background:#eaa94f;border-color:#eaa94f}
+.sbtn.acc:active{background:#c9852f}
+.s-tabs button{font:500 14px/1.2 var(--font-text)}
+.s-tabs button.on{background:rgba(255,255,255,.05);color:var(--ink);box-shadow:inset 3px 0 0 var(--accent)}
+.gen{border-radius:3px}
+.gen.on{background:rgba(255,255,255,.05);border-color:var(--hairline);box-shadow:inset 3px 0 0 var(--accent)}
+.q-list button.on{background:rgba(255,255,255,.05);border-color:var(--hairline)}
+:where(a,button,input,select,textarea,summary,[tabindex]):focus-visible{outline-color:var(--accent)}
+.t-body kbd{font:500 12.5px/1.2 var(--font-mono);border-color:var(--hairline);background:var(--surface2);color:var(--ink)}
+.t-scheme b{font:600 12px/1 var(--font-text);letter-spacing:0;text-transform:none}
+@media (prefers-reduced-motion:reduce){.mbtn::before{transition:none}}
+.b-key{font:500 13px/1 var(--font-mono)}
+
+/* ------------------------------------------- здоровье и перевязка (v5) --- */
+#vitals{position:absolute;left:28px;bottom:112px;width:210px;font:600 10px/1.5 var(--mono);letter-spacing:.16em;
+  color:rgba(255,255,255,.5);text-shadow:0 1px 6px rgba(0,0,0,.9);text-transform:uppercase;opacity:.55;transition:opacity .3s}
+#vitals.hurt{opacity:1}
+#vitals .vh{display:flex;justify-content:space-between;align-items:baseline}
+#vitals .vh b{font:700 17px/1 var(--mono);letter-spacing:.02em;color:#eef0f2}
+#vitals.low .vh b,#vitals.crit .vh b{color:#e0544a}
+#vitals .vbar{position:relative;height:5px;margin-top:5px;background:rgba(255,255,255,.12);border-radius:3px;overflow:hidden}
+#vitals .vbar i{position:absolute;inset:0;transform-origin:left;border-radius:3px}
+#vitals .vbar .loss{background:rgba(224,49,60,.55)}
+#vitals .vbar .hp{background:#d8dfd0}
+#vitals.warn .vbar .hp{background:#e8c36a}
+#vitals.low .vbar .hp,#vitals.crit .vbar .hp{background:#e0313c}
+#vitals.crit .vbar{animation:vPulse 1s ease-in-out infinite}
+@keyframes vPulse{50%{box-shadow:0 0 0 2px rgba(224,49,60,.45)}}
+#vitals .vst{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;min-height:0}
+#vitals .vst i{font-style:normal;font-size:9.5px;letter-spacing:.1em;padding:2px 6px;border-radius:4px;text-transform:none;
+  background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.14);color:#e6e6e6}
+#vitals .vst .c-art{border-color:rgba(224,49,60,.8);color:#ff9d93;animation:vBlink .8s steps(2) infinite}
+#vitals .vst .c-ven{border-color:rgba(232,195,106,.7);color:#f0d89c}
+#vitals .vst .c-fr{border-color:rgba(200,205,212,.6)}
+#vitals .vst .c-tq{border-color:rgba(120,170,230,.6);color:#b9d4f4}
+@keyframes vBlink{50%{opacity:.55}}
+#vitals .vkit{display:flex;gap:12px;align-items:center;margin-top:6px;font-size:9.5px;letter-spacing:.12em}
+#vitals .vkit b{color:#eef0f2;font-size:11px;margin-left:3px}
+#vitals kbd,#treat kbd{font:600 10px/1 var(--mono);padding:2px 5px;border:1px solid rgba(255,255,255,.35);border-radius:4px;color:#fff}
+#vitals .vmsg{margin-top:5px;min-height:14px;font-size:10px;letter-spacing:.06em;text-transform:none;color:#f3dfae}
+#vitals.crit .vmsg{color:#ff9d93}
+#treat{position:absolute;left:50%;top:58%;transform:translateX(-50%);text-align:center;opacity:0;transition:opacity .2s;
+  font:600 12px/1.4 var(--f);letter-spacing:.05em;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.95)}
+#treat.on{opacity:1}
+#treat svg{width:46px;height:46px;transform:rotate(-90deg)}
+#treat circle{fill:none;stroke-width:3.5}
+#treat .bg{stroke:rgba(255,255,255,.18)}
+#treat .fg{stroke:#e8c36a;stroke-dasharray:119.4;stroke-dashoffset:119.4;stroke-linecap:round}
+#treat .ts{font:500 10.5px/1.5 var(--mono);color:rgba(255,255,255,.65);letter-spacing:.08em}
+#who em{display:block;font-style:normal;margin-top:3px;font-size:9.5px;letter-spacing:.12em;color:#e8c36a;text-transform:none}
+/* особенности генералов в меню */
+.gen .tr{display:block;font:600 9.5px/1.4 var(--mono);letter-spacing:.1em;color:var(--acc);margin-top:2px;opacity:.9}
+/* обучение в игре: список задач */
+#itut{position:fixed;left:22px;top:20px;z-index:6;width:290px;padding:10px 12px 8px;border-radius:12px;
+  background:rgba(14,16,20,.5);border:1px solid var(--line);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  font:500 12px/1.45 var(--f);color:var(--tx2);opacity:0;pointer-events:none;transition:opacity .3s;transform:translateZ(0)}
+#itut.on{opacity:1;pointer-events:auto}
+#itut .ih{display:flex;align-items:center;gap:8px;font:600 10px/1.4 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--acc);margin-bottom:4px}
+#itut .ih b{color:var(--tx3);font-weight:600;letter-spacing:.08em}
+#itut .ih button{margin-left:auto;background:none;border:0;color:var(--tx3);font-size:16px;line-height:1;cursor:pointer;padding:0 2px}
+#itut .ih button:hover{color:#fff}
+#itut ol{margin:0;padding:0;list-style:none}
+#itut li{position:relative;padding:3px 0 3px 20px;opacity:.55}
+#itut li::before{content:'';position:absolute;left:2px;top:7px;width:9px;height:9px;border-radius:50%;border:1.5px solid rgba(255,255,255,.4)}
+#itut li.cur{opacity:1;color:#fff}
+#itut li.cur::before{border-color:var(--acc);box-shadow:0 0 0 3px rgba(232,195,106,.2)}
+#itut li.ok{opacity:.45;text-decoration:line-through;text-decoration-color:rgba(255,255,255,.3)}
+#itut li.ok::before{background:#7fbf7a;border-color:#7fbf7a}
+#itut li.fin{opacity:1;color:#cfe8c8;padding-left:0}
+#itut li.fin::before{display:none}
+#itut kbd{font:600 10px/1 var(--mono);padding:2px 5px;margin:0 1px;border:1px solid rgba(255,255,255,.3);border-radius:4px;color:#fff;background:rgba(255,255,255,.06)}
+body.dead #itut,body.st-armory #itut,body.st-loading #itut{opacity:0!important;pointer-events:none}
+
+/* ===================================================== v12 · экран загрузки
+   Кадр из игры на весь экран, логотип и совет слева внизу, тонкая полоса
+   прогресса во всю ширину. Шрифты: Oswald (заголовки, SIL OFL) + IBM Plex
+   Sans (текст). Совет — 16 px, обычный регистр, без разрядки. */
+@font-face{font-family:"Oswald";font-style:normal;font-weight:400 700;font-display:block;src:url(../assets/fonts/oswald-cyrillic.woff2) format("woff2");unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:"Oswald";font-style:normal;font-weight:400 700;font-display:block;src:url(../assets/fonts/oswald-latin.woff2) format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+#intro{position:fixed;inset:0;z-index:80;overflow:hidden;background:#000;color:#ecebe7;font-family:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;transition:opacity .6s cubic-bezier(.2,.6,.2,1)}
+#intro.out{opacity:0;pointer-events:none}
+#intro .ld-art{position:absolute;inset:0;background:#14160f center/cover no-repeat;opacity:0;transition:opacity 1.2s ease}
+/* кадр неподвижен: медленный «наезд» (transform на весь экран) заставлял
+   композитор перерисовывать полноэкранный слой каждый кадр и на слабом ПК
+   отнимал процессор у сборки полигона — загрузка шла вдвое дольше */
+#intro.art .ld-art{opacity:1}
+/* v25: 2D-витрина оружия (js/app/intro.js). Слайды лежат в одной ячейке сетки и сменяются
+   CSS-анимацией opacity/transform — её ведёт композитор, главный поток не нужен. */
+#intro .ld-bg{position:absolute;inset:0;background:radial-gradient(ellipse 72% 58% at 50% 38%,#1f2125 0%,#0c0d0f 56%,#030303 100%)}
+#intro .ld-bg::after{content:"";position:absolute;left:8%;right:8%;top:56%;height:22%;background:radial-gradient(ellipse 50% 42% at 50% 8%,rgba(255,246,230,.055),rgba(255,246,230,0) 72%)}
+#intro .ld-show{position:absolute;left:0;right:0;top:5vh;height:58vh;display:grid;place-items:center;pointer-events:none}
+#intro .ld-slot{grid-area:1/1;width:min(68vw,1360px)}
+#intro .ld-slide{position:relative;width:min(100%,calc(44vh * var(--a,3)));margin:0 auto;opacity:0;transform:translate3d(2.2%,0,0);transition:opacity .85s cubic-bezier(.2,.7,.25,1),transform 1.1s cubic-bezier(.2,.7,.25,1);will-change:opacity,transform;backface-visibility:hidden}
+#intro .ld-slide.on{opacity:1;transform:translate3d(0,0,0)}
+#intro .ld-slide.off{opacity:0;transform:translate3d(-2.2%,0,0)}
+#intro .ld-slide img{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none;}
+#intro .ld-dim{position:absolute;top:calc(100% + 14px);height:9px;border-left:1px solid rgba(214,160,90,.5);border-right:1px solid rgba(214,160,90,.5)}
+#intro .ld-dim::before{content:"";position:absolute;left:0;right:0;top:4px;border-top:1px solid rgba(214,160,90,.32)}
+#intro .ld-dim span{position:absolute;left:50%;top:12px;transform:translateX(-50%);font:500 12px/1 "IBM Plex Sans",sans-serif;font-variant-numeric:tabular-nums;color:rgba(214,190,150,.72);white-space:nowrap}
+#intro .ld-gun{position:absolute;right:clamp(28px,5vw,80px);bottom:clamp(92px,13vh,140px);width:min(560px,44vw);height:96px}
+#intro .ld-cap{position:absolute;right:0;bottom:0;left:0;text-align:right;opacity:0;transform:translate3d(0,8px,0);transition:opacity .7s cubic-bezier(.2,.7,.25,1),transform .9s cubic-bezier(.2,.7,.25,1);will-change:opacity,transform}
+#intro .ld-cap.on{opacity:1;transform:none}
+#intro .ld-cap.off{opacity:0;transform:translate3d(0,-4px,0)}
+#intro .ld-gun-n{font:600 clamp(30px,3.4vw,48px)/1 "Oswald","Arial Narrow",sans-serif;letter-spacing:.04em;color:#f2f0ea}
+#intro .ld-gun-t{margin-top:8px;font:400 14px/1.45 "IBM Plex Sans",sans-serif;color:#a9a7a0}
+@media (prefers-reduced-motion: reduce){#intro .ld-slide,#intro .ld-cap{transform:none!important}}
+#intro .ld-scrim{position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.55) 18%,rgba(0,0,0,0) 40%)}
+#intro .ld-main{position:absolute;left:clamp(28px,5vw,80px);bottom:clamp(92px,13vh,140px);max-width:min(620px,80vw)}
+#intro .ld-logo{font:600 clamp(44px,5.2vw,72px)/.95 "Oswald","Arial Narrow",sans-serif;letter-spacing:.02em;color:#f2f0ea}
+#intro .ld-sub{margin-top:10px;font:500 15px/1.3 "IBM Plex Sans",sans-serif;color:#b9b7ae}
+#intro .ld-tip{margin-top:34px;padding-left:16px;border-left:2px solid #c98a3a}
+#intro .ld-tip.swap{animation:ldTipIn .45s ease-out}
+@keyframes ldTipIn{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:none}}
+#intro .ld-tip-h{font:500 13px/1 "Oswald","Arial Narrow",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#d9a257}
+#intro .ld-tip-t{margin:9px 0 0;font:400 16px/1.55 "IBM Plex Sans",sans-serif;color:#e4e2dc;text-shadow:0 1px 2px rgba(0,0,0,.6)}
+#intro kbd{display:inline-block;min-width:22px;padding:1px 6px;margin:0 1px;border:1px solid rgba(236,235,231,.55);border-radius:3px;background:rgba(0,0,0,.35);font:600 13px/1.4 "IBM Plex Mono",Consolas,monospace;text-align:center;color:#fff}
+#intro .ld-foot{position:absolute;left:clamp(28px,5vw,80px);right:clamp(28px,5vw,80px);bottom:clamp(32px,5vh,52px)}
+#intro .ld-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;font:500 14px/1.2 "IBM Plex Sans",sans-serif;color:#cfcdc6}
+#intro .ld-pct{font:500 14px/1 "IBM Plex Mono",Consolas,monospace;font-variant-numeric:tabular-nums;color:#ecebe7}
+#intro .ld-bar{position:relative;height:3px;background:rgba(236,235,231,.14);overflow:hidden}
+#intro .ld-bar i{position:absolute;inset:0;background:#c98a3a;transform:scaleX(0);transform-origin:left;transition:transform .45s linear;will-change:transform}
+#intro.ready .ld-stage{color:#fff;animation:ldPulse 2s ease-in-out infinite}
+@keyframes ldPulse{0%,100%{opacity:1}50%{opacity:.55}}
+@media (prefers-reduced-motion: reduce){#intro.ready .ld-stage{animation:none}}
+body.intro-on #loading{opacity:0}
+
+/* v17 UI patch: three desktop cards, no pagination or second game engine. */
+#battle{left:24px;right:24px;top:0;bottom:0;margin:auto;width:auto;max-width:1320px;
+  height:max-content;max-height:calc(100vh - 32px);padding:28px;overflow:auto}
+#battle .maps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+#battle .map{display:flex;flex-direction:column;min-width:0;padding:24px;cursor:default;
+  background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.17)}
+#battle .map-code{font-size:12px;letter-spacing:.08em;color:#d9a257;margin-bottom:24px}
+#battle .map-n{font-size:28px;line-height:1.2;margin:0 0 12px;padding:0}
+#battle .map-id{font:12px/1.5 Consolas,monospace;color:#c6c9c8;overflow-wrap:anywhere}
+#battle .map-d{font-size:14px;line-height:1.55;padding:0;margin:20px 0 28px;color:#c6c9c8;flex:1}
+#battle .map-start{min-height:44px;padding:12px;border:1px solid #5b6163;border-radius:4px;
+  background:#222a2c;color:#c6c9c8;font:inherit;cursor:not-allowed}
+#battle .b-note{font-size:14px;line-height:1.5;margin:20px 0;color:#c6c9c8}
+#battleTraining{border:1px solid rgba(255,255,255,.17);border-radius:4px;padding:12px 16px}
+#battle .back{min-height:44px}
+#battle button:focus-visible{outline:2px solid #d9a257;outline-offset:4px}
+/* On compact desktop screens all three cards still share a single row. */
+@media(max-width:1100px){#battle{left:16px;right:16px;padding:20px}#battle .maps{gap:12px}
+  #battle .map{padding:16px}#battle .map-n{font-size:24px}}
+@media(max-width:640px){#battle .maps{grid-template-columns:1fr}}
+
+/* Operational map selection (desktop). */
+#battle .map-start:not(:disabled){color:#f2eee6;border-color:#bd914b;background:#43351f;cursor:pointer}
+#battle .map-start:not(:disabled):hover{background:#604725}
+body.st-battle #battle .map-start{font-size:15px}
+/* v21: выбор сектора большой карты (мини-карты) */
+#battle .map-sec{display:flex;flex-wrap:wrap;gap:6px;margin:-12px 0 16px}
+#battle .map-sec .sec{flex:1 1 auto;min-height:34px;padding:6px 10px;border:1px solid #4a5052;border-radius:4px;
+  background:rgba(0,0,0,.22);color:#c6c9c8;font:600 12.5px/1.2 system-ui,Segoe UI,Arial,sans-serif;cursor:pointer}
+#battle .map-sec .sec:hover{border-color:#8b7547;color:#f2eee6}
+#battle .map-sec .sec.on{border-color:#bd914b;background:#43351f;color:#f2eee6}
+#battle .map-sec-cap{width:100%;font-size:11.5px;letter-spacing:.08em;color:#9aa0a0;margin-bottom:2px}
+
+/* ---- реализм: никаких точек, маркеров и подсветки противника ---- */
+#hitmark,body.embodied #tag{display:none!important}
+body.map-battle #tag{display:none!important}
+#mapToast{position:fixed;left:50%;top:9%;transform:translateX(-50%);z-index:9;pointer-events:none;opacity:0;transition:opacity .5s;
+  padding:8px 18px;border-radius:3px;background:rgba(12,14,18,.82);border:1px solid rgba(255,255,255,.25);
+  font:600 13px/1.4 var(--f);letter-spacing:.06em;color:#fff;text-shadow:0 1px 2px #000}
+#mapToast.on{opacity:1}
+#pQuit{border-color:rgba(240,120,100,.55)}
+#pQuit.arm{background:rgba(190,50,40,.55)}
+#pQuit[hidden]{display:none}
+
+/* v23: Esc в бою открывает главное меню — та же панель справа, что и на старте (игра на паузе) */
+#pause{justify-content:flex-end;padding-right:28px;background:linear-gradient(90deg,rgba(5,6,8,.05) 0%,rgba(5,6,8,.35) 55%,rgba(5,6,8,.66) 100%)}
+#pause .p-box{width:340px;padding:28px 16px 18px;max-height:calc(100vh - 40px);overflow:auto}
+#pause .p-top{padding-left:18px;margin-bottom:12px}
+#pause .p-who{margin-bottom:10px}
+#pause .m-foot{padding-left:18px;margin-top:12px}
+@media (max-width:900px){#pause{padding-right:14px}#pause .p-box{width:300px}}
+.b-row.fixed .b-key{opacity:.75;cursor:default}
+/* v26: подсказка «нажать» (обыск тела, предметы на земле) — заметная рамка клавиши */
+#prompt.press .key{border-color:#f0c35a;background:rgba(240,195,90,.18);color:#ffe7ae;box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 14px rgba(240,195,90,.55);animation:promptPulse 1.4s ease-in-out infinite}
+#prompt.press .lbl{color:#ffe7ae;font-size:14px}
+#prompt.press .sub{color:rgba(255,236,190,.85)}
+@keyframes promptPulse{0%,100%{box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 8px rgba(240,195,90,.35)}50%{box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 18px rgba(240,195,90,.8)}}
+@media (prefers-reduced-motion: reduce){#prompt.press .key{animation:none}}
+
+/* v26: увеличитель 3× и ПНВ за коллиматором */
+#reticle.scope.mag .mask{background:radial-gradient(circle at 50% 50%,transparent calc(var(--r) * .86 - 2px),rgba(0,0,0,.55) calc(var(--r) * .9),#000 calc(var(--r) * .93))}
+#reticle.scope.nv .mask{background:radial-gradient(circle at 50% 50%,rgba(20,60,20,0) calc(var(--r) * .7),rgba(0,0,0,.55) calc(var(--r) * .88),#000 calc(var(--r) * .92))}
+/* v26: короткая подсказка (прицел, марка, увеличитель) */
+#hudNote{position:fixed;left:50%;top:17%;transform:translate(-50%,-6px);z-index:30;pointer-events:none;
+  padding:6px 14px;border-radius:6px;background:rgba(10,12,9,.72);color:#eef0e6;font:600 13px/1.3 system-ui,sans-serif;
+  letter-spacing:.02em;opacity:0;transition:opacity .18s,transform .18s;white-space:nowrap}
+#hudNote.on{opacity:1;transform:translate(-50%,0)}

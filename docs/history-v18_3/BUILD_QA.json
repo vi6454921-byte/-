@@ -1,0 +1,1068 @@
+{
+  "version": "18.3.0-experimental",
+  "source": "AEGIS_v17_3maps_TEST.zip",
+  "architecture": {
+    "ai": "Reactive behavior trees in TypeScript + Recast/Detour 0.43.1 WASM; grid A* only for standalone fallback tests",
+    "physics": "Rapier 0.19.3 WASM, KCC + animated/IK skin + contact-assisted live rigs + physical ragdolls",
+    "raycast": "three-mesh-bvh 0.9.2 exact static single-material acceleration; material arrays keep native Three raycast"
+  },
+  "build": {
+    "transpile": "pass",
+    "strictTypeScript": "pass",
+    "nodeSyntax": "pass",
+    "npmTest": "pass",
+    "legacyBallisticsAssertions": 499,
+    "legacyRayMatches": 3000
+  },
+  "runtime": {
+    "coordinateAndStateAssertions": 1030832,
+    "ragdollCases": 36,
+    "continuationRecords": 14
+  },
+  "models": {
+    "poses": 60,
+    "movementSteps": 180,
+    "maxPlantTargetErrorM": 1.62210200872365e-08,
+    "grenade": {
+      "finite": true,
+      "objects": 1,
+      "afterClear": 0
+    }
+  },
+  "livingContacts": {
+    "pass": true,
+    "results": [
+      {
+        "dt": 0.016666666666666666,
+        "maxContacts": 1,
+        "maxJointGap": 0.0015458352151951754,
+        "minDist": -0.0014941804111003876,
+        "maxAngle": 0.36648575837114883
+      },
+      {
+        "dt": 0.03333333333333333,
+        "maxContacts": 1,
+        "maxJointGap": 0.00013022234771292913,
+        "minDist": -0.0014941804111003876,
+        "maxAngle": 0.3649950905284967
+      },
+      {
+        "dt": 0.05,
+        "maxContacts": 1,
+        "maxJointGap": 0.0001014980226854741,
+        "minDist": -0.0014941804111003876,
+        "maxAngle": 0.3635379473280639
+      }
+    ]
+  },
+  "shoulderTraction": {
+    "cases": 12,
+    "movedRangeM": [
+      0.573401689529419,
+      1.2270978689193726
+    ],
+    "maxSpeedMps": 1.508881287134529,
+    "maxJointAnchorGapM": 0.0009802402633060934,
+    "scope": "isolated physical pull with fixed RNG seed and .65m grip-error advance pause; not full medical evacuation under fire"
+  },
+  "traversal": [
+    {
+      "case": "quality-v3-browser",
+      "armed": false,
+      "maxFPError": 8.025154038416283e-16,
+      "fpFrames": 72,
+      "hiddenGunFrames": 0,
+      "result": "landed",
+      "frames": 73,
+      "handFrames": 18,
+      "maxHandError": 9.68690235318292e-06,
+      "contactFrames": 10,
+      "maxAngle": 2.306806367191436,
+      "pos": [
+        0,
+        0.01500000836327664,
+        -1.7599999642372128
+      ],
+      "restoredWeapon": true,
+      "contactModels": [
+        {
+          "key": "delta_1",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.2400353357717108,
+          "maxGap": 0.0002791539744875782,
+          "parts": 17
+        },
+        {
+          "key": "delta_2",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.3395741091176592,
+          "maxGap": 0.0004842485988192658,
+          "parts": 17
+        },
+        {
+          "key": "alpha_1",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.2199827969244997,
+          "maxGap": 0.0002041667424374607,
+          "parts": 17
+        },
+        {
+          "key": "alpha_2",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.26702628577288334,
+          "maxGap": 0.0003444410751563205,
+          "parts": 17
+        }
+      ]
+    },
+    {
+      "case": "quality-v3-browser-armed",
+      "armed": true,
+      "maxFPError": 6.684427777288335e-16,
+      "fpFrames": 72,
+      "hiddenGunFrames": 72,
+      "result": "landed",
+      "frames": 73,
+      "handFrames": 18,
+      "maxHandError": 9.722867278790835e-06,
+      "contactFrames": 10,
+      "maxAngle": 2.309323522311409,
+      "pos": [
+        0,
+        0.01500000836327664,
+        -1.7599999642372128
+      ],
+      "restoredWeapon": true,
+      "contactModels": [
+        {
+          "key": "delta_1",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.23995865636978073,
+          "maxGap": 0.00027956063752349904,
+          "parts": 17
+        },
+        {
+          "key": "delta_2",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.3399960106514742,
+          "maxGap": 0.0004834019316805464,
+          "parts": 17
+        },
+        {
+          "key": "alpha_1",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.21929183384264425,
+          "maxGap": 0.00020494876977205569,
+          "parts": 17
+        },
+        {
+          "key": "alpha_2",
+          "finite": true,
+          "contacts": 1,
+          "angle": 0.26701848463104644,
+          "maxGap": 0.00034428690921197645,
+          "parts": 17
+        }
+      ]
+    }
+  ],
+  "medical": [
+    {
+      "case": "medical-browser",
+      "elevated": false,
+      "medicalFloorY": 0.023428545315255178,
+      "tourniquetApplied": true,
+      "tourniquetsUsed": 1,
+      "sampledSeconds": 5,
+      "navigation": {
+        "stations": 1,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 1,
+        "queued": 0,
+        "expanded": 0,
+        "navigation": {
+          "ready": true,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 0,
+          "complete": 0,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 1,
+          "buildMs": 363.30000000004657,
+          "triangles": 13774,
+          "bytes": 274040,
+          "errors": 0,
+          "tiles": 20,
+          "polygons": 1644,
+          "lastError": ""
+        }
+      },
+      "errors": []
+    },
+    {
+      "case": "medical-browser-armed",
+      "elevated": false,
+      "medicalFloorY": 0.015100061831617495,
+      "tourniquetApplied": true,
+      "tourniquetsUsed": 1,
+      "sampledSeconds": 5,
+      "navigation": {
+        "stations": 1,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 1,
+        "queued": 0,
+        "expanded": 0,
+        "navigation": {
+          "ready": true,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 0,
+          "complete": 0,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 1,
+          "buildMs": 337,
+          "triangles": 13774,
+          "bytes": 274040,
+          "errors": 0,
+          "tiles": 20,
+          "polygons": 1644,
+          "lastError": ""
+        }
+      },
+      "errors": []
+    },
+    {
+      "case": "medical-barrier",
+      "elevated": false,
+      "medicalFloorY": 0.02680283202062128,
+      "tourniquetApplied": true,
+      "tourniquetsUsed": 1,
+      "sampledSeconds": 5,
+      "navigation": {
+        "stations": 1,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 1,
+        "queued": 0,
+        "expanded": 0,
+        "navigation": {
+          "ready": true,
+          "building": false,
+          "generation": 2,
+          "revision": 1,
+          "queries": 1,
+          "complete": 1,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 2,
+          "buildMs": 358.0999999998603,
+          "triangles": 13786,
+          "bytes": 275020,
+          "errors": 0,
+          "tiles": 20,
+          "polygons": 1650,
+          "lastError": ""
+        }
+      },
+      "errors": []
+    },
+    {
+      "case": "medical-barrier-armed",
+      "elevated": false,
+      "medicalFloorY": 0.1123843198765826,
+      "tourniquetApplied": true,
+      "tourniquetsUsed": 1,
+      "sampledSeconds": 5,
+      "navigation": {
+        "stations": 1,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 1,
+        "queued": 0,
+        "expanded": 0,
+        "navigation": {
+          "ready": true,
+          "building": false,
+          "generation": 2,
+          "revision": 1,
+          "queries": 1,
+          "complete": 1,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 2,
+          "buildMs": 268.0999999998603,
+          "triangles": 13786,
+          "bytes": 275020,
+          "errors": 0,
+          "tiles": 20,
+          "polygons": 1650,
+          "lastError": ""
+        }
+      },
+      "errors": []
+    },
+    {
+      "case": "medical-elevated",
+      "elevated": true,
+      "medicalFloorY": 2.015107417741092,
+      "tourniquetApplied": true,
+      "tourniquetsUsed": 1,
+      "sampledSeconds": 7,
+      "navigation": {
+        "stations": 1,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 1,
+        "queued": 0,
+        "expanded": 0,
+        "navigation": {
+          "ready": true,
+          "building": false,
+          "generation": 2,
+          "revision": 1,
+          "queries": 1,
+          "complete": 1,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 2,
+          "buildMs": 296.30000000004657,
+          "triangles": 13882,
+          "bytes": 276172,
+          "errors": 0,
+          "tiles": 20,
+          "polygons": 1656,
+          "lastError": ""
+        }
+      },
+      "errors": []
+    },
+    {
+      "case": "medical-elevated-armed",
+      "elevated": true,
+      "medicalFloorY": 2.0551171585011616,
+      "tourniquetApplied": true,
+      "tourniquetsUsed": 1,
+      "sampledSeconds": 7,
+      "navigation": {
+        "stations": 1,
+        "replans": 0,
+        "stalls": 0,
+        "gripBreaks": 0,
+        "claims": 1,
+        "queued": 0,
+        "expanded": 0,
+        "navigation": {
+          "ready": true,
+          "building": false,
+          "generation": 2,
+          "revision": 1,
+          "queries": 1,
+          "complete": 1,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 2,
+          "buildMs": 401.69999999995343,
+          "triangles": 13882,
+          "bytes": 276172,
+          "errors": 0,
+          "tiles": 20,
+          "polygons": 1656,
+          "lastError": ""
+        }
+      },
+      "errors": []
+    }
+  ],
+  "combatAim": {
+    "shots": 2,
+    "woundSourcesBefore": 0,
+    "woundSourcesAfter": 6,
+    "targetDead": true,
+    "targetCollapsed": true,
+    "errors": []
+  },
+  "maps": [
+    {
+      "map": "angar_map",
+      "duelShots": 1,
+      "allModelGrips": 12,
+      "npcGripsChecked": 11,
+      "finite": true,
+      "errors": []
+    },
+    {
+      "map": "forest_map_camp",
+      "duelShots": 1,
+      "allModelGrips": 12,
+      "npcGripsChecked": 11,
+      "finite": true,
+      "errors": []
+    },
+    {
+      "map": "stroyka_zarechye_v2",
+      "duelShots": 2,
+      "allModelGrips": 12,
+      "npcGripsChecked": 11,
+      "finite": true,
+      "errors": []
+    }
+  ],
+  "soak": [
+    {
+      "map": "angar_map",
+      "seconds": 90,
+      "frames": 5400,
+      "shots": 1011,
+      "aliveAtEnd": 12,
+      "woundedPeakSampled": 0,
+      "fallenPeakSampled": 0,
+      "peakBodiesSampled": 180,
+      "queuedAtEnd": 0,
+      "navigation": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 218,
+        "complete": 188,
+        "projected": 10,
+        "partial": 17,
+        "unreachable": 3,
+        "builds": 1,
+        "buildMs": 541.2000000001863,
+        "triangles": 13774,
+        "bytes": 274040,
+        "errors": 0,
+        "tiles": 20,
+        "polygons": 1644,
+        "lastError": ""
+      },
+      "pathStatesAtEnd": {
+        "complete": 10,
+        "projected": 0,
+        "partial": 1,
+        "unreachable": 0
+      },
+      "unreachableAtEnd": 0,
+      "last360CpuSimulationMs": {
+        "samples": 360,
+        "mean": 11.456111111110335,
+        "p50": 11.300000000279397,
+        "p95": 13.5,
+        "max": 22
+      },
+      "errors": []
+    },
+    {
+      "map": "forest_map_camp",
+      "seconds": 90,
+      "frames": 5400,
+      "shots": 281,
+      "aliveAtEnd": 12,
+      "woundedPeakSampled": 0,
+      "fallenPeakSampled": 0,
+      "peakBodiesSampled": 172,
+      "queuedAtEnd": 0,
+      "navigation": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 533,
+        "complete": 336,
+        "projected": 111,
+        "partial": 0,
+        "unreachable": 86,
+        "builds": 1,
+        "buildMs": 2834.2999999998137,
+        "triangles": 235800,
+        "bytes": 3641936,
+        "errors": 0,
+        "tiles": 168,
+        "polygons": 21878,
+        "lastError": ""
+      },
+      "pathStatesAtEnd": {
+        "complete": 11,
+        "projected": 0,
+        "partial": 0,
+        "unreachable": 1
+      },
+      "unreachableAtEnd": 1,
+      "last360CpuSimulationMs": {
+        "samples": 360,
+        "mean": 14.660555555555039,
+        "p50": 12.899999999906868,
+        "p95": 27.59999999962747,
+        "max": 51.299999999813735
+      },
+      "errors": []
+    },
+    {
+      "map": "stroyka_zarechye_v2",
+      "seconds": 90,
+      "frames": 5400,
+      "shots": 813,
+      "aliveAtEnd": 12,
+      "woundedPeakSampled": 0,
+      "fallenPeakSampled": 0,
+      "peakBodiesSampled": 176,
+      "queuedAtEnd": 0,
+      "navigation": {
+        "ready": true,
+        "maxNodes": 32768,
+        "building": false,
+        "generation": 1,
+        "revision": 0,
+        "queries": 449,
+        "complete": 287,
+        "projected": 101,
+        "partial": 9,
+        "unreachable": 52,
+        "builds": 1,
+        "buildMs": 7809.100000000093,
+        "triangles": 382286,
+        "bytes": 6402252,
+        "errors": 0,
+        "tiles": 319,
+        "polygons": 38809,
+        "lastError": ""
+      },
+      "pathStatesAtEnd": {
+        "complete": 10,
+        "projected": 2,
+        "partial": 0,
+        "unreachable": 0
+      },
+      "unreachableAtEnd": 0,
+      "last360CpuSimulationMs": {
+        "samples": 360,
+        "mean": 15.053333333331263,
+        "p50": 12.700000000186265,
+        "p95": 25.100000000093132,
+        "max": 36.59999999962747
+      },
+      "errors": []
+    }
+  ],
+  "rays": {
+    "tests": 3000,
+    "instanceIdentityCases": 100,
+    "benchmark": {
+      "rays": 400,
+      "triangles": 64800,
+      "rounds": [
+        {
+          "originalMs": 1848.0240160000003,
+          "bvhMs": 3.348653000000013
+        },
+        {
+          "originalMs": 1868.0733140000002,
+          "bvhMs": 3.3643050000000585
+        },
+        {
+          "originalMs": 1745.5843000000004,
+          "bvhMs": 3.284679999999753
+        }
+      ],
+      "note": "Node CPU microbenchmark of identical seeded rays; not gameplay FPS"
+    },
+    "stats": {
+      "rays": 3000,
+      "tests": 4450,
+      "meshes": 150,
+      "custom": 0,
+      "dynamic": 1,
+      "bvh": {
+        "geometries": 151,
+        "triangles": 81000,
+        "buildMs": 116.33346599999996,
+        "failures": 0,
+        "backend": "three-mesh-bvh 0.9.2",
+        "enabled": true
+      }
+    }
+  },
+  "render": {
+    "fp": {
+      "visible": true,
+      "fov": 38.07579787499657,
+      "gunVisible": true,
+      "curKind": "gun",
+      "rigTuck": 0,
+      "gunChain": [
+        {
+          "name": "weaponMount",
+          "visible": true
+        },
+        {
+          "name": "Scene",
+          "visible": true
+        }
+      ],
+      "rigChain": [
+        {
+          "name": "Group",
+          "visible": true
+        },
+        {
+          "name": "bodycamRig",
+          "visible": true
+        },
+        {
+          "name": "Scene",
+          "visible": true
+        }
+      ],
+      "camera": [
+        -13.500000050362832,
+        1.742785966916633,
+        9.389000187370357
+      ],
+      "muzzle": [
+        -0.0003225270360091665,
+        -0.16433284203311996,
+        0.9321486232870193
+      ],
+      "rightHand": [
+        2.0944816519315776,
+        -12.292356487321484,
+        -1.1304595097678751
+      ]
+    },
+    "lastRender": {
+      "frame": 47,
+      "calls": 628,
+      "triangles": 3542424,
+      "points": 1660,
+      "lines": 0
+    },
+    "glError": 0,
+    "pageErrors": [],
+    "modelSnapshots": [
+      "standing",
+      "crouch",
+      "prone",
+      "fallen"
+    ]
+  },
+  "limits": [
+    "hybrid live physics, not autonomous physical balance",
+    "three live contact rigs, static collisions only; wrist/foot completion by IK",
+    "vault palms assist but do not support whole body weight physically",
+    "Recast multi-level static navmesh, bounded queries; partial/unreachable paths remain; no automatic parkour/moving-platform links",
+    "90 seconds per map is not multi-hour game QA",
+    "CPU tests without rendering are not FPS; no overall percentage promised",
+    "specialized ballistics, recoil, cloth and some effects not ported to Rapier"
+  ],
+  "navigation": {
+    "backend": "Recast/Detour WASM 0.43.1",
+    "fixtures": [
+      {
+        "name": "wall detour",
+        "state": "complete",
+        "points": 5,
+        "build": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 1,
+          "complete": 1,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 1,
+          "buildMs": 49.74486199999998,
+          "triangles": 1164,
+          "bytes": 3060,
+          "errors": 0,
+          "tiles": 4,
+          "polygons": 15,
+          "lastError": ""
+        }
+      },
+      {
+        "name": "disconnected wall is partial, never complete",
+        "state": "partial",
+        "points": 1,
+        "build": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 1,
+          "complete": 0,
+          "projected": 0,
+          "partial": 1,
+          "unreachable": 0,
+          "builds": 1,
+          "buildMs": 20.951878000000022,
+          "triangles": 1164,
+          "bytes": 2204,
+          "errors": 0,
+          "tiles": 4,
+          "polygons": 9,
+          "lastError": ""
+        }
+      },
+      {
+        "name": "1.4m doorway",
+        "state": "complete",
+        "points": 6,
+        "build": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 1,
+          "complete": 1,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 1,
+          "buildMs": 13.749371999999994,
+          "triangles": 1176,
+          "bytes": 3060,
+          "errors": 0,
+          "tiles": 4,
+          "polygons": 15,
+          "lastError": ""
+        }
+      },
+      {
+        "name": "1.0m doorway",
+        "state": "complete",
+        "points": 6,
+        "build": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 1,
+          "complete": 1,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 1,
+          "buildMs": 11.905108999999982,
+          "triangles": 1176,
+          "bytes": 3060,
+          "errors": 0,
+          "tiles": 4,
+          "polygons": 15,
+          "lastError": ""
+        }
+      },
+      {
+        "name": "0.4m doorway rejected for capsule",
+        "state": "partial",
+        "points": 1,
+        "build": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 1,
+          "complete": 0,
+          "projected": 0,
+          "partial": 1,
+          "unreachable": 0,
+          "builds": 1,
+          "buildMs": 13.115306999999973,
+          "triangles": 1176,
+          "bytes": 2204,
+          "errors": 0,
+          "tiles": 4,
+          "polygons": 9,
+          "lastError": ""
+        }
+      },
+      {
+        "name": "stacked floors cannot shortcut vertically",
+        "state": "unreachable",
+        "points": 0,
+        "build": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 1,
+          "complete": 0,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 1,
+          "builds": 1,
+          "buildMs": 10.29725499999995,
+          "triangles": 1164,
+          "bytes": 1976,
+          "errors": 0,
+          "tiles": 4,
+          "polygons": 8,
+          "lastError": ""
+        }
+      },
+      {
+        "name": "stairs to elevated floor",
+        "state": "complete",
+        "points": 4,
+        "build": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 1,
+          "complete": 1,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 1,
+          "buildMs": 10.707844999999963,
+          "triangles": 1260,
+          "bytes": 4420,
+          "errors": 0,
+          "tiles": 4,
+          "polygons": 23,
+          "lastError": ""
+        }
+      },
+      {
+        "name": "physical stairs dt 0.016666666666666666",
+        "state": "landed",
+        "pos": [
+          2.0000380101405426,
+          2.01509972580061,
+          -0.0010068118975008478
+        ],
+        "maxDelta": 0.10930007817230387
+      },
+      {
+        "name": "physical stairs dt 0.03333333333333333",
+        "state": "landed",
+        "pos": [
+          1.9999976334759548,
+          2.0150660456238256,
+          -0.0031947060247465436
+        ],
+        "maxDelta": 0.19416814061975676
+      },
+      {
+        "name": "physical stairs dt 0.05",
+        "state": "landed",
+        "pos": [
+          2.000001639081388,
+          2.01509030834859,
+          -0.002555385279301381
+        ],
+        "maxDelta": 0.2489466957959419
+      },
+      {
+        "name": "low ceiling rejects standing navigation",
+        "state": "unreachable",
+        "points": 0,
+        "build": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 1,
+          "complete": 0,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 1,
+          "builds": 1,
+          "buildMs": 20.900007999999957,
+          "triangles": 1164,
+          "bytes": 1796,
+          "errors": 0,
+          "tiles": 4,
+          "polygons": 7,
+          "lastError": ""
+        }
+      },
+      {
+        "name": "cylinder detour",
+        "state": "complete",
+        "points": 11,
+        "build": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 1,
+          "complete": 1,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 1,
+          "buildMs": 12.283355000000029,
+          "triangles": 1212,
+          "bytes": 6876,
+          "errors": 0,
+          "tiles": 4,
+          "polygons": 43,
+          "lastError": ""
+        }
+      },
+      {
+        "name": "destructible wall before",
+        "state": "partial",
+        "points": 1,
+        "build": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 1,
+          "complete": 0,
+          "projected": 0,
+          "partial": 1,
+          "unreachable": 0,
+          "builds": 1,
+          "buildMs": 10.830839000000083,
+          "triangles": 1164,
+          "bytes": 2204,
+          "errors": 0,
+          "tiles": 4,
+          "polygons": 9,
+          "lastError": ""
+        }
+      },
+      {
+        "name": "removed wall rebuild",
+        "state": "complete",
+        "generation": 2
+      },
+      {
+        "name": "10000 repeated Detour queries",
+        "state": "bounded heap",
+        "beforeHeap": 67108864,
+        "afterHeap": 67108864
+      }
+    ],
+    "spawnCoverage": [
+      {
+        "map": "angar_map",
+        "pairs": 132,
+        "states": {
+          "complete": 132
+        },
+        "stats": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 132,
+          "complete": 132,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 1,
+          "buildMs": 374.39999999990687,
+          "triangles": 13774,
+          "bytes": 274040,
+          "errors": 0,
+          "tiles": 20,
+          "polygons": 1644,
+          "lastError": ""
+        }
+      },
+      {
+        "map": "forest_map_camp",
+        "pairs": 132,
+        "states": {
+          "complete": 132
+        },
+        "stats": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 132,
+          "complete": 132,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 1,
+          "buildMs": 3414.5,
+          "triangles": 235800,
+          "bytes": 3641936,
+          "errors": 0,
+          "tiles": 168,
+          "polygons": 21878,
+          "lastError": ""
+        }
+      },
+      {
+        "map": "stroyka_zarechye_v2",
+        "pairs": 132,
+        "states": {
+          "complete": 132
+        },
+        "stats": {
+          "ready": true,
+          "maxNodes": 32768,
+          "building": false,
+          "generation": 1,
+          "revision": 0,
+          "queries": 132,
+          "complete": 132,
+          "projected": 0,
+          "partial": 0,
+          "unreachable": 0,
+          "builds": 1,
+          "buildMs": 9040,
+          "triangles": 382286,
+          "bytes": 6402252,
+          "errors": 0,
+          "tiles": 319,
+          "polygons": 38809,
+          "lastError": ""
+        }
+      }
+    ]
+  },
+  "launchFix": {
+    "version": "18.3.1",
+    "details": "LAUNCH_FIX_QA.json",
+    "gameplayCodeChanged": false
+  }
+}

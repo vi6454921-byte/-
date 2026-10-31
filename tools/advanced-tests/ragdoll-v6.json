@@ -1,0 +1,419 @@
+{
+  "pass": true,
+  "rows": [
+    {
+      "test": "catch-without-fall",
+      "dt": 0.016666666666666666,
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "maxLean": 0.16958915685551615
+    },
+    {
+      "test": "catch-without-fall",
+      "dt": 0.016666666666666666,
+      "direction": [
+        0,
+        0,
+        -1
+      ],
+      "maxLean": 0.18500635293329035
+    },
+    {
+      "test": "catch-without-fall",
+      "dt": 0.03333333333333333,
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "maxLean": 0.16705091542591385
+    },
+    {
+      "test": "catch-without-fall",
+      "dt": 0.03333333333333333,
+      "direction": [
+        0,
+        0,
+        -1
+      ],
+      "maxLean": 0.18223736228281512
+    },
+    {
+      "test": "catch-without-fall",
+      "dt": 0.05,
+      "direction": [
+        1,
+        0,
+        0
+      ],
+      "maxLean": 0.1649062912354973
+    },
+    {
+      "test": "catch-without-fall",
+      "dt": 0.05,
+      "direction": [
+        0,
+        0,
+        -1
+      ],
+      "maxLean": 0.17989777225690615
+    },
+    {
+      "test": "fall-and-get-up",
+      "dt": 0.016666666666666666,
+      "speed": 0,
+      "maxGap": 0.00016874749102260586,
+      "maxSpeed": 4.8910855135341205,
+      "minY": 0.025908062234520912,
+      "displacement": 0.9709730330483536,
+      "events": [
+        {
+          "name": "external",
+          "time": 0
+        },
+        {
+          "name": "fall",
+          "time": 0.016666666666666666
+        },
+        {
+          "name": "get-up-start",
+          "time": 1.6166666666666658
+        },
+        {
+          "name": "recovered",
+          "time": 3.383333333333326
+        }
+      ]
+    },
+    {
+      "test": "fall-and-get-up",
+      "dt": 0.016666666666666666,
+      "speed": 4.55,
+      "maxGap": 0.016540375609598965,
+      "maxSpeed": 8.181862937725667,
+      "minY": 0.02648313157260418,
+      "displacement": 2.833780628376127,
+      "events": [
+        {
+          "name": "external",
+          "time": 0
+        },
+        {
+          "name": "fall",
+          "time": 0.016666666666666666
+        },
+        {
+          "name": "get-up-start",
+          "time": 1.6166666666666658
+        },
+        {
+          "name": "recovered",
+          "time": 3.383333333333326
+        }
+      ]
+    },
+    {
+      "test": "fall-and-get-up",
+      "dt": 0.03333333333333333,
+      "speed": 0,
+      "maxGap": 0.0001037574912680475,
+      "maxSpeed": 4.889484540208957,
+      "minY": 0.03507428616285324,
+      "displacement": 0.9529270839852589,
+      "events": [
+        {
+          "name": "external",
+          "time": 0
+        },
+        {
+          "name": "fall",
+          "time": 0.03333333333333333
+        },
+        {
+          "name": "get-up-start",
+          "time": 1.633333333333335
+        },
+        {
+          "name": "recovered",
+          "time": 3.3999999999999977
+        }
+      ]
+    },
+    {
+      "test": "fall-and-get-up",
+      "dt": 0.03333333333333333,
+      "speed": 4.55,
+      "maxGap": 0.00039598569229937604,
+      "maxSpeed": 8.197670707911353,
+      "minY": 0.03720029443502426,
+      "displacement": 3.2459073993288996,
+      "events": [
+        {
+          "name": "external",
+          "time": 0
+        },
+        {
+          "name": "fall",
+          "time": 0.03333333333333333
+        },
+        {
+          "name": "get-up-start",
+          "time": 1.933333333333336
+        },
+        {
+          "name": "recovered",
+          "time": 3.6999999999999966
+        }
+      ]
+    },
+    {
+      "test": "fall-and-get-up",
+      "dt": 0.05,
+      "speed": 0,
+      "maxGap": 0.00004443446872170004,
+      "maxSpeed": 4.742164404652146,
+      "minY": 0.029239393770694733,
+      "displacement": 1.030167046105239,
+      "events": [
+        {
+          "name": "external",
+          "time": 0
+        },
+        {
+          "name": "fall",
+          "time": 0.05
+        },
+        {
+          "name": "get-up-start",
+          "time": 1.6500000000000008
+        },
+        {
+          "name": "recovered",
+          "time": 3.399999999999996
+        }
+      ]
+    },
+    {
+      "test": "fall-and-get-up",
+      "dt": 0.05,
+      "speed": 4.55,
+      "maxGap": 0.00008931019005206585,
+      "maxSpeed": 8.151208174638615,
+      "minY": 0.034743256866931915,
+      "displacement": 2.72929082516233,
+      "events": [
+        {
+          "name": "external",
+          "time": 0
+        },
+        {
+          "name": "fall",
+          "time": 0.05
+        },
+        {
+          "name": "get-up-start",
+          "time": 1.6500000000000008
+        },
+        {
+          "name": "recovered",
+          "time": 3.399999999999996
+        }
+      ]
+    },
+    {
+      "test": "ceiling-blocks-recovery-and-retry",
+      "events": [
+        {
+          "name": "get-up-rescued",
+          "time": 7.116666666666647
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.133333333333313
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.14999999999998
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.1666666666666465
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.183333333333313
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.19999999999998
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.216666666666646
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.233333333333313
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.24999999999998
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.266666666666646
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.283333333333313
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.299999999999979
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.316666666666646
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.333333333333313
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.349999999999979
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.366666666666646
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.383333333333312
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.399999999999979
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.416666666666646
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.433333333333312
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.449999999999979
+        },
+        {
+          "name": "get-up-rescued",
+          "time": 7.4666666666666455
+        },
+        {
+          "name": "get-up-start",
+          "time": 7.4666666666666455
+        },
+        {
+          "name": "recovered",
+          "time": 9.233333333333372
+        }
+      ]
+    },
+    {
+      "test": "legs-out-settles-supine",
+      "dt": 0.016666666666666666,
+      "settledAt": 2.0666666666666664,
+      "events": [
+        "external",
+        "fall",
+        "legs-out-supine"
+      ]
+    },
+    {
+      "test": "legs-out-settles-supine",
+      "dt": 0.03333333333333333,
+      "settledAt": 2.033333333333333,
+      "events": [
+        "external",
+        "fall",
+        "legs-out-supine"
+      ]
+    },
+    {
+      "test": "unconscious-does-not-auto-rise"
+    },
+    {
+      "test": "casualty-collapse-cancels-auto-recovery"
+    },
+    {
+      "test": "casualty-vertical-inertia-and-obstacle",
+      "kind": "ground",
+      "scale": 0.85,
+      "maxGap": 0.05175311547715845,
+      "maxSpeed": 13.786046077510619,
+      "minY": 0.03739742934703827
+    },
+    {
+      "test": "casualty-vertical-inertia-and-obstacle",
+      "kind": "step",
+      "scale": 0.85,
+      "maxGap": 0.0013775161448662913,
+      "maxSpeed": 9.397194378773097,
+      "minY": 0.46345606446266174
+    },
+    {
+      "test": "casualty-vertical-inertia-and-obstacle",
+      "kind": "ground",
+      "scale": 1,
+      "maxGap": 0.016027345668836037,
+      "maxSpeed": 18.477315609780174,
+      "minY": 0.03143017739057541
+    },
+    {
+      "test": "casualty-vertical-inertia-and-obstacle",
+      "kind": "step",
+      "scale": 1,
+      "maxGap": 0.001396279956210586,
+      "maxSpeed": 9.140610835916986,
+      "minY": 0.4698410928249359
+    },
+    {
+      "test": "casualty-vertical-inertia-and-obstacle",
+      "kind": "ground",
+      "scale": 1.15,
+      "maxGap": 0.04224545685430251,
+      "maxSpeed": 10.054863149173217,
+      "minY": 0.03935709223151207
+    },
+    {
+      "test": "casualty-vertical-inertia-and-obstacle",
+      "kind": "step",
+      "scale": 1.15,
+      "maxGap": 0.0003570829245763601,
+      "maxSpeed": 8.503463496436304,
+      "minY": 0.043738868087530136
+    },
+    {
+      "test": "off-centre-impulse-and-no-air-freeze",
+      "angularVelocity": {
+        "x": 2.072934150695801,
+        "y": -7.316524028778076,
+        "z": 0.415903240442276
+      }
+    }
+  ],
+  "stats": {
+    "triggered": 17,
+    "caught": 6,
+    "falls": 11,
+    "recovered": 9,
+    "blocked": 1,
+    "vaults": 0,
+    "rescued": 28
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "result": {
+    "fp": {
+      "visible": true,
+      "fov": 38.07579787499657,
+      "gunVisible": true,
+      "curKind": "gun",
+      "rigTuck": 0,
+      "gunChain": [
+        {
+          "name": "weaponMount",
+          "visible": true
+        },
+        {
+          "name": "Scene",
+          "visible": true
+        }
+      ],
+      "rigChain": [
+        {
+          "name": "Group",
+          "visible": true
+        },
+        {
+          "name": "bodycamRig",
+          "visible": true
+        },
+        {
+          "name": "Scene",
+          "visible": true
+        }
+      ],
+      "camera": [
+        -13.500000050362832,
+        1.742785966916633,
+        9.389000187370357
+      ],
+      "muzzle": [
+        -0.0003225270360091665,
+        -0.16433284203311996,
+        0.9321486232870193
+      ],
+      "rightHand": [
+        2.0944816519315776,
+        -12.292356487321484,
+        -1.1304595097678751
+      ]
+    },
+    "info": {
+      "mode": "free",
+      "activeIdx": -1,
+      "score": 0,
+      "camera": [
+        -10.5,
+        2.815,
+        13.5
+      ],
+      "fov": 65,
+      "targets": [],
+      "squad": [
+        {
+          "key": "delta_1",
+          "pos": [
+            -13.5,
+            0.015,
+            9.5
+          ],
+          "ammo": 30,
+          "speed": 0,
+          "yaw": 0.17,
+          "prone": 0,
+          "crouch": 0.03,
+          "thr": "/0/0/iy1.19/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "delta_2",
+          "pos": [
+            32.809,
+            0.016,
+            1.536
+          ],
+          "ammo": 0,
+          "speed": 0.867,
+          "yaw": 1.53,
+          "prone": 0,
+          "crouch": 0,
+          "thr": "/0/0/iy1.53/ty-/w-0.3",
+          "stun": false
+        },
+        {
+          "key": "delta_soldier_0",
+          "pos": [
+            32.627,
+            0.019,
+            -1.082
+          ],
+          "ammo": 29,
+          "speed": 0.509,
+          "yaw": 1.54,
+          "prone": 0,
+          "crouch": 0,
+          "thr": "/0/0/iy1.57/ty-/w-0.0",
+          "stun": false
+        },
+        {
+          "key": "delta_soldier_1",
+          "pos": [
+            33.567,
+            0.001,
+            -1.331
+          ],
+          "ammo": 30,
+          "speed": 0,
+          "yaw": 1.57,
+          "prone": 0,
+          "crouch": 1,
+          "thr": "/0/0/iy1.57/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "delta_soldier_2",
+          "pos": [
+            34.852,
+            0.001,
+            -1.111
+          ],
+          "ammo": 30,
+          "speed": 0,
+          "yaw": 1.57,
+          "prone": 0,
+          "crouch": 0,
+          "thr": "/0/0/iy1.57/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "delta_soldier_3",
+          "pos": [
+            34.972,
+            0.016,
+            0.513
+          ],
+          "ammo": 30,
+          "speed": 2.49,
+          "yaw": 2.2,
+          "prone": 0,
+          "crouch": 0,
+          "thr": "/0/0/iy1.58/ty-/w-1.0",
+          "stun": false
+        },
+        {
+          "key": "alpha_1",
+          "pos": [
+            -33.89,
+            0.018,
+            1.342
+          ],
+          "ammo": 0,
+          "speed": 2.141,
+          "yaw": -1.96,
+          "prone": 0,
+          "crouch": 0,
+          "thr": "/0/0/iy-1.95/ty-/w-0.4",
+          "stun": false
+        },
+        {
+          "key": "alpha_2",
+          "pos": [
+            -35.051,
+            0.017,
+            0.913
+          ],
+          "ammo": 0,
+          "speed": 0.243,
+          "yaw": -1.95,
+          "prone": 0,
+          "crouch": 0,
+          "thr": "/0/0/iy-1.95/ty-/w0.3",
+          "stun": false
+        },
+        {
+          "key": "alpha_soldier_0",
+          "pos": [
+            -35.361,
+            0.001,
+            0.327
+          ],
+          "ammo": 30,
+          "speed": 0,
+          "yaw": -1.97,
+          "prone": 0,
+          "crouch": 1,
+          "thr": "/0/0/iy-1.97/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "alpha_soldier_1",
+          "pos": [
+            -35.04,
+            0.001,
+            -0.937
+          ],
+          "ammo": 30,
+          "speed": 0,
+          "yaw": -2.02,
+          "prone": 0,
+          "crouch": 1,
+          "thr": "/0/0/iy-2.02/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "alpha_soldier_2",
+          "pos": [
+            -33.817,
+            0.001,
+            -1.388
+          ],
+          "ammo": 30,
+          "speed": 0,
+          "yaw": -2.06,
+          "prone": 0,
+          "crouch": 1,
+          "thr": "/0/0/iy-2.06/ty-/w-",
+          "stun": false
+        },
+        {
+          "key": "alpha_soldier_3",
+          "pos": [
+            -32.753,
+            0.001,
+            -0.636
+          ],
+          "ammo": 29,
+          "speed": 0,
+          "yaw": -2.05,
+          "prone": 0,
+          "crouch": 0.99,
+          "thr": "/0/0/iy-2.06/ty-/w-",
+          "stun": false
+        }
+      ]
+    },
+    "render": {
+      "frame": 47,
+      "calls": 629,
+      "triangles": 3542622,
+      "points": 1660,
+      "lines": 0
+    },
+    "glError": 0,
+    "geometry": {
+      "geometries": 163,
+      "triangles": 380156,
+      "buildMs": 117.8999999994412,
+      "failures": 0,
+      "backend": "three-mesh-bvh 0.9.2",
+      "enabled": true
+    }
+  },
+  "errors": []
+}

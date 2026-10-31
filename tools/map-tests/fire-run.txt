@@ -1,0 +1,2 @@
+{"errors":[],"result":{"before":[30,30],"after":[27,26],"shots":[3,4],"combat":{"checks":34,"shots":40,"paths":4,"cachedNav":400},"alive":[false,true],"distance":1.831852291551822}}
+PASS real AEGIS controllers fired in controlled close encounter on angar

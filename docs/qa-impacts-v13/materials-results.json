@@ -1,0 +1,104 @@
+{
+  "concreteHashes": [
+    "27855c77698d3ebf44aa5ea9924db1d7d122ff05fc2f5a799994e5f5cae88955",
+    "74583705d91365ad5fa03ca4d3e5427b94fff076a770b583aaaeb58ae4735ea6",
+    "decb8af0b07fd84baa1ec76930631ecac06ffed611819b512493813610f7fa5e"
+  ],
+  "layers": {
+    "concrete": {
+      "variants": 6,
+      "heightMin": 0,
+      "heightMax": 255,
+      "coveredTexels": 5541,
+      "raisedTexels": 3314,
+      "deepTexels": 124,
+      "profile": 255,
+      "nominalPOMDepthMm": 17.976470588235294
+    },
+    "metal": {
+      "variants": 6,
+      "heightMin": 30,
+      "heightMax": 188,
+      "coveredTexels": 4191,
+      "raisedTexels": 0,
+      "deepTexels": 665,
+      "profile": 1,
+      "nominalPOMDepthMm": 3.6705882352941184
+    },
+    "wood": {
+      "variants": 6,
+      "heightMin": 22,
+      "heightMax": 221,
+      "coveredTexels": 4812,
+      "raisedTexels": 541,
+      "deepTexels": 384,
+      "profile": 2,
+      "nominalPOMDepthMm": 6.268235294117648
+    },
+    "paper": {
+      "variants": 4,
+      "heightMin": 66,
+      "heightMax": 219,
+      "coveredTexels": 3954,
+      "raisedTexels": 1076,
+      "deepTexels": 813,
+      "profile": 3,
+      "nominalPOMDepthMm": 0.7905882352941177
+    },
+    "fabric": {
+      "variants": 3,
+      "heightMin": 66,
+      "heightMax": 240,
+      "coveredTexels": 1387,
+      "raisedTexels": 252,
+      "deepTexels": 625,
+      "profile": 4,
+      "nominalPOMDepthMm": 1.2705882352941178
+    },
+    "soil": {
+      "variants": 5,
+      "heightMin": 95,
+      "heightMax": 212,
+      "coveredTexels": 6029,
+      "raisedTexels": 405,
+      "deepTexels": 39,
+      "profile": 5,
+      "nominalPOMDepthMm": 7.905882352941176
+    }
+  },
+  "count": 6,
+  "wallTexturesUnchanged": true,
+  "views": [
+    {
+      "kind": "wood",
+      "changedPixels": 2440,
+      "totalRGBDifference": 168524
+    },
+    {
+      "kind": "metal",
+      "changedPixels": 706,
+      "totalRGBDifference": 47225
+    },
+    {
+      "kind": "paper",
+      "changedPixels": 115,
+      "totalRGBDifference": 12012
+    },
+    {
+      "kind": "fabric",
+      "changedPixels": 104,
+      "totalRGBDifference": 7994
+    },
+    {
+      "kind": "soil",
+      "changedPixels": 2005,
+      "totalRGBDifference": 117642
+    },
+    {
+      "kind": "concrete",
+      "changedPixels": 8948,
+      "totalRGBDifference": 788077
+    }
+  ],
+  "errors": []
+}

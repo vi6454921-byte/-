@@ -1,0 +1,40 @@
+{
+  "method": "Individual inspection of actual game-rendered keyframes; not contact-sheet-only review. Full encoded video also decoded by ffmpeg.",
+  "chapters": [
+    {
+      "index": 1,
+      "pass": true,
+      "observation": "Jump arm trajectory corrected in actor-local space; captions and complete body visible."
+    },
+    {
+      "index": 2,
+      "pass": true,
+      "observation": "Armed jump retains both weapon grips."
+    },
+    {
+      "index": 3,
+      "pass": true,
+      "observation": "Asymmetric leg transfer across low barrier visible."
+    },
+    {
+      "index": 4,
+      "pass": true,
+      "observation": "Both palms on barrier, legs tucked above top."
+    },
+    {
+      "index": 5,
+      "pass": true,
+      "observation": "Hand-supported platform ascent framed completely."
+    },
+    {
+      "index": 6,
+      "pass": true,
+      "observation": "Rifle and both hands move together during run."
+    },
+    {
+      "index": 7,
+      "pass": true,
+      "observation": "Ground support and rise inspected at multiple phases; camera follows actual pelvis to avoid cropping."
+    }
+  ]
+}

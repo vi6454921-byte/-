@@ -1,0 +1,51 @@
+{
+  "source": "http://mocap.cs.cmu.edu/",
+  "clips": [
+    {
+      "clip": "136_09",
+      "group": "crouch",
+      "frames": 600,
+      "speed": 0.86672,
+      "leg": 0.82422,
+      "cycles": 3,
+      "url": "http://mocap.cs.cmu.edu/subjects/136/136_09.amc",
+      "sha256": "2d42440a0cd5abe84a5e4728073425ecfab53787928134536e6e8da84207e79c"
+    },
+    {
+      "clip": "136_10",
+      "group": "crouch",
+      "frames": 600,
+      "speed": 0.78496,
+      "leg": 0.82422,
+      "cycles": 3,
+      "url": "http://mocap.cs.cmu.edu/subjects/136/136_10.amc",
+      "sha256": "1d405f6d991acbfef749073ca3caf7e6e347af3d3a60e579509d2424028eee68"
+    },
+    {
+      "clip": "17_03",
+      "group": "sneak",
+      "frames": 600,
+      "speed": 0.42915,
+      "leg": 0.84596,
+      "cycles": 3,
+      "url": "http://mocap.cs.cmu.edu/subjects/17/17_03.amc",
+      "sha256": "6b4be366a5ae8d0a05b7172099d92bb1f33b997933ad5c1ae8747ba5b831abe7"
+    }
+  ],
+  "gaits": {
+    "crouch": {
+      "speed": 0.825838,
+      "freq": 0.778811,
+      "leg": 0.824221,
+      "stance": 0.487847,
+      "cycles": 6
+    },
+    "sneak": {
+      "speed": 0.429147,
+      "freq": 0.700187,
+      "leg": 0.845957,
+      "stance": 0.6125,
+      "cycles": 3
+    }
+  }
+}

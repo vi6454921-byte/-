@@ -1,0 +1,591 @@
+{
+  "baseline": "AEGIS_mocap_locomotion_v9.zip",
+  "changed": [
+    {
+      "file": "README.md",
+      "sha256": "526b3e6b815c8d3ff8b12fb4c15f73649dc11b9416ad67641ba87d48c63f5251"
+    },
+    {
+      "file": "index.html",
+      "sha256": "408ffe95b128d5aa9461c13fb5bf6dfee3ab7425b50ed55b058a022a40708f0b"
+    },
+    {
+      "file": "js/advanced/animator.js",
+      "sha256": "0a3c0dab928b1d4267b09a3b7f5ca2beaa84b261246b43c71aa398f78b464eb0"
+    },
+    {
+      "file": "js/app/config.js",
+      "sha256": "7fbd54657e92aea333fb1f8cad2d7159266a094edb5a4414fc1378eaeba48c29"
+    },
+    {
+      "file": "js/polygon/15_rig.js",
+      "sha256": "72957ac6262c17629b7de09b3b4a3b9c3f520b9d7b26ae76b1ac0588024dfdd2"
+    },
+    {
+      "file": "js/polygon/20_player.js",
+      "sha256": "c1e807c95dbea6df041cadcc3ffe5e059b67818c778f95d60df3ae836cd7945c"
+    },
+    {
+      "file": "js/polygon/29_game.js",
+      "sha256": "80aa34d72854b8db3957d2b310114f6dfa59cb1558e4a8ab5f4f4c79992a5a26"
+    },
+    {
+      "file": "package-lock.json",
+      "sha256": "5a8ad98c15299a284e34b7771d651a10e0cc5332c98acfd9d5fedb01de143f01"
+    },
+    {
+      "file": "package.json",
+      "sha256": "b36740f68d7f9feb1d230f291a021f8bb0b75a0886539655867a2dfb0a1e9b4d"
+    },
+    {
+      "file": "src/advanced/animator.ts",
+      "sha256": "c6bdf121b6f8e92110b17e3ecd948b15be08bed841cc4b5ee57805420666e6da"
+    },
+    {
+      "file": "tools/advanced-tests/npc-v9-after.json",
+      "sha256": "28878af29fe6bda1df76c00876a1787cbe359f079b6cb468890da726698b02ff"
+    },
+    {
+      "file": "tools/advanced-tests/ragdoll-v6-browser.json",
+      "sha256": "86818aadf68c0bc1ba40a503e88787a5bd6f23edbcf8ff36837f90d8682e270b"
+    },
+    {
+      "file": "tools/advanced-tests/ragdoll-v6-fall.png",
+      "sha256": "b53b173b8567b27acbe2b8d2f2120905b4d5cdab9a7e5eb58e0afc4d2766713a"
+    },
+    {
+      "file": "tools/build-advanced.cjs",
+      "sha256": "a594a7b74bb39d94a742db3e44c5f9db0b1fe7aa20a460010b25efbe556071b6"
+    },
+    {
+      "file": "tools/impact-tests/impacts-preview.png",
+      "sha256": "4255c02f39d4e7d9f22a3f95059f0ce14adba894ae374612e22476543189241c"
+    },
+    {
+      "file": "tools/impact-tests/maps-v8.json",
+      "sha256": "af027fb5545a47d90ddee7661b1cfcc063c20fb9e790d4aefee29f280ee8c62b"
+    }
+  ],
+  "added": [
+    {
+      "file": "ANIMATION_SYSTEM_V11_README_RU.md",
+      "sha256": "b89b8b23a000c6a4766dc6c03cc38ade6743a829e46bd5aa16e688ff256d39fb"
+    },
+    {
+      "file": "docs/AEGIS_ANIMATIONS_V11.mp4",
+      "sha256": "9822b05231bd8a3be6efb78905b7d450dd7815133899f2416b6ef86bfec8ef1b"
+    },
+    {
+      "file": "docs/ANIMATION_SYSTEM_QA_V11.json",
+      "sha256": "8e0d0d3b3f0da5e4fa4d34cf14ceb4bc0963bc291ea2df7cf30c49b9c7638b59"
+    },
+    {
+      "file": "docs/ANIMATION_VIDEO_CAPTURE_V11.json",
+      "sha256": "f24240707880d8c5b8cc2854344b3d39e78f19e58a2317bdcc702fd128170a75"
+    },
+    {
+      "file": "docs/ANIMATION_VIDEO_CHAPTERS_V11.md",
+      "sha256": "582e52574dcdaf0112fefe280a3a0c96b6902e57aed5c7bac7cd63179990e595"
+    },
+    {
+      "file": "docs/ANIMATION_VIDEO_PROBE_V11.json",
+      "sha256": "e04b7e954c1db7fba1fe8852a18e08bac9414819ac25d7304d65431829cc91b7"
+    },
+    {
+      "file": "docs/ANIMATION_VISUAL_REVIEW_V11.json",
+      "sha256": "375d7bb7f272b855d4e100031ff4c179b7a44a520a879fc46123bccfe0343455"
+    },
+    {
+      "file": "docs/animation-v11-stills/01.jpg",
+      "sha256": "10ac778b63709eb4b51b7b5f5853021d4a4c35e1077a67a773f1b7648b49a466"
+    },
+    {
+      "file": "docs/animation-v11-stills/02.jpg",
+      "sha256": "7fac84b55e7cb56f08230b20e0c3738276a4fd7420cea9ab8c90d79e58f750c9"
+    },
+    {
+      "file": "docs/animation-v11-stills/03.jpg",
+      "sha256": "c224acdb98fb2b3b290ca4250f570f2f2b872832618761116dca67247d3df193"
+    },
+    {
+      "file": "docs/animation-v11-stills/04.jpg",
+      "sha256": "fdcdeb211bc47671e9032c069cbedf6c926a1487fa6676408026214a90f4d770"
+    },
+    {
+      "file": "docs/animation-v11-stills/05.jpg",
+      "sha256": "b27e1ffd2d1eaec6b59307221c6555cf3b901d2921cae1107e38fb6fbe7c0eb6"
+    },
+    {
+      "file": "docs/animation-v11-stills/06.jpg",
+      "sha256": "abc22c20504824cfc827f71fd5033ec7de20ec52553f5f4d9d3d8e84c1f977a1"
+    },
+    {
+      "file": "docs/animation-v11-stills/07.jpg",
+      "sha256": "fb6abfa5678aad3f36929b077de8c1e36fc53ed63cff514586f00674f970e547"
+    },
+    {
+      "file": "docs/animation-v11-stills/08.jpg",
+      "sha256": "fb7d6462332b1537c68cbbba3e7b692f7eb79c269819fdb83ed380e8ac2a186f"
+    },
+    {
+      "file": "docs/animation-v11-stills/09.jpg",
+      "sha256": "5c57a0d0f6c7a6a7bd334ca8fb21a0506a105d79e8b772a8bab3584f71db763c"
+    },
+    {
+      "file": "docs/animation-v11-stills/10.jpg",
+      "sha256": "f162d4f703ebc9f2cf68a830569ad5802546115f70886f6b12084c8984532177"
+    },
+    {
+      "file": "docs/animation-v11-stills/11.jpg",
+      "sha256": "23ef2b32bfa88d96c5f860dcef570497cc5b83e7c3a8a132d677799f9e72a05c"
+    },
+    {
+      "file": "docs/animation-v11-stills/12.jpg",
+      "sha256": "1d816cf361bbb77cff6fb8a81dcd0fda4900f2312146fc9de02f09f5bece3b58"
+    },
+    {
+      "file": "docs/animation-v11-stills/13.jpg",
+      "sha256": "bf1ad99613e53ff8b09553c3c4742ccf3db7065cb68e173a2df916de7a50dd3d"
+    },
+    {
+      "file": "docs/animation-v11-stills/14.jpg",
+      "sha256": "81a7e081bbf1518f162c8a1f907ba8c5485dd61690ddffb518ab3ed1226d56cd"
+    },
+    {
+      "file": "docs/animation-v11-stills/15.jpg",
+      "sha256": "3e4ebb3665a24d9ed9b11d3ae0c1d18357b111f2b579cc78bdecf158b5275402"
+    },
+    {
+      "file": "docs/animation-v11-stills/16.jpg",
+      "sha256": "9fe90e8b7f00a04b453215b09d9792c2e25c7fdec0e88e08d323f0ae7416555c"
+    },
+    {
+      "file": "docs/animation-v11-stills/17.jpg",
+      "sha256": "c7368ee66647dd7b35d466f542c1887e1ea88b44e7d3365c96b54470a23b522c"
+    },
+    {
+      "file": "docs/animation-v11-stills/18.jpg",
+      "sha256": "b843bb3466572dc33275bdcec28be6e1cfd5d7c5c9f2d9964216e2cd4861059e"
+    },
+    {
+      "file": "docs/animation-v11-stills/19.jpg",
+      "sha256": "34b79cdffb11bb5c1ec19c02045e9d7399d0a8a3f8d0bcf803639802966ac4e2"
+    },
+    {
+      "file": "docs/animation-v11-stills/20.jpg",
+      "sha256": "3dde4979d6d3bf172f2e67849ce08c0b53c7e700912b12874f71f1dbf43e1961"
+    },
+    {
+      "file": "docs/animation-v11-stills/21.jpg",
+      "sha256": "ea3bcfee2de9918a5fe95b22c2bc46fd52b22e10d860942b350b97333f1229e1"
+    },
+    {
+      "file": "docs/animation-v11-stills/22.jpg",
+      "sha256": "788d4596a286599275ff8d02974f4fc344cfa14255dcbe59a2e0bca2a2d9aea2"
+    },
+    {
+      "file": "docs/animation-v11-stills/23.jpg",
+      "sha256": "35de077a6a416d41a165cddf547a227765a153c7831df55e5cecb5e1f6d42e87"
+    },
+    {
+      "file": "docs/animation-v11-stills/24.jpg",
+      "sha256": "ab7fc23a7501fb23a464727b23fa10795a05363c38f08408ad0406dfb2c3a59a"
+    },
+    {
+      "file": "docs/animation-v11-stills/25.jpg",
+      "sha256": "6865b9a67712b378bc81a261a7f0df2df431aead48fa2c418c599c69b48fded1"
+    },
+    {
+      "file": "docs/animation-v11-stills/26.jpg",
+      "sha256": "bba472ec26e07b1f8a0203a0229805de02e6a400cf7bae6b8ce7989376329ed1"
+    },
+    {
+      "file": "docs/animation-v11-stills/27.jpg",
+      "sha256": "560dd88070cab4472db3a02ffa15202c0981660b21f2d6423c3b19837b52fb39"
+    },
+    {
+      "file": "docs/animation-v11-stills/28.jpg",
+      "sha256": "7d18aa0fb07cbedbb152044031c17ef69941c444da6a0081f0ab9accab23a51b"
+    },
+    {
+      "file": "docs/animation-v11-stills/29.jpg",
+      "sha256": "3d059962c011e59b05842694b453a6b3d4086300d8b8c5608c99587a7c5076fb"
+    },
+    {
+      "file": "docs/animation-v11-stills/30.jpg",
+      "sha256": "78bc84ec8c1c972a83de8ca2fd7ff31c60d56f4ee8f8978a016571e7f003b18c"
+    },
+    {
+      "file": "docs/animation-v11-stills/31.jpg",
+      "sha256": "74fcb80f9f758bf3aa95ea845f9021d4711d9eb492b602e084b3bf196f2775d1"
+    },
+    {
+      "file": "docs/animation-v11-stills/32.jpg",
+      "sha256": "c375788bf60865c3424632cce2dffd7facb19bd7ee0f2358bc2e92a99348fa19"
+    },
+    {
+      "file": "docs/animation-v11-stills/33.jpg",
+      "sha256": "77d1d988c7cd2926d55af900e7f039d294d3b8cef4e943f0f62764fb68185694"
+    },
+    {
+      "file": "docs/animation-v11-stills/34.jpg",
+      "sha256": "d1d14b2107ee78a8bf9c6e1ec5a46862cd45c29b5ef115125fb75a53098f388f"
+    },
+    {
+      "file": "docs/animation-v11-stills/35.jpg",
+      "sha256": "9356ddcc9efcb3bc53fa8f36f8e95ead3171d88036cb7137621e6b08d81d03a9"
+    },
+    {
+      "file": "docs/qa-v11/contact-rig.log",
+      "sha256": "b8f13e935f622e63ac96f40e5277daface7f4f9f7ae860b6d679000ef859f7df"
+    },
+    {
+      "file": "docs/qa-v11/encode-corrections.log",
+      "sha256": "ef8a5efbc5366cda3dfc15da1086571876aaf16045c0a42df742955b4da03b71"
+    },
+    {
+      "file": "docs/qa-v11/firstperson.log",
+      "sha256": "cb67944c9fc3b1289659328a996c202b7a42c49275c2bd61b69fdd0dcc508cd3"
+    },
+    {
+      "file": "docs/qa-v11/gait-v9.log",
+      "sha256": "ea04db41a4775a52b437d142b5ed2196c1476473052048eb7e3f7080f17cdcb6"
+    },
+    {
+      "file": "docs/qa-v11/game.log",
+      "sha256": "4541c1382fad79ecf62cbba4b3fbd8dbf453cf2b35f76c3bd788eaadf5ec667e"
+    },
+    {
+      "file": "docs/qa-v11/locomotion-v9.log",
+      "sha256": "2eb270d29a250842ed98c03fdda9beaa772c877eb8f9f400ea3ca24720dad20e"
+    },
+    {
+      "file": "docs/qa-v11/maps-v8.log",
+      "sha256": "210a609c4c20f57bd79f8db2bc0ed196955388f233d4290f9ddcd4aee29daa5b"
+    },
+    {
+      "file": "docs/qa-v11/maps.log",
+      "sha256": "7a28f8a4671ed067be767eccd21de27445673c2eff6937fe48db91f091ca5201"
+    },
+    {
+      "file": "docs/qa-v11/npc.log",
+      "sha256": "cd61aba959eeebcb12966d41e809a1aa5ee19a31ebcb8df4ae8143893b562b7f"
+    },
+    {
+      "file": "docs/qa-v11/npm-test.log",
+      "sha256": "59cae988fb4083c8a7f8bdd03c2592c0b36879fef28c9d9653382b0d544e69ec"
+    },
+    {
+      "file": "docs/qa-v11/physical.log",
+      "sha256": "dc4e332b465c0ed57c275e6e306a042db646b07dc4662c8e0daceb2c31c5d80d"
+    },
+    {
+      "file": "docs/qa-v11/pistol-video.log",
+      "sha256": "81cfda573b870c6442fdecf2fc6b8736ccefa8aac42f1cef2453abc787f35065"
+    },
+    {
+      "file": "docs/qa-v11/ragdoll-v6.log",
+      "sha256": "9fb2246b25571b5738346edfe35d3eaca020239ee9d0ff60ac581fb1ddc8e25a"
+    },
+    {
+      "file": "docs/qa-v11/special.log",
+      "sha256": "e4c1ce27775deae48cfe95d26740102cb195eaad8ba03394000fbb19048ccabc"
+    },
+    {
+      "file": "docs/qa-v11/status.log",
+      "sha256": "821db7f49512baddd7c47ce0daa95a5cf9945f2f6325d816fa1108d95c8addf9"
+    },
+    {
+      "file": "docs/qa-v11/surface-v8.log",
+      "sha256": "f8ce47f4c3f18acef2274bf5d70ff1c5ba731a527c8668c5b6e78b28f1c3381c"
+    },
+    {
+      "file": "docs/qa-v11/terrain-v11.log",
+      "sha256": "be7f582259dfae2f1238acd50c1aa31b6869ea392e159d6eff52dbff591e821d"
+    },
+    {
+      "file": "docs/qa-v11/terrain-v9.log",
+      "sha256": "b9acfbcb73ade1e82f4450bd2cbbb9c50c2289e99dae8899527176a7057de009"
+    },
+    {
+      "file": "docs/qa-v11/tint.log",
+      "sha256": "d2cb3e5f270a2608d4394d4018016dfe2d04830bb7f29716c2a1350d63189e64"
+    },
+    {
+      "file": "docs/qa-v11/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "docs/qa-v11/video-corrections.log",
+      "sha256": "34d873c004d5747569a2dd50e20da1a3d7f8a01384d144fd8212f156a0b31f5b"
+    },
+    {
+      "file": "docs/qa-v11/video-decode.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "docs/qa-v11/weapons.log",
+      "sha256": "2cb2097822c4bfc5c64a013b8d2da136b75c86a89eb1213589a1ab4d2d2c48b8"
+    },
+    {
+      "file": "js/advanced/motion-actions.js",
+      "sha256": "42d22da5ab0f89d93b6c735294be53a697735b907c0ac1d843b71a382a912571"
+    },
+    {
+      "file": "js/advanced/special-motion-data.js",
+      "sha256": "9010b869f0edbc6c393c72ee0e57902604dbbfa14aa94646cba65f71af9d2500"
+    },
+    {
+      "file": "src/advanced/motion-actions.ts",
+      "sha256": "de7bf7ba43d6f6c0babac9bba5dd1649d6f3659fcb73676db58e7c1043c39341"
+    },
+    {
+      "file": "tools/advanced-tests/special-v11-browser.cjs",
+      "sha256": "12d53357ae2fa29608078e83dd77b1bb6278c2fb5f23c32a37dc0ec002f616ed"
+    },
+    {
+      "file": "tools/advanced-tests/special-v11-browser.json",
+      "sha256": "905fa7ae6e0d99f623e5034934f60801e0333f027061fec40345bb0a455a137c"
+    },
+    {
+      "file": "tools/advanced-tests/terrain-v11.cjs",
+      "sha256": "3d70c52230ca09a10c3638945dd4cad867b765df53dff43706f2cd7bacb09568"
+    },
+    {
+      "file": "tools/advanced-tests/terrain-v11.json",
+      "sha256": "353cbef45100d956ba6cb544944b4ef3800d45cf1a2abc4d8cfeb11c8093bfc6"
+    },
+    {
+      "file": "tools/animation-video/README.md",
+      "sha256": "1b72d92f001c4eefc2586e39460fc455f7683df92d8ed236425823913c8cd9f2"
+    },
+    {
+      "file": "tools/animation-video/capture-v11.cjs",
+      "sha256": "a507dfc8fe4068c9023137ba752b1a068a1a3c918d66fc93ad92dfd784207ecf"
+    },
+    {
+      "file": "tools/animation-video/encode-v11.py",
+      "sha256": "23da08120c870ded70863407f740d227878d65c95c8aad8fe247532a08c80e42"
+    },
+    {
+      "file": "tools/mocap/build-specials.py",
+      "sha256": "a1670b4b29f63e1e3033cb2f87316d3ec21bd921399e33c8d7c241f422723fd5"
+    },
+    {
+      "file": "tools/mocap/source/111.asf",
+      "sha256": "8fe67a2163f1f70ed985e34abe0e3ff4af7f5da76f2f3c178d59759cb18bba16"
+    },
+    {
+      "file": "tools/mocap/source/111_03.amc",
+      "sha256": "ed59da10b187b0bd294316e7954769b881de2f898e5de8c27ba148e9e3f7d37b"
+    },
+    {
+      "file": "tools/mocap/source/136.asf",
+      "sha256": "48eb3f19477086e28495d841c604157b354fc76be054fa662ff10843ac698427"
+    },
+    {
+      "file": "tools/mocap/source/136_09.amc",
+      "sha256": "2d42440a0cd5abe84a5e4728073425ecfab53787928134536e6e8da84207e79c"
+    },
+    {
+      "file": "tools/mocap/source/136_10.amc",
+      "sha256": "1d405f6d991acbfef749073ca3caf7e6e347af3d3a60e579509d2424028eee68"
+    },
+    {
+      "file": "tools/mocap/source/16_17.amc",
+      "sha256": "a59f9c90eb2af8197c6390edddbcf761bbec1cf03b6907128212102fe2123a2c"
+    },
+    {
+      "file": "tools/mocap/source/16_19.amc",
+      "sha256": "691d578a676bf9e091dac59001a6cb78daa7141ad5639f943c684dee7f4e64e6"
+    },
+    {
+      "file": "tools/mocap/source/16_33.amc",
+      "sha256": "03644f38e30d839a005334a6358f97093da05a65da53a73a51bd8136c5cd63ea"
+    },
+    {
+      "file": "tools/mocap/source/16_57.amc",
+      "sha256": "ae00399e82615e63be9590e0e11c679a5f033111a656e9ffbbb0a3e3060a01cd"
+    },
+    {
+      "file": "tools/mocap/source/17.asf",
+      "sha256": "5ffc9575bb74fe327327db991b2f9bb87f00bd9b1a04c20583d955d396020304"
+    },
+    {
+      "file": "tools/mocap/source/17_03.amc",
+      "sha256": "6b4be366a5ae8d0a05b7172099d92bb1f33b997933ad5c1ae8747ba5b831abe7"
+    },
+    {
+      "file": "tools/mocap/source/36.asf",
+      "sha256": "05e190867ead216b5dcdc94b210aa19b2eaaf383df44f1d9bb247e64fbf1c02b"
+    },
+    {
+      "file": "tools/mocap/source/36_02.amc",
+      "sha256": "bbbf8ebb9b7e7c96a114169169d7200c3bd2c77e3d4673427de446bee80f7bfa"
+    },
+    {
+      "file": "tools/mocap/special-cyclic-manifest.json",
+      "sha256": "946ccf033fe7c427d6159d237c6a3069064847ec924f026c6b02a79e451ee51f"
+    },
+    {
+      "file": "tools/mocap/special-manifest.json",
+      "sha256": "dd5aef40556f2e026b438746f38e39b46f88b6597be3f6defd262f957c4b2590"
+    },
+    {
+      "file": "tools/weapon-tests/audit-v10-20hz.json",
+      "sha256": "d057f0b008767537f9b96c518ec037764d643e0fd59e3e579dc4d0620e5ce6d2"
+    },
+    {
+      "file": "tools/weapon-tests/audit-v10-30hz.json",
+      "sha256": "0453b57eaa098fd7ab4395f81d270f73ed44840b289221d4c7242080d199b068"
+    },
+    {
+      "file": "tools/weapon-tests/audit-v10-after.json",
+      "sha256": "307fcb6637fd8c6201a9a13caa4da4009eb624653264722e25b33466ade5d774"
+    },
+    {
+      "file": "tools/weapon-tests/audit-v10-before.json",
+      "sha256": "0709f46e29097b70e582d1860b609b030f7f05d6605425f97fd0a4500adbf124"
+    },
+    {
+      "file": "tools/weapon-tests/audit-v10-v11.json",
+      "sha256": "ae3d3428d4a9bdf34e5478941870dc1a797c0691a9b2c0fceba0799dc94b340c"
+    },
+    {
+      "file": "tools/weapon-tests/audit-v10.cjs",
+      "sha256": "80cb82174ad9401bde1334305e7de1a5166feb11426567f302f5ae7b63723a7e"
+    },
+    {
+      "file": "tools/weapon-tests/frames-after/ak74-reload-empty.png",
+      "sha256": "02d54cf4d8aa8075c2d787edcea058e4fbb08de1f9ead97877cb585661d6e8ef"
+    },
+    {
+      "file": "tools/weapon-tests/frames-after/ar15m4-reload-tactical.png",
+      "sha256": "7fea246e6e68d3be62d17b013de7423582bf4aeb68eaaffb5b03f0a677909946"
+    },
+    {
+      "file": "tools/weapon-tests/frames-after/ar15m4-run.png",
+      "sha256": "a4da4c8db8093a917ab3996cad060ea949df1028da6ffe40dfd5d0d38fa1a234"
+    },
+    {
+      "file": "tools/weapon-tests/frames-after/glock21-carry.png",
+      "sha256": "be32909297c58e9672ab08826fbff8b97feff3ed423c542ea90c171d0fe43b88"
+    },
+    {
+      "file": "tools/weapon-tests/frames-after/glock21-reload-empty.png",
+      "sha256": "956364fc2f2deed86a75bd8f224a17e473458777a206ae64675dc463af7182b3"
+    },
+    {
+      "file": "tools/weapon-tests/frames-after/m870-reload-empty.png",
+      "sha256": "6e30a1939441f958f5b0a430db56c5abf864be2b42b5e697786e55a91a2c8d2d"
+    },
+    {
+      "file": "tools/weapon-tests/frames-after/mp5a3-reload-empty.png",
+      "sha256": "cfb9658a08d2149f922a180197070e3d6e1e6de8cfc3709723c2a493e2668a24"
+    },
+    {
+      "file": "tools/weapon-tests/frames-before/ak74-reload-empty.png",
+      "sha256": "c727ae026e1ec83601af3a3300cca37a01466a714379f550407e17975017caae"
+    },
+    {
+      "file": "tools/weapon-tests/frames-before/ar15m4-reload-tactical.png",
+      "sha256": "ddedd1e48cbf4bdf3185754716c9ee36c2d40726a5569b10ab89648607cf2be9"
+    },
+    {
+      "file": "tools/weapon-tests/frames-before/ar15m4-run.png",
+      "sha256": "8a2095199da95a4e10147442f04198e88065b86ae6f2b3a64ba8c2e8effdfebc"
+    },
+    {
+      "file": "tools/weapon-tests/frames-before/glock21-carry.png",
+      "sha256": "d078376f435073d1830269547c11c4709e057ab0ce8cad33ca533c18d092ece2"
+    },
+    {
+      "file": "tools/weapon-tests/frames-before/glock21-reload-empty.png",
+      "sha256": "59d08b29ea38a7f8aba3ecef7fe19c9fc8cfaf1d21f00936ff3f86a20d5cdff0"
+    },
+    {
+      "file": "tools/weapon-tests/frames-before/m870-reload-empty.png",
+      "sha256": "5cdf830a524ac3e32e7d0ef2131de06dda9ab7dc61f046a47e978df1915d1566"
+    },
+    {
+      "file": "tools/weapon-tests/frames-before/mp5a3-reload-empty.png",
+      "sha256": "e0743f5e288645eefce544083338c083887dfad577aaf6ebfe7de28989bc9b05"
+    },
+    {
+      "file": "tools/weapon-tests/frames-contacts/ak74-reload-empty.png",
+      "sha256": "90778c23514176b70e4172060782709f8dc2de7bb29a618689de555adf0eeba4"
+    },
+    {
+      "file": "tools/weapon-tests/frames-contacts/ar15m4-reload-tactical.png",
+      "sha256": "2f273596151ea3b9bd528926cf40db33d501514cda28e36e20dd7ebdaa9a1bee"
+    },
+    {
+      "file": "tools/weapon-tests/frames-contacts/ar15m4-run.png",
+      "sha256": "8a69bf261b4af0393fe998a5436d202f871b899605a71bf9b0a6275353a97afa"
+    },
+    {
+      "file": "tools/weapon-tests/frames-contacts/glock21-carry.png",
+      "sha256": "a90d5750585d84c158e6605546fd190a44ab450304f12abbe9ad5133da78ade6"
+    },
+    {
+      "file": "tools/weapon-tests/frames-contacts/glock21-reload-empty.png",
+      "sha256": "a037fa89c276538aaf81332925798f570fe46466de77c7735f3277d9fef0f2ec"
+    },
+    {
+      "file": "tools/weapon-tests/frames-contacts/m870-reload-empty.png",
+      "sha256": "8fcc5d181c38b2d97658986b33fd4bc10bf6a5673ca28f08df31f4ca9cdf5be6"
+    },
+    {
+      "file": "tools/weapon-tests/frames-contacts/mp5a3-reload-empty.png",
+      "sha256": "0fc1452f85db7685b1bf8c3c085e07156539a838e25dadb9999a428460bae585"
+    },
+    {
+      "file": "tools/weapon-tests/frames-pose2/ak74-reload-empty.png",
+      "sha256": "97ee9f53a21a5854aedda77ae6c761674ad58e42964e40f3259ff536125db017"
+    },
+    {
+      "file": "tools/weapon-tests/frames-pose2/ar15m4-reload-tactical.png",
+      "sha256": "40a6294a918282f1060c789f97be5cee95a4eeebf37d975333bc215c64e477af"
+    },
+    {
+      "file": "tools/weapon-tests/frames-pose2/ar15m4-run.png",
+      "sha256": "b712ab24f81c843d529af541932dc7ee71b86a752f6d46f71c875deb8272e281"
+    },
+    {
+      "file": "tools/weapon-tests/frames-pose2/glock21-carry.png",
+      "sha256": "459780ef838c80b7c449ce61c7fa13979d8b3ada635b681cd011b78a54307ea1"
+    },
+    {
+      "file": "tools/weapon-tests/frames-pose2/glock21-reload-empty.png",
+      "sha256": "c1d6a03b883f5bd9c1a635c1b58381484e97020a1241b920066e3f66f51cc31a"
+    },
+    {
+      "file": "tools/weapon-tests/frames-pose2/m870-reload-empty.png",
+      "sha256": "1a233a132467de67fc5a693beada3c0d0cc966b2ce4fac592084c28ce25fcb07"
+    },
+    {
+      "file": "tools/weapon-tests/frames-pose2/mp5a3-reload-empty.png",
+      "sha256": "adad4d40fdd03393b625c87a4404feeaf0362cd2dbc7a3958e8ac5c2f11fdbe5"
+    },
+    {
+      "file": "tools/weapon-tests/frames-pose3/ar15m4-reload-tactical.png",
+      "sha256": "3bf6149ac0c9a9bd89c11824417e6df80b008c60726fd0da412be31dc5e8f750"
+    },
+    {
+      "file": "tools/weapon-tests/frames-pose3/ar15m4-run.png",
+      "sha256": "a0f6d2c27785be41dfb7fe42a436cba7d8672f75adb0a6983a846ba4b01ef0cc"
+    },
+    {
+      "file": "tools/weapon-tests/frames-pose3/glock21-carry.png",
+      "sha256": "b602915b560fc5bfdd4ba198057926ccdefb5dde72545f69db4fc9301ea1353f"
+    },
+    {
+      "file": "tools/weapon-tests/frames-pose3/glock21-reload-empty.png",
+      "sha256": "e02ce57f62dd3f82feab6e2d9a887ab9fcde3b3eb9da2aa3d46b234f1f4ee709"
+    },
+    {
+      "file": "tools/weapon-tests/visual-v10.cjs",
+      "sha256": "174ffa01baf75730a9fa215e82c73bf08e2bf55135949677330621f825316ae8"
+    }
+  ]
+}

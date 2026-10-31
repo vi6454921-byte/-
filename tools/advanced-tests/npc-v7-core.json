@@ -1,0 +1,135 @@
+{
+  "pass": true,
+  "turnCases": 16,
+  "steeringFrameCases": 20,
+  "rows": [
+    {
+      "dt": 0.008333333333333333,
+      "alert": false,
+      "wrap": false,
+      "maxSpeed": 3.000000000000016,
+      "maxAcceleration": 11.000000000004917,
+      "error": 6.717261369360016e-8
+    },
+    {
+      "dt": 0.008333333333333333,
+      "alert": false,
+      "wrap": true,
+      "maxSpeed": 1.252430555555577,
+      "maxAcceleration": 11.000000000004917,
+      "error": 5.848337598787831e-10
+    },
+    {
+      "dt": 0.008333333333333333,
+      "alert": true,
+      "wrap": false,
+      "maxSpeed": 4.200000000000017,
+      "maxAcceleration": 18.000000000002814,
+      "error": 1.7852386235972517e-13
+    },
+    {
+      "dt": 0.008333333333333333,
+      "alert": true,
+      "wrap": true,
+      "maxSpeed": 1.800000000000015,
+      "maxAcceleration": 18.000000000002814,
+      "error": 2.9094646189298464e-15
+    },
+    {
+      "dt": 0.016666666666666666,
+      "alert": false,
+      "wrap": false,
+      "maxSpeed": 3.0000000000000027,
+      "maxAcceleration": 11.00000000000172,
+      "error": 6.717261369360016e-8
+    },
+    {
+      "dt": 0.016666666666666666,
+      "alert": false,
+      "wrap": true,
+      "maxSpeed": 1.2220486111111217,
+      "maxAcceleration": 11.00000000000172,
+      "error": 5.848337598787831e-10
+    },
+    {
+      "dt": 0.016666666666666666,
+      "alert": true,
+      "wrap": false,
+      "maxSpeed": 4.200000000000017,
+      "maxAcceleration": 18.000000000001215,
+      "error": 1.7852386235972517e-13
+    },
+    {
+      "dt": 0.016666666666666666,
+      "alert": true,
+      "wrap": true,
+      "maxSpeed": 1.7250000000000032,
+      "maxAcceleration": 18.000000000001215,
+      "error": 2.9094646189298464e-15
+    },
+    {
+      "dt": 0.03333333333333333,
+      "alert": false,
+      "wrap": false,
+      "maxSpeed": 3.0000000000000027,
+      "maxAcceleration": 11.00000000000012,
+      "error": 6.717261369360016e-8
+    },
+    {
+      "dt": 0.03333333333333333,
+      "alert": false,
+      "wrap": true,
+      "maxSpeed": 1.1986447181230764,
+      "maxAcceleration": 11.00000000000012,
+      "error": 5.848337598787831e-10
+    },
+    {
+      "dt": 0.03333333333333333,
+      "alert": true,
+      "wrap": false,
+      "maxSpeed": 4.200000000000017,
+      "maxAcceleration": 18.000000000000416,
+      "error": 1.7852386235972517e-13
+    },
+    {
+      "dt": 0.03333333333333333,
+      "alert": true,
+      "wrap": true,
+      "maxSpeed": 1.6097792592592564,
+      "maxAcceleration": 18.000000000000416,
+      "error": 2.9094646189298464e-15
+    },
+    {
+      "dt": 0.05,
+      "alert": false,
+      "wrap": false,
+      "maxSpeed": 3.0000000000000027,
+      "maxAcceleration": 11.000000000000018,
+      "error": 6.717261369360016e-8
+    },
+    {
+      "dt": 0.05,
+      "alert": false,
+      "wrap": true,
+      "maxSpeed": 1.1588779582026731,
+      "maxAcceleration": 11.000000000000298,
+      "error": 5.848337598787831e-10
+    },
+    {
+      "dt": 0.05,
+      "alert": true,
+      "wrap": false,
+      "maxSpeed": 4.200000000000017,
+      "maxAcceleration": 18,
+      "error": 1.7852386235972517e-13
+    },
+    {
+      "dt": 0.05,
+      "alert": true,
+      "wrap": true,
+      "maxSpeed": 1.5084199550068522,
+      "maxAcceleration": 17.99999999999997,
+      "error": 2.9094646189298464e-15
+    }
+  ]
+}

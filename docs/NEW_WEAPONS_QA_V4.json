@@ -1,0 +1,673 @@
+{
+  "patch": "new-imported-weapons-v4",
+  "date": "2026-10-24",
+  "environment": "Local Chromium WebGL2 / SwiftShader; no physical GPU FPS claim",
+  "models": {
+    "result": [
+      {
+        "id": "ar15m4",
+        "name": "AR-15 / M4",
+        "mag": 30,
+        "cal": "556",
+        "modes": [
+          "safe",
+          "semi",
+          "auto"
+        ],
+        "carrierTravel": 90,
+        "magTravel": 0.12,
+        "meshCount": 48,
+        "vertices": 51314,
+        "textured": 48,
+        "trigger": true,
+        "sights": 1,
+        "contact": true
+      },
+      {
+        "id": "glock21",
+        "name": "Glock 21 Gen4",
+        "mag": 13,
+        "cal": "45acp",
+        "modes": [
+          "semi"
+        ],
+        "carrierTravel": 36,
+        "magTravel": 0.12,
+        "meshCount": 10,
+        "vertices": 94488,
+        "textured": 10,
+        "trigger": true,
+        "sights": 1,
+        "contact": true
+      }
+    ],
+    "errors": []
+  },
+  "armory": {
+    "reports": [
+      {
+        "id": "ar15m4",
+        "list": [
+          "ak74",
+          "akm",
+          "m416",
+          "ar15m4",
+          "scar",
+          "svd",
+          "m870",
+          "mp5a3",
+          "glock18c",
+          "glock21"
+        ],
+        "selected": "ar15m4",
+        "text": "Сборка модели…\n←\nНазад\n1\nПусто\n2\nПусто\n3\nПусто\n4\nПусто\n5\nПусто\n6\nПусто\nПогода\nДень\nСнаряжение · Дельта\nГенерал Громов\n?\nОружие\nАК-74\n5,45×39\nАКМ\n7,62×39\nM416\n5,56×45 NATO\nAR-15 / M4\n5,56×45 NATO\nSCAR-H\n7,62×51 NATO\nСВД\n7,62×54R\nRemington 870\n12/76\nMP5A3\n9×19 Para\nGlock 18C\n9×19 Para\nGlock 21 Gen4\n.45 ACP\nВзять AR-15 / M4 в снаряжение\nХарактеристики\nМасса\n3.10 кг\nДлина\n825 мм\nЭргономика\n58\nОтдача вертикальная\n95\nОтдача горизонтальная\n90\nКучность\n2.0 MOA\nНачальная скорость\n880 м/с\nГромкость выстрела\n160 дБ\nЗаметность вспышки\n70\nВскидка\n270 мс\nМагазин\n30 патр.\nМодификация\nСброс\nСнаряжение\nМагазин\nPMAG 30 · 5,56×45\n+\nМеханика\nРукоять заряжания\nШтатная рукоять заряжания\n+\n30+1/30\nАВТО\nготов\nОгонь\nПерезарядка\nАВТО\nПрицел\nСлед пули\nДень\nЗвук вкл\n?",
+        "ready": 2,
+        "registered": true
+      },
+      {
+        "id": "glock21",
+        "list": [
+          "ak74",
+          "akm",
+          "m416",
+          "ar15m4",
+          "scar",
+          "svd",
+          "m870",
+          "mp5a3",
+          "glock18c",
+          "glock21"
+        ],
+        "selected": "glock21",
+        "text": "Сборка модели…\n←\nНазад\n1\nПусто\n2\nПусто\n3\nПусто\n4\nПусто\n5\nПусто\n6\nПусто\nПогода\nДень\nСнаряжение · Дельта\nГенерал Громов\n?\nОружие\nАК-74\n5,45×39\nАКМ\n7,62×39\nM416\n5,56×45 NATO\nAR-15 / M4\n5,56×45 NATO\nSCAR-H\n7,62×51 NATO\nСВД\n7,62×54R\nRemington 870\n12/76\nMP5A3\n9×19 Para\nGlock 18C\n9×19 Para\nGlock 21 Gen4\n.45 ACP\nВзять Glock 21 Gen4 в снаряжение\nХарактеристики\nМасса\n0.83 кг\nДлина\n208 мм\nЭргономика\n67\nОтдача вертикальная\n118\nОтдача горизонтальная\n100\nКучность\n4.8 MOA\nНачальная скорость\n260 м/с\nГромкость выстрела\n157 дБ\nЗаметность вспышки\n55\nВскидка\n190 мс\nМагазин\n13 патр.\nМодификация\nСброс\nСнаряжение\nМагазин\nGlock 21 · 13 патронов .45 ACP\n+\n13+1/13\nОДИНОЧНЫЙ\nготов\nОгонь\nПерезарядка\nОДИНОЧНЫЙ\nПрицел\nСлед пули\nДень\nЗвук вкл\n?",
+        "ready": 2,
+        "registered": true
+      }
+    ],
+    "errors": []
+  },
+  "game": {
+    "result": {
+      "reports": [
+        {
+          "id": "ar15m4",
+          "cap": 30,
+          "cal": "556",
+          "fired": true,
+          "emptyReload": {
+            "mag": 29,
+            "chamber": 1,
+            "reserve": 90
+          },
+          "tacticalReload": {
+            "mag": 30,
+            "chamber": 1
+          },
+          "mass": 4,
+          "diameter": 5.7,
+          "modes": [
+            "safe",
+            "semi",
+            "auto"
+          ],
+          "finite": true
+        },
+        {
+          "id": "glock21",
+          "cap": 13,
+          "cal": "45acp",
+          "fired": true,
+          "emptyReload": {
+            "mag": 12,
+            "chamber": 1,
+            "reserve": 39
+          },
+          "tacticalReload": {
+            "mag": 13,
+            "chamber": 1
+          },
+          "mass": 14.9,
+          "diameter": 11.43,
+          "modes": [
+            "semi"
+          ],
+          "finite": true
+        }
+      ],
+      "modelsLoaded": 2,
+      "marks": true,
+      "world": "angar_map"
+    },
+    "errors": []
+  },
+  "magazineContact": {
+    "result": [
+      {
+        "id": "ak74",
+        "calibrated": true,
+        "verticesInside": 0,
+        "centroidsInside": 0,
+        "worstPenetrationMm": 0,
+        "params": [
+          -0.05869999999254942,
+          -0.09714999684840443,
+          0.06300000250339505,
+          0.7100000000000001,
+          1.506,
+          1.009,
+          0.7,
+          1.5659999999999998,
+          1.1570000000000003,
+          0.7240000000000001,
+          1.3369999999999997,
+          0.8099999999999998,
+          0.785,
+          0.71,
+          1.3179999999999998,
+          0.1,
+          0,
+          0,
+          0.24800000000000014,
+          0.41000000000000003
+        ]
+      },
+      {
+        "id": "akm",
+        "calibrated": true,
+        "verticesInside": 0,
+        "centroidsInside": 0,
+        "worstPenetrationMm": 0,
+        "params": [
+          -0.05890000000000001,
+          -0.09556785697937013,
+          0.05944996109008788,
+          0.758,
+          1.3519999999999996,
+          1.141,
+          0.702,
+          1.5139999999999996,
+          1.113,
+          0.7340000000000001,
+          1.2889999999999997,
+          0.8459999999999999,
+          0.63,
+          0.9089999999999998,
+          1.5,
+          0.1,
+          0.21200000000000002,
+          0,
+          0.2679999999999999,
+          0.46799999999999997
+        ]
+      },
+      {
+        "id": "m416",
+        "calibrated": true,
+        "verticesInside": 0,
+        "centroidsInside": 0,
+        "worstPenetrationMm": 0,
+        "params": [
+          -0.05760000000000001,
+          -0.06481934356689452,
+          0.04741331100463868,
+          0.6000000000000001,
+          1.4519999999999995,
+          1.175,
+          0.55,
+          1.5899999999999999,
+          1.179,
+          0.6920000000000001,
+          1.3109999999999997,
+          0.6199999999999998,
+          0.5700000000000001,
+          0.7569999999999998,
+          1.448,
+          0.1,
+          0.02,
+          1.1,
+          0.2500000000000001,
+          0.268
+        ]
+      },
+      {
+        "id": "scar",
+        "calibrated": true,
+        "verticesInside": 0,
+        "centroidsInside": 0,
+        "worstPenetrationMm": 0,
+        "params": [
+          -0.058700000000000016,
+          -0.05507006072998046,
+          0.046,
+          0.63,
+          1.482,
+          0.717,
+          0.55,
+          1.5359999999999998,
+          0.751,
+          0.658,
+          1.1769999999999996,
+          0.7639999999999999,
+          0.55,
+          0.746,
+          0.9859999999999995,
+          0.7619999999999999,
+          0.8040000000000002,
+          0.8420000000000003,
+          0.8,
+          0.04600000000000001
+        ]
+      },
+      {
+        "id": "svd",
+        "calibrated": true,
+        "verticesInside": 0,
+        "centroidsInside": 0,
+        "worstPenetrationMm": 0,
+        "params": [
+          -0.05625000000000002,
+          -0.07698391342163087,
+          0.08853115644454958,
+          0.6940000000000001,
+          1.3459999999999999,
+          0.7569999999999999,
+          0.5900000000000001,
+          1.3779999999999997,
+          0.889,
+          0.5900000000000001,
+          1.2749999999999997,
+          0.5599999999999999,
+          0.56,
+          0.7,
+          0.7359999999999993,
+          0.3600000000000001,
+          1.1,
+          1.046,
+          0.7220000000000001,
+          -0.08
+        ]
+      },
+      {
+        "id": "mp5a3",
+        "calibrated": true,
+        "verticesInside": 0,
+        "centroidsInside": 0,
+        "worstPenetrationMm": 0,
+        "params": [
+          -0.04945000000000001,
+          -0.0785791277885437,
+          0.06179752044677728,
+          0.562,
+          1.2919999999999998,
+          1.001,
+          0.6260000000000001,
+          1.4239999999999997,
+          1.2970000000000002,
+          0.9020000000000001,
+          1.3029999999999997,
+          0.8399999999999999,
+          0.7990000000000002,
+          0.9409999999999997,
+          1.446,
+          0.1,
+          1.1,
+          1.1,
+          0.6500000000000001,
+          0.7
+        ]
+      },
+      {
+        "id": "ar15m4",
+        "calibrated": true,
+        "verticesInside": 0,
+        "centroidsInside": 0,
+        "worstPenetrationMm": 0,
+        "params": [
+          -0.05952760428488259,
+          -0.12515344950705765,
+          0.040841254499554586,
+          0.55,
+          1.2576283440589902,
+          0.8978802770730107,
+          0.7445742984563112,
+          1.381632097641006,
+          0.6249133405406028,
+          0.7594109278721736,
+          1.0012611226104198,
+          1.388,
+          0.558,
+          1.1298749863468112,
+          1.0252141751125454,
+          0.1,
+          1.005105326972902,
+          1.1,
+          0.41274292139336466,
+          0.6707177762705833
+        ]
+      },
+      {
+        "id": "glock21",
+        "calibrated": true,
+        "verticesInside": 0,
+        "centroidsInside": 0,
+        "worstPenetrationMm": 0,
+        "params": [
+          -0.0463006714873016,
+          -0.07855751959979544,
+          0.08051814197301861,
+          0.55,
+          1.2219999999999998,
+          1.215,
+          0.55,
+          1.6979999999999995,
+          0.7230000000000002,
+          0.6740000000000002,
+          1.553,
+          0.7199999999999998,
+          0.6220000000000001,
+          1.259,
+          1.2439999999999998,
+          0.31000000000000005,
+          1.1,
+          1.04,
+          0.8,
+          0.3360000000000001
+        ]
+      },
+      {
+        "id": "glock18c",
+        "calibrated": true,
+        "verticesInside": 0,
+        "centroidsInside": 0,
+        "worstPenetrationMm": 0,
+        "params": [
+          -0.046800000000000015,
+          -0.06664345708085977,
+          0.10215393406584086,
+          0.55,
+          1.2819999999999998,
+          1.141,
+          0.554,
+          1.7459999999999996,
+          0.5870000000000001,
+          0.6140000000000001,
+          1.553,
+          0.7699999999999998,
+          0.5720000000000001,
+          1.259,
+          1.2059999999999997,
+          0.29400000000000004,
+          1.1,
+          1.1,
+          0.8,
+          0.23600000000000002
+        ]
+      }
+    ],
+    "errors": [],
+    "scope": "Default magazines. Base skinned vertices and triangle centroids vs primary magazine body; not an arbitrary-attachment collision solver."
+  },
+  "reloadAndImpactRegression": {
+    "result": {
+      "tracks": [
+        {
+          "id": "ak74",
+          "mode": "tactical",
+          "keys": 15,
+          "maxAngularStepDeg": 8.950834698705318
+        },
+        {
+          "id": "ak74",
+          "mode": "empty",
+          "keys": 18,
+          "maxAngularStepDeg": 10.418176113570354
+        },
+        {
+          "id": "akm",
+          "mode": "tactical",
+          "keys": 15,
+          "maxAngularStepDeg": 9.25020217248028
+        },
+        {
+          "id": "akm",
+          "mode": "empty",
+          "keys": 18,
+          "maxAngularStepDeg": 10.33216661026385
+        },
+        {
+          "id": "m416",
+          "mode": "tactical",
+          "keys": 9,
+          "maxAngularStepDeg": 3.6527991444439114
+        },
+        {
+          "id": "m416",
+          "mode": "empty",
+          "keys": 12,
+          "maxAngularStepDeg": 4.5713853982168775
+        },
+        {
+          "id": "scar",
+          "mode": "tactical",
+          "keys": 9,
+          "maxAngularStepDeg": 3.393290751931959
+        },
+        {
+          "id": "scar",
+          "mode": "empty",
+          "keys": 12,
+          "maxAngularStepDeg": 4.5713853982168775
+        },
+        {
+          "id": "svd",
+          "mode": "tactical",
+          "keys": 15,
+          "maxAngularStepDeg": 6.660968036351008
+        },
+        {
+          "id": "svd",
+          "mode": "empty",
+          "keys": 18,
+          "maxAngularStepDeg": 11.248942595943868
+        },
+        {
+          "id": "m870",
+          "mode": "pump",
+          "keys": 22,
+          "maxAngularStepDeg": 10.5523704171307
+        },
+        {
+          "id": "mp5a3",
+          "mode": "tactical",
+          "keys": 9,
+          "maxAngularStepDeg": 4.455886188530593
+        },
+        {
+          "id": "mp5a3",
+          "mode": "empty",
+          "keys": 15,
+          "maxAngularStepDeg": 11.949403849507057
+        },
+        {
+          "id": "ar15m4",
+          "mode": "tactical",
+          "keys": 9,
+          "maxAngularStepDeg": 4.388473132032405
+        },
+        {
+          "id": "ar15m4",
+          "mode": "empty",
+          "keys": 12,
+          "maxAngularStepDeg": 4.5713853982168775
+        },
+        {
+          "id": "glock21",
+          "mode": "tactical",
+          "keys": 9,
+          "maxAngularStepDeg": 4.85791495934584
+        },
+        {
+          "id": "glock21",
+          "mode": "empty",
+          "keys": 12,
+          "maxAngularStepDeg": 7.483137587322549
+        },
+        {
+          "id": "glock18c",
+          "mode": "tactical",
+          "keys": 9,
+          "maxAngularStepDeg": 4.681810099701519
+        },
+        {
+          "id": "glock18c",
+          "mode": "empty",
+          "keys": 12,
+          "maxAngularStepDeg": 7.244797332358585
+        }
+      ],
+      "fumbles": [
+        {
+          "id": "ak74",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "ak74",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "akm",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "akm",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "m416",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "m416",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "scar",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "scar",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "svd",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "svd",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "mp5a3",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "mp5a3",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "ar15m4",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "ar15m4",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "glock21",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "glock21",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "glock18c",
+          "mode": "tactical",
+          "mechanicsPreserved": true
+        },
+        {
+          "id": "glock18c",
+          "mode": "empty",
+          "mechanicsPreserved": true
+        }
+      ],
+      "initial": 5,
+      "afterInstance": 6,
+      "movingFollow": true,
+      "capped": 50,
+      "disposed": true,
+      "programs": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    "errors": []
+  },
+  "v3FilesByteIdentical": {
+    "vendor/bullet-impacts/Decals.ts": true,
+    "vendor/bullet-impacts/bullet-impacts.js": true,
+    "js/polygon/18_fx.js": true,
+    "js/polygon/03_viewmodel_vm.js": true
+  },
+  "sourceModels": [
+    {
+      "id": "ar15m4",
+      "source": "ar15_m4.glb",
+      "sourceSHA256": "51d0962dc781770374b20f638323a7626a5215916b900d878f36fefed5bcc9d3",
+      "sourceBytes": 4585260,
+      "gameAsset": "assets/models/weapons/ar15_m4.glb",
+      "gameSHA256": "7d2e09907de00335bb701614a561d8842c6ed12e12c536da9a2592014b0451ab",
+      "gameBytes": 4584820
+    },
+    {
+      "id": "glock21",
+      "source": "Glock21_Gen4_Reworked_v2.fbx",
+      "sourceSHA256": "95ecbdfacb6da885b30c91c99404f5cb686e269e18b030aeba08a71e87e2409f",
+      "sourceBytes": 72943772,
+      "gameAsset": "assets/models/weapons/glock21_gen4.glb",
+      "gameSHA256": "ccb1197762cd1cd60558150154a93e23ca5cb11e3ba1bdd016deb5171540dd74",
+      "gameBytes": 14291064
+    }
+  ],
+  "limitations": [
+    "Contact sample checks base skinned vertices and triangle centroids against default primary magazine bodies in a reference grip, not all surfaces in every animation frame.",
+    "Imported fixed model assemblies use stock magazines and mechanisms, not the full attachment library of procedural models.",
+    "New sounds reuse existing AEGIS sample banks, not dedicated M4/.45 recordings."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "fps": 30,
+  "frames": 120,
+  "clips": [
+    {
+      "mode": "walk",
+      "start": 0,
+      "end": 39
+    },
+    {
+      "mode": "jog",
+      "start": 40,
+      "end": 79
+    },
+    {
+      "mode": "armed-run",
+      "start": 80,
+      "end": 119
+    }
+  ],
+  "errors": []
+}

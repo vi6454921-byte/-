@@ -1,0 +1,9 @@
+{
+  "poses": [
+    "standing",
+    "crouch",
+    "prone",
+    "fallen"
+  ],
+  "errors": []
+}

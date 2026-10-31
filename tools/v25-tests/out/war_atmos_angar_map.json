@@ -1,0 +1,43 @@
+{
+  "map": "angar_map",
+  "quality": "low",
+  "plumes": [
+    {
+      "a": 4.99,
+      "d": 4586,
+      "big": 1.09
+    },
+    {
+      "a": 1.19,
+      "d": 4474,
+      "big": 0.89
+    }
+  ],
+  "craters": 0,
+  "craterKinds": {
+    "big": 0,
+    "small": 0
+  },
+  "minBaseDist": null,
+  "roofHits": 0,
+  "battle10min": {
+    "mg": 21,
+    "auto": 18,
+    "single": 18,
+    "art": 11,
+    "duel": 12
+  },
+  "battleBefore": {
+    "mg": 0,
+    "auto": 0,
+    "single": 0,
+    "art": 0,
+    "duel": 0
+  },
+  "msWithout": 15.2,
+  "msWith": 17.8,
+  "shotTimes": [
+    "plume0_high:26828",
+    "plume1_high:20"
+  ]
+}

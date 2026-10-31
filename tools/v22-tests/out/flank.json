@@ -1,0 +1,38 @@
+{
+ "t": 63,
+ "out": {
+  "alpha_2": [
+   "30.8 take-cover 0 3.2 complete 4 0 1 x  0 "
+  ],
+  "alpha_soldier_5": [
+   "30.8 take-cover 0 14.2 complete 0 0 0.76 x  0 ",
+   "31.9 flank 0 14.4 complete 22 2.1 0.16 g R 1 ",
+   "33 flank 0 13.8 complete 17 4.4 0 g R 1 ",
+   "34.1 take-cover 0 13.3 complete 17 0 1 x  0 ",
+   "35.1 take-cover 0 13.3 complete 17 0 1 x  0 ",
+   "36.2 take-cover 0 13.3 complete 17 0 1 x  0 ",
+   "37.3 take-cover 0 13.3 complete 17 0 1 x  0 ",
+   "38.3 take-cover 0 13.3 complete 17 0 1 x  0 ",
+   "39.4 take-cover 0 13.3 complete 17 0 1 x  0 ",
+   "40.5 take-cover 0 13.3 complete 17 0 1 x  0 ",
+   "41.6 take-cover 0 13.3 complete 17 0 1 x  0 ",
+   "42.7 take-cover 0 13.3 complete 5 0.1 0.76 x  1 "
+  ],
+  "alpha_soldier_2": [
+   "36.7 flank 0 10.9 complete 13 2 0 g R 1 "
+  ],
+  "alpha_soldier_8": [
+   "41.6 flank 0 14.6 complete 7 1.1 0 g R 1 ",
+   "42.7 flank 0 13.8 complete 6 1.1 0 g R 1 ",
+   "43.8 take-cover 0 13.7 complete 6 0 1 x  0 ",
+   "44.8 take-cover 0 13.7 complete 6 0 1 x  0 ",
+   "45.9 take-cover 0 13.7 complete 6 0 1 x  0 ",
+   "47 take-cover 0 13.7 complete 6 0 1 x  0 ",
+   "48 take-cover 0 13.7 complete 6 0 1 x  0 ",
+   "49.1 take-cover 0 13.7 complete 6 0 1 x  0 ",
+   "50.2 take-cover 0 13.7 complete 6 0 1 x  0 ",
+   "51.2 take-cover 0 13.7 complete 6 0 1 x  0 ",
+   "52.3 take-cover 0 13.8 complete 2 0.1 0.88 x  1 "
+  ]
+ }
+}

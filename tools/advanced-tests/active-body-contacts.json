@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "scope": "Self-contact filtering, measured foot load, dynamic fall transition, 10s finite fall, cleanup. Not get-up acceptance.",
+  "loadN": 778.4094304112017,
+  "expectedWeightN": 746.5410000000002,
+  "modeError": 0,
+  "selfContacts": 5962,
+  "handSupports": 1097,
+  "kneeSupports": 48
+}

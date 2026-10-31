@@ -1,0 +1,108 @@
+{
+ "ctx": "running",
+ "pack": {
+  "pack": 2,
+  "clips": 400,
+  "decoded": 0,
+  "live": 0,
+  "busy": 0
+ },
+ "voices": [
+  "grom",
+  "hrip",
+  "sokol",
+  "tihiy"
+ ],
+ "profiles": [
+  "alpha_2:hrip@1",
+  "alpha_soldier_0:sokol@1",
+  "alpha_soldier_2:hrip@0.97",
+  "alpha_soldier_3:hrip@0.97",
+  "alpha_soldier_4:grom@1.03",
+  "alpha_soldier_5:hrip@1.03"
+ ],
+ "contact": {
+  "ok": true,
+  "cap": "Генерал Тихонов: Контакт! 140 градусов, юго-восток! Метров 60!",
+  "last": {
+   "who": "alpha_2",
+   "keys": [
+    "op1",
+    "az140",
+    "d60"
+   ],
+   "voice": "hrip",
+   "rate": 1,
+   "radio": true,
+   "vol": 1.6,
+   "dur": 5.33
+  }
+ },
+ "contactLvl": {
+  "peakRmsDb": -7.1,
+  "activeRmsDb": -15.7,
+  "activeShare": 0.83
+ },
+ "busyBlock": {
+  "lastWho": "alpha_2"
+ },
+ "enemy": {
+  "ok": true,
+  "cap": "Генерал Громов: Граната!",
+  "last": {
+   "who": "delta_1",
+   "keys": [
+    "grenade0"
+   ],
+   "voice": "hrip",
+   "rate": 1,
+   "radio": false,
+   "vol": 0.807,
+   "dur": 0.71
+  }
+ },
+ "enemyLvl": {
+  "peakRmsDb": -16.1,
+  "activeRmsDb": -20.6,
+  "activeShare": 0.47
+ },
+ "enemyFar": false,
+ "medic": {
+  "ok": true,
+  "cap": "Генерал Громов: Граната!",
+  "last": {
+   "who": "alpha_soldier_2",
+   "keys": [
+    "aid0"
+   ],
+   "voice": "hrip",
+   "rate": 0.97,
+   "radio": true,
+   "vol": 1.6,
+   "dur": 1.08
+  }
+ },
+ "interrupt": {
+  "ok": true,
+  "cap": "Альфа-4: Осколочная пошла!",
+  "last": {
+   "who": "alpha_soldier_3",
+   "keys": [
+    "grenade1"
+   ],
+   "voice": "hrip",
+   "rate": 0.97,
+   "radio": true,
+   "vol": 1.6,
+   "dur": 1.33
+  }
+ },
+ "pausedLive": 0,
+ "final": {
+  "pack": 2,
+  "clips": 400,
+  "decoded": 6,
+  "live": 0,
+  "busy": 1.9913645159783755
+ }
+}

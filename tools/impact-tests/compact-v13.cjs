@@ -1,0 +1,9 @@
+const fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict'),T=require('three');
+function inspect(file){globalThis.THREE=T;const oldRandom=Math.random;Math.random=()=>.5;vm.runInThisContext(fs.readFileSync(file,'utf8'));const scene=new T.Scene(),d=new GBulletImpacts.Decals(scene),out={};
+for(const [kind,ids] of Object.entries(d.layerOf)){let covered=0,dark=0,shadow=0;const col=d.textures[0].image.data;for(const id of ids)for(let i=0;i<256*256;i++){const j=(id*256*256+i)*4,a=col[j+3]/255,lum=(.2126*col[j]+.7152*col[j+1]+.0722*col[j+2])/255;covered+=a;if(lum<.20)dark+=a;shadow+=(1-lum)*a;}
+ const m=new T.Mesh(new T.PlaneGeometry(2,2),new T.MeshStandardMaterial());scene.add(m);m.updateMatrixWorld(true);d.add(new T.Vector3(),new T.Vector3(0,0,1),kind,undefined,new T.Vector3(0,0,-1),1,m);const slot=d.ring.at(-1),st=d.slots[slot];let min=Infinity,max=-Infinity;for(let j=0;j<st.used;j++){const x=d.aPos.getX(slot*768+j);min=Math.min(min,x);max=Math.max(max,x);}const width=max-min;out[kind]={projectorWidthM:width,coveredTexels:covered/ids.length,darkTexels:dark/ids.length,darkAreaM2:dark/ids.length/(256*256)*width*width,weightedShadowM2:shadow/ids.length/(256*256)*width*width};scene.remove(m);}
+d.dispose();Math.random=oldRandom;return out;}
+const before=JSON.parse(fs.readFileSync('docs/COMPACT_IMPACTS_BASELINE.json','utf8')),after=inspect('vendor/bullet-impacts/bullet-impacts.js');
+for(const k of ['wood','metal','paper','fabric','soil']){assert(after[k].projectorWidthM<before[k].projectorWidthM*.75,k+' width');assert(after[k].darkAreaM2<before[k].darkAreaM2*.45,k+' dark area');}
+assert.deepEqual(after.concrete,before.concrete,'concrete unchanged');
+const report={pass:true,before,after};fs.writeFileSync('docs/COMPACT_IMPACTS_V13_QA.json',JSON.stringify(report,null,2));console.log(JSON.stringify(report));

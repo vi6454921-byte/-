@@ -1,0 +1,156 @@
+{
+  "version": "18.4.2-active-body-experimental",
+  "base": "18.4; previous experimental branch 18.4.1",
+  "fullLivingBodyMigrationReady": false,
+  "enabledInNormalGameplay": false,
+  "build": {
+    "strictTypeScript": "PASS",
+    "transpile": "PASS",
+    "modules": 10,
+    "npmTest": "PASS",
+    "npmSuites": 8
+  },
+  "infrastructure": {
+    "status": "PASS",
+    "scenarios": 15,
+    "report": "tools/advanced-tests/active-body-core.json",
+    "kneeHingesAndLimitsValidated": true,
+    "impulseAndMultibodyCleanupValidated": true
+  },
+  "motorCalibration": {
+    "status": "PASS",
+    "rapier": "0.19.3",
+    "compoundRotations": 5,
+    "report": "tools/advanced-tests/active-body-motors.json"
+  },
+  "fullMigrationAcceptance": {
+    "status": "FAIL",
+    "results": [
+      {
+        "name": "30s_balance_with_6Ns_chest_push",
+        "pass": true,
+        "stableAtEnd": 23.79999999999993,
+        "peakTilt": 0.08532804142763244
+      },
+      {
+        "name": "physical_walk_6m_and_stop",
+        "pass": false,
+        "actualDistance": 1.3396259546279907,
+        "stepsStarted": 8,
+        "stableAtEnd": 7.116666666666647,
+        "peakTilt": 0.369198732394325
+      },
+      {
+        "name": "60Ns_forward_push_fall_get_up",
+        "pass": false,
+        "recoveryRequested": true,
+        "stableAtEnd": 0,
+        "peakTilt": 1.9385963604741572
+      }
+    ],
+    "expectedExitCode": 1,
+    "report": "tools/advanced-tests/active-body-acceptance.json",
+    "fallTestDirection": "60 Ns forward (negative Z); lateral 60 Ns can be held without falling. No forced release/reset in test."
+  },
+  "minuteWalkDiagnostic": {
+    "scope": "Flat fixture calibrated from actual asset. Movement commanded between 2s and35s; observed until60s. Does not certify combat speed, terrain or get-up.",
+    "allSamplesStanding": true,
+    "completedSteps": 14,
+    "missedSteps": 0,
+    "netForwardDistanceMeters": 2.3706890884786844,
+    "maxSampledTiltRadians": 0.15021524396476216,
+    "report": "tools/advanced-tests/active-body-walk-current.json"
+  },
+  "realModelBrowserDiagnostics": {
+    "scope": "15s stance/push per preset, articulation and render diagnostic. Not full-game integration.",
+    "pageErrors": [],
+    "webGLerror": 0,
+    "models": [
+      {
+        "preset": "delta_1",
+        "parts": 19,
+        "dynamic": true,
+        "hiddenActors": 0,
+        "stateAtEnd": "standing",
+        "maxTiltRadians": 0.061728896960290096,
+        "minHipHeightMeters": 0.9496180415153503,
+        "maxJointGapMeters": 8.972561088615774e-08
+      },
+      {
+        "preset": "delta_2",
+        "parts": 19,
+        "dynamic": true,
+        "hiddenActors": 0,
+        "stateAtEnd": "standing",
+        "maxTiltRadians": 0.04098625936872864,
+        "minHipHeightMeters": 0.9125028252601624,
+        "maxJointGapMeters": 8.413744651883427e-08
+      },
+      {
+        "preset": "alpha_1",
+        "parts": 19,
+        "dynamic": true,
+        "hiddenActors": 0,
+        "stateAtEnd": "standing",
+        "maxTiltRadians": 0.06865650576708392,
+        "minHipHeightMeters": 0.9713801741600037,
+        "maxJointGapMeters": 9.523646610217309e-08
+      },
+      {
+        "preset": "alpha_2",
+        "parts": 19,
+        "dynamic": true,
+        "hiddenActors": 0,
+        "stateAtEnd": "standing",
+        "maxTiltRadians": 0.06383421458583408,
+        "minHipHeightMeters": 0.937126874923706,
+        "maxJointGapMeters": 8.212501875509202e-08
+      }
+    ],
+    "report": "tools/advanced-tests/active-body-browser.json"
+  },
+  "remaining": [
+    "Reliable physical get-up and automatic recovery",
+    "Combat-speed gait, catch step, crouch/prone/jump/vault and terrain",
+    "Self-collisions and anatomical limits beyond knees",
+    "Full living-body integration for all squad/enemy actors, gun/FP/medical/death/revive",
+    "Full-battle 12-body performance and three-map certification"
+  ],
+  "constraints": {
+    "allMainSegmentsDynamic": true,
+    "gravityScale": 1,
+    "worldAnchor": false,
+    "kinematicPelvis": false,
+    "KCCWhileAttached": false,
+    "directLiveBodyTransformWritesAfterCreation": false,
+    "referenceIK": "joint motor inputs only; render reads physics",
+    "selfCollision": false,
+    "allMotorForceCapsValidated": false
+  },
+  "performance": {
+    "FPSImprovementClaimed": false,
+    "max12IsAllocationLimitNotFPSCertification": true,
+    "additionalSolverIterationsPerSegment": 12,
+    "mainGamePhysicsIterations": 8,
+    "optimizations": "Motor model initialized once; cached per-step tuning; only foot support contacts queried. No measured full-game speedup."
+  },
+  "validationLimits": {
+    "WindowsBATExecuted": false,
+    "threeMapPhysicalBodyBattleTested": false,
+    "userGPUPerformanceMeasured": false
+  },
+  "sourceSHA256": {
+    "src/advanced/active-body.ts": "ad45457b81277f70b77c498c919b1b31011283ae5238c596554abcb3e9d8dbf5",
+    "js/advanced/active-body.js": "cfe095517cfc8f19f75e1f6549f7b55b3e7f515a5aeeb04bd91a17ed6e36696c",
+    "src/advanced/physics.ts": "dbb8f8bb488e32ce6ab537aeefda580e59085f8f3b13eb5d11cca00453877dbe",
+    "js/advanced/physics.js": "16c9568d368bd6c8dd9699008eb5139fcf84ee9dd4226b670ed25f70a29a47ea"
+  },
+  "normalGameplayRenderSmoke": {
+    "map": "angar_map",
+    "FPVisible": true,
+    "gunVisible": true,
+    "glError": 0,
+    "pageErrors": [],
+    "scope": "Normal inherited gameplay, not active-body combat integration"
+  }
+}

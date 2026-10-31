@@ -1,0 +1,58 @@
+{
+  "scope": "CPU-only fixture in Node VM, 30 warmup+90 measured steps. No render, AI, navigation, guns or battle. Not FPS or hardware guarantee.",
+  "rows": [
+    {
+      "profile": "default_full_articulation",
+      "count": 1,
+      "meanStepMs": 15.884728455555564,
+      "p95StepMs": 16.154682000000093,
+      "controlMs": 0.4200915222222281,
+      "rapierMs": 15.284979477777783,
+      "contactsMs": 0.16253322222222802,
+      "allFinite": true,
+      "states": [
+        "standing"
+      ]
+    },
+    {
+      "profile": "default_full_articulation",
+      "count": 4,
+      "meanStepMs": 63.173958333333395,
+      "p95StepMs": 63.71903200000088,
+      "controlMs": 1.4173425666667754,
+      "rapierMs": 61.2203927111111,
+      "contactsMs": 0.5053959888889494,
+      "allFinite": true,
+      "states": [
+        "standing",
+        "standing",
+        "standing",
+        "standing"
+      ]
+    },
+    {
+      "profile": "default_full_articulation",
+      "count": 12,
+      "meanStepMs": 188.40993394444453,
+      "p95StepMs": 191.01753699999972,
+      "controlMs": 3.622737188888944,
+      "rapierMs": 183.4800757555553,
+      "contactsMs": 1.2739076666666127,
+      "allFinite": true,
+      "states": [
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "scope": "CPU-only fixture in Node VM, 30 warmup+90 measured steps. No render, AI, navigation, guns or battle. Not FPS or hardware guarantee.",
+  "rows": [
+    {
+      "splitArms": false,
+      "count": 1,
+      "meanStepMs": 16.912154088888897,
+      "p95StepMs": 21.07180100000005,
+      "controlMs": 0.4673131333333206,
+      "rapierMs": 16.20467152222222,
+      "contactsMs": 0.2134834444444323,
+      "allFinite": true,
+      "states": [
+        "standing"
+      ]
+    },
+    {
+      "splitArms": false,
+      "count": 4,
+      "meanStepMs": 63.79516522222222,
+      "p95StepMs": 67.1881940000003,
+      "controlMs": 1.392818088888867,
+      "rapierMs": 61.859991955555486,
+      "contactsMs": 0.5107706111111636,
+      "allFinite": true,
+      "states": [
+        "standing",
+        "standing",
+        "standing",
+        "standing"
+      ]
+    },
+    {
+      "splitArms": false,
+      "count": 12,
+      "meanStepMs": 192.77742217777757,
+      "p95StepMs": 219.59188699999868,
+      "controlMs": 3.616142433332991,
+      "rapierMs": 187.76840922222235,
+      "contactsMs": 1.3591914666668647,
+      "allFinite": true,
+      "states": [
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing"
+      ]
+    },
+    {
+      "splitArms": true,
+      "count": 1,
+      "meanStepMs": 7.83582954444452,
+      "p95StepMs": 7.988257999997586,
+      "controlMs": 0.3511052555554973,
+      "rapierMs": 7.36495799999967,
+      "contactsMs": 0.10986386666683959,
+      "allFinite": true,
+      "states": [
+        "standing"
+      ]
+    },
+    {
+      "splitArms": true,
+      "count": 4,
+      "meanStepMs": 31.241960222222165,
+      "p95StepMs": 31.765659000004234,
+      "controlMs": 1.1846910333329612,
+      "rapierMs": 29.61184257777786,
+      "contactsMs": 0.41920539999919126,
+      "allFinite": true,
+      "states": [
+        "standing",
+        "standing",
+        "standing",
+        "standing"
+      ]
+    },
+    {
+      "splitArms": true,
+      "count": 12,
+      "meanStepMs": 92.55171693333347,
+      "p95StepMs": 93.49383600000147,
+      "controlMs": 3.4060883888886666,
+      "rapierMs": 87.91451975555505,
+      "contactsMs": 1.2003435999999055,
+      "allFinite": true,
+      "states": [
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing",
+        "standing"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "map": "stroyka_zarechye_v2",
+  "quality": "low",
+  "plumes": [
+    {
+      "a": 7.07,
+      "d": 4553,
+      "big": 0.76
+    },
+    {
+      "a": 3.66,
+      "d": 3598,
+      "big": 1.24
+    }
+  ],
+  "craters": 10,
+  "craterKinds": {
+    "big": 2,
+    "small": 8
+  },
+  "minBaseDist": 35,
+  "roofHits": 0,
+  "battle10min": {
+    "mg": 16,
+    "auto": 17,
+    "single": 11,
+    "art": 4,
+    "duel": 5
+  },
+  "battleBefore": {
+    "mg": 0,
+    "auto": 0,
+    "single": 0,
+    "art": 0,
+    "duel": 0
+  },
+  "msWithout": 19.9,
+  "msWith": 21.1,
+  "shotTimes": [
+    "plume0_high:69548",
+    "plume0_ground:31",
+    "plume1_high:17716",
+    "plume1_ground:18",
+    "crater0_r1.1small:12881",
+    "crater1_r0.9small:135",
+    "crater2_r0.9small:80",
+    "crater3_r0.9small:39"
+  ]
+}

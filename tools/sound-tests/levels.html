@@ -1,0 +1,81 @@
+<!doctype html><meta charset="utf-8"><title>AEGIS v19 — уровни записей против синтеза</title>
+<body style="font:13px monospace;background:#111;color:#ddd"><pre id="out">идёт рендер…</pre>
+<script src="../../js/polygon/02_util.js"></script>
+<script src="../../js/polygon/19_audio.js"></script>
+<script src="../../assets/snd/sfx_pack.js"></script>
+<script src="../../assets/snd/amb_pack.js"></script>
+<script src="../../js/polygon/28b_audio_samples.js"></script>
+<script>
+/* Рендер одного события в OfflineAudioContext через настоящий тракт GAudio
+   (микрофон бодикама, компрессор): synth (sfxRecorded=false) и запись. */
+const SR = 48000;
+const RND0 = Math.random;
+function seed(n) { let x = (n * 2654435761) >>> 0 || 1; Math.random = () => { x ^= x << 13; x >>>= 0; x ^= x >>> 17; x ^= x << 5; x >>>= 0; return x / 4294967296; }; }
+async function render(fn, sec, rec, sd) {
+  seed(sd || 1);
+  globalThis.AEGIS_SETTINGS = { sfxRecorded: rec };
+  const AC0 = window.AudioContext;
+  window.AudioContext = function () { return new OfflineAudioContext(2, Math.round(SR * sec), SR); };
+  const A = GAudio.create(); A.ambOn = false;
+  const ctx = A.init(); window.AudioContext = AC0;
+  await GAudioSamples.decodeOneShots(ctx);
+  fn(A);
+  const buf = await ctx.startRendering();
+  const L = buf.getChannelData(0), R = buf.getChannelData(1);
+  let pk = 0, s = 0;
+  for (let i = 0; i < L.length; i++) { const v = 0.5 * (L[i] + R[i]); s += v * v; pk = Math.max(pk, Math.abs(L[i]), Math.abs(R[i])); }
+  /* RMS по самым громким 300 мс (скользящее окно 10 мс) — «громкость события» */
+  const w = 480, n = Math.floor(L.length / w), e = [];
+  for (let k = 0; k < n; k++) { let q = 0; for (let i = k * w; i < (k + 1) * w; i++) { const v = 0.5 * (L[i] + R[i]); q += v * v; } e.push(q / w); }
+  let best = 0; const win = 30;
+  for (let k = 0; k + win <= e.length; k++) { let q = 0; for (let j = 0; j < win; j++) q += e[k + j]; best = Math.max(best, q / win); }
+  const db = (x) => (20 * Math.log10(Math.max(1e-9, x))).toFixed(1);
+  return { pk: db(pk), rms300: db(Math.sqrt(best)), rmsAll: db(Math.sqrt(s / L.length)) };
+}
+const TESTS = {
+  'explosion m67 10m': [(A) => A.explosion({ dist: 10 }, 'm67'), 3],
+  'explosion m67 60m': [(A) => A.explosion({ dist: 60, delay: 0 }, 'm67'), 3],
+  'explosion pmn 8m': [(A) => A.explosion({ dist: 8 }, 'pmn'), 3],
+  'explosion tm 25m': [(A) => A.explosion({ dist: 25 }, 'tm'), 4],
+  'explosion ozm 15m': [(A) => A.explosion({ dist: 15 }, 'ozm'), 3],
+  'bulletPass crack': [(A) => A.bulletPass({ gain: 1 }, 1), 1],
+  'bulletPass whizz': [(A) => A.bulletPass({ gain: 1, delay: 0.3 }, 0), 1],
+  'bodyHit flesh 5m': [(A) => A.bodyHit('flesh', { gain: 0.8 }), 1],
+  'metalPing': [(A) => A.metalPing({ gain: 0.8 }, false), 1.5],
+  'metalPing big': [(A) => A.metalPing({ gain: 0.8 }, true), 2],
+  'ricochet': [(A) => A.ricochet({ gain: 0.8 }, 1), 1],
+  'caseHit': [(A) => A.caseHit(0.8), 1],
+  'explosion m67 150m': [(A) => A.explosion({ dist: 150 }, 'm67'), 3.5],
+};
+/* фон: synth (ветер/листва/шипение) против записанной петли, RMS последних 4 с из 8 */
+window.measureAmb = async (key, map, wx) => {
+  const out = {};
+  for (const rec of [false, true]) {
+    seed(3); globalThis.AEGIS_SETTINGS = { sfxRecorded: rec };
+    const AC0 = window.AudioContext;
+    window.AudioContext = function () { return new OfflineAudioContext(2, SR * 8, SR); };
+    const A = GAudio.create(); const ctx = A.init(); window.AudioContext = AC0;
+    if (rec) { await GAudioSamples.loadLoop(ctx, key); A.setScene({ map, wx }); await new Promise(r => setTimeout(r, 100)); }
+    const buf = await ctx.startRendering();
+    const L = buf.getChannelData(0), R = buf.getChannelData(1); let s = 0, n = 0;
+    for (let i = SR * 4; i < L.length; i++) { const v = 0.5 * (L[i] + R[i]); s += v * v; n++; }
+    out[rec ? 'rec' : 'synth'] = (10 * Math.log10(s / n)).toFixed(1);
+  }
+  return out;
+};
+window.measure = async (name, rec, cal, seeds) => {
+  if (cal) Object.assign(GAudioSamples.CAL, cal);
+  const [fn, sec] = TESTS[name]; const n = seeds || 3; let r = 0, p = 0;
+  for (let i = 1; i <= n; i++) { const m = await render(fn, sec, rec, i * 7); r += +m.rms300; p += +m.pk; }
+  return { rms300: (r / n).toFixed(1), pk: (p / n).toFixed(1) };
+};
+if (/fit=1/.test(location.search)) window.__RES = { fitMode: true }; else (async () => {
+  const res = {};
+  for (const [k, [fn, sec]] of Object.entries(TESTS)) {
+    const a = await render(fn, sec, false), b = await render(fn, sec, true);
+    res[k] = { synth: a, rec: b, diff300: (b.rms300 - a.rms300).toFixed(1) };
+  }
+  window.__RES = res;
+  document.getElementById('out').textContent = Object.entries(res).map(([k, r]) => k.padEnd(22) + ' synth pk ' + r.synth.pk + ' rms ' + r.synth.rms300 + ' | rec pk ' + r.rec.pk + ' rms ' + r.rec.rms300 + ' | Δ ' + r.diff300 + ' dB').join('\n');
+})();
+</script>

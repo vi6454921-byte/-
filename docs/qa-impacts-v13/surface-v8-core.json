@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "cases": 15,
+  "rows": [
+    "per-mark linear tint attribute",
+    "removed owner clears mark",
+    "replaced source geometry clears mark",
+    "distant edit in merged mesh preserves unrelated mark",
+    "changed support triangles clear mark",
+    "unparented decal pool follows moving owner via local contact",
+    "hidden source suppresses mark; visibility restores without orphaning",
+    "detached ancestor clears mark",
+    "destroying one instance preserves the other mark",
+    "instance slot compaction does not teleport mark to another object",
+    "160 destroy/reuse cycles release ring and bindings",
+    "13 explicit map material aliases",
+    "material beats generic wall/hit name; dark and light host tints differ",
+    "wood fibre axis follows rotated triangle UV, not global up",
+    "texture albedo decoded once from sRGB into linear tint"
+  ]
+}

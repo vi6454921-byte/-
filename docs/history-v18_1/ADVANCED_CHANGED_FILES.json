@@ -1,0 +1,460 @@
+{
+  "source": "AEGIS_v17_3maps_TEST.zip",
+  "sourceSha256": "25e71e1b377c355ba41f14554fe2d7308e78259a5c54ff695f53f3fb45471169",
+  "version": "18.1.0-experimental",
+  "modified": [
+    {
+      "path": "README.md",
+      "sha256": "dd7fc95852e1cd8f5d5ea70ef85582355cefaf5cbc39e37b9086dcd6e1ac23d4"
+    },
+    {
+      "path": "index.html",
+      "sha256": "bf1e9c6ed50c8f797b2578cd4951b1839faa0d3702764a542d39891957daee2f"
+    },
+    {
+      "path": "js/app/aidlab.js",
+      "sha256": "4a2d9ed7324664be5337d24f2a2b0bc3936e2573625b1622533626d79ddecfc8"
+    },
+    {
+      "path": "js/app/riglab.js",
+      "sha256": "8925ce5ca63c21c6e1f3afee0eab65c5d2323f20fa5068e3420a0d4e77254716"
+    },
+    {
+      "path": "js/polygon/05d_grenades.js",
+      "sha256": "034b70818885c981e11391dd7090c0b2d7f071e4316c3da2494e9cf1ee815152"
+    },
+    {
+      "path": "js/polygon/20_player.js",
+      "sha256": "eb712c3d2bef4ebc75c380340e41ebbf3d319eec3717f4748aa5d6abeb1a535a"
+    },
+    {
+      "path": "js/polygon/23_game_damage.js",
+      "sha256": "4791cac819869dedfd827fdecd386e1026f9916e1b26867636aa491811f11e36"
+    },
+    {
+      "path": "js/polygon/27_game_flags.js",
+      "sha256": "7fef33223fd8a4675cd8f8e390589c5d57369323d83b15fa9a7ddb1d9aa2cbeb"
+    },
+    {
+      "path": "js/polygon/29_game.js",
+      "sha256": "ea3712ba6251109dc27a560c1b094caecadeb71bf5e9f90fc718512f8d3cc170"
+    },
+    {
+      "path": "js/polygon/30_game_medic.js",
+      "sha256": "80c3d40343cda04214147db64cb412294eb2c4e3ec1e551beb732b2722723258"
+    },
+    {
+      "path": "js/polygon/30b_tactics.js",
+      "sha256": "803a9581a06f46645288b1f3693fb63f15d19a54c728e4b554daf30b57107448"
+    }
+  ],
+  "added": [
+    {
+      "path": "README_ADVANCED_RU.md",
+      "sha256": "a3a008cc7f2ab8c124d7efc26dbf6ac4b96fedbbb3d441dd0679cda0723a8ff8"
+    },
+    {
+      "path": "docs/ADVANCED_VALIDATION_RU.md",
+      "sha256": "5d723defb3515dc19c22f445933dde237c8525cd8e64a5ebcaedc2ace887c9b1"
+    },
+    {
+      "path": "docs/BUILD_QA.json",
+      "sha256": "d39d3b159dcf53d2701835dcdccfdb566189bb97ae1973a1fbd9b463e92fe326"
+    },
+    {
+      "path": "js/advanced/animator.js",
+      "sha256": "f08832283d9ef696bf5a8d7be34911338757b86f3fb4a80f48240c7690920371"
+    },
+    {
+      "path": "js/advanced/combat.js",
+      "sha256": "fb1777f615e9963b86dc9d072374b2e6cf439a166ad9d84d3d521a5287ab7221"
+    },
+    {
+      "path": "js/advanced/physics.js",
+      "sha256": "554584e43a54971fbbec3d1a0f530d4ad7cb2a24903e486ab28e9e6c511dea7d"
+    },
+    {
+      "path": "js/advanced/profiler.js",
+      "sha256": "3de832585f6021da75c01bd1efb26a94b85817973fa1c9a9b6022083cad7e262"
+    },
+    {
+      "path": "js/advanced/tactics.js",
+      "sha256": "e14b13f503aebec36b643daf74fcf7bcd217d9a98946ffa8df4ef716fe4f2aed"
+    },
+    {
+      "path": "js/advanced/traversal.js",
+      "sha256": "946c53f182d516fbb8be17871cf282ef3ae45ba30cc4ae8ee28297ce31b836fd"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "6305683ddac9bc64ab5877d18cdf36b27c7b030f10e53e1f3b11b73fbbffb877"
+    },
+    {
+      "path": "package.json",
+      "sha256": "86a47e947e6055af90d6270ee096c86544d834bcae197f62d7284da4ee711dc5"
+    },
+    {
+      "path": "src/advanced/animator.ts",
+      "sha256": "2d225ee2f5818030068e2c7eb524149b6e96df6757ec8d7e07be1bfd0c305dbd"
+    },
+    {
+      "path": "src/advanced/combat.ts",
+      "sha256": "963309693b006c83476123483093e6e9ea09257c9230ea05ab5a467672978f20"
+    },
+    {
+      "path": "src/advanced/physics.ts",
+      "sha256": "a9b30b0cbf6078859c73e764580a47d673878064e0c2ba4374ba4406da0c0202"
+    },
+    {
+      "path": "src/advanced/profiler.ts",
+      "sha256": "16d495ab80ef1f6e861186475675762b8eb774196983fe6a428634fa9d6bf260"
+    },
+    {
+      "path": "src/advanced/tactics.ts",
+      "sha256": "8f2aa1adbdfa3d6b42502cc37bbe27c7aebd02a7fa0bc5d4ecd50f93a4a83f14"
+    },
+    {
+      "path": "src/advanced/traversal.ts",
+      "sha256": "92765873366e433deae3c60ff07df5c17287e80155f48fe2214ea35fa1b06ec3"
+    },
+    {
+      "path": "start-server.bat",
+      "sha256": "080c1d7c6ebf0666bced9f69be6bfc3abd80d4b1734f201cb81835402506375e"
+    },
+    {
+      "path": "start-server.sh",
+      "sha256": "c95556c1584f86855a5784c1b4412ad0c2d277098172961c086077ee3807082a"
+    },
+    {
+      "path": "tools/advanced-tests/browser-smoke.cjs",
+      "sha256": "cf554597c86b1ee35dfd34bb1fc33831dd49ec9084282676135f6d0f1634b417"
+    },
+    {
+      "path": "tools/advanced-tests/compare-cpu.cjs",
+      "sha256": "bd791ed42e5cd79f013fe718771fba4f5dd4ad1fa4dc38019877269ed91e2ce4"
+    },
+    {
+      "path": "tools/advanced-tests/continuation-browser.cjs",
+      "sha256": "c09a02eefad7110cb503f179e8180634c4d114ee0e3d2dbd2b66e03e8c3bfc64"
+    },
+    {
+      "path": "tools/advanced-tests/continuation-browser.json",
+      "sha256": "23e61d7953c7eb2c6df01b4b8e018c49342ec43c49f865a4446836ff416af5e0"
+    },
+    {
+      "path": "tools/advanced-tests/continuation-results.json",
+      "sha256": "c732f9d7d3716e29ff9201cd174ed1e76160bcb6d8c37aba7d788f56fa7f99d8"
+    },
+    {
+      "path": "tools/advanced-tests/continuation.cjs",
+      "sha256": "93e429d39ce5ee9da9fd03a266964a1b19fea591d0c7aa6578bbd4ae92540ae7"
+    },
+    {
+      "path": "tools/advanced-tests/cpu-benchmark.cjs",
+      "sha256": "4aff8198ad1323cab8264c5c2d53e41148776e30df03f2055c49bcba82d36833"
+    },
+    {
+      "path": "tools/advanced-tests/cpu-v2-baseline-repeat.json",
+      "sha256": "d0eabb78fb8d8b303eaa569de01c284af50a0eae23714ee136961050cc4f07ec"
+    },
+    {
+      "path": "tools/advanced-tests/cpu-v2-baseline.json",
+      "sha256": "15c6dc1c7ea804f05b1b15f67ced7a4fcee7c314d85d3cc0b0f70e0f4f3409d0"
+    },
+    {
+      "path": "tools/advanced-tests/cpu-v2-updated.json",
+      "sha256": "8e9a4dd5893b5262b78a69256057fc2618cc4ca90ad321573c274c84d92d9c40"
+    },
+    {
+      "path": "tools/advanced-tests/history-v1/cpu-original.json",
+      "sha256": "2292646b0d2891f7954307fa5f2fc4708ff3450cb1f28196e5467643da780978"
+    },
+    {
+      "path": "tools/advanced-tests/history-v1/cpu-updated.json",
+      "sha256": "e42ab6aa684c9787b416f0edc72d6b1444d1d072e9de9706f064ff9202fe8079"
+    },
+    {
+      "path": "tools/advanced-tests/history-v1/performance-summary.json",
+      "sha256": "f821d1ef678561c5c0d3e154280d77a37e9a66aa5429a5ec02f2feab80fb41c9"
+    },
+    {
+      "path": "tools/advanced-tests/history-v2-before-final/cpu-before-idle-cache.json",
+      "sha256": "66ee743c48a4928fe8c187f46929336aaeb1fca5416a11e0ce40285e0648c303"
+    },
+    {
+      "path": "tools/advanced-tests/integration-angar_map.json",
+      "sha256": "56cf79ef22d8f0e6f7f20239117081c3f083d0a1f8fc4eee9c395bfdf99b7973"
+    },
+    {
+      "path": "tools/advanced-tests/integration-forest_map_camp.json",
+      "sha256": "08a7a647276c11a3cc2f34c5409357951efa43da2aa70af777f967716b366ed7"
+    },
+    {
+      "path": "tools/advanced-tests/integration-stroyka_zarechye_v2.json",
+      "sha256": "e82d018efe71328f645c301c5f5905c2a92e68d4738b96c7881791f305081dc6"
+    },
+    {
+      "path": "tools/advanced-tests/medical-browser-armed.json",
+      "sha256": "51ee362539bc816c5520440b1dcf32ca731c5511e0881473b64acd06a9e29e3f"
+    },
+    {
+      "path": "tools/advanced-tests/medical-browser.cjs",
+      "sha256": "b185952ad465981f7bd778905eb4ed58eac14d4d975652bc77d87e1bb4d56f41"
+    },
+    {
+      "path": "tools/advanced-tests/medical-browser.json",
+      "sha256": "92b892914e86c91fd9b4758e347b315fa34f7e7fe665b8b1569e245fb78356c9"
+    },
+    {
+      "path": "tools/advanced-tests/performance-summary.json",
+      "sha256": "bd7dfdea71eb65b1d1216aa0183755c27f0981b0c771c1f891354915f9cb97d1"
+    },
+    {
+      "path": "tools/advanced-tests/results.json",
+      "sha256": "94f07443c7533d5391928c0cff9d707eb1955d0db2d431312b42b4b9168d3723"
+    },
+    {
+      "path": "tools/advanced-tests/runtime.cjs",
+      "sha256": "6340ff35f41c9777731f44a37e6830c390ccac1db4aaef71ed0c31d44ff66f75"
+    },
+    {
+      "path": "tools/advanced-tests/visual-crouch.png",
+      "sha256": "1b0d3177142bde8bbbaaad3431ec9b48b06f9394116f800194a79fa6eca86baa"
+    },
+    {
+      "path": "tools/advanced-tests/visual-fallen.png",
+      "sha256": "bdf122c9605914f0bbe936edf208524d52525874bcee9d911d91c4426d190a03"
+    },
+    {
+      "path": "tools/advanced-tests/visual-prone.png",
+      "sha256": "3fe640a3c4bf0fc252a385fbf7de32fc19f63b510703e95d09e873a90a095c94"
+    },
+    {
+      "path": "tools/advanced-tests/visual-smoke.cjs",
+      "sha256": "ba0604fc1763db638f70404b52ded7058bb7b594630b302f1a0413e119f6ce03"
+    },
+    {
+      "path": "tools/advanced-tests/visual-standing.png",
+      "sha256": "06b959dff282062a5078fa553d2369a8dcd8233006fe887740f70995e1e5ecd5"
+    },
+    {
+      "path": "tools/build-advanced.cjs",
+      "sha256": "7c999f94fa7b99cbc095b0cc1cc7b704d7368051332959d6eef9b5f75baf9f27"
+    },
+    {
+      "path": "tsconfig.json",
+      "sha256": "f7ff4e2abfc3871671735c7d67d645ec929aa1c39b15faf9bfeb3cd3c51d0d98"
+    },
+    {
+      "path": "vendor/rapier/LICENSE",
+      "sha256": "ceacfa4d7fa67df64ab09a56fe248c50a3bfc9bc00374d69bd74ad763b14b89c"
+    },
+    {
+      "path": "vendor/rapier/package.json",
+      "sha256": "0e0b00bc0e8d0dd7afed4da18831a5bc416fce03637c64b48329898dfd9e3320"
+    },
+    {
+      "path": "vendor/rapier/rapier.js",
+      "sha256": "7932ea7f8369df92f2ac092c309759cfd283c9290f71817501706b50c948e9f1"
+    }
+  ],
+  "removed": [],
+  "changedSincePreviousExperimental": [
+    {
+      "path": "README.md",
+      "sha256": "dd7fc95852e1cd8f5d5ea70ef85582355cefaf5cbc39e37b9086dcd6e1ac23d4"
+    },
+    {
+      "path": "README_ADVANCED_RU.md",
+      "sha256": "a3a008cc7f2ab8c124d7efc26dbf6ac4b96fedbbb3d441dd0679cda0723a8ff8"
+    },
+    {
+      "path": "docs/ADVANCED_VALIDATION_RU.md",
+      "sha256": "5d723defb3515dc19c22f445933dde237c8525cd8e64a5ebcaedc2ace887c9b1"
+    },
+    {
+      "path": "docs/BUILD_QA.json",
+      "sha256": "d39d3b159dcf53d2701835dcdccfdb566189bb97ae1973a1fbd9b463e92fe326"
+    },
+    {
+      "path": "index.html",
+      "sha256": "bf1e9c6ed50c8f797b2578cd4951b1839faa0d3702764a542d39891957daee2f"
+    },
+    {
+      "path": "js/advanced/animator.js",
+      "sha256": "f08832283d9ef696bf5a8d7be34911338757b86f3fb4a80f48240c7690920371"
+    },
+    {
+      "path": "js/advanced/combat.js",
+      "sha256": "fb1777f615e9963b86dc9d072374b2e6cf439a166ad9d84d3d521a5287ab7221"
+    },
+    {
+      "path": "js/advanced/physics.js",
+      "sha256": "554584e43a54971fbbec3d1a0f530d4ad7cb2a24903e486ab28e9e6c511dea7d"
+    },
+    {
+      "path": "js/advanced/tactics.js",
+      "sha256": "e14b13f503aebec36b643daf74fcf7bcd217d9a98946ffa8df4ef716fe4f2aed"
+    },
+    {
+      "path": "js/advanced/traversal.js",
+      "sha256": "946c53f182d516fbb8be17871cf282ef3ae45ba30cc4ae8ee28297ce31b836fd"
+    },
+    {
+      "path": "js/polygon/05d_grenades.js",
+      "sha256": "034b70818885c981e11391dd7090c0b2d7f071e4316c3da2494e9cf1ee815152"
+    },
+    {
+      "path": "js/polygon/20_player.js",
+      "sha256": "eb712c3d2bef4ebc75c380340e41ebbf3d319eec3717f4748aa5d6abeb1a535a"
+    },
+    {
+      "path": "js/polygon/29_game.js",
+      "sha256": "ea3712ba6251109dc27a560c1b094caecadeb71bf5e9f90fc718512f8d3cc170"
+    },
+    {
+      "path": "js/polygon/30_game_medic.js",
+      "sha256": "80c3d40343cda04214147db64cb412294eb2c4e3ec1e551beb732b2722723258"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "6305683ddac9bc64ab5877d18cdf36b27c7b030f10e53e1f3b11b73fbbffb877"
+    },
+    {
+      "path": "package.json",
+      "sha256": "86a47e947e6055af90d6270ee096c86544d834bcae197f62d7284da4ee711dc5"
+    },
+    {
+      "path": "src/advanced/animator.ts",
+      "sha256": "2d225ee2f5818030068e2c7eb524149b6e96df6757ec8d7e07be1bfd0c305dbd"
+    },
+    {
+      "path": "src/advanced/combat.ts",
+      "sha256": "963309693b006c83476123483093e6e9ea09257c9230ea05ab5a467672978f20"
+    },
+    {
+      "path": "src/advanced/physics.ts",
+      "sha256": "a9b30b0cbf6078859c73e764580a47d673878064e0c2ba4374ba4406da0c0202"
+    },
+    {
+      "path": "src/advanced/tactics.ts",
+      "sha256": "8f2aa1adbdfa3d6b42502cc37bbe27c7aebd02a7fa0bc5d4ecd50f93a4a83f14"
+    },
+    {
+      "path": "src/advanced/traversal.ts",
+      "sha256": "92765873366e433deae3c60ff07df5c17287e80155f48fe2214ea35fa1b06ec3"
+    },
+    {
+      "path": "tools/advanced-tests/browser-smoke.cjs",
+      "sha256": "cf554597c86b1ee35dfd34bb1fc33831dd49ec9084282676135f6d0f1634b417"
+    },
+    {
+      "path": "tools/advanced-tests/compare-cpu.cjs",
+      "sha256": "bd791ed42e5cd79f013fe718771fba4f5dd4ad1fa4dc38019877269ed91e2ce4"
+    },
+    {
+      "path": "tools/advanced-tests/continuation-browser.cjs",
+      "sha256": "c09a02eefad7110cb503f179e8180634c4d114ee0e3d2dbd2b66e03e8c3bfc64"
+    },
+    {
+      "path": "tools/advanced-tests/continuation-browser.json",
+      "sha256": "23e61d7953c7eb2c6df01b4b8e018c49342ec43c49f865a4446836ff416af5e0"
+    },
+    {
+      "path": "tools/advanced-tests/continuation-results.json",
+      "sha256": "c732f9d7d3716e29ff9201cd174ed1e76160bcb6d8c37aba7d788f56fa7f99d8"
+    },
+    {
+      "path": "tools/advanced-tests/continuation.cjs",
+      "sha256": "93e429d39ce5ee9da9fd03a266964a1b19fea591d0c7aa6578bbd4ae92540ae7"
+    },
+    {
+      "path": "tools/advanced-tests/cpu-v2-baseline-repeat.json",
+      "sha256": "d0eabb78fb8d8b303eaa569de01c284af50a0eae23714ee136961050cc4f07ec"
+    },
+    {
+      "path": "tools/advanced-tests/cpu-v2-baseline.json",
+      "sha256": "15c6dc1c7ea804f05b1b15f67ced7a4fcee7c314d85d3cc0b0f70e0f4f3409d0"
+    },
+    {
+      "path": "tools/advanced-tests/cpu-v2-updated.json",
+      "sha256": "8e9a4dd5893b5262b78a69256057fc2618cc4ca90ad321573c274c84d92d9c40"
+    },
+    {
+      "path": "tools/advanced-tests/history-v1/cpu-original.json",
+      "sha256": "2292646b0d2891f7954307fa5f2fc4708ff3450cb1f28196e5467643da780978"
+    },
+    {
+      "path": "tools/advanced-tests/history-v1/cpu-updated.json",
+      "sha256": "e42ab6aa684c9787b416f0edc72d6b1444d1d072e9de9706f064ff9202fe8079"
+    },
+    {
+      "path": "tools/advanced-tests/history-v1/performance-summary.json",
+      "sha256": "f821d1ef678561c5c0d3e154280d77a37e9a66aa5429a5ec02f2feab80fb41c9"
+    },
+    {
+      "path": "tools/advanced-tests/history-v2-before-final/cpu-before-idle-cache.json",
+      "sha256": "66ee743c48a4928fe8c187f46929336aaeb1fca5416a11e0ce40285e0648c303"
+    },
+    {
+      "path": "tools/advanced-tests/integration-angar_map.json",
+      "sha256": "56cf79ef22d8f0e6f7f20239117081c3f083d0a1f8fc4eee9c395bfdf99b7973"
+    },
+    {
+      "path": "tools/advanced-tests/integration-forest_map_camp.json",
+      "sha256": "08a7a647276c11a3cc2f34c5409357951efa43da2aa70af777f967716b366ed7"
+    },
+    {
+      "path": "tools/advanced-tests/integration-stroyka_zarechye_v2.json",
+      "sha256": "e82d018efe71328f645c301c5f5905c2a92e68d4738b96c7881791f305081dc6"
+    },
+    {
+      "path": "tools/advanced-tests/medical-browser-armed.json",
+      "sha256": "51ee362539bc816c5520440b1dcf32ca731c5511e0881473b64acd06a9e29e3f"
+    },
+    {
+      "path": "tools/advanced-tests/medical-browser.cjs",
+      "sha256": "b185952ad465981f7bd778905eb4ed58eac14d4d975652bc77d87e1bb4d56f41"
+    },
+    {
+      "path": "tools/advanced-tests/medical-browser.json",
+      "sha256": "92b892914e86c91fd9b4758e347b315fa34f7e7fe665b8b1569e245fb78356c9"
+    },
+    {
+      "path": "tools/advanced-tests/performance-summary.json",
+      "sha256": "bd7dfdea71eb65b1d1216aa0183755c27f0981b0c771c1f891354915f9cb97d1"
+    },
+    {
+      "path": "tools/advanced-tests/results.json",
+      "sha256": "94f07443c7533d5391928c0cff9d707eb1955d0db2d431312b42b4b9168d3723"
+    },
+    {
+      "path": "tools/advanced-tests/runtime.cjs",
+      "sha256": "6340ff35f41c9777731f44a37e6830c390ccac1db4aaef71ed0c31d44ff66f75"
+    },
+    {
+      "path": "tools/advanced-tests/visual-crouch.png",
+      "sha256": "1b0d3177142bde8bbbaaad3431ec9b48b06f9394116f800194a79fa6eca86baa"
+    },
+    {
+      "path": "tools/advanced-tests/visual-fallen.png",
+      "sha256": "bdf122c9605914f0bbe936edf208524d52525874bcee9d911d91c4426d190a03"
+    },
+    {
+      "path": "tools/advanced-tests/visual-prone.png",
+      "sha256": "3fe640a3c4bf0fc252a385fbf7de32fc19f63b510703e95d09e873a90a095c94"
+    },
+    {
+      "path": "tools/advanced-tests/visual-smoke.cjs",
+      "sha256": "ba0604fc1763db638f70404b52ded7058bb7b594630b302f1a0413e119f6ce03"
+    },
+    {
+      "path": "tools/advanced-tests/visual-standing.png",
+      "sha256": "06b959dff282062a5078fa553d2369a8dcd8233006fe887740f70995e1e5ecd5"
+    },
+    {
+      "path": "tools/build-advanced.cjs",
+      "sha256": "7c999f94fa7b99cbc095b0cc1cc7b704d7368051332959d6eef9b5f75baf9f27"
+    }
+  ]
+}
